@@ -1,6 +1,6 @@
 # Experiments and results (by Daniel Severin)
 
-This folder has a copy of different digital catalogs.
+Below some experiments are reported.
 
 ### Efficiency of algorithm
 
@@ -40,6 +40,10 @@ Below is the list of corrections:
 where the parameter may be "RAm" or "RAs" for the minutes or seconds of Right Ascension resp. or "DEm" for the minutes of Declination, *dist1* is the distance produced by the difference between the current position and the corrected one, and *dist2* is the angular distance computed by the algorithm between the position in the BD digital catalog and PPM catalog (after precession and correction by proper motion of the PPM star).
 
 Note that *dist1* and *dist2* are similar, thus showing that the cause of the mistake in the digital catalog is typographical.
+For instance, the star BD +19°4871 reports 19°37'.9 in declination: 
+![Alt text](VizieR.png?raw=true "Digital catalog")
+But in the printed catalog, it says 19°7'.9, thus leading to a separation of 30 arcmin. In fact, star PPM 141127 is near the printed position, as expected. Below, a portion of the BD catalog is shown:
+![Alt text](bd.png?raw=true "Printed catalog")
 
 ### Typo errors found in Cordoba Durchmusterung digital catalog
 
