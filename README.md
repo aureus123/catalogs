@@ -1,4 +1,4 @@
-# Old catalog comparsion
+# Old catalogs comparison
 
 This repository contains some simple algorithms to compare old catalogs in order to detect typo errors during the transcription from original printed catalogs to digital ones, particularly the Durchmusterungs.
 
