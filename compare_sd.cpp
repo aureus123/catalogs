@@ -1,8 +1,7 @@
 
 /*
  * COMPARE_SD - Compara registros de CD contra SD a través de una identificación cruzada
- * Copyright (C) 2024 Daniel E. Severin
- *
+ * Made in 2024 by Daniel E. Severin
  */
 
 #include <stdio.h>

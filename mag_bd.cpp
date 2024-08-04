@@ -1,8 +1,7 @@
 
 /*
  * MAG_BD - Genera datos para ajustar magnitudes visuales de BD
- * Copyright (C) 2015 Daniel E. Severin
- *
+ * Made in 2024 by Daniel E. Severin
  */
 
 #include <stdio.h>

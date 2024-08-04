@@ -1,7 +1,7 @@
 
 /*
  * COMPARE_CD - Compara registros de CD contra si mismos
- * Copyright (C) 2024 Daniel E. Severin
+ * Made in 2024 by Daniel E. Severin
  */
 
 #include <stdio.h>

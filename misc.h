@@ -1,6 +1,6 @@
 
 /*
- * MISC Header
+ * MISC - Header
  */
 
 void bye(const char *string);

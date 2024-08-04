@@ -1,7 +1,7 @@
 
 /*
  * READ_BD - Lee catálogo BD y lo ubica en memoria
- * Copyright (C) 2024 Daniel E. Severin
+ * Made in 2024 by Daniel E. Severin
  */
 
 #include <stdio.h>

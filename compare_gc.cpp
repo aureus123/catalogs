@@ -1,7 +1,7 @@
 
 /*
  * COMPARE_GC - Compara registros de CD contra GC
- * Copyright (C) 2024 Daniel E. Severin
+ * Made in 2024 by Daniel E. Severin
  */
 
 #include <stdio.h>

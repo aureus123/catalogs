@@ -1,7 +1,7 @@
 
 /*
  * COMPARE_PPM_BD - Compara registros de BD contra PPM
- * Copyright (C) 2024 Daniel E. Severin
+ * Made in 2024 by Daniel E. Severin
  */
 
 #include <stdio.h>

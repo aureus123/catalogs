@@ -1,6 +1,6 @@
 
 /*
- * READ_PPM Header
+ * READ_PPM - Header
  */
 
 #define MAXPPMSTAR 468586

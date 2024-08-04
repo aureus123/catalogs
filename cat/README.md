@@ -7,7 +7,7 @@ This folder has a copy of different digital catalogs.
 - cd: Current catalog from VizieR (code I/114)
 - cd_vol1: Same as "cd" but only first volume (Resultados del Observatorio Nacional Argentino, Tomo XVI, declinaciones -22 a -31)
 - 1114: Catalog from NASA-ADC CD-ROMs, circa 1994
-- I88: Old version of first volume, circa 1982
+- I88: Old version of first volume from VizieR (code I/88), circa 1982
 
 These catalogs were downloaded from NAOJ Astronomy Data Center and VizieR: https://vizier.cds.unistra.fr
 
@@ -22,12 +22,12 @@ These catalogs were downloaded from GAVO Data Center: https://dc.g-vo.org/arigfh
 ### Other catalogs
 
 - ppm: Positions and Proper Motions from VizieR (merge of I/146, I/193, I/206 and I/208)
-- bd: Bonner Durchmusterung from VizieR (I/122)
-- sd: Bonner (southern) durchmusterung from VizieR (I/119)
-- cpd: Cape Photographic Durchmusterung from VizieR (I/108)
+- bd: Bonner Durchmusterung from VizieR (code I/122)
+- sd: Bonner (southern) durchmusterung from VizieR (code I/119)
+- cpd: Cape Photographic Durchmusterung from VizieR (code I/108)
 - gc: Argentine General Catalog from GAVO Data Center
-- 4005: Table of Correspondences BD/CD/CPD (Jung, Bischoffl 1971) from NASA-ADC CD-ROMs, also on Vizier (IV/5)
-- 4011: Correspondences CD/CPD, Zones -18 to -39 (Bonnet) from NASA-ADC CD-ROMs, also on Vizier (IV/11)
+- 4005: Table of Correspondences BD/CD/CPD (Jung, Bischoffl 1971) from NASA-ADC CD-ROMs, also on Vizier (code IV/5)
+- 4011: Correspondences CD/CPD, Zones -18 to -39 (Bonnet) from NASA-ADC CD-ROMs, also on Vizier (code IV/11)
 - 4019: CD/CPD Cross Index (Rappaport, Warren 1987) from NASA-ADC (a buggy line was deleted from this file)
 
 ### Original catalogs

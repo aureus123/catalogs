@@ -1,6 +1,6 @@
 
 /*
- * READ_DM Header
+ * READ_DM - Header (CD y BD)
  */
 
 #define MAXDMSTAR 613959

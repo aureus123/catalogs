@@ -1,8 +1,7 @@
 
 /*
  * MAG_CD - Genera datos para ajustar magnitudes visuales de CD
- * Copyright (C) 2015 Daniel E. Severin
- *
+ * Made in 2024 by Daniel E. Severin
  */
 
 #include <stdio.h>

@@ -1,8 +1,7 @@
 
 /*
  * TRIG - Funciones trigonométricas y matematicas en gral.
- * Copyright (C) 2015 Daniel E. Severin
- *
+ * Made in 2024 by Daniel E. Severin
  */
 
 #include <math.h>
