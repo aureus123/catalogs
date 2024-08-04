@@ -1,0 +1,1807 @@
+COMPARE_GC - Compare CD and GC catalogs.
+Made in 2024 by Daniel Severin.
+Stars read from Cordoba Durchmusterung: 613778
+   Tomo XVI: 179745, Tomo XVII: 160381, Tomo XVIII: 149433, Tomo XXIa: 89128, Tomo XXIb: 35091
+Progress: stars = 29, page = 2
+Progress: stars = 67, page = 3
+Progress: stars = 99, page = 4
+Progress: stars = 135, page = 5
+Progress: stars = 178, page = 6
+Progress: stars = 212, page = 7
+Progress: stars = 256, page = 8
+Progress: stars = 289, page = 9
+Progress: stars = 334, page = 10
+Progress: stars = 369, page = 11
+Progress: stars = 412, page = 12
+Progress: stars = 452, page = 13
+Progress: stars = 496, page = 14
+Progress: stars = 539, page = 15
+Progress: stars = 569, page = 16
+Progress: stars = 610, page = 17
+Progress: stars = 645, page = 18
+Progress: stars = 675, page = 19
+Progress: stars = 722, page = 20
+Progress: stars = 769, page = 21
+Progress: stars = 817, page = 22
+Progress: stars = 862, page = 23
+Progress: stars = 909, page = 24
+Progress: stars = 965, page = 25
+Progress: stars = 1016, page = 26
+Progress: stars = 1062, page = 27
+Progress: stars = 1109, page = 28
+Progress: stars = 1148, page = 29
+Progress: stars = 1179, page = 30
+Progress: stars = 1209, page = 31
+Progress: stars = 1250, page = 32
+Progress: stars = 1289, page = 33
+Progress: stars = 1337, page = 34
+Progress: stars = 1384, page = 35
+Progress: stars = 1424, page = 36
+Progress: stars = 1477, page = 37
+Progress: stars = 1527, page = 38
+Progress: stars = 1570, page = 39
+Progress: stars = 1606, page = 40
+Progress: stars = 1664, page = 41
+Progress: stars = 1710, page = 42
+Progress: stars = 1751, page = 43
+Progress: stars = 1797, page = 44
+Progress: stars = 1849, page = 45
+Progress: stars = 1894, page = 46
+Progress: stars = 1940, page = 47
+Progress: stars = 1974, page = 48
+Progress: stars = 2029, page = 49
+Progress: stars = 2079, page = 50
+Progress: stars = 2130, page = 51
+Progress: stars = 2181, page = 52
+Progress: stars = 2229, page = 53
+Progress: stars = 2284, page = 54
+Progress: stars = 2332, page = 55
+Progress: stars = 2385, page = 56
+Progress: stars = 2432, page = 57
+Progress: stars = 2478, page = 58
+Progress: stars = 2510, page = 59
+Progress: stars = 2556, page = 60
+Progress: stars = 2605, page = 61
+Progress: stars = 2655, page = 62
+Progress: stars = 2704, page = 63
+Progress: stars = 2756, page = 64
+Progress: stars = 2805, page = 65
+Progress: stars = 2850, page = 66
+Progress: stars = 2898, page = 67
+Progress: stars = 2947, page = 68
+Progress: stars = 2998, page = 69
+Progress: stars = 3049, page = 70
+Progress: stars = 3095, page = 71
+Progress: stars = 3140, page = 72
+Progress: stars = 3182, page = 73
+Progress: stars = 3226, page = 74
+Progress: stars = 3273, page = 75
+Progress: stars = 3324, page = 76
+Progress: stars = 3376, page = 77
+Progress: stars = 3428, page = 78
+Progress: stars = 3482, page = 79
+Progress: stars = 3539, page = 80
+Progress: stars = 3591, page = 81
+Progress: stars = 3627, page = 82
+Progress: stars = 3673, page = 83
+Progress: stars = 3722, page = 84
+Progress: stars = 3771, page = 85
+Progress: stars = 3818, page = 86
+Progress: stars = 3859, page = 87
+Progress: stars = 3903, page = 88
+Progress: stars = 3935, page = 89
+Progress: stars = 3980, page = 90
+Progress: stars = 4034, page = 91
+Progress: stars = 4082, page = 92
+Progress: stars = 4123, page = 93
+Progress: stars = 4169, page = 94
+Progress: stars = 4218, page = 95
+Progress: stars = 4265, page = 96
+Progress: stars = 4313, page = 97
+Progress: stars = 4358, page = 98
+Progress: stars = 4406, page = 99
+Progress: stars = 4458, page = 100
+Progress: stars = 4498, page = 101
+Progress: stars = 4546, page = 102
+Progress: stars = 4592, page = 103
+Progress: stars = 4636, page = 104
+Progress: stars = 4690, page = 105
+Progress: stars = 4743, page = 106
+Progress: stars = 4780, page = 107
+Progress: stars = 4821, page = 108
+Progress: stars = 4875, page = 109
+Progress: stars = 4921, page = 110
+Progress: stars = 4964, page = 111
+Progress: stars = 5017, page = 112
+Progress: stars = 5066, page = 113
+Progress: stars = 5115, page = 114
+Progress: stars = 5163, page = 115
+Progress: stars = 5202, page = 116
+Progress: stars = 5251, page = 117
+Progress: stars = 5294, page = 118
+Progress: stars = 5342, page = 119
+Progress: stars = 5379, page = 120
+Progress: stars = 5420, page = 121
+Progress: stars = 5463, page = 122
+Progress: stars = 5497, page = 123
+Progress: stars = 5549, page = 124
+Progress: stars = 5589, page = 125
+Progress: stars = 5633, page = 126
+Progress: stars = 5673, page = 127
+Progress: stars = 5715, page = 128
+Progress: stars = 5751, page = 129
+Progress: stars = 5774, page = 130
+Progress: stars = 5819, page = 131
+Progress: stars = 5857, page = 132
+Progress: stars = 5900, page = 133
+Progress: stars = 5948, page = 134
+Progress: stars = 5991, page = 135
+Progress: stars = 6036, page = 136
+Progress: stars = 6081, page = 137
+Progress: stars = 6120, page = 138
+Progress: stars = 6160, page = 139
+Progress: stars = 6203, page = 140
+Progress: stars = 6247, page = 141
+Progress: stars = 6299, page = 142
+Progress: stars = 6353, page = 143
+Progress: stars = 6400, page = 144
+Progress: stars = 6448, page = 145
+Progress: stars = 6495, page = 146
+Progress: stars = 6547, page = 147
+Progress: stars = 6592, page = 148
+Progress: stars = 6640, page = 149
+Progress: stars = 6685, page = 150
+Progress: stars = 6729, page = 151
+Progress: stars = 6777, page = 152
+Progress: stars = 6820, page = 153
+Progress: stars = 6855, page = 154
+Progress: stars = 6892, page = 155
+Progress: stars = 6930, page = 156
+Progress: stars = 6969, page = 157
+Progress: stars = 7014, page = 158
+Progress: stars = 7059, page = 159
+Progress: stars = 7102, page = 160
+Progress: stars = 7145, page = 161
+Progress: stars = 7191, page = 162
+Progress: stars = 7246, page = 163
+Progress: stars = 7291, page = 164
+Progress: stars = 7340, page = 165
+Progress: stars = 7386, page = 166
+Progress: stars = 7427, page = 167
+Progress: stars = 7471, page = 168
+Progress: stars = 7517, page = 169
+Progress: stars = 7559, page = 170
+Progress: stars = 7610, page = 171
+Progress: stars = 7651, page = 172
+Progress: stars = 7687, page = 173
+Progress: stars = 7721, page = 174
+Progress: stars = 7760, page = 175
+Progress: stars = 7808, page = 176
+Progress: stars = 7860, page = 177
+Progress: stars = 7902, page = 178
+Progress: stars = 7943, page = 179
+Progress: stars = 7985, page = 180
+Progress: stars = 8030, page = 181
+Progress: stars = 8075, page = 182
+Progress: stars = 8113, page = 183
+Progress: stars = 8153, page = 184
+Progress: stars = 8193, page = 185
+Progress: stars = 8238, page = 186
+Progress: stars = 8284, page = 187
+Progress: stars = 8320, page = 188
+Progress: stars = 8363, page = 189
+Progress: stars = 8414, page = 190
+Progress: stars = 8463, page = 191
+Progress: stars = 8510, page = 192
+Progress: stars = 8552, page = 193
+Progress: stars = 8587, page = 194
+Progress: stars = 8623, page = 195
+Progress: stars = 8668, page = 196
+Progress: stars = 8713, page = 197
+Progress: stars = 8758, page = 198
+Progress: stars = 8806, page = 199
+Progress: stars = 8851, page = 200
+Progress: stars = 8890, page = 201
+Progress: stars = 8940, page = 202
+Progress: stars = 8982, page = 203
+Progress: stars = 9021, page = 204
+Progress: stars = 9060, page = 205
+Progress: stars = 9110, page = 206
+Progress: stars = 9166, page = 207
+Progress: stars = 9224, page = 208
+Progress: stars = 9278, page = 209
+Progress: stars = 9331, page = 210
+Progress: stars = 9380, page = 211
+Progress: stars = 9425, page = 212
+Progress: stars = 9469, page = 213
+Progress: stars = 9504, page = 214
+Progress: stars = 9544, page = 215
+Progress: stars = 9589, page = 216
+Progress: stars = 9632, page = 217
+Progress: stars = 9681, page = 218
+Progress: stars = 9723, page = 219
+Progress: stars = 9774, page = 220
+Progress: stars = 9818, page = 221
+Progress: stars = 9859, page = 222
+Progress: stars = 9908, page = 223
+Progress: stars = 9956, page = 224
+Progress: stars = 10002, page = 225
+Progress: stars = 10048, page = 226
+Progress: stars = 10087, page = 227
+Progress: stars = 10127, page = 228
+Progress: stars = 10180, page = 229
+Progress: stars = 10228, page = 230
+Progress: stars = 10275, page = 231
+Progress: stars = 10324, page = 232
+Progress: stars = 10375, page = 233
+Progress: stars = 10421, page = 234
+Progress: stars = 10464, page = 235
+Progress: stars = 10499, page = 236
+Progress: stars = 10541, page = 237
+Progress: stars = 10588, page = 238
+Progress: stars = 10641, page = 239
+Progress: stars = 10694, page = 240
+Progress: stars = 10734, page = 241
+Progress: stars = 10778, page = 242
+Progress: stars = 10825, page = 243
+Progress: stars = 10876, page = 244
+Progress: stars = 10927, page = 245
+Progress: stars = 10979, page = 246
+Progress: stars = 11024, page = 247
+Progress: stars = 11076, page = 248
+Progress: stars = 11126, page = 249
+Progress: stars = 11177, page = 250
+Progress: stars = 11220, page = 251
+Progress: stars = 11262, page = 252
+Progress: stars = 11317, page = 253
+Progress: stars = 11365, page = 254
+Progress: stars = 11399, page = 255
+Progress: stars = 11436, page = 256
+Progress: stars = 11486, page = 257
+Progress: stars = 11529, page = 258
+Progress: stars = 11577, page = 259
+Progress: stars = 11619, page = 260
+Progress: stars = 11657, page = 261
+Progress: stars = 11704, page = 262
+Progress: stars = 11752, page = 263
+Progress: stars = 11802, page = 264
+Progress: stars = 11848, page = 265
+Progress: stars = 11903, page = 266
+Progress: stars = 11955, page = 267
+Progress: stars = 12002, page = 268
+Progress: stars = 12047, page = 269
+Progress: stars = 12100, page = 270
+Progress: stars = 12147, page = 271
+Progress: stars = 12190, page = 272
+Progress: stars = 12233, page = 273
+Progress: stars = 12268, page = 274
+Progress: stars = 12307, page = 275
+Progress: stars = 12344, page = 276
+Progress: stars = 12383, page = 277
+Progress: stars = 12427, page = 278
+Progress: stars = 12474, page = 279
+Progress: stars = 12515, page = 280
+Progress: stars = 12556, page = 281
+Progress: stars = 12604, page = 282
+Progress: stars = 12649, page = 283
+Progress: stars = 12691, page = 284
+Progress: stars = 12737, page = 285
+Progress: stars = 12774, page = 286
+Progress: stars = 12816, page = 287
+Progress: stars = 12863, page = 288
+Progress: stars = 12905, page = 289
+Progress: stars = 12947, page = 290
+Progress: stars = 12988, page = 291
+Progress: stars = 13026, page = 292
+Progress: stars = 13072, page = 293
+Progress: stars = 13107, page = 294
+Progress: stars = 13144, page = 295
+Progress: stars = 13187, page = 296
+Progress: stars = 13235, page = 297
+Progress: stars = 13299, page = 298
+Progress: stars = 13343, page = 299
+Progress: stars = 13382, page = 300
+Progress: stars = 13424, page = 301
+Progress: stars = 13463, page = 302
+Progress: stars = 13512, page = 303
+Progress: stars = 13558, page = 304
+Progress: stars = 13596, page = 305
+Progress: stars = 13638, page = 306
+Progress: stars = 13681, page = 307
+Progress: stars = 13721, page = 308
+Progress: stars = 13770, page = 309
+Progress: stars = 13824, page = 310
+Progress: stars = 13872, page = 311
+Progress: stars = 13917, page = 312
+Progress: stars = 13957, page = 313
+Progress: stars = 14005, page = 314
+Progress: stars = 14042, page = 315
+Progress: stars = 14088, page = 316
+Progress: stars = 14135, page = 317
+Progress: stars = 14190, page = 318
+Progress: stars = 14246, page = 319
+Progress: stars = 14298, page = 320
+Progress: stars = 14350, page = 321
+Progress: stars = 14404, page = 322
+Progress: stars = 14461, page = 323
+Progress: stars = 14514, page = 324
+Progress: stars = 14563, page = 325
+Progress: stars = 14606, page = 326
+Progress: stars = 14658, page = 327
+Progress: stars = 14711, page = 328
+Progress: stars = 14755, page = 329
+Progress: stars = 14807, page = 330
+Progress: stars = 14854, page = 331
+Progress: stars = 14895, page = 332
+Progress: stars = 14943, page = 333
+Progress: stars = 14994, page = 334
+Progress: stars = 15051, page = 335
+Progress: stars = 15105, page = 336
+Progress: stars = 15154, page = 337
+Progress: stars = 15192, page = 338
+Progress: stars = 15250, page = 339
+Progress: stars = 15305, page = 340
+Progress: stars = 15358, page = 341
+Progress: stars = 15411, page = 342
+Progress: stars = 15458, page = 343
+Progress: stars = 15506, page = 344
+Progress: stars = 15553, page = 345
+Progress: stars = 15599, page = 346
+Progress: stars = 15658, page = 347
+Progress: stars = 15707, page = 348
+Progress: stars = 15764, page = 349
+Progress: stars = 15817, page = 350
+Progress: stars = 15867, page = 351
+Progress: stars = 15915, page = 352
+Progress: stars = 15969, page = 353
+Progress: stars = 16024, page = 354
+Progress: stars = 16071, page = 355
+Progress: stars = 16123, page = 356
+Progress: stars = 16155, page = 357
+Progress: stars = 16199, page = 358
+Progress: stars = 16236, page = 359
+Progress: stars = 16284, page = 360
+Progress: stars = 16333, page = 361
+Progress: stars = 16370, page = 362
+Progress: stars = 16414, page = 363
+Progress: stars = 16464, page = 364
+Progress: stars = 16520, page = 365
+Progress: stars = 16570, page = 366
+Progress: stars = 16627, page = 367
+Progress: stars = 16678, page = 368
+Progress: stars = 16722, page = 369
+Progress: stars = 16757, page = 370
+Progress: stars = 16811, page = 371
+Progress: stars = 16861, page = 372
+Progress: stars = 16911, page = 373
+Progress: stars = 16964, page = 374
+Progress: stars = 17013, page = 375
+Progress: stars = 17064, page = 376
+Progress: stars = 17110, page = 377
+Progress: stars = 17150, page = 378
+Progress: stars = 17198, page = 379
+Progress: stars = 17252, page = 380
+Progress: stars = 17299, page = 381
+Progress: stars = 17349, page = 382
+Progress: stars = 17404, page = 383
+Progress: stars = 17460, page = 384
+Progress: stars = 17512, page = 385
+Progress: stars = 17560, page = 386
+Progress: stars = 17605, page = 387
+Progress: stars = 17657, page = 388
+Progress: stars = 17711, page = 389
+Progress: stars = 17761, page = 390
+Progress: stars = 17817, page = 391
+Progress: stars = 17848, page = 392
+Progress: stars = 17898, page = 393
+Progress: stars = 17956, page = 394
+Progress: stars = 18005, page = 395
+Progress: stars = 18061, page = 396
+Progress: stars = 18111, page = 397
+Progress: stars = 18166, page = 398
+Progress: stars = 18220, page = 399
+Progress: stars = 18266, page = 400
+Progress: stars = 18320, page = 401
+Progress: stars = 18367, page = 402
+Progress: stars = 18412, page = 403
+Progress: stars = 18453, page = 404
+Progress: stars = 18489, page = 405
+Progress: stars = 18544, page = 406
+Progress: stars = 18596, page = 407
+Progress: stars = 18651, page = 408
+Progress: stars = 18700, page = 409
+Progress: stars = 18759, page = 410
+Progress: stars = 18808, page = 411
+Progress: stars = 18863, page = 412
+Progress: stars = 18908, page = 413
+Progress: stars = 18961, page = 414
+Progress: stars = 19018, page = 415
+Progress: stars = 19069, page = 416
+Progress: stars = 19126, page = 417
+Progress: stars = 19172, page = 418
+Progress: stars = 19219, page = 419
+Progress: stars = 19268, page = 420
+Progress: stars = 19323, page = 421
+Progress: stars = 19367, page = 422
+Progress: stars = 19413, page = 423
+Progress: stars = 19451, page = 424
+Progress: stars = 19503, page = 425
+Progress: stars = 19541, page = 426
+Progress: stars = 19583, page = 427
+Progress: stars = 19641, page = 428
+Progress: stars = 19686, page = 429
+Progress: stars = 19727, page = 430
+Progress: stars = 19779, page = 431
+Progress: stars = 19826, page = 432
+Progress: stars = 19877, page = 433
+Progress: stars = 19931, page = 434
+Progress: stars = 19979, page = 435
+Progress: stars = 20025, page = 436
+Progress: stars = 20058, page = 437
+Progress: stars = 20104, page = 438
+Progress: stars = 20157, page = 439
+Progress: stars = 20209, page = 440
+Progress: stars = 20260, page = 441
+Progress: stars = 20305, page = 442
+Progress: stars = 20355, page = 443
+Progress: stars = 20415, page = 444
+Progress: stars = 20462, page = 445
+Progress: stars = 20513, page = 446
+Progress: stars = 20568, page = 447
+Progress: stars = 20620, page = 448
+Progress: stars = 20679, page = 449
+Progress: stars = 20737, page = 450
+Progress: stars = 20776, page = 451
+Progress: stars = 20822, page = 452
+Progress: stars = 20865, page = 453
+Progress: stars = 20917, page = 454
+Progress: stars = 20968, page = 455
+Progress: stars = 21009, page = 456
+Progress: stars = 21065, page = 457
+Progress: stars = 21117, page = 458
+Progress: stars = 21168, page = 459
+Progress: stars = 21216, page = 460
+Progress: stars = 21259, page = 461
+Progress: stars = 21307, page = 462
+Progress: stars = 21360, page = 463
+Progress: stars = 21415, page = 464
+Progress: stars = 21471, page = 465
+Progress: stars = 21510, page = 466
+Progress: stars = 21560, page = 467
+Progress: stars = 21599, page = 468
+Progress: stars = 21641, page = 469
+Progress: stars = 21690, page = 470
+Progress: stars = 21748, page = 471
+Progress: stars = 21808, page = 472
+Progress: stars = 21867, page = 473
+Progress: stars = 21911, page = 474
+Progress: stars = 21957, page = 475
+Progress: stars = 22002, page = 476
+Progress: stars = 22052, page = 477
+Progress: stars = 22092, page = 478
+Progress: stars = 22146, page = 479
+Progress: stars = 22196, page = 480
+Progress: stars = 22250, page = 481
+Progress: stars = 22289, page = 482
+Progress: stars = 22344, page = 483
+Progress: stars = 22403, page = 484
+Progress: stars = 22451, page = 485
+Progress: stars = 22503, page = 486
+Progress: stars = 22551, page = 487
+Progress: stars = 22591, page = 488
+Progress: stars = 22631, page = 489
+Progress: stars = 22676, page = 490
+Progress: stars = 22730, page = 491
+Progress: stars = 22782, page = 492
+Progress: stars = 22837, page = 493
+Progress: stars = 22886, page = 494
+Progress: stars = 22938, page = 495
+Progress: stars = 22993, page = 496
+Progress: stars = 23033, page = 497
+Progress: stars = 23079, page = 498
+Progress: stars = 23131, page = 499
+Progress: stars = 23183, page = 500
+Progress: stars = 23235, page = 501
+Progress: stars = 23271, page = 502
+Progress: stars = 23318, page = 503
+Progress: stars = 23370, page = 504
+Progress: stars = 23422, page = 505
+Progress: stars = 23466, page = 506
+Progress: stars = 23500, page = 507
+Progress: stars = 23550, page = 508
+Progress: stars = 23605, page = 509
+Progress: stars = 23655, page = 510
+Progress: stars = 23708, page = 511
+Progress: stars = 23762, page = 512
+Progress: stars = 23817, page = 513
+Progress: stars = 23854, page = 514
+Progress: stars = 23885, page = 515
+Progress: stars = 23937, page = 516
+Progress: stars = 23988, page = 517
+Progress: stars = 24039, page = 518
+Progress: stars = 24096, page = 519
+Progress: stars = 24141, page = 520
+Progress: stars = 24188, page = 521
+Progress: stars = 24243, page = 522
+Progress: stars = 24300, page = 523
+Progress: stars = 24352, page = 524
+Progress: stars = 24407, page = 525
+Progress: stars = 24442, page = 526
+Progress: stars = 24490, page = 527
+Progress: stars = 24536, page = 528
+Progress: stars = 24587, page = 529
+Progress: stars = 24629, page = 530
+Progress: stars = 24672, page = 531
+Progress: stars = 24715, page = 532
+Progress: stars = 24763, page = 533
+Progress: stars = 24817, page = 534
+Progress: stars = 24852, page = 535
+Progress: stars = 24887, page = 536
+Progress: stars = 24920, page = 537
+Progress: stars = 24966, page = 538
+Progress: stars = 25007, page = 539
+Progress: stars = 25053, page = 540
+Progress: stars = 25102, page = 541
+Progress: stars = 25151, page = 542
+Progress: stars = 25203, page = 543
+Progress: stars = 25254, page = 544
+Progress: stars = 25303, page = 545
+Progress: stars = 25335, page = 546
+Progress: stars = 25364, page = 547
+Progress: stars = 25393, page = 548
+Progress: stars = 25442, page = 549
+Progress: stars = 25485, page = 550
+Progress: stars = 25529, page = 551
+Progress: stars = 25578, page = 552
+Progress: stars = 25615, page = 553
+Progress: stars = 25656, page = 554
+Progress: stars = 25708, page = 555
+Progress: stars = 25757, page = 556
+Progress: stars = 25795, page = 557
+Progress: stars = 25833, page = 558
+Progress: stars = 25880, page = 559
+Progress: stars = 25924, page = 560
+Progress: stars = 25973, page = 561
+Progress: stars = 26021, page = 562
+Progress: stars = 26059, page = 563
+Progress: stars = 26107, page = 564
+Progress: stars = 26138, page = 565
+Progress: stars = 26182, page = 566
+Progress: stars = 26227, page = 567
+Progress: stars = 26274, page = 568
+Progress: stars = 26323, page = 569
+Progress: stars = 26374, page = 570
+Progress: stars = 26418, page = 571
+Progress: stars = 26465, page = 572
+Progress: stars = 26510, page = 573
+Progress: stars = 26557, page = 574
+Progress: stars = 26603, page = 575
+Progress: stars = 26652, page = 576
+Progress: stars = 26700, page = 577
+Progress: stars = 26747, page = 578
+Progress: stars = 26785, page = 579
+Progress: stars = 26823, page = 580
+Progress: stars = 26863, page = 581
+Progress: stars = 26911, page = 582
+Progress: stars = 26957, page = 583
+Progress: stars = 27001, page = 584
+Progress: stars = 27050, page = 585
+Progress: stars = 27092, page = 586
+Progress: stars = 27147, page = 587
+Progress: stars = 27187, page = 588
+Progress: stars = 27221, page = 589
+Progress: stars = 27265, page = 590
+Progress: stars = 27304, page = 591
+Progress: stars = 27349, page = 592
+Progress: stars = 27389, page = 593
+Progress: stars = 27430, page = 594
+Progress: stars = 27466, page = 595
+Progress: stars = 27506, page = 596
+Progress: stars = 27550, page = 597
+Progress: stars = 27596, page = 598
+Progress: stars = 27637, page = 599
+Progress: stars = 27681, page = 600
+Progress: stars = 27729, page = 601
+Progress: stars = 27770, page = 602
+Progress: stars = 27806, page = 603
+Progress: stars = 27845, page = 604
+Progress: stars = 27898, page = 605
+Progress: stars = 27942, page = 606
+Progress: stars = 27981, page = 607
+Progress: stars = 28033, page = 608
+Progress: stars = 28077, page = 609
+Progress: stars = 28124, page = 610
+Progress: stars = 28165, page = 611
+Progress: stars = 28204, page = 612
+Progress: stars = 28254, page = 613
+Progress: stars = 28291, page = 614
+Progress: stars = 28333, page = 615
+Progress: stars = 28367, page = 616
+Progress: stars = 28409, page = 617
+Progress: stars = 28452, page = 618
+Progress: stars = 28491, page = 619
+Progress: stars = 28523, page = 620
+Stars read from Catalogo General Argentino: 28552  (discarded = 648)
+1) GC 51 (pag. 2) is ALONE; nearest CD -37°16 separated in 381.2 arcsec.
+     Register GC 51: mag = 9.5, RA = 00h02m44s45, DE = 37°20'47''8, obs = 2 (pag 2)
+2) GC 202 (pag. 5) is alone within MAG = 8.5; similar CD -61°42 separated in 484.5 arcsec.
+     Register GC 202: mag = 8.5, RA = 00h11m34s97, DE = 61°29'36''4, obs = 1 (pag 5)
+     Register CD -61°42 (en 0h):  8.5 | 12m41.8s | 30.9'     (pag. 281)
+     Register CD -61°38 (en 0h):  7.4 | 11m34.8s | 28.9'     (pag. 281)
+3) GC 322 (pag. 8) is alone within MAG = 4.5; similar CD -72°1809 separated in 5932.2 arcsec.
+     Register GC 322: mag = 4.5, RA = 00h18m29s63, DE = 72°46'39''2, obs = 3 (pag 8)
+     Register CD -72°1809 (en 23h):  5.5 | 58m21.0s | 8.0'     (pag. 260)
+     Register CD -72°22 (en 0h):  10.0 | 19m30.0s | 49.5'     (pag. 240)
+4) GC 471 (pag. 11) is alone within MAG = 8.0; similar CD -37°176 separated in 563.3 arcsec.
+     Register GC 471: mag = 8.0, RA = 00h27m19s88, DE = 37°28'44''6, obs = 1 (pag 11)
+     Register CD -37°176 (en 0h):  8.0 | 26m58.3s | 37.1'     (pag. 280)
+     Register CD -37°182 (en 0h):  9.5 | 27m20.3s | 28.8'     (pag. 280)
+5) GC 637 (pag. 15) is alone within MAG = 8.5; similar CD -56°130 separated in 411.2 arcsec.
+     Register GC 637: mag = 8.5, RA = 00h36m18s61, DE = 56°27'61''0, obs = 2 (pag 15)
+     Register CD -56°130 (en 0h):  8.8 | 37m1.8s | 31.4'     (pag. 134)
+     Register CD -56°129 (en 0h):  7.4 | 36m19.1s | 28.1'     (pag. 134)
+6) GC 655 (pag. 15) is alone within MAG = 8.2; similar CD -74°29 separated in 475.1 arcsec.
+     Register GC 655: mag = 8.2, RA = 00h37m11s37, DE = 74°21'59''9, obs = 2 (pag 15)
+     Register CD -74°29 (en 0h):  9.1 | 38m57.0s | 25.5'     (pag. 280)
+     Register CD -74°28 (en 0h):  9.6 | 37m13.0s | 22.0'     (pag. 280)
+7) GC 741 (pag. 17) is alone within MAG = 7.2; similar CD -54°179 separated in 1626.1 arcsec.
+     Register GC 741: mag = 7.2, RA = 00h42m53s47, DE = 54°00'53''6, obs = 2 (pag 17)
+     Register CD -54°179 (en 0h):  7.8 | 43m35.2s | 27.3'     (pag. 69)
+     Register CD -54°177 (en 0h):  8.3 | 42m53.1s | 1.3'     (pag. 69)
+8) GC 784 (pag. 18) is alone within MAG = 8.7; similar CD -23°329 separated in 1140.3 arcsec.
+     Register GC 784: mag = 8.7, RA = 00h46m04s60, DE = 23°17'26''5, obs = 1 (pag 18)
+     Register CD -23°329 (en 0h):  9.0 | 44m58.2s | 28.8'     (pag. 56)
+     Register CD -23°334 (en 0h):  7.1 | 46m5.0s | 18.0'     (pag. 56)
+9) GC 891 (pag. 20) is ALONE; nearest CD -73°42 separated in 1488.7 arcsec.
+     Register GC 891: mag = 7.7, RA = 00h51m60s18, DE = 73°08'23''0, obs = 3 (pag 20)
+10) GC 934 (pag. 21) is ALONE; nearest CD -72°49 separated in 1166.7 arcsec.
+     Register GC 934: mag = 10.0, RA = 00h54m43s44, DE = 72°51'08''8, obs = 1 (pag 21)
+11) GC 994 (pag. 22) is ALONE; nearest CD -71°48 separated in 719.8 arcsec.
+     Register GC 994: mag = 8.5, RA = 00h58m59s19, DE = 71°31'13''2, obs = 3 (pag 22)
+12) GC 1072 (pag. 24) is alone within MAG = 8.5; similar CD -42°398 separated in 595.6 arcsec.
+     Register GC 1072: mag = 8.5, RA = 01h03m21s82, DE = 43°04'07''3, obs = 1 (pag 24)
+     Register CD -42°398 (en 1h):  9.4 | 3m23.6s | 54.2'     (pag. 1)
+     Register CD -43°336 (en 1h):  7.3 | 3m21.6s | 4.1'     (pag. 56)
+13) GC 1151 (pag. 25) is ALONE; nearest CD -69°48 separated in 912.3 arcsec.
+     Register GC 1151: mag = 10.5, RA = 01h08m08s88, DE = 69°47'08''8, obs = 1 (pag 25)
+14) GC 1302 (pag. 28) is alone within MAG = 7.2; similar CD -52°258 separated in 2079.5 arcsec.
+     Register GC 1302: mag = 7.2, RA = 01h16m33s48, DE = 52°43'54''5, obs = 1 (pag 28)
+     Register CD -52°258 (en 1h):  7.5 | 12m44.8s | 45.8'     (pag. 0)
+     Register CD -52°270 (en 1h):  8.4 | 16m33.6s | 43.8'     (pag. 0)
+15) GC 1389 (pag. 30) is alone within MAG = 7.2; similar CD -52°288 separated in 1581.2 arcsec.
+     Register GC 1389: mag = 7.2, RA = 01h21m55s53, DE = 52°37'03''5, obs = 2 (pag 30)
+     Register CD -52°288 (en 1h):  8.0 | 21m48.7s | 10.7'     (pag. 0)
+     Register CD -52°289 (en 1h):  8.4 | 21m55.5s | 37.7'     (pag. 0)
+16) GC 1439 (pag. 31) is alone within MAG = 8.0; similar CD -52°296 separated in 1043.0 arcsec.
+     Register GC 1439: mag = 8.0, RA = 01h24m36s72, DE = 52°25'56''0, obs = 1 (pag 31)
+     Register CD -52°296 (en 1h):  7.9 | 24m21.8s | 8.7'     (pag. 1)
+     Register CD -52°297 (en 1h):  9.2 | 24m36.8s | 25.7'     (pag. 1)
+17) GC 1479 (pag. 32) is alone within MAG = 9.2; similar CD -56°307 separated in 562.5 arcsec.
+     Register GC 1479: mag = 9.2, RA = 01h26m36s35, DE = 56°36'43''1, obs = 1 (pag 32)
+     Register CD -56°307 (en 1h):  9.5 | 27m33.2s | 41.9'     (pag. 135)
+     Register CD -56°304 (en 1h):  7.6 | 26m36.6s | 36.9'     (pag. 135)
+18) GC 1856 (pag. 40) is alone within MAG = 7.2; similar CD -54°388 separated in 1331.2 arcsec.
+     Register GC 1856: mag = 7.2, RA = 01h48m08s50, DE = 54°37'40''7, obs = 1 (pag 40)
+     Register CD -54°388 (en 1h):  7.6 | 46m22.1s | 53.7'     (pag. 70)
+     Register CD -54°397 (en 1h):  8.4 | 48m8.4s | 37.5'     (pag. 70)
+19) GC 2348 (pag. 49) is alone within MAG = 8.7; similar CD -32°844 separated in 584.2 arcsec.
+     Register GC 2348: mag = 8.7, RA = 02h12m35s09, DE = 31°56'45''9, obs = 1 (pag 49)
+     Register CD -32°844 (en 2h):  9.6 | 11m52.5s | 0.4'     (pag. 2)
+     Register CD -31°923 (en 2h):  7.5 | 12m35.5s | 56.9'     (pag. 542)
+20) GC 2349 (pag. 49) is ALONE; nearest CD -64°60 separated in 678.5 arcsec.
+     Register GC 2349: mag = 9.5, RA = 02h12m42s08, DE = 64°20'33''6, obs = 1 (pag 49)
+21) GC 2356 (pag. 50) is alone within MAG = 8.2; similar CD -51°561 separated in 519.2 arcsec.
+     Register GC 2356: mag = 8.2, RA = 02h13m05s51, DE = 51°16'15''5, obs = 1 (pag 50)
+     Register CD -51°561 (en 2h):  8.6 | 13m31.5s | 23.9'     (pag. 458)
+     Register CD -51°559 (en 2h):  9.4 | 13m4.8s | 16.5'     (pag. 458)
+22) GC 2406 (pag. 50) is alone within MAG = 7.2; similar CD -39°679 separated in 905.5 arcsec.
+     Register GC 2406: mag = 7.2, RA = 02h15m34s10, DE = 39°36'21''8, obs = 1 (pag 50)
+     Register CD -39°679 (en 2h):  7.7 | 14m17.0s | 33.7'     (pag. 386)
+     Register CD -39°684 (en 2h):  8.3 | 15m35.4s | 36.7'     (pag. 386)
+23) GC 2560 (pag. 53) is alone within MAG = 8.2; similar CD -30°894 separated in 809.5 arcsec.
+     Register GC 2560: mag = 8.2, RA = 02h22m33s69, DE = 31°00'06''7, obs = 1 (pag 53)
+     Register CD -30°894 (en 2h):  9.1 | 23m36.3s | 58.7'     (pag. 475)
+     Register CD -31°984 (en 2h):  7.0 | 22m34.3s | 0.7'     (pag. 542)
+24) GC 2940 (pag. 60) is alone within MAG = 9.7; similar CD -25°1091 separated in 521.6 arcsec.
+     Register GC 2940: mag = 9.7, RA = 02h40m26s10, DE = 25°44'13''6, obs = 1 (pag 60)
+     Register CD -25°1091 (en 2h):  10.0 | 39m47.5s | 44.3'     (pag. 180)
+     Register CD -25°1097 (en 2h):  8.6 | 40m26.3s | 44.3'     (pag. 180)
+25) GC 3021 (pag. 62) is alone within MAG = 9.7; similar CD -52°571 separated in 746.3 arcsec.
+     Register GC 3021: mag = 9.7, RA = 02h44m28s32, DE = 52°05'18''7, obs = 1 (pag 62)
+     Register CD -52°571 (en 2h):  9.9 | 43m11.3s | 1.5'     (pag. 1)
+     Register CD -52°574 (en 2h):  8.4 | 44m28.6s | 5.5'     (pag. 1)
+26) GC 3045 (pag. 63) is alone within MAG = 6.5; similar CD -40°736 separated in 678.8 arcsec.
+     Register GC 3045: mag = 6.5, RA = 02h45m57s74, DE = 40°26'54''7, obs = 1 (pag 63)
+     Register CD -40°736 (en 2h):  6.5 | 44m58.3s | 26.6'     (pag. 438)
+     Register CD -40°741 (en 2h):  10.0 | 46m27.1s | 25.6'     (pag. 438)
+27) GC 3143 (pag. 64) is alone within MAG = 11.0; similar CD -67°151 separated in 1545.0 arcsec.
+     Register GC 3143: mag = 11.0, RA = 02h50m07s09, DE = 67°52'07''8, obs = 1 (pag 64)
+     Register CD -67°151 (en 2h):  10.0 | 49m8.0s | 27.0'     (pag. 117)
+     Register CD -67°153 (en 2h):  8.0 | 50m31.0s | 49.0'     (pag. 117)
+28) GC 3182 (pag. 65) is alone within MAG = 7.0; similar CD -25°1160 separated in 1855.9 arcsec.
+     Register GC 3182: mag = 7.0, RA = 02h51m44s53, DE = 25°28'21''8, obs = 1 (pag 65)
+     Register CD -25°1160 (en 2h):  6.9 | 49m59.6s | 48.3'     (pag. 181)
+     Register CD -25°1168 (en 2h):  8.3 | 51m43.3s | 28.6'     (pag. 181)
+29) GC 3211 (pag. 66) is alone within MAG = 8.0; similar CD -61°532 separated in 506.7 arcsec.
+     Register GC 3211: mag = 8.0, RA = 02h52m48s19, DE = 61°06'54''8, obs = 1 (pag 66)
+     Register CD -61°532 (en 2h):  8.3 | 53m57.6s | 5.9'     (pag. 283)
+     Register CD -61°527 (en 2h):  9.3 | 52m48.5s | 6.9'     (pag. 283)
+30) GC 3535 (pag. 72) is alone within MAG = 8.2; similar CD -40°831 separated in 1428.7 arcsec.
+     Register GC 3535: mag = 8.2, RA = 03h10m25s46, DE = 39°57'40''8, obs = 2 (pag 72)
+     Register CD -40°831 (en 3h):  8.9 | 8m46.0s | 12.0'     (pag. 438)
+     Register CD -39°958 (en 3h):  9.4 | 10m25.7s | 57.9'     (pag. 387)
+31) GC 3925 (pag. 79) is alone within MAG = 8.2; similar CD -79°129 separated in 1928.0 arcsec.
+     Register GC 3925: mag = 8.2, RA = 03h29m19s16, DE = 79°47'31''7, obs = 1 (pag 79)
+     Register CD -79°129 (en 3h):  8.8 | 17m16.0s | 51.0'     (pag. 353)
+     Register CD -79°139 (en 3h):  9.4 | 29m20.0s | 47.5'     (pag. 353)
+32) GC 4051 (pag. 82) is alone within MAG = 8.2; similar CD -53°727 separated in 769.6 arcsec.
+     Register GC 4051: mag = 8.2, RA = 03h35m06s13, DE = 53°29'16''1, obs = 1 (pag 82)
+     Register CD -53°727 (en 3h):  8.0 | 33m39.9s | 29.2'     (pag. 38)
+     Register CD -53°732 (en 3h):  9.4 | 35m6.2s | 29.5'     (pag. 38)
+33) GC 4285 (pag. 86) is alone within MAG = 9.7; similar CD -29°1451 separated in 498.9 arcsec.
+     Register GC 4285: mag = 9.7, RA = 03h45m55s11, DE = 29°46'44''0, obs = 1 (pag 86)
+     Register CD -29°1451 (en 3h):  9.5 | 46m5.0s | 38.7'     (pag. 413)
+     Register CD -29°1448 (en 3h):  7.5 | 45m55.3s | 47.2'     (pag. 413)
+34) GC 4349 (pag. 88) is alone within MAG = 8.0; similar CD -70°203 separated in 405.5 arcsec.
+     Register GC 4349: mag = 8.0, RA = 03h49m03s70, DE = 70°15'00''0, obs = 5 (pag 88)
+     Register CD -70°203 (en 3h):  7.6 | 47m44.0s | 16.0'     (pag. 199)
+     Register CD -70°206 (en 3h):  9.4 | 49m4.0s | 15.5'     (pag. 199)
+35) GC 4750 (pag. 95) is ALONE; nearest CD -65°211 separated in 388.0 arcsec.
+     Register GC 4750: mag = 8.7, RA = 04h09m28s45, DE = 65°31'59''3, obs = 1 (pag 95)
+36) GC 4763 (pag. 96) is alone within MAG = 8.2; similar CD -30°1710 separated in 819.5 arcsec.
+     Register GC 4763: mag = 8.2, RA = 04h10m08s60, DE = 30°23'12''5, obs = 2 (pag 96)
+     Register CD -30°1710 (en 4h):  7.3 | 9m6.4s | 25.8'     (pag. 478)
+     Register CD -30°1719 (en 4h):  9.5 | 10m9.3s | 22.8'     (pag. 478)
+37) GC 4770 (pag. 96) is alone within MAG = 7.0; similar CD -32°1671 separated in 1291.7 arcsec.
+     Register GC 4770: mag = 7.0, RA = 04h10m21s25, DE = 32°06'09''3, obs = 1 (pag 96)
+     Register CD -32°1671 (en 4h):  7.3 | 9m8.9s | 21.3'     (pag. 5)
+     Register CD -32°1683 (en 4h):  8.3 | 10m21.3s | 6.1'     (pag. 5)
+38) GC 4863 (pag. 98) is alone within MAG = 8.2; similar CD -44°1480 separated in 1694.1 arcsec.
+     Register GC 4863: mag = 8.2, RA = 04h15m25s40, DE = 44°34'35''2, obs = 2 (pag 98)
+     Register CD -44°1480 (en 4h):  8.7 | 12m47.1s | 36.3'     (pag. 113)
+     Register CD -44°1505 (en 4h):  9.3 | 15m25.5s | 34.5'     (pag. 113)
+39) GC 4913 (pag. 99) is alone within MAG = 8.0; similar CD -53°907 separated in 585.9 arcsec.
+     Register GC 4913: mag = 8.0, RA = 04h17m58s12, DE = 53°14'31''6, obs = 1 (pag 99)
+     Register CD -53°907 (en 4h):  8.3 | 16m53.0s | 15.2'     (pag. 39)
+     Register CD -53°911 (en 4h):  9.3 | 17m58.3s | 14.2'     (pag. 39)
+40) GC 4986 (pag. 100) is alone within MAG = 7.2; similar CD -50°1385 separated in 1057.4 arcsec.
+     Register GC 4986: mag = 7.2, RA = 04h21m47s83, DE = 51°11'32''5, obs = 2 (pag 100)
+     Register CD -50°1385 (en 4h):  7.7 | 21m34.5s | 54.0'     (pag. 413)
+     Register CD -51°1119 (en 4h):  8.4 | 21m47.9s | 11.4'     (pag. 460)
+41) GC 5205 (pag. 104) is alone within MAG = 8.0; similar CD -65°246 separated in 523.2 arcsec.
+     Register GC 5205: mag = 8.0, RA = 04h31m36s57, DE = 65°06'50''2, obs = 1 (pag 104)
+     Register CD -65°246 (en 4h):  8.7 | 31m46.0s | 15.5'     (pag. 54)
+     Register CD -65°244 (en 4h):  9.1 | 31m35.0s | 7.0'     (pag. 54)
+42) GC 5555 (pag. 111) is alone within MAG = 5.8; similar CD -54°1022 separated in 8198.3 arcsec.
+     Register GC 5555: mag = 5.8, RA = 04h48m08s10, DE = 53°40'30''6, obs = 2 (pag 111)
+     Register CD -54°1022 (en 5h):  6.7 | 2m24.2s | 34.8'     (pag. 72)
+     Register CD -53°1042 (en 4h):  8.0 | 48m9.2s | 40.6'     (pag. 39)
+43) GC 5649 (pag. 113) is alone within MAG = 7.7; similar CD -61°979 separated in 614.4 arcsec.
+     Register GC 5649: mag = 7.7, RA = 04h52m30s83, DE = 61°27'54''2, obs = 1 (pag 113)
+     Register CD -61°979 (en 4h):  8.2 | 51m28.1s | 34.9'     (pag. 284)
+     Register CD -61°986 (en 4h):  9.1 | 52m31.0s | 27.8'     (pag. 284)
+44) GC 5674 (pag. 113) is alone within MAG = 7.7; similar CD -50°1557 separated in 938.0 arcsec.
+     Register GC 5674: mag = 7.7, RA = 04h53m25s87, DE = 50°02'29''7, obs = 1 (pag 113)
+     Register CD -50°1557 (en 4h):  8.5 | 51m56.4s | 8.7'     (pag. 414)
+     Register CD -50°1565 (en 4h):  8.8 | 53m26.4s | 2.6'     (pag. 414)
+45) GC 5871 (pag. 117) is ALONE; nearest CD -64°174 separated in 379.1 arcsec.
+     Register GC 5871: mag = 7.7, RA = 05h02m31s86, DE = 64°42'26''7, obs = 1 (pag 117)
+46) GC 5943 (pag. 118) is alone within MAG = 10.0; similar CD -63°184 separated in 1232.3 arcsec.
+     Register GC 5943: mag = 10.0, RA = 05h05m23s01, DE = 62°59'32''0, obs = 1 (pag 118)
+     Register CD -63°184 (en 5h):  9.5 | 4m25.0s | 19.0'     (pag. 18)
+     Register CD -62°189 (en 5h):  8.0 | 5m5.0s | 57.6'     (pag. 2)
+47) GC 6036 (pag. 120) is ALONE; nearest CD -40°1793 separated in 456.1 arcsec.
+     Register GC 6036: mag = 8.0, RA = 05h10m00s67, DE = 40°11'27''7, obs = 2 (pag 120)
+48) GC 6386 (pag. 127) is alone within MAG = 7.0; similar CD -22°2251 separated in 1484.2 arcsec.
+     Register GC 6386: mag = 7.0, RA = 05h24m25s06, DE = 22°49'06''0, obs = 2 (pag 127)
+     Register CD -22°2251 (en 5h):  7.0 | 23m6.2s | 32.3'     (pag. 7)
+     Register CD -22°2263 (en 5h):  8.2 | 24m25.1s | 49.7'     (pag. 7)
+49) GC 6712 (pag. 134) is ALONE; nearest CD -25°2618 separated in 411.8 arcsec.
+     Register GC 6712: mag = 8.7, RA = 05h38m24s53, DE = 25°40'42''4, obs = 1 (pag 134)
+50) GC 6744 (pag. 134) is ALONE; nearest CD -68°334 separated in 773.2 arcsec.
+     Register GC 6744: mag = 6.2, RA = 05h39m34s72, DE = 69°09'50''6, obs = 3 (pag 134)
+51) GC 6757 (pag. 134) is alone within MAG = 7.5; similar CD -45°2131 separated in 771.9 arcsec.
+     Register GC 6757: mag = 7.5, RA = 05h40m09s07, DE = 45°40'37''9, obs = 2 (pag 134)
+     Register CD -45°2131 (en 5h):  6.7 | 40m8.4s | 53.5'     (pag. 167)
+     Register CD -45°2132 (en 5h):  8.9 | 40m9.1s | 40.7'     (pag. 167)
+52) GC 6832 (pag. 136) is alone within MAG = 7.2; similar CD -35°2509 separated in 1377.4 arcsec.
+     Register GC 6832: mag = 7.2, RA = 05h43m37s00, DE = 35°22'21''5, obs = 1 (pag 136)
+     Register CD -35°2509 (en 5h):  6.7 | 42m54.2s | 43.6'     (pag. 179)
+     Register CD -35°2518 (en 5h):  8.3 | 43m37.4s | 22.3'     (pag. 179)
+53) GC 6837 (pag. 136) is alone within MAG = 8.0; similar CD -68°341 separated in 569.2 arcsec.
+     Register GC 6837: mag = 8.0, RA = 05h43m52s95, DE = 68°38'35''6, obs = 2 (pag 136)
+     Register CD -68°341 (en 5h):  8.7 | 42m47.0s | 46.0'     (pag. 149)
+     Register CD -68°343 (en 5h):  9.2 | 43m54.0s | 39.0'     (pag. 149)
+54) GC 7147 (pag. 142) is alone within MAG = 7.0; similar CD -27°2680 separated in 899.2 arcsec.
+     Register GC 7147: mag = 7.0, RA = 05h56m12s14, DE = 27°33'37''5, obs = 1 (pag 142)
+     Register CD -27°2680 (en 5h):  7.1 | 57m9.5s | 25.7'     (pag. 299)
+     Register CD -27°2670 (en 5h):  8.5 | 56m12.7s | 34.4'     (pag. 299)
+55) GC 7376 (pag. 146) is alone within MAG = 6.0; similar CD -22°2793 separated in 1464.0 arcsec.
+     Register GC 7376: mag = 6.0, RA = 06h04m33s17, DE = 22°45'16''6, obs = 1 (pag 146)
+     Register CD -22°2793 (en 6h):  5.9 | 3m43.0s | 23.8'     (pag. 9)
+     Register CD -22°2806 (en 6h):  7.1 | 4m33.5s | 44.6'     (pag. 9)
+56) GC 7493 (pag. 148) is alone within MAG = 7.2; similar CD -43°2346 separated in 3600.7 arcsec.
+     Register GC 7493: mag = 7.2, RA = 06h08m43s02, DE = 42°58'28''6, obs = 1 (pag 148)
+     Register CD -43°2346 (en 6h):  7.4 | 12m59.5s | 36.2'     (pag. 63)
+     Register CD -42°2400 (en 6h):  8.4 | 8m43.3s | 58.5'     (pag. 8)
+57) GC 7908 (pag. 156) is ALONE; nearest CD -75°264 separated in 534.1 arcsec.
+     Register GC 7908: mag = 8.2, RA = 06h23m47s02, DE = 75°38'02''7, obs = 1 (pag 156)
+58) GC 8015 (pag. 158) is alone within MAG = 7.2; similar CD -22°3206 separated in 1650.9 arcsec.
+     Register GC 8015: mag = 7.2, RA = 06h27m54s87, DE = 22°30'61''9, obs = 2 (pag 158)
+     Register CD -22°3206 (en 6h):  8.1 | 28m1.8s | 58.5'     (pag. 10)
+     Register CD -22°3203 (en 6h):  8.5 | 27m54.4s | 30.9'     (pag. 10)
+59) GC 8742 (pag. 172) is alone within MAG = 6.6; similar CD -27°3460 separated in 1376.5 arcsec.
+     Register GC 8742: mag = 6.6, RA = 06h53m06s42, DE = 26°59'50''2, obs = 2 (pag 172)
+     Register CD -27°3460 (en 6h):  6.6 | 52m43.4s | 22.2'     (pag. 302)
+     Register CD -26°3646 (en 6h):  9.6 | 53m6.8s | 59.6'     (pag. 246)
+60) GC 8775 (pag. 173) is alone within MAG = 7.7; similar CD -55°1603 separated in 1380.5 arcsec.
+     Register GC 8775: mag = 7.7, RA = 06h54m33s13, DE = 54°52'46''5, obs = 2 (pag 173)
+     Register CD -55°1603 (en 6h):  8.4 | 52m20.9s | 5.8'     (pag. 107)
+     Register CD -54°1621 (en 6h):  10.0 | 54m32.8s | 52.7'     (pag. 74)
+61) GC 8962 (pag. 177) is alone within MAG = 7.7; similar CD -34°3339 separated in 618.7 arcsec.
+     Register GC 8962: mag = 7.7, RA = 07h00m59s86, DE = 34°35'25''5, obs = 2 (pag 177)
+     Register CD -34°3339 (en 7h):  8.7 | 1m48.3s | 32.8'     (pag. 127)
+     Register CD -34°3327 (en 7h):  6.6 | 1m0.6s | 36.1'     (pag. 127)
+62) GC 9419 (pag. 186) is alone within MAG = 8.0; similar CD -53°1824 separated in 1273.6 arcsec.
+     Register GC 9419: mag = 8.0, RA = 07h17m19s79, DE = 53°58'36''0, obs = 2 (pag 186)
+     Register CD -53°1824 (en 7h):  8.7 | 18m16.6s | 39.1'     (pag. 42)
+     Register CD -53°1817 (en 7h):  9.2 | 17m19.8s | 58.8'     (pag. 42)
+63) GC 9461 (pag. 188) is alone within MAG = 8.7; similar CD -56°1841 separated in 491.6 arcsec.
+     Register GC 9461: mag = 8.7, RA = 07h18m29s52, DE = 56°32'35''6, obs = 1 (pag 188)
+     Register CD -56°1841 (en 7h):  9.7 | 19m22.9s | 29.0'     (pag. 140)
+     Register CD -56°1835 (en 7h):  7.6 | 18m29.8s | 32.8'     (pag. 140)
+64) GC 9642 (pag. 191) is alone within MAG = 7.0; similar CD -55°1781 separated in 2443.8 arcsec.
+     Register GC 9642: mag = 7.0, RA = 07h24m56s38, DE = 55°09'17''5, obs = 1 (pag 191)
+     Register CD -55°1781 (en 7h):  7.4 | 20m21.6s | 20.5'     (pag. 107)
+     Register CD -55°1808 (en 7h):  8.9 | 24m56.6s | 9.5'     (pag. 108)
+65) GC 9806 (pag. 194) is ALONE; nearest CD -75°315 separated in 667.2 arcsec.
+     Register GC 9806: mag = 9.0, RA = 07h31m06s81, DE = 75°29'23''2, obs = 1 (pag 194)
+66) GC 9946 (pag. 197) is alone within MAG = 8.0; similar CD -26°4741 separated in 934.1 arcsec.
+     Register GC 9946: mag = 8.0, RA = 07h35m42s16, DE = 26°03'53''6, obs = 1 (pag 197)
+     Register CD -26°4741 (en 7h):  8.0 | 35m10.1s | 17.7'     (pag. 249)
+     Register CD -26°4750 (en 7h):  9.2 | 35m42.5s | 3.6'     (pag. 249)
+67) GC 9947 (pag. 197) is alone within MAG = 8.5; similar CD -43°3424 separated in 903.7 arcsec.
+     Register GC 9947: mag = 8.5, RA = 07h35m44s93, DE = 43°07'16''1, obs = 1 (pag 197)
+     Register CD -43°3424 (en 7h):  9.2 | 34m37.6s | 16.0'     (pag. 67)
+     Register CD -43°3441 (en 7h):  9.7 | 35m45.0s | 7.2'     (pag. 67)
+68) GC 10607 (pag. 210) is alone within MAG = 7.0; similar CD -62°322 separated in 737.8 arcsec.
+     Register GC 10607: mag = 7.0, RA = 07h56m38s98, DE = 62°47'26''1, obs = 1 (pag 210)
+     Register CD -62°322 (en 7h):  6.5 | 55m37.0s | 57.5'     (pag. 3)
+     Register CD -62°324 (en 7h):  8.5 | 56m39.0s | 47.4'     (pag. 3)
+69) GC 10624 (pag. 210) is alone within MAG = 7.7; similar CD -29°5351 separated in 791.7 arcsec.
+     Register GC 10624: mag = 7.7, RA = 07h57m01s55, DE = 29°26'33''8, obs = 1 (pag 210)
+     Register CD -29°5351 (en 7h):  8.5 | 56m6.1s | 31.9'     (pag. 426)
+     Register CD -29°5381 (en 7h):  9.1 | 57m2.2s | 26.7'     (pag. 426)
+70) GC 10773 (pag. 213) is alone within MAG = 8.0; similar CD -71°448 separated in 1963.7 arcsec.
+     Register GC 10773: mag = 8.0, RA = 08h02m48s95, DE = 72°07'38''2, obs = 1 (pag 213)
+     Register CD -71°448 (en 8h):  9.0 | 8m17.0s | 47.0'     (pag. 224)
+     Register CD -72°433 (en 8h):  9.5 | 2m50.0s | 8.0'     (pag. 244)
+71) GC 10866 (pag. 215) is alone within MAG = 8.0; similar CD -48°3545 separated in 473.3 arcsec.
+     Register GC 10866: mag = 8.0, RA = 08h05m43s00, DE = 48°48'45''0, obs = 1 (pag 215)
+     Register CD -48°3545 (en 8h):  8.9 | 6m18.8s | 54.0'     (pag. 323)
+     Register CD -48°3521 (en 8h):  9.1 | 5m43.0s | 48.7'     (pag. 323)
+72) GC 10882 (pag. 216) is alone within MAG = 7.0; similar CD -38°4187 separated in 1920.2 arcsec.
+     Register GC 10882: mag = 7.0, RA = 08h06m14s60, DE = 37°53'54''4, obs = 1 (pag 216)
+     Register CD -38°4187 (en 8h):  7.5 | 8m50.0s | 3.2'     (pag. 345)
+     Register CD -37°4333 (en 8h):  8.1 | 6m15.3s | 53.7'     (pag. 294)
+73) GC 10915 (pag. 216) is alone within MAG = 7.2; similar CD -48°3556 separated in 416.1 arcsec.
+     Register GC 10915: mag = 7.2, RA = 08h07m18s73, DE = 48°54'46''5, obs = 1 (pag 216)
+     Register CD -48°3556 (en 8h):  7.2 | 6m39.8s | 52.1'     (pag. 323)
+     Register CD -48°3574 (en 8h):  8.3 | 7m18.7s | 54.9'     (pag. 323)
+74) GC 10949 (pag. 217) is alone within MAG = 8.0; similar CD -55°2104 separated in 649.7 arcsec.
+     Register GC 10949: mag = 8.0, RA = 08h08m25s23, DE = 55°48'40''9, obs = 1 (pag 217)
+     Register CD -55°2104 (en 8h):  8.8 | 8m40.4s | 59.3'     (pag. 109)
+     Register CD -55°2100 (en 8h):  9.2 | 8m25.6s | 49.0'     (pag. 109)
+75) GC 10985 (pag. 218) is alone within MAG = 7.7; similar CD -46°3938 separated in 388.8 arcsec.
+     Register GC 10985: mag = 7.7, RA = 08h09m40s47, DE = 46°36'15''3, obs = 1 (pag 218)
+     Register CD -46°3938 (en 8h):  8.2 | 10m11.6s | 32.6'     (pag. 224)
+     Register CD -46°3928 (en 8h):  9.6 | 9m40.6s | 36.3'     (pag. 224)
+76) GC 11025 (pag. 219) is alone within MAG = 8.5; similar CD -29°5858 separated in 580.9 arcsec.
+     Register GC 11025: mag = 8.5, RA = 08h10m55s49, DE = 29°48'04''4, obs = 2 (pag 219)
+     Register CD -29°5858 (en 8h):  9.4 | 11m31.3s | 42.3'     (pag. 428)
+     Register CD -29°5836 (en 8h):  7.4 | 10m56.8s | 47.6'     (pag. 428)
+77) GC 11039 (pag. 219) is alone within MAG = 7.0; similar CD -28°5699 separated in 2526.4 arcsec.
+     Register GC 11039: mag = 7.0, RA = 08h11m33s86, DE = 27°28'48''2, obs = 1 (pag 219)
+     Register CD -28°5699 (en 8h):  8.0 | 9m52.9s | 4.5'     (pag. 365)
+     Register CD -27°5248 (en 8h):  8.3 | 11m34.4s | 29.0'     (pag. 308)
+78) GC 11061 (pag. 219) is alone within MAG = 8.0; similar CD -68°530 separated in 1440.9 arcsec.
+     Register GC 11061: mag = 8.0, RA = 08h12m08s03, DE = 68°23'07''7, obs = 1 (pag 219)
+     Register CD -68°530 (en 8h):  7.7 | 8m38.0s | 37.5'     (pag. 151)
+     Register CD -68°536 (en 8h):  9.8 | 12m10.0s | 23.0'     (pag. 151)
+79) GC 11156 (pag. 221) is ALONE; nearest CD -66°579 separated in 595.4 arcsec.
+     Register GC 11156: mag = 11.0, RA = 08h15m16s44, DE = 66°39'06''5, obs = 2 (pag 221)
+80) GC 11166 (pag. 221) is alone within MAG = 9.0; similar CD -67°623 separated in 757.6 arcsec.
+     Register GC 11166: mag = 9.0, RA = 08h15m40s39, DE = 67°27'23''1, obs = 1 (pag 221)
+     Register CD -67°623 (en 8h):  9.5 | 17m23.0s | 19.5'     (pag. 123)
+     Register CD -67°616 (en 8h):  10.1 | 15m41.0s | 27.5'     (pag. 122)
+81) GC 11254 (pag. 223) is alone within MAG = 8.2; similar CD -61°1898 separated in 1991.8 arcsec.
+     Register GC 11254: mag = 8.2, RA = 08h18m49s26, DE = 61°59'41''7, obs = 2 (pag 223)
+     Register CD -61°1898 (en 8h):  8.5 | 14m6.5s | 59.4'     (pag. 287)
+     Register CD -61°1918 (en 8h):  10.8 | 18m32.4s | 59.2'     (pag. 287)
+82) GC 11338 (pag. 225) is alone within MAG = 8.5; similar CD -33°5006 separated in 672.9 arcsec.
+     Register GC 11338: mag = 8.5, RA = 08h21m56s61, DE = 33°45'53''4, obs = 1 (pag 225)
+     Register CD -33°5006 (en 8h):  9.5 | 21m2.7s | 46.4'     (pag. 76)
+     Register CD -33°5023 (en 8h):  7.3 | 21m56.3s | 45.7'     (pag. 76)
+83) GC 11360 (pag. 225) is alone within MAG = 8.0; similar CD -44°4428 separated in 970.9 arcsec.
+     Register GC 11360: mag = 8.0, RA = 08h22m30s63, DE = 44°26'23''2, obs = 1 (pag 225)
+     Register CD -44°4428 (en 8h):  8.7 | 23m18.0s | 12.6'     (pag. 123)
+     Register CD -44°4413 (en 8h):  9.3 | 22m30.6s | 26.3'     (pag. 123)
+84) GC 11593 (pag. 230) is alone within MAG = 7.5; similar CD -47°4136 separated in 893.1 arcsec.
+     Register GC 11593: mag = 7.5, RA = 08h31m15s44, DE = 47°31'49''4, obs = 2 (pag 230)
+     Register CD -47°4136 (en 8h):  8.0 | 32m42.7s | 34.0'     (pag. 275)
+     Register CD -47°4112 (en 8h):  8.7 | 31m16.2s | 31.8'     (pag. 275)
+85) GC 11656 (pag. 231) is alone within MAG = 8.5; similar CD -48°3938 separated in 621.3 arcsec.
+     Register GC 11656: mag = 8.5, RA = 08h33m16s54, DE = 48°59'21''3, obs = 4 (pag 231)
+     Register CD -48°3938 (en 8h):  9.2 | 32m22.5s | 54.0'     (pag. 324)
+     Register CD -48°3950 (en 8h):  7.2 | 33m16.8s | 59.3'     (pag. 324)
+86) GC 11828 (pag. 234) is alone within MAG = 7.7; similar CD -47°4261 separated in 426.7 arcsec.
+     Register GC 11828: mag = 7.7, RA = 08h39m08s78, DE = 47°38'55''1, obs = 1 (pag 234)
+     Register CD -47°4261 (en 8h):  7.7 | 38m33.0s | 42.7'     (pag. 275)
+     Register CD -47°4280 (en 8h):  9.3 | 39m9.3s | 39.0'     (pag. 276)
+87) GC 11934 (pag. 237) is alone within MAG = 7.2; similar CD -42°4610 separated in 509.4 arcsec.
+     Register GC 11934: mag = 7.2, RA = 08h42m48s02, DE = 42°08'33''4, obs = 1 (pag 237)
+     Register CD -42°4610 (en 8h):  7.5 | 42m3.6s | 6.5'     (pag. 15)
+     Register CD -42°4621 (en 8h):  8.8 | 42m48.4s | 8.5'     (pag. 15)
+88) GC 12077 (pag. 239) is alone within MAG = 8.0; similar CD -42°4723 separated in 1092.2 arcsec.
+     Register GC 12077: mag = 8.0, RA = 08h47m57s24, DE = 42°16'51''0, obs = 1 (pag 239)
+     Register CD -42°4723 (en 8h):  7.1 | 46m57.5s | 2.4'     (pag. 15)
+     Register CD -42°4741 (en 8h):  9.4 | 47m57.8s | 17.0'     (pag. 15)
+89) GC 12283 (pag. 243) is alone within MAG = 8.2; similar CD -24°7649 separated in 402.4 arcsec.
+     Register GC 12283: mag = 8.2, RA = 08h56m15s29, DE = 24°56'36''5, obs = 1 (pag 243)
+     Register CD -24°7649 (en 8h):  8.4 | 56m43.9s | 54.9'     (pag. 142)
+     Register CD -24°7646 (en 8h):  7.1 | 56m14.9s | 56.7'     (pag. 142)
+90) GC 12350 (pag. 245) is alone within MAG = 9.5; similar CD -29°7089 separated in 391.4 arcsec.
+     Register GC 12350: mag = 9.5, RA = 08h58m39s66, DE = 29°16'22''9, obs = 1 (pag 245)
+     Register CD -29°7089 (en 8h):  9.8 | 58m47.1s | 22.7'     (pag. 432)
+     Register CD -29°7086 (en 8h):  8.4 | 58m39.1s | 16.2'     (pag. 432)
+91) GC 12452 (pag. 247) is alone within MAG = 7.0; similar CD -61°2121 separated in 2288.0 arcsec.
+     Register GC 12452: mag = 7.0, RA = 09h04m03s86, DE = 62°20'47''1, obs = 1 (pag 247)
+     Register CD -61°2121 (en 9h):  7.9 | 0m30.0s | 52.0'     (pag. 288)
+     Register CD -62°379 (en 9h):  8.8 | 4m4.0s | 21.0'     (pag. 4)
+92) GC 12479 (pag. 247) is alone within MAG = 8.7; similar CD -27°6320 separated in 487.7 arcsec.
+     Register GC 12479: mag = 8.7, RA = 09h05m09s48, DE = 27°40'30''0, obs = 1 (pag 247)
+     Register CD -27°6320 (en 9h):  9.6 | 5m12.5s | 48.6'     (pag. 311)
+     Register CD -27°6319 (en 9h):  7.5 | 5m9.3s | 40.0'     (pag. 311)
+93) GC 12510 (pag. 248) is alone within MAG = 8.5; similar CD -35°5465 separated in 463.1 arcsec.
+     Register GC 12510: mag = 8.5, RA = 09h06m23s07, DE = 35°14'11''5, obs = 1 (pag 248)
+     Register CD -35°5465 (en 9h):  9.5 | 6m57.0s | 17.6'     (pag. 189)
+     Register CD -35°5454 (en 9h):  7.4 | 6m23.2s | 14.6'     (pag. 189)
+94) GC 12588 (pag. 249) is ALONE; nearest CD -64°383 separated in 908.6 arcsec.
+     Register GC 12588: mag = 6.6, RA = 09h09m36s03, DE = 64°20'52''0, obs = 2 (pag 249)
+95) GC 12602 (pag. 249) is alone within MAG = 8.0; similar CD -67°721 separated in 1802.1 arcsec.
+     Register GC 12602: mag = 8.0, RA = 09h10m04s02, DE = 67°12'24''1, obs = 2 (pag 249)
+     Register CD -67°721 (en 9h):  7.2 | 15m12.0s | 9.0'     (pag. 124)
+     Register CD -67°708 (en 9h):  9.7 | 10m2.0s | 12.5'     (pag. 123)
+96) GC 12607 (pag. 249) is alone within MAG = 8.7; similar CD -27°6411 separated in 849.1 arcsec.
+     Register GC 12607: mag = 8.7, RA = 09h10m28s40, DE = 27°41'04''8, obs = 1 (pag 249)
+     Register CD -27°6411 (en 9h):  8.7 | 10m9.5s | 54.6'     (pag. 312)
+     Register CD -27°6415 (en 9h):  7.5 | 10m28.6s | 41.0'     (pag. 312)
+97) GC 12662 (pag. 250) is alone within MAG = 8.0; similar CD -23°8236 separated in 498.1 arcsec.
+     Register GC 12662: mag = 8.0, RA = 09h13m19s21, DE = 23°30'07''3, obs = 1 (pag 250)
+     Register CD -23°8236 (en 9h):  9.0 | 12m43.0s | 30.2'     (pag. 83)
+     Register CD -23°8248 (en 9h):  9.1 | 13m19.2s | 29.8'     (pag. 83)
+98) GC 12689 (pag. 251) is alone within MAG = 9.0; similar CD -27°6484 separated in 556.4 arcsec.
+     Register GC 12689: mag = 9.0, RA = 09h14m31s14, DE = 27°14'55''0, obs = 1 (pag 251)
+     Register CD -27°6484 (en 9h):  9.6 | 15m11.7s | 17.1'     (pag. 312)
+     Register CD -27°6476 (en 9h):  7.8 | 14m30.9s | 15.4'     (pag. 312)
+99) GC 12702 (pag. 251) is alone within MAG = 7.5; similar CD -49°4273 separated in 2659.9 arcsec.
+     Register GC 12702: mag = 7.5, RA = 09h14m58s40, DE = 48°27'02''5, obs = 1 (pag 251)
+     Register CD -49°4273 (en 9h):  7.3 | 12m24.5s | 3.4'     (pag. 375)
+     Register CD -48°4600 (en 9h):  9.3 | 14m58.8s | 27.0'     (pag. 326)
+100) GC 12808 (pag. 253) is alone within MAG = 8.5; similar CD -28°7229 separated in 375.3 arcsec.
+     Register GC 12808: mag = 8.5, RA = 09h18m57s61, DE = 28°38'36''3, obs = 1 (pag 253)
+     Register CD -28°7229 (en 9h):  9.5 | 19m20.9s | 35.0'     (pag. 370)
+     Register CD -28°7219 (en 9h):  7.2 | 18m57.4s | 38.3'     (pag. 370)
+101) GC 12811 (pag. 253) is alone within MAG = 9.0; similar CD -27°6548 separated in 380.5 arcsec.
+     Register GC 12811: mag = 9.0, RA = 09h19m05s04, DE = 27°28'01''8, obs = 1 (pag 253)
+     Register CD -27°6548 (en 9h):  10.0 | 18m38.9s | 30.6'     (pag. 312)
+     Register CD -27°6554 (en 9h):  7.9 | 19m5.3s | 28.1'     (pag. 312)
+102) GC 12829 (pag. 254) is alone within MAG = 9.2; similar CD -27°6571 separated in 533.9 arcsec.
+     Register GC 12829: mag = 9.2, RA = 09h19m53s55, DE = 26°59'18''0, obs = 1 (pag 254)
+     Register CD -27°6571 (en 9h):  9.0 | 20m10.1s | 7.4'     (pag. 312)
+     Register CD -26°7033 (en 9h):  8.1 | 19m52.7s | 59.6'     (pag. 257)
+103) GC 12893 (pag. 255) is alone within MAG = 7.5; similar CD -51°3767 separated in 1583.3 arcsec.
+     Register GC 12893: mag = 7.5, RA = 09h22m37s27, DE = 51°13'39''5, obs = 1 (pag 255)
+     Register CD -51°3767 (en 9h):  6.6 | 19m49.1s | 12.0'     (pag. 469)
+     Register CD -51°3824 (en 9h):  8.6 | 22m37.4s | 13.8'     (pag. 469)
+104) GC 12906 (pag. 255) is alone within MAG = 7.5; similar CD -34°5906 separated in 444.4 arcsec.
+     Register GC 12906: mag = 7.5, RA = 09h23m02s64, DE = 34°21'34''7, obs = 2 (pag 255)
+     Register CD -34°5906 (en 9h):  7.9 | 23m6.1s | 14.2'     (pag. 136)
+     Register CD -34°5905 (en 9h):  9.6 | 23m3.2s | 21.2'     (pag. 136)
+105) GC 13170 (pag. 261) is alone within MAG = 8.5; similar CD -54°2925 separated in 372.4 arcsec.
+     Register GC 13170: mag = 8.5, RA = 09h33m47s47, DE = 54°20'04''7, obs = 1 (pag 261)
+     Register CD -54°2925 (en 9h):  9.2 | 33m15.4s | 16.0'     (pag. 78)
+     Register CD -54°2933 (en 9h):  9.6 | 33m47.5s | 20.0'     (pag. 78)
+106) GC 13178 (pag. 261) is alone within MAG = 8.0; similar CD -42°5524 separated in 1361.1 arcsec.
+     Register GC 13178: mag = 8.0, RA = 09h34m09s07, DE = 42°18'02''8, obs = 1 (pag 261)
+     Register CD -42°5524 (en 9h):  9.0 | 36m10.3s | 21.6'     (pag. 18)
+     Register CD -42°5478 (en 9h):  9.3 | 34m9.3s | 18.0'     (pag. 18)
+107) GC 13243 (pag. 262) is alone within MAG = 8.5; similar CD -46°5392 separated in 938.5 arcsec.
+     Register GC 13243: mag = 8.5, RA = 09h37m18s64, DE = 46°05'04''2, obs = 2 (pag 262)
+     Register CD -46°5392 (en 9h):  9.3 | 35m48.8s | 3.7'     (pag. 229)
+     Register CD -46°5411 (en 9h):  10.0 | 36m51.6s | 6.8'     (pag. 229)
+108) GC 13271 (pag. 263) is ALONE; nearest CD -62°406 separated in 630.4 arcsec.
+     Register GC 13271: mag = 9.2, RA = 09h38m47s50, DE = 62°20'59''7, obs = 2 (pag 263)
+109) GC 13384 (pag. 265) is ALONE; nearest CD -63°496 separated in 391.9 arcsec.
+     Register GC 13384: mag = 8.7, RA = 09h43m35s86, DE = 63°39'46''6, obs = 1 (pag 265)
+110) GC 13515 (pag. 267) is alone within MAG = 8.5; similar CD -22°7708 separated in 855.5 arcsec.
+     Register GC 13515: mag = 8.5, RA = 09h49m17s50, DE = 22°54'21''5, obs = 1 (pag 267)
+     Register CD -22°7708 (en 9h):  8.3 | 48m40.1s | 43.0'     (pag. 25)
+     Register CD -22°7719 (en 9h):  7.4 | 49m17.4s | 54.3'     (pag. 25)
+111) GC 13538 (pag. 268) is ALONE; nearest CD -62°418 separated in 860.7 arcsec.
+     Register GC 13538: mag = 10.0, RA = 09h50m19s21, DE = 62°21'15''4, obs = 1 (pag 268)
+112) GC 13548 (pag. 268) is alone within MAG = 6.8; similar CD -42°5648 separated in 4310.7 arcsec.
+     Register GC 13548: mag = 6.8, RA = 09h50m41s14, DE = 42°46'36''5, obs = 1 (pag 268)
+     Register CD -42°5648 (en 9h):  7.0 | 44m11.2s | 53.8'     (pag. 19)
+     Register CD -42°5758 (en 9h):  9.2 | 50m40.6s | 46.6'     (pag. 19)
+113) GC 13565 (pag. 268) is ALONE; nearest CD -62°424 separated in 908.0 arcsec.
+     Register GC 13565: mag = 10.2, RA = 09h51m11s94, DE = 62°19'33''5, obs = 1 (pag 268)
+114) GC 13572 (pag. 268) is alone within MAG = 7.0; similar CD -45°5562 separated in 1901.1 arcsec.
+     Register GC 13572: mag = 7.0, RA = 09h51m22s06, DE = 44°39'48''3, obs = 1 (pag 268)
+     Register CD -45°5562 (en 9h):  8.0 | 50m11.2s | 8.9'     (pag. 179)
+     Register CD -44°6018 (en 9h):  8.2 | 51m22.3s | 39.8'     (pag. 128)
+115) GC 13627 (pag. 269) is alone within MAG = 9.0; similar CD -27°7117 separated in 400.5 arcsec.
+     Register GC 13627: mag = 9.0, RA = 09h54m08s35, DE = 27°44'17''9, obs = 1 (pag 269)
+     Register CD -27°7117 (en 9h):  9.4 | 54m15.2s | 50.8'     (pag. 314)
+     Register CD -27°7114 (en 9h):  7.8 | 54m8.0s | 43.8'     (pag. 314)
+116) GC 13660 (pag. 270) is alone within MAG = 7.7; similar CD -58°2957 separated in 379.6 arcsec.
+     Register GC 13660: mag = 7.7, RA = 09h55m37s47, DE = 58°08'07''5, obs = 1 (pag 270)
+     Register CD -58°2957 (en 9h):  8.3 | 56m20.2s | 11.0'     (pag. 205)
+     Register CD -58°2947 (en 9h):  9.3 | 55m37.7s | 8.0'     (pag. 205)
+117) GC 13878 (pag. 275) is alone within MAG = 8.0; similar CD -41°5651 separated in 498.7 arcsec.
+     Register GC 13878: mag = 8.0, RA = 10h05m17s83, DE = 41°58'36''1, obs = 1 (pag 275)
+     Register CD -41°5651 (en 10h):  8.2 | 4m50.0s | 52.1'     (pag. 506)
+     Register CD -41°5656 (en 10h):  9.7 | 5m18.2s | 58.6'     (pag. 506)
+118) GC 13985 (pag. 277) is alone within MAG = 8.5; similar CD -34°6590 separated in 944.8 arcsec.
+     Register GC 13985: mag = 8.5, RA = 10h10m03s37, DE = 34°51'31''5, obs = 1 (pag 277)
+     Register CD -34°6590 (en 10h):  9.0 | 11m16.4s | 46.7'     (pag. 138)
+     Register CD -34°6574 (en 10h):  7.3 | 10m4.1s | 52.8'     (pag. 138)
+119) GC 14007 (pag. 277) is ALONE; nearest CD -53°3430 separated in 567.3 arcsec.
+     Register GC 14007: mag = 10.7, RA = 10h10m45s74, DE = 53°26'42''0, obs = 2 (pag 277)
+120) GC 14125 (pag. 280) is alone within MAG = 11.0; similar CD -81°362 separated in 471.4 arcsec.
+     Register GC 14125: mag = 11.0, RA = 10h15m41s05, DE = 81°10'39''3, obs = 1 (pag 280)
+     Register CD -81°362 (en 10h):  10.1 | 15m30.0s | 18.5'     (pag. 377)
+     Register CD -81°363 (en 10h):  9.8 | 15m40.0s | 10.5'     (pag. 377)
+121) GC 14160 (pag. 281) is alone within MAG = 9.0; similar CD -27°7402 separated in 586.5 arcsec.
+     Register GC 14160: mag = 9.0, RA = 10h17m05s01, DE = 27°23'00''7, obs = 1 (pag 281)
+     Register CD -27°7402 (en 10h):  9.8 | 16m24.6s | 26.9'     (pag. 315)
+     Register CD -27°7406 (en 10h):  7.6 | 17m4.5s | 23.2'     (pag. 315)
+122) GC 14203 (pag. 281) is alone within MAG = 9.7; similar CD -60°3036 separated in 429.3 arcsec.
+     Register GC 14203: mag = 9.7, RA = 10h18m36s78, DE = 60°02'17''0, obs = 1 (pag 281)
+     Register CD -60°3036 (en 10h):  10.0 | 18m4.5s | 8.2'     (pag. 263)
+     Register CD -60°3038 (en 10h):  8.5 | 18m37.1s | 1.7'     (pag. 263)
+123) GC 14249 (pag. 282) is alone within MAG = 7.0; similar CD -81°352 separated in 2207.7 arcsec.
+     Register GC 14249: mag = 7.0, RA = 10h20m49s27, DE = 82°16'48''5, obs = 2 (pag 282)
+     Register CD -81°352 (en 10h):  7.5 | 6m49.0s | 54.0'     (pag. 377)
+     Register CD -82°206 (en 10h):  8.6 | 20m51.0s | 16.8'     (pag. 385)
+124) GC 14332 (pag. 284) is alone within MAG = 7.7; similar CD -61°2676 separated in 610.8 arcsec.
+     Register GC 14332: mag = 7.7, RA = 10h24m31s21, DE = 61°54'35''8, obs = 2 (pag 284)
+     Register CD -61°2676 (en 10h):  8.1 | 25m51.7s | 50.9'     (pag. 290)
+     Register CD -61°2665 (en 10h):  9.0 | 24m32.2s | 55.0'     (pag. 290)
+125) GC 14502 (pag. 287) is alone within MAG = 7.5; similar CD -42°6375 separated in 642.4 arcsec.
+     Register GC 14502: mag = 7.5, RA = 10h31m37s73, DE = 43°02'35''0, obs = 1 (pag 287)
+     Register CD -42°6375 (en 10h):  7.3 | 31m57.4s | 52.5'     (pag. 21)
+     Register CD -43°6425 (en 10h):  8.9 | 31m38.3s | 2.6'     (pag. 77)
+126) GC 14547 (pag. 288) is alone within MAG = 8.2; similar CD -79°424 separated in 653.6 arcsec.
+     Register GC 14547: mag = 8.2, RA = 10h33m27s75, DE = 79°52'17''7, obs = 2 (pag 288)
+     Register CD -79°424 (en 10h):  9.2 | 29m20.0s | 52.0'     (pag. 357)
+     Register CD -79°433 (en 10h):  7.0 | 33m29.0s | 52.5'     (pag. 357)
+127) GC 14573 (pag. 289) is alone within MAG = 7.5; similar CD -55°3529 separated in 1404.0 arcsec.
+     Register GC 14573: mag = 7.5, RA = 10h34m26s12, DE = 54°57'22''4, obs = 3 (pag 289)
+     Register CD -55°3529 (en 10h):  7.5 | 34m26.0s | 20.8'     (pag. 113)
+     Register CD -54°3675 (en 10h):  6.2 | 34m25.7s | 57.8'     (pag. 81)
+128) GC 14583 (pag. 289) is alone within MAG = 7.1; similar CD -60°3141 separated in 373.3 arcsec.
+     Register GC 14583: mag = 7.1, RA = 10h34m50s38, DE = 60°20'05''2, obs = 1 (pag 289)
+     Register CD -60°3141 (en 10h):  8.0 | 34m47.8s | 26.3'     (pag. 264)
+     Register CD -60°3142 (en 10h):  8.2 | 34m50.9s | 19.3'     (pag. 264)
+129) GC 14593 (pag. 289) is alone within MAG = 9.5; similar CD -27°7611 separated in 399.5 arcsec.
+     Register GC 14593: mag = 9.5, RA = 10h35m24s89, DE = 27°28'51''0, obs = 1 (pag 289)
+     Register CD -27°7611 (en 10h):  10.0 | 35m4.8s | 33.8'     (pag. 316)
+     Register CD -27°7615 (en 10h):  8.0 | 35m25.1s | 28.2'     (pag. 316)
+130) GC 14652 (pag. 291) is alone within MAG = 8.5; similar CD -30°8681 separated in 636.6 arcsec.
+     Register GC 14652: mag = 8.5, RA = 10h37m47s49, DE = 30°12'42''3, obs = 1 (pag 291)
+     Register CD -30°8681 (en 10h):  9.5 | 38m36.5s | 13.4'     (pag. 501)
+     Register CD -30°8662 (en 10h):  7.3 | 37m47.5s | 12.4'     (pag. 501)
+131) GC 14908 (pag. 296) is alone within MAG = 7.5; similar CD -56°3628 separated in 2592.3 arcsec.
+     Register GC 14908: mag = 7.5, RA = 10h48m23s33, DE = 55°45'21''8, obs = 2 (pag 296)
+     Register CD -56°3628 (en 10h):  8.5 | 47m37.8s | 28.1'     (pag. 146)
+     Register CD -55°3717 (en 10h):  6.0 | 48m22.9s | 45.1'     (pag. 114)
+132) GC 15044 (pag. 298) is alone within MAG = 7.2; similar CD -39°6839 separated in 611.6 arcsec.
+     Register GC 15044: mag = 7.2, RA = 10h54m21s20, DE = 39°44'45''2, obs = 1 (pag 298)
+     Register CD -39°6839 (en 10h):  7.7 | 54m36.6s | 35.0'     (pag. 407)
+     Register CD -39°6832 (en 10h):  8.5 | 54m21.9s | 45.0'     (pag. 407)
+133) GC 15231 (pag. 302) is alone within MAG = 8.2; similar CD -58°3830 separated in 412.4 arcsec.
+     Register GC 15231: mag = 8.2, RA = 11h01m52s99, DE = 58°13'53''9, obs = 1 (pag 302)
+     Register CD -58°3830 (en 11h):  9.0 | 1m36.0s | 7.4'     (pag. 208)
+     Register CD -58°3836 (en 11h):  9.5 | 1m52.9s | 13.4'     (pag. 208)
+134) GC 15273 (pag. 303) is alone within MAG = 8.0; similar CD -60°3371 separated in 402.4 arcsec.
+     Register GC 15273: mag = 8.0, RA = 11h03m36s21, DE = 60°04'55''9, obs = 1 (pag 303)
+     Register CD -60°3371 (en 11h):  7.4 | 2m52.8s | 8.9'     (pag. 264)
+     Register CD -60°3382 (en 11h):  9.2 | 3m36.4s | 4.9'     (pag. 264)
+135) GC 15318 (pag. 303) is alone within MAG = 7.0; similar CD -57°3764 separated in 559.1 arcsec.
+     Register GC 15318: mag = 7.0, RA = 11h05m31s36, DE = 57°46'37''9, obs = 1 (pag 303)
+     Register CD -57°3764 (en 11h):  7.5 | 6m39.2s | 44.4'     (pag. 177)
+     Register CD -57°3750 (en 11h):  8.3 | 5m31.4s | 46.4'     (pag. 177)
+136) GC 15461 (pag. 306) is alone within MAG = 7.7; similar CD -59°3635 separated in 1573.1 arcsec.
+     Register GC 15461: mag = 7.7, RA = 11h11m46s91, DE = 59°05'11''9, obs = 2 (pag 306)
+     Register CD -59°3635 (en 11h):  8.6 | 9m41.9s | 26.0'     (pag. 237)
+     Register CD -59°3654 (en 11h):  9.3 | 11m46.9s | 5.5'     (pag. 237)
+137) GC 15498 (pag. 307) is alone within MAG = 8.0; similar CD -31°8922 separated in 874.1 arcsec.
+     Register GC 15498: mag = 8.0, RA = 11h13m26s97, DE = 32°04'02''2, obs = 1 (pag 307)
+     Register CD -31°8922 (en 11h):  8.0 | 13m22.4s | 49.5'     (pag. 569)
+     Register CD -32°8018 (en 11h):  9.1 | 13m27.0s | 4.0'     (pag. 26)
+138) GC 15573 (pag. 309) is alone within MAG = 7.0; similar CD -57°3882 separated in 370.8 arcsec.
+     Register GC 15573: mag = 7.0, RA = 11h17m10s89, DE = 57°37'46''7, obs = 1 (pag 309)
+     Register CD -57°3882 (en 11h):  7.4 | 16m38.6s | 42.2'     (pag. 178)
+     Register CD -57°3890 (en 11h):  8.1 | 17m10.8s | 38.2'     (pag. 178)
+139) GC 15621 (pag. 309) is alone within MAG = 8.5; similar CD -66°1039 separated in 491.5 arcsec.
+     Register GC 15621: mag = 8.5, RA = 11h19m29s11, DE = 66°26'34''5, obs = 1 (pag 309)
+     Register CD -66°1039 (en 11h):  8.5 | 18m58.0s | 19.0'     (pag. 97)
+     Register CD -66°1042 (en 11h):  9.8 | 19m31.0s | 27.0'     (pag. 97)
+140) GC 15892 (pag. 315) is alone within MAG = 7.5; similar CD -36°7297 separated in 526.2 arcsec.
+     Register GC 15892: mag = 7.5, RA = 11h31m55s93, DE = 36°07'10''6, obs = 1 (pag 315)
+     Register CD -36°7297 (en 11h):  7.3 | 31m18.9s | 2.6'     (pag. 249)
+     Register CD -36°7303 (en 11h):  9.4 | 31m56.9s | 7.1'     (pag. 249)
+141) GC 16028 (pag. 317) is alone within MAG = 8.7; similar CD -33°7919 separated in 539.2 arcsec.
+     Register GC 16028: mag = 8.7, RA = 11h37m15s13, DE = 33°11'27''9, obs = 1 (pag 317)
+     Register CD -33°7919 (en 11h):  9.0 | 37m35.0s | 3.5'     (pag. 86)
+     Register CD -33°7916 (en 11h):  7.6 | 37m14.9s | 12.0'     (pag. 86)
+142) GC 16036 (pag. 317) is alone within MAG = 8.5; similar CD -60°3719 separated in 552.0 arcsec.
+     Register GC 16036: mag = 8.5, RA = 11h37m32s52, DE = 60°13'34''3, obs = 1 (pag 317)
+     Register CD -60°3719 (en 11h):  8.0 | 38m38.9s | 9.5'     (pag. 266)
+     Register CD -60°3710 (en 11h):  9.6 | 37m32.3s | 13.5'     (pag. 266)
+143) GC 16081 (pag. 318) is alone within MAG = 8.2; similar CD -51°6012 separated in 531.2 arcsec.
+     Register GC 16081: mag = 8.2, RA = 11h39m37s46, DE = 51°59'45''2, obs = 1 (pag 318)
+     Register CD -51°6012 (en 11h):  8.1 | 39m38.0s | 50.9'     (pag. 476)
+     Register CD -51°6014 (en 11h):  10.0 | 39m46.3s | 59.3'     (pag. 476)
+144) GC 16120 (pag. 319) is alone within MAG = 6.3; similar CD -56°4148 separated in 911.8 arcsec.
+     Register GC 16120: mag = 6.3, RA = 11h41m13s47, DE = 57°00'09''2, obs = 1 (pag 319)
+     Register CD -56°4148 (en 11h):  7.0 | 43m5.0s | 59.6'     (pag. 148)
+     Register CD -57°4122 (en 11h):  7.5 | 41m13.4s | 0.0'     (pag. 178)
+145) GC 16152 (pag. 319) is alone within MAG = 11.0; similar CD -81°429 separated in 5638.3 arcsec.
+     Register GC 16152: mag = 11.0, RA = 11h43m40s66, DE = 83°31'15''6, obs = 1 (pag 319)
+     Register CD -81°429 (en 11h):  10.0 | 40m20.0s | 57.5'     (pag. 377)
+     Register CD -83°170 (en 11h):  9.7 | 44m13.0s | 28.7'     (pag. 389)
+146) GC 16229 (pag. 321) is alone within MAG = 9.0; similar CD -27°8357 separated in 447.4 arcsec.
+     Register GC 16229: mag = 9.0, RA = 11h47m16s57, DE = 27°34'59''8, obs = 1 (pag 321)
+     Register CD -27°8357 (en 11h):  9.6 | 46m47.1s | 31.4'     (pag. 318)
+     Register CD -27°8364 (en 11h):  7.8 | 47m17.0s | 35.4'     (pag. 318)
+147) GC 16308 (pag. 322) is alone within MAG = 7.0; similar CD -62°584 separated in 804.5 arcsec.
+     Register GC 16308: mag = 7.0, RA = 11h50m42s56, DE = 62°33'12''0, obs = 1 (pag 322)
+     Register CD -62°584 (en 11h):  7.5 | 48m48.0s | 35.6'     (pag. 6)
+     Register CD -62°588 (en 11h):  8.2 | 50m43.0s | 32.8'     (pag. 6)
+148) GC 16343 (pag. 323) is alone within MAG = 8.7; similar CD -38°7432 separated in 387.6 arcsec.
+     Register GC 16343: mag = 8.7, RA = 11h51m57s15, DE = 38°56'15''2, obs = 1 (pag 323)
+     Register CD -38°7432 (en 11h):  9.0 | 52m30.2s | 55.6'     (pag. 356)
+     Register CD -38°7431 (en 11h):  7.6 | 51m57.1s | 56.0'     (pag. 356)
+149) GC 16422 (pag. 324) is alone within MAG = 7.2; similar CD -61°3313 separated in 535.9 arcsec.
+     Register GC 16422: mag = 7.2, RA = 11h55m23s24, DE = 61°49'46''8, obs = 1 (pag 324)
+     Register CD -61°3313 (en 11h):  7.3 | 56m1.8s | 42.1'     (pag. 292)
+     Register CD -61°3308 (en 11h):  8.4 | 55m23.7s | 50.1'     (pag. 292)
+150) GC 16565 (pag. 327) is alone within MAG = 8.5; similar CD -50°6684 separated in 602.8 arcsec.
+     Register GC 16565: mag = 8.5, RA = 12h01m36s97, DE = 50°04'02''3, obs = 1 (pag 327)
+     Register CD -50°6684 (en 12h):  9.0 | 1m25.0s | 13.9'     (pag. 431)
+     Register CD -50°6688 (en 12h):  6.4 | 1m37.2s | 4.1'     (pag. 431)
+151) GC 16718 (pag. 330) is alone within MAG = 8.5; similar CD -24°10233 separated in 857.6 arcsec.
+     Register GC 16718: mag = 8.5, RA = 12h08m16s84, DE = 24°04'43''1, obs = 1 (pag 330)
+     Register CD -24°10233 (en 12h):  8.8 | 7m57.3s | 18.3'     (pag. 151)
+     Register CD -24°10236 (en 12h):  7.3 | 8m17.3s | 4.4'     (pag. 151)
+152) GC 16773 (pag. 331) is alone within MAG = 9.0; similar CD -27°8603 separated in 435.2 arcsec.
+     Register GC 16773: mag = 9.0, RA = 12h11m17s36, DE = 27°34'30''9, obs = 1 (pag 331)
+     Register CD -27°8603 (en 12h):  9.6 | 10m55.1s | 29.2'     (pag. 319)
+     Register CD -27°8608 (en 12h):  7.7 | 11m17.7s | 34.8'     (pag. 319)
+153) GC 16823 (pag. 332) is ALONE; nearest CD -79°497 separated in 657.3 arcsec.
+     Register GC 16823: mag = 9.5, RA = 12h14m05s39, DE = 79°03'46''6, obs = 1 (pag 332)
+154) GC 16939 (pag. 334) is alone within MAG = 6.8; similar CD -63°758 separated in 2441.2 arcsec.
+     Register GC 16939: mag = 6.8, RA = 12h19m34s93, DE = 62°25'45''1, obs = 2 (pag 334)
+     Register CD -63°758 (en 12h):  6.8 | 20m27.0s | 6.0'     (pag. 25)
+     Register CD -62°651 (en 12h):  8.0 | 19m36.0s | 26.2'     (pag. 7)
+155) GC 17050 (pag. 336) is alone within MAG = 8.5; similar CD -29°9773 separated in 597.3 arcsec.
+     Register GC 17050: mag = 8.5, RA = 12h24m19s56, DE = 29°59'10''6, obs = 2 (pag 336)
+     Register CD -29°9773 (en 12h):  8.9 | 23m34.1s | 57.6'     (pag. 441)
+     Register CD -29°9782 (en 12h):  7.2 | 24m19.5s | 59.1'     (pag. 441)
+156) GC 17062 (pag. 336) is alone within MAG = 6.4; similar CD -58°4560 separated in 2468.2 arcsec.
+     Register GC 17062: mag = 6.4, RA = 12h24m42s35, DE = 58°43'58''0, obs = 1 (pag 336)
+     Register CD -58°4560 (en 12h):  6.7 | 20m36.1s | 18.3'     (pag. 210)
+     Register CD -58°4603 (en 12h):  9.3 | 24m42.4s | 44.3'     (pag. 211)
+157) GC 17205 (pag. 338) is alone within MAG = 8.5; similar CD -34°8313 separated in 539.5 arcsec.
+     Register GC 17205: mag = 8.5, RA = 12h31m58s37, DE = 34°28'36''4, obs = 1 (pag 338)
+     Register CD -34°8313 (en 12h):  8.9 | 31m42.7s | 37.0'     (pag. 144)
+     Register CD -34°8318 (en 12h):  7.3 | 31m58.2s | 28.5'     (pag. 144)
+158) GC 17246 (pag. 339) is alone within MAG = 9.5; similar CD -28°9649 separated in 853.7 arcsec.
+     Register GC 17246: mag = 9.5, RA = 12h33m40s41, DE = 28°55'40''6, obs = 1 (pag 339)
+     Register CD -28°9649 (en 12h):  10.0 | 34m40.4s | 50.2'     (pag. 378)
+     Register CD -28°9643 (en 12h):  8.0 | 33m40.5s | 55.5'     (pag. 378)
+159) GC 17310 (pag. 340) is alone within MAG = 8.5; similar CD -30°10071 separated in 375.3 arcsec.
+     Register GC 17310: mag = 8.5, RA = 12h36m06s60, DE = 30°15'38''5, obs = 1 (pag 340)
+     Register CD -30°10071 (en 12h):  8.9 | 36m28.3s | 11.5'     (pag. 506)
+     Register CD -30°10070 (en 12h):  7.4 | 36m6.0s | 15.8'     (pag. 506)
+160) GC 17366 (pag. 341) is alone within MAG = 5.7; similar CD -59°4424 separated in 2898.5 arcsec.
+     Register GC 17366: mag = 5.7, RA = 12h38m18s11, DE = 60°17'40''7, obs = 1 (pag 341)
+     Register CD -59°4424 (en 12h):  6.4 | 42m49.7s | 43.3'     (pag. 240)
+     Register CD -60°4350 (en 12h):  4.6 | 38m17.8s | 17.7'     (pag. 268)
+161) GC 17396 (pag. 341) is alone within MAG = 10.0; similar CD -71°875 separated in 605.8 arcsec.
+     Register GC 17396: mag = 10.0, RA = 12h39m39s61, DE = 70°59'57''9, obs = 1 (pag 341)
+     Register CD -71°875 (en 12h):  10.0 | 37m38.0s | 2.0'     (pag. 229)
+     Register CD -71°876 (en 12h):  8.9 | 39m40.0s | 0.0'     (pag. 229)
+162) GC 17405 (pag. 341) is alone within MAG = 9.0; similar CD -58°4747 separated in 463.5 arcsec.
+     Register GC 17405: mag = 9.0, RA = 12h40m07s26, DE = 59°00'39''7, obs = 1 (pag 341)
+     Register CD -58°4747 (en 12h):  8.0 | 40m44.4s | 54.6'     (pag. 211)
+     Register CD -59°4399 (en 12h):  1.5 | 40m25.7s | 0.6'     (pag. 240)
+163) GC 17453 (pag. 342) is alone within MAG = 7.5; similar CD -59°4415 separated in 1038.1 arcsec.
+     Register GC 17453: mag = 7.5, RA = 12h42m49s54, DE = 59°43'04''9, obs = 2 (pag 342)
+     Register CD -59°4415 (en 12h):  8.2 | 41m51.4s | 58.8'     (pag. 240)
+     Register CD -59°4424 (en 12h):  6.4 | 42m49.7s | 43.3'     (pag. 240)
+164) GC 17550 (pag. 344) is alone within MAG = 8.5; similar CD -27°8918 separated in 720.1 arcsec.
+     Register GC 17550: mag = 8.5, RA = 12h47m32s48, DE = 27°16'45''1, obs = 1 (pag 344)
+     Register CD -27°8918 (en 12h):  9.4 | 48m3.3s | 6.9'     (pag. 320)
+     Register CD -27°8914 (en 12h):  7.1 | 47m33.1s | 16.9'     (pag. 320)
+165) GC 17609 (pag. 345) is alone within MAG = 8.5; similar CD -23°10825 separated in 470.4 arcsec.
+     Register GC 17609: mag = 8.5, RA = 12h50m01s56, DE = 23°46'23''5, obs = 1 (pag 345)
+     Register CD -23°10825 (en 12h):  8.0 | 50m22.5s | 52.6'     (pag. 92)
+     Register CD -23°10822 (en 12h):  7.3 | 50m1.7s | 46.7'     (pag. 92)
+166) GC 17620 (pag. 345) is ALONE; nearest CD -62°687 separated in 539.7 arcsec.
+     Register GC 17620: mag = 9.0, RA = 12h50m35s17, DE = 62°09'26''5, obs = 1 (pag 345)
+167) GC 17687 (pag. 347) is alone within MAG = 7.5; similar CD -61°3638 separated in 1281.2 arcsec.
+     Register GC 17687: mag = 7.5, RA = 12h53m25s86, DE = 62°20'55''3, obs = 1 (pag 347)
+     Register CD -61°3638 (en 12h):  8.5 | 52m59.0s | 59.8'     (pag. 293)
+     Register CD -62°689 (en 12h):  9.0 | 53m25.0s | 21.0'     (pag. 7)
+168) GC 17706 (pag. 347) is alone within MAG = 8.2; similar CD -44°8378 separated in 794.4 arcsec.
+     Register GC 17706: mag = 8.2, RA = 12h54m10s35, DE = 44°04'37''1, obs = 2 (pag 347)
+     Register CD -44°8378 (en 12h):  9.1 | 53m27.5s | 15.4'     (pag. 136)
+     Register CD -44°8388 (en 12h):  7.1 | 54m10.3s | 4.6'     (pag. 136)
+169) GC 17775 (pag. 348) is ALONE; nearest CD -61°3658 separated in 913.1 arcsec.
+     Register GC 17775: mag = 10.0, RA = 12h57m34s79, DE = 62°09'55''4, obs = 1 (pag 348)
+170) GC 17785 (pag. 348) is ALONE; nearest CD -62°691 separated in 592.9 arcsec.
+     Register GC 17785: mag = 8.7, RA = 12h57m49s46, DE = 62°41'58''8, obs = 1 (pag 348)
+171) GC 17790 (pag. 348) is alone within MAG = 9.0; similar CD -36°8295 separated in 437.5 arcsec.
+     Register GC 17790: mag = 9.0, RA = 12h58m03s22, DE = 36°51'11''4, obs = 1 (pag 348)
+     Register CD -36°8295 (en 12h):  10.0 | 57m37.2s | 56.3'     (pag. 253)
+     Register CD -36°8297 (en 12h):  7.7 | 58m3.0s | 50.8'     (pag. 253)
+172) GC 17966 (pag. 352) is alone within MAG = 8.7; similar CD -30°10398 separated in 729.1 arcsec.
+     Register GC 17966: mag = 8.7, RA = 13h06m02s95, DE = 30°03'07''5, obs = 1 (pag 352)
+     Register CD -30°10398 (en 13h):  9.0 | 5m6.8s | 3.3'     (pag. 507)
+     Register CD -30°10411 (en 13h):  7.4 | 6m3.2s | 2.7'     (pag. 507)
+173) GC 17972 (pag. 352) is alone within MAG = 8.0; similar CD -42°8220 separated in 907.0 arcsec.
+     Register GC 17972: mag = 8.0, RA = 13h06m18s83, DE = 42°22'46''5, obs = 1 (pag 352)
+     Register CD -42°8220 (en 13h):  7.3 | 7m11.4s | 11.2'     (pag. 27)
+     Register CD -42°8206 (en 13h):  9.2 | 6m18.8s | 22.8'     (pag. 27)
+174) GC 18077 (pag. 353) is alone within MAG = 9.5; similar CD -24°10818 separated in 446.2 arcsec.
+     Register GC 18077: mag = 9.5, RA = 13h10m23s62, DE = 24°22'04''4, obs = 1 (pag 353)
+     Register CD -24°10818 (en 13h):  9.5 | 9m54.3s | 18.8'     (pag. 153)
+     Register CD -24°10824 (en 13h):  8.4 | 10m23.3s | 22.4'     (pag. 153)
+175) GC 18083 (pag. 353) is alone within MAG = 10.2; similar CD -23°10991 separated in 541.2 arcsec.
+     Register GC 18083: mag = 10.2, RA = 13h10m43s16, DE = 23°13'15''0, obs = 1 (pag 353)
+     Register CD -23°10991 (en 13h):  9.4 | 10m27.3s | 5.0'     (pag. 92)
+     Register CD -23°10996 (en 13h):  9.0 | 10m42.8s | 13.0'     (pag. 92)
+176) GC 18094 (pag. 354) is alone within MAG = 9.5; similar CD -23°10995 separated in 361.2 arcsec.
+     Register GC 18094: mag = 9.5, RA = 13h11m05s74, DE = 23°39'37''9, obs = 1 (pag 354)
+     Register CD -23°10995 (en 13h):  10.0 | 10m40.7s | 37.8'     (pag. 92)
+     Register CD -23°10997 (en 13h):  8.4 | 11m6.0s | 39.3'     (pag. 92)
+177) GC 18106 (pag. 354) is alone within MAG = 7.0; similar CD -59°4680 separated in 1953.9 arcsec.
+     Register GC 18106: mag = 7.0, RA = 13h11m37s28, DE = 58°35'01''3, obs = 1 (pag 354)
+     Register CD -59°4680 (en 13h):  7.4 | 12m38.8s | 6.6'     (pag. 241)
+     Register CD -58°4990 (en 13h):  8.3 | 11m37.5s | 34.8'     (pag. 212)
+178) GC 18263 (pag. 357) is ALONE; nearest CD -66°1416 separated in 372.1 arcsec.
+     Register GC 18263: mag = 8.2, RA = 13h18m44s83, DE = 66°05'44''6, obs = 1 (pag 357)
+179) GC 18278 (pag. 357) is ALONE; nearest CD -46°8650 separated in 502.4 arcsec.
+     Register GC 18278: mag = 4.0, RA = 13h19m16s12, DE = 46°49'29''5, obs = 1 (pag 357)
+180) GC 18291 (pag. 358) is alone within MAG = 7.5; similar CD -53°5177 separated in 1311.0 arcsec.
+     Register GC 18291: mag = 7.5, RA = 13h19m41s87, DE = 53°30'14''2, obs = 3 (pag 358)
+     Register CD -53°5177 (en 13h):  7.9 | 21m57.5s | 21.9'     (pag. 53)
+     Register CD -53°5150 (en 13h):  8.7 | 19m42.3s | 30.5'     (pag. 53)
+181) GC 18330 (pag. 358) is ALONE; nearest CD -61°3815 separated in 707.0 arcsec.
+     Register GC 18330: mag = 9.5, RA = 13h21m37s81, DE = 62°06'37''8, obs = 1 (pag 358)
+182) GC 18357 (pag. 359) is alone within MAG = 7.2; similar CD -53°5177 separated in 505.3 arcsec.
+     Register GC 18357: mag = 7.2, RA = 13h22m44s04, DE = 53°17'08''6, obs = 1 (pag 359)
+     Register CD -53°5177 (en 13h):  7.9 | 21m57.5s | 21.9'     (pag. 53)
+     Register CD -53°5181 (en 13h):  8.4 | 22m44.5s | 17.3'     (pag. 53)
+183) GC 18372 (pag. 359) is alone within MAG = 8.5; similar CD -22°9967 separated in 546.8 arcsec.
+     Register GC 18372: mag = 8.5, RA = 13h23m38s83, DE = 23°00'10''2, obs = 1 (pag 359)
+     Register CD -22°9967 (en 13h):  8.9 | 23m35.0s | 51.1'     (pag. 33)
+     Register CD -22°9968 (en 13h):  7.4 | 23m38.7s | 59.9'     (pag. 33)
+184) GC 18479 (pag. 361) is alone within MAG = 8.0; similar CD -31°10485 separated in 884.8 arcsec.
+     Register GC 18479: mag = 8.0, RA = 13h28m07s10, DE = 31°31'06''7, obs = 1 (pag 361)
+     Register CD -31°10485 (en 13h):  7.1 | 28m41.6s | 43.9'     (pag. 574)
+     Register CD -31°10478 (en 13h):  9.3 | 28m7.2s | 30.9'     (pag. 574)
+185) GC 18486 (pag. 361) is alone within MAG = 7.5; similar CD -47°8437 separated in 1084.2 arcsec.
+     Register GC 18486: mag = 7.5, RA = 13h28m34s17, DE = 48°09'40''9, obs = 1 (pag 361)
+     Register CD -47°8437 (en 13h):  8.3 | 28m0.7s | 52.5'     (pag. 290)
+     Register CD -48°8328 (en 13h):  8.6 | 28m34.0s | 9.6'     (pag. 339)
+186) GC 18515 (pag. 362) is alone within MAG = 8.0; similar CD -29°10463 separated in 394.3 arcsec.
+     Register GC 18515: mag = 8.0, RA = 13h29m58s87, DE = 29°13'36''0, obs = 1 (pag 362)
+     Register CD -29°10463 (en 13h):  8.8 | 29m50.3s | 19.9'     (pag. 443)
+     Register CD -29°10462 (en 13h):  10.0 | 29m44.1s | 15.8'     (pag. 443)
+187) GC 18601 (pag. 364) is alone within MAG = 9.0; similar CD -38°8724 separated in 396.3 arcsec.
+     Register GC 18601: mag = 9.0, RA = 13h34m24s33, DE = 38°22'51''8, obs = 1 (pag 364)
+     Register CD -38°8724 (en 13h):  9.9 | 33m52.0s | 21.0'     (pag. 360)
+     Register CD -38°8730 (en 13h):  7.5 | 34m25.0s | 22.5'     (pag. 360)
+188) GC 18868 (pag. 368) is alone within MAG = 7.7; similar CD -82°253 separated in 2341.9 arcsec.
+     Register GC 18868: mag = 7.7, RA = 13h46m27s34, DE = 82°18'37''4, obs = 3 (pag 368)
+     Register CD -82°253 (en 14h):  8.4 | 2m35.0s | 41.6'     (pag. 386)
+     Register CD -82°251 (en 13h):  8.8 | 46m25.0s | 18.6'     (pag. 386)
+189) GC 18994 (pag. 371) is alone within MAG = 7.2; similar CD -61°4119 separated in 2353.1 arcsec.
+     Register GC 18994: mag = 7.2, RA = 13h52m27s17, DE = 62°20'35''8, obs = 1 (pag 371)
+     Register CD -61°4119 (en 13h):  7.0 | 48m29.7s | 52.9'     (pag. 295)
+     Register CD -62°800 (en 13h):  8.5 | 52m28.0s | 20.0'     (pag. 9)
+190) GC 19130 (pag. 373) is alone within MAG = 7.2; similar CD -53°5441 separated in 2013.0 arcsec.
+     Register GC 19130: mag = 7.2, RA = 13h59m25s02, DE = 53°05'36''6, obs = 1 (pag 373)
+     Register CD -53°5441 (en 13h):  8.2 | 57m52.7s | 36.2'     (pag. 54)
+     Register CD -53°5448 (en 13h):  8.5 | 59m24.9s | 5.4'     (pag. 54)
+191) GC 19145 (pag. 373) is alone within MAG = 8.5; similar CD -30°11171 separated in 723.1 arcsec.
+     Register GC 19145: mag = 8.5, RA = 13h59m52s17, DE = 30°48'07''6, obs = 2 (pag 373)
+     Register CD -30°11171 (en 14h):  8.2 | 0m6.4s | 59.8'     (pag. 509)
+     Register CD -30°11167 (en 13h):  7.3 | 59m52.5s | 48.4'     (pag. 509)
+192) GC 19178 (pag. 374) is alone within MAG = 8.0; similar CD -50°8285 separated in 560.2 arcsec.
+     Register GC 19178: mag = 8.0, RA = 14h01m28s10, DE = 50°55'20''1, obs = 1 (pag 374)
+     Register CD -50°8285 (en 14h):  8.5 | 0m29.9s | 57.1'     (pag. 437)
+     Register CD -50°8297 (en 14h):  9.1 | 1m28.3s | 55.5'     (pag. 437)
+193) GC 19183 (pag. 374) is alone within MAG = 9.7; similar CD -23°11508 separated in 374.1 arcsec.
+     Register GC 19183: mag = 9.7, RA = 14h01m48s05, DE = 23°29'43''7, obs = 1 (pag 374)
+     Register CD -23°11508 (en 14h):  9.6 | 1m21.8s | 28.1'     (pag. 94)
+     Register CD -23°11515 (en 14h):  8.6 | 1m48.6s | 29.1'     (pag. 94)
+194) GC 19223 (pag. 375) is alone within MAG = 7.5; similar CD -67°1557 separated in 1204.9 arcsec.
+     Register GC 19223: mag = 7.5, RA = 14h04m02s60, DE = 67°36'05''3, obs = 2 (pag 375)
+     Register CD -67°1557 (en 14h):  7.6 | 4m31.0s | 56.0'     (pag. 133)
+     Register CD -67°1555 (en 14h):  9.7 | 3m7.0s | 38.5'     (pag. 133)
+195) GC 19229 (pag. 375) is alone within MAG = 8.7; similar CD -28°10497 separated in 391.8 arcsec.
+     Register GC 19229: mag = 8.7, RA = 14h04m22s08, DE = 28°17'38''0, obs = 1 (pag 375)
+     Register CD -28°10497 (en 14h):  8.3 | 4m51.7s | 18.0'     (pag. 381)
+     Register CD -28°10490 (en 14h):  10.0 | 4m21.5s | 17.5'     (pag. 381)
+196) GC 19271 (pag. 376) is alone within MAG = 6.8; similar CD -82°250 separated in 3320.7 arcsec.
+     Register GC 19271: mag = 6.8, RA = 14h06m06s82, DE = 82°16'08''6, obs = 1 (pag 376)
+     Register CD -82°250 (en 13h):  6.0 | 39m53.0s | 2.6'     (pag. 386)
+     Register CD -82°255 (en 14h):  8.0 | 6m5.0s | 16.1'     (pag. 386)
+197) GC 19401 (pag. 378) is alone within MAG = 8.5; similar CD -24°11433 separated in 464.4 arcsec.
+     Register GC 19401: mag = 8.5, RA = 14h13m29s68, DE = 23°55'54''2, obs = 2 (pag 378)
+     Register CD -24°11433 (en 14h):  8.6 | 13m48.1s | 2.4'     (pag. 155)
+     Register CD -23°11638 (en 14h):  7.3 | 13m30.0s | 56.1'     (pag. 94)
+198) GC 19469 (pag. 379) is alone within MAG = 9.5; similar CD -25°10311 separated in 391.7 arcsec.
+     Register GC 19469: mag = 9.5, RA = 14h16m31s49, DE = 25°47'49''3, obs = 1 (pag 379)
+     Register CD -25°10311 (en 14h):  9.0 | 17m0.4s | 47.3'     (pag. 211)
+     Register CD -25°10307 (en 14h):  8.2 | 16m31.3s | 47.9'     (pag. 211)
+199) GC 19712 (pag. 383) is alone within MAG = 7.5; similar CD -45°9276 separated in 686.8 arcsec.
+     Register GC 19712: mag = 7.5, RA = 14h26m23s92, DE = 45°45'09''0, obs = 2 (pag 383)
+     Register CD -45°9276 (en 14h):  7.1 | 27m1.0s | 54.6'     (pag. 191)
+     Register CD -45°9269 (en 14h):  8.6 | 26m24.8s | 45.0'     (pag. 191)
+200) GC 19809 (pag. 385) is alone within MAG = 7.2; similar CD -85°119 separated in 824.1 arcsec.
+     Register GC 19809: mag = 7.2, RA = 14h30m22s12, DE = 85°57'11''9, obs = 1 (pag 385)
+     Register CD -85°119 (en 14h):  8.0 | 18m56.0s | 51.0'     (pag. 395)
+     Register CD -85°122 (en 14h):  8.3 | 30m19.0s | 57.2'     (pag. 395)
+201) GC 19819 (pag. 385) is alone within MAG = 7.0; similar CD -42°9493 separated in 878.5 arcsec.
+     Register GC 19819: mag = 7.0, RA = 14h30m48s34, DE = 42°27'21''4, obs = 4 (pag 385)
+     Register CD -42°9493 (en 14h):  7.1 | 29m37.0s | 33.9'     (pag. 31)
+     Register CD -42°9514 (en 14h):  8.1 | 30m48.6s | 27.4'     (pag. 32)
+202) GC 19829 (pag. 386) is alone within MAG = 8.2; similar CD -34°9818 separated in 402.7 arcsec.
+     Register GC 19829: mag = 8.2, RA = 14h31m18s05, DE = 35°03'03''1, obs = 1 (pag 386)
+     Register CD -34°9818 (en 14h):  9.2 | 31m22.4s | 56.4'     (pag. 149)
+     Register CD -35°9683 (en 14h):  7.0 | 31m18.6s | 2.7'     (pag. 203)
+203) GC 20036 (pag. 389) is alone within MAG = 7.1; similar CD -58°5808 separated in 660.2 arcsec.
+     Register GC 20036: mag = 7.1, RA = 14h40m07s45, DE = 58°36'23''6, obs = 2 (pag 389)
+     Register CD -58°5808 (en 14h):  7.6 | 40m50.1s | 26.9'     (pag. 215)
+     Register CD -58°5806 (en 14h):  8.3 | 40m6.9s | 36.4'     (pag. 215)
+204) GC 20042 (pag. 389) is alone within MAG = 8.5; similar CD -31°11453 separated in 786.7 arcsec.
+     Register GC 20042: mag = 8.5, RA = 14h40m20s96, DE = 31°43'18''9, obs = 2 (pag 389)
+     Register CD -31°11453 (en 14h):  9.3 | 39m19.4s | 42.5'     (pag. 577)
+     Register CD -31°11467 (en 14h):  7.4 | 40m20.8s | 43.1'     (pag. 577)
+205) GC 20084 (pag. 390) is alone within MAG = 8.7; similar CD -36°9655 separated in 601.4 arcsec.
+     Register GC 20084: mag = 8.7, RA = 14h42m18s32, DE = 36°52'26''3, obs = 1 (pag 390)
+     Register CD -36°9655 (en 14h):  8.7 | 41m40.8s | 45.8'     (pag. 257)
+     Register CD -36°9666 (en 14h):  7.5 | 42m18.0s | 52.3'     (pag. 257)
+206) GC 20104 (pag. 390) is alone within MAG = 5.9; similar CD -82°262 separated in 761.5 arcsec.
+     Register GC 20104: mag = 5.9, RA = 14h43m14s50, DE = 82°31'57''2, obs = 9 (pag 390)
+     Register CD -82°262 (en 14h):  6.5 | 40m5.0s | 43.1'     (pag. 386)
+     Register CD -82°266 (en 14h):  7.0 | 43m13.0s | 31.9'     (pag. 386)
+207) GC 20234 (pag. 393) is alone within MAG = 9.5; similar CD -35°9911 separated in 438.8 arcsec.
+     Register GC 20234: mag = 9.5, RA = 14h49m09s15, DE = 35°11'15''4, obs = 1 (pag 393)
+     Register CD -35°9911 (en 14h):  9.3 | 48m53.3s | 4.7'     (pag. 204)
+     Register CD -35°9917 (en 14h):  8.0 | 49m9.5s | 11.2'     (pag. 204)
+208) GC 20320 (pag. 395) is alone within MAG = 8.2; similar CD -35°9958 separated in 515.8 arcsec.
+     Register GC 20320: mag = 8.2, RA = 14h52m12s42, DE = 35°31'43''4, obs = 1 (pag 395)
+     Register CD -35°9958 (en 14h):  8.6 | 52m44.6s | 37.3'     (pag. 204)
+     Register CD -35°9952 (en 14h):  7.1 | 52m13.2s | 31.7'     (pag. 204)
+209) GC 20381 (pag. 396) is alone within MAG = 8.2; similar CD -54°5979 separated in 964.7 arcsec.
+     Register GC 20381: mag = 8.2, RA = 14h54m55s55, DE = 53°50'46''1, obs = 1 (pag 396)
+     Register CD -54°5979 (en 14h):  8.3 | 53m28.6s | 0.5'     (pag. 89)
+     Register CD -53°5834 (en 14h):  9.4 | 54m55.5s | 50.5'     (pag. 56)
+210) GC 20570 (pag. 399) is alone within MAG = 4.5; similar CD -47°9860 separated in 5024.3 arcsec.
+     Register GC 20570: mag = 4.5, RA = 15h03m15s25, DE = 48°15'36''5, obs = 1 (pag 399)
+     Register CD -47°9860 (en 15h):  5.0 | 9m51.0s | 24.6'     (pag. 294)
+     Register CD -48°9704 (en 15h):  5.9 | 3m16.8s | 15.6'     (pag. 344)
+211) GC 20603 (pag. 400) is alone within MAG = 8.0; similar CD -25°10800 separated in 1271.0 arcsec.
+     Register GC 20603: mag = 8.0, RA = 15h05m14s19, DE = 24°48'39''8, obs = 1 (pag 400)
+     Register CD -25°10800 (en 15h):  9.0 | 6m29.5s | 1.2'     (pag. 213)
+     Register CD -24°11913 (en 15h):  9.4 | 5m14.6s | 49.1'     (pag. 156)
+212) GC 20634 (pag. 400) is alone within MAG = 7.2; similar CD -66°1728 separated in 1710.7 arcsec.
+     Register GC 20634: mag = 7.2, RA = 15h06m12s72, DE = 65°37'32''0, obs = 2 (pag 400)
+     Register CD -66°1728 (en 15h):  7.0 | 8m36.0s | 2.0'     (pag. 105)
+     Register CD -65°1893 (en 15h):  10.2 | 6m17.0s | 32.0'     (pag. 73)
+213) GC 20728 (pag. 402) is alone within MAG = 7.2; similar CD -59°5618 separated in 2165.4 arcsec.
+     Register GC 20728: mag = 7.2, RA = 15h10m36s14, DE = 59°05'08''3, obs = 2 (pag 402)
+     Register CD -59°5618 (en 15h):  7.4 | 9m9.3s | 39.5'     (pag. 244)
+     Register CD -59°5632 (en 15h):  9.6 | 10m42.0s | 5.0'     (pag. 244)
+214) GC 20745 (pag. 402) is alone within MAG = 8.5; similar CD -33°10451 separated in 606.4 arcsec.
+     Register GC 20745: mag = 8.5, RA = 15h11m34s05, DE = 33°34'26''7, obs = 1 (pag 402)
+     Register CD -33°10451 (en 15h):  9.4 | 12m19.3s | 38.1'     (pag. 94)
+     Register CD -33°10441 (en 15h):  7.2 | 11m34.4s | 34.9'     (pag. 94)
+215) GC 20760 (pag. 403) is alone within MAG = 7.7; similar CD -58°6013 separated in 687.7 arcsec.
+     Register GC 20760: mag = 7.7, RA = 15h12m25s69, DE = 58°41'37''2, obs = 1 (pag 403)
+     Register CD -58°6013 (en 15h):  8.5 | 13m30.6s | 49.4'     (pag. 215)
+     Register CD -58°6005 (en 15h):  8.8 | 12m25.8s | 41.4'     (pag. 215)
+216) GC 20767 (pag. 403) is alone within MAG = 7.5; similar CD -58°6013 separated in 551.8 arcsec.
+     Register GC 20767: mag = 7.5, RA = 15h12m41s77, DE = 58°42'42''2, obs = 2 (pag 403)
+     Register CD -58°6013 (en 15h):  8.5 | 13m30.6s | 49.4'     (pag. 215)
+     Register CD -58°6007 (en 15h):  8.8 | 12m41.6s | 43.4'     (pag. 215)
+217) GC 20772 (pag. 403) is alone within MAG = 7.5; similar CD -58°6013 separated in 577.8 arcsec.
+     Register GC 20772: mag = 7.5, RA = 15h12m49s48, DE = 58°41'22''8, obs = 2 (pag 403)
+     Register CD -58°6013 (en 15h):  8.5 | 13m30.6s | 49.4'     (pag. 215)
+     Register CD -58°6008 (en 15h):  8.8 | 12m48.8s | 41.4'     (pag. 215)
+218) GC 20971 (pag. 406) is alone within MAG = 9.7; similar CD -52°6723 separated in 380.7 arcsec.
+     Register GC 20971: mag = 9.7, RA = 15h21m48s98, DE = 52°12'51''3, obs = 1 (pag 406)
+     Register CD -52°6723 (en 15h):  10.0 | 22m30.1s | 12.1'     (pag. 23)
+     Register CD -52°6711 (en 15h):  7.7 | 21m49.7s | 12.0'     (pag. 22)
+219) GC 21210 (pag. 410) is alone within MAG = 8.7; similar CD -35°10429 separated in 460.3 arcsec.
+     Register GC 21210: mag = 8.7, RA = 15h31m56s61, DE = 35°45'44''3, obs = 1 (pag 410)
+     Register CD -35°10429 (en 15h):  9.7 | 32m21.7s | 40.0'     (pag. 206)
+     Register CD -35°10423 (en 15h):  7.5 | 31m56.6s | 46.1'     (pag. 206)
+220) GC 21279 (pag. 412) is alone within MAG = 8.5; similar CD -31°12185 separated in 379.4 arcsec.
+     Register GC 21279: mag = 8.5, RA = 15h34m50s91, DE = 31°46'59''8, obs = 2 (pag 412)
+     Register CD -31°12185 (en 15h):  8.8 | 34m30.0s | 42.5'     (pag. 580)
+     Register CD -31°12192 (en 15h):  7.3 | 34m50.5s | 47.2'     (pag. 580)
+221) GC 21341 (pag. 413) is alone within MAG = 8.5; similar CD -37°10496 separated in 520.3 arcsec.
+     Register GC 21341: mag = 8.5, RA = 15h37m53s53, DE = 37°23'02''5, obs = 1 (pag 413)
+     Register CD -37°10496 (en 15h):  9.5 | 38m37.1s | 22.5'     (pag. 314)
+     Register CD -37°10490 (en 15h):  10.0 | 38m14.2s | 27.0'     (pag. 314)
+222) GC 21371 (pag. 413) is alone within MAG = 7.7; similar CD -48°10355 separated in 1385.8 arcsec.
+     Register GC 21371: mag = 7.7, RA = 15h39m13s57, DE = 48°50'55''4, obs = 1 (pag 413)
+     Register CD -48°10355 (en 15h):  7.3 | 41m14.3s | 39.2'     (pag. 346)
+     Register CD -48°10324 (en 15h):  8.8 | 39m13.6s | 50.9'     (pag. 346)
+223) GC 21409 (pag. 414) is ALONE; nearest CD -62°986 separated in 545.6 arcsec.
+     Register GC 21409: mag = 8.5, RA = 15h41m02s39, DE = 62°14'01''4, obs = 1 (pag 414)
+224) GC 21444 (pag. 415) is alone within MAG = 8.7; similar CD -51°9557 separated in 711.1 arcsec.
+     Register GC 21444: mag = 8.7, RA = 15h42m34s65, DE = 51°14'17''2, obs = 1 (pag 415)
+     Register CD -51°9557 (en 15h):  9.2 | 41m55.1s | 24.4'     (pag. 488)
+     Register CD -51°9570 (en 15h):  7.6 | 42m35.0s | 14.4'     (pag. 488)
+225) GC 21491 (pag. 415) is alone within MAG = 7.5; similar CD -58°6214 separated in 962.7 arcsec.
+     Register GC 21491: mag = 7.5, RA = 15h44m33s42, DE = 58°34'25''2, obs = 1 (pag 415)
+     Register CD -58°6214 (en 15h):  7.5 | 42m40.3s | 40.8'     (pag. 216)
+     Register CD -58°6226 (en 15h):  9.0 | 44m33.6s | 34.8'     (pag. 216)
+226) GC 21603 (pag. 417) is alone within MAG = 8.7; similar CD -57°6213 separated in 599.7 arcsec.
+     Register GC 21603: mag = 8.7, RA = 15h49m39s31, DE = 57°42'23''0, obs = 1 (pag 417)
+     Register CD -57°6213 (en 15h):  8.9 | 50m8.8s | 33.2'     (pag. 186)
+     Register CD -57°6211 (en 15h):  10.0 | 49m40.9s | 42.4'     (pag. 186)
+227) GC 21943 (pag. 424) is alone within MAG = 7.2; similar CD -82°284 separated in 1873.2 arcsec.
+     Register GC 21943: mag = 7.2, RA = 16h04m14s92, DE = 83°17'29''5, obs = 3 (pag 424)
+     Register CD -82°284 (en 16h):  7.5 | 18m7.0s | 58.6'     (pag. 386)
+     Register CD -83°211 (en 16h):  8.6 | 4m14.0s | 17.7'     (pag. 390)
+228) GC 21999 (pag. 425) is alone within MAG = 8.5; similar CD -52°7318 separated in 807.1 arcsec.
+     Register GC 21999: mag = 8.5, RA = 16h07m04s74, DE = 52°17'13''0, obs = 1 (pag 425)
+     Register CD -52°7318 (en 16h):  8.3 | 6m28.8s | 29.5'     (pag. 25)
+     Register CD -52°7324 (en 16h):  10.0 | 7m5.4s | 17.5'     (pag. 25)
+229) GC 22110 (pag. 427) is alone within MAG = 8.7; similar CD -46°10650 separated in 374.6 arcsec.
+     Register GC 22110: mag = 8.7, RA = 16h11m41s12, DE = 46°58'31''1, obs = 1 (pag 427)
+     Register CD -46°10650 (en 16h):  8.0 | 11m6.7s | 56.4'     (pag. 247)
+     Register CD -46°10656 (en 16h):  9.9 | 11m41.1s | 58.5'     (pag. 247)
+230) GC 22201 (pag. 429) is alone within MAG = 7.2; similar CD -26°11336 separated in 1832.4 arcsec.
+     Register GC 22201: mag = 7.2, RA = 16h15m56s06, DE = 26°13'27''3, obs = 1 (pag 429)
+     Register CD -26°11336 (en 16h):  8.0 | 18m11.3s | 17.1'     (pag. 271)
+     Register CD -26°11317 (en 16h):  9.9 | 16m0.8s | 16.4'     (pag. 271)
+231) GC 22244 (pag. 430) is alone within MAG = 7.0; similar CD -47°10733 separated in 1087.9 arcsec.
+     Register GC 22244: mag = 7.0, RA = 16h18m00s57, DE = 47°15'40''2, obs = 1 (pag 430)
+     Register CD -47°10733 (en 16h):  8.0 | 16m14.3s | 13.8'     (pag. 297)
+     Register CD -47°10764 (en 16h):  8.3 | 18m0.9s | 15.7'     (pag. 297)
+232) GC 22367 (pag. 432) is alone within MAG = 9.7; similar CD -41°10704 separated in 434.7 arcsec.
+     Register GC 22367: mag = 9.7, RA = 16h24m25s08, DE = 41°43'39''6, obs = 1 (pag 432)
+     Register CD -41°10704 (en 16h):  9.7 | 24m0.2s | 38.1'     (pag. 523)
+     Register CD -41°10709 (en 16h):  8.6 | 24m26.0s | 43.6'     (pag. 523)
+233) GC 22552 (pag. 435) is alone within MAG = 9.0; similar CD -32°11903 separated in 388.2 arcsec.
+     Register GC 22552: mag = 9.0, RA = 16h32m36s01, DE = 32°07'56''8, obs = 1 (pag 435)
+     Register CD -32°11903 (en 16h):  9.8 | 32m55.7s | 3.0'     (pag. 39)
+     Register CD -32°11900 (en 16h):  7.5 | 32m35.8s | 8.0'     (pag. 39)
+234) GC 22560 (pag. 435) is alone within MAG = 9.5; similar CD -54°6914 separated in 680.9 arcsec.
+     Register GC 22560: mag = 9.5, RA = 16h33m04s75, DE = 54°32'07''5, obs = 1 (pag 435)
+     Register CD -54°6914 (en 16h):  10.3 | 32m6.4s | 39.7'     (pag. 92)
+     Register CD -54°6925 (en 16h):  8.4 | 33m5.4s | 32.1'     (pag. 92)
+235) GC 22605 (pag. 436) is alone within MAG = 7.5; similar CD -46°10958 separated in 1252.1 arcsec.
+     Register GC 22605: mag = 7.5, RA = 16h35m23s27, DE = 46°32'48''0, obs = 3 (pag 436)
+     Register CD -46°10958 (en 16h):  7.5 | 34m32.4s | 51.8'     (pag. 248)
+     Register CD -46°10976 (en 16h):  8.6 | 35m23.6s | 32.7'     (pag. 248)
+236) GC 22834 (pag. 441) is alone within MAG = 10.2; similar CD -66°2020 separated in 421.8 arcsec.
+     Register GC 22834: mag = 10.2, RA = 16h45m50s03, DE = 66°50'28''7, obs = 1 (pag 441)
+     Register CD -66°2020 (en 16h):  9.2 | 44m55.0s | 46.0'     (pag. 108)
+     Register CD -66°2024 (en 16h):  8.5 | 45m50.0s | 50.5'     (pag. 108)
+237) GC 22959 (pag. 443) is alone within MAG = 9.0; similar CD -58°6610 separated in 402.4 arcsec.
+     Register GC 22959: mag = 9.0, RA = 16h50m18s50, DE = 58°39'28''2, obs = 1 (pag 443)
+     Register CD -58°6610 (en 16h):  9.8 | 51m8.8s | 38.0'     (pag. 217)
+     Register CD -58°6602 (en 16h):  7.5 | 50m17.8s | 39.0'     (pag. 217)
+238) GC 23060 (pag. 445) is alone within MAG = 7.3; similar CD -55°7028 separated in 871.2 arcsec.
+     Register GC 23060: mag = 7.3, RA = 16h54m55s16, DE = 55°57'32''1, obs = 2 (pag 445)
+     Register CD -55°7028 (en 16h):  8.2 | 55m30.8s | 43.9'     (pag. 125)
+     Register CD -55°7024 (en 16h):  8.5 | 54m53.4s | 57.6'     (pag. 125)
+239) GC 23069 (pag. 445) is alone within MAG = 7.3; similar CD -31°13502 separated in 603.3 arcsec.
+     Register GC 23069: mag = 7.3, RA = 16h55m14s91, DE = 31°25'55''4, obs = 2 (pag 445)
+     Register CD -31°13502 (en 16h):  7.1 | 55m14.7s | 36.0'     (pag. 584)
+     Register CD -31°13510 (en 16h):  10.0 | 55m36.7s | 23.4'     (pag. 584)
+240) GC 23127 (pag. 446) is alone within MAG = 8.5; similar CD -39°11133 separated in 1083.7 arcsec.
+     Register GC 23127: mag = 8.5, RA = 16h57m53s73, DE = 39°07'51''2, obs = 2 (pag 446)
+     Register CD -39°11133 (en 16h):  9.3 | 59m15.3s | 16.6'     (pag. 421)
+     Register CD -39°11113 (en 16h):  7.2 | 57m53.3s | 8.4'     (pag. 421)
+241) GC 23167 (pag. 447) is alone within MAG = 8.5; similar CD -39°11153 separated in 484.7 arcsec.
+     Register GC 23167: mag = 8.5, RA = 17h00m06s33, DE = 39°10'13''0, obs = 1 (pag 447)
+     Register CD -39°11153 (en 17h):  9.3 | 0m47.4s | 11.6'     (pag. 421)
+     Register CD -39°11145 (en 17h):  7.3 | 0m6.2s | 10.6'     (pag. 421)
+242) GC 23186 (pag. 447) is alone within MAG = 7.2; similar CD -63°1261 separated in 1088.7 arcsec.
+     Register GC 23186: mag = 7.2, RA = 17h00m42s86, DE = 63°31'28''3, obs = 2 (pag 447)
+     Register CD -63°1261 (en 17h):  8.2 | 2m49.0s | 43.0'     (pag. 31)
+     Register CD -63°1259 (en 17h):  4.2 | 0m46.0s | 31.8'     (pag. 31)
+243) GC 23267 (pag. 448) is alone within MAG = 7.2; similar CD -55°7070 separated in 1917.5 arcsec.
+     Register GC 23267: mag = 7.2, RA = 17h04m06s80, DE = 55°51'16''9, obs = 1 (pag 448)
+     Register CD -55°7070 (en 17h):  8.0 | 1m30.8s | 28.1'     (pag. 126)
+     Register CD -55°7091 (en 17h):  8.6 | 4m7.2s | 51.1'     (pag. 126)
+244) GC 23338 (pag. 449) is alone within MAG = 8.2; similar CD -44°11547 separated in 591.9 arcsec.
+     Register GC 23338: mag = 8.2, RA = 17h07m08s85, DE = 44°15'06''5, obs = 1 (pag 449)
+     Register CD -44°11547 (en 17h):  8.5 | 6m13.8s | 15.5'     (pag. 147)
+     Register CD -44°11557 (en 17h):  9.4 | 7m8.8s | 14.9'     (pag. 147)
+245) GC 23342 (pag. 449) is alone within MAG = 8.5; similar CD -33°11874 separated in 363.0 arcsec.
+     Register GC 23342: mag = 8.5, RA = 17h07m21s14, DE = 32°57'28''2, obs = 1 (pag 449)
+     Register CD -33°11874 (en 17h):  8.5 | 7m5.1s | 2.5'     (pag. 99)
+     Register CD -32°12517 (en 17h):  7.3 | 7m21.1s | 56.9'     (pag. 42)
+246) GC 23393 (pag. 451) is alone within MAG = 9.0; similar CD -53°7209 separated in 474.4 arcsec.
+     Register GC 23393: mag = 9.0, RA = 17h09m31s06, DE = 53°40'49''1, obs = 2 (pag 451)
+     Register CD -53°7209 (en 17h):  9.5 | 10m19.5s | 44.2'     (pag. 60)
+     Register CD -53°7200 (en 17h):  7.9 | 9m30.9s | 40.2'     (pag. 60)
+247) GC 23417 (pag. 451) is alone within MAG = 6.3; similar CD -43°11572 separated in 511.7 arcsec.
+     Register GC 23417: mag = 6.3, RA = 17h10m21s46, DE = 44°05'10''6, obs = 2 (pag 451)
+     Register CD -43°11572 (en 17h):  6.3 | 9m46.0s | 59.5'     (pag. 94)
+     Register CD -44°11595 (en 17h):  7.5 | 10m21.5s | 5.3'     (pag. 147)
+248) GC 23470 (pag. 452) is ALONE; nearest CD -63°1276 separated in 733.5 arcsec.
+     Register GC 23470: mag = 9.5, RA = 17h12m53s88, DE = 63°44'59''1, obs = 1 (pag 452)
+249) GC 23587 (pag. 454) is ALONE; nearest CD -78°785 separated in 566.1 arcsec.
+     Register GC 23587: mag = 11.0, RA = 17h17m31s22, DE = 78°29'48''6, obs = 1 (pag 454)
+250) GC 23763 (pag. 457) is alone within MAG = 7.2; similar CD -46°11618 separated in 739.4 arcsec.
+     Register GC 23763: mag = 7.2, RA = 17h24m45s21, DE = 46°30'27''7, obs = 1 (pag 457)
+     Register CD -46°11618 (en 17h):  8.1 | 23m59.8s | 40.0'     (pag. 250)
+     Register CD -46°11632 (en 17h):  8.4 | 24m45.2s | 30.5'     (pag. 250)
+251) GC 23816 (pag. 458) is alone within MAG = 9.2; similar CD -58°6845 separated in 485.7 arcsec.
+     Register GC 23816: mag = 9.2, RA = 17h26m50s67, DE = 58°14'56''1, obs = 1 (pag 458)
+     Register CD -58°6845 (en 17h):  9.3 | 26m39.7s | 22.9'     (pag. 218)
+     Register CD -58°6846 (en 17h):  8.0 | 26m50.4s | 14.8'     (pag. 218)
+252) GC 23999 (pag. 462) is ALONE; nearest CD -61°5892 separated in 797.1 arcsec.
+     Register GC 23999: mag = 10.0, RA = 17h35m05s26, DE = 62°11'30''0, obs = 1 (pag 462)
+253) GC 24161 (pag. 465) is alone within MAG = 7.3; similar CD -60°6800 separated in 839.0 arcsec.
+     Register GC 24161: mag = 7.3, RA = 17h40m46s99, DE = 60°21'01''3, obs = 2 (pag 465)
+     Register CD -60°6800 (en 17h):  6.7 | 40m20.8s | 7.4'     (pag. 276)
+     Register CD -60°6803 (en 17h):  8.8 | 40m47.0s | 21.0'     (pag. 276)
+254) GC 24164 (pag. 465) is alone within MAG = 8.7; similar CD -68°1891 separated in 588.0 arcsec.
+     Register GC 24164: mag = 8.7, RA = 17h40m54s68, DE = 68°37'12''0, obs = 1 (pag 465)
+     Register CD -68°1891 (en 17h):  9.4 | 42m1.0s | 29.5'     (pag. 167)
+     Register CD -68°1889 (en 17h):  7.5 | 40m55.0s | 37.5'     (pag. 167)
+255) GC 24354 (pag. 469) is alone within MAG = 10.0; similar CD -87°91 separated in 1441.2 arcsec.
+     Register GC 24354: mag = 10.0, RA = 17h49m02s51, DE = 87°40'12''6, obs = 1 (pag 469)
+     Register CD -87°91 (en 17h):  9.7 | 10m34.0s | 47.8'     (pag. 398)
+     Register CD -87°92 (en 17h):  5.4 | 41m14.0s | 39.4'     (pag. 398)
+256) GC 24383 (pag. 469) is ALONE; nearest CD -74°1247 separated in 1293.6 arcsec.
+     Register GC 24383: mag = 10.0, RA = 17h50m14s42, DE = 74°36'42''0, obs = 2 (pag 469)
+257) GC 24433 (pag. 470) is alone within MAG = 7.2; similar CD -72°1403 separated in 868.7 arcsec.
+     Register GC 24433: mag = 7.2, RA = 17h51m53s48, DE = 73°05'52''0, obs = 2 (pag 470)
+     Register CD -72°1403 (en 17h):  7.4 | 49m22.0s | 56.5'     (pag. 255)
+     Register CD -73°1343 (en 17h):  9.2 | 51m52.0s | 6.0'     (pag. 275)
+258) GC 24688 (pag. 475) is alone within MAG = 7.7; similar CD -55°7600 separated in 1129.4 arcsec.
+     Register GC 24688: mag = 7.7, RA = 18h01m17s36, DE = 55°22'51''4, obs = 2 (pag 475)
+     Register CD -55°7600 (en 18h):  8.2 | 2m38.2s | 37.8'     (pag. 127)
+     Register CD -55°7592 (en 18h):  6.6 | 1m17.8s | 22.6'     (pag. 127)
+259) GC 25085 (pag. 482) is alone within MAG = 7.3; similar CD -53°7708 separated in 1901.3 arcsec.
+     Register GC 25085: mag = 7.3, RA = 18h16m58s35, DE = 53°10'38''7, obs = 1 (pag 482)
+     Register CD -53°7708 (en 18h):  7.1 | 17m8.0s | 42.3'     (pag. 62)
+     Register CD -53°7706 (en 18h):  6.0 | 16m58.5s | 10.5'     (pag. 62)
+260) GC 25278 (pag. 485) is alone within MAG = 8.5; similar CD -67°2246 separated in 1459.6 arcsec.
+     Register GC 25278: mag = 8.5, RA = 18h23m43s11, DE = 66°58'44''5, obs = 1 (pag 485)
+     Register CD -67°2246 (en 18h):  9.4 | 20m52.0s | 16.5'     (pag. 141)
+     Register CD -66°2224 (en 18h):  7.0 | 23m44.0s | 58.5'     (pag. 111)
+261) GC 25306 (pag. 486) is alone within MAG = 6.0; similar CD -39°12626 separated in 3579.2 arcsec.
+     Register GC 25306: mag = 6.0, RA = 18h24m46s01, DE = 38°48'47''8, obs = 1 (pag 486)
+     Register CD -39°12626 (en 18h):  6.0 | 19m49.1s | 3.8'     (pag. 426)
+     Register CD -38°12895 (en 18h):  7.7 | 24m45.7s | 48.9'     (pag. 374)
+262) GC 25365 (pag. 487) is alone within MAG = 8.5; similar CD -48°12618 separated in 568.6 arcsec.
+     Register GC 25365: mag = 8.5, RA = 18h27m32s42, DE = 48°18'28''9, obs = 1 (pag 487)
+     Register CD -48°12618 (en 18h):  9.2 | 27m9.6s | 9.8'     (pag. 353)
+     Register CD -48°12623 (en 18h):  7.3 | 27m32.3s | 18.4'     (pag. 353)
+263) GC 25388 (pag. 487) is alone within MAG = 8.2; similar CD -24°14520 separated in 613.2 arcsec.
+     Register GC 25388: mag = 8.2, RA = 18h28m42s35, DE = 24°00'25''9, obs = 1 (pag 487)
+     Register CD -24°14520 (en 18h):  9.1 | 29m3.0s | 9.5'     (pag. 165)
+     Register CD -24°14508 (en 18h):  9.8 | 28m36.4s | 0.2'     (pag. 165)
+264) GC 25389 (pag. 487) is alone within MAG = 8.0; similar CD -59°6924 separated in 623.8 arcsec.
+     Register GC 25389: mag = 8.0, RA = 18h28m45s70, DE = 59°24'17''2, obs = 1 (pag 487)
+     Register CD -59°6924 (en 18h):  7.5 | 28m16.1s | 14.6'     (pag. 248)
+     Register CD -59°6926 (en 18h):  9.5 | 28m47.1s | 24.4'     (pag. 248)
+265) GC 25412 (pag. 488) is alone within MAG = 8.7; similar CD -84°176 separated in 510.9 arcsec.
+     Register GC 25412: mag = 8.7, RA = 18h29m49s52, DE = 84°04'42''8, obs = 1 (pag 488)
+     Register CD -84°176 (en 18h):  9.5 | 34m57.0s | 1.7'     (pag. 393)
+     Register CD -84°175 (en 18h):  7.6 | 29m49.0s | 4.7'     (pag. 393)
+266) GC 25620 (pag. 492) is alone within MAG = 8.0; similar CD -45°12772 separated in 1088.0 arcsec.
+     Register GC 25620: mag = 8.0, RA = 18h38m14s54, DE = 45°33'49''0, obs = 1 (pag 492)
+     Register CD -45°12772 (en 18h):  7.3 | 39m40.0s | 23.6'     (pag. 203)
+     Register CD -45°12752 (en 18h):  9.3 | 38m14.0s | 33.8'     (pag. 203)
+267) GC 25773 (pag. 494) is alone within MAG = 7.4; similar CD -41°13159 separated in 1032.3 arcsec.
+     Register GC 25773: mag = 7.4, RA = 18h43m29s94, DE = 41°03'36''7, obs = 2 (pag 494)
+     Register CD -41°13159 (en 18h):  6.7 | 42m11.6s | 12.5'     (pag. 531)
+     Register CD -41°13181 (en 18h):  9.5 | 43m30.0s | 3.9'     (pag. 531)
+268) GC 25795 (pag. 495) is alone within MAG = 7.0; similar CD -30°16356 separated in 924.8 arcsec.
+     Register GC 25795: mag = 7.0, RA = 18h44m22s90, DE = 31°07'56''7, obs = 1 (pag 495)
+     Register CD -30°16356 (en 18h):  6.8 | 44m40.5s | 53.0'     (pag. 527)
+     Register CD -31°16071 (en 18h):  8.4 | 44m22.7s | 8.0'     (pag. 593)
+269) GC 25843 (pag. 495) is alone within MAG = 7.0; similar CD -52°8861 separated in 1460.6 arcsec.
+     Register GC 25843: mag = 7.0, RA = 18h45m57s33, DE = 52°05'12''3, obs = 1 (pag 495)
+     Register CD -52°8861 (en 18h):  7.1 | 43m19.0s | 4.3'     (pag. 30)
+     Register CD -52°8888 (en 18h):  8.2 | 45m57.1s | 5.1'     (pag. 30)
+270) GC 25857 (pag. 496) is alone within MAG = 7.2; similar CD -22°13397 separated in 423.5 arcsec.
+     Register GC 25857: mag = 7.2, RA = 18h46m42s25, DE = 22°50'20''2, obs = 2 (pag 496)
+     Register CD -22°13397 (en 18h):  8.1 | 46m34.6s | 43.5'     (pag. 45)
+     Register CD -22°13401 (en 18h):  8.5 | 46m42.3s | 50.1'     (pag. 45)
+271) GC 26078 (pag. 500) is alone within MAG = 7.2; similar CD -23°15008 separated in 774.3 arcsec.
+     Register GC 26078: mag = 7.2, RA = 18h56m11s81, DE = 22°53'29''1, obs = 1 (pag 500)
+     Register CD -23°15008 (en 18h):  6.9 | 56m42.4s | 4.3'     (pag. 106)
+     Register CD -22°13563 (en 18h):  8.4 | 56m11.9s | 53.0'     (pag. 45)
+272) GC 26122 (pag. 500) is alone within MAG = 8.0; similar CD -41°13330 separated in 504.8 arcsec.
+     Register GC 26122: mag = 8.0, RA = 18h57m57s86, DE = 41°43'35''3, obs = 1 (pag 500)
+     Register CD -41°13330 (en 18h):  8.7 | 58m40.2s | 40.7'     (pag. 532)
+     Register CD -41°13323 (en 18h):  9.7 | 57m58.1s | 43.6'     (pag. 532)
+273) GC 26171 (pag. 501) is alone within MAG = 9.5; similar CD -67°2316 separated in 464.8 arcsec.
+     Register GC 26171: mag = 9.5, RA = 19h00m07s59, DE = 67°16'53''3, obs = 1 (pag 501)
+     Register CD -67°2316 (en 19h):  9.9 | 0m57.0s | 23.0'     (pag. 142)
+     Register CD -67°2315 (en 19h):  8.4 | 0m9.0s | 17.0'     (pag. 142)
+274) GC 26195 (pag. 502) is alone within MAG = 7.0; similar CD -24°15041 separated in 1598.4 arcsec.
+     Register GC 26195: mag = 7.0, RA = 19h01m07s29, DE = 25°16'26''9, obs = 2 (pag 502)
+     Register CD -24°15041 (en 19h):  6.7 | 0m36.8s | 50.7'     (pag. 167)
+     Register CD -25°13770 (en 19h):  10.0 | 1m7.4s | 16.3'     (pag. 223)
+275) GC 26378 (pag. 505) is alone within MAG = 7.7; similar CD -63°1412 separated in 1033.8 arcsec.
+     Register GC 26378: mag = 7.7, RA = 19h08m12s11, DE = 63°06'52''5, obs = 1 (pag 505)
+     Register CD -63°1412 (en 19h):  8.5 | 8m29.0s | 24.0'     (pag. 32)
+     Register CD -63°1411 (en 19h):  8.8 | 8m8.0s | 6.8'     (pag. 32)
+276) GC 26382 (pag. 505) is alone within MAG = 7.2; similar CD -45°13094 separated in 838.8 arcsec.
+     Register GC 26382: mag = 7.2, RA = 19h08m17s34, DE = 45°38'17''8, obs = 1 (pag 505)
+     Register CD -45°13094 (en 19h):  8.0 | 8m54.3s | 50.7'     (pag. 204)
+     Register CD -45°13086 (en 19h):  8.3 | 8m17.4s | 38.3'     (pag. 204)
+277) GC 26486 (pag. 507) is alone within MAG = 7.0; similar CD -44°13303 separated in 1737.8 arcsec.
+     Register GC 26486: mag = 7.0, RA = 19h13m41s47, DE = 44°41'22''0, obs = 1 (pag 507)
+     Register CD -44°13303 (en 19h):  7.5 | 15m59.3s | 26.0'     (pag. 153)
+     Register CD -44°13278 (en 19h):  8.5 | 13m41.8s | 41.5'     (pag. 152)
+278) GC 26598 (pag. 509) is alone within MAG = 8.2; similar CD -55°8160 separated in 505.9 arcsec.
+     Register GC 26598: mag = 8.2, RA = 19h17m52s68, DE = 55°19'43''9, obs = 2 (pag 509)
+     Register CD -55°8160 (en 19h):  8.1 | 17m20.6s | 12.6'     (pag. 129)
+     Register CD -55°8164 (en 19h):  9.3 | 17m52.7s | 19.6'     (pag. 129)
+279) GC 26804 (pag. 512) is alone within MAG = 7.0; similar CD -46°13043 separated in 3006.9 arcsec.
+     Register GC 26804: mag = 7.0, RA = 19h27m03s41, DE = 46°25'16''2, obs = 1 (pag 512)
+     Register CD -46°13043 (en 19h):  7.1 | 22m14.8s | 31.8'     (pag. 255)
+     Register CD -46°13090 (en 19h):  8.1 | 27m3.7s | 25.2'     (pag. 255)
+280) GC 26912 (pag. 515) is alone within MAG = 8.5; similar CD -31°16937 separated in 393.5 arcsec.
+     Register GC 26912: mag = 8.5, RA = 19h32m00s08, DE = 31°14'05''1, obs = 1 (pag 515)
+     Register CD -31°16937 (en 19h):  9.5 | 32m17.4s | 19.5'     (pag. 596)
+     Register CD -31°16930 (en 19h):  9.6 | 31m52.2s | 11.2'     (pag. 596)
+281) GC 26948 (pag. 515) is alone within MAG = 7.2; similar CD -23°15625 separated in 1119.0 arcsec.
+     Register GC 26948: mag = 7.2, RA = 19h33m33s50, DE = 23°56'12''9, obs = 1 (pag 515)
+     Register CD -23°15625 (en 19h):  6.2 | 32m36.4s | 42.9'     (pag. 108)
+     Register CD -23°15637 (en 19h):  8.6 | 33m33.2s | 56.4'     (pag. 108)
+282) GC 27132 (pag. 518) is alone within MAG = 7.6; similar CD -42°14506 separated in 991.3 arcsec.
+     Register GC 27132: mag = 7.6, RA = 19h42m01s31, DE = 42°10'14''2, obs = 1 (pag 518)
+     Register CD -42°14506 (en 19h):  8.6 | 42m47.3s | 24.4'     (pag. 48)
+     Register CD -42°14496 (en 19h):  8.9 | 42m1.5s | 10.3'     (pag. 48)
+283) GC 27313 (pag. 521) is alone within MAG = 8.5; similar CD -33°14607 separated in 520.4 arcsec.
+     Register GC 27313: mag = 8.5, RA = 19h50m35s40, DE = 32°57'44''3, obs = 1 (pag 521)
+     Register CD -33°14607 (en 19h):  8.7 | 50m37.6s | 6.4'     (pag. 108)
+     Register CD -32°15607 (en 19h):  7.4 | 50m35.1s | 57.6'     (pag. 52)
+284) GC 27549 (pag. 526) is alone within MAG = 7.1; similar CD -44°13763 separated in 433.9 arcsec.
+     Register GC 27549: mag = 7.1, RA = 20h00m44s33, DE = 44°16'39''9, obs = 2 (pag 526)
+     Register CD -44°13763 (en 20h):  7.4 | 1m24.0s | 15.3'     (pag. 154)
+     Register CD -44°13755 (en 20h):  8.2 | 0m44.6s | 16.8'     (pag. 154)
+285) GC 27924 (pag. 532) is alone within MAG = 9.0; similar CD -77°1032 separated in 391.0 arcsec.
+     Register GC 27924: mag = 9.0, RA = 20h15m58s50, DE = 77°42'14''1, obs = 1 (pag 532)
+     Register CD -77°1032 (en 20h):  8.2 | 15m23.0s | 36.0'     (pag. 338)
+     Register CD -77°1033 (en 20h):  7.7 | 15m57.0s | 42.0'     (pag. 338)
+286) GC 27954 (pag. 533) is alone within MAG = 9.5; similar CD -27°14774 separated in 494.1 arcsec.
+     Register GC 27954: mag = 9.5, RA = 20h16m57s68, DE = 27°18'00''7, obs = 1 (pag 533)
+     Register CD -27°14774 (en 20h):  10.0 | 16m26.3s | 22.4'     (pag. 340)
+     Register CD -27°14777 (en 20h):  8.1 | 16m57.3s | 18.2'     (pag. 340)
+287) GC 28030 (pag. 534) is alone within MAG = 8.7; similar CD -51°12570 separated in 1073.5 arcsec.
+     Register GC 28030: mag = 8.7, RA = 20h19m51s31, DE = 51°29'43''8, obs = 1 (pag 534)
+     Register CD -51°12570 (en 20h):  9.4 | 21m11.9s | 17.0'     (pag. 498)
+     Register CD -51°12559 (en 20h):  7.5 | 19m51.3s | 29.7'     (pag. 498)
+288) GC 28034 (pag. 534) is alone within MAG = 7.5; similar CD -45°13840 separated in 476.3 arcsec.
+     Register GC 28034: mag = 7.5, RA = 20h20m03s66, DE = 45°47'44''5, obs = 1 (pag 534)
+     Register CD -45°13840 (en 20h):  8.5 | 20m49.2s | 47.7'     (pag. 206)
+     Register CD -45°13829 (en 20h):  9.3 | 20m3.5s | 47.8'     (pag. 206)
+289) GC 28067 (pag. 535) is ALONE; nearest CD -87°99 separated in 1761.3 arcsec.
+     Register GC 28067: mag = 10.2, RA = 20h21m26s32, DE = 88°14'14''0, obs = 1 (pag 535)
+290) GC 28173 (pag. 537) is alone within MAG = 8.0; similar CD -60°7482 separated in 419.8 arcsec.
+     Register GC 28173: mag = 8.0, RA = 20h26m49s04, DE = 60°06'34''7, obs = 2 (pag 537)
+     Register CD -60°7482 (en 20h):  7.6 | 25m52.9s | 6.0'     (pag. 278)
+     Register CD -60°7492 (en 20h):  9.6 | 26m48.5s | 7.1'     (pag. 278)
+291) GC 28222 (pag. 538) is alone within MAG = 7.5; similar CD -65°2683 separated in 1175.0 arcsec.
+     Register GC 28222: mag = 7.5, RA = 20h29m08s69, DE = 65°30'23''9, obs = 2 (pag 538)
+     Register CD -65°2683 (en 20h):  6.8 | 26m2.0s | 27.5'     (pag. 82)
+     Register CD -65°2688 (en 20h):  9.0 | 29m10.0s | 30.5'     (pag. 82)
+292) GC 28467 (pag. 542) is ALONE; nearest CD -88°54 separated in 1524.6 arcsec.
+     Register GC 28467: mag = 10.0, RA = 20h39m04s36, DE = 88°13'34''3, obs = 2 (pag 542)
+293) GC 28559 (pag. 544) is alone within MAG = 9.0; similar CD -30°18206 separated in 487.3 arcsec.
+     Register GC 28559: mag = 9.0, RA = 20h42m38s88, DE = 30°53'08''5, obs = 1 (pag 544)
+     Register CD -30°18206 (en 20h):  9.9 | 42m3.1s | 55.8'     (pag. 533)
+     Register CD -30°18214 (en 20h):  7.7 | 42m38.9s | 52.8'     (pag. 533)
+294) GC 28573 (pag. 544) is alone within MAG = 8.2; similar CD -83°263 separated in 589.0 arcsec.
+     Register GC 28573: mag = 8.2, RA = 20h43m29s60, DE = 83°47'20''5, obs = 2 (pag 544)
+     Register CD -83°263 (en 20h):  9.0 | 49m24.0s | 49.6'     (pag. 390)
+     Register CD -83°259 (en 20h):  9.3 | 43m30.0s | 47.4'     (pag. 390)
+295) GC 28869 (pag. 550) is alone within MAG = 8.0; similar CD -48°13768 separated in 1017.5 arcsec.
+     Register GC 28869: mag = 8.0, RA = 20h57m01s33, DE = 48°19'03''6, obs = 1 (pag 550)
+     Register CD -48°13768 (en 20h):  7.0 | 55m31.4s | 27.1'     (pag. 357)
+     Register CD -48°13776 (en 20h):  9.3 | 57m1.0s | 19.0'     (pag. 357)
+296) GC 28943 (pag. 551) is ALONE; nearest CD -25°15236 separated in 483.7 arcsec.
+     Register GC 28943: mag = 8.7, RA = 20h59m34s13, DE = 25°09'01''3, obs = 2 (pag 551)
+297) GC 29010 (pag. 553) is alone within MAG = 9.7; similar CD -37°14154 separated in 443.4 arcsec.
+     Register GC 29010: mag = 9.7, RA = 21h03m15s74, DE = 37°47'28''4, obs = 1 (pag 553)
+     Register CD -37°14154 (en 21h):  10.0 | 3m46.6s | 43.3'     (pag. 327)
+     Register CD -37°14152 (en 21h):  8.5 | 3m15.2s | 47.3'     (pag. 327)
+298) GC 29507 (pag. 562) is ALONE; nearest CD -83°276 separated in 610.4 arcsec.
+     Register GC 29507: mag = 10.0, RA = 21h25m58s45, DE = 83°20'38''0, obs = 1 (pag 562)
+299) GC 29615 (pag. 564) is alone within MAG = 8.2; similar CD -58°8122 separated in 766.6 arcsec.
+     Register GC 29615: mag = 8.2, RA = 21h31m10s69, DE = 57°47'32''6, obs = 1 (pag 564)
+     Register CD -58°8122 (en 21h):  7.4 | 31m5.3s | 0.3'     (pag. 223)
+     Register CD -57°8363 (en 21h):  9.5 | 31m10.4s | 47.3'     (pag. 193)
+300) GC 29657 (pag. 565) is alone within MAG = 9.5; similar CD -29°17934 separated in 580.7 arcsec.
+     Register GC 29657: mag = 9.5, RA = 21h33m12s01, DE = 29°47'43''0, obs = 1 (pag 565)
+     Register CD -29°17934 (en 21h):  10.0 | 32m55.4s | 56.7'     (pag. 468)
+     Register CD -29°17936 (en 21h):  8.4 | 33m12.1s | 47.7'     (pag. 468)
+301) GC 29699 (pag. 566) is alone within MAG = 7.7; similar CD -55°8916 separated in 1859.0 arcsec.
+     Register GC 29699: mag = 7.7, RA = 21h35m10s96, DE = 54°32'48''7, obs = 2 (pag 566)
+     Register CD -55°8916 (en 21h):  7.3 | 35m14.4s | 3.8'     (pag. 132)
+     Register CD -54°9063 (en 21h):  6.5 | 35m11.0s | 32.6'     (pag. 99)
+302) GC 29855 (pag. 569) is ALONE; nearest CD -62°1370 separated in 1249.9 arcsec.
+     Register GC 29855: mag = 7.2, RA = 21h42m50s75, DE = 62°37'53''7, obs = 2 (pag 569)
+303) GC 29948 (pag. 570) is alone within MAG = 8.7; similar CD -60°7809 separated in 1031.3 arcsec.
+     Register GC 29948: mag = 8.7, RA = 21h47m07s92, DE = 60°49'08''9, obs = 1 (pag 570)
+     Register CD -60°7809 (en 21h):  9.7 | 46m58.3s | 32.0'     (pag. 280)
+     Register CD -60°7811 (en 21h):  7.5 | 47m8.1s | 49.0'     (pag. 280)
+304) GC 29978 (pag. 571) is ALONE; nearest CD -65°2800 separated in 365.0 arcsec.
+     Register GC 29978: mag = 8.7, RA = 21h48m20s02, DE = 65°11'23''2, obs = 1 (pag 571)
+305) GC 30576 (pag. 582) is ALONE; nearest CD -67°2542 separated in 1060.2 arcsec.
+     Register GC 30576: mag = 9.0, RA = 22h17m28s58, DE = 67°44'38''5, obs = 1 (pag 582)
+306) GC 30670 (pag. 584) is alone within MAG = 6.3; similar CD -26°16170 separated in 2868.0 arcsec.
+     Register GC 30670: mag = 6.3, RA = 22h22m46s11, DE = 27°44'43''0, obs = 2 (pag 584)
+     Register CD -26°16170 (en 22h):  6.5 | 23m27.3s | 57.8'     (pag. 288)
+     Register CD -27°15932 (en 22h):  9.3 | 22m46.7s | 44.7'     (pag. 344)
+307) GC 31343 (pag. 598) is alone within MAG = 10.0; similar CD -83°298 separated in 1340.6 arcsec.
+     Register GC 31343: mag = 10.0, RA = 22h57m22s08, DE = 83°04'04''6, obs = 1 (pag 598)
+     Register CD -83°298 (en 23h):  9.7 | 0m20.0s | 25.8'     (pag. 391)
+     Register CD -83°296 (en 22h):  7.4 | 57m22.0s | 4.1'     (pag. 390)
+308) GC 31347 (pag. 598) is alone within MAG = 10.2; similar CD -83°298 separated in 1300.6 arcsec.
+     Register GC 31347: mag = 10.2, RA = 22h57m27s34, DE = 83°04'43''5, obs = 1 (pag 598)
+     Register CD -83°298 (en 23h):  9.7 | 0m20.0s | 25.8'     (pag. 391)
+     Register CD -83°297 (en 22h):  7.4 | 57m29.0s | 4.8'     (pag. 390)
+309) GC 31485 (pag. 600) is alone within MAG = 9.2; similar CD -60°8039 separated in 1057.1 arcsec.
+     Register GC 31485: mag = 9.2, RA = 23h05m53s50, DE = 61°07'25''6, obs = 1 (pag 600)
+     Register CD -60°8039 (en 23h):  9.6 | 6m19.8s | 50.1'     (pag. 280)
+     Register CD -61°6796 (en 23h):  8.1 | 5m53.5s | 7.1'     (pag. 304)
+310) GC 31575 (pag. 602) is ALONE; nearest CD -88°60 separated in 387.2 arcsec.
+     Register GC 31575: mag = 10.0, RA = 23h11m06s80, DE = 88°16'24''9, obs = 1 (pag 602)
+311) GC 31647 (pag. 604) is alone within MAG = 9.0; similar CD -36°15842 separated in 534.5 arcsec.
+     Register GC 31647: mag = 9.0, RA = 23h14m45s16, DE = 36°40'03''1, obs = 1 (pag 604)
+     Register CD -36°15842 (en 23h):  10.0 | 15m22.4s | 35.2'     (pag. 278)
+     Register CD -36°15839 (en 23h):  7.9 | 14m45.4s | 39.9'     (pag. 278)
+312) GC 31657 (pag. 604) is alone within MAG = 8.2; similar CD -43°15352 separated in 646.1 arcsec.
+     Register GC 31657: mag = 8.2, RA = 23h15m35s99, DE = 44°02'45''1, obs = 1 (pag 604)
+     Register CD -43°15352 (en 23h):  7.6 | 15m21.6s | 52.3'     (pag. 107)
+     Register CD -44°15218 (en 23h):  9.4 | 15m35.9s | 2.8'     (pag. 159)
+313) GC 31750 (pag. 606) is alone within MAG = 5.7; similar CD -57°8799 separated in 5918.4 arcsec.
+     Register GC 31750: mag = 5.7, RA = 23h20m06s53, DE = 59°09'57''8, obs = 2 (pag 606)
+     Register CD -57°8799 (en 23h):  5.5 | 18m10.7s | 32.5'     (pag. 194)
+     Register CD -59°8132 (en 23h):  7.0 | 20m5.9s | 10.4'     (pag. 252)
+314) GC 31804 (pag. 607) is alone within MAG = 9.2; similar CD -59°8145 separated in 722.4 arcsec.
+     Register GC 31804: mag = 9.2, RA = 23h23m37s49, DE = 59°19'53''9, obs = 1 (pag 607)
+     Register CD -59°8145 (en 23h):  9.3 | 24m23.6s | 9.4'     (pag. 252)
+     Register CD -59°8144 (en 23h):  8.0 | 23m37.4s | 20.0'     (pag. 252)
+315) GC 31984 (pag. 610) is alone within MAG = 9.2; similar CD -71°1802 separated in 1513.3 arcsec.
+     Register GC 31984: mag = 9.2, RA = 23h32m49s40, DE = 71°48'29''3, obs = 2 (pag 610)
+     Register CD -71°1802 (en 23h):  9.2 | 38m9.0s | 52.5'     (pag. 239)
+     Register CD -71°1798 (en 23h):  8.1 | 32m52.0s | 48.5'     (pag. 239)
+Total errors: 315 (alone: 40, mag: 275)
+RSME of distance (arcsec) = 26.93  among a total of 27554 stars
+RSME of visual magnitude = 0.35862  among a total of 27554 stars

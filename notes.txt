@@ -1,0 +1,39 @@
+Diferencias entre catálogos con y sin errores:
+----------------------------------------------
+
+1) Difference between cd.txt and 1114.txt:
+     Errors in RA: 139,  DE: 2,  Mag: 0   -> 141 differences
+Error comparing cd and PPM:
+     Position: 121, mag: 114              -> 235 errors
+Error comparing 1114 and PPM:
+     Position: 156, mag: 114              -> 270 errors
+
+From the 141 differences in position, 35 was found by algorithm (25%).
+
+2) Difference between cd_vol1.txt and I88.txt:
+     Errors in RA: 165,  DE: 37,  Mag: 3  -> 205 differences
+      (also 44 unknown codes in I88)
+Error comparing cd_vol1 and PPM:
+     Position: 72, mag: 12                -> 84 errors
+Error comparing I88 and PPM:
+     Position: 123, mag: 15               -> 138 errors
+
+From the 202 differences in position, 51 was found by algorithm (25%).
+All (3 cases) magnitude differences was found by algorithm.
+
+Nota:
+-----
+
+En la fila 18 de log_sd encontramos:
+18) CD -22°15216 separated from SD -22°5630 in 4356.0 arcsec.
+     Register CD -22°15216 (en 21h):  10.0 | 1m35.8s | 45.3'     (pag. 51)
+Esa estrella no presenta errores en CD, pero esta misma identificación, además de 4005, la da SIMBAD.
+Por otra parte, una búsquda por coordenadas arroja que CD -22°15266 es la estrella más
+cercana a HD 202025, con una diferencia de 0.3 arcmin, por lo que es una mala identificación cruzada.
+
+
+Nota 2:
+-------
+
+Encontramos aleatoriamente que CD-30 3694 tiene mag. 9.5 en el impreso (pag. 484) pero 9.0 en el digital.
+

@@ -1,0 +1,1896 @@
+COMPARE_PPM_BD - Compare BD and PPM catalogs.
+Made in 2024 by Daniel Severin.
+Star already corrected (BD 19°2041)
+Star already corrected (BD 19°2856)
+Star already corrected (BD 19°3508)
+Star already corrected (BD 19°4908)
+Star already corrected (BD 18°2679)
+Star already corrected (BD 17°88)
+Star already corrected (BD 17°4368)
+Star already corrected (BD 16°409)
+Star already corrected (BD 16°588)
+Star already corrected (BD 16°4193)
+Star already corrected (BD 16°4290)
+Star already corrected (BD 16°4458)
+Star already corrected (BD 16°4921)
+Star already corrected (BD 15°613)
+Star already corrected (BD 15°622)
+Star already corrected (BD 15°4392)
+Star already corrected (BD 15°4395)
+Star already corrected (BD 14°2850)
+Star already corrected (BD 14°3726)
+Star already corrected (BD 14°3727)
+Star already corrected (BD 13°4688)
+Star already corrected (BD 13°5168)
+Star already corrected (BD 12°3382)
+Star already corrected (BD 10°402)
+Star already corrected (BD 10°2494)
+Star already corrected (BD 10°3787)
+Star already corrected (BD 9°852)
+Star already corrected (BD 9°856)
+Star already corrected (BD 9°4813)
+Star already corrected (BD 9°5059)
+Star already corrected (BD 8°492)
+Star already corrected (BD 8°1414)
+Star already corrected (BD 8°1417)
+Star already corrected (BD 8°2631)
+Star already corrected (BD 8°2632)
+Star already corrected (BD 8°3411)
+Star already corrected (BD 7°3199)
+Star already corrected (BD 7°3209)
+Star already corrected (BD 5°3883)
+Star already corrected (BD 5°3897)
+Star already corrected (BD 4°2061)
+Star already corrected (BD 4°2290)
+Star already corrected (BD 4°4993)
+Star already corrected (BD 3°53)
+Star already corrected (BD 3°1471)
+Star already corrected (BD 3°1726)
+Star already corrected (BD 3°3085)
+Star already corrected (BD 2°2556)
+Star already corrected (BD 2°4448)
+Star already corrected (BD 1°1564)
+Star already corrected (BD 1°2129)
+Star already corrected (BD 0°1010)
+Star already corrected (BD 0°1236)
+Star already corrected (BD 0°3946)
+Star already corrected (BD -1°3364)
+Star already corrected (BD -1°4185)
+Star already corrected (BD -1°4186)
+Stars read from Bonner Durchmusterung: 111179
+PPM 89427 is removed because PPM 89428 is nearer to same DM +19°2
+PPM 89736 is removed because PPM 89737 is nearer to same DM +19°61
+PPM 90299 is removed because PPM 90298 is nearer to same DM +19°146
+PPM 90387 is removed because PPM 90384 is nearer to same DM +19°166
+PPM 91409 is removed because PPM 91410 is nearer to same DM +19°329
+PPM 92499 is removed because PPM 92497 is nearer to same DM +19°530
+PPM 92523 is removed because PPM 92524 is nearer to same DM +19°537
+PPM 93019 is removed because PPM 93021 is nearer to same DM +19°607
+PPM 93232 is removed because PPM 93230 is nearer to same DM +19°655
+PPM 94304 is removed because PPM 94305 is nearer to same DM +19°905
+PPM 109837 is removed because PPM 109839 is nearer to same DM +19°4173
+PPM 110278 is removed because PPM 110280 is nearer to same DM +19°4257
+PPM 110697 is removed because PPM 110696 is nearer to same DM +19°4329
+PPM 110850 is removed because PPM 110851 is nearer to same DM +19°4359
+PPM 111321 is removed because PPM 111320 is nearer to same DM +19°4432
+PPM 111509 is removed because PPM 111512 is nearer to same DM +19°4464
+PPM 111616 is removed because PPM 111615 is nearer to same DM +19°4479
+PPM 111961 is removed because PPM 111960 is nearer to same DM +19°4525
+PPM 112437 is removed because PPM 112440 is nearer to same DM +19°4617
+PPM 112533 is removed because PPM 112529 is nearer to same DM +19°4630
+PPM 113352 is removed because PPM 113353 is nearer to same DM +19°4755
+PPM 113542 is removed because PPM 113543 is nearer to same DM +19°4778
+PPM 113971 is removed because PPM 113973 is nearer to same DM +19°4848
+PPM 114371 is removed because PPM 114374 is nearer to same DM +19°4912
+PPM 114941 is removed because PPM 114940 is nearer to same DM +19°5030
+PPM 116035 is removed because PPM 116036 is nearer to same DM +19°5180
+PPM 116124 is removed because PPM 116125 is nearer to same DM +17°5032
+PPM 116190 is removed because PPM 116189 is nearer to same DM +10°7
+PPM 116217 is removed because PPM 116218 is nearer to same DM +18°9
+PPM 116264 is removed because PPM 116261 is nearer to same DM +15°21
+PPM 116277 is removed because PPM 116276 is nearer to same DM +16°15
+PPM 116302 is removed because PPM 116303 is nearer to same DM +15°35
+PPM 116306 is removed because PPM 116308 is nearer to same DM +12°16
+PPM 116370 is removed because PPM 116372 is nearer to same DM +10°34
+PPM 116381 is removed because PPM 116382 is nearer to same DM +12°22
+PPM 116394 is removed because PPM 116392 is nearer to same DM +12°25
+PPM 116465 is removed because PPM 116467 is nearer to same DM +15°59
+PPM 116524 is removed because PPM 116525 is nearer to same DM +15°69
+PPM 116554 is removed because PPM 116555 is nearer to same DM +14°61
+PPM 116593 is removed because PPM 116591 is nearer to same DM +18°76
+PPM 116616 is removed because PPM 116617 is nearer to same DM +16°54
+PPM 116624 is removed because PPM 116625 is nearer to same DM +15°94
+PPM 116648 is removed because PPM 116649 is nearer to same DM +18°86
+Star DM +17°88 not found (corresponding to PPM 116697). Discarding PPM star.
+PPM 116702 is removed because PPM 116703 is nearer to same DM +12°78
+PPM 116820 is removed because PPM 116823 is nearer to same DM +13°114
+PPM 116852 is removed because PPM 116855 is nearer to same DM +14°130
+PPM 116857 is removed because PPM 116860 is nearer to same DM +14°131
+PPM 116881 is removed because PPM 116882 is nearer to same DM +12°109
+PPM 116965 is removed because PPM 116964 is nearer to same DM +14°153
+PPM 116968 is removed because PPM 116967 is nearer to same DM +11°132
+PPM 117000 is removed because PPM 116998 is nearer to same DM +9°121
+PPM 117100 is removed because PPM 117099 is nearer to same DM +15°170
+PPM 117132 is removed because PPM 117131 is nearer to same DM +17°169
+PPM 117154 is removed because PPM 117151 is nearer to same DM +10°147
+PPM 117152 is removed because PPM 117155 is nearer to same DM +17°172
+PPM 117232 is removed because PPM 117233 is nearer to same DM +13°199
+PPM 117275 is removed because PPM 117274 is nearer to same DM +18°180
+PPM 117282 is removed because PPM 117279 is nearer to same DM +16°141
+PPM 117367 is removed because PPM 117366 is nearer to same DM +13°218
+PPM 117375 is removed because PPM 117374 is nearer to same DM +10°191
+PPM 117379 is removed because PPM 117384 is nearer to same DM +13°222
+PPM 117389 is removed because PPM 117388 is nearer to same DM +11°190
+PPM 117408 is removed because PPM 117409 is nearer to same DM +9°181
+PPM 117428 is removed because PPM 117426 is nearer to same DM +16°167
+PPM 117471 is removed because PPM 117472 is nearer to same DM +11°201
+PPM 117629 is removed because PPM 117631 is nearer to same DM +13°270
+PPM 117667 is removed because PPM 117665 is nearer to same DM +12°230
+PPM 117792 is removed because PPM 117793 is nearer to same DM +14°308
+PPM 117891 is removed because PPM 117889 is nearer to same DM +13°324
+PPM 117899 is removed because PPM 117898 is nearer to same DM +10°274
+PPM 117900 is removed because PPM 117897 is nearer to same DM +15°298
+PPM 117917 is removed because PPM 117915 is nearer to same DM +12°275
+PPM 117967 is removed because PPM 117966 is nearer to same DM +14°342
+PPM 117998 is removed because PPM 117997 is nearer to same DM +15°309
+PPM 118012 is removed because PPM 118010 is nearer to same DM +11°290
+PPM 118080 is removed because PPM 118078 is nearer to same DM +10°303
+PPM 118139 is removed because PPM 118140 is nearer to same DM +13°374
+PPM 118212 is removed because PPM 118211 is nearer to same DM +10°323
+PPM 118310 is removed because PPM 118311 is nearer to same DM +17°383
+PPM 118371 is removed because PPM 118369 is nearer to same DM +11°358
+PPM 118378 is removed because PPM 118377 is nearer to same DM +11°359
+PPM 118385 is removed because PPM 118387 is nearer to same DM +11°362
+PPM 118406 is removed because PPM 118407 is nearer to same DM +14°439
+PPM 118444 is removed because PPM 118441 is nearer to same DM +14°444
+PPM 118458 is removed because PPM 118459 is nearer to same DM +15°373
+PPM 118523 is removed because PPM 118522 is nearer to same DM +11°382
+PPM 118542 is removed because PPM 118538 is nearer to same DM +16°345
+PPM 118549 is removed because PPM 118551 is nearer to same DM +9°362
+PPM 118585 is removed because PPM 118584 is nearer to same DM +11°397
+PPM 118630 is removed because PPM 118629 is nearer to same DM +10°385
+PPM 118638 is removed because PPM 118639 is nearer to same DM +11°407
+PPM 118671 is removed because PPM 118670 is nearer to same DM +10°391
+PPM 118701 is removed because PPM 118702 is nearer to same DM +13°480
+PPM 118740 is removed because PPM 118741 is nearer to same DM +13°490
+Star DM +10°402 not found (corresponding to PPM 118757). Discarding PPM star.
+Star DM +10°402 not found (corresponding to PPM 118758). Discarding PPM star.
+PPM 118827 is removed because PPM 118828 is nearer to same DM +17°493
+PPM 118890 is removed because PPM 118888 is nearer to same DM +14°525
+PPM 118923 is removed because PPM 118922 is nearer to same DM +14°536
+PPM 119014 is removed because PPM 119013 is nearer to same DM +19°509
+PPM 119055 is removed because PPM 119056 is nearer to same DM +17°545
+PPM 119155 is removed because PPM 119156 is nearer to same DM +11°487
+PPM 119170 is removed because PPM 119174 is nearer to same DM +12°491
+PPM 119180 is removed because PPM 119182 is nearer to same DM +17°573
+PPM 119188 is removed because PPM 119187 is nearer to same DM +19°554
+PPM 119195 is removed because PPM 119196 is nearer to same DM +19°556
+PPM 119268 is removed because PPM 119266 is nearer to same DM +14°592
+PPM 119391 is removed because PPM 119390 is nearer to same DM +17°635
+PPM 119526 is removed because PPM 119525 is nearer to same DM +11°554
+PPM 119904 is removed because PPM 119903 is nearer to same DM +18°637
+PPM 119907 is removed because PPM 119906 is nearer to same DM +17°724
+PPM 119916 is removed because PPM 119918 is nearer to same DM +9°583
+PPM 119951 is removed because PPM 119953 is nearer to same DM +16°608
+PPM 120013 is removed because PPM 120014 is nearer to same DM +19°737
+PPM 120032 is removed because PPM 120033 is nearer to same DM +16°623
+PPM 120070 is removed because PPM 120071 is nearer to same DM +15°656
+PPM 120273 is removed because PPM 120274 is nearer to same DM +10°639
+PPM 120279 is removed because PPM 120278 is nearer to same DM +17°789
+PPM 120505 is removed because PPM 120503 is nearer to same DM +11°700
+PPM 120517 is removed because PPM 120519 is nearer to same DM +11°702
+PPM 120581 is removed because PPM 120579 is nearer to same DM +14°828
+PPM 120669 is removed because PPM 120668 is nearer to same DM +13°822
+PPM 120683 is removed because PPM 120686 is nearer to same DM +12°740
+PPM 120779 is removed because PPM 120780 is nearer to same DM +18°811
+PPM 121072 is removed because PPM 121074 is nearer to same DM +16°794
+PPM 121098 is removed because PPM 121099 is nearer to same DM +15°852
+PPM 121245 is removed because PPM 121246 is nearer to same DM +15°887
+PPM 121265 is removed because PPM 121264 is nearer to same DM +12°858
+PPM 121385 is removed because PPM 121384 is nearer to same DM +10°885
+PPM 121482 is removed because PPM 121483 is nearer to same DM +17°1032
+PPM 121499 is removed because PPM 121500 is nearer to same DM +10°910
+PPM 121545 is removed because PPM 121546 is nearer to same DM +17°1043
+PPM 121676 is removed because PPM 121673 is nearer to same DM +19°1151
+PPM 121714 is removed because PPM 121716 is nearer to same DM +11°989
+PPM 121776 is removed because PPM 121779 is nearer to same DM +16°968
+PPM 121881 is removed because PPM 121880 is nearer to same DM +14°1139
+PPM 121902 is removed because PPM 121905 is nearer to same DM +10°1004
+PPM 121952 is removed because PPM 121953 is nearer to same DM +17°1135
+PPM 121967 is removed because PPM 121970 is nearer to same DM +13°1124
+PPM 122176 is removed because PPM 122178 is nearer to same DM +10°1067
+PPM 122312 is removed because PPM 122310 is nearer to same DM +13°1207
+PPM 122627 is removed because PPM 122629 is nearer to same DM +17°1286
+PPM 122968 is removed because PPM 122969 is nearer to same DM +13°1392
+PPM 123353 is removed because PPM 123358 is nearer to same DM +17°1465
+PPM 123512 is removed because PPM 123511 is nearer to same DM +17°1491
+PPM 123544 is removed because PPM 123545 is nearer to same DM +17°1495
+PPM 123591 is removed because PPM 123590 is nearer to same DM +17°1506
+PPM 123617 is removed because PPM 123614 is nearer to same DM +15°1484
+PPM 123759 is removed because PPM 123758 is nearer to same DM +12°1471
+PPM 123776 is removed because PPM 123778 is nearer to same DM +16°1429
+PPM 123842 is removed because PPM 123840 is nearer to same DM +13°1626
+PPM 123952 is removed because PPM 123950 is nearer to same DM +10°1521
+PPM 123981 is removed because PPM 123983 is nearer to same DM +11°1580
+PPM 124002 is removed because PPM 124001 is nearer to same DM +14°1665
+PPM 124005 is removed because PPM 124004 is nearer to same DM +15°1571
+PPM 124014 is removed because PPM 124013 is nearer to same DM +18°1618
+PPM 124092 is removed because PPM 124093 is nearer to same DM +14°1681
+PPM 124113 is removed because PPM 124111 is nearer to same DM +16°1497
+PPM 124219 is removed because PPM 124218 is nearer to same DM +18°1676
+PPM 124266 is removed because PPM 124265 is nearer to same DM +18°1692
+PPM 124322 is removed because PPM 124321 is nearer to same DM +18°1713
+PPM 124524 is removed because PPM 124523 is nearer to same DM +17°1690
+PPM 124569 is removed because PPM 124570 is nearer to same DM +15°1697
+PPM 124582 is removed because PPM 124581 is nearer to same DM +18°1777
+PPM 124647 is removed because PPM 124648 is nearer to same DM +13°1804
+PPM 124667 is removed because PPM 124665 is nearer to same DM +15°1713
+PPM 124746 is removed because PPM 124747 is nearer to same DM +17°1733
+PPM 124775 is removed because PPM 124774 is nearer to same DM +12°1752
+PPM 124818 is removed because PPM 124819 is nearer to same DM +12°1760
+PPM 124847 is removed because PPM 124846 is nearer to same DM +14°1822
+PPM 124877 is removed because PPM 124873 is nearer to same DM +11°1756
+PPM 124876 is removed because PPM 124880 is nearer to same DM +18°1848
+PPM 124893 is removed because PPM 124892 is nearer to same DM +15°1759
+PPM 124916 is removed because PPM 124921 is nearer to same DM +16°1645
+PPM 125125 is removed because PPM 125124 is nearer to same DM +18°1913
+PPM 125306 is removed because PPM 125307 is nearer to same DM +17°1852
+PPM 125368 is removed because PPM 125366 is nearer to same DM +15°1835
+PPM 125619 is removed because PPM 125618 is nearer to same DM +12°1891
+PPM 125697 is removed because PPM 125699 is nearer to same DM +13°1979
+PPM 125736 is removed because PPM 125737 is nearer to same DM +11°1913
+PPM 125791 is removed because PPM 125790 is nearer to same DM +15°1912
+PPM 125794 is removed because PPM 125792 is nearer to same DM +18°2050
+Star DM +12°1926 not found (corresponding to PPM 125829). Discarding PPM star.
+PPM 125884 is removed because PPM 125883 is nearer to same DM +13°2010
+PPM 125888 is removed because PPM 125887 is nearer to same DM +14°1992
+PPM 126002 is removed because PPM 126001 is nearer to same DM +13°2023
+PPM 126014 is removed because PPM 126013 is nearer to same DM +15°1957
+PPM 126127 is removed because PPM 126126 is nearer to same DM +12°1970
+PPM 126150 is removed because PPM 126152 is nearer to same DM +15°1986
+PPM 126178 is removed because PPM 126175 is nearer to same DM +13°2049
+PPM 126220 is removed because PPM 126223 is nearer to same DM +13°2054
+PPM 126226 is removed because PPM 126227 is nearer to same DM +11°1998
+PPM 126302 is removed because PPM 126303 is nearer to same DM +12°2010
+PPM 126346 is removed because PPM 126345 is nearer to same DM +14°2075
+PPM 126498 is removed because PPM 126497 is nearer to same DM +13°2097
+PPM 126525 is removed because PPM 126527 is nearer to same DM +11°2052
+PPM 126624 is removed because PPM 126623 is nearer to same DM +19°2234
+PPM 126717 is removed because PPM 126716 is nearer to same DM +18°2251
+PPM 126719 is removed because PPM 126722 is nearer to same DM +18°2253
+PPM 126791 is removed because PPM 126794 is nearer to same DM +17°2133
+PPM 126838 is removed because PPM 126839 is nearer to same DM +17°2143
+PPM 126868 is removed because PPM 126869 is nearer to same DM +18°2280
+PPM 126908 is removed because PPM 126909 is nearer to same DM +15°2130
+PPM 126913 is removed because PPM 126916 is nearer to same DM +12°2111
+PPM 126928 is removed because PPM 126930 is nearer to same DM +10°2072
+PPM 126931 is removed because PPM 126930 is nearer to same DM +10°2072
+PPM 127077 is removed because PPM 127076 is nearer to same DM +17°2167
+PPM 127099 is removed because PPM 127098 is nearer to same DM +11°2163
+PPM 127160 is removed because PPM 127161 is nearer to same DM +17°2178
+PPM 127280 is removed because PPM 127279 is nearer to same DM +12°2186
+PPM 127306 is removed because PPM 127305 is nearer to same DM +12°2190
+PPM 127316 is removed because PPM 127317 is nearer to same DM +14°2232
+PPM 127413 is removed because PPM 127414 is nearer to same DM +18°2366
+PPM 127467 is removed because PPM 127468 is nearer to same DM +12°2219
+PPM 127508 is removed because PPM 127509 is nearer to same DM +15°2220
+PPM 127562 is removed because PPM 127561 is nearer to same DM +15°2226
+PPM 127605 is removed because PPM 127606 is nearer to same DM +19°2363
+PPM 127688 is removed because PPM 127685 is nearer to same DM +14°2295
+PPM 127694 is removed because PPM 127693 is nearer to same DM +13°2304
+PPM 127715 is removed because PPM 127716 is nearer to same DM +13°2306
+PPM 127740 is removed because PPM 127739 is nearer to same DM +13°2311
+PPM 127800 is removed because PPM 127798 is nearer to same DM +14°2312
+PPM 127839 is removed because PPM 127840 is nearer to same DM +18°2422
+PPM 127864 is removed because PPM 127865 is nearer to same DM +14°2324
+PPM 127882 is removed because PPM 127883 is nearer to same DM +12°2281
+PPM 127919 is removed because PPM 127918 is nearer to same DM +15°2277
+PPM 127986 is removed because PPM 127985 is nearer to same DM +11°2311
+PPM 128208 is removed because PPM 128210 is nearer to same DM +15°2327
+PPM 128242 is removed because PPM 128243 is nearer to same DM +14°2386
+PPM 128260 is removed because PPM 128258 is nearer to same DM +12°2337
+PPM 128263 is removed because PPM 128264 is nearer to same DM +19°2455
+PPM 128295 is removed because PPM 128294 is nearer to same DM +12°2340
+PPM 128323 is removed because PPM 128322 is nearer to same DM +15°2345
+PPM 128332 is removed because PPM 128331 is nearer to same DM +14°2400
+PPM 128378 is removed because PPM 128379 is nearer to same DM +14°2409
+PPM 128393 is removed because PPM 128392 is nearer to same DM +12°2350
+PPM 128445 is removed because PPM 128446 is nearer to same DM +18°2516
+PPM 128466 is removed because PPM 128467 is nearer to same DM +17°2388
+PPM 128475 is removed because PPM 128477 is nearer to same DM +13°2443
+PPM 128503 is removed because PPM 128501 is nearer to same DM +19°2495
+PPM 128510 is removed because PPM 128509 is nearer to same DM +10°2331
+PPM 128514 is removed because PPM 128513 is nearer to same DM +15°2372
+PPM 128515 is removed because PPM 128516 is nearer to same DM +12°2372
+PPM 128620 is removed because PPM 128621 is nearer to same DM +16°2307
+PPM 128701 is removed because PPM 128700 is nearer to same DM +18°2552
+PPM 128822 is removed because PPM 128823 is nearer to same DM +12°2429
+PPM 128859 is removed because PPM 128858 is nearer to same DM +16°2347
+PPM 128860 is removed because PPM 128861 is nearer to same DM +11°2435
+PPM 128908 is removed because PPM 128910 is nearer to same DM +15°2438
+PPM 128911 is removed because PPM 128910 is nearer to same DM +15°2438
+PPM 128945 is removed because PPM 128944 is nearer to same DM +12°2446
+PPM 129005 is removed because PPM 129006 is nearer to same DM +14°2495
+PPM 129142 is removed because PPM 129143 is nearer to same DM +10°2438
+PPM 129165 is removed because PPM 129167 is nearer to same DM +19°2584
+PPM 129221 is removed because PPM 129222 is nearer to same DM +15°2491
+PPM 129304 is removed because PPM 129303 is nearer to same DM +10°2466
+PPM 129306 is removed because PPM 129303 is nearer to same DM +10°2466
+PPM 129358 is removed because PPM 129357 is nearer to same DM +14°2548
+PPM 129400 is removed because PPM 129399 is nearer to same DM +19°2613
+PPM 129411 is removed because PPM 129412 is nearer to same DM +15°2515
+PPM 129449 is removed because PPM 129445 is nearer to same DM +12°2529
+PPM 129466 is removed because PPM 129467 is nearer to same DM +19°2618
+Star DM +10°2494 not found (corresponding to PPM 129489). Discarding PPM star.
+PPM 129505 is removed because PPM 129506 is nearer to same DM +19°2622
+PPM 129511 is removed because PPM 129509 is nearer to same DM +15°2531
+PPM 129760 is removed because PPM 129758 is nearer to same DM +16°2497
+PPM 129763 is removed because PPM 129762 is nearer to same DM +18°2722
+PPM 129804 is removed because PPM 129803 is nearer to same DM +11°2562
+PPM 129820 is removed because PPM 129819 is nearer to same DM +15°2577
+PPM 129836 is removed because PPM 129835 is nearer to same DM +14°2620
+PPM 130011 is removed because PPM 130010 is nearer to same DM +18°2768
+PPM 130040 is removed because PPM 130041 is nearer to same DM +19°2710
+PPM 130092 is removed because PPM 130096 is nearer to same DM +18°2786
+PPM 130194 is removed because PPM 130193 is nearer to same DM +15°2646
+PPM 130199 is removed because PPM 130202 is nearer to same DM +12°2643
+PPM 130219 is removed because PPM 130220 is nearer to same DM +12°2646
+PPM 130237 is removed because PPM 130236 is nearer to same DM +16°2597
+PPM 130424 is removed because PPM 130421 is nearer to same DM +19°2772
+PPM 130463 is removed because PPM 130462 is nearer to same DM +11°2660
+PPM 130542 is removed because PPM 130543 is nearer to same DM +19°2803
+PPM 130550 is removed because PPM 130551 is nearer to same DM +11°2673
+PPM 130651 is removed because PPM 130650 is nearer to same DM +17°2752
+PPM 130707 is removed because PPM 130708 is nearer to same DM +12°2717
+PPM 130724 is removed because PPM 130726 is nearer to same DM +15°2735
+PPM 130803 is removed because PPM 130804 is nearer to same DM +13°2830
+PPM 131002 is removed because PPM 131004 is nearer to same DM +18°2957
+PPM 131044 is removed because PPM 131043 is nearer to same DM +15°2803
+PPM 131058 is removed because PPM 131059 is nearer to same DM +16°2719
+PPM 131073 is removed because PPM 131072 is nearer to same DM +16°2724
+PPM 131219 is removed because PPM 131220 is nearer to same DM +19°2939
+PPM 131291 is removed because PPM 131290 is nearer to same DM +10°2823
+PPM 131347 is removed because PPM 131346 is nearer to same DM +11°2796
+PPM 131426 is removed because PPM 131427 is nearer to same DM +15°2867
+PPM 131427 is removed because PPM 131428 is nearer to same DM +15°2867
+PPM 131442 is removed because PPM 131444 is nearer to same DM +13°2953
+PPM 131457 is removed because PPM 131458 is nearer to same DM +16°2791
+PPM 131465 is removed because PPM 131464 is nearer to same DM +13°2954
+PPM 131591 is removed because PPM 131592 is nearer to same DM +12°2875
+PPM 131670 is removed because PPM 131671 is nearer to same DM +13°3000
+PPM 131699 is removed because PPM 131698 is nearer to same DM +15°2915
+PPM 131748 is removed because PPM 131749 is nearer to same DM +15°2919
+PPM 131811 is removed because PPM 131810 is nearer to same DM +10°2925
+PPM 131833 is removed because PPM 131831 is nearer to same DM +17°2936
+PPM 131838 is removed because PPM 131840 is nearer to same DM +17°2938
+PPM 131885 is removed because PPM 131886 is nearer to same DM +13°3045
+PPM 131893 is removed because PPM 131894 is nearer to same DM +12°2930
+PPM 132001 is removed because PPM 132002 is nearer to same DM +12°2948
+PPM 132076 is removed because PPM 132077 is nearer to same DM +12°2970
+PPM 132108 is removed because PPM 132110 is nearer to same DM +15°2965
+PPM 132166 is removed because PPM 132169 is nearer to same DM +19°3077
+PPM 132193 is removed because PPM 132192 is nearer to same DM +15°2976
+PPM 132293 is removed because PPM 132291 is nearer to same DM +13°3136
+PPM 132378 is removed because PPM 132376 is nearer to same DM +10°3012
+PPM 132408 is removed because PPM 132409 is nearer to same DM +19°3113
+PPM 132466 is removed because PPM 132468 is nearer to same DM +15°3025
+PPM 132519 is removed because PPM 132520 is nearer to same DM +13°3178
+PPM 132576 is removed because PPM 132578 is nearer to same DM +13°3196
+PPM 132590 is removed because PPM 132591 is nearer to same DM +11°3026
+PPM 132595 is removed because PPM 132594 is nearer to same DM +13°3203
+PPM 132952 is removed because PPM 132953 is nearer to same DM +11°3095
+PPM 133088 is removed because PPM 133089 is nearer to same DM +17°3181
+PPM 133089 is removed because PPM 133092 is nearer to same DM +17°3181
+PPM 133110 is removed because PPM 133109 is nearer to same DM +11°3130
+PPM 133179 is removed because PPM 133181 is nearer to same DM +17°3202
+PPM 133247 is removed because PPM 133244 is nearer to same DM +19°3280
+PPM 133283 is removed because PPM 133280 is nearer to same DM +16°3160
+PPM 133357 is removed because PPM 133356 is nearer to same DM +13°3365
+PPM 133481 is removed because PPM 133483 is nearer to same DM +14°3265
+PPM 133488 is removed because PPM 133487 is nearer to same DM +10°3225
+PPM 133509 is removed because PPM 133510 is nearer to same DM +16°3211
+PPM 133535 is removed because PPM 133536 is nearer to same DM +18°3396
+PPM 133569 is removed because PPM 133568 is nearer to same DM +12°3253
+PPM 133571 is removed because PPM 133568 is nearer to same DM +12°3253
+PPM 133682 is removed because PPM 133680 is nearer to same DM +17°3300
+PPM 133811 is removed because PPM 133810 is nearer to same DM +14°3335
+PPM 133840 is removed because PPM 133842 is nearer to same DM +15°3273
+PPM 133879 is removed because PPM 133878 is nearer to same DM +15°3283
+PPM 133882 is removed because PPM 133883 is nearer to same DM +14°3348
+PPM 133898 is removed because PPM 133894 is nearer to same DM +19°3442
+PPM 133917 is removed because PPM 133919 is nearer to same DM +14°3356
+PPM 133925 is removed because PPM 133926 is nearer to same DM +18°3489
+PPM 133947 is removed because PPM 133946 is nearer to same DM +14°3357
+PPM 133991 is removed because PPM 133990 is nearer to same DM +10°3323
+PPM 133998 is removed because PPM 133997 is nearer to same DM +16°3314
+Star DM +19°3508 not found (corresponding to PPM 134177). Discarding PPM star.
+PPM 134189 is removed because PPM 134190 is nearer to same DM +12°3370
+PPM 134216 is removed because PPM 134215 is nearer to same DM +11°3331
+PPM 134249 is removed because PPM 134248 is nearer to same DM +12°3383
+PPM 134274 is removed because PPM 134275 is nearer to same DM +13°3524
+PPM 134318 is removed because PPM 134316 is nearer to same DM +11°3352
+PPM 134324 is removed because PPM 134322 is nearer to same DM +12°3403
+PPM 134415 is removed because PPM 134414 is nearer to same DM +10°3434
+PPM 134416 is removed because PPM 134414 is nearer to same DM +10°3434
+PPM 134458 is removed because PPM 134457 is nearer to same DM +19°3567
+PPM 134763 is removed because PPM 134764 is nearer to same DM +11°3473
+PPM 134852 is removed because PPM 134853 is nearer to same DM +10°3547
+PPM 134878 is removed because PPM 134877 is nearer to same DM +13°3680
+PPM 134934 is removed because PPM 134933 is nearer to same DM +11°3513
+PPM 134998 is removed because PPM 134995 is nearer to same DM +14°3595
+PPM 135013 is removed because PPM 135015 is nearer to same DM +10°3599
+PPM 135103 is removed because PPM 135104 is nearer to same DM +19°3753
+PPM 135116 is removed because PPM 135115 is nearer to same DM +11°3570
+PPM 135124 is removed because PPM 135123 is nearer to same DM +19°3759
+PPM 135156 is removed because PPM 135157 is nearer to same DM +16°3598
+PPM 135387 is removed because PPM 135389 is nearer to same DM +14°3680
+PPM 135476 is removed because PPM 135475 is nearer to same DM +13°3812
+PPM 135540 is removed because PPM 135539 is nearer to same DM +12°3733
+Star DM +14°3726 not found (corresponding to PPM 135543). Discarding PPM star.
+Star DM +14°3727 not found (corresponding to PPM 135549). Discarding PPM star.
+PPM 135571 is removed because PPM 135573 is nearer to same DM +13°3841
+PPM 135598 is removed because PPM 135599 is nearer to same DM +14°3739
+PPM 135600 is removed because PPM 135601 is nearer to same DM +12°3750
+PPM 135718 is removed because PPM 135719 is nearer to same DM +16°3713
+PPM 135723 is removed because PPM 135722 is nearer to same DM +12°3783
+PPM 135736 is removed because PPM 135734 is nearer to same DM +14°3768
+PPM 135739 is removed because PPM 135738 is nearer to same DM +10°3774
+Star DM +10°3787 not found (corresponding to PPM 135805). Discarding PPM star.
+PPM 135834 is removed because PPM 135833 is nearer to same DM +19°3920
+PPM 135893 is removed because PPM 135894 is nearer to same DM +17°3879
+PPM 136000 is removed because PPM 136001 is nearer to same DM +14°3838
+PPM 136159 is removed because PPM 136160 is nearer to same DM +18°4043
+PPM 136176 is removed because PPM 136177 is nearer to same DM +14°3888
+PPM 136217 is removed because PPM 136219 is nearer to same DM +15°3795
+PPM 136237 is removed because PPM 136238 is nearer to same DM +16°3840
+PPM 136348 is removed because PPM 136349 is nearer to same DM +11°3850
+PPM 136381 is removed because PPM 136380 is nearer to same DM +17°3984
+PPM 136412 is removed because PPM 136413 is nearer to same DM +11°3867
+PPM 136425 is removed because PPM 136427 is nearer to same DM +9°4129
+PPM 136449 is removed because PPM 136453 is nearer to same DM +10°3938
+PPM 136463 is removed because PPM 136461 is nearer to same DM +16°3884
+PPM 136489 is removed because PPM 136491 is nearer to same DM +17°3999
+PPM 136490 is removed because PPM 136493 is nearer to same DM +10°3955
+PPM 136583 is removed because PPM 136581 is nearer to same DM +10°3980
+PPM 136663 is removed because PPM 136660 is nearer to same DM +12°3998
+PPM 136677 is removed because PPM 136675 is nearer to same DM +10°4000
+PPM 136715 is removed because PPM 136714 is nearer to same DM +9°4197
+PPM 136729 is removed because PPM 136730 is nearer to same DM +13°4093
+PPM 136757 is removed because PPM 136758 is nearer to same DM +11°3939
+PPM 136815 is removed because PPM 136821 is nearer to same DM +16°3972
+PPM 136824 is removed because PPM 136825 is nearer to same DM +17°4055
+PPM 136871 is removed because PPM 136872 is nearer to same DM +12°4056
+PPM 136875 is removed because PPM 136877 is nearer to same DM +17°4069
+PPM 136943 is removed because PPM 136940 is nearer to same DM +10°4045
+PPM 136940 is removed because PPM 136944 is nearer to same DM +10°4045
+PPM 136968 is removed because PPM 136970 is nearer to same DM +11°3984
+PPM 136988 is removed because PPM 136987 is nearer to same DM +15°3945
+PPM 137171 is removed because PPM 137173 is nearer to same DM +17°4136
+Star DM +18°4290 not found (corresponding to PPM 137175). Discarding PPM star.
+PPM 137178 is removed because PPM 137179 is nearer to same DM +12°4126
+PPM 137269 is removed because PPM 137270 is nearer to same DM +14°4104
+PPM 137315 is removed because PPM 137321 is nearer to same DM +16°4086
+PPM 137352 is removed because PPM 137353 is nearer to same DM +18°4340
+PPM 137371 is removed because PPM 137369 is nearer to same DM +11°4075
+PPM 137387 is removed because PPM 137388 is nearer to same DM +17°4185
+PPM 137443 is removed because PPM 137442 is nearer to same DM +10°4142
+PPM 137450 is removed because PPM 137449 is nearer to same DM +12°4191
+PPM 137473 is removed because PPM 137472 is nearer to same DM +18°4360
+PPM 137498 is removed because PPM 137497 is nearer to same DM +12°4197
+PPM 137520 is removed because PPM 137519 is nearer to same DM +15°4030
+PPM 137533 is removed because PPM 137532 is nearer to same DM +14°4157
+PPM 137547 is removed because PPM 137548 is nearer to same DM +18°4370
+PPM 137555 is removed because PPM 137554 is nearer to same DM +16°4120
+PPM 137559 is removed because PPM 137552 is nearer to same DM +12°4208
+PPM 137560 is removed because PPM 137561 is nearer to same DM +16°4122
+PPM 137572 is removed because PPM 137570 is nearer to same DM +19°4274
+PPM 137578 is removed because PPM 137577 is nearer to same DM +15°4038
+PPM 137627 is removed because PPM 137626 is nearer to same DM +18°4383
+PPM 137633 is removed because PPM 137636 is nearer to same DM +11°4130
+PPM 137643 is removed because PPM 137642 is nearer to same DM +12°4223
+PPM 137659 is removed because PPM 137655 is nearer to same DM +16°4145
+PPM 137660 is removed because PPM 137662 is nearer to same DM +10°4176
+PPM 137666 is removed because PPM 137665 is nearer to same DM +11°4137
+PPM 137681 is removed because PPM 137680 is nearer to same DM +15°4047
+PPM 137688 is removed because PPM 137690 is nearer to same DM +13°4273
+PPM 137699 is removed because PPM 137698 is nearer to same DM +9°4406
+PPM 137706 is removed because PPM 137703 is nearer to same DM +16°4152
+PPM 137708 is removed because PPM 137712 is nearer to same DM +16°4153
+PPM 137714 is removed because PPM 137715 is nearer to same DM +16°4154
+PPM 137745 is removed because PPM 137749 is nearer to same DM +15°4063
+PPM 137755 is removed because PPM 137758 is nearer to same DM +10°4191
+PPM 137770 is removed because PPM 137769 is nearer to same DM +16°4167
+PPM 137779 is removed because PPM 137778 is nearer to same DM +11°4158
+PPM 137814 is removed because PPM 137812 is nearer to same DM +18°4415
+PPM 137848 is removed because PPM 137847 is nearer to same DM +13°4303
+PPM 137852 is removed because PPM 137851 is nearer to same DM +18°4423
+PPM 137865 is removed because PPM 137866 is nearer to same DM +14°4221
+PPM 137867 is removed because PPM 137863 is nearer to same DM +16°4182
+PPM 137928 is removed because PPM 137930 is nearer to same DM +16°4196
+PPM 137958 is removed because PPM 137964 is nearer to same DM +11°4185
+PPM 137975 is removed because PPM 137974 is nearer to same DM +12°4265
+PPM 137980 is removed because PPM 137982 is nearer to same DM +19°4337
+PPM 137989 is removed because PPM 137991 is nearer to same DM +9°4461
+PPM 137998 is removed because PPM 137996 is nearer to same DM +17°4268
+PPM 137999 is removed because PPM 137997 is nearer to same DM +19°4342
+PPM 138003 is removed because PPM 138005 is nearer to same DM +15°4110
+PPM 138006 is removed because PPM 138005 is nearer to same DM +15°4110
+PPM 138046 is removed because PPM 138048 is nearer to same DM +11°4204
+PPM 138059 is removed because PPM 138060 is nearer to same DM +18°4447
+PPM 138086 is removed because PPM 138083 is nearer to same DM +16°4219
+PPM 138100 is removed because PPM 138101 is nearer to same DM +14°4256
+PPM 138103 is removed because PPM 138104 is nearer to same DM +18°4454
+PPM 110888 is removed because PPM 138109 is nearer to same DM +19°4364
+PPM 138110 is removed because PPM 138107 is nearer to same DM +17°4289
+PPM 138124 is removed because PPM 138125 is nearer to same DM +12°4291
+PPM 138133 is removed because PPM 138132 is nearer to same DM +18°4459
+PPM 138141 is removed because PPM 138146 is nearer to same DM +14°4262
+PPM 138177 is removed because PPM 138181 is nearer to same DM +14°4267
+PPM 138213 is removed because PPM 138212 is nearer to same DM +15°4143
+PPM 138234 is removed because PPM 138236 is nearer to same DM +17°4309
+PPM 138276 is removed because PPM 138281 is nearer to same DM +13°4382
+PPM 138282 is removed because PPM 138277 is nearer to same DM +19°4396
+PPM 138296 is removed because PPM 138297 is nearer to same DM +14°4284
+PPM 138300 is removed because PPM 138301 is nearer to same DM +12°4320
+PPM 138302 is removed because PPM 138303 is nearer to same DM +9°4523
+PPM 138320 is removed because PPM 138321 is nearer to same DM +18°4493
+PPM 138322 is removed because PPM 138318 is nearer to same DM +15°4157
+PPM 138340 is removed because PPM 138341 is nearer to same DM +11°4260
+PPM 138369 is removed because PPM 138371 is nearer to same DM +12°4337
+PPM 138377 is removed because PPM 138373 is nearer to same DM +12°4338
+PPM 138400 is removed because PPM 138401 is nearer to same DM +13°4402
+PPM 138420 is removed because PPM 138421 is nearer to same DM +17°4334
+PPM 138426 is removed because PPM 138424 is nearer to same DM +16°4273
+PPM 138447 is removed because PPM 138445 is nearer to same DM +18°4514
+PPM 138479 is removed because PPM 138480 is nearer to same DM +17°4340
+PPM 138481 is removed because PPM 138478 is nearer to same DM +14°4322
+PPM 138496 is removed because PPM 138495 is nearer to same DM +13°4418
+PPM 138507 is removed because PPM 138508 is nearer to same DM +10°4307
+PPM 138521 is removed because PPM 138517 is nearer to same DM +15°4183
+PPM 138523 is removed because PPM 138522 is nearer to same DM +14°4331
+Star DM +16°4290 not found (corresponding to PPM 138552). Discarding PPM star.
+PPM 138559 is removed because PPM 138560 is nearer to same DM +17°4347
+PPM 138579 is removed because PPM 138577 is nearer to same DM +9°4573
+PPM 138585 is removed because PPM 138586 is nearer to same DM +12°4375
+PPM 138619 is removed because PPM 138617 is nearer to same DM +13°4446
+PPM 138625 is removed because PPM 138623 is nearer to same DM +13°4448
+PPM 138669 is removed because PPM 138668 is nearer to same DM +18°4540
+PPM 138740 is removed because PPM 138743 is nearer to same DM +16°4323
+PPM 138756 is removed because PPM 138757 is nearer to same DM +9°4599
+PPM 138778 is removed because PPM 138779 is nearer to same DM +10°4349
+PPM 138801 is removed because PPM 138802 is nearer to same DM +12°4421
+PPM 138811 is removed because PPM 138810 is nearer to same DM +16°4338
+PPM 138824 is removed because PPM 138822 is nearer to same DM +17°4378
+PPM 138879 is removed because PPM 138878 is nearer to same DM +13°4495
+PPM 138903 is removed because PPM 138904 is nearer to same DM +19°4494
+PPM 138910 is removed because PPM 138909 is nearer to same DM +19°4495
+PPM 138960 is removed because PPM 138964 is nearer to same DM +10°4372
+PPM 138973 is removed because PPM 138976 is nearer to same DM +10°4374
+PPM 139026 is removed because PPM 139021 is nearer to same DM +12°4464
+PPM 139077 is removed because PPM 139078 is nearer to same DM +14°4433
+PPM 139092 is removed because PPM 139097 is nearer to same DM +15°4270
+PPM 139098 is removed because PPM 139096 is nearer to same DM +11°4393
+PPM 139100 is removed because PPM 139099 is nearer to same DM +12°4474
+PPM 139115 is removed because PPM 139110 is nearer to same DM +14°4440
+PPM 139119 is removed because PPM 139118 is nearer to same DM +11°4398
+PPM 139124 is removed because PPM 139122 is nearer to same DM +10°4390
+PPM 139155 is removed because PPM 139156 is nearer to same DM +9°4651
+PPM 139191 is removed because PPM 139190 is nearer to same DM +11°4409
+PPM 139197 is removed because PPM 139194 is nearer to same DM +10°4400
+PPM 139236 is removed because PPM 139237 is nearer to same DM +12°4494
+PPM 139248 is removed because PPM 139251 is nearer to same DM +17°4448
+PPM 139280 is removed because PPM 139281 is nearer to same DM +13°4570
+Star DM +17°4475 not found (corresponding to PPM 139371). Discarding PPM star.
+Star DM +17°4475 not found (corresponding to PPM 139373). Discarding PPM star.
+PPM 139379 is removed because PPM 139380 is nearer to same DM +15°4300
+PPM 139391 is removed because PPM 139388 is nearer to same DM +16°4416
+PPM 139402 is removed because PPM 139403 is nearer to same DM +10°4428
+PPM 139406 is removed because PPM 139408 is nearer to same DM +15°4304
+PPM 139452 is removed because PPM 139451 is nearer to same DM +12°4519
+PPM 139474 is removed because PPM 139476 is nearer to same DM +18°4680
+PPM 139496 is removed because PPM 139497 is nearer to same DM +12°4527
+PPM 139532 is removed because PPM 139529 is nearer to same DM +12°4535
+PPM 139563 is removed because PPM 139565 is nearer to same DM +11°4468
+PPM 139575 is removed because PPM 139574 is nearer to same DM +12°4541
+PPM 139597 is removed because PPM 139598 is nearer to same DM +12°4544
+PPM 139682 is removed because PPM 139681 is nearer to same DM +16°4466
+PPM 139705 is removed because PPM 139708 is nearer to same DM +15°4357
+PPM 139791 is removed because PPM 139792 is nearer to same DM +11°4510
+PPM 139794 is removed because PPM 139793 is nearer to same DM +10°4491
+PPM 139798 is removed because PPM 139801 is nearer to same DM +18°4739
+PPM 139809 is removed because PPM 139808 is nearer to same DM +9°4746
+PPM 139849 is removed because PPM 139851 is nearer to same DM +10°4498
+PPM 139896 is removed because PPM 139895 is nearer to same DM +12°4590
+PPM 139948 is removed because PPM 139944 is nearer to same DM +12°4596
+Star DM +15°4392 not found (corresponding to PPM 139970). Discarding PPM star.
+PPM 139985 is removed because PPM 139987 is nearer to same DM +16°4505
+PPM 139993 is removed because PPM 139992 is nearer to same DM +12°4609
+PPM 140004 is removed because PPM 140005 is nearer to same DM +17°4562
+PPM 140006 is removed because PPM 140002 is nearer to same DM +16°4509
+Star DM +13°4688 not found (corresponding to PPM 140046). Discarding PPM star.
+PPM 140055 is removed because PPM 140054 is nearer to same DM +18°4776
+Star DM +9°4813 not found (corresponding to PPM 140144). Discarding PPM star.
+PPM 140151 is removed because PPM 140155 is nearer to same DM +13°4709
+PPM 140189 is removed because PPM 140187 is nearer to same DM +10°4554
+PPM 140192 is removed because PPM 140194 is nearer to same DM +10°4555
+PPM 140241 is removed because PPM 140240 is nearer to same DM +10°4563
+PPM 140303 is removed because PPM 140301 is nearer to same DM +14°4628
+PPM 140392 is removed because PPM 140394 is nearer to same DM +11°4615
+PPM 140402 is removed because PPM 140399 is nearer to same DM +10°4589
+PPM 140407 is removed because PPM 140410 is nearer to same DM +10°4590
+PPM 140411 is removed because PPM 140409 is nearer to same DM +9°4861
+PPM 140425 is removed because PPM 140424 is nearer to same DM +18°4830
+PPM 140428 is removed because PPM 140427 is nearer to same DM +13°4753
+PPM 140448 is removed because PPM 140445 is nearer to same DM +12°4657
+PPM 140452 is removed because PPM 140451 is nearer to same DM +10°4598
+PPM 140455 is removed because PPM 140457 is nearer to same DM +13°4757
+PPM 140460 is removed because PPM 140461 is nearer to same DM +16°4574
+PPM 140501 is removed because PPM 140502 is nearer to same DM +18°4841
+PPM 140534 is removed because PPM 140536 is nearer to same DM +12°4670
+PPM 140540 is removed because PPM 140541 is nearer to same DM +12°4671
+PPM 140548 is removed because PPM 140549 is nearer to same DM +15°4480
+PPM 140589 is removed because PPM 140588 is nearer to same DM +10°4618
+PPM 140609 is removed because PPM 140606 is nearer to same DM +10°4622
+PPM 140610 is removed because PPM 140612 is nearer to same DM +13°4780
+PPM 140671 is removed because PPM 140669 is nearer to same DM +9°4901
+PPM 140784 is removed because PPM 140789 is nearer to same DM +12°4710
+PPM 140791 is removed because PPM 140792 is nearer to same DM +19°4814
+PPM 140833 is removed because PPM 140832 is nearer to same DM +19°4822
+PPM 140851 is removed because PPM 140852 is nearer to same DM +15°4528
+PPM 140868 is removed because PPM 140869 is nearer to same DM +17°4665
+PPM 140892 is removed because PPM 140893 is nearer to same DM +16°4640
+PPM 140942 is removed because PPM 140941 is nearer to same DM +14°4713
+PPM 141065 is removed because PPM 141066 is nearer to same DM +9°4984
+PPM 141083 is removed because PPM 141082 is nearer to same DM +16°4670
+PPM 141099 is removed because PPM 141101 is nearer to same DM +14°4741
+PPM 141110 is removed because PPM 141112 is nearer to same DM +17°4697
+PPM 141139 is removed because PPM 141140 is nearer to same DM +18°4948
+PPM 141194 is removed because PPM 141195 is nearer to same DM +10°4708
+PPM 141214 is removed because PPM 141213 is nearer to same DM +16°4694
+PPM 141231 is removed because PPM 141230 is nearer to same DM +16°4697
+PPM 141246 is removed because PPM 141240 is nearer to same DM +17°4719
+PPM 141274 is removed because PPM 141275 is nearer to same DM +16°4705
+PPM 141323 is removed because PPM 141324 is nearer to same DM +18°4974
+PPM 141370 is removed because PPM 141369 is nearer to same DM +14°4785
+PPM 141378 is removed because PPM 141379 is nearer to same DM +10°4739
+PPM 141486 is removed because PPM 141487 is nearer to same DM +16°4746
+PPM 141490 is removed because PPM 141489 is nearer to same DM +15°4655
+PPM 141652 is removed because PPM 141650 is nearer to same DM +18°5013
+PPM 141662 is removed because PPM 141660 is nearer to same DM +10°4786
+PPM 141665 is removed because PPM 141664 is nearer to same DM +12°4859
+PPM 141700 is removed because PPM 141696 is nearer to same DM +19°4977
+PPM 141697 is removed because PPM 141701 is nearer to same DM +11°4851
+PPM 141706 is removed because PPM 141705 is nearer to same DM +16°4790
+PPM 141791 is removed because PPM 141790 is nearer to same DM +12°4879
+PPM 141821 is removed because PPM 141822 is nearer to same DM +18°5048
+PPM 141879 is removed because PPM 141876 is nearer to same DM +12°4892
+PPM 141974 is removed because PPM 141975 is nearer to same DM +14°4892
+PPM 142025 is removed because PPM 142026 is nearer to same DM +9°5139
+Star DM +13°5055 not found (corresponding to PPM 142175). Discarding PPM star.
+Star DM +13°5055 not found (corresponding to PPM 142177). Discarding PPM star.
+PPM 142222 is removed because PPM 142223 is nearer to same DM +10°4887
+PPM 142239 is removed because PPM 142237 is nearer to same DM +14°4937
+PPM 142250 is removed because PPM 142249 is nearer to same DM +10°4894
+PPM 142285 is removed because PPM 142284 is nearer to same DM +9°5181
+PPM 142289 is removed because PPM 142290 is nearer to same DM +10°4902
+PPM 142361 is removed because PPM 142362 is nearer to same DM +15°4794
+PPM 142371 is removed because PPM 142370 is nearer to same DM +9°5196
+PPM 142398 is removed because PPM 142396 is nearer to same DM +15°4801
+PPM 142461 is removed because PPM 142459 is nearer to same DM +15°4815
+PPM 142463 is removed because PPM 142464 is nearer to same DM +9°5211
+PPM 142530 is removed because PPM 142529 is nearer to same DM +19°5108
+PPM 142531 is removed because PPM 142532 is nearer to same DM +10°4938
+PPM 142589 is removed because PPM 142590 is nearer to same DM +15°4837
+PPM 142689 is removed because PPM 142688 is nearer to same DM +11°5033
+PPM 142710 is removed because PPM 142709 is nearer to same DM +19°5130
+PPM 142735 is removed because PPM 142738 is nearer to same DM +18°5188
+PPM 142755 is removed because PPM 142754 is nearer to same DM +15°4865
+PPM 142765 is removed because PPM 142766 is nearer to same DM +14°5036
+PPM 142770 is removed because PPM 142769 is nearer to same DM +17°4964
+PPM 142781 is removed because PPM 142780 is nearer to same DM +17°4968
+PPM 142796 is removed because PPM 142797 is nearer to same DM +14°5043
+Star DM +13°5168 not found (corresponding to PPM 142822). Discarding PPM star.
+PPM 142825 is removed because PPM 142824 is nearer to same DM +17°4975
+PPM 142826 is removed because PPM 142827 is nearer to same DM +18°5208
+PPM 142837 is removed because PPM 142839 is nearer to same DM +16°4980
+PPM 142840 is removed because PPM 142843 is nearer to same DM +13°5170
+PPM 142864 is removed because PPM 142865 is nearer to same DM +9°5281
+PPM 142889 is removed because PPM 142890 is nearer to same DM +14°5062
+PPM 142888 is removed because PPM 142891 is nearer to same DM +10°4996
+PPM 142934 is removed because PPM 142935 is nearer to same DM +11°5068
+PPM 142962 is removed because PPM 142964 is nearer to same DM +17°5002
+PPM 142982 is removed because PPM 142979 is nearer to same DM +19°5173
+PPM 143037 is removed because PPM 143036 is nearer to same DM +0°5078
+PPM 143058 is removed because PPM 143056 is nearer to same DM +6°5233
+PPM 143096 is removed because PPM 143097 is nearer to same DM +7°5123
+PPM 143093 is removed because PPM 143098 is nearer to same DM +6°5237
+PPM 143138 is removed because PPM 143137 is nearer to same DM +1°4830
+PPM 143204 is removed because PPM 143203 is nearer to same DM +7°9
+PPM 143245 is removed because PPM 143244 is nearer to same DM -0°15
+PPM 143294 is removed because PPM 143293 is nearer to same DM +8°19
+PPM 143336 is removed because PPM 143335 is nearer to same DM +1°34
+PPM 143354 is removed because PPM 143353 is nearer to same DM +8°28
+PPM 143409 is removed because PPM 143407 is nearer to same DM +1°44
+PPM 143522 is removed because PPM 143520 is nearer to same DM +4°56
+PPM 143660 is removed because PPM 143661 is nearer to same DM +2°73
+PPM 143698 is removed because PPM 143699 is nearer to same DM +2°81
+PPM 143719 is removed because PPM 143720 is nearer to same DM +0°93
+PPM 143846 is removed because PPM 143848 is nearer to same DM +4°108
+PPM 143888 is removed because PPM 143890 is nearer to same DM +7°107
+PPM 143938 is removed because PPM 143936 is nearer to same DM -0°117
+PPM 143983 is removed because PPM 143985 is nearer to same DM +1°151
+PPM 144025 is removed because PPM 144026 is nearer to same DM +4°133
+PPM 144043 is removed because PPM 144044 is nearer to same DM +7°131
+PPM 144123 is removed because PPM 144124 is nearer to same DM +1°180
+PPM 144126 is removed because PPM 144125 is nearer to same DM +4°148
+PPM 144157 is removed because PPM 144158 is nearer to same DM +8°147
+PPM 144220 is removed because PPM 144221 is nearer to same DM +0°174
+PPM 144302 is removed because PPM 144300 is nearer to same DM +9°132
+PPM 144395 is removed because PPM 144393 is nearer to same DM +6°180
+PPM 144443 is removed because PPM 144441 is nearer to same DM +9°145
+PPM 144470 is removed because PPM 144474 is nearer to same DM +6°195
+PPM 144488 is removed because PPM 144487 is nearer to same DM +3°185
+PPM 144498 is removed because PPM 144501 is nearer to same DM +5°170
+PPM 144617 is removed because PPM 144616 is nearer to same DM +7°209
+PPM 144676 is removed because PPM 144675 is nearer to same DM +7°223
+PPM 144685 is removed because PPM 144683 is nearer to same DM +2°222
+PPM 144749 is removed because PPM 144751 is nearer to same DM +7°232
+PPM 144787 is removed because PPM 144788 is nearer to same DM +8°252
+PPM 144814 is removed because PPM 144813 is nearer to same DM +6°248
+PPM 144828 is removed because PPM 144829 is nearer to same DM +5°219
+PPM 144849 is removed because PPM 144851 is nearer to same DM +7°256
+PPM 144907 is removed because PPM 144906 is nearer to same DM +5°230
+PPM 145076 is removed because PPM 145073 is nearer to same DM +0°302
+PPM 145086 is removed because PPM 145087 is nearer to same DM -0°288
+PPM 145115 is removed because PPM 145114 is nearer to same DM +3°263
+PPM 145133 is removed because PPM 145132 is nearer to same DM +0°311
+PPM 145150 is removed because PPM 145152 is nearer to same DM +4°329
+PPM 145160 is removed because PPM 145162 is nearer to same DM +4°331
+PPM 145196 is removed because PPM 145198 is nearer to same DM +5°275
+PPM 145206 is removed because PPM 145208 is nearer to same DM +4°337
+PPM 145235 is removed because PPM 145234 is nearer to same DM +6°319
+PPM 145270 is removed because PPM 145268 is nearer to same DM +2°327
+PPM 145312 is removed because PPM 145313 is nearer to same DM +5°285
+PPM 145362 is removed because PPM 145363 is nearer to same DM -0°328
+PPM 145368 is removed because PPM 145367 is nearer to same DM +2°346
+PPM 145416 is removed because PPM 145415 is nearer to same DM +1°396
+PPM 145467 is removed because PPM 145468 is nearer to same DM +3°321
+PPM 145502 is removed because PPM 145503 is nearer to same DM +5°318
+PPM 145506 is removed because PPM 145505 is nearer to same DM +2°362
+PPM 145522 is removed because PPM 145521 is nearer to same DM +8°366
+PPM 145531 is removed because PPM 145530 is nearer to same DM +6°353
+PPM 145546 is removed because PPM 145544 is nearer to same DM +5°326
+PPM 145560 is removed because PPM 145561 is nearer to same DM +8°368
+PPM 145588 is removed because PPM 145589 is nearer to same DM +7°382
+PPM 145658 is removed because PPM 145660 is nearer to same DM +4°407
+PPM 145670 is removed because PPM 145671 is nearer to same DM +0°415
+PPM 145680 is removed because PPM 145681 is nearer to same DM +8°392
+PPM 145695 is removed because PPM 145697 is nearer to same DM -0°382
+PPM 145722 is removed because PPM 145721 is nearer to same DM +2°400
+PPM 145755 is removed because PPM 145753 is nearer to same DM +5°369
+PPM 145775 is removed because PPM 145777 is nearer to same DM +8°407
+PPM 145779 is removed because PPM 145780 is nearer to same DM +3°370
+PPM 145796 is removed because PPM 145797 is nearer to same DM +7°410
+PPM 145861 is removed because PPM 145860 is nearer to same DM +4°434
+PPM 145883 is removed because PPM 145885 is nearer to same DM +1°482
+PPM 145909 is removed because PPM 145910 is nearer to same DM +5°394
+PPM 145917 is removed because PPM 145916 is nearer to same DM +6°425
+PPM 145947 is removed because PPM 145946 is nearer to same DM +8°433
+PPM 145953 is removed because PPM 145951 is nearer to same DM +6°433
+PPM 145961 is removed because PPM 145962 is nearer to same DM +2°436
+PPM 145986 is removed because PPM 145984 is nearer to same DM +2°440
+PPM 145999 is removed because PPM 146000 is nearer to same DM +5°406
+PPM 146029 is removed because PPM 146030 is nearer to same DM +9°370
+PPM 146063 is removed because PPM 146064 is nearer to same DM +5°420
+PPM 146098 is removed because PPM 146099 is nearer to same DM -0°464
+PPM 146149 is removed because PPM 146147 is nearer to same DM +4°483
+PPM 146158 is removed because PPM 146157 is nearer to same DM +1°530
+PPM 146166 is removed because PPM 146164 is nearer to same DM +3°418
+PPM 146169 is removed because PPM 146168 is nearer to same DM -0°485
+PPM 146183 is removed because PPM 146182 is nearer to same DM +7°466
+PPM 146215 is removed because PPM 146216 is nearer to same DM +6°474
+PPM 146242 is removed because PPM 146244 is nearer to same DM +6°478
+PPM 146267 is removed because PPM 146269 is nearer to same DM +6°484
+PPM 146312 is removed because PPM 146313 is nearer to same DM +8°468
+PPM 146378 is removed because PPM 146379 is nearer to same DM +1°569
+PPM 146395 is removed because PPM 146396 is nearer to same DM +7°491
+PPM 146409 is removed because PPM 146408 is nearer to same DM +2°512
+PPM 146426 is removed because PPM 146425 is nearer to same DM +5°471
+PPM 146437 is removed because PPM 146436 is nearer to same DM +3°455
+Star DM +8°492 not found (corresponding to PPM 146439). Discarding PPM star.
+PPM 146483 is removed because PPM 146482 is nearer to same DM +4°529
+PPM 146632 is removed because PPM 146631 is nearer to same DM +4°544
+PPM 146660 is removed because PPM 146658 is nearer to same DM +7°518
+PPM 146666 is removed because PPM 146667 is nearer to same DM +3°490
+PPM 146801 is removed because PPM 146802 is nearer to same DM +4°571
+PPM 146802 is removed because PPM 146804 is nearer to same DM +4°571
+PPM 146837 is removed because PPM 146836 is nearer to same DM +1°649
+PPM 146918 is removed because PPM 146916 is nearer to same DM +7°547
+PPM 146930 is removed because PPM 146929 is nearer to same DM +1°664
+PPM 146980 is removed because PPM 146979 is nearer to same DM -0°610
+PPM 147093 is removed because PPM 147089 is nearer to same DM +3°545
+PPM 147111 is removed because PPM 147110 is nearer to same DM +7°582
+PPM 147119 is removed because PPM 147122 is nearer to same DM +4°619
+PPM 147123 is removed because PPM 147121 is nearer to same DM +8°613
+PPM 147243 is removed because PPM 147244 is nearer to same DM +8°638
+PPM 147263 is removed because PPM 147261 is nearer to same DM -0°649
+PPM 147298 is removed because PPM 147300 is nearer to same DM +0°710
+PPM 147359 is removed because PPM 147356 is nearer to same DM +5°616
+PPM 147419 is removed because PPM 147417 is nearer to same DM +9°561
+PPM 147484 is removed because PPM 147486 is nearer to same DM +8°677
+PPM 147508 is removed because PPM 147506 is nearer to same DM -0°696
+PPM 147526 is removed because PPM 147527 is nearer to same DM +2°705
+PPM 147611 is removed because PPM 147612 is nearer to same DM +4°701
+PPM 147627 is removed because PPM 147628 is nearer to same DM +6°696
+PPM 147648 is removed because PPM 147647 is nearer to same DM +7°661
+PPM 147670 is removed because PPM 147667 is nearer to same DM +8°710
+PPM 147718 is removed because PPM 147717 is nearer to same DM +8°721
+PPM 147720 is removed because PPM 147719 is nearer to same DM +0°796
+PPM 147766 is removed because PPM 147764 is nearer to same DM +3°631
+PPM 147800 is removed because PPM 147795 is nearer to same DM +6°732
+PPM 147801 is removed because PPM 147802 is nearer to same DM +3°638
+PPM 147844 is removed because PPM 147845 is nearer to same DM +4°733
+PPM 147846 is removed because PPM 147843 is nearer to same DM +6°738
+PPM 147865 is removed because PPM 147867 is nearer to same DM +4°738
+PPM 147925 is removed because PPM 147926 is nearer to same DM +6°750
+PPM 147927 is removed because PPM 147929 is nearer to same DM +0°838
+PPM 147951 is removed because PPM 147950 is nearer to same DM +2°767
+PPM 147961 is removed because PPM 147962 is nearer to same DM +4°752
+PPM 148036 is removed because PPM 148037 is nearer to same DM +6°765
+PPM 148040 is removed because PPM 148039 is nearer to same DM +9°663
+PPM 148070 is removed because PPM 148071 is nearer to same DM +5°747
+PPM 148077 is removed because PPM 148076 is nearer to same DM +4°765
+PPM 148105 is removed because PPM 148101 is nearer to same DM +0°881
+PPM 148122 is removed because PPM 148125 is nearer to same DM +6°774
+PPM 148149 is removed because PPM 148150 is nearer to same DM +7°754
+PPM 148168 is removed because PPM 148167 is nearer to same DM +0°897
+PPM 148201 is removed because PPM 148198 is nearer to same DM +4°784
+PPM 148214 is removed because PPM 148217 is nearer to same DM +2°819
+PPM 148226 is removed because PPM 148223 is nearer to same DM +5°776
+PPM 148227 is removed because PPM 148223 is nearer to same DM +5°776
+PPM 120442 is removed because PPM 148250 is nearer to same DM +9°697
+PPM 148296 is removed because PPM 148297 is nearer to same DM +3°738
+PPM 148313 is removed because PPM 148310 is nearer to same DM +6°805
+PPM 148338 is removed because PPM 148337 is nearer to same DM +1°886
+PPM 148347 is removed because PPM 148348 is nearer to same DM +4°817
+PPM 148351 is removed because PPM 148350 is nearer to same DM +7°777
+PPM 148356 is removed because PPM 148358 is nearer to same DM +4°818
+PPM 148363 is removed because PPM 148364 is nearer to same DM +1°889
+PPM 148538 is removed because PPM 148541 is nearer to same DM +5°823
+PPM 148578 is removed because PPM 148577 is nearer to same DM +0°974
+PPM 148666 is removed because PPM 148663 is nearer to same DM +5°856
+PPM 148685 is removed because PPM 148683 is nearer to same DM +2°901
+PPM 148734 is removed because PPM 148735 is nearer to same DM +6°892
+PPM 148739 is removed because PPM 148738 is nearer to same DM +3°845
+PPM 148743 is removed because PPM 148744 is nearer to same DM +5°882
+PPM 148751 is removed because PPM 148750 is nearer to same DM +1°969
+Star DM +0°1010 not found (corresponding to PPM 148754). Discarding PPM star.
+PPM 148795 is removed because PPM 148793 is nearer to same DM +6°902
+PPM 148799 is removed because PPM 148800 is nearer to same DM +2°926
+PPM 148837 is removed because PPM 148835 is nearer to same DM +5°899
+PPM 148865 is removed because PPM 148864 is nearer to same DM +1°992
+PPM 148868 is removed because PPM 148866 is nearer to same DM +0°1036
+PPM 148883 is removed because PPM 148879 is nearer to same DM +7°881
+PPM 148889 is removed because PPM 148888 is nearer to same DM +2°943
+PPM 148895 is removed because PPM 148899 is nearer to same DM +3°880
+PPM 148918 is removed because PPM 148920 is nearer to same DM +6°920
+PPM 149029 is removed because PPM 149030 is nearer to same DM +3°928
+PPM 149052 is removed because PPM 149055 is nearer to same DM +3°939
+PPM 149069 is removed because PPM 149070 is nearer to same DM +1°1039
+Star DM +9°856 not found (corresponding to PPM 149073). Discarding PPM star.
+PPM 149092 is removed because PPM 149090 is nearer to same DM +2°986
+PPM 149116 is removed because PPM 149117 is nearer to same DM +7°926
+PPM 149119 is removed because PPM 149120 is nearer to same DM +2°996
+PPM 149135 is removed because PPM 149134 is nearer to same DM +9°872
+PPM 149164 is removed because PPM 149163 is nearer to same DM +9°878
+PPM 149235 is removed because PPM 149234 is nearer to same DM +2°1020
+PPM 149240 is removed because PPM 149237 is nearer to same DM +2°1021
+PPM 149394 is removed because PPM 149392 is nearer to same DM +3°1022
+PPM 149401 is removed because PPM 149400 is nearer to same DM +3°1025
+Star DM +0°1177 not found (corresponding to PPM 149435). Discarding PPM star.
+Star DM +0°1177 not found (corresponding to PPM 149436). Discarding PPM star.
+PPM 149441 is removed because PPM 149443 is nearer to same DM +9°954
+PPM 149442 is removed because PPM 149445 is nearer to same DM +0°1178
+PPM 149465 is removed because PPM 149463 is nearer to same DM +1°1131
+PPM 149468 is removed because PPM 149470 is nearer to same DM +4°1039
+PPM 149488 is removed because PPM 149487 is nearer to same DM +5°1019
+PPM 149495 is removed because PPM 149493 is nearer to same DM +5°1020
+PPM 149520 is removed because PPM 149519 is nearer to same DM +6°1035
+PPM 149537 is removed because PPM 149536 is nearer to same DM +4°1053
+PPM 149628 is removed because PPM 149631 is nearer to same DM +5°1043
+PPM 149633 is removed because PPM 149631 is nearer to same DM +5°1043
+PPM 149637 is removed because PPM 149638 is nearer to same DM +7°1054
+Star DM +7°1055 not found (corresponding to PPM 149643). Discarding PPM star.
+PPM 149648 is removed because PPM 149649 is nearer to same DM +8°1115
+PPM 149742 is removed because PPM 149741 is nearer to same DM +3°1094
+PPM 149789 is removed because PPM 149790 is nearer to same DM +7°1095
+PPM 149804 is removed because PPM 149803 is nearer to same DM +0°1255
+PPM 149834 is removed because PPM 149835 is nearer to same DM +4°1110
+PPM 149841 is removed because PPM 149844 is nearer to same DM +2°1118
+PPM 149853 is removed because PPM 149854 is nearer to same DM +8°1173
+PPM 149866 is removed because PPM 149869 is nearer to same DM +8°1176
+PPM 149870 is removed because PPM 149871 is nearer to same DM +0°1269
+PPM 149874 is removed because PPM 149875 is nearer to same DM +6°1107
+PPM 149879 is removed because PPM 149876 is nearer to same DM +7°1120
+PPM 149917 is removed because PPM 149919 is nearer to same DM +0°1289
+PPM 149929 is removed because PPM 149930 is nearer to same DM +2°1137
+PPM 149960 is removed because PPM 149961 is nearer to same DM +5°1106
+PPM 149964 is removed because PPM 149963 is nearer to same DM +7°1145
+PPM 149983 is removed because PPM 149982 is nearer to same DM +7°1151
+PPM 150012 is removed because PPM 150011 is nearer to same DM +3°1145
+PPM 150042 is removed because PPM 150043 is nearer to same DM +9°1122
+PPM 150058 is removed because PPM 150059 is nearer to same DM +1°1243
+PPM 150111 is removed because PPM 150112 is nearer to same DM +3°1166
+PPM 150160 is removed because PPM 150163 is nearer to same DM +6°1170
+PPM 150169 is removed because PPM 150172 is nearer to same DM +3°1180
+PPM 150205 is removed because PPM 150206 is nearer to same DM +4°1187
+PPM 150215 is removed because PPM 150213 is nearer to same DM +6°1180
+PPM 150295 is removed because PPM 150294 is nearer to same DM +5°1194
+PPM 150308 is removed because PPM 150309 is nearer to same DM +5°1196
+PPM 150323 is removed because PPM 150322 is nearer to same DM +8°1282
+PPM 150319 is removed because PPM 150324 is nearer to same DM +5°1198
+PPM 150379 is removed because PPM 150380 is nearer to same DM +5°1213
+PPM 150406 is removed because PPM 150407 is nearer to same DM +7°1260
+PPM 150433 is removed because PPM 150430 is nearer to same DM +1°1324
+PPM 150526 is removed because PPM 150528 is nearer to same DM +4°1255
+PPM 150535 is removed because PPM 150536 is nearer to same DM +0°1425
+PPM 150546 is removed because PPM 150543 is nearer to same DM +6°1246
+PPM 150559 is removed because PPM 150556 is nearer to same DM +8°1345
+PPM 150579 is removed because PPM 150578 is nearer to same DM +5°1249
+PPM 150586 is removed because PPM 150585 is nearer to same DM +8°1352
+PPM 150644 is removed because PPM 150645 is nearer to same DM +4°1282
+PPM 150666 is removed because PPM 150663 is nearer to same DM +5°1273
+PPM 150670 is removed because PPM 150669 is nearer to same DM +4°1291
+PPM 150676 is removed because PPM 150677 is nearer to same DM +4°1295
+PPM 150683 is removed because PPM 150684 is nearer to same DM +5°1280
+PPM 150699 is removed because PPM 150698 is nearer to same DM +1°1382
+PPM 150702 is removed because PPM 150703 is nearer to same DM +5°1285
+PPM 150712 is removed because PPM 150715 is nearer to same DM +3°1286
+PPM 150719 is removed because PPM 150716 is nearer to same DM +10°1166
+PPM 150734 is removed because PPM 150735 is nearer to same DM +6°1282
+PPM 150768 is removed because PPM 150770 is nearer to same DM +8°1393
+PPM 150798 is removed because PPM 150795 is nearer to same DM +9°1288
+PPM 150861 is removed because PPM 150862 is nearer to same DM +1°1421
+PPM 150871 is removed because PPM 150870 is nearer to same DM +3°1321
+Star DM +8°1417 not found (corresponding to PPM 150873). Discarding PPM star.
+PPM 150883 is removed because PPM 150885 is nearer to same DM +6°1309
+PPM 150919 is removed because PPM 150921 is nearer to same DM +5°1337
+PPM 150959 is removed because PPM 150961 is nearer to same DM +2°1328
+PPM 150972 is removed because PPM 150970 is nearer to same DM +2°1332
+PPM 151016 is removed because PPM 151017 is nearer to same DM +1°1455
+PPM 151047 is removed because PPM 151048 is nearer to same DM +9°1345
+PPM 151090 is removed because PPM 151089 is nearer to same DM +5°1371
+PPM 151093 is removed because PPM 151095 is nearer to same DM +5°1373
+PPM 151095 is removed because PPM 151096 is nearer to same DM +5°1373
+PPM 151097 is removed because PPM 151096 is nearer to same DM +5°1373
+PPM 151121 is removed because PPM 151120 is nearer to same DM +8°1462
+PPM 151126 is removed because PPM 151128 is nearer to same DM +3°1374
+PPM 151133 is removed because PPM 151136 is nearer to same DM +4°1415
+PPM 151162 is removed because PPM 151158 is nearer to same DM +0°1573
+PPM 151164 is removed because PPM 151165 is nearer to same DM +6°1374
+PPM 151169 is removed because PPM 151168 is nearer to same DM +7°1433
+PPM 151186 is removed because PPM 151187 is nearer to same DM +2°1377
+PPM 151191 is removed because PPM 151190 is nearer to same DM +2°1378
+PPM 151236 is removed because PPM 151238 is nearer to same DM +8°1495
+PPM 151241 is removed because PPM 151242 is nearer to same DM +0°1598
+PPM 151274 is removed because PPM 151273 is nearer to same DM +9°1390
+PPM 151337 is removed because PPM 151336 is nearer to same DM +7°1469
+PPM 151407 is removed because PPM 151409 is nearer to same DM +0°1655
+Star DM +1°1564 not found (corresponding to PPM 151423). Discarding PPM star.
+PPM 151496 is removed because PPM 151495 is nearer to same DM +2°1457
+PPM 151503 is removed because PPM 151504 is nearer to same DM +3°1456
+PPM 151531 is removed because PPM 151532 is nearer to same DM +2°1463
+PPM 151544 is removed because PPM 151542 is nearer to same DM +8°1564
+PPM 151570 is removed because PPM 151571 is nearer to same DM +6°1443
+Star DM +3°1471 not found (corresponding to PPM 151581). Discarding PPM star.
+Star DM +3°1471 not found (corresponding to PPM 151582). Discarding PPM star.
+Star DM +3°1471 not found (corresponding to PPM 151585). Discarding PPM star.
+PPM 151624 is removed because PPM 151625 is nearer to same DM +6°1459
+PPM 151690 is removed because PPM 151689 is nearer to same DM +0°1743
+PPM 151709 is removed because PPM 151715 is nearer to same DM +1°1635
+PPM 151720 is removed because PPM 151717 is nearer to same DM +2°1503
+PPM 151724 is removed because PPM 151722 is nearer to same DM +9°1477
+PPM 151735 is removed because PPM 151736 is nearer to same DM +3°1502
+PPM 151748 is removed because PPM 151747 is nearer to same DM +3°1508
+PPM 151758 is removed because PPM 151759 is nearer to same DM +2°1514
+PPM 151770 is removed because PPM 151772 is nearer to same DM +9°1483
+PPM 151833 is removed because PPM 151838 is nearer to same DM +3°1527
+PPM 151875 is removed because PPM 151874 is nearer to same DM +6°1508
+PPM 151895 is removed because PPM 151894 is nearer to same DM +7°1588
+PPM 151933 is removed because PPM 151934 is nearer to same DM +8°1647
+PPM 151945 is removed because PPM 151944 is nearer to same DM +0°1804
+PPM 151960 is removed because PPM 151958 is nearer to same DM +2°1555
+PPM 151961 is removed because PPM 151964 is nearer to same DM +4°1592
+PPM 151999 is removed because PPM 152000 is nearer to same DM +0°1814
+PPM 152003 is removed because PPM 152000 is nearer to same DM +0°1814
+PPM 152004 is removed because PPM 152010 is nearer to same DM +2°1567
+PPM 152030 is removed because PPM 152031 is nearer to same DM +1°1707
+PPM 152108 is removed because PPM 152107 is nearer to same DM +2°1588
+PPM 152143 is removed because PPM 152144 is nearer to same DM +7°1634
+PPM 152204 is removed because PPM 152203 is nearer to same DM +4°1631
+PPM 152202 is removed because PPM 152207 is nearer to same DM +3°1609
+PPM 152207 is removed because PPM 152209 is nearer to same DM +3°1609
+PPM 152214 is removed because PPM 152213 is nearer to same DM +0°1860
+PPM 152244 is removed because PPM 152246 is nearer to same DM +5°1604
+PPM 152271 is removed because PPM 152272 is nearer to same DM +2°1619
+PPM 152276 is removed because PPM 152277 is nearer to same DM +9°1590
+PPM 152293 is removed because PPM 152297 is nearer to same DM +5°1614
+PPM 152339 is removed because PPM 152338 is nearer to same DM +4°1652
+PPM 152338 is removed because PPM 152340 is nearer to same DM +4°1652
+PPM 152366 is removed because PPM 152365 is nearer to same DM +3°1638
+PPM 152382 is removed because PPM 152384 is nearer to same DM +6°1611
+PPM 152416 is removed because PPM 152417 is nearer to same DM +2°1645
+PPM 152428 is removed because PPM 152429 is nearer to same DM +7°1687
+PPM 152435 is removed because PPM 152434 is nearer to same DM +3°1650
+PPM 152441 is removed because PPM 152440 is nearer to same DM +3°1651
+PPM 152442 is removed because PPM 152440 is nearer to same DM +3°1651
+PPM 152449 is removed because PPM 152451 is nearer to same DM +5°1628
+PPM 152474 is removed because PPM 152475 is nearer to same DM +1°1781
+PPM 152488 is removed because PPM 152490 is nearer to same DM +2°1654
+PPM 152491 is removed because PPM 152493 is nearer to same DM +4°1676
+PPM 152504 is removed because PPM 152497 is nearer to same DM +5°1635
+PPM 152512 is removed because PPM 152509 is nearer to same DM +1°1784
+PPM 152531 is removed because PPM 152533 is nearer to same DM +5°1640
+PPM 152673 is removed because PPM 152672 is nearer to same DM +9°1657
+PPM 152676 is removed because PPM 152674 is nearer to same DM +7°1726
+PPM 152700 is removed because PPM 152699 is nearer to same DM +0°1952
+PPM 152781 is removed because PPM 152779 is nearer to same DM +5°1689
+PPM 152831 is removed because PPM 152833 is nearer to same DM +1°1837
+PPM 152836 is removed because PPM 152839 is nearer to same DM +4°1736
+PPM 152838 is removed because PPM 152844 is nearer to same DM +10°1560
+PPM 152855 is removed because PPM 152854 is nearer to same DM +0°1987
+PPM 152876 is removed because PPM 152874 is nearer to same DM +9°1696
+PPM 152884 is removed because PPM 152885 is nearer to same DM +9°1698
+PPM 152886 is removed because PPM 152878 is nearer to same DM +7°1761
+PPM 152943 is removed because PPM 152944 is nearer to same DM +2°1708
+PPM 152970 is removed because PPM 152971 is nearer to same DM +0°2014
+PPM 153036 is removed because PPM 153037 is nearer to same DM +10°1585
+PPM 153128 is removed because PPM 153129 is nearer to same DM +1°1877
+PPM 153137 is removed because PPM 153136 is nearer to same DM +2°1743
+PPM 153141 is removed because PPM 153142 is nearer to same DM +9°1742
+PPM 153191 is removed because PPM 153196 is nearer to same DM +3°1770
+PPM 153201 is removed because PPM 153199 is nearer to same DM +3°1773
+PPM 153207 is removed because PPM 153206 is nearer to same DM +8°1853
+PPM 153208 is removed because PPM 153210 is nearer to same DM +7°1823
+PPM 153236 is removed because PPM 153238 is nearer to same DM +1°1898
+PPM 153268 is removed because PPM 153270 is nearer to same DM +0°2066
+PPM 153312 is removed because PPM 153321 is nearer to same DM +6°1782
+PPM 153363 is removed because PPM 153361 is nearer to same DM +1°1912
+PPM 153370 is removed because PPM 153369 is nearer to same DM +6°1788
+PPM 153379 is removed because PPM 153380 is nearer to same DM +3°1803
+PPM 153397 is removed because PPM 153396 is nearer to same DM +4°1831
+PPM 153398 is removed because PPM 153404 is nearer to same DM +6°1791
+PPM 153414 is removed because PPM 153417 is nearer to same DM +2°1801
+PPM 153431 is removed because PPM 153432 is nearer to same DM +8°1892
+PPM 153496 is removed because PPM 153497 is nearer to same DM +7°1853
+PPM 153501 is removed because PPM 153502 is nearer to same DM +9°1799
+PPM 153526 is removed because PPM 153527 is nearer to same DM +4°1851
+PPM 153528 is removed because PPM 153525 is nearer to same DM +2°1818
+PPM 153661 is removed because PPM 153659 is nearer to same DM +6°1837
+PPM 153706 is removed because PPM 153704 is nearer to same DM +0°2154
+PPM 153842 is removed because PPM 153843 is nearer to same DM +8°1963
+PPM 153868 is removed because PPM 153867 is nearer to same DM +5°1872
+PPM 153870 is removed because PPM 153871 is nearer to same DM +2°1870
+PPM 153904 is removed because PPM 153905 is nearer to same DM +7°1919
+PPM 153912 is removed because PPM 153910 is nearer to same DM +0°2193
+PPM 153982 is removed because PPM 153984 is nearer to same DM +7°1925
+PPM 153990 is removed because PPM 153989 is nearer to same DM +4°1922
+PPM 153996 is removed because PPM 153997 is nearer to same DM +0°2211
+PPM 154072 is removed because PPM 154073 is nearer to same DM +10°1752
+PPM 154132 is removed because PPM 154130 is nearer to same DM +7°1945
+PPM 154150 is removed because PPM 154148 is nearer to same DM +5°1918
+PPM 154155 is removed because PPM 154154 is nearer to same DM +2°1916
+PPM 154161 is removed because PPM 154154 is nearer to same DM +2°1916
+PPM 154162 is removed because PPM 154160 is nearer to same DM +2°1917
+PPM 154171 is removed because PPM 154172 is nearer to same DM +3°1933
+PPM 154201 is removed because PPM 154202 is nearer to same DM +9°1919
+PPM 154319 is removed because PPM 154322 is nearer to same DM +5°1939
+PPM 154328 is removed because PPM 154327 is nearer to same DM +4°1957
+PPM 154341 is removed because PPM 154338 is nearer to same DM +4°1960
+PPM 154377 is removed because PPM 154376 is nearer to same DM +8°2042
+PPM 154424 is removed because PPM 154425 is nearer to same DM +6°1948
+PPM 154436 is removed because PPM 154439 is nearer to same DM +8°2052
+PPM 154559 is removed because PPM 154560 is nearer to same DM +8°2067
+PPM 154579 is removed because PPM 154580 is nearer to same DM +6°1974
+PPM 154603 is removed because PPM 154602 is nearer to same DM +1°2116
+PPM 154630 is removed because PPM 154632 is nearer to same DM +6°1984
+Star DM +1°2129 not found (corresponding to PPM 154667). Discarding PPM star.
+PPM 154669 is removed because PPM 154670 is nearer to same DM +7°1996
+PPM 154699 is removed because PPM 154700 is nearer to same DM +5°2004
+PPM 154708 is removed because PPM 154707 is nearer to same DM +7°1997
+PPM 154711 is removed because PPM 154712 is nearer to same DM +10°1831
+PPM 154738 is removed because PPM 154740 is nearer to same DM +0°2346
+PPM 154995 is removed because PPM 154999 is nearer to same DM +0°2393
+PPM 155022 is removed because PPM 155021 is nearer to same DM +1°2173
+PPM 155045 is removed because PPM 155043 is nearer to same DM +8°2124
+PPM 155079 is removed because PPM 155078 is nearer to same DM +4°2056
+PPM 155145 is removed because PPM 155142 is nearer to same DM +6°2053
+PPM 155160 is removed because PPM 155161 is nearer to same DM +8°2138
+PPM 155176 is removed because PPM 155175 is nearer to same DM +8°2139
+PPM 155178 is removed because PPM 155177 is nearer to same DM +1°2198
+PPM 155258 is removed because PPM 155259 is nearer to same DM +5°2087
+PPM 155358 is removed because PPM 155357 is nearer to same DM +2°2133
+PPM 155414 is removed because PPM 155413 is nearer to same DM +1°2233
+PPM 155435 is removed because PPM 155436 is nearer to same DM +3°2142
+PPM 155465 is removed because PPM 155464 is nearer to same DM +5°2123
+PPM 155517 is removed because PPM 155516 is nearer to same DM +9°2130
+PPM 155530 is removed because PPM 155532 is nearer to same DM +6°2119
+PPM 155563 is removed because PPM 155564 is nearer to same DM +6°2128
+PPM 155629 is removed because PPM 155630 is nearer to same DM +8°2195
+PPM 155691 is removed because PPM 155690 is nearer to same DM +3°2189
+PPM 155698 is removed because PPM 155699 is nearer to same DM +5°2161
+PPM 155710 is removed because PPM 155709 is nearer to same DM +8°2206
+PPM 155713 is removed because PPM 155714 is nearer to same DM +8°2207
+PPM 155768 is removed because PPM 155767 is nearer to same DM +4°2178
+PPM 155772 is removed because PPM 155773 is nearer to same DM +8°2214
+PPM 155781 is removed because PPM 155778 is nearer to same DM +3°2196
+PPM 155818 is removed because PPM 155817 is nearer to same DM +4°2185
+PPM 155830 is removed because PPM 155832 is nearer to same DM +6°2174
+PPM 155843 is removed because PPM 155845 is nearer to same DM +6°2175
+PPM 155875 is removed because PPM 155876 is nearer to same DM +8°2226
+PPM 155889 is removed because PPM 155888 is nearer to same DM +3°2212
+PPM 155989 is removed because PPM 155990 is nearer to same DM +4°2213
+PPM 156125 is removed because PPM 156124 is nearer to same DM +9°2230
+PPM 156174 is removed because PPM 156176 is nearer to same DM +2°2247
+PPM 156186 is removed because PPM 156187 is nearer to same DM +9°2239
+PPM 156189 is removed because PPM 156187 is nearer to same DM +9°2239
+PPM 156271 is removed because PPM 156270 is nearer to same DM +7°2196
+PPM 156276 is removed because PPM 156272 is nearer to same DM +3°2279
+PPM 156282 is removed because PPM 156283 is nearer to same DM +4°2259
+PPM 156348 is removed because PPM 156341 is nearer to same DM +6°2231
+PPM 156356 is removed because PPM 156352 is nearer to same DM +7°2210
+PPM 156359 is removed because PPM 156357 is nearer to same DM +8°2290
+PPM 156407 is removed because PPM 156406 is nearer to same DM +6°2240
+PPM 156506 is removed because PPM 156505 is nearer to same DM +3°2313
+PPM 156562 is removed because PPM 156561 is nearer to same DM +1°2408
+PPM 156604 is removed because PPM 156603 is nearer to same DM +3°2330
+PPM 156615 is removed because PPM 156618 is nearer to same DM +2°2305
+PPM 156737 is removed because PPM 156736 is nearer to same DM +7°2282
+PPM 156780 is removed because PPM 156779 is nearer to same DM +6°2301
+PPM 156829 is removed because PPM 156831 is nearer to same DM +4°2328
+PPM 156848 is removed because PPM 156850 is nearer to same DM +4°2332
+PPM 156871 is removed because PPM 156869 is nearer to same DM +3°2369
+PPM 156881 is removed because PPM 156880 is nearer to same DM +4°2342
+PPM 156921 is removed because PPM 156922 is nearer to same DM +10°2164
+PPM 156923 is removed because PPM 156924 is nearer to same DM +3°2380
+PPM 156928 is removed because PPM 156926 is nearer to same DM +4°2346
+PPM 156945 is removed because PPM 156944 is nearer to same DM +1°2454
+PPM 156991 is removed because PPM 156993 is nearer to same DM +3°2392
+PPM 157029 is removed because PPM 157032 is nearer to same DM +2°2343
+PPM 157077 is removed because PPM 157079 is nearer to same DM +6°2337
+PPM 157109 is removed because PPM 157110 is nearer to same DM +5°2384
+PPM 157218 is removed because PPM 157217 is nearer to same DM +7°2367
+PPM 157228 is removed because PPM 157227 is nearer to same DM +4°2383
+PPM 157279 is removed because PPM 157278 is nearer to same DM +7°2377
+PPM 157287 is removed because PPM 157285 is nearer to same DM +9°2423
+PPM 157289 is removed because PPM 157290 is nearer to same DM +8°2422
+PPM 157328 is removed because PPM 157329 is nearer to same DM +7°2382
+PPM 157389 is removed because PPM 157388 is nearer to same DM +9°2434
+PPM 157438 is removed because PPM 157439 is nearer to same DM +10°2234
+PPM 157442 is removed because PPM 157441 is nearer to same DM +10°2235
+PPM 157493 is removed because PPM 157492 is nearer to same DM +2°2382
+PPM 157510 is removed because PPM 157509 is nearer to same DM +7°2411
+PPM 157557 is removed because PPM 157560 is nearer to same DM +2°2391
+PPM 157637 is removed because PPM 157636 is nearer to same DM +10°2263
+PPM 157635 is removed because PPM 157638 is nearer to same DM +8°2473
+PPM 157709 is removed because PPM 157708 is nearer to same DM +9°2474
+PPM 157713 is removed because PPM 157712 is nearer to same DM +1°2547
+PPM 157792 is removed because PPM 157791 is nearer to same DM +1°2556
+PPM 157797 is removed because PPM 157796 is nearer to same DM +2°2417
+PPM 157870 is removed because PPM 157871 is nearer to same DM +10°2287
+PPM 157931 is removed because PPM 157933 is nearer to same DM +7°2455
+PPM 157996 is removed because PPM 157995 is nearer to same DM +4°2497
+PPM 158067 is removed because PPM 158068 is nearer to same DM +6°2479
+PPM 158079 is removed because PPM 158080 is nearer to same DM +10°2318
+PPM 158104 is removed because PPM 158101 is nearer to same DM +9°2534
+PPM 158123 is removed because PPM 158124 is nearer to same DM +0°2823
+PPM 158139 is removed because PPM 158140 is nearer to same DM +1°2604
+PPM 158177 is removed because PPM 158176 is nearer to same DM +4°2522
+PPM 158191 is removed because PPM 158192 is nearer to same DM +9°2547
+PPM 158199 is removed because PPM 158201 is nearer to same DM +5°2539
+PPM 158286 is removed because PPM 158287 is nearer to same DM +8°2548
+PPM 158333 is removed because PPM 158330 is nearer to same DM +1°2628
+PPM 158336 is removed because PPM 158335 is nearer to same DM +4°2546
+PPM 158449 is removed because PPM 158447 is nearer to same DM +6°2541
+PPM 158476 is removed because PPM 158477 is nearer to same DM +8°2566
+PPM 158520 is removed because PPM 158522 is nearer to same DM +10°2380
+PPM 158557 is removed because PPM 158556 is nearer to same DM +4°2578
+PPM 158585 is removed because PPM 158583 is nearer to same DM +8°2574
+PPM 158637 is removed because PPM 158638 is nearer to same DM +9°2607
+PPM 158642 is removed because PPM 158643 is nearer to same DM +10°2394
+PPM 158641 is removed because PPM 158644 is nearer to same DM +8°2580
+PPM 158664 is removed because PPM 158665 is nearer to same DM +5°2605
+PPM 158690 is removed because PPM 158688 is nearer to same DM +5°2607
+PPM 158740 is removed because PPM 158739 is nearer to same DM +4°2602
+PPM 158772 is removed because PPM 158773 is nearer to same DM +6°2599
+PPM 158811 is removed because PPM 158810 is nearer to same DM +3°2640
+PPM 158847 is removed because PPM 158850 is nearer to same DM +8°2602
+PPM 158853 is removed because PPM 158854 is nearer to same DM +8°2603
+PPM 158905 is removed because PPM 158904 is nearer to same DM +4°2622
+PPM 158934 is removed because PPM 158932 is nearer to same DM +8°2611
+PPM 158960 is removed because PPM 158959 is nearer to same DM +1°2717
+PPM 158972 is removed because PPM 158973 is nearer to same DM +6°2630
+Star DM +2°2556 not found (corresponding to PPM 158990). Discarding PPM star.
+PPM 158999 is removed because PPM 159001 is nearer to same DM +5°2648
+PPM 159028 is removed because PPM 159027 is nearer to same DM +4°2633
+Star DM +8°2632 not found (corresponding to PPM 159085). Discarding PPM star.
+Star DM +8°2631 not found (corresponding to PPM 159088). Discarding PPM star.
+PPM 159203 is removed because PPM 159205 is nearer to same DM +2°2582
+PPM 159208 is removed because PPM 159206 is nearer to same DM +4°2658
+PPM 159258 is removed because PPM 159257 is nearer to same DM +8°2654
+PPM 159257 is removed because PPM 159259 is nearer to same DM +8°2654
+PPM 159319 is removed because PPM 159321 is nearer to same DM +1°2769
+PPM 159331 is removed because PPM 159330 is nearer to same DM +7°2596
+PPM 159369 is removed because PPM 159371 is nearer to same DM +7°2600
+PPM 159416 is removed because PPM 159418 is nearer to same DM +8°2672
+PPM 159440 is removed because PPM 159441 is nearer to same DM +10°2506
+PPM 159481 is removed because PPM 159480 is nearer to same DM +6°2696
+PPM 159509 is removed because PPM 159508 is nearer to same DM +1°2790
+PPM 159525 is removed because PPM 159524 is nearer to same DM +9°2722
+PPM 159548 is removed because PPM 159547 is nearer to same DM +1°2795
+PPM 159696 is removed because PPM 159695 is nearer to same DM +6°2733
+PPM 159764 is removed because PPM 159765 is nearer to same DM +7°2649
+PPM 159872 is removed because PPM 159873 is nearer to same DM +0°3074
+PPM 159914 is removed because PPM 159915 is nearer to same DM +9°2789
+PPM 159924 is removed because PPM 159923 is nearer to same DM +3°2799
+PPM 159969 is removed because PPM 159970 is nearer to same DM +8°2747
+PPM 159970 is removed because PPM 159973 is nearer to same DM +8°2747
+PPM 160093 is removed because PPM 160096 is nearer to same DM +6°2800
+PPM 160132 is removed because PPM 160134 is nearer to same DM +4°2798
+PPM 160210 is removed because PPM 160211 is nearer to same DM +5°2823
+PPM 160270 is removed because PPM 160271 is nearer to same DM +6°2822
+PPM 160378 is removed because PPM 160379 is nearer to same DM +6°2840
+PPM 160384 is removed because PPM 160385 is nearer to same DM +5°2846
+PPM 160447 is removed because PPM 160448 is nearer to same DM +1°2899
+PPM 160451 is removed because PPM 160452 is nearer to same DM +6°2856
+PPM 160500 is removed because PPM 160499 is nearer to same DM +3°2877
+PPM 160503 is removed because PPM 160502 is nearer to same DM +1°2908
+PPM 160533 is removed because PPM 160535 is nearer to same DM +4°2850
+PPM 160560 is removed because PPM 160559 is nearer to same DM +5°2869
+PPM 160584 is removed because PPM 160586 is nearer to same DM +7°2775
+PPM 160602 is removed because PPM 160600 is nearer to same DM +3°2885
+PPM 160643 is removed because PPM 160645 is nearer to same DM +10°2683
+PPM 160813 is removed because PPM 160815 is nearer to same DM +7°2813
+PPM 160925 is removed because PPM 160926 is nearer to same DM +8°2913
+PPM 160995 is removed because PPM 160996 is nearer to same DM +7°2846
+PPM 161103 is removed because PPM 161105 is nearer to same DM +9°2962
+PPM 161127 is removed because PPM 161126 is nearer to same DM +8°2949
+PPM 161158 is removed because PPM 161156 is nearer to same DM +7°2874
+PPM 161190 is removed because PPM 161189 is nearer to same DM +6°2974
+PPM 161214 is removed because PPM 161213 is nearer to same DM +8°2965
+PPM 161228 is removed because PPM 161227 is nearer to same DM +6°2983
+PPM 161236 is removed because PPM 161235 is nearer to same DM +8°2971
+PPM 161255 is removed because PPM 161254 is nearer to same DM +4°2962
+PPM 161277 is removed because PPM 161273 is nearer to same DM +6°2997
+PPM 161308 is removed because PPM 161309 is nearer to same DM +5°2977
+PPM 161380 is removed because PPM 161379 is nearer to same DM +9°3013
+PPM 161426 is removed because PPM 161424 is nearer to same DM +5°2991
+PPM 161441 is removed because PPM 161440 is nearer to same DM +9°3017
+PPM 161589 is removed because PPM 161588 is nearer to same DM +5°3009
+PPM 161645 is removed because PPM 161643 is nearer to same DM +4°3020
+PPM 161662 is removed because PPM 161663 is nearer to same DM +10°2868
+PPM 161678 is removed because PPM 161677 is nearer to same DM +5°3033
+PPM 161710 is removed because PPM 161709 is nearer to same DM +9°3070
+PPM 161748 is removed because PPM 161746 is nearer to same DM +9°3072
+PPM 161795 is removed because PPM 161792 is nearer to same DM +3°3066
+PPM 161858 is removed because PPM 161861 is nearer to same DM +9°3095
+PPM 161865 is removed because PPM 161864 is nearer to same DM +5°3070
+PPM 161866 is removed because PPM 161864 is nearer to same DM +5°3070
+PPM 161889 is removed because PPM 161887 is nearer to same DM +1°3127
+PPM 161957 is removed because PPM 161962 is nearer to same DM +2°3007
+PPM 161987 is removed because PPM 161986 is nearer to same DM +8°3099
+PPM 162076 is removed because PPM 162075 is nearer to same DM +3°3101
+PPM 162086 is removed because PPM 162087 is nearer to same DM +3°3104
+PPM 162150 is removed because PPM 162148 is nearer to same DM +6°3138
+PPM 162300 is removed because PPM 162301 is nearer to same DM +4°3125
+PPM 162324 is removed because PPM 162322 is nearer to same DM +10°2971
+PPM 162345 is removed because PPM 162347 is nearer to same DM +8°3153
+PPM 162425 is removed because PPM 162422 is nearer to same DM +1°3190
+PPM 162592 is removed because PPM 162590 is nearer to same DM +3°3186
+PPM 162622 is removed because PPM 162617 is nearer to same DM +9°3203
+PPM 162652 is removed because PPM 162651 is nearer to same DM +1°3235
+PPM 162752 is removed because PPM 162753 is nearer to same DM +5°3221
+PPM 162762 is removed because PPM 162761 is nearer to same DM +0°3540
+PPM 162769 is removed because PPM 162768 is nearer to same DM +10°3022
+Star DM +7°3209 not found (corresponding to PPM 162868). Discarding PPM star.
+PPM 162896 is removed because PPM 162892 is nearer to same DM +3°3233
+PPM 162956 is removed because PPM 162960 is nearer to same DM +9°3251
+PPM 162965 is removed because PPM 162966 is nearer to same DM +6°3274
+PPM 162972 is removed because PPM 162973 is nearer to same DM +5°3253
+PPM 163056 is removed because PPM 163059 is nearer to same DM +6°3288
+PPM 163059 is removed because PPM 163062 is nearer to same DM +6°3288
+PPM 163076 is removed because PPM 163081 is nearer to same DM +8°3269
+PPM 163117 is removed because PPM 163115 is nearer to same DM +2°3175
+PPM 163151 is removed because PPM 163153 is nearer to same DM +3°3277
+PPM 163202 is removed because PPM 163203 is nearer to same DM +1°3322
+PPM 163225 is removed because PPM 163224 is nearer to same DM +5°3285
+PPM 163234 is removed because PPM 163231 is nearer to same DM +7°3265
+PPM 163321 is removed because PPM 163319 is nearer to same DM +6°3324
+PPM 163340 is removed because PPM 163339 is nearer to same DM +4°3301
+PPM 163455 is removed because PPM 163454 is nearer to same DM +9°3316
+PPM 163538 is removed because PPM 163539 is nearer to same DM +7°3306
+PPM 163546 is removed because PPM 163544 is nearer to same DM +3°3346
+PPM 163571 is removed because PPM 163572 is nearer to same DM +1°3387
+PPM 163679 is removed because PPM 163682 is nearer to same DM +0°3656
+PPM 163709 is removed because PPM 163707 is nearer to same DM +10°3169
+PPM 163757 is removed because PPM 163761 is nearer to same DM +5°3362
+PPM 163828 is removed because PPM 163830 is nearer to same DM +6°3391
+PPM 163897 is removed because PPM 163901 is nearer to same DM +2°3304
+PPM 163932 is removed because PPM 163934 is nearer to same DM +3°3397
+PPM 163955 is removed because PPM 163956 is nearer to same DM +3°3403
+PPM 163953 is removed because PPM 163958 is nearer to same DM +6°3410
+Star DM +8°3411 not found (corresponding to PPM 163998). Discarding PPM star.
+PPM 164014 is removed because PPM 164013 is nearer to same DM +9°3395
+PPM 164028 is removed because PPM 164029 is nearer to same DM +4°3424
+PPM 164086 is removed because PPM 164080 is nearer to same DM +8°3427
+PPM 164131 is removed because PPM 164130 is nearer to same DM +6°3440
+PPM 164133 is removed because PPM 164134 is nearer to same DM +6°3441
+PPM 164194 is removed because PPM 164192 is nearer to same DM +8°3444
+PPM 164237 is removed because PPM 164236 is nearer to same DM +6°3456
+PPM 164244 is removed because PPM 164241 is nearer to same DM +3°3451
+PPM 164265 is removed because PPM 164262 is nearer to same DM +6°3460
+PPM 164277 is removed because PPM 164278 is nearer to same DM +6°3463
+PPM 164306 is removed because PPM 164305 is nearer to same DM +7°3418
+PPM 164345 is removed because PPM 164344 is nearer to same DM +3°3463
+PPM 164370 is removed because PPM 164375 is nearer to same DM +5°3444
+PPM 164372 is removed because PPM 164377 is nearer to same DM +6°3489
+PPM 164441 is removed because PPM 164440 is nearer to same DM +8°3474
+PPM 164459 is removed because PPM 164457 is nearer to same DM +2°3386
+PPM 164501 is removed because PPM 164502 is nearer to same DM +3°3483
+PPM 164574 is removed because PPM 164575 is nearer to same DM +5°3494
+PPM 164622 is removed because PPM 164621 is nearer to same DM +1°3516
+PPM 164628 is removed because PPM 164629 is nearer to same DM +5°3505
+PPM 164634 is removed because PPM 164637 is nearer to same DM +8°3501
+PPM 164653 is removed because PPM 164652 is nearer to same DM +9°3481
+PPM 164763 is removed because PPM 164755 is nearer to same DM +7°3496
+PPM 164860 is removed because PPM 164859 is nearer to same DM +3°3535
+PPM 164996 is removed because PPM 164998 is nearer to same DM +9°3535
+PPM 165018 is removed because PPM 165016 is nearer to same DM +3°3564
+PPM 165059 is removed because PPM 165062 is nearer to same DM +9°3541
+PPM 165075 is removed because PPM 165078 is nearer to same DM +4°3581
+PPM 165098 is removed because PPM 165100 is nearer to same DM +6°3607
+PPM 165107 is removed because PPM 165108 is nearer to same DM +3°3578
+PPM 165267 is removed because PPM 165264 is nearer to same DM +2°3505
+PPM 165263 is removed because PPM 165268 is nearer to same DM +1°3605
+PPM 165317 is removed because PPM 165315 is nearer to same DM +2°3517
+PPM 165318 is removed because PPM 165314 is nearer to same DM +7°3576
+Star DM +6°3649 not found (corresponding to PPM 165362). Discarding PPM star.
+PPM 165390 is removed because PPM 165389 is nearer to same DM +8°3613
+PPM 165391 is removed because PPM 165392 is nearer to same DM +5°3643
+PPM 165411 is removed because PPM 165410 is nearer to same DM +9°3611
+PPM 165440 is removed because PPM 165437 is nearer to same DM +9°3620
+PPM 165477 is removed because PPM 165478 is nearer to same DM +7°3607
+PPM 165564 is removed because PPM 165568 is nearer to same DM +4°3692
+PPM 165614 is removed because PPM 165613 is nearer to same DM +2°3562
+PPM 165655 is removed because PPM 165657 is nearer to same DM +6°3703
+PPM 165707 is removed because PPM 165708 is nearer to same DM +8°3667
+PPM 165714 is removed because PPM 165712 is nearer to same DM +7°3662
+PPM 165728 is removed because PPM 165729 is nearer to same DM +5°3722
+PPM 165731 is removed because PPM 165730 is nearer to same DM +8°3670
+PPM 165742 is removed because PPM 165741 is nearer to same DM +1°3663
+PPM 165805 is removed because PPM 165807 is nearer to same DM +9°3707
+PPM 165826 is removed because PPM 165827 is nearer to same DM +6°3756
+PPM 165886 is removed because PPM 165885 is nearer to same DM +7°3699
+PPM 165958 is removed because PPM 165957 is nearer to same DM +1°3689
+PPM 165965 is removed because PPM 165964 is nearer to same DM +3°3727
+PPM 166011 is removed because PPM 166010 is nearer to same DM +9°3749
+PPM 166060 is removed because PPM 166059 is nearer to same DM +5°3782
+PPM 166062 is removed because PPM 166063 is nearer to same DM +9°3763
+PPM 166248 is removed because PPM 166250 is nearer to same DM +5°3857
+PPM 166294 is removed because PPM 166296 is nearer to same DM +7°3792
+PPM 166306 is removed because PPM 166310 is nearer to same DM +8°3789
+PPM 166333 is removed because PPM 166334 is nearer to same DM +3°3769
+PPM 166420 is removed because PPM 166421 is nearer to same DM +5°3924
+PPM 166438 is removed because PPM 166442 is nearer to same DM +6°3905
+PPM 166458 is removed because PPM 166457 is nearer to same DM +5°3933
+PPM 166717 is removed because PPM 166719 is nearer to same DM +9°3902
+PPM 166744 is removed because PPM 166743 is nearer to same DM +3°3825
+PPM 166746 is removed because PPM 166748 is nearer to same DM +9°3910
+PPM 166860 is removed because PPM 166859 is nearer to same DM +1°3827
+PPM 166897 is removed because PPM 166896 is nearer to same DM +5°3994
+PPM 167030 is removed because PPM 167029 is nearer to same DM +2°3758
+PPM 167156 is removed because PPM 167155 is nearer to same DM +6°4014
+PPM 167174 is removed because PPM 167175 is nearer to same DM +6°4021
+PPM 167198 is removed because PPM 167197 is nearer to same DM +8°3975
+PPM 167209 is removed because PPM 167210 is nearer to same DM +8°3978
+PPM 167261 is removed because PPM 167259 is nearer to same DM +3°3916
+PPM 167298 is removed because PPM 167299 is nearer to same DM +8°3992
+PPM 167318 is removed because PPM 167321 is nearer to same DM +3°3933
+PPM 167354 is removed because PPM 167353 is nearer to same DM +8°3999
+PPM 167356 is removed because PPM 167352 is nearer to same DM +5°4060
+PPM 167431 is removed because PPM 167432 is nearer to same DM +0°4145
+PPM 167479 is removed because PPM 167482 is nearer to same DM +1°3944
+PPM 167481 is removed because PPM 167486 is nearer to same DM +2°3833
+PPM 167530 is removed because PPM 167529 is nearer to same DM +8°4025
+PPM 167534 is removed because PPM 167535 is nearer to same DM +6°4076
+PPM 167573 is removed because PPM 167572 is nearer to same DM +8°4035
+PPM 167602 is removed because PPM 167604 is nearer to same DM +4°4062
+PPM 167618 is removed because PPM 167620 is nearer to same DM +8°4043
+PPM 167645 is removed because PPM 167643 is nearer to same DM +3°3978
+PPM 167648 is removed because PPM 167647 is nearer to same DM +0°4175
+PPM 167686 is removed because PPM 167690 is nearer to same DM +6°4103
+PPM 167691 is removed because PPM 167690 is nearer to same DM +6°4103
+PPM 167746 is removed because PPM 167747 is nearer to same DM +9°4085
+PPM 167752 is removed because PPM 167751 is nearer to same DM +7°4055
+PPM 167767 is removed because PPM 167768 is nearer to same DM +8°4076
+PPM 167815 is removed because PPM 167818 is nearer to same DM +4°4096
+PPM 167852 is removed because PPM 167853 is nearer to same DM +4°4105
+PPM 167894 is removed because PPM 167897 is nearer to same DM +3°4027
+PPM 167946 is removed because PPM 167947 is nearer to same DM +2°3897
+PPM 167959 is removed because PPM 167958 is nearer to same DM +2°3899
+PPM 167993 is removed because PPM 167994 is nearer to same DM +4°4128
+PPM 168101 is removed because PPM 168106 is nearer to same DM +7°4126
+PPM 168183 is removed because PPM 168178 is nearer to same DM +5°4199
+PPM 168248 is removed because PPM 168246 is nearer to same DM +6°4218
+PPM 168253 is removed because PPM 168254 is nearer to same DM +8°4163
+PPM 168268 is removed because PPM 168270 is nearer to same DM +7°4157
+PPM 168304 is removed because PPM 168300 is nearer to same DM +7°4163
+PPM 168337 is removed because PPM 168338 is nearer to same DM +5°4225
+PPM 168372 is removed because PPM 168373 is nearer to same DM +7°4177
+PPM 168403 is removed because PPM 168405 is nearer to same DM +9°4206
+PPM 168415 is removed because PPM 168418 is nearer to same DM +7°4182
+PPM 168417 is removed because PPM 168429 is nearer to same DM +3°4117
+PPM 168472 is removed because PPM 168475 is nearer to same DM +8°4190
+PPM 168475 is removed because PPM 168478 is nearer to same DM +8°4190
+PPM 168525 is removed because PPM 168523 is nearer to same DM +9°4230
+PPM 168574 is removed because PPM 168573 is nearer to same DM +8°4202
+PPM 168597 is removed because PPM 168595 is nearer to same DM +3°4136
+PPM 168637 is removed because PPM 168638 is nearer to same DM +8°4212
+PPM 168650 is removed because PPM 168652 is nearer to same DM +8°4214
+PPM 168664 is removed because PPM 168663 is nearer to same DM +8°4216
+PPM 168756 is removed because PPM 168759 is nearer to same DM +3°4164
+PPM 168761 is removed because PPM 168760 is nearer to same DM +6°4327
+PPM 168778 is removed because PPM 168783 is nearer to same DM +8°4237
+PPM 168787 is removed because PPM 168783 is nearer to same DM +8°4237
+PPM 168876 is removed because PPM 168877 is nearer to same DM +7°4278
+PPM 168972 is removed because PPM 168971 is nearer to same DM +9°4328
+PPM 168999 is removed because PPM 168998 is nearer to same DM +1°4145
+PPM 169010 is removed because PPM 169012 is nearer to same DM +8°4276
+PPM 169215 is removed because PPM 169216 is nearer to same DM +7°4349
+PPM 169247 is removed because PPM 169239 is nearer to same DM +7°4353
+PPM 169367 is removed because PPM 169366 is nearer to same DM +1°4203
+PPM 169368 is removed because PPM 169363 is nearer to same DM +8°4334
+PPM 169445 is removed because PPM 169436 is nearer to same DM +9°4417
+PPM 169484 is removed because PPM 169483 is nearer to same DM +8°4361
+PPM 169485 is removed because PPM 169486 is nearer to same DM +8°4363
+PPM 169537 is removed because PPM 169536 is nearer to same DM +3°4281
+PPM 169540 is removed because PPM 169541 is nearer to same DM +7°4397
+PPM 169579 is removed because PPM 169583 is nearer to same DM +7°4402
+Star DM -0°3946 not found (corresponding to PPM 169607). Discarding PPM star.
+PPM 169644 is removed because PPM 169643 is nearer to same DM +8°4386
+PPM 169694 is removed because PPM 169695 is nearer to same DM +4°4398
+PPM 169735 is removed because PPM 169736 is nearer to same DM +5°4469
+PPM 169751 is removed because PPM 169754 is nearer to same DM +7°4435
+PPM 169780 is removed because PPM 169781 is nearer to same DM +3°4315
+PPM 169813 is removed because PPM 169814 is nearer to same DM +9°4488
+PPM 169828 is removed because PPM 169830 is nearer to same DM +9°4492
+PPM 169830 is removed because PPM 169832 is nearer to same DM +9°4492
+PPM 169859 is removed because PPM 169855 is nearer to same DM +7°4446
+PPM 169919 is removed because PPM 169915 is nearer to same DM +5°4493
+PPM 170082 is removed because PPM 170078 is nearer to same DM +8°4444
+PPM 170104 is removed because PPM 170111 is nearer to same DM +4°4456
+PPM 170184 is removed because PPM 170183 is nearer to same DM +8°4456
+PPM 170215 is removed because PPM 170217 is nearer to same DM +1°4310
+PPM 170240 is removed because PPM 170244 is nearer to same DM +5°4542
+PPM 170269 is removed because PPM 170262 is nearer to same DM +6°4570
+PPM 170305 is removed because PPM 170302 is nearer to same DM +4°4490
+PPM 170307 is removed because PPM 170311 is nearer to same DM +6°4578
+PPM 170334 is removed because PPM 170332 is nearer to same DM +6°4582
+PPM 170353 is removed because PPM 170354 is nearer to same DM +4°4498
+PPM 170357 is removed because PPM 170352 is nearer to same DM +6°4587
+PPM 170383 is removed because PPM 170390 is nearer to same DM +9°4592
+PPM 170415 is removed because PPM 170417 is nearer to same DM +7°4507
+PPM 170430 is removed because PPM 170429 is nearer to same DM +8°4485
+PPM 170458 is removed because PPM 170459 is nearer to same DM +2°4215
+PPM 170493 is removed because PPM 170494 is nearer to same DM +2°4220
+PPM 170538 is removed because PPM 170541 is nearer to same DM +7°4528
+PPM 170546 is removed because PPM 170547 is nearer to same DM +8°4502
+PPM 170557 is removed because PPM 170555 is nearer to same DM +8°4504
+PPM 170580 is removed because PPM 170581 is nearer to same DM +2°4232
+PPM 170711 is removed because PPM 170706 is nearer to same DM +8°4530
+PPM 170739 is removed because PPM 170738 is nearer to same DM +3°4428
+PPM 170913 is removed because PPM 170912 is nearer to same DM +3°4449
+PPM 170985 is removed because PPM 170981 is nearer to same DM +7°4581
+PPM 171005 is removed because PPM 171003 is nearer to same DM +9°4674
+PPM 171052 is removed because PPM 171051 is nearer to same DM +4°4586
+PPM 171073 is removed because PPM 171074 is nearer to same DM +3°4473
+PPM 171233 is removed because PPM 171231 is nearer to same DM +1°4419
+PPM 171338 is removed because PPM 171339 is nearer to same DM +6°4759
+PPM 171428 is removed because PPM 171429 is nearer to same DM +1°4444
+PPM 171639 is removed because PPM 171640 is nearer to same DM +1°4465
+PPM 171661 is removed because PPM 171662 is nearer to same DM +0°4715
+PPM 171677 is removed because PPM 171679 is nearer to same DM +2°4350
+PPM 171775 is removed because PPM 171774 is nearer to same DM +7°4693
+PPM 171796 is removed because PPM 171798 is nearer to same DM +6°4837
+PPM 171859 is removed because PPM 171857 is nearer to same DM +4°4694
+PPM 171936 is removed because PPM 171938 is nearer to same DM +8°4695
+PPM 171942 is removed because PPM 171945 is nearer to same DM +6°4855
+PPM 171945 is removed because PPM 171946 is nearer to same DM +6°4855
+PPM 171967 is removed because PPM 171964 is nearer to same DM +8°4699
+PPM 171974 is removed because PPM 171975 is nearer to same DM +6°4859
+PPM 171978 is removed because PPM 171977 is nearer to same DM +0°4751
+PPM 171990 is removed because PPM 171989 is nearer to same DM +7°4720
+PPM 171993 is removed because PPM 171994 is nearer to same DM -0°4239
+PPM 172023 is removed because PPM 172022 is nearer to same DM +6°4867
+PPM 172026 is removed because PPM 172019 is nearer to same DM +0°4756
+PPM 172050 is removed because PPM 172051 is nearer to same DM +6°4871
+PPM 172081 is removed because PPM 172088 is nearer to same DM +1°4519
+PPM 172090 is removed because PPM 172089 is nearer to same DM +3°4597
+PPM 172102 is removed because PPM 172101 is nearer to same DM +7°4732
+PPM 172144 is removed because PPM 172145 is nearer to same DM -0°4251
+PPM 172148 is removed because PPM 172150 is nearer to same DM +5°4853
+PPM 172172 is removed because PPM 172171 is nearer to same DM +6°4887
+PPM 172192 is removed because PPM 172191 is nearer to same DM -0°4260
+PPM 172306 is removed because PPM 172307 is nearer to same DM +2°4424
+PPM 172359 is removed because PPM 172357 is nearer to same DM +6°4913
+PPM 172362 is removed because PPM 172361 is nearer to same DM +8°4753
+PPM 172383 is removed because PPM 172382 is nearer to same DM +0°4791
+PPM 172450 is removed because PPM 172451 is nearer to same DM +7°4769
+Star DM +2°4448 not found (corresponding to PPM 172461). Discarding PPM star.
+PPM 172483 is removed because PPM 172485 is nearer to same DM +5°4910
+PPM 172509 is removed because PPM 172508 is nearer to same DM +0°4802
+PPM 172516 is removed because PPM 172515 is nearer to same DM +5°4918
+PPM 172530 is removed because PPM 172523 is nearer to same DM +8°4772
+PPM 172568 is removed because PPM 172570 is nearer to same DM +4°4788
+PPM 172592 is removed because PPM 172593 is nearer to same DM +1°4575
+PPM 172711 is removed because PPM 172708 is nearer to same DM +0°4828
+PPM 172726 is removed because PPM 172727 is nearer to same DM +7°4806
+PPM 172742 is removed because PPM 172743 is nearer to same DM +7°4812
+PPM 172832 is removed because PPM 172824 is nearer to same DM +6°4989
+PPM 172952 is removed because PPM 172951 is nearer to same DM +4°4847
+PPM 173068 is removed because PPM 173071 is nearer to same DM +3°4709
+PPM 173103 is removed because PPM 173100 is nearer to same DM +4°4860
+PPM 173156 is removed because PPM 173157 is nearer to same DM +6°5034
+PPM 173196 is removed because PPM 173195 is nearer to same DM +3°4730
+PPM 173255 is removed because PPM 173254 is nearer to same DM +5°5046
+PPM 173265 is removed because PPM 173262 is nearer to same DM +6°5043
+PPM 173293 is removed because PPM 173292 is nearer to same DM +6°5045
+PPM 173445 is removed because PPM 173446 is nearer to same DM +6°5066
+PPM 173451 is removed because PPM 173450 is nearer to same DM +8°4937
+PPM 173461 is removed because PPM 173460 is nearer to same DM +8°4939
+PPM 173529 is removed because PPM 173526 is nearer to same DM +3°4789
+PPM 173727 is removed because PPM 173726 is nearer to same DM +4°4955
+PPM 173772 is removed because PPM 173773 is nearer to same DM +5°5135
+PPM 173773 is removed because PPM 173774 is nearer to same DM +5°5135
+PPM 173802 is removed because PPM 173803 is nearer to same DM +7°4981
+PPM 173869 is removed because PPM 173868 is nearer to same DM +8°5019
+PPM 173890 is removed because PPM 173891 is nearer to same DM +2°4634
+PPM 173906 is removed because PPM 173910 is nearer to same DM +4°4987
+PPM 173929 is removed because PPM 173927 is nearer to same DM +2°4646
+Star DM +4°4993 not found (corresponding to PPM 173967). Discarding PPM star.
+PPM 174042 is removed because PPM 174045 is nearer to same DM +3°4858
+PPM 174091 is removed because PPM 174092 is nearer to same DM +0°4998
+PPM 174121 is removed because PPM 174120 is nearer to same DM +9°5221
+PPM 174151 is removed because PPM 174150 is nearer to same DM +4°5019
+PPM 174225 is removed because PPM 174223 is nearer to same DM +7°5057
+PPM 174239 is removed because PPM 174238 is nearer to same DM +8°5082
+PPM 174278 is removed because PPM 174277 is nearer to same DM +8°5093
+PPM 174309 is removed because PPM 174310 is nearer to same DM +2°4697
+PPM 174330 is removed because PPM 174329 is nearer to same DM +9°5259
+PPM 174491 is removed because PPM 174490 is nearer to same DM +7°5092
+PPM 174565 is removed because PPM 174566 is nearer to same DM +8°5144
+PPM 174596 is removed because PPM 174591 is nearer to same DM +2°4735
+PPM 174618 is removed because PPM 174615 is nearer to same DM +1°4808
+PPM 174626 is removed because PPM 174627 is nearer to same DM +8°5152
+PPM 174630 is removed because PPM 174629 is nearer to same DM +2°4741
+PPM 174756 is removed because PPM 174755 is nearer to same DM -0°91
+PPM 174767 is removed because PPM 174766 is nearer to same DM -1°82
+PPM 174906 is removed because PPM 174907 is nearer to same DM -0°229
+PPM 174911 is removed because PPM 174910 is nearer to same DM -1°192
+PPM 175046 is removed because PPM 175047 is nearer to same DM -1°293
+PPM 175130 is removed because PPM 175131 is nearer to same DM -1°354
+PPM 175140 is removed because PPM 175139 is nearer to same DM -1°360
+PPM 175238 is removed because PPM 175237 is nearer to same DM -1°434
+PPM 175272 is removed because PPM 175271 is nearer to same DM -1°465
+PPM 175305 is removed because PPM 175304 is nearer to same DM -1°487
+PPM 175376 is removed because PPM 175375 is nearer to same DM -0°597
+PPM 175536 is removed because PPM 175535 is nearer to same DM -1°644
+PPM 175547 is removed because PPM 175546 is nearer to same DM -1°653
+PPM 175580 is removed because PPM 175579 is nearer to same DM -0°727
+PPM 175595 is removed because PPM 175596 is nearer to same DM -0°739
+PPM 175662 is removed because PPM 175661 is nearer to same DM -1°747
+PPM 175838 is removed because PPM 175837 is nearer to same DM -0°955
+PPM 175841 is removed because PPM 175842 is nearer to same DM -0°958
+PPM 175866 is removed because PPM 175867 is nearer to same DM -1°913
+PPM 175898 is removed because PPM 175899 is nearer to same DM -1°939
+PPM 175917 is removed because PPM 175916 is nearer to same DM -1°951
+PPM 175926 is removed because PPM 175927 is nearer to same DM -0°1005
+PPM 175978 is removed because PPM 175977 is nearer to same DM -0°1035
+PPM 176045 is removed because PPM 176046 is nearer to same DM -1°1040
+PPM 176066 is removed because PPM 176065 is nearer to same DM -0°1116
+PPM 176151 is removed because PPM 176152 is nearer to same DM -0°1204
+PPM 176159 is removed because PPM 176158 is nearer to same DM -1°1146
+PPM 176174 is removed because PPM 176173 is nearer to same DM -0°1220
+PPM 176240 is removed because PPM 176239 is nearer to same DM -0°1276
+PPM 176244 is removed because PPM 176246 is nearer to same DM -0°1280
+PPM 176298 is removed because PPM 176297 is nearer to same DM -0°1319
+PPM 176391 is removed because PPM 176392 is nearer to same DM -0°1407
+PPM 176399 is removed because PPM 176400 is nearer to same DM -1°1351
+PPM 176410 is removed because PPM 176411 is nearer to same DM +0°1578
+PPM 176471 is removed because PPM 176470 is nearer to same DM -1°1406
+PPM 176486 is removed because PPM 176488 is nearer to same DM -1°1416
+PPM 176524 is removed because PPM 176523 is nearer to same DM -1°1443
+PPM 176538 is removed because PPM 176537 is nearer to same DM -1°1453
+PPM 176553 is removed because PPM 176554 is nearer to same DM -0°1506
+PPM 176600 is removed because PPM 176601 is nearer to same DM -0°1536
+PPM 176611 is removed because PPM 176610 is nearer to same DM -0°1548
+PPM 176619 is removed because PPM 176620 is nearer to same DM -1°1509
+PPM 176676 is removed because PPM 176675 is nearer to same DM -1°1553
+PPM 176718 is removed because PPM 176717 is nearer to same DM -0°1625
+PPM 176725 is removed because PPM 176722 is nearer to same DM -0°1628
+PPM 176747 is removed because PPM 176750 is nearer to same DM -1°1592
+PPM 176763 is removed because PPM 176762 is nearer to same DM -1°1600
+PPM 176789 is removed because PPM 176788 is nearer to same DM -1°1615
+PPM 176849 is removed because PPM 176850 is nearer to same DM +0°1902
+PPM 176858 is removed because PPM 176857 is nearer to same DM -0°1684
+PPM 176918 is removed because PPM 176917 is nearer to same DM -0°1722
+PPM 176923 is removed because PPM 176920 is nearer to same DM -0°1723
+PPM 176947 is removed because PPM 176948 is nearer to same DM +0°1956
+PPM 177119 is removed because PPM 177118 is nearer to same DM -1°1840
+PPM 177160 is removed because PPM 177159 is nearer to same DM -1°1869
+PPM 177175 is removed because PPM 177174 is nearer to same DM -1°1878
+PPM 177281 is removed because PPM 177280 is nearer to same DM -1°1949
+PPM 177298 is removed because PPM 177297 is nearer to same DM -0°1913
+PPM 177337 is removed because PPM 177336 is nearer to same DM -1°1978
+PPM 177380 is removed because PPM 177381 is nearer to same DM +0°2253
+PPM 177439 is removed because PPM 177440 is nearer to same DM -1°2036
+PPM 177442 is removed because PPM 177441 is nearer to same DM +0°2294
+PPM 177461 is removed because PPM 177462 is nearer to same DM +0°2309
+PPM 177476 is removed because PPM 177475 is nearer to same DM -1°2061
+PPM 177489 is removed because PPM 177488 is nearer to same DM +0°2325
+PPM 177539 is removed because PPM 177540 is nearer to same DM +0°2356
+PPM 177620 is removed because PPM 177619 is nearer to same DM +0°2403
+PPM 177647 is removed because PPM 177646 is nearer to same DM -0°2086
+PPM 177688 is removed because PPM 177687 is nearer to same DM -1°2173
+PPM 177709 is removed because PPM 177706 is nearer to same DM -0°2109
+PPM 177745 is removed because PPM 177744 is nearer to same DM +0°2462
+PPM 177810 is removed because PPM 177811 is nearer to same DM -1°2235
+PPM 177816 is removed because PPM 177815 is nearer to same DM -0°2174
+PPM 177863 is removed because PPM 177866 is nearer to same DM -0°2198
+PPM 178069 is removed because PPM 178068 is nearer to same DM -0°2285
+PPM 178076 is removed because PPM 178077 is nearer to same DM -0°2289
+PPM 178142 is removed because PPM 178143 is nearer to same DM -1°2372
+PPM 178183 is removed because PPM 178182 is nearer to same DM -1°2390
+PPM 178257 is removed because PPM 178258 is nearer to same DM +0°2694
+PPM 178259 is removed because PPM 178258 is nearer to same DM +0°2694
+PPM 178266 is removed because PPM 178267 is nearer to same DM +0°2695
+PPM 178279 is removed because PPM 178278 is nearer to same DM -0°2370
+PPM 178299 is removed because PPM 178300 is nearer to same DM -1°2448
+PPM 178342 is removed because PPM 178341 is nearer to same DM -0°2393
+PPM 178390 is removed because PPM 178389 is nearer to same DM -1°2482
+PPM 178452 is removed because PPM 178451 is nearer to same DM -0°2428
+PPM 178513 is removed because PPM 178512 is nearer to same DM -1°2534
+PPM 178525 is removed because PPM 178524 is nearer to same DM +0°2802
+PPM 178605 is removed because PPM 178604 is nearer to same DM +0°2843
+PPM 178637 is removed because PPM 178635 is nearer to same DM -0°2512
+Star DM -0°2518 not found (corresponding to PPM 178653). Discarding PPM star.
+Star DM -0°2518 not found (corresponding to PPM 178654). Discarding PPM star.
+PPM 178696 is removed because PPM 178695 is nearer to same DM +0°2900
+PPM 178705 is removed because PPM 178706 is nearer to same DM -1°2628
+PPM 178790 is removed because PPM 178789 is nearer to same DM +0°2944
+PPM 178856 is removed because PPM 178857 is nearer to same DM +0°2976
+PPM 178867 is removed because PPM 178866 is nearer to same DM -0°2605
+PPM 178970 is removed because PPM 178972 is nearer to same DM -1°2777
+PPM 178991 is removed because PPM 178992 is nearer to same DM -1°2786
+PPM 178995 is removed because PPM 178994 is nearer to same DM -0°2671
+PPM 179038 is removed because PPM 179039 is nearer to same DM -1°2815
+PPM 179291 is removed because PPM 179292 is nearer to same DM -1°2945
+PPM 179316 is removed because PPM 179317 is nearer to same DM -1°2959
+PPM 179400 is removed because PPM 179401 is nearer to same DM +0°3250
+PPM 179554 is removed because PPM 179553 is nearer to same DM -1°3050
+PPM 179557 is removed because PPM 179556 is nearer to same DM -1°3051
+PPM 179608 is removed because PPM 179607 is nearer to same DM -0°2989
+PPM 179637 is removed because PPM 179636 is nearer to same DM -0°3004
+PPM 179752 is removed because PPM 179751 is nearer to same DM -1°3150
+PPM 179773 is removed because PPM 179774 is nearer to same DM -1°3166
+PPM 179884 is removed because PPM 179885 is nearer to same DM +0°3560
+PPM 179908 is removed because PPM 179907 is nearer to same DM -0°3174
+Star DM -1°3245 not found (corresponding to PPM 179921). Discarding PPM star.
+PPM 179998 is removed because PPM 180000 is nearer to same DM -1°3292
+PPM 180077 is removed because PPM 180079 is nearer to same DM -1°3345
+PPM 180122 is removed because PPM 180121 is nearer to same DM -0°3335
+PPM 180155 is removed because PPM 180154 is nearer to same DM -1°3389
+PPM 180174 is removed because PPM 180175 is nearer to same DM -1°3404
+PPM 180227 is removed because PPM 180228 is nearer to same DM -1°3437
+PPM 180436 is removed because PPM 180437 is nearer to same DM -1°3559
+PPM 180491 is removed because PPM 180490 is nearer to same DM -0°3597
+PPM 180510 is removed because PPM 180509 is nearer to same DM -1°3612
+PPM 180555 is removed because PPM 180554 is nearer to same DM -1°3649
+PPM 180643 is removed because PPM 180641 is nearer to same DM -0°3723
+PPM 180699 is removed because PPM 180698 is nearer to same DM -0°3762
+PPM 180861 is removed because PPM 180862 is nearer to same DM -1°3885
+PPM 181059 is removed because PPM 181060 is nearer to same DM -1°4027
+PPM 181188 is removed because PPM 181189 is nearer to same DM -0°4163
+PPM 181224 is removed because PPM 181223 is nearer to same DM -1°4131
+PPM 181258 is removed because PPM 181260 is nearer to same DM -1°4159
+PPM 181310 is removed because PPM 181309 is nearer to same DM -1°4180
+Star DM -1°4186 not found (corresponding to PPM 181315). Discarding PPM star.
+Star DM -1°4185 not found (corresponding to PPM 181316). Discarding PPM star.
+PPM 181385 is removed because PPM 181384 is nearer to same DM -1°4235
+PPM 181387 is removed because PPM 181388 is nearer to same DM -1°4237
+PPM 181390 is removed because PPM 181389 is nearer to same DM -1°4238
+PPM 181431 is removed because PPM 181432 is nearer to same DM -1°4279
+PPM 181600 is removed because PPM 181599 is nearer to same DM -1°4412
+PPM 181701 is removed because PPM 181702 is nearer to same DM -1°4491
+PPM 181719 is removed because PPM 181718 is nearer to same DM -1°4505
+PPM 147771 is removed because PPM 700192 is nearer to same DM -0°740
+Star DM +0°1236 not found (corresponding to PPM 700275). Discarding PPM star.
+PPM 700366 is removed because PPM 155704 is nearer to same DM +1°2282
+PPM 701162 is removed because PPM 174875 is nearer to same DM -1°167
+Stars read from PPM: 63926
+1) BD +17°5026 separated from PPM 116071 in 300.5 arcsec.
+     Register BD 17°5026 (en 23h):  9.5 | 54m56.4s | 30.6'     (pag. 343)
+2) BD +15°259 separated from PPM 117652 in 225.2 arcsec.
+     Register BD 15°259 (en 1h):  9.5 | 38m21.1s | 36.5'     (pag. 293)
+3) BD +17°893 separated from PPM 120819 in 197.3 arcsec.
+     Register BD 17°893 (en 5h):  9.5 | 10m30.7s | 38.5'     (pag. 329)
+4) BD +11°857 separated from PPM 121122 in 247.7 arcsec.
+     Register BD 11°857 (en 5h):  9.3 | 26m12.6s | 32.8'     (pag. 225)
+5) BD +11°1921 separated from PPM 125787 in 228.6 arcsec.
+     Register BD 11°1921 (en 8h):  9.5 | 41m53.9s | 37.7'     (pag. 229)
+6) BD +13°2074 separated from PPM 126363 in 865.5 arcsec.
+     Register BD 13°2074 (en 9h):  7.0 | 12m23.8s | 43.2'     (pag. 264)
+7) BD +12°2132 separated from PPM 127043 in 337.5 arcsec.
+     Register BD 12°2132 (en 9h):  8.0 | 54m8.4s | 50.9'     (pag. 247)
+8) BD +12°2223 separated from PPM 127501 (PROBLEM) in 182.5 arcsec.
+     Register BD 12°2223 (en 10h):  9.5 | 25m39.1s | 19.4'     (pag. 247)
+9) BD +17°2657 separated from PPM 129982 in 904.1 arcsec.
+     Register BD 17°2657 (en 13h):  9.5 | 33m38.1s | 3.0'     (pag. 335)
+10) BD +11°2749 separated from PPM 131031 in 187.7 arcsec.
+     Register BD 11°2749 (en 14h):  9.5 | 51m55.0s | 58.7'     (pag. 231)
+11) BD +15°2819 separated from PPM 131156 in 197.9 arcsec.
+     Register BD 15°2819 (en 15h):  9.0 | 1m8.0s | 34.4'     (pag. 301)
+12) BD +12°3255 separated from PPM 133583 in 191.5 arcsec.
+     Register BD 12°3255 (en 17h):  9.4 | 28m55.4s | 39.5'     (pag. 250)
+13) BD +10°3556 separated from PPM 134886 in 182.3 arcsec.
+     Register BD 10°3556 (en 18h):  9.5 | 26m21.6s | 6.9'     (pag. 217)
+14) BD +12°3695 separated from PPM 135403 (PROBLEM) in 182.0 arcsec.
+     Register BD 12°3695 (en 18h):  9.5 | 46m2.0s | 20.3'     (pag. 252)
+15) BD +17°4041 separated from PPM 136738 in 184.9 arcsec.
+     Register BD 17°4041 (en 19h):  9.5 | 33m35.9s | 5.4'     (pag. 339)
+16) BD +15°3907 separated from PPM 136813 in 194.9 arcsec.
+     Register BD 15°3907 (en 19h):  9.5 | 35m41.1s | 5.0'     (pag. 305)
+17) BD +10°4164 separated from PPM 137539 in 249.8 arcsec.
+     Register BD 10°4164 (en 19h):  9.4 | 57m2.5s | 7.9'     (pag. 219)
+18) BD +13°4315 separated from PPM 137919 in 238.0 arcsec.
+     Register BD 13°4315 (en 20h):  9.4 | 6m56.6s | 34.3'     (pag. 271)
+19) BD +12°4447 separated from PPM 138916 in 209.3 arcsec.
+     Register BD 12°4447 (en 20h):  9.3 | 37m5.9s | 2.9'     (pag. 254)
+20) BD +15°4389 separated from PPM 139931 in 572.6 arcsec.
+     Register BD 15°4389 (en 21h):  9.5 | 12m34.7s | 8.9'     (pag. 307)
+21) BD +17°4605 separated from PPM 140322 in 209.4 arcsec.
+     Register BD 17°4605 (en 21h):  9.5 | 27m44.0s | 3.4'     (pag. 341)
+22) BD +10°4616 separated from PPM 140581 in 209.7 arcsec.
+     Register BD 10°4616 (en 21h):  9.5 | 37m54.1s | 41.2'     (pag. 221)
+23) BD +19°4871 separated from PPM 141127 in 1848.1 arcsec.
+     Register BD 19°4871 (en 22h):  9.4 | 3m11.2s | 37.9'     (pag. 377)
+24) BD +17°4700 separated from PPM 141128 (PROBLEM) in 566.0 arcsec.
+     Register BD 17°4700 (en 22h):  9.5 | 3m11.3s | 55.1'     (pag. 342)
+25) BD +16°4796 separated from PPM 141724 in 900.9 arcsec.
+     Register BD 16°4796 (en 22h):  9.5 | 34m44.5s | 22.6'     (pag. 325)
+26) BD +14°4925 separated from PPM 142147 in 204.8 arcsec.
+     Register BD 14°4925 (en 22h):  9.4 | 56m59.1s | 31.8'     (pag. 291)
+27) BD +11°5006 separated from PPM 142538 in 190.9 arcsec.
+     Register BD 11°5006 (en 23h):  9.5 | 21m5.0s | 49.0'     (pag. 239)
+28) BD +6°151 separated from PPM 144218 in 238.9 arcsec.
+     Register BD 6°151 (en 0h):  9.5 | 56m14.4s | 32.4'     (pag. 134)
+29) BD +1°410 separated from PPM 145462 in 439.1 arcsec.
+     Register BD 1°410 (en 2h):  5.8 | 10m0.4s | 4.0'     (pag. 50)
+30) BD +4°416 separated from PPM 145735 in 183.8 arcsec.
+     Register BD 4°416 (en 2h):  9.3 | 28m2.8s | 28.2'     (pag. 100)
+31) BD +4°538 separated from PPM 146584 in 184.3 arcsec.
+     Register BD 4°538 (en 3h):  9.5 | 20m2.0s | 25.8'     (pag. 100)
+32) BD +0°1108 separated from PPM 149109 in 211.1 arcsec.
+     Register BD 0°1108 (en 5h):  8.9 | 25m1.7s | 58.3'     (pag. 35)
+33) BD +4°1318 separated from PPM 150758 in 1179.7 arcsec.
+     Register BD 4°1318 (en 6h):  8.5 | 26m10.1s | 57.5'     (pag. 103)
+34) BD +3°1374 separated from PPM 151128 (PROBLEM) in 303.6 arcsec.
+     Register BD 3°1374 (en 6h):  8.9 | 36m14.3s | 30.6'     (pag. 86)
+     Note: Also associated to discarded PPM 151126 (dist = 313.2 arcsec).
+35) BD +2°1367 separated from PPM 151138 in 275.0 arcsec.
+     Register BD 2°1367 (en 6h):  9.0 | 36m26.7s | 50.9'     (pag. 70)
+36) BD +6°1439 separated from PPM 151541 in 1164.3 arcsec.
+     Register BD 6°1439 (en 6h):  9.3 | 47m43.0s | 42.2'     (pag. 139)
+37) BD +5°1481 separated from PPM 151561 in 226.5 arcsec.
+     Register BD 5°1481 (en 6h):  9.5 | 48m35.4s | 23.5'     (pag. 121)
+38) BD +4°1671 separated from PPM 152462 in 212.3 arcsec.
+     Register BD 4°1671 (en 7h):  9.4 | 13m51.5s | 21.8'     (pag. 104)
+39) BD +8°1757 separated from PPM 152571 (PROBLEM) in 234.7 arcsec.
+     Register BD 8°1757 (en 7h):  9.5 | 16m26.9s | 35.4'     (pag. 175)
+40) BD +8°1825 separated from PPM 153008 in 204.7 arcsec.
+     Register BD 8°1825 (en 7h):  9.5 | 29m34.7s | 34.7'     (pag. 175)
+41) BD +2°1758 separated from PPM 153209 in 187.4 arcsec.
+     Register BD 2°1758 (en 7h):  9.6 | 36m12.3s | 45.6'     (pag. 71)
+42) BD +0°2151 separated from PPM 153697 in 208.3 arcsec.
+     Register BD 0°2151 (en 7h):  9.5 | 52m30.0s | 53.6'     (pag. 39)
+43) BD +8°2038 separated from PPM 154351 in 184.5 arcsec.
+     Register BD 8°2038 (en 8h):  9.3 | 14m17.0s | 16.8'     (pag. 176)
+44) BD +1°2078 separated from PPM 154370 in 596.5 arcsec.
+     Register BD 1°2078 (en 8h):  8.8 | 15m13.0s | 39.3'     (pag. 56)
+45) BD +9°1975 separated from PPM 154500 in 196.3 arcsec.
+     Register BD 9°1975 (en 8h):  9.5 | 19m58.5s | 5.1'     (pag. 193)
+46) BD +6°2229 separated from PPM 156333 in 352.2 arcsec.
+     Register BD 6°2229 (en 9h):  9.3 | 48m19.1s | 41.3'     (pag. 141)
+47) BD +7°2545 separated from PPM 158855 in 191.6 arcsec.
+     Register BD 7°2545 (en 12h):  9.2 | 20m2.9s | 36.9'     (pag. 160)
+48) BD +2°2564 separated from PPM 159058 in 182.4 arcsec.
+     Register BD 2°2564 (en 12h):  9.2 | 32m46.4s | 34.6'     (pag. 74)
+49) BD +1°2911 separated from PPM 160518 in 1219.7 arcsec.
+     Register BD 1°2911 (en 14h):  8.5 | 11m26.3s | 35.3'     (pag. 59)
+50) BD +3°3183 separated from PPM 162583 in 286.8 arcsec.
+     Register BD 3°3183 (en 16h):  9.3 | 16m53.8s | 20.7'     (pag. 93)
+51) BD +9°3277 separated from PPM 163154 in 310.2 arcsec.
+     Register BD 9°3277 (en 16h):  9.2 | 42m11.8s | 13.5'     (pag. 198)
+52) BD +0°3703 separated from PPM 164115 in 253.4 arcsec.
+     Register BD 0°3703 (en 17h):  9.0 | 23m17.4s | 42.7'     (pag. 44)
+53) BD +0°3742 separated from PPM 164353 in 542.9 arcsec.
+     Register BD 0°3742 (en 17h):  9.1 | 31m32.4s | 30.2'     (pag. 44)
+54) BD +9°3543 separated from PPM 165073 in 180.3 arcsec.
+     Register BD 9°3543 (en 17h):  9.3 | 56m22.0s | 49.0'     (pag. 199)
+55) BD +6°3621 separated from PPM 165189 in 1306.8 arcsec.
+     Register BD 6°3621 (en 17h):  9.5 | 58m45.1s | 5.7'     (pag. 146)
+56) BD +0°3924 separated from PPM 165686 in 323.9 arcsec.
+     Register BD 0°3924 (en 18h):  8.8 | 14m59.4s | 53.9'     (pag. 45)
+57) BD +1°3697 separated from PPM 166000 (PROBLEM) in 255.3 arcsec.
+     Register BD 1°3697 (en 18h):  9.5 | 23m37.3s | 55.5'     (pag. 62)
+58) BD +0°4007 separated from PPM 166505 in 720.8 arcsec.
+     Register BD 0°4007 (en 18h):  9.5 | 37m47.4s | 39.5'     (pag. 45)
+59) BD +3°3794 separated from PPM 166537 in 1799.7 arcsec.
+     Register BD 3°3794 (en 18h):  9.2 | 38m48.9s | 57.4'     (pag. 95)
+60) BD +0°4128 separated from PPM 167340 in 203.0 arcsec.
+     Register BD 0°4128 (en 19h):  9.5 | 4m1.8s | 33.0'     (pag. 46)
+61) BD +0°4242 separated from PPM 168116 in 595.5 arcsec.
+     Register BD 0°4242 (en 19h):  9.2 | 25m56.3s | 4.8'     (pag. 46)
+62) BD +2°4111 separated from PPM 169568 in 477.1 arcsec.
+     Register BD 2°4111 (en 20h):  9.5 | 5m30.5s | 0.3'     (pag. 80)
+63) BD +4°4414 separated from PPM 169783 in 226.8 arcsec.
+     Register BD 4°4414 (en 20h):  9.5 | 12m10.7s | 57.0'     (pag. 114)
+64) BD +6°4506 separated from PPM 169871 in 223.2 arcsec.
+     Register BD 6°4506 (en 20h):  9.5 | 14m38.2s | 21.0'     (pag. 149)
+65) BD +9°4528 separated from PPM 170026 in 201.4 arcsec.
+     Register BD 9°4528 (en 20h):  9.5 | 19m10.3s | 27.4'     (pag. 202)
+66) BD -0°4017 separated from PPM 170119 in 211.3 arcsec.
+     Register BD 0°4017 (en 20h):  9.2 | 21m34.7s | 31.7'     (pag. 30)
+67) BD +5°4560 separated from PPM 170355 in 181.5 arcsec.
+     Register BD 5°4560 (en 20h):  9.2 | 28m54.6s | 26.0'     (pag. 131)
+68) BD +4°4600 separated from PPM 171197 in 227.5 arcsec.
+     Register BD 4°4600 (en 20h):  9.5 | 56m22.9s | 23.9'     (pag. 114)
+69) BD +7°4636 separated from PPM 171378 in 240.5 arcsec.
+     Register BD 7°4636 (en 21h):  9.5 | 3m9.7s | 8.6'     (pag. 167)
+70) BD +7°4658 separated from PPM 171540 in 1782.5 arcsec.
+     Register BD 7°4658 (en 21h):  8.0 | 10m20.0s | 8.1'     (pag. 168)
+71) BD +8°4691 separated from PPM 171914 in 182.7 arcsec.
+     Register BD 8°4691 (en 21h):  9.5 | 26m9.2s | 6.2'     (pag. 185)
+72) BD +3°4720 separated from PPM 173144 in 205.7 arcsec.
+     Register BD 3°4720 (en 22h):  8.8 | 24m26.5s | 16.6'     (pag. 98)
+73) BD +7°4897 separated from PPM 173229 in 180.7 arcsec.
+     Register BD 7°4897 (en 22h):  9.5 | 29m4.6s | 53.0'     (pag. 168)
+74) BD +1°4756 separated from PPM 174319 in 188.8 arcsec.
+     Register BD 1°4756 (en 23h):  9.5 | 32m56.9s | 48.5'     (pag. 65)
+75) BD -0°1008 separated from PPM 175930 (PROBLEM) in 302.4 arcsec.
+     Register BD 0°1008 (en 5h):  9.3 | 27m47.8s | 55.5'     (pag. 19)
+76) BD -1°1489 separated from PPM 176590 in 241.0 arcsec.
+     Register BD -1°1489 (en 6h):  9.3 | 52m25.3s | 6.0'     (pag. 6)
+77) BD -1°2359 separated from PPM 178109 in 912.7 arcsec.
+     Register BD -1°2359 (en 10h):  8.6 | 5m10.6s | 1.0'     (pag. 9)
+78) BD +0°2751 separated from PPM 178412 in 232.0 arcsec.
+     Register BD 0°2751 (en 11h):  9.4 | 2m29.9s | 2.1'     (pag. 41)
+79) BD -0°2683 separated from PPM 179033 in 222.0 arcsec.
+     Register BD 0°2683 (en 13h):  9.5 | 15m40.6s | 5.1'     (pag. 25)
+80) BD -0°3349 separated from PPM 180141 in 186.7 arcsec.
+     Register BD 0°3349 (en 17h):  9.5 | 36m4.4s | 31.1'     (pag. 27)
+81) BD -1°4012 separated from PPM 181045 in 187.0 arcsec.
+     Register BD -1°4012 (en 20h):  9.3 | 29m35.0s | 35.7'     (pag. 14)
+82) BD -1°4303 separated from PPM 181472 in 229.1 arcsec.
+     Register BD -1°4303 (en 22h):  8.5 | 22m26.5s | 28.2'     (pag. 15)
+83) BD -1°1212 reports mag=8.7 but it should be mag=9.2 from PPM 702810: Delta = 0.5.
+     Register BD -1°1212 (en 6h):  8.7 | 14m41.8s | 57.8'     (pag. 5)
+84) BD +0°3251 reports mag=8.4 but it should be mag=9.1 from PPM 706082: Delta = 0.7.
+     Register BD 0°3251 (en 14h):  8.4 | 43m23.0s | 2.7'     (pag. 43)
+85) BD -0°3267 reports mag=8.7 but it should be mag=9.2 from PPM 706751: Delta = 0.5.
+     Register BD 0°3267 (en 17h):  8.7 | 13m32.4s | 5.2'     (pag. 27)
+86) BD -1°3475 reports mag=8.9 but it should be mag=9.3 from PPM 707048: Delta = 0.4.
+     Register BD -1°3475 (en 18h):  8.9 | 14m5.2s | 35.4'     (pag. 12)
+Total errors: 86 (position: 82, mag: 4); errors without warning = 86, PPM with problems = 5197
+RSME of distance (arcsec) = 36.02  among a total of 63034 stars
+RSME of visual magnitude = 0.10345  among a total of 1425 stars

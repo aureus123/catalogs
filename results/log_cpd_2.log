@@ -1,0 +1,732 @@
+COMPARE_CPD - Compare CD and CPD catalogs.
+Made in 2024 by Daniel Severin.
+Stars read from Cordoba Durchmusterung: 613778
+   Tomo XVI: 179745, Tomo XVII: 160381, Tomo XVIII: 149433, Tomo XXIa: 89128, Tomo XXIb: 35091
+Ommitting star CPD -25°5857b
+Ommitting star CPD -33°404b
+Ommitting star CPD -36°9696b
+Ommitting star CPD -38°6265b
+Ommitting star CPD -60°1a
+Ommitting star CPD -60°46a
+Ommitting star CPD -60°91a
+Ommitting star CPD -60°136a
+Ommitting star CPD -78°848b
+Stars read from Cape Photographic Durchmusterung: 423992
+Number of CPD stars cross-identified with CD stars: 45993
+Warning: cross-identifications differ for CPD -22°2334: CD -22°4692 vs -22°4703
+Warning: cross-identifications differ for CPD -23°2938: CD -23°6249 vs -23°6243
+Warning: cross-identifications differ for CPD -26°2774: CD -26°5199 vs -26°5166
+Warning: cross-identifications differ for CPD -36°6136: CD -36°8853 vs -36°8854
+Warning: cross-identifications differ for CPD -37°1498: CD -37°3813 vs -37°3810
+Warning: cross-identifications differ for CPD -37°1605: CD -37°3901 vs -37°3902
+Warning: cross-identifications differ for CPD -39°1748: CD -39°3661 vs -39°3674
+Warning: cross-identifications differ for CPD -39°2068: CD -39°3987 vs -39°3991
+Warning: cross-identifications differ for CPD -39°2070: CD -39°3991 vs -39°3987
+Warning: cross-identifications differ for CPD -39°2451: CD -39°4384 vs -39°4382
+Warning: cross-identifications differ for CPD -39°3196: CD -39°5169 vs -39°5170
+Warning: cross-identifications differ for CPD -39°4635: CD -39°6641 vs -39°6640
+Warning: cross-identifications differ for CPD -39°5056: CD -39°7083 vs -39°7085
+Warning: cross-identifications differ for CPD -39°6085: CD -39°8490 vs -39°8491
+Warning: cross-identifications differ for CPD -39°6191: CD -39°8689 vs -39°8699
+Warning: cross-identifications differ for CPD -39°6329: CD -39°8959 vs -39°8960
+Warning: cross-identifications differ for CPD -39°6922: CD -39°10395 vs -39°10394
+Warning: cross-identifications differ for CPD -39°7165: CD -39°10866 vs -39°10864
+Warning: cross-identifications differ for CPD -39°7207: CD -39°10962 vs -39°10960
+Warning: cross-identifications differ for CPD -39°7794: CD -39°12060 vs -39°12061
+Warning: cross-identifications differ for CPD -39°8386: CD -39°13206 vs -39°13207
+Warning: cross-identifications differ for CPD -40°360: CD -40°1074 vs -40°1075
+Warning: cross-identifications differ for CPD -40°1049: CD -40°2521 vs -40°2520
+Warning: cross-identifications differ for CPD -40°1192: CD -40°2738 vs -40°2737
+Warning: cross-identifications differ for CPD -40°1300: CD -40°2883 vs -40°2885
+Warning: cross-identifications differ for CPD -40°2230: CD -40°3983 vs -40°3973
+Warning: cross-identifications differ for CPD -40°2398: CD -40°4142 vs -40°4155
+Warning: cross-identifications differ for CPD -41°3302: CD -40°4879 vs -41°4779
+Warning: cross-identifications differ for CPD -40°4130: CD -40°5711 vs -40°5712
+Warning: cross-identifications differ for CPD -40°4332: CD -40°5913 vs -40°5930
+Warning: cross-identifications differ for CPD -40°4374: CD -40°5955 vs -40°5956
+Warning: cross-identifications differ for CPD -40°4775: CD -40°6334 vs -40°6337
+Warning: cross-identifications differ for CPD -40°6692: CD -40°8941 vs -40°8943
+Warning: cross-identifications differ for CPD -40°6769: CD -40°9147 vs -40°9149
+Warning: cross-identifications differ for CPD -40°6870: CD -40°9409 vs -40°9410
+Warning: cross-identifications differ for CPD -40°6871: CD -40°9410 vs -40°9409
+Warning: cross-identifications differ for CPD -40°6938: CD -40°9543 vs -40°9542
+Warning: cross-identifications differ for CPD -40°6951: CD -40°9576 vs -40°9577
+Warning: cross-identifications differ for CPD -40°7016: CD -40°9687 vs -40°9686
+Warning: cross-identifications differ for CPD -40°7050: CD -40°9779 vs -40°9778
+Warning: cross-identifications differ for CPD -40°7258: CD -40°10322 vs -40°10321
+Warning: cross-identifications differ for CPD -40°7295: CD -40°10380 vs -40°10381
+Warning: cross-identifications differ for CPD -40°7293: CD -40°10381 vs -40°10380
+Warning: cross-identifications differ for CPD -40°7348: CD -40°10473 vs -40°10475
+Warning: cross-identifications differ for CPD -40°7380: CD -40°10525 vs -40°10524
+Warning: cross-identifications differ for CPD -40°7588: CD -40°10907 vs -40°10910
+Warning: cross-identifications differ for CPD -40°7592: CD -40°10910 vs -40°10914
+Warning: cross-identifications differ for CPD -40°7590: CD -40°10914 vs -40°10912
+Warning: cross-identifications differ for CPD -40°7644: CD -40°10973 vs -40°10978
+Warning: cross-identifications differ for CPD -40°7710: CD -40°11129 vs -40°11127
+Warning: cross-identifications differ for CPD -40°7841: CD -40°11482 vs -40°11483
+Warning: cross-identifications differ for CPD -40°7842: CD -40°11492 vs -40°11482
+Warning: cross-identifications differ for CPD -40°8803: CD -40°13086 vs -40°13089
+Warning: cross-identifications differ for CPD -40°9334: CD -40°13966 vs -40°13965
+Warning: cross-identifications differ for CPD -40°9337: CD -40°13970 vs -40°13969
+Warning: cross-identifications differ for CPD -40°9343: CD -40°13987 vs -40°13963
+Warning: cross-identifications differ for CPD -40°9379: CD -40°14044 vs -40°14045
+Warning: cross-identifications differ for CPD -40°9378: CD -40°14045 vs -40°14044
+Warning: cross-identifications differ for CPD -41°472: CD -41°1385 vs -41°1386
+Warning: cross-identifications differ for CPD -42°602: CD -41°1710 vs -42°1770
+Warning: cross-identifications differ for CPD -41°873: CD -41°2181 vs -41°2183
+Warning: cross-identifications differ for CPD -41°1043: CD -41°2484 vs -41°2494
+Warning: cross-identifications differ for CPD -41°1056: CD -41°2500 vs -41°2506
+Warning: cross-identifications differ for CPD -41°2380: CD -41°4006 vs -41°3994
+Warning: cross-identifications differ for CPD -41°2955: CD -41°4491 vs -41°4492
+Warning: cross-identifications differ for CPD -41°3047: CD -41°4562 vs -41°4563
+Warning: cross-identifications differ for CPD -41°3312: CD -41°4794 vs -41°4797
+Warning: cross-identifications differ for CPD -41°3481: CD -41°4923 vs -41°4922
+Warning: cross-identifications differ for CPD -41°4225: CD -41°5529 vs -41°5531
+Warning: cross-identifications differ for CPD -41°4318: CD -41°5610 vs -41°5608
+Warning: cross-identifications differ for CPD -41°4481: CD -41°5775 vs -41°5774
+Warning: cross-identifications differ for CPD -41°5637: CD -41°6850 vs -41°6851
+Warning: cross-identifications differ for CPD -41°5659: CD -41°6890 vs -41°6888
+Warning: cross-identifications differ for CPD -41°6071: CD -41°7385 vs -41°7382
+Warning: cross-identifications differ for CPD -41°6088: CD -41°7397 vs -41°7398
+Warning: cross-identifications differ for CPD -41°6158: CD -41°7508 vs -41°7509
+Warning: cross-identifications differ for CPD -41°6265: CD -41°7667 vs -41°7668
+Warning: cross-identifications differ for CPD -41°6266: CD -41°7668 vs -41°7670
+Warning: cross-identifications differ for CPD -41°6275: CD -41°7698 vs -41°7697
+Warning: cross-identifications differ for CPD -41°6486: CD -41°8183 vs -41°8180
+Warning: cross-identifications differ for CPD -41°6617: CD -41°8419 vs -41°8420
+Warning: cross-identifications differ for CPD -41°6705: CD -41°8653 vs -41°8652
+Warning: cross-identifications differ for CPD -41°6792: CD -41°8805 vs -41°8806
+Warning: cross-identifications differ for CPD -41°7000: CD -41°9383 vs -41°9389
+Warning: cross-identifications differ for CPD -41°7229: CD -41°9949 vs -41°9947
+Warning: cross-identifications differ for CPD -41°7278: CD -41°10123 vs -41°10125
+Warning: cross-identifications differ for CPD -41°7742: CD -41°11041 vs -41°11042
+Warning: cross-identifications differ for CPD -41°7741: CD -41°11042 vs -41°11041
+Warning: cross-identifications differ for CPD -41°7753: CD -41°11048 vs -41°11054
+Warning: cross-identifications differ for CPD -41°8055: CD -41°11767 vs -41°11765
+Warning: cross-identifications differ for CPD -41°8073: CD -41°11800 vs -41°11807
+Warning: cross-identifications differ for CPD -41°8084: CD -41°11821 vs -41°11822
+Warning: cross-identifications differ for CPD -41°8100: CD -41°11839 vs -41°11840
+Warning: cross-identifications differ for CPD -41°8219: CD -41°11999 vs -41°12001
+Warning: cross-identifications differ for CPD -41°8386: CD -41°12204 vs -41°12203
+Warning: cross-identifications differ for CPD -41°8613: CD -41°12489 vs -41°12487
+Warning: cross-identifications differ for CPD -41°8672: CD -41°12800 vs -41°12799
+Warning: cross-identifications differ for CPD -41°8756: CD -41°13039 vs -41°13023
+Warning: cross-identifications differ for CPD -41°9254: CD -41°13798 vs -41°13797
+Warning: cross-identifications differ for CPD -42°291: CD -42°1059 vs -42°1061
+Warning: cross-identifications differ for CPD -42°294: CD -42°1064 vs -42°1066
+Warning: cross-identifications differ for CPD -42°296: CD -42°1067 vs -42°1069
+Warning: cross-identifications differ for CPD -42°297: CD -42°1070 vs -42°1072
+Warning: cross-identifications differ for CPD -42°298: CD -42°1071 vs -42°1073
+Warning: cross-identifications differ for CPD -42°300: CD -42°1073 vs -42°1075
+Warning: cross-identifications differ for CPD -42°302: CD -42°1082 vs -42°1084
+Warning: cross-identifications differ for CPD -42°734: CD -42°2100 vs -42°2102
+Warning: cross-identifications differ for CPD -42°2015: CD -42°3849 vs -42°3879
+Warning: cross-identifications differ for CPD -42°2480: CD -42°4247 vs -42°4240
+Warning: cross-identifications differ for CPD -42°3050: CD -42°4718 vs -42°4717
+Warning: cross-identifications differ for CPD -42°3522: CD -42°5119 vs -42°5121
+Warning: cross-identifications differ for CPD -42°4392: CD -42°5998 vs -42°5997
+Warning: cross-identifications differ for CPD -41°4389: CD -42°6029 vs -41°5678
+Warning: cross-identifications differ for CPD -42°6649: CD -42°9283 vs -42°9280
+Warning: cross-identifications differ for CPD -42°6673: CD -42°9344 vs -42°9348
+Warning: cross-identifications differ for CPD -42°6958: CD -42°10160 vs -42°10149
+Warning: cross-identifications differ for CPD -42°7044: CD -42°10390 vs -42°10392
+Warning: cross-identifications differ for CPD -42°7189: CD -42°10772 vs -42°10785
+Warning: cross-identifications differ for CPD -42°7390: CD -42°11279 vs -42°11280
+Warning: cross-identifications differ for CPD -42°8266: CD -42°12857 vs -42°12855
+Warning: cross-identifications differ for CPD -42°9133: CD -42°15039 vs -42°15038
+Warning: cross-identifications differ for CPD -43°692: CD -43°2072 vs -43°2042
+Warning: cross-identifications differ for CPD -43°1186: CD -43°2906 vs -43°2907
+Warning: cross-identifications differ for CPD -43°1881: CD -43°3671 vs -43°3684
+Warning: cross-identifications differ for CPD -44°2562: CD -43°4230 vs -44°4330
+Warning: cross-identifications differ for CPD -43°2590: CD -43°4295 vs -42°4295
+Warning: cross-identifications differ for CPD -43°5834: CD -43°7763 vs -43°7764
+Warning: cross-identifications differ for CPD -43°5835: CD -43°7764 vs -43°7765
+Warning: cross-identifications differ for CPD -43°5836: CD -43°7767 vs -43°7768
+Warning: cross-identifications differ for CPD -43°5973: CD -43°7999 vs -43°7998
+Warning: cross-identifications differ for CPD -43°5976: CD -43°8004 vs -43°8003
+Warning: cross-identifications differ for CPD -43°5977: CD -43°8005 vs -43°8004
+Warning: cross-identifications differ for CPD -43°5980: CD -43°8010 vs -43°8009
+Warning: cross-identifications differ for CPD -43°5981: CD -43°8011 vs -43°8010
+Warning: cross-identifications differ for CPD -43°5983: CD -43°8013 vs -43°8012
+Warning: cross-identifications differ for CPD -43°5985: CD -43°8016 vs -43°8015
+Warning: cross-identifications differ for CPD -43°5987: CD -43°8019 vs -43°8018
+Warning: cross-identifications differ for CPD -43°5989: CD -43°8023 vs -43°8022
+Warning: cross-identifications differ for CPD -43°5992: CD -43°8026 vs -43°8025
+Warning: cross-identifications differ for CPD -43°6061: CD -43°8113 vs -43°8114
+Warning: cross-identifications differ for CPD -43°6754: CD -43°9400 vs -43°9401
+Warning: cross-identifications differ for CPD -43°6800: CD -43°9477 vs -43°9478
+Warning: cross-identifications differ for CPD -43°7476: CD -43°10607 vs -43°10609
+Warning: cross-identifications differ for CPD -43°7842: CD -43°11398 vs -43°11422
+Warning: cross-identifications differ for CPD -43°8188: CD -43°11900 vs -43°11903
+Warning: cross-identifications differ for CPD -43°8205: CD -43°11924 vs -43°11918
+Warning: cross-identifications differ for CPD -43°8885: CD -43°13073 vs -43°13072
+Warning: cross-identifications differ for CPD -43°8976: CD -43°13320 vs -43°13321
+Warning: cross-identifications differ for CPD -43°8975: CD -43°13321 vs -43°13320
+Warning: cross-identifications differ for CPD -43°9216: CD -43°13958 vs -43°13957
+Warning: cross-identifications differ for CPD -43°9747: CD -43°15388 vs -43°15378
+Warning: cross-identifications differ for CPD -44°1190: CD -44°3044 vs -44°3045
+Warning: cross-identifications differ for CPD -44°1313: CD -44°3183 vs -44°3185
+Warning: cross-identifications differ for CPD -44°1314: CD -44°3184 vs -44°3186
+Warning: cross-identifications differ for CPD -44°1360: CD -44°3237 vs -44°3236
+Warning: cross-identifications differ for CPD -44°3051: CD -44°4801 vs -44°4800
+Warning: cross-identifications differ for CPD -44°3244: CD -44°4967 vs -44°4977
+Warning: cross-identifications differ for CPD -44°3510: CD -44°5221 vs -44°5220
+Warning: cross-identifications differ for CPD -44°3663: CD -44°5358 vs -44°5356
+Warning: cross-identifications differ for CPD -44°3718: CD -44°5413 vs -44°5411
+Warning: cross-identifications differ for CPD -44°4017: CD -44°5716 vs -44°5717
+Warning: cross-identifications differ for CPD -44°4047: CD -44°5743 vs -44°5744
+Warning: cross-identifications differ for CPD -44°4846: CD -44°6524 vs -44°6582
+Warning: cross-identifications differ for CPD -44°6294: CD -44°8542 vs -44°8543
+Warning: cross-identifications differ for CPD -44°6369: CD -44°8670 vs -44°8675
+Warning: cross-identifications differ for CPD -44°6841: CD -44°9432 vs -44°9431
+Warning: cross-identifications differ for CPD -44°6899: CD -44°9524 vs -44°9530
+Warning: cross-identifications differ for CPD -44°7855: CD -44°10806 vs -44°10851
+Warning: cross-identifications differ for CPD -44°8003: CD -44°11053 vs -44°11052
+Warning: cross-identifications differ for CPD -44°9539: CD -44°13245 vs -44°13244
+Warning: cross-identifications differ for CPD -44°9548: CD -44°13277 vs -44°13278
+Warning: cross-identifications differ for CPD -44°9884: CD -44°14173 vs -44°14133
+Warning: cross-identifications differ for CPD -44°10315: CD -44°15210 vs -44°15220
+Warning: cross-identifications differ for CPD -44°10370: CD -44°15357 vs -44°15337
+Warning: cross-identifications differ for CPD -45°132: CD -45°379 vs -45°372
+Warning: cross-identifications differ for CPD -45°706: CD -45°2199 vs -45°2195
+Warning: cross-identifications differ for CPD -45°737: CD -45°2260 vs -45°2250
+Warning: cross-identifications differ for CPD -45°2077: CD -45°3741 vs -45°3742
+Warning: cross-identifications differ for CPD -45°2078: CD -45°3742 vs -45°3741
+Warning: cross-identifications differ for CPD -45°2106: CD -45°3768 vs -45°3760
+Warning: cross-identifications differ for CPD -45°2732: CD -45°4314 vs -45°4305
+Warning: cross-identifications differ for CPD -45°2824: CD -45°4392 vs -45°4391
+Warning: cross-identifications differ for CPD -45°5477: CD -45°7008 vs -45°7009
+Warning: cross-identifications differ for CPD -46°7484: CD -45°9969 vs -46°10129
+Warning: cross-identifications differ for CPD -45°8137: CD -45°10945 vs -45°10944
+Warning: cross-identifications differ for CPD -45°8268: CD -45°11151 vs -45°11149
+Warning: cross-identifications differ for CPD -45°8455: CD -45°11384 vs -45°11383
+Warning: cross-identifications differ for CPD -45°9713: CD -45°13201 vs -45°13200
+Warning: cross-identifications differ for CPD -45°10421: CD -45°15022 vs -45°15023
+Warning: cross-identifications differ for CPD -45°10422: CD -45°15023 vs -45°15024
+Warning: cross-identifications differ for CPD -45°10502: CD -45°15199 vs -45°15193
+Warning: cross-identifications differ for CPD -46°2202: CD -46°3847 vs -46°3849
+Warning: cross-identifications differ for CPD -46°3418: CD -46°4929 vs -46°4930
+Warning: cross-identifications differ for CPD -46°3530: CD -46°5051 vs -46°5043
+Warning: cross-identifications differ for CPD -46°4648: CD -46°6248 vs -46°6249
+Warning: cross-identifications differ for CPD -46°6476: CD -46°8825 vs -46°8821
+Warning: cross-identifications differ for CPD -46°8078: CD -46°10854 vs -46°10855
+Warning: cross-identifications differ for CPD -46°8166: CD -46°10967 vs -46°10966
+Warning: cross-identifications differ for CPD -46°8204: CD -46°11007 vs -46°11006
+Warning: cross-identifications differ for CPD -46°8448: CD -46°11288 vs -46°11291
+Warning: cross-identifications differ for CPD -46°9084: CD -46°12090 vs -46°12092
+Warning: cross-identifications differ for CPD -46°9157: CD -46°12178 vs -46°12180
+Warning: cross-identifications differ for CPD -46°9270: CD -46°12324 vs -46°12325
+Warning: cross-identifications differ for CPD -46°9348: CD -46°12433 vs -46°12434
+Warning: cross-identifications differ for CPD -46°9456: CD -46°12590 vs -46°12589
+Warning: cross-identifications differ for CPD -47°50: CD -47°137 vs -47°131
+Warning: cross-identifications differ for CPD -47°223: CD -47°609 vs -47°608
+Warning: cross-identifications differ for CPD -47°2561: CD -47°4236 vs -47°4238
+Warning: cross-identifications differ for CPD -47°3449: CD -47°5083 vs -47°5080
+Warning: cross-identifications differ for CPD -47°4299: CD -47°5963 vs -47°5967
+Warning: cross-identifications differ for CPD -47°4341: CD -47°6014 vs -47°6012
+Warning: cross-identifications differ for CPD -47°5718: CD -47°7939 vs -47°7949
+Warning: cross-identifications differ for CPD -47°5764: CD -47°8000 vs -47°8001
+Warning: cross-identifications differ for CPD -47°7019: CD -47°9860 vs -47°9861
+Warning: cross-identifications differ for CPD -47°7099: CD -47°9947 vs -47°9945
+Warning: cross-identifications differ for CPD -47°7141: CD -47°10005 vs -47°10007
+Warning: cross-identifications differ for CPD -47°7450: CD -47°10392 vs -47°10401
+Warning: cross-identifications differ for CPD -47°8389: CD -47°11671 vs -47°11687
+Warning: cross-identifications differ for CPD -47°8834: CD -47°12226 vs -47°12225
+Warning: cross-identifications differ for CPD -47°8836: CD -47°12228 vs -47°12218
+Warning: cross-identifications differ for CPD -47°9371: CD -47°13119 vs -47°13120
+Warning: cross-identifications differ for CPD -47°9540: CD -47°13486 vs -47°13487
+Warning: cross-identifications differ for CPD -48°107: CD -48°208 vs -48°207
+Warning: cross-identifications differ for CPD -48°498: CD -48°1369 vs -48°1370
+Warning: cross-identifications differ for CPD -48°622: CD -48°1711 vs -48°1710
+Warning: cross-identifications differ for CPD -48°994: CD -48°2587 vs -48°2588
+Warning: cross-identifications differ for CPD -48°1277: CD -48°3167 vs -48°3176
+Warning: cross-identifications differ for CPD -48°1373: CD -48°3349 vs -48°3350
+Warning: cross-identifications differ for CPD -48°2176: CD -48°4360 vs -48°4364
+Warning: cross-identifications differ for CPD -48°4105: CD -48°6664 vs -48°6669
+Warning: cross-identifications differ for CPD -48°5364: CD -48°8003 vs -48°8005
+Warning: cross-identifications differ for CPD -48°7199: CD -48°9704 vs -48°9705
+Warning: cross-identifications differ for CPD -48°10056: CD -48°12916 vs -48°12915
+Warning: cross-identifications differ for CPD -48°10905: CD -48°14531 vs -48°14532
+Warning: cross-identifications differ for CPD -49°500: CD -49°1217 vs -49°1216
+Warning: cross-identifications differ for CPD -49°501: CD -49°1219 vs -49°1218
+Warning: cross-identifications differ for CPD -49°930: CD -49°2201 vs -49°2205
+Warning: cross-identifications differ for CPD -49°984: CD -49°2330 vs -49°2340
+Warning: cross-identifications differ for CPD -49°1447: CD -49°3243 vs -49°3244
+Warning: cross-identifications differ for CPD -49°1514: CD -49°3371 vs -49°3374
+Warning: cross-identifications differ for CPD -49°4828: CD -49°6786 vs -49°6787
+Warning: cross-identifications differ for CPD -49°4827: CD -49°6787 vs -49°6786
+Warning: cross-identifications differ for CPD -49°5600: CD -49°7520 vs -49°7521
+Warning: cross-identifications differ for CPD -49°5867: CD -49°7758 vs -49°7760
+Warning: cross-identifications differ for CPD -49°6084: CD -49°7931 vs -49°7937
+Warning: cross-identifications differ for CPD -49°6850: CD -49°8620 vs -49°8685
+Warning: cross-identifications differ for CPD -49°7679: CD -49°9311 vs -49°9302
+Warning: cross-identifications differ for CPD -49°8731: CD -49°10122 vs -49°10123
+Warning: cross-identifications differ for CPD -49°8771: CD -49°10157 vs -49°10159
+Warning: cross-identifications differ for CPD -49°8873: CD -49°10252 vs -49°10259
+Warning: cross-identifications differ for CPD -49°9248: CD -49°10604 vs -49°10602
+Warning: cross-identifications differ for CPD -49°9599: CD -49°10966 vs -49°10986
+Warning: cross-identifications differ for CPD -49°10999: CD -49°12734 vs -49°12735
+Warning: cross-identifications differ for CPD -50°45: CD -50°69 vs -50°67
+Warning: cross-identifications differ for CPD -50°816: CD -50°1872 vs -50°1871
+Warning: cross-identifications differ for CPD -50°984: CD -50°2240 vs -50°2241
+Warning: cross-identifications differ for CPD -50°1785: CD -50°3554 vs -50°3556
+Warning: cross-identifications differ for CPD -50°1788: CD -50°3559 vs -50°3560
+Warning: cross-identifications differ for CPD -50°2033: CD -50°3812 vs -50°3813
+Warning: cross-identifications differ for CPD -50°2034: CD -50°3813 vs -50°3814
+Warning: cross-identifications differ for CPD -50°3337: CD -50°5043 vs -50°5045
+Warning: cross-identifications differ for CPD -50°3827: CD -50°5561 vs -50°5581
+Warning: cross-identifications differ for CPD -50°3830: CD -50°5567 vs -50°5587
+Warning: cross-identifications differ for CPD -50°5141: CD -50°6946 vs -50°6947
+Warning: cross-identifications differ for CPD -50°5324: CD -50°7121 vs -50°7123
+Warning: cross-identifications differ for CPD -50°6366: CD -50°8069 vs -50°8073
+Warning: cross-identifications differ for CPD -50°8412: CD -50°9705 vs -50°9702
+Warning: cross-identifications differ for CPD -50°8556: CD -50°9809 vs -50°9810
+Warning: cross-identifications differ for CPD -50°8555: CD -50°9810 vs -50°9809
+Warning: cross-identifications differ for CPD -50°9690: CD -50°10842 vs -50°10841
+Warning: cross-identifications differ for CPD -50°11506: CD -50°13282 vs -50°13283
+Warning: cross-identifications differ for CPD -51°178: CD -51°311 vs -51°312
+Warning: cross-identifications differ for CPD -51°179: CD -51°312 vs -51°311
+Warning: cross-identifications differ for CPD -51°2090: CD -51°3686 vs -51°3687
+Warning: cross-identifications differ for CPD -51°2091: CD -51°3687 vs -51°3686
+Warning: cross-identifications differ for CPD -51°2442: CD -51°4008 vs -51°4015
+Warning: cross-identifications differ for CPD -51°2994: CD -51°4493 vs -51°4494
+Warning: cross-identifications differ for CPD -51°3544: CD -51°5004 vs -51°5006
+Warning: cross-identifications differ for CPD -51°3692: CD -51°5160 vs -51°5161
+Warning: cross-identifications differ for CPD -51°4266: CD -51°5787 vs -51°5788
+Warning: cross-identifications differ for CPD -51°4296: CD -51°5830 vs -51°5831
+Warning: cross-identifications differ for CPD -51°5241: CD -51°6752 vs -51°6754
+Warning: cross-identifications differ for CPD -51°9505: CD -51°10146 vs -51°10147
+Warning: cross-identifications differ for CPD -51°10479: CD -51°11035 vs -51°11033
+Warning: cross-identifications differ for CPD -51°10491: CD -51°11043 vs -51°11051
+Warning: cross-identifications differ for CPD -51°10769: CD -51°11415 vs -51°11416
+Warning: cross-identifications differ for CPD -51°10770: CD -51°11416 vs -51°11415
+Warning: cross-identifications differ for CPD -51°11232: CD -51°12080 vs -51°12081
+Warning: cross-identifications differ for CPD -51°11550: CD -51°12684 vs -51°12676
+Warning: cross-identifications differ for CPD -54°6759: CD -54°6443 vs -54°6441
+Warning: cross-identifications differ for CPD -54°6774: CD -54°6448 vs -54°6447
+Warning: cross-identifications differ for CPD -57°3739: CD -57°3452 vs -57°3453
+Warning: cross-identifications differ for CPD -57°6642: CD -57°5574 vs -57°5575
+Warning: cross-identifications differ for CPD -58°2659: CD -58°3538 vs -58°3536
+Warning: cross-identifications differ for CPD -58°3329: CD -58°3925 vs -58°3926
+Warning: cross-identifications differ for CPD -60°1602: CD -60°2889 vs -60°2899
+Warning: cross-identifications differ for CPD -60°3749: CD -60°3985 vs -60°3986
+Warning: cross-identifications differ for CPD -60°4508: CD -60°4536 vs -60°4540
+Warning: cross-identifications differ for CPD -60°4528: CD -60°4555 vs -60°4554
+Warning: cross-identifications differ for CPD -62°3270: CD -61°3779 vs -62°726
+Warning: cross-identifications differ for CPD -61°4317: CD -61°4202 vs -61°4204
+Warning: cross-identifications differ for CPD -62°2564: CD -62°612 vs -62°608
+1) CD -26°5166 separated from CPD -26°2774 in 1010.4 arcsec.
+    (also identified as CD -26°5199)
+     Register CD -26°5166 (en 7h):  9.3 | 49m5.5s | 7.1'     (pag. 251)
+2) CD -39°4385 separated from CPD -39°2454 in 248.9 arcsec.
+     Register CD -39°4385 (en 8h):  9.3 | 24m18.0s | 53.1'     (pag. 399)
+3) CD -39°5170 separated from CPD -39°3196 in 1062.0 arcsec.
+    (also identified as CD -39°5169)
+     Register CD -39°5170 (en 9h):  9.3 | 1m29.0s | 46.2'     (pag. 401)
+4) CD -39°7085 separated from CPD -39°5056 in 2346.8 arcsec.
+    (also identified as CD -39°7083)
+     Register CD -39°7085 (en 11h):  8.1 | 17m52.8s | 49.5'     (pag. 408)
+5) CD -39°8699 separated from CPD -39°6191 in 788.6 arcsec.
+    (also identified as CD -39°8689)
+     Register CD -39°8699 (en 13h):  9.3 | 59m12.6s | 37.1'     (pag. 413)
+6) CD -39°10960 separated from CPD -39°7207 in 218.2 arcsec.
+    (also identified as CD -39°10962)
+     Register CD -39°10960 (en 16h):  9.3 | 51m9.5s | 59.6'     (pag. 421)
+7) CD -39°13207 separated from CPD -39°8386 in 300.9 arcsec.
+    (also identified as CD -39°13206)
+     Register CD -39°13207 (en 19h):  9.5 | 8m46.3s | 49.6'     (pag. 428)
+8) CD -40°736 separated from CPD -40°239 in 683.9 arcsec.
+     Register CD -40°736 (en 2h):  6.5 | 44m58.3s | 26.6'     (pag. 438)
+9) CD -40°1936 separated from CPD -40°740 in 1074.0 arcsec.
+     Register CD -40°1936 (en 5h):  9.7 | 27m43.3s | 56.9'     (pag. 442)
+10) CD -40°2737 separated from CPD -40°1192 in 426.0 arcsec.
+    (also identified as CD -40°2738)
+     Register CD -40°2737 (en 6h):  10.0 | 47m35.8s | 38.0'     (pag. 444)
+11) CD -40°2819 separated from CPD -40°1256 in 312.4 arcsec.
+     Register CD -40°2819 (en 6h):  9.3 | 54m52.4s | 33.4'     (pag. 445)
+12) CD -40°5930 separated from CPD -40°4332 in 1088.0 arcsec.
+    (also identified as CD -40°5913)
+     Register CD -40°5930 (en 10h):  10.0 | 14m4.6s | 23.3'     (pag. 455)
+13) CD -40°8943 separated from CPD -40°6692 in 223.5 arcsec.
+    (also identified as CD -40°8941)
+     Register CD -40°8943 (en 14h):  9.5 | 37m28.3s | 49.7'     (pag. 465)
+14) CD -40°9686 separated from CPD -40°7016 in 1608.1 arcsec.
+    (also identified as CD -40°9687)
+     Register CD -40°9686 (en 15h):  9.7 | 22m48.5s | 35.4'     (pag. 468)
+15) CD -40°9778 separated from CPD -40°7050 in 409.2 arcsec.
+    (also identified as CD -40°9779)
+     Register CD -40°9778 (en 15h):  9.3 | 28m2.0s | 40.6'     (pag. 468)
+16) CD -40°10475 separated from CPD -40°7348 in 2352.2 arcsec.
+    (also identified as CD -40°10473)
+     Register CD -40°10475 (en 16h):  9.3 | 22m56.0s | 19.3'     (pag. 470)
+17) CD -40°11483 separated from CPD -40°7841 in 750.7 arcsec.
+    (also identified as CD -40°11482)
+     Register CD -40°11483 (en 17h):  8.0 | 19m40.2s | 13.8'     (pag. 474)
+18) CD -40°13963 separated from CPD -40°9343 in 2910.1 arcsec.
+    (also identified as CD -40°13987)
+     Register CD -40°13963 (en 20h):  9.5 | 29m57.3s | 24.5'     (pag. 482)
+19) CD -40°14881 separated from CPD -40°9727 in 1194.0 arcsec.
+     Register CD -40°14881 (en 22h):  7.7 | 36m4.2s | 39.6'     (pag. 485)
+20) CD -41°1386 separated from CPD -41°472 in 851.8 arcsec.
+    (also identified as CD -41°1385)
+     Register CD -41°1386 (en 4h):  8.0 | 17m43.0s | 30.5'     (pag. 491)
+21) CD -41°2494 separated from CPD -41°1043 in 643.1 arcsec.
+    (also identified as CD -41°2484)
+     Register CD -41°2494 (en 6h):  9.4 | 33m22.8s | 18.5'     (pag. 495)
+22) CD -41°2506 separated from CPD -41°1056 in 1867.3 arcsec.
+    (also identified as CD -41°2500)
+     Register CD -41°2506 (en 6h):  10.0 | 34m51.7s | 26.3'     (pag. 495)
+23) CD -41°4492 separated from CPD -41°2955 in 2214.1 arcsec.
+    (also identified as CD -41°4491)
+     Register CD -41°4492 (en 8h):  9.6 | 42m34.6s | 13.1'     (pag. 502)
+24) CD -41°4779 separated from CPD -41°3302 in 3271.9 arcsec.
+    (also identified as CD -40°4879)
+     Register CD -41°4779 (en 8h):  10.0 | 59m50.7s | 54.6'     (pag. 503)
+25) CD -41°5774 separated from CPD -41°4481 in 254.6 arcsec.
+    (also identified as CD -41°5775)
+     Register CD -41°5774 (en 10h):  10.0 | 13m59.9s | 27.3'     (pag. 506)
+26) CD -41°6851 separated from CPD -41°5637 in 421.1 arcsec.
+    (also identified as CD -41°6850)
+     Register CD -41°6851 (en 11h):  9.3 | 49m13.1s | 38.2'     (pag. 510)
+27) CD -41°7668 separated from CPD -41°6265 in 209.5 arcsec.
+    (also identified as CD -41°7667)
+     Register CD -41°7668 (en 13h):  8.9 | 6m14.0s | 6.0'     (pag. 513)
+28) CD -41°7670 separated from CPD -41°6266 in 784.5 arcsec.
+    (also identified as CD -41°7668)
+     Register CD -41°7670 (en 13h):  9.5 | 6m21.0s | 18.2'     (pag. 513)
+29) CD -41°9450 separated from CPD -41°7021 in 1806.0 arcsec.
+     Register CD -41°9450 (en 14h):  9.0 | 56m29.4s | 58.0'     (pag. 519)
+30) CD -41°13023 separated from CPD -41°8756 in 918.3 arcsec.
+    (also identified as CD -41°13039)
+     Register CD -41°13023 (en 18h):  8.9 | 33m7.8s | 51.4'     (pag. 531)
+31) CD -42°1061 separated from CPD -42°291 in 505.7 arcsec.
+    (also identified as CD -42°1059)
+     Register CD -42°1061 (en 3h):  10.0 | 11m35.0s | 33.6'     (pag. 3)
+32) CD -42°1066 separated from CPD -42°294 in 2666.2 arcsec.
+    (also identified as CD -42°1064)
+     Register CD -42°1066 (en 3h):  9.4 | 12m34.8s | 15.0'     (pag. 3)
+33) CD -42°1069 separated from CPD -42°296 in 454.1 arcsec.
+    (also identified as CD -42°1067)
+     Register CD -42°1069 (en 3h):  10.0 | 13m20.4s | 50.4'     (pag. 3)
+34) CD -42°1072 separated from CPD -42°297 in 2287.3 arcsec.
+    (also identified as CD -42°1070)
+     Register CD -42°1072 (en 3h):  10.0 | 14m5.5s | 39.6'     (pag. 3)
+35) CD -42°1073 separated from CPD -42°298 in 1854.8 arcsec.
+    (also identified as CD -42°1071)
+     Register CD -42°1073 (en 3h):  9.2 | 14m12.2s | 13.0'     (pag. 3)
+36) CD -42°1075 separated from CPD -42°300 in 668.5 arcsec.
+    (also identified as CD -42°1073)
+     Register CD -42°1075 (en 3h):  10.0 | 14m22.0s | 24.0'     (pag. 3)
+37) CD -42°1084 separated from CPD -42°302 in 1565.5 arcsec.
+    (also identified as CD -42°1082)
+     Register CD -42°1084 (en 3h):  10.0 | 16m35.7s | 34.0'     (pag. 3)
+38) CD -42°1770 separated from CPD -42°602 in 925.5 arcsec.
+    (also identified as CD -41°1710)
+     Register CD -42°1770 (en 5h):  10.0 | 2m35.3s | 15.6'     (pag. 5)
+39) CD -42°3879 separated from CPD -42°2015 in 1857.5 arcsec.
+    (also identified as CD -42°3849)
+     Register CD -42°3879 (en 8h):  10.0 | 1m39.4s | 45.0'     (pag. 13)
+40) CD -42°9280 separated from CPD -42°6649 in 2581.5 arcsec.
+    (also identified as CD -42°9283)
+     Register CD -42°9280 (en 14h):  9.9 | 15m9.6s | 49.4'     (pag. 31)
+41) CD -42°9348 separated from CPD -42°6673 in 936.8 arcsec.
+    (also identified as CD -42°9344)
+     Register CD -42°9348 (en 14h):  9.8 | 20m18.4s | 1.4'     (pag. 31)
+42) CD -42°15038 separated from CPD -42°9133 in 1370.6 arcsec.
+    (also identified as CD -42°15039)
+     Register CD -42°15038 (en 20h):  9.7 | 33m19.2s | 42.5'     (pag. 50)
+43) CD -43°2042 separated from CPD -43°692 in 1889.3 arcsec.
+    (also identified as CD -43°2072)
+     Register CD -43°2042 (en 5h):  9.6 | 43m37.7s | 50.5'     (pag. 62)
+44) CD -42°4295 separated from CPD -43°2590 in 3303.5 arcsec.
+    (also identified as CD -43°4295)
+     Register CD -42°4295 (en 8h):  10.0 | 24m49.7s | 39.1'     (pag. 14)
+45) CD -43°7998 separated from CPD -43°5973 in 2018.9 arcsec.
+    (also identified as CD -43°7999)
+     Register CD -43°7998 (en 12h):  10.0 | 53m23.5s | 40.5'     (pag. 82)
+46) CD -43°8003 separated from CPD -43°5976 in 242.6 arcsec.
+    (also identified as CD -43°8004)
+     Register CD -43°8003 (en 12h):  10.0 | 54m10.7s | 4.7'     (pag. 82)
+47) CD -43°8004 separated from CPD -43°5977 in 2574.1 arcsec.
+    (also identified as CD -43°8005)
+     Register CD -43°8004 (en 12h):  8.3 | 54m13.8s | 0.8'     (pag. 82)
+48) CD -43°8009 separated from CPD -43°5980 in 614.5 arcsec.
+    (also identified as CD -43°8010)
+     Register CD -43°8009 (en 12h):  10.0 | 54m44.5s | 41.4'     (pag. 82)
+49) CD -43°8010 separated from CPD -43°5981 in 1467.8 arcsec.
+    (also identified as CD -43°8011)
+     Register CD -43°8010 (en 12h):  8.7 | 54m49.9s | 31.3'     (pag. 82)
+50) CD -43°8012 separated from CPD -43°5983 in 1014.6 arcsec.
+    (also identified as CD -43°8013)
+     Register CD -43°8012 (en 12h):  10.0 | 55m17.3s | 19.6'     (pag. 82)
+51) CD -43°8015 separated from CPD -43°5985 in 2172.3 arcsec.
+    (also identified as CD -43°8016)
+     Register CD -43°8015 (en 12h):  10.0 | 55m21.9s | 44.5'     (pag. 82)
+52) CD -43°8018 separated from CPD -43°5987 in 2676.9 arcsec.
+    (also identified as CD -43°8019)
+     Register CD -43°8018 (en 12h):  10.0 | 55m31.9s | 58.5'     (pag. 82)
+53) CD -43°8022 separated from CPD -43°5989 in 2100.1 arcsec.
+    (also identified as CD -43°8023)
+     Register CD -43°8022 (en 12h):  10.0 | 56m9.5s | 18.4'     (pag. 82)
+54) CD -43°8114 separated from CPD -43°6061 in 235.1 arcsec.
+    (also identified as CD -43°8113)
+     Register CD -43°8114 (en 13h):  9.4 | 4m56.1s | 53.4'     (pag. 83)
+55) CD -43°8329 separated from CPD -43°6168 in 234.1 arcsec.
+     Register CD -43°8329 (en 13h):  10.0 | 22m57.6s | 17.5'     (pag. 83)
+56) CD -43°9478 separated from CPD -43°6800 in 1443.4 arcsec.
+    (also identified as CD -43°9477)
+     Register CD -43°9478 (en 14h):  9.2 | 48m49.6s | 56.8'     (pag. 87)
+57) CD -43°11422 separated from CPD -43°7842 in 1377.7 arcsec.
+    (also identified as CD -43°11398)
+     Register CD -43°11422 (en 16h):  10.0 | 58m20.0s | 2.1'     (pag. 94)
+58) CD -43°11903 separated from CPD -43°8188 in 1212.0 arcsec.
+    (also identified as CD -43°11900)
+     Register CD -43°11903 (en 17h):  9.3 | 30m9.3s | 45.6'     (pag. 95)
+59) CD -43°11918 separated from CPD -43°8205 in 379.1 arcsec.
+    (also identified as CD -43°11924)
+     Register CD -43°11918 (en 17h):  9.6 | 31m26.4s | 12.1'     (pag. 95)
+60) CD -43°13231 separated from CPD -43°8951 in 594.0 arcsec.
+     Register CD -43°13231 (en 19h):  9.8 | 6m52.1s | 36.8'     (pag. 100)
+61) CD -43°13396 separated from CPD -43°9006 in 600.0 arcsec.
+     Register CD -43°13396 (en 19h):  9.3 | 20m38.5s | 51.2'     (pag. 100)
+62) CD -43°13957 separated from CPD -43°9216 in 1146.1 arcsec.
+    (also identified as CD -43°13958)
+     Register CD -43°13957 (en 20h):  9.9 | 14m55.8s | 24.1'     (pag. 102)
+63) CD -43°15378 separated from CPD -43°9747 in 1788.8 arcsec.
+    (also identified as CD -43°15388)
+     Register CD -43°15378 (en 23h):  10.0 | 20m35.8s | 12.1'     (pag. 107)
+64) CD -44°4330 separated from CPD -44°2562 in 2429.8 arcsec.
+    (also identified as CD -43°4230)
+     Register CD -44°4330 (en 8h):  8.4 | 17m30.5s | 36.4'     (pag. 122)
+65) CD -44°4977 separated from CPD -44°3244 in 817.8 arcsec.
+    (also identified as CD -44°4967)
+     Register CD -44°4977 (en 8h):  10.0 | 52m39.4s | 40.5'     (pag. 125)
+66) CD -44°5220 separated from CPD -44°3510 in 2112.0 arcsec.
+    (also identified as CD -44°5221)
+     Register CD -44°5220 (en 9h):  9.4 | 7m6.9s | 2.0'     (pag. 125)
+67) CD -44°5356 separated from CPD -44°3663 in 672.4 arcsec.
+    (also identified as CD -44°5358)
+     Register CD -44°5356 (en 9h):  10.0 | 13m59.8s | 45.0'     (pag. 126)
+68) CD -44°5411 separated from CPD -44°3718 in 1494.7 arcsec.
+    (also identified as CD -44°5413)
+     Register CD -44°5411 (en 9h):  9.3 | 17m3.4s | 23.7'     (pag. 126)
+69) CD -44°6582 separated from CPD -44°4846 in 2628.5 arcsec.
+    (also identified as CD -44°6524)
+     Register CD -44°6582 (en 10h):  6.7 | 26m36.8s | 25.4'     (pag. 130)
+70) CD -44°6911 separated from CPD -44°5186 in 1794.0 arcsec.
+     Register CD -44°6911 (en 10h):  9.5 | 48m50.7s | 17.7'     (pag. 131)
+71) CD -44°9431 separated from CPD -44°6841 in 612.2 arcsec.
+    (also identified as CD -44°9432)
+     Register CD -44°9431 (en 14h):  10.0 | 25m36.3s | 27.4'     (pag. 140)
+72) CD -44°9903 separated from CPD -44°7203 in 1812.0 arcsec.
+     Register CD -44°9903 (en 15h):  8.8 | 1m30.0s | 10.2'     (pag. 141)
+73) CD -44°10698 separated from CPD -44°7805 in 672.0 arcsec.
+     Register CD -44°10698 (en 16h):  9.3 | 3m41.0s | 28.6'     (pag. 144)
+74) CD -44°10851 separated from CPD -44°7855 in 2608.3 arcsec.
+    (also identified as CD -44°10806)
+     Register CD -44°10851 (en 16h):  9.1 | 17m8.3s | 26.1'     (pag. 144)
+75) CD -44°11052 separated from CPD -44°8003 in 546.1 arcsec.
+    (also identified as CD -44°11053)
+     Register CD -44°11052 (en 16h):  9.6 | 32m22.8s | 22.0'     (pag. 145)
+76) CD -44°14356 separated from CPD -44°9967 in 641.6 arcsec.
+     Register CD -44°14356 (en 21h):  8.5 | 6m7.6s | 20.0'     (pag. 156)
+77) CD -44°14358 separated from CPD -44°9968 in 641.4 arcsec.
+     Register CD -44°14358 (en 21h):  8.8 | 6m16.2s | 26.9'     (pag. 156)
+78) CD -44°14360 separated from CPD -44°9970 in 641.9 arcsec.
+     Register CD -44°14360 (en 21h):  9.2 | 6m22.3s | 30.2'     (pag. 156)
+79) CD -44°14362 separated from CPD -44°9972 in 639.4 arcsec.
+     Register CD -44°14362 (en 21h):  8.9 | 6m44.3s | 44.1'     (pag. 156)
+80) CD -44°15220 separated from CPD -44°10315 in 2591.7 arcsec.
+    (also identified as CD -44°15210)
+     Register CD -44°15220 (en 23h):  8.8 | 16m6.5s | 50.1'     (pag. 159)
+81) CD -44°15337 separated from CPD -44°10370 in 3103.8 arcsec.
+    (also identified as CD -44°15357)
+     Register CD -44°15337 (en 23h):  10.0 | 36m57.0s | 44.8'     (pag. 159)
+82) CD -45°372 separated from CPD -45°132 in 633.6 arcsec.
+    (also identified as CD -45°379)
+     Register CD -45°372 (en 1h):  10.0 | 3m9.9s | 9.0'     (pag. 161)
+83) CD -45°2195 separated from CPD -45°706 in 1139.1 arcsec.
+    (also identified as CD -45°2199)
+     Register CD -45°2195 (en 5h):  9.9 | 47m37.0s | 43.4'     (pag. 167)
+84) CD -45°2250 separated from CPD -45°737 in 2615.2 arcsec.
+    (also identified as CD -45°2260)
+     Register CD -45°2250 (en 5h):  10.0 | 54m16.3s | 48.7'     (pag. 167)
+85) CD -45°2660 separated from CPD -45°981 in 606.0 arcsec.
+     Register CD -45°2660 (en 6h):  8.7 | 36m6.4s | 26.8'     (pag. 169)
+86) CD -45°3760 separated from CPD -45°2106 in 390.6 arcsec.
+    (also identified as CD -45°3768)
+     Register CD -45°3760 (en 8h):  10.0 | 1m52.7s | 52.7'     (pag. 172)
+87) CD -45°4305 separated from CPD -45°2732 in 960.1 arcsec.
+    (also identified as CD -45°4314)
+     Register CD -45°4305 (en 8h):  10.0 | 32m52.0s | 26.5'     (pag. 174)
+88) CD -45°6928 separated from CPD -45°5420 in 1194.0 arcsec.
+     Register CD -45°6928 (en 11h):  8.7 | 16m32.4s | 59.7'     (pag. 183)
+89) CD -45°11383 separated from CPD -45°8455 in 241.3 arcsec.
+    (also identified as CD -45°11384)
+     Register CD -45°11383 (en 17h):  10.0 | 9m47.5s | 49.6'     (pag. 198)
+90) CD -45°13200 separated from CPD -45°9713 in 594.0 arcsec.
+    (also identified as CD -45°13201)
+     Register CD -45°13200 (en 19h):  9.4 | 16m38.0s | 47.8'     (pag. 204)
+91) CD -45°14271 separated from CPD -45°10123 in 180.2 arcsec.
+     Register CD -45°14271 (en 21h):  8.2 | 6m47.9s | 3.0'     (pag. 208)
+92) CD -45°15023 separated from CPD -45°10421 in 2802.6 arcsec.
+    (also identified as CD -45°15022)
+     Register CD -45°15023 (en 23h):  8.8 | 18m13.3s | 46.8'     (pag. 210)
+93) CD -45°15024 separated from CPD -45°10422 in 1333.4 arcsec.
+    (also identified as CD -45°15023)
+     Register CD -45°15024 (en 23h):  10.0 | 18m19.3s | 24.7'     (pag. 210)
+94) CD -45°15059 separated from CPD -45°10435 in 606.0 arcsec.
+     Register CD -45°15059 (en 23h):  6.8 | 25m53.6s | 48.6'     (pag. 210)
+95) CD -45°15193 separated from CPD -45°10502 in 1323.1 arcsec.
+    (also identified as CD -45°15199)
+     Register CD -45°15193 (en 23h):  10.0 | 52m19.8s | 57.0'     (pag. 211)
+96) CD -46°5420 separated from CPD -46°3858 in 2994.0 arcsec.
+     Register CD -46°5420 (en 9h):  8.7 | 37m18.8s | 55.0'     (pag. 229)
+97) CD -46°8821 separated from CPD -46°6476 in 1081.6 arcsec.
+    (also identified as CD -46°8825)
+     Register CD -46°8821 (en 13h):  9.8 | 36m25.5s | 59.9'     (pag. 241)
+98) CD -46°9501 separated from CPD -46°6927 in 1800.0 arcsec.
+     Register CD -46°9501 (en 14h):  2.6 | 33m38.0s | 51.0'     (pag. 243)
+99) CD -46°10129 separated from CPD -46°7484 in 1032.3 arcsec.
+    (also identified as CD -45°9969)
+     Register CD -46°10129 (en 15h):  10.0 | 22m42.8s | 17.2'     (pag. 245)
+100) CD -46°10911 separated from CPD -46°8114 in 1806.0 arcsec.
+     Register CD -46°10911 (en 16h):  10.0 | 30m38.9s | 49.8'     (pag. 248)
+101) CD -46°11288 separated from CPD -46°8446 in 552.0 arcsec.
+     Register CD -46°11288 (en 17h):  9.4 | 3m7.3s | 32.2'     (pag. 249)
+102) CD -46°12092 separated from CPD -46°9084 in 630.1 arcsec.
+    (also identified as CD -46°12090)
+     Register CD -46°12092 (en 17h):  9.8 | 56m36.9s | 0.6'     (pag. 252)
+103) CD -47°131 separated from CPD -47°50 in 1746.6 arcsec.
+    (also identified as CD -47°137)
+     Register CD -47°131 (en 0h):  10.0 | 24m22.6s | 6.1'     (pag. 262)
+104) CD -47°2868 separated from CPD -47°1159 in 600.0 arcsec.
+     Register CD -47°2868 (en 7h):  9.7 | 8m38.0s | 25.8'     (pag. 271)
+105) CD -47°4238 separated from CPD -47°2561 in 468.1 arcsec.
+    (also identified as CD -47°4236)
+     Register CD -47°4238 (en 8h):  10.0 | 37m52.6s | 42.8'     (pag. 275)
+106) CD -47°4479 separated from CPD -47°2885 in 1794.1 arcsec.
+     Register CD -47°4479 (en 8h):  10.0 | 49m31.2s | 26.9'     (pag. 276)
+107) CD -47°10007 separated from CPD -47°7141 in 2322.4 arcsec.
+    (also identified as CD -47°10005)
+     Register CD -47°10007 (en 15h):  9.7 | 19m52.8s | 48.8'     (pag. 295)
+108) CD -47°11687 separated from CPD -47°8389 in 2621.7 arcsec.
+    (also identified as CD -47°11671)
+     Register CD -47°11687 (en 17h):  9.8 | 29m13.8s | 19.5'     (pag. 300)
+109) CD -47°12218 separated from CPD -47°8836 in 856.6 arcsec.
+    (also identified as CD -47°12228)
+     Register CD -47°12218 (en 18h):  10.0 | 11m10.7s | 41.0'     (pag. 302)
+110) CD -47°13120 separated from CPD -47°9371 in 420.1 arcsec.
+    (also identified as CD -47°13119)
+     Register CD -47°13120 (en 19h):  10.0 | 42m54.8s | 40.2'     (pag. 305)
+111) CD -48°207 separated from CPD -48°107 in 2292.1 arcsec.
+    (also identified as CD -48°208)
+     Register CD -48°207 (en 0h):  9.9 | 47m49.3s | 44.9'     (pag. 312)
+112) CD -48°510 separated from CPD -48°224 in 502.6 arcsec.
+     Register CD -48°510 (en 1h):  8.8 | 50m57.1s | 26.4'     (pag. 313)
+113) CD -48°1710 separated from CPD -48°622 in 3060.1 arcsec.
+    (also identified as CD -48°1711)
+     Register CD -48°1710 (en 5h):  10.0 | 12m6.6s | 52.0'     (pag. 317)
+114) CD -48°4364 separated from CPD -48°2176 in 408.2 arcsec.
+    (also identified as CD -48°4360)
+     Register CD -48°4364 (en 8h):  9.9 | 58m48.3s | 12.0'     (pag. 326)
+115) CD -48°14532 separated from CPD -48°10905 in 1204.1 arcsec.
+    (also identified as CD -48°14531)
+     Register CD -48°14532 (en 23h):  9.9 | 25m44.4s | 58.5'     (pag. 360)
+116) CD -49°1218 separated from CPD -49°501 in 612.0 arcsec.
+    (also identified as CD -49°1219)
+     Register CD -49°1218 (en 4h):  9.5 | 3m2.7s | 49.3'     (pag. 364)
+117) CD -49°2205 separated from CPD -49°930 in 606.0 arcsec.
+    (also identified as CD -49°2201)
+     Register CD -49°2205 (en 6h):  9.3 | 18m30.3s | 39.2'     (pag. 368)
+118) CD -49°2340 separated from CPD -49°984 in 734.2 arcsec.
+    (also identified as CD -49°2330)
+     Register CD -49°2340 (en 6h):  9.6 | 34m2.4s | 56.2'     (pag. 368)
+119) CD -49°3374 separated from CPD -49°1514 in 1989.5 arcsec.
+    (also identified as CD -49°3371)
+     Register CD -49°3374 (en 8h):  10.0 | 5m36.2s | 34.7'     (pag. 372)
+120) CD -49°3993 separated from CPD -49°2037 in 798.0 arcsec.
+     Register CD -49°3993 (en 8h):  10.0 | 52m55.2s | 20.5'     (pag. 374)
+121) CD -49°7937 separated from CPD -49°6084 in 532.3 arcsec.
+    (also identified as CD -49°7931)
+     Register CD -49°7937 (en 13h):  10.0 | 19m55.6s | 0.8'     (pag. 387)
+122) CD -49°8685 separated from CPD -49°6850 in 3074.2 arcsec.
+    (also identified as CD -49°8620)
+     Register CD -49°8685 (en 14h):  8.3 | 14m5.3s | 16.6'     (pag. 390)
+123) CD -49°8895 separated from CPD -49°7162 in 192.0 arcsec.
+     Register CD -49°8895 (en 14h):  7.3 | 29m12.1s | 32.3'     (pag. 390)
+124) CD -49°9302 separated from CPD -49°7679 in 380.5 arcsec.
+    (also identified as CD -49°9311)
+     Register CD -49°9302 (en 14h):  9.9 | 56m22.9s | 48.0'     (pag. 392)
+125) CD -49°10039 separated from CPD -49°8629 in 2388.0 arcsec.
+     Register CD -49°10039 (en 15h):  9.5 | 40m56.6s | 45.9'     (pag. 394)
+126) CD -49°10259 separated from CPD -49°8873 in 1890.8 arcsec.
+    (also identified as CD -49°10252)
+     Register CD -49°10259 (en 15h):  10.0 | 52m47.3s | 4.8'     (pag. 395)
+127) CD -49°10986 separated from CPD -49°9599 in 1759.2 arcsec.
+    (also identified as CD -49°10966)
+     Register CD -49°10986 (en 16h):  9.3 | 39m48.4s | 21.0'     (pag. 397)
+128) CD -50°67 separated from CPD -50°45 in 2329.4 arcsec.
+    (also identified as CD -50°69)
+     Register CD -50°67 (en 0h):  9.9 | 16m15.2s | 21.1'     (pag. 409)
+129) CD -50°3560 separated from CPD -50°1788 in 2616.0 arcsec.
+    (also identified as CD -50°3559)
+     Register CD -50°3560 (en 8h):  9.5 | 42m30.0s | 5.4'     (pag. 421)
+130) CD -50°3813 separated from CPD -50°2033 in 286.0 arcsec.
+    (also identified as CD -50°3812)
+     Register CD -50°3813 (en 9h):  9.9 | 1m12.5s | 18.4'     (pag. 421)
+131) CD -50°3814 separated from CPD -50°2034 in 1020.1 arcsec.
+    (also identified as CD -50°3813)
+     Register CD -50°3814 (en 9h):  10.0 | 1m14.6s | 1.4'     (pag. 421)
+132) CD -50°4905 separated from CPD -50°3153 in 600.0 arcsec.
+     Register CD -50°4905 (en 10h):  10.0 | 7m34.9s | 39.1'     (pag. 425)
+133) CD -50°5581 separated from CPD -50°3827 in 2356.6 arcsec.
+    (also identified as CD -50°5561)
+     Register CD -50°5581 (en 10h):  10.0 | 54m50.1s | 49.3'     (pag. 427)
+134) CD -50°5587 separated from CPD -50°3830 in 2306.2 arcsec.
+    (also identified as CD -50°5567)
+     Register CD -50°5587 (en 10h):  10.0 | 55m19.1s | 53.4'     (pag. 427)
+135) CD -50°8073 separated from CPD -50°6366 in 216.6 arcsec.
+    (also identified as CD -50°8069)
+     Register CD -50°8073 (en 13h):  10.0 | 43m1.3s | 35.2'     (pag. 436)
+136) CD -50°8877 separated from CPD -50°7314 in 1188.1 arcsec.
+     Register CD -50°8877 (en 14h):  9.9 | 44m30.9s | 30.8'     (pag. 439)
+137) CD -50°13283 separated from CPD -50°11506 in 537.7 arcsec.
+    (also identified as CD -50°13282)
+     Register CD -50°13283 (en 21h):  9.8 | 7m20.6s | 36.8'     (pag. 453)
+138) CD -51°4494 separated from CPD -51°2994 in 1308.4 arcsec.
+    (also identified as CD -51°4493)
+     Register CD -51°4494 (en 10h):  9.9 | 3m9.7s | 24.8'     (pag. 471)
+139) CD -51°6012 separated from CPD -51°4449 in 528.0 arcsec.
+     Register CD -51°6012 (en 11h):  8.1 | 39m38.0s | 50.9'     (pag. 476)
+140) CD -51°6914 separated from CPD -51°5411 in 588.1 arcsec.
+     Register CD -51°6914 (en 12h):  9.8 | 34m56.5s | 38.0'     (pag. 479)
+141) CD -51°10147 separated from CPD -51°9505 in 192.0 arcsec.
+    (also identified as CD -51°10146)
+     Register CD -51°10147 (en 16h):  10.0 | 15m49.9s | 38.1'     (pag. 490)
+142) CD -51°12081 separated from CPD -51°11232 in 1812.0 arcsec.
+    (also identified as CD -51°12080)
+     Register CD -51°12081 (en 19h):  10.0 | 16m5.3s | 2.9'     (pag. 497)
+143) CD -51°12676 separated from CPD -51°11550 in 1133.1 arcsec.
+    (also identified as CD -51°12684)
+     Register CD -51°12676 (en 20h):  10.0 | 33m13.7s | 31.9'     (pag. 499)
+144) CD -57°3407 separated from CPD -57°3665 in 1007.9 arcsec.
+     Register CD -57°3407 (en 10h):  10.0 | 34m20.6s | 58.1'     (pag. 176)
+145) CD -58°3567 separated from CPD -58°2725 in 498.1 arcsec.
+     Register CD -58°3567 (en 10h):  10.3 | 43m15.0s | 0.8'     (pag. 207)
+146) CD -58°3926 separated from CPD -58°3329 in 1352.1 arcsec.
+    (also identified as CD -58°3925)
+     Register CD -58°3926 (en 11h):  10.8 | 8m47.1s | 31.5'     (pag. 208)
+147) CD -58°7076 separated from CPD -58°7399 in 289.6 arcsec.
+     Register CD -58°7076 (en 18h):  10.0 | 19m53.8s | 19.7'     (pag. 219)
+148) CD -60°2899 separated from CPD -60°1602 in 547.6 arcsec.
+    (also identified as CD -60°2889)
+     Register CD -60°2899 (en 10h):  8.7 | 0m1.6s | 42.0'     (pag. 263)
+149) CD -61°4204 separated from CPD -61°4317 in 2005.7 arcsec.
+    (also identified as CD -61°4202)
+     Register CD -61°4204 (en 13h):  9.5 | 56m30.7s | 20.9'     (pag. 295)
+150) CD -62°608 separated from CPD -62°2564 in 502.0 arcsec.
+    (also identified as CD -62°612)
+     Register CD -62°608 (en 11h):  9.2 | 57m16.0s | 7.0'     (pag. 6)
+Total errors: 150, Drops = 0
+RSME of distance (arcsec) = 16.03  among a total of 44316 stars

@@ -1,0 +1,547 @@
+COMPARE_PPM - Compare CD and PPM catalogs.
+Made in 2024 by Daniel Severin.
+Stars read from Cordoba Durchmusterung: 613778
+   Tomo XVI: 179745, Tomo XVII: 160381, Tomo XVIII: 149433, Tomo XXIa: 89128, Tomo XXIb: 35091
+PPM 242959 is removed because PPM 242957 is nearer to same DM -26°164
+PPM 244868 is removed because PPM 244869 is nearer to same DM -30°815
+PPM 245384 is removed because PPM 245382 is nearer to same DM -23°1055
+PPM 251580 is removed because PPM 251581 is nearer to same DM -29°3852
+PPM 252310 is removed because PPM 252307 is nearer to same DM -24°5326
+PPM 254987 is removed because PPM 254989 is nearer to same DM -23°7642
+PPM 255149 is removed because PPM 255151 is nearer to same DM -27°5927
+PPM 255394 is removed because PPM 255397 is nearer to same DM -23°7902
+PPM 258633 is removed because PPM 258635 is nearer to same DM -28°8688
+PPM 259065 is removed because PPM 259064 is nearer to same DM -23°10009
+PPM 259117 is removed because PPM 259116 is nearer to same DM -28°8928
+PPM 263376 is removed because PPM 263375 is nearer to same DM -24°11661
+PPM 266057 is removed because PPM 266061 is nearer to same DM -28°12497
+PPM 268785 is removed because PPM 268784 is nearer to same DM -23°14643
+PPM 272914 is removed because PPM 272915 is nearer to same DM -27°15611
+PPM 276422 is removed because PPM 276423 is nearer to same DM -35°278
+PPM 276710 is removed because PPM 276709 is nearer to same DM -35°381
+PPM 279474 is removed because PPM 279475 is nearer to same DM -32°1479
+PPM 279812 is removed because PPM 279814 is nearer to same DM -36°1587
+PPM 281322 is removed because PPM 281323 is nearer to same DM -30°2320
+PPM 281442 is removed because PPM 281443 is nearer to same DM -35°2291
+PPM 281443 is removed because PPM 281444 is nearer to same DM -35°2291
+PPM 282800 is removed because PPM 282801 is nearer to same DM -31°3407
+PPM 283012 is removed because PPM 283013 is nearer to same DM -38°2844
+PPM 283348 is removed because PPM 283349 is nearer to same DM -35°3243
+PPM 283869 is removed because PPM 283868 is nearer to same DM -35°3551
+PPM 284341 is removed because PPM 284340 is nearer to same DM -39°3531
+PPM 284490 is removed because PPM 284491 is nearer to same DM -31°5130
+PPM 284593 is removed because PPM 284592 is nearer to same DM -35°4030
+PPM 285226 is removed because PPM 285229 is nearer to same DM -38°4462
+PPM 285270 is removed because PPM 285269 is nearer to same DM -34°4842
+PPM 287808 is removed because PPM 287807 is nearer to same DM -31°8319
+PPM 288346 is removed because PPM 288347 is nearer to same DM -30°8855
+PPM 289210 is removed because PPM 289208 is nearer to same DM -37°7399
+PPM 291079 is removed because PPM 291082 is nearer to same DM -31°10142
+PPM 291567 is removed because PPM 291566 is nearer to same DM -35°8828
+PPM 291849 is removed because PPM 291850 is nearer to same DM -35°9019
+PPM 292187 is removed because PPM 292186 is nearer to same DM -35°9249
+PPM 292315 is removed because PPM 292313 is nearer to same DM -35°9314
+PPM 293554 is removed because PPM 293553 is nearer to same DM -32°10658
+PPM 293636 is removed because PPM 293635 is nearer to same DM -36°10010
+PPM 294446 is removed because PPM 294447 is nearer to same DM -34°10622
+PPM 294448 is removed because PPM 294449 is nearer to same DM -33°10826
+PPM 294468 is removed because PPM 294471 is nearer to same DM -35°10616
+PPM 294532 is removed because PPM 294533 is nearer to same DM -35°10650
+PPM 294735 is removed because PPM 294737 is nearer to same DM -32°11456
+PPM 294987 is removed because PPM 294986 is nearer to same DM -30°13092
+PPM 295879 is removed because PPM 295878 is nearer to same DM -33°11713
+PPM 297869 is removed because PPM 297868 is nearer to same DM -38°12896
+PPM 298426 is removed because PPM 298425 is nearer to same DM -36°13211
+PPM 298577 is removed because PPM 298575 is nearer to same DM -36°13322
+PPM 298700 is removed because PPM 298699 is nearer to same DM -31°16460
+PPM 298887 is removed because PPM 298886 is nearer to same DM -33°14136
+PPM 301489 is removed because PPM 301487 is nearer to same DM -35°14815
+PPM 307195 is removed because PPM 307196 is nearer to same DM -40°771
+PPM 310073 is removed because PPM 310071 is nearer to same DM -44°2247
+PPM 312504 is removed because PPM 312505 is nearer to same DM -40°3776
+PPM 313129 is removed because PPM 313131 is nearer to same DM -47°4004
+PPM 324945 is removed because PPM 324944 is nearer to same DM -50°12407
+PPM 337115 is removed because PPM 337114 is nearer to same DM -52°2484
+PPM 344287 is removed because PPM 344285 is nearer to same DM -54°6419
+PPM 344835 is removed because PPM 344836 is nearer to same DM -50°10370
+Star DM -69°297 not found (corresponding to PPM 354686). Discarding PPM star.
+Star DM -69°324 not found (corresponding to PPM 354885). Discarding PPM star.
+Star DM -71°46 not found (corresponding to PPM 367144). Discarding PPM star.
+Star DM -69°325 not found (corresponding to PPM 776057). Discarding PPM star.
+Stars read from PPM: 172220
+1) CD -25°16747 separated from PPM 242413 in 169.0 arcsec.
+     Register CD -25°16747 (en 23h):  9.6 | 54m36.2s | 21.8'     (pag. 233)
+2) CD -26°705 separated from PPM 244476 in 2597.2 arcsec.
+     Register CD -26°705 (en 1h):  9.1 | 51m47.3s | 6.4'     (pag. 236)
+3) CD -26°706 separated from PPM 244481 in 3026.4 arcsec.
+     Register CD -26°706 (en 1h):  9.9 | 51m49.3s | 57.5'     (pag. 236)
+4) CD -26°1304 separated from PPM 246277 (PROBLEM) in 1167.6 arcsec.
+     Register CD -26°1304 (en 3h):  9.3 | 22m42.7s | 27.0'     (pag. 238)
+5) CD -26°1426 separated from PPM 246657 in 1629.7 arcsec.
+     Register CD -26°1426 (en 3h):  10.0 | 40m24.1s | 27.8'     (pag. 238)
+6) CD -24°2783 separated from PPM 248371 in 615.4 arcsec.
+     Register CD -24°2783 (en 4h):  9.2 | 57m43.0s | 30.2'     (pag. 126)
+7) CD -26°2132 separated from PPM 248732 in 1619.5 arcsec.
+     Register CD -26°2132 (en 5h):  8.8 | 13m17.4s | 17.9'     (pag. 240)
+8) CD -25°2622 separated from PPM 249281 in 545.6 arcsec.
+     Register CD -25°2622 (en 5h):  8.3 | 38m25.1s | 49.8'     (pag. 186)
+9) CD -24°3857 separated from PPM 250124 in 193.2 arcsec.
+     Register CD -24°3857 (en 6h):  8.1 | 11m42.3s | 51.0'     (pag. 129)
+10) CD -24°4356 reports mag=9.6 but it should be mag=7.8 from PPM 250893: Delta = 1.8.
+     Register CD -24°4356 (en 6h):  9.6 | 38m2.4s | 19.1'     (pag. 131)
+11) CD -26°3646 reports mag=9.6 but it should be mag=6.7 from PPM 251329 (PROBLEM): Delta = 2.9.
+     Register CD -26°3646 (en 6h):  9.6 | 53m6.8s | 59.6'     (pag. 246)
+12) CD -28°3661 separated from PPM 251337 in 167.4 arcsec.
+     Register CD -28°3661 (en 6h):  9.3 | 53m30.4s | 51.6'     (pag. 358)
+13) CD -27°3496 separated from PPM 251386 in 558.0 arcsec.
+     Register CD -27°3496 (en 6h):  8.7 | 54m54.9s | 39.1'     (pag. 302)
+14) CD -24°5419 separated from PPM 252425 in 775.1 arcsec.
+     Register CD -24°5419 (en 7h):  10.0 | 21m55.0s | 22.1'     (pag. 135)
+15) CD -24°5836 separated from PPM 253024 in 1652.0 arcsec.
+     Register CD -24°5836 (en 7h):  10.0 | 37m52.5s | 45.5'     (pag. 136)
+16) CD -27°4804 separated from PPM 253548 in 578.6 arcsec.
+     Register CD -27°4804 (en 7h):  8.0 | 52m52.5s | 20.4'     (pag. 306)
+17) CD -23°6942 separated from PPM 254043 in 581.4 arcsec.
+     Register CD -23°6942 (en 8h):  9.4 | 6m52.7s | 28.2'     (pag. 79)
+18) CD -27°5405 separated from PPM 254394 in 2030.5 arcsec.
+     Register CD -27°5405 (en 8h):  10.0 | 18m12.7s | 35.4'     (pag. 308)
+19) CD -24°6945 separated from PPM 254512 in 145.5 arcsec.
+     Register CD -24°6945 (en 8h):  9.3 | 21m24.7s | 6.1'     (pag. 140)
+20) CD -23°8777 separated from PPM 256819 in 205.7 arcsec.
+     Register CD -23°8777 (en 9h):  8.6 | 44m27.9s | 51.0'     (pag. 85)
+21) CD -27°8178 separated from PPM 259164 in 565.2 arcsec.
+     Register CD -27°8178 (en 11h):  7.7 | 28m19.0s | 26.4'     (pag. 318)
+22) CD -27°8492 reports mag=5.5 but it should be mag=9.6 from PPM 259845: Delta = 4.1.
+     Register CD -27°8492 (en 11h):  5.5 | 59m17.9s | 36.5'     (pag. 319)
+23) CD -25°9325 separated from PPM 260535 in 527.6 arcsec.
+     Register CD -25°9325 (en 12h):  9.1 | 28m57.1s | 50.3'     (pag. 208)
+24) CD -27°9346 separated from PPM 261901 in 414.5 arcsec.
+     Register CD -27°9346 (en 13h):  9.0 | 32m7.3s | 11.4'     (pag. 322)
+25) CD -27°9429 reports mag=7.5 but it should be mag=5.9 from PPM 262109 (PROBLEM): Delta = 1.6.
+     Register CD -27°9429 (en 13h):  7.5 | 42m0.8s | 44.2'     (pag. 322)
+26) CD -27°9680 separated from PPM 262645 in 1328.8 arcsec.
+     Register CD -27°9680 (en 14h):  10.0 | 5m21.5s | 46.9'     (pag. 323)
+27) CD -24°11477 reports mag=8.2 but it should be mag=9.8 from PPM 262905: Delta = 1.6.
+     Register CD -24°11477 (en 14h):  8.2 | 18m26.6s | 42.2'     (pag. 155)
+28) CD -24°11535 separated from PPM 263064 (PROBLEM) in 1771.8 arcsec.
+     Register CD -24°11535 (en 14h):  9.3 | 24m8.5s | 16.4'     (pag. 155)
+29) CD -25°10836 separated from PPM 264039 in 545.4 arcsec.
+     Register CD -25°10836 (en 15h):  9.1 | 9m4.3s | 20.0'     (pag. 213)
+30) CD -23°12414 separated from PPM 264450 in 2104.8 arcsec.
+     Register CD -23°12414 (en 15h):  10.0 | 29m36.6s | 18.8'     (pag. 97)
+31) CD -25°11369 reports mag=6.6 but it should be mag=5.0 from PPM 265162: Delta = 1.6.
+     Register CD -25°11369 (en 16h):  6.6 | 0m31.7s | 59.7'     (pag. 215)
+32) CD -27°10862 separated from PPM 265292 in 586.0 arcsec.
+     Register CD -27°10862 (en 16h):  9.1 | 6m36.4s | 24.7'     (pag. 327)
+33) CD -26°12149 separated from PPM 266936 in 616.5 arcsec.
+     Register CD -26°12149 (en 17h):  9.0 | 22m12.7s | 39.9'     (pag. 274)
+34) CD -24°13475 separated from PPM 267289 in 1175.4 arcsec.
+     Register CD -24°13475 (en 17h):  9.0 | 39m22.9s | 50.1'     (pag. 162)
+35) CD -24°13579 separated from PPM 267456 (PROBLEM) in 762.8 arcsec.
+     Register CD -24°13579 (en 17h):  9.9 | 45m20.3s | 51.4'     (pag. 162)
+36) CD -24°14202 separated from PPM 268272 in 2833.4 arcsec.
+     Register CD -24°14202 (en 18h):  10.0 | 13m13.0s | 46.9'     (pag. 164)
+37) CD -28°14598 separated from PPM 268429 in 1798.1 arcsec.
+     Register CD -28°14598 (en 18h):  9.3 | 19m32.5s | 19.6'     (pag. 395)
+38) CD -25°13770 reports mag=10.0 but it should be mag=7.4 from PPM 269368: Delta = 2.6.
+     Register CD -25°13770 (en 19h):  10.0 | 1m7.4s | 16.3'     (pag. 223)
+39) CD -27°13714 separated from PPM 269507 in 671.6 arcsec.
+     Register CD -27°13714 (en 19h):  8.5 | 6m42.5s | 35.6'     (pag. 336)
+40) CD -27°13715 separated from PPM 269508 in 641.9 arcsec.
+     Register CD -27°13715 (en 19h):  9.3 | 6m42.9s | 24.7'     (pag. 336)
+41) CD -27°14302 separated from PPM 270327 in 602.4 arcsec.
+     Register CD -27°14302 (en 19h):  9.1 | 42m24.2s | 36.3'     (pag. 338)
+42) CD -25°14906 separated from PPM 271386 in 2416.0 arcsec.
+     Register CD -25°14906 (en 20h):  9.3 | 29m19.8s | 17.5'     (pag. 227)
+43) CD -25°15944 separated from PPM 273854 in 1802.5 arcsec.
+     Register CD -25°15944 (en 22h):  9.2 | 22m18.4s | 16.4'     (pag. 230)
+44) CD -27°15932 reports mag=9.3 but it should be mag=6.5 from PPM 273867: Delta = 2.8.
+     Register CD -27°15932 (en 22h):  9.3 | 22m46.7s | 44.7'     (pag. 344)
+45) CD -26°16170 reports mag=6.5 but it should be mag=9.4 from PPM 273886: Delta = 2.9.
+     Register CD -26°16170 (en 22h):  6.5 | 23m27.3s | 57.8'     (pag. 288)
+46) CD -27°16182 separated from PPM 274605 in 194.4 arcsec.
+     Register CD -27°16182 (en 23h):  9.0 | 0m13.7s | 13.6'     (pag. 345)
+47) CD -25°16414 separated from PPM 274855 in 167.3 arcsec.
+     Register CD -25°16414 (en 23h):  9.2 | 13m51.8s | 51.6'     (pag. 232)
+48) CD -24°17893 separated from PPM 275432 in 2430.4 arcsec.
+     Register CD -24°17893 (en 23h):  9.9 | 46m35.0s | 55.6'     (pag. 177)
+49) CD -37°17 separated from PPM 275745 in 509.5 arcsec.
+     Register CD -37°17 (en 0h):  9.2 | 2m43.9s | 29.3'     (pag. 279)
+50) CD -37°74 separated from PPM 275891 in 126.4 arcsec.
+     Register CD -37°74 (en 0h):  6.6 | 12m12.7s | 11.9'     (pag. 279)
+51) CD -37°358 separated from PPM 276557 in 698.2 arcsec.
+     Register CD -37°358 (en 0h):  8.7 | 53m31.3s | 43.9'     (pag. 280)
+52) CD -33°525 reports mag=8.0 but it should be mag=5.5 from PPM 277044 (PROBLEM): Delta = 2.5.
+     Register CD -33°525 (en 1h):  8.0 | 21m12.7s | 12.1'     (pag. 61)
+53) CD -37°664 separated from PPM 277290 in 161.2 arcsec.
+     Register CD -37°664 (en 1h):  9.5 | 38m24.6s | 48.3'     (pag. 281)
+54) CD -31°791 separated from PPM 277456 in 377.0 arcsec.
+     Register CD -31°791 (en 1h):  9.0 | 49m23.1s | 56.5'     (pag. 541)
+55) CD -31°792 separated from PPM 277457 in 1349.3 arcsec.
+     Register CD -31°792 (en 1h):  10.0 | 49m31.6s | 34.2'     (pag. 541)
+56) CD -31°905 separated from PPM 277800 in 333.7 arcsec.
+     Register CD -31°905 (en 2h):  9.3 | 10m48.9s | 50.9'     (pag. 542)
+57) CD -31°906 separated from PPM 277801 in 143.0 arcsec.
+     Register CD -31°906 (en 2h):  10.0 | 10m49.7s | 53.4'     (pag. 542)
+58) CD -31°914 separated from PPM 277812 in 3212.9 arcsec.
+     Register CD -31°914 (en 2h):  10.0 | 11m44.2s | 54.9'     (pag. 542)
+59) CD -31°917 separated from PPM 277813 (PROBLEM) in 1333.1 arcsec.
+     Register CD -31°917 (en 2h):  9.3 | 11m49.2s | 20.1'     (pag. 542)
+60) CD -31°918 separated from PPM 277814 in 1244.1 arcsec.
+     Register CD -31°918 (en 2h):  10.0 | 11m56.3s | 41.1'     (pag. 542)
+61) CD -31°920 separated from PPM 277819 (PROBLEM) in 1003.7 arcsec.
+     Register CD -31°920 (en 2h):  10.0 | 12m13.8s | 34.4'     (pag. 542)
+62) CD -31°922 separated from PPM 277824 in 551.3 arcsec.
+     Register CD -31°922 (en 2h):  10.0 | 12m28.3s | 12.0'     (pag. 542)
+63) CD -31°924 separated from PPM 277827 in 1025.3 arcsec.
+     Register CD -31°924 (en 2h):  8.8 | 12m44.4s | 39.8'     (pag. 542)
+64) CD -31°925 separated from PPM 277831 in 1049.7 arcsec.
+     Register CD -31°925 (en 2h):  7.7 | 12m47.0s | 22.5'     (pag. 542)
+65) CD -31°926 separated from PPM 277833 in 782.7 arcsec.
+     Register CD -31°926 (en 2h):  9.4 | 12m55.1s | 9.1'     (pag. 542)
+66) CD -31°928 separated from PPM 277838 in 849.5 arcsec.
+     Register CD -31°928 (en 2h):  10.0 | 13m18.5s | 13.5'     (pag. 542)
+67) CD -31°934 separated from PPM 277854 in 1927.7 arcsec.
+     Register CD -31°934 (en 2h):  10.0 | 14m37.6s | 6.2'     (pag. 542)
+68) CD -31°938 separated from PPM 277865 in 261.2 arcsec.
+     Register CD -31°938 (en 2h):  9.8 | 15m43.6s | 30.8'     (pag. 542)
+69) CD -31°942 separated from PPM 277871 in 1471.5 arcsec.
+     Register CD -31°942 (en 2h):  8.3 | 15m52.2s | 31.1'     (pag. 542)
+70) CD -31°943 separated from PPM 277873 in 1014.0 arcsec.
+     Register CD -31°943 (en 2h):  9.3 | 16m0.7s | 47.4'     (pag. 542)
+71) CD -31°949 separated from PPM 277889 in 1150.0 arcsec.
+     Register CD -31°949 (en 2h):  9.3 | 17m5.2s | 55.9'     (pag. 542)
+72) CD -31°950 separated from PPM 277894 in 2627.3 arcsec.
+     Register CD -31°950 (en 2h):  9.3 | 17m7.0s | 12.7'     (pag. 542)
+73) CD -40°736 separated from PPM 278419 in 679.2 arcsec.
+     Register CD -40°736 (en 2h):  6.5 | 44m58.3s | 26.6'     (pag. 438)
+74) CD -37°1089 separated from PPM 278479 in 121.5 arcsec.
+     Register CD -37°1089 (en 2h):  9.0 | 49m25.8s | 57.0'     (pag. 283)
+75) CD -31°1585 separated from PPM 279582 in 769.4 arcsec.
+     Register CD -31°1585 (en 3h):  9.0 | 47m45.7s | 37.4'     (pag. 544)
+76) CD -31°1588 separated from PPM 279591 in 782.1 arcsec.
+     Register CD -31°1588 (en 3h):  9.2 | 48m1.4s | 18.3'     (pag. 544)
+77) CD -30°1719 reports mag=9.5 but it should be mag=7.9 from PPM 280020 (PROBLEM): Delta = 1.6.
+     Register CD -30°1719 (en 4h):  9.5 | 10m9.3s | 22.8'     (pag. 478)
+78) CD -34°2056 separated from PPM 281038 in 342.8 arcsec.
+     Register CD -34°2056 (en 5h):  9.9 | 0m50.5s | 53.9'     (pag. 123)
+79) CD -33°2251 reports mag=9.0 but it should be mag=7.3 from PPM 281315: Delta = 1.7.
+     Register CD -33°2251 (en 5h):  9.0 | 14m42.6s | 50.3'     (pag. 67)
+80) CD -35°2291 reports mag=8.5 but it should be mag=6.9 from PPM 281444 (PROBLEM): Delta = 1.6.
+     Register CD -35°2291 (en 5h):  8.5 | 21m26.7s | 27.6'     (pag. 178)
+     Note: Also associated to discarded PPM 281442 (dist = 29.8 arcsec).
+     Note: Also associated to discarded PPM 281443 (dist = 17.4 arcsec).
+81) CD -36°2749 separated from PPM 282436 in 199.1 arcsec.
+     Register CD -36°2749 (en 6h):  9.0 | 10m50.5s | 31.3'     (pag. 234)
+82) CD -36°2804 separated from PPM 282509 in 1802.4 arcsec.
+     Register CD -36°2804 (en 6h):  8.0 | 14m50.7s | 58.5'     (pag. 234)
+83) CD -33°3445 separated from PPM 283440 in 321.7 arcsec.
+     Register CD -33°3445 (en 6h):  10.0 | 58m27.1s | 0.8'     (pag. 71)
+84) CD -38°3240 separated from PPM 283632 in 124.1 arcsec.
+     Register CD -38°3240 (en 7h):  9.0 | 7m49.8s | 53.3'     (pag. 342)
+85) CD -29°4070 separated from PPM 283657 in 159.5 arcsec.
+     Register CD -29°4070 (en 7h):  9.2 | 8m23.8s | 56.9'     (pag. 422)
+86) CD -35°3551 reports mag=7.7 but it should be mag=6.1 from PPM 283868 (PROBLEM): Delta = 1.6.
+     Register CD -35°3551 (en 7h):  7.7 | 17m47.0s | 41.0'     (pag. 183)
+87) CD -31°4590 reports mag=7.4 but it should be mag=5.6 from PPM 284007 (PROBLEM): Delta = 1.8.
+     Register CD -31°4590 (en 7h):  7.4 | 24m3.9s | 35.3'     (pag. 554)
+88) CD -29°4868 separated from PPM 284357 (PROBLEM) in 3278.5 arcsec.
+     Register CD -29°4868 (en 7h):  7.9 | 39m24.5s | 1.5'     (pag. 424)
+89) CD -36°4160 separated from PPM 284751 in 358.3 arcsec.
+     Register CD -36°4160 (en 7h):  8.9 | 59m0.6s | 3.7'     (pag. 239)
+90) CD -33°4843 separated from PPM 285083 in 285.6 arcsec.
+     Register CD -33°4843 (en 8h):  9.0 | 14m33.2s | 25.5'     (pag. 76)
+91) CD -29°6327 separated from PPM 285354 in 178.6 arcsec.
+     Register CD -29°6327 (en 8h):  9.1 | 27m8.3s | 41.8'     (pag. 429)
+92) CD -32°5706 separated from PPM 285637 in 590.2 arcsec.
+     Register CD -32°5706 (en 8h):  8.6 | 41m27.3s | 32.9'     (pag. 19)
+93) CD -34°5905 reports mag=9.6 but it should be mag=7.8 from PPM 286496: Delta = 1.8.
+     Register CD -34°5905 (en 9h):  9.6 | 23m3.2s | 21.2'     (pag. 136)
+94) CD -36°5782 separated from PPM 286623 in 162.5 arcsec.
+     Register CD -36°5782 (en 9h):  9.0 | 28m58.9s | 31.8'     (pag. 244)
+95) CD -37°6041 reports mag=9.7 but it should be mag=7.9 from PPM 286853: Delta = 1.8.
+     Register CD -37°6041 (en 9h):  9.7 | 40m17.5s | 9.9'     (pag. 299)
+96) CD -31°8102 separated from PPM 287490 in 217.0 arcsec.
+     Register CD -31°8102 (en 10h):  7.7 | 10m13.7s | 36.9'     (pag. 566)
+97) CD -32°7804 separated from PPM 288386 in 1796.7 arcsec.
+     Register CD -32°7804 (en 10h):  9.2 | 53m42.0s | 52.4'     (pag. 26)
+98) CD -32°7805 separated from PPM 288387 in 1800.7 arcsec.
+     Register CD -32°7805 (en 10h):  9.3 | 53m49.1s | 22.4'     (pag. 26)
+99) CD -34°7161 separated from PPM 288448 in 1796.6 arcsec.
+     Register CD -34°7161 (en 10h):  10.0 | 56m54.5s | 54.0'     (pag. 140)
+100) CD -32°7928 separated from PPM 288593 (PROBLEM) in 559.4 arcsec.
+     Register CD -32°7928 (en 11h):  9.6 | 4m46.5s | 10.5'     (pag. 26)
+101) CD -32°7930 separated from PPM 288595 in 2451.5 arcsec.
+     Register CD -32°7930 (en 11h):  9.9 | 4m51.5s | 42.5'     (pag. 26)
+102) CD -32°7933 separated from PPM 288602 in 1443.2 arcsec.
+     Register CD -32°7933 (en 11h):  9.9 | 4m59.1s | 52.0'     (pag. 26)
+103) CD -32°7934 separated from PPM 288624 in 874.5 arcsec.
+     Register CD -32°7934 (en 11h):  8.9 | 5m11.1s | 27.8'     (pag. 26)
+104) CD -37°7586 separated from PPM 289610 in 1258.2 arcsec.
+     Register CD -37°7586 (en 11h):  10.0 | 53m19.5s | 17.5'     (pag. 305)
+105) CD -32°8979 separated from PPM 290662 in 2043.1 arcsec.
+     Register CD -32°8979 (en 12h):  9.7 | 44m43.0s | 36.1'     (pag. 30)
+106) CD -35°8321 separated from PPM 290797 in 138.9 arcsec.
+     Register CD -35°8321 (en 12h):  9.5 | 51m10.6s | 12.0'     (pag. 199)
+107) CD -36°8704 separated from PPM 291593 in 1730.7 arcsec.
+     Register CD -36°8704 (en 13h):  9.8 | 29m10.0s | 24.0'     (pag. 254)
+108) CD -36°8707 separated from PPM 291599 in 2033.5 arcsec.
+     Register CD -36°8707 (en 13h):  9.6 | 29m12.6s | 3.2'     (pag. 254)
+109) CD -31°10729 separated from PPM 291934 (PROBLEM) in 195.7 arcsec.
+     Register CD -31°10729 (en 13h):  5.2 | 46m1.8s | 15.3'     (pag. 575)
+110) CD -31°10817 separated from PPM 292074 in 194.8 arcsec.
+     Register CD -31°10817 (en 13h):  8.9 | 52m29.5s | 57.7'     (pag. 575)
+111) CD -33°10035 separated from PPM 293016 in 174.2 arcsec.
+     Register CD -33°10035 (en 14h):  9.0 | 37m20.7s | 48.1'     (pag. 93)
+112) CD -31°11651 separated from PPM 293375 in 561.9 arcsec.
+     Register CD -31°11651 (en 14h):  9.2 | 54m27.2s | 40.1'     (pag. 578)
+113) CD -30°12566 separated from PPM 294308 in 553.0 arcsec.
+     Register CD -30°12566 (en 15h):  8.4 | 41m43.9s | 43.3'     (pag. 514)
+114) CD -30°12756 separated from PPM 294563 (PROBLEM) in 510.1 arcsec.
+     Register CD -30°12756 (en 15h):  9.2 | 54m10.7s | 29.7'     (pag. 515)
+115) CD -29°12801 separated from PPM 295439 in 564.7 arcsec.
+     Register CD -29°12801 (en 16h):  9.0 | 37m9.4s | 50.4'     (pag. 451)
+116) CD -31°13502 separated from PPM 295835 in 604.4 arcsec.
+     Register CD -31°13502 (en 16h):  7.1 | 55m14.7s | 36.0'     (pag. 584)
+117) CD -36°11399 separated from PPM 296182 in 452.0 arcsec.
+     Register CD -36°11399 (en 17h):  10.0 | 10m12.4s | 50.1'     (pag. 263)
+118) CD -36°11406 separated from PPM 296201 in 1186.1 arcsec.
+     Register CD -36°11406 (en 17h):  10.0 | 10m55.3s | 38.3'     (pag. 263)
+119) CD -35°12351 separated from PPM 297359 in 142.1 arcsec.
+     Register CD -35°12351 (en 18h):  9.8 | 3m1.0s | 10.0'     (pag. 212)
+120) CD -38°12729 reports mag=6.5 but it should be mag=4.9 from PPM 297606: Delta = 1.6.
+     Register CD -38°12729 (en 18h):  6.5 | 13m41.8s | 42.9'     (pag. 374)
+121) CD -32°14091 separated from PPM 297634 in 146.0 arcsec.
+     Register CD -32°14091 (en 18h):  9.0 | 15m20.7s | 6.0'     (pag. 47)
+122) CD -36°13423 separated from PPM 298713 in 595.7 arcsec.
+     Register CD -36°13423 (en 19h):  9.3 | 5m21.1s | 38.6'     (pag. 270)
+123) CD -33°14076 reports mag=6.9 but it should be mag=8.5 from PPM 298783: Delta = 1.6.
+     Register CD -33°14076 (en 19h):  6.9 | 8m23.1s | 44.2'     (pag. 107)
+124) CD -39°13250 separated from PPM 298932 in 1222.1 arcsec.
+     Register CD -39°13250 (en 19h):  9.0 | 15m3.8s | 45.6'     (pag. 429)
+125) CD -34°14096 separated from PPM 299688 in 142.7 arcsec.
+     Register CD -34°14096 (en 19h):  10.0 | 53m50.9s | 3.1'     (pag. 163)
+126) CD -31°17508 separated from PPM 300076 in 1801.1 arcsec.
+     Register CD -31°17508 (en 20h):  9.0 | 13m6.6s | 3.3'     (pag. 597)
+127) CD -39°14114 separated from PPM 301009 in 294.4 arcsec.
+     Register CD -39°14114 (en 20h):  8.7 | 59m15.0s | 29.1'     (pag. 431)
+128) CD -32°16655 separated from PPM 301611 in 139.4 arcsec.
+     Register CD -32°16655 (en 21h):  8.6 | 29m12.0s | 47.9'     (pag. 55)
+129) CD -35°14927 separated from PPM 301755 in 128.3 arcsec.
+     Register CD -35°14927 (en 21h):  9.7 | 35m55.7s | 58.0'     (pag. 221)
+130) CD -38°14807 separated from PPM 302034 in 187.8 arcsec.
+     Register CD -38°14807 (en 21h):  8.9 | 50m6.2s | 51.9'     (pag. 381)
+131) CD -33°16481 separated from PPM 303607 in 604.7 arcsec.
+     Register CD -33°16481 (en 23h):  8.0 | 12m43.0s | 32.7'     (pag. 115)
+132) CD -44°4051 reports mag=5.8 but it should be mag=4.1 from PPM 312586: Delta = 1.7.
+     Register CD -44°4051 (en 8h):  5.8 | 2m40.0s | 54.4'     (pag. 121)
+133) CD -47°4004 reports mag=5.5 but it should be mag=9.3 from PPM 313131 (PROBLEM): Delta = 3.8.
+     Register CD -47°4004 (en 8h):  5.5 | 25m8.9s | 30.6'     (pag. 275)
+     Note: Also associated to discarded PPM 313129 (dist = 14.6 arcsec).
+134) CD -44°4462 reports mag=6.1 but it should be mag=3.9 from PPM 313144 (PROBLEM): Delta = 2.2.
+     Register CD -44°4462 (en 8h):  6.1 | 25m15.5s | 18.4'     (pag. 123)
+135) CD -43°5103 reports mag=5.6 but it should be mag=3.9 from PPM 314148: Delta = 1.7.
+     Register CD -43°5103 (en 9h):  5.6 | 11m46.1s | 44.5'     (pag. 73)
+136) CD -45°7630 reports mag=6.7 but it should be mag=4.2 from PPM 317217 (PROBLEM): Delta = 2.5.
+     Register CD -45°7630 (en 12h):  6.7 | 7m31.2s | 1.8'     (pag. 185)
+137) CD -48°7608 reports mag=5.4 but it should be mag=3.4 from PPM 317714: Delta = 2.0.
+     Register CD -48°7608 (en 12h):  5.4 | 35m41.0s | 7.6'     (pag. 337)
+138) CD -48°7753 reports mag=5.0 but it should be mag=2.4 from PPM 317896: Delta = 2.6.
+     Register CD -48°7753 (en 12h):  5.0 | 46m3.6s | 15.7'     (pag. 337)
+139) CD -43°7998 separated from PPM 318040 in 2014.3 arcsec.
+     Register CD -43°7998 (en 12h):  10.0 | 53m23.5s | 40.5'     (pag. 82)
+140) CD -43°8003 separated from PPM 318048 in 247.9 arcsec.
+     Register CD -43°8003 (en 12h):  10.0 | 54m10.7s | 4.7'     (pag. 82)
+141) CD -43°8009 separated from PPM 318061 (PROBLEM) in 605.2 arcsec.
+     Register CD -43°8009 (en 12h):  10.0 | 54m44.5s | 41.4'     (pag. 82)
+142) CD -43°8022 separated from PPM 318083 in 2099.5 arcsec.
+     Register CD -43°8022 (en 12h):  10.0 | 56m9.5s | 18.4'     (pag. 82)
+143) CD -43°8025 separated from PPM 318087 in 147.7 arcsec.
+     Register CD -43°8025 (en 12h):  10.0 | 56m17.5s | 10.0'     (pag. 82)
+144) CD -43°8329 separated from PPM 318556 in 228.4 arcsec.
+     Register CD -43°8329 (en 13h):  10.0 | 22m57.6s | 17.5'     (pag. 83)
+145) CD -49°8095 reports mag=6.8 but it should be mag=5.2 from PPM 318713: Delta = 1.6.
+     Register CD -49°8095 (en 13h):  6.8 | 32m17.0s | 18.9'     (pag. 388)
+146) CD -39°8429 separated from PPM 318776 (PROBLEM) in 133.1 arcsec.
+     Register CD -39°8429 (en 13h):  7.0 | 36m27.2s | 30.6'     (pag. 412)
+147) CD -44°9040 reports mag=5.0 but it should be mag=3.4 from PPM 319099: Delta = 1.6.
+     Register CD -44°9040 (en 13h):  5.0 | 53m56.4s | 59.9'     (pag. 138)
+148) CD -48°9198 reports mag=4.5 but it should be mag=2.9 from PPM 319720: Delta = 1.6.
+     Register CD -48°9198 (en 14h):  4.5 | 29m30.0s | 52.8'     (pag. 342)
+149) CD -46°9773 reports mag=4.3 but it should be mag=2.2 from PPM 320215 (PROBLEM): Delta = 2.1.
+     Register CD -46°9773 (en 14h):  4.3 | 56m37.9s | 33.5'     (pag. 244)
+150) CD -44°9889 reports mag=4.8 but it should be mag=3.1 from PPM 320280 (PROBLEM): Delta = 1.7.
+     Register CD -44°9889 (en 15h):  4.8 | 0m26.8s | 47.6'     (pag. 141)
+151) CD -44°10066 reports mag=3.7 but it should be mag=1.1 from PPM 320519 (PROBLEM): Delta = 2.6.
+     Register CD -44°10066 (en 15h):  3.7 | 14m12.0s | 14.4'     (pag. 142)
+152) CD -40°9794 reports mag=9.5 but it should be mag=7.3 from PPM 320798: Delta = 2.2.
+     Register CD -40°9794 (en 15h):  9.5 | 28m51.9s | 36.5'     (pag. 468)
+153) CD -42°10601 reports mag=4.7 but it should be mag=2.6 from PPM 320817 (PROBLEM): Delta = 2.1.
+     Register CD -42°10601 (en 15h):  4.7 | 29m39.0s | 9.2'     (pag. 35)
+154) CD -40°10069 reports mag=9.7 but it should be mag=7.6 from PPM 321201: Delta = 2.1.
+     Register CD -40°10069 (en 15h):  9.7 | 47m32.0s | 24.8'     (pag. 469)
+155) CD -41°11018 reports mag=9.4 but it should be mag=7.8 from PPM 322339: Delta = 1.6.
+     Register CD -41°11018 (en 16h):  9.4 | 45m9.4s | 40.4'     (pag. 524)
+156) CD -42°11633 reports mag=5.8 but it should be mag=3.6 from PPM 322342: Delta = 2.2.
+     Register CD -42°11633 (en 16h):  5.8 | 45m10.8s | 9.0'     (pag. 39)
+157) CD -41°11022 reports mag=9.5 but it should be mag=7.8 from PPM 322343: Delta = 1.7.
+     Register CD -41°11022 (en 16h):  9.5 | 45m13.9s | 30.3'     (pag. 524)
+158) CD -48°11389 separated from PPM 322549 in 131.4 arcsec.
+     Register CD -48°11389 (en 16h):  7.4 | 53m48.6s | 7.0'     (pag. 349)
+159) CD -49°12153 reports mag=4.5 but it should be mag=2.4 from PPM 324133: Delta = 2.1.
+     Register CD -49°12153 (en 18h):  4.5 | 19m12.2s | 8.2'     (pag. 401)
+160) CD -41°13181 reports mag=9.5 but it should be mag=7.6 from PPM 324521: Delta = 1.9.
+     Register CD -41°13181 (en 18h):  9.5 | 43m30.0s | 3.9'     (pag. 531)
+161) CD -41°13323 reports mag=9.7 but it should be mag=7.5 from PPM 324780: Delta = 2.2.
+     Register CD -41°13323 (en 18h):  9.7 | 57m58.1s | 43.6'     (pag. 532)
+162) CD -55°1076 reports mag=11.5 but it should be mag=9.9 from PPM 334116: Delta = 1.6.
+     Register CD -55°1076 (en 5h):  11.5 | 7m50.4s | 49.0'     (pag. 105)
+163) CD -55°1256 reports mag=11.0 but it should be mag=8.5 from PPM 334596 (PROBLEM): Delta = 2.5.
+     Register CD -55°1256 (en 5h):  11.0 | 42m55.6s | 46.4'     (pag. 106)
+164) CD -54°1621 reports mag=10.0 but it should be mag=7.7 from PPM 335617: Delta = 2.3.
+     Register CD -54°1621 (en 6h):  10.0 | 54m32.8s | 52.7'     (pag. 74)
+165) CD -52°2474 reports mag=10.5 but it should be mag=8.7 from PPM 337101 (PROBLEM): Delta = 1.8.
+     Register CD -52°2474 (en 8h):  10.5 | 35m27.1s | 16.2'     (pag. 8)
+166) CD -58°2623 reports mag=10.0 but it should be mag=7.6 from PPM 337998: Delta = 2.4.
+     Register CD -58°2623 (en 9h):  10.0 | 24m56.5s | 36.1'     (pag. 204)
+167) CD -58°3509 reports mag=10.5 but it should be mag=8.7 from PPM 339354: Delta = 1.8.
+     Register CD -58°3509 (en 10h):  10.5 | 37m36.1s | 0.8'     (pag. 207)
+168) CD -58°3527 reports mag=9.0 but it should be mag=7.1 from PPM 339375 (PROBLEM): Delta = 1.9.
+     Register CD -58°3527 (en 10h):  9.0 | 39m3.6s | 53.0'     (pag. 207)
+169) CD -58°3872 reports mag=8.5 but it should be mag=7.0 from PPM 339816: Delta = 1.5.
+     Register CD -58°3872 (en 11h):  8.5 | 4m19.6s | 9.4'     (pag. 208)
+170) CD -54°4049 reports mag=10.0 but it should be mag=7.9 from PPM 339918: Delta = 2.1.
+     Register CD -54°4049 (en 11h):  10.0 | 10m25.5s | 32.0'     (pag. 82)
+171) CD -59°3654 reports mag=9.3 but it should be mag=7.6 from PPM 339939: Delta = 1.7.
+     Register CD -59°3654 (en 11h):  9.3 | 11m46.9s | 5.5'     (pag. 237)
+172) CD -51°6012 separated from PPM 340378 in 531.8 arcsec.
+     Register CD -51°6012 (en 11h):  8.1 | 39m38.0s | 50.9'     (pag. 476)
+173) CD -59°4005 reports mag=11.0 but it should be mag=9.1 from PPM 340477: Delta = 1.9.
+     Register CD -59°4005 (en 11h):  11.0 | 46m48.8s | 3.8'     (pag. 238)
+174) CD -59°4104 reports mag=10.0 but it should be mag=8.4 from PPM 340699: Delta = 1.6.
+     Register CD -59°4104 (en 12h):  10.0 | 0m17.8s | 3.7'     (pag. 239)
+175) CD -51°6455 reports mag=4.5 but it should be mag=2.9 from PPM 340769: Delta = 1.6.
+     Register CD -51°6455 (en 12h):  4.5 | 5m8.0s | 40.4'     (pag. 478)
+176) CD -58°4868 reports mag=10.5 but it should be mag=8.5 from PPM 341561: Delta = 2.0.
+     Register CD -58°4868 (en 12h):  10.5 | 56m15.7s | 17.6'     (pag. 212)
+177) CD -53°5088 reports mag=11.0 but it should be mag=8.6 from PPM 341816: Delta = 2.4.
+     Register CD -53°5088 (en 13h):  11.0 | 12m59.8s | 36.8'     (pag. 53)
+178) CD -50°8017 reports mag=5.2 but it should be mag=3.3 from PPM 342240 (PROBLEM): Delta = 1.9.
+     Register CD -50°8017 (en 13h):  5.2 | 38m45.5s | 48.4'     (pag. 436)
+179) CD -55°6352 reports mag=11.0 but it should be mag=8.5 from PPM 344218: Delta = 2.5.
+     Register CD -55°6352 (en 15h):  11.0 | 37m57.3s | 29.8'     (pag. 123)
+180) CD -59°6926 reports mag=9.5 but it should be mag=7.7 from PPM 347049: Delta = 1.8.
+     Register CD -59°6926 (en 18h):  9.5 | 28m47.1s | 24.4'     (pag. 248)
+181) CD -51°11917 reports mag=7.3 but it should be mag=9.1 from PPM 347434: Delta = 1.8.
+     Register CD -51°11917 (en 18h):  7.3 | 56m51.8s | 36.2'     (pag. 496)
+182) CD -52°9501 reports mag=11.3 but it should be mag=9.5 from PPM 348553: Delta = 1.8.
+     Register CD -52°9501 (en 20h):  11.3 | 17m20.3s | 19.8'     (pag. 32)
+183) CD -54°9063 reports mag=6.5 but it should be mag=8.1 from PPM 349619: Delta = 1.6.
+     Register CD -54°9063 (en 21h):  6.5 | 35m11.0s | 32.6'     (pag. 99)
+184) CD -54°9261 reports mag=11.5 but it should be mag=10.0 from PPM 350256 (PROBLEM): Delta = 1.5.
+     Register CD -54°9261 (en 22h):  11.5 | 20m28.4s | 8.4'     (pag. 100)
+185) CD -51°13470 reports mag=7.3 but it should be mag=5.4 from PPM 350797 (PROBLEM): Delta = 1.9.
+     Register CD -51°13470 (en 23h):  7.3 | 0m0.0s | 21.7'     (pag. 502)
+186) CD -59°8141 reports mag=8.2 but it should be mag=9.8 from PPM 351133: Delta = 1.6.
+     Register CD -59°8141 (en 23h):  8.2 | 23m17.2s | 6.4'     (pag. 252)
+187) CD -59°8144 reports mag=8.0 but it should be mag=9.7 from PPM 351138: Delta = 1.7.
+     Register CD -59°8144 (en 23h):  8.0 | 23m37.4s | 20.0'     (pag. 252)
+188) CD -63°39 reports mag=0.7 but it should be mag=9.6 from PPM 352613 (PROBLEM): Delta = 8.9.
+     Register CD -63°39 (en 1h):  0.7 | 47m20.0s | 51.2'     (pag. 17)
+189) CD -70°111 reports mag=4.9 but it should be mag=8.9 from PPM 352839: Delta = 4.0.
+     Register CD -70°111 (en 2h):  4.9 | 14m31.0s | 3.0'     (pag. 198)
+190) CD -62°175 reports mag=6.0 but it should be mag=3.6 from PPM 354226 (PROBLEM): Delta = 2.4.
+     Register CD -62°175 (en 4h):  6.0 | 35m19.0s | 19.4'     (pag. 1)
+191) CD -67°708 reports mag=9.7 but it should be mag=7.8 from PPM 357185: Delta = 1.9.
+     Register CD -67°708 (en 9h):  9.7 | 10m2.0s | 12.5'     (pag. 123)
+192) CD -59°3553 reports mag=10.8 but it should be mag=8.5 from PPM 358489: Delta = 2.3.
+     Register CD -59°3553 (en 11h):  10.8 | 1m56.2s | 37.9'     (pag. 237)
+193) CD -66°1042 reports mag=9.8 but it should be mag=8.3 from PPM 358695: Delta = 1.5.
+     Register CD -66°1042 (en 11h):  9.8 | 19m31.0s | 27.0'     (pag. 97)
+194) CD -60°3960 reports mag=10.0 but it should be mag=8.5 from PPM 359176: Delta = 1.5.
+     Register CD -60°3960 (en 11h):  10.0 | 58m40.5s | 10.4'     (pag. 266)
+195) CD -60°3999 reports mag=10.5 but it should be mag=8.1 from PPM 359209: Delta = 2.4.
+     Register CD -60°3999 (en 12h):  10.5 | 1m45.5s | 25.0'     (pag. 267)
+196) CD -63°757 reports mag=9.2 but it should be mag=7.5 from PPM 359404: Delta = 1.7.
+     Register CD -63°757 (en 12h):  9.2 | 18m52.0s | 19.2'     (pag. 25)
+197) CD -60°4812 reports mag=10.5 but it should be mag=8.6 from PPM 360240: Delta = 1.9.
+     Register CD -60°4812 (en 13h):  10.5 | 31m5.3s | 35.0'     (pag. 269)
+198) CD -62°1101 reports mag=7.5 but it should be mag=5.9 from PPM 362279 (PROBLEM): Delta = 1.6.
+     Register CD -62°1101 (en 16h):  7.5 | 31m25.0s | 19.2'     (pag. 12)
+199) CD -63°1259 reports mag=4.2 but it should be mag=7.6 from PPM 362552: Delta = 3.4.
+     Register CD -63°1259 (en 17h):  4.2 | 0m46.0s | 31.8'     (pag. 31)
+200) CD -69°1349 reports mag=6.2 but it should be mag=4.3 from PPM 372592: Delta = 1.9.
+     Register CD -69°1349 (en 15h):  6.2 | 2m24.0s | 36.5'     (pag. 188)
+201) CD -82°206 reports mag=8.6 but it should be mag=7.0 from PPM 377179: Delta = 1.6.
+     Register CD -82°206 (en 10h):  8.6 | 20m51.0s | 16.8'     (pag. 385)
+202) CD -26°7412 reports mag=7.0 but it should be mag=9.1 from PPM 729617: Delta = 2.1.
+     Register CD -26°7412 (en 9h):  7.0 | 40m49.8s | 30.6'     (pag. 258)
+203) CD -35°3654 reports mag=10.0 but it should be mag=8.4 from PPM 740169: Delta = 1.6.
+     Register CD -35°3654 (en 7h):  10.0 | 27m16.4s | 15.5'     (pag. 183)
+204) CD -41°4023 reports mag=8.0 but it should be mag=9.6 from PPM 755804: Delta = 1.6.
+     Register CD -41°4023 (en 8h):  8.0 | 16m50.6s | 51.7'     (pag. 500)
+205) CD -57°757 reports mag=11.5 but it should be mag=9.8 from PPM 766071: Delta = 1.7.
+     Register CD -57°757 (en 3h):  11.5 | 49m10.5s | 7.8'     (pag. 167)
+206) CD -54°1545 reports mag=11.0 but it should be mag=9.4 from PPM 767106: Delta = 1.6.
+     Register CD -54°1545 (en 6h):  11.0 | 43m23.1s | 45.3'     (pag. 73)
+207) CD -52°2917 reports mag=10.8 but it should be mag=9.3 from PPM 768572: Delta = 1.5.
+     Register CD -52°2917 (en 9h):  10.8 | 11m22.4s | 35.0'     (pag. 9)
+208) CD -55°2731 reports mag=10.5 but it should be mag=8.5 from PPM 768689: Delta = 2.0.
+     Register CD -55°2731 (en 9h):  10.5 | 25m17.8s | 41.6'     (pag. 111)
+209) CD -52°3301 reports mag=11.0 but it should be mag=9.4 from PPM 768883: Delta = 1.6.
+     Register CD -52°3301 (en 9h):  11.0 | 37m53.9s | 9.2'     (pag. 11)
+210) CD -54°3310 reports mag=11.5 but it should be mag=9.3 from PPM 769143: Delta = 2.2.
+     Register CD -54°3310 (en 10h):  11.5 | 7m47.5s | 49.3'     (pag. 80)
+211) CD -52°3983 reports mag=11.0 but it should be mag=9.1 from PPM 769406: Delta = 1.9.
+     Register CD -52°3983 (en 10h):  11.0 | 42m21.2s | 41.3'     (pag. 13)
+212) CD -54°3900 reports mag=11.0 but it should be mag=9.3 from PPM 769526: Delta = 1.7.
+     Register CD -54°3900 (en 10h):  11.0 | 54m53.1s | 58.8'     (pag. 82)
+213) CD -55°3880 reports mag=11.0 but it should be mag=9.3 from PPM 769620: Delta = 1.7.
+     Register CD -55°3880 (en 11h):  11.0 | 4m33.0s | 13.0'     (pag. 115)
+214) CD -58°4736 reports mag=10.8 but it should be mag=9.3 from PPM 770449: Delta = 1.5.
+     Register CD -58°4736 (en 12h):  10.8 | 39m25.7s | 17.4'     (pag. 211)
+215) CD -55°5254 reports mag=8.8 but it should be mag=7.2 from PPM 770881: Delta = 1.6.
+     Register CD -55°5254 (en 13h):  8.8 | 29m33.3s | 50.3'     (pag. 119)
+216) CD -58°5405 reports mag=11.5 but it should be mag=9.9 from PPM 771105: Delta = 1.6.
+     Register CD -58°5405 (en 13h):  11.5 | 52m50.2s | 5.2'     (pag. 213)
+217) CD -57°5392 reports mag=11.3 but it should be mag=9.8 from PPM 771115: Delta = 1.5.
+     Register CD -57°5392 (en 13h):  11.3 | 54m2.8s | 51.3'     (pag. 183)
+218) CD -53°5487 reports mag=11.8 but it should be mag=9.8 from PPM 771221: Delta = 2.0.
+     Register CD -53°5487 (en 14h):  11.8 | 5m6.3s | 17.2'     (pag. 54)
+219) CD -59°5212 reports mag=11.0 but it should be mag=9.3 from PPM 771298: Delta = 1.7.
+     Register CD -59°5212 (en 14h):  11.0 | 13m19.1s | 3.9'     (pag. 242)
+220) CD -53°5637 reports mag=11.0 but it should be mag=9.2 from PPM 771429: Delta = 1.8.
+     Register CD -53°5637 (en 14h):  11.0 | 29m33.1s | 14.4'     (pag. 55)
+221) CD -53°5682 reports mag=11.0 but it should be mag=9.3 from PPM 771500: Delta = 1.7.
+     Register CD -53°5682 (en 14h):  11.0 | 35m35.6s | 33.4'     (pag. 55)
+222) CD -54°5976 reports mag=11.0 but it should be mag=9.3 from PPM 771708: Delta = 1.7.
+     Register CD -54°5976 (en 14h):  11.0 | 52m45.1s | 6.4'     (pag. 89)
+223) CD -54°6220 reports mag=11.5 but it should be mag=9.8 from PPM 771958: Delta = 1.7.
+     Register CD -54°6220 (en 15h):  11.5 | 19m6.5s | 7.7'     (pag. 89)
+224) CD -53°6491 reports mag=10.8 but it should be mag=9.3 from PPM 772292: Delta = 1.5.
+     Register CD -53°6491 (en 16h):  10.8 | 3m53.4s | 35.0'     (pag. 58)
+225) CD -53°6524 reports mag=11.5 but it should be mag=9.8 from PPM 772319: Delta = 1.7.
+     Register CD -53°6524 (en 16h):  11.5 | 6m24.5s | 38.0'     (pag. 58)
+226) CD -52°7324 reports mag=10.0 but it should be mag=8.5 from PPM 772322: Delta = 1.5.
+     Register CD -52°7324 (en 16h):  10.0 | 7m5.4s | 17.5'     (pag. 25)
+227) CD -52°9409 reports mag=11.5 but it should be mag=9.7 from PPM 774389: Delta = 1.8.
+     Register CD -52°9409 (en 20h):  11.5 | 3m17.3s | 30.8'     (pag. 32)
+228) CD -60°2324 reports mag=11.3 but it should be mag=9.7 from PPM 777198: Delta = 1.6.
+     Register CD -60°2324 (en 8h):  11.3 | 42m57.3s | 48.3'     (pag. 261)
+229) CD -65°874 reports mag=5.7 but it should be mag=9.6 from PPM 777813: Delta = 3.9.
+     Register CD -65°874 (en 10h):  5.7 | 5m15.0s | 12.5'     (pag. 61)
+230) CD -59°3299 reports mag=10.8 but it should be mag=9.0 from PPM 778117: Delta = 1.8.
+     Register CD -59°3299 (en 10h):  10.8 | 39m51.7s | 24.3'     (pag. 236)
+231) CD -62°547 reports mag=7.5 but it should be mag=9.9 from PPM 778561: Delta = 2.4.
+     Register CD -62°547 (en 11h):  7.5 | 32m2.0s | 38.5'     (pag. 6)
+232) CD -59°4154 reports mag=10.5 but it should be mag=8.6 from PPM 778859: Delta = 1.9.
+     Register CD -59°4154 (en 12h):  10.5 | 6m23.0s | 57.8'     (pag. 239)
+233) CD -60°6050 reports mag=11.0 but it should be mag=9.3 from PPM 780875: Delta = 1.7.
+     Register CD -60°6050 (en 15h):  11.0 | 53m59.5s | 2.4'     (pag. 274)
+234) CD -59°6218 reports mag=10.8 but it should be mag=9.3 from PPM 781183: Delta = 1.5.
+     Register CD -59°6218 (en 16h):  10.8 | 25m5.0s | 57.2'     (pag. 246)
+235) CD -76°1113 reports mag=6.2 but it should be mag=10.1 from PPM 788139: Delta = 3.9.
+     Register CD -76°1113 (en 21h):  6.2 | 50m46.0s | 43.0'     (pag. 325)
+Total errors: 235 (position: 121, mag: 114); errors without warning = 235, PPM with problems = 9070
+RSME of distance (arcsec) = 20.48  among a total of 172068 stars
+RSME of visual magnitude = 0.31089  among a total of 152177 stars

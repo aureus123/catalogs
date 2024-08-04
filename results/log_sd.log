@@ -1,0 +1,113 @@
+COMPARE_SD - Compare CD and SD catalogs.
+Made in 2024 by Daniel Severin.
+Stars read from Cordoba Durchmusterung: 613778
+   Tomo XVI: 179745, Tomo XVII: 160381, Tomo XVIII: 149433, Tomo XXIa: 89128, Tomo XXIb: 35091
+Ommitting star SD -22°3885*
+Ommitting star SD -22°5735*
+Stars read from Southern Durchmusterung: 6261
+Warning: Star SD -22°4135 not found
+Warning: Star SD -22°5331 not found
+Warning: Star SD -22°5735 not found
+Number of SD stars cross-identified with CD stars: 3485
+1) CD -22°202 separated from SD -22°107 in 224.9 arcsec.
+     Register CD -22°202 (en 0h):  9.6 | 32m21.4s | 1.9'     (pag. 0)
+     Register SD -22°107 (en 0h):  9.1 | 31m15.9s | 5.0'     (pag. 438)
+2) CD -22°2289 separated from SD -22°1142 in 191.3 arcsec.
+     Register CD -22°2289 (en 5h):  8.5 | 26m47.7s | 18.7'     (pag. 7)
+     Register SD -22°1142 (en 5h):  9.8 | 25m58.3s | 16.5'     (pag. 442)
+3) CD -22°2652 reports mag=8.0 but it should be mag=8.9 from SD -22°1287: Delta = 0.9.
+     Register CD -22°2652 (en 5h):  8.0 | 54m47.1s | 6.2'     (pag. 8)
+     Register SD -22°1287 (en 5h):  8.9 | 53m55.4s | 6.0'     (pag. 442)
+4) CD -22°3405 reports mag=9.0 but it should be mag=6.8 from SD -22°1505: Delta = 2.2.
+     Register CD -22°3405 (en 6h):  9.0 | 37m31.1s | 19.5'     (pag. 11)
+     Register SD -22°1505 (en 6h):  6.8 | 36m39.4s | 18.7'     (pag. 443)
+5) CD -22°3491 separated from SD -22°1530 in 1062.6 arcsec.
+     Register CD -22°3491 (en 6h):  10.0 | 41m39.2s | 56.0'     (pag. 11)
+     Register SD -22°1530 (en 6h):  9.3 | 40m51.0s | 37.1'     (pag. 443)
+6) CD -22°3867 separated from SD -22°1654 in 516.1 arcsec.
+     Register CD -22°3867 (en 6h):  9.6 | 55m48.3s | 58.9'     (pag. 13)
+     Register SD -22°1654 (en 6h):  8.7 | 54m57.5s | 48.7'     (pag. 443)
+7) CD -23°4754 reports mag=9.8 but it should be mag=9.0 from SD -22°1660: Delta = 0.8.
+     Register CD -23°4754 (en 6h):  9.8 | 56m6.8s | 1.3'     (pag. 71)
+     Register SD -22°1660 (en 6h):  9.0 | 55m16.7s | 59.7'     (pag. 443)
+8) CD -22°4043 separated from SD -22°1707 in 941.6 arcsec.
+     Register CD -22°4043 (en 7h):  10.0 | 2m15.4s | 22.5'     (pag. 13)
+     Register SD -22°1707 (en 7h):  9.3 | 1m21.9s | 36.4'     (pag. 443)
+9) CD -22°4895 separated from SD -22°1977 in 807.8 arcsec.
+     Register CD -22°4895 (en 7h):  10.0 | 34m23.5s | 25.3'     (pag. 16)
+     Register SD -22°1977 (en 7h):  9.6 | 34m30.4s | 22.4'     (pag. 444)
+10) CD -22°5124 separated from SD -22°2020 in 285.2 arcsec.
+     Register CD -22°5124 (en 7h):  9.7 | 41m22.5s | 40.6'     (pag. 17)
+     Register SD -22°2020 (en 7h):  9.7 | 40m30.3s | 42.5'     (pag. 445)
+11) CD -22°5730 separated from SD -22°2169 in 2711.8 arcsec.
+     Register CD -22°5730 (en 8h):  9.4 | 3m44.4s | 13.3'     (pag. 19)
+     Register SD -22°2169 (en 8h):  9.5 | 3m3.4s | 55.0'     (pag. 445)
+12) CD -22°5914 separated from SD -22°2207 in 570.7 arcsec.
+     Register CD -22°5914 (en 8h):  9.8 | 10m39.3s | 14.2'     (pag. 19)
+     Register SD -22°2207 (en 8h):  9.1 | 9m48.8s | 1.1'     (pag. 445)
+13) CD -22°6169 separated from SD -22°2276 in 820.5 arcsec.
+     Register CD -22°6169 (en 8h):  9.4 | 21m36.1s | 36.7'     (pag. 20)
+     Register SD -22°2276 (en 8h):  7.7 | 20m41.1s | 46.5'     (pag. 445)
+14) CD -22°7991 separated from SD -22°2861 in 627.3 arcsec.
+     Register CD -22°7991 (en 10h):  9.8 | 6m8.3s | 46.9'     (pag. 26)
+     Register SD -22°2861 (en 10h):  9.0 | 5m15.3s | 30.6'     (pag. 448)
+15) CD -22°8093 separated from SD -22°2892 in 1522.7 arcsec.
+     Register CD -22°8093 (en 10h):  10.0 | 13m8.2s | 6.8'     (pag. 27)
+     Register SD -22°2892 (en 10h):  8.5 | 12m15.3s | 26.2'     (pag. 448)
+16) CD -22°8333 separated from SD -22°2955 in 1946.6 arcsec.
+     Register CD -22°8333 (en 10h):  8.9 | 29m5.2s | 50.9'     (pag. 28)
+     Register SD -22°2955 (en 10h):  9.8 | 28m19.3s | 12.4'     (pag. 448)
+17) CD -22°9051 reports mag=10.0 but it should be mag=9.0 from SD -22°3194: Delta = 1.0.
+     Register CD -22°9051 (en 11h):  10.0 | 34m32.6s | 25.1'     (pag. 30)
+     Register SD -22°3194 (en 11h):  9.0 | 33m32.9s | 16.8'     (pag. 449)
+18) CD -22°9451 separated from SD -22°3378 in 1389.4 arcsec.
+     Register CD -22°9451 (en 12h):  9.0 | 21m35.2s | 6.5'     (pag. 31)
+     Register SD -22°3378 (en 12h):  9.1 | 20m33.6s | 23.0'     (pag. 449)
+19) CD -22°9783 reports mag=8.4 but it should be mag=7.5 from SD -22°3521: Delta = 0.9.
+     Register CD -22°9783 (en 13h):  8.4 | 3m23.0s | 44.8'     (pag. 32)
+     Register SD -22°3521 (en 13h):  7.5 | 2m19.9s | 38.2'     (pag. 450)
+20) CD -22°11379 reports mag=7.6 but it should be mag=8.5 from SD -22°4101: Delta = 0.9.
+     Register CD -22°11379 (en 16h):  7.6 | 1m58.8s | 37.0'     (pag. 38)
+     Register SD -22°4101 (en 16h):  8.5 | 0m47.3s | 34.3'     (pag. 452)
+21) CD -23°12988 separated from SD -22°4247 in 3267.9 arcsec.
+     Register CD -23°12988 (en 16h):  10.0 | 49m11.3s | 54.7'     (pag. 99)
+     Register SD -22°4247 (en 16h):  9.5 | 47m53.3s | 58.2'     (pag. 452)
+22) CD -22°12143 reports mag=8.4 but it should be mag=7.5 from SD -22°4383: Delta = 0.9.
+     Register CD -22°12143 (en 17h):  8.4 | 30m30.8s | 30.3'     (pag. 40)
+     Register SD -22°4383 (en 17h):  7.5 | 29m18.1s | 29.3'     (pag. 453)
+23) CD -22°12988 separated from SD -22°4730 in 698.0 arcsec.
+     Register CD -22°12988 (en 18h):  9.6 | 20m3.2s | 15.9'     (pag. 43)
+     Register SD -22°4730 (en 18h):  9.4 | 18m50.8s | 28.1'     (pag. 454)
+24) CD -22°13074 reports mag=10.0 but it should be mag=9.2 from SD -22°4773: Delta = 0.8.
+     Register CD -22°13074 (en 18h):  10.0 | 25m52.7s | 26.0'     (pag. 43)
+     Register SD -22°4773 (en 18h):  9.2 | 24m43.2s | 27.5'     (pag. 454)
+25) CD -22°13399 reports mag=5.0 but it should be mag=6.0 from SD -22°4907: Delta = 1.0.
+     Register CD -22°13399 (en 18h):  5.0 | 46m37.6s | 53.7'     (pag. 45)
+     Register SD -22°4907 (en 18h):  6.0 | 45m25.3s | 54.9'     (pag. 455)
+26) CD -22°13419 reports mag=5.1 but it should be mag=6.2 from SD -22°4915: Delta = 1.1.
+     Register CD -22°13419 (en 18h):  5.1 | 47m34.0s | 49.2'     (pag. 45)
+     Register SD -22°4915 (en 18h):  6.2 | 46m19.9s | 50.8'     (pag. 455)
+27) CD -22°14939 separated from SD -22°5508 in 180.6 arcsec.
+     Register CD -22°14939 (en 20h):  8.7 | 35m50.8s | 21.4'     (pag. 50)
+     Register SD -22°5508 (en 20h):  8.8 | 34m40.8s | 28.6'     (pag. 457)
+28) CD -22°15053 separated from SD -22°5555 in 325.8 arcsec.
+     Register CD -22°15053 (en 20h):  9.3 | 45m28.8s | 33.4'     (pag. 50)
+     Register SD -22°5555 (en 20h):  9.8 | 44m38.6s | 34.8'     (pag. 457)
+29) CD -22°15402 reports mag=4.7 but it should be mag=5.7 from SD -22°5692: Delta = 1.0.
+     Register CD -22°15402 (en 21h):  4.7 | 21m36.3s | 20.8'     (pag. 51)
+     Register SD -22°5692 (en 21h):  5.7 | 20m27.1s | 26.1'     (pag. 457)
+30) CD -22°16389 separated from SD -22°6161 in 951.9 arcsec.
+     Register CD -22°16389 (en 23h):  9.4 | 31m24.4s | 12.2'     (pag. 55)
+     Register SD -22°6161 (en 23h):  8.1 | 29m27.5s | 28.6'     (pag. 459)
+31) CD -22°16457 separated from SD -22°6196 in 1442.4 arcsec.
+     Register CD -22°16457 (en 23h):  9.9 | 41m29.5s | 12.7'     (pag. 55)
+     Register SD -22°6196 (en 23h):  9.1 | 40m28.0s | 43.4'     (pag. 459)
+32) CD -22°16495 reports mag=9.3 but it should be mag=8.5 from SD -22°6217: Delta = 0.8.
+     Register CD -22°16495 (en 23h):  9.3 | 47m16.6s | 19.0'     (pag. 55)
+     Register SD -22°6217 (en 23h):  8.5 | 46m14.9s | 25.6'     (pag. 459)
+33) CD -22°16507 separated from SD -22°6224 in 862.5 arcsec.
+     Register CD -22°16507 (en 23h):  9.9 | 48m46.5s | 33.5'     (pag. 55)
+     Register SD -22°6224 (en 23h):  9.1 | 47m44.5s | 25.8'     (pag. 459)
+Total errors: 33 (position: 21, mag: 12), Drops: 0
+RSME of distance (arcsec) = 31.08  among a total of 3356 stars
+RSME of visual magnitude = 0.20720  among a total of 3341 stars
