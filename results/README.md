@@ -2,7 +2,7 @@
 
 Below some experiments are reported.
 
-### Efficiency of algorithm
+### 1. Efficiency of algorithm
 
 An experiment was carried out to analize the efficiency in finding errors in CD digital catalog. Two comparisons are made:
 
@@ -12,7 +12,7 @@ An experiment was carried out to analize the efficiency in finding errors in CD 
 
 The thresholds used in both experiments was 2 arcmin for the position and 1.5 for the magnitude.
 
-### Typo errors found in Bonner Durchmusterung digital catalog
+### 2. Typo errors found in Bonner Durchmusterung digital catalog
 
 By using tool *compare_ppm_bd* with 180 arcsec and 0.4 magnitude units as thresholds, a total of 86 warnings were found (82 in position and 4 in magnitude). By manually comparing those registers with the printed catalog, 13 typo errors in position were found (see file *log_ppm_bd*). It gives a success rate of 15%. If the position threshold is reduced to 150 arcsec, 61 new warnings are generated but almost all of them are false-positives while only 1 typo error is found.
 
@@ -45,6 +45,10 @@ For instance, the star BD +19°4871 reports 19°37'.9 in declination:
 But in the printed catalog, it says 19°7'.9, thus leading to a separation of 30 arcmin. In fact, star PPM 141127 is near the printed position, as expected. Below, a portion of the BD catalog is shown:
 ![Alt text](bd.png?raw=true "Printed catalog")
 
-### Typo errors found in Cordoba Durchmusterung digital catalog
+### 3. Typo errors found in Cordoba Durchmusterung digital catalog
+
+In 2018, with this approach 45 typo mistakes were found in the current CD catalog at VizieR (for declinations -23 and -24), see https://data.mendeley.com/datasets/5wwwtv7c8c/1/files/4934a81a-5a03-46b1-9098-4004733511a7
+
+
 
 🚧 In construction

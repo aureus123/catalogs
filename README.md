@@ -17,7 +17,13 @@ If the angular distance exceeds a given threshold, a warning is generated, with 
 used in its printed form. Also, the page of the printed catalog is
 estimated.
 One can compare these data against the real printed catalog, in order to
-find typo errors during the confection of the digital version of CD.  
+find typo errors during the confection of the digital version of CD.
+
+### Limitations of the approach:
+
+🛑 On the one hand, only typo mistakes that leads to an excess in the thresholds can be corrected. For instance, a threshold of 0.5 for magnitudes will find some errors in the first digit of them (e.g. if the value reported is 8.8 but the real is 9.3) and will skip some other (e.g. if the real is 9.1), however mistakes in the second digit will not be found. Naturally, one can reduce the threshold to raise the number of hits, but at the expense of increase a lot the number of false-positives (see Experiment 2 in the results folder).
+
+✋ On the other hand, the approach is limited to the cross-identified stars. In the case of CD, from a total of 613778 stars, only 171303 has useful cross-identifications with PPM. That means that there are roughly 72% of stars in the CD digital catalog that the algorithm does not explore.  
 
 ### Comparison schemes:
 
@@ -36,6 +42,16 @@ find typo errors during the confection of the digital version of CD.
 
 🚰 Sources of WCSTools 3.9.7 from http://tdc-www.harvard.edu/wcstools should be downloaded to wcstools-3.9.7 folder, and compiled.
 The routing "wcsconp" is used for transforming coordinates.
+
+### Bibliography
+
+- Severin D. E., Sevilla D. J. (2015) Development of a new digital version of "Cordoba Durchmusterung" stellar catalog. Revista Académica Electrónica de la UNR 15 (8), pg. 2250-2260.
+https://rephip.unr.edu.ar/server/api/core/bitstreams/0362c1df-b472-4216-99fe-46c7f135921a/content 
+- Severin D. E. (2018) Cross-identification of stellar catalogs with multiple stars: Complexity and Resolution. Electronic Notes in Discrete Mathematics 69, pg 29-36.
+https://doi.org/10.1016/j.endm.2018.07.005
+- Severin, D. E. (2018) Cross-identification between Cordoba Durchmusterung catalog (declinations -22, -23 and -24) and PPMX catalog, Mendeley Data, V1.
+ http://dx.doi.org/10.17632/5wwwtv7c8c.1
+
 
 Enjoy! 🤗
 
