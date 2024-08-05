@@ -9,15 +9,14 @@ The hypothesis is that, since the cross-identifications between both catalogs we
 
 ### Algorithm:
 
-📄 There are two catalogs, the source (e.g. CD) and the target (e.g PPM).
-In first place, all stars from PPM having a cross-identification between both catalogs are considered. Then, coordinates from PPM are precessed
-to the epoch of the CD catalog (from J2000 to B1875) and corrected by
-proper motion. The resulting coordinates are compared against CD ones.
-If the angular distance exceeds a given threshold, a warning is generated, with the data of that star in the CD catalog in the format
+📄 The approach considers two catalogs, the source (e.g. CD) and the target (e.g PPM).
+In first place, all stars from the target catalog having a cross-identification between both catalogs are considered. Then, coordinates are precessed to the epoch of the source catalog (e.g from J2000 to B1875) and corrected by proper motion.
+The resulting coordinates are compared to those from the source catalog.
+If the angular distance exceeds a given threshold, a warning is generated, with the data of that star in the source catalog in the format
 used in its printed form. Also, the page of the printed catalog is
 estimated.
 One can compare these data against the real printed catalog, in order to
-find typo errors during the confection of the digital version of CD.
+find typo errors during the confection of the digital version of BD or CD.
 
 ### Limitations of the approach:
 
@@ -29,7 +28,7 @@ find typo errors during the confection of the digital version of CD.
 
 - *compare_ppm*: Compares CD and PPM (from declination -23 to south pole)
 - *compare_ppm_bd*: Compares BD and PPM (only Vol 1, from declination -1 to +19)
-- *compare_sd*: Compares CD and SD (declination -22)
+- *compare_sd*: Compares CD and SD (declination -22), through catalog 4005
 - *compare_cpd*: Compares CD and CPD, through catalogs 4005 or 4011
 - *compare_agk*: Compares CD and AGK (Cordoba A, B and C, from declination -22 to -37)
 
@@ -41,7 +40,7 @@ find typo errors during the confection of the digital version of CD.
 ### Requirements
 
 🚰 Sources of WCSTools 3.9.7 from http://tdc-www.harvard.edu/wcstools should be downloaded to wcstools-3.9.7 folder, and compiled.
-The routing "wcsconp" is used for transforming coordinates.
+The routine "wcsconp" is used for transforming coordinates.
 
 ### Bibliography
 
