@@ -37,3 +37,46 @@ Nota 2:
 
 Encontramos aleatoriamente que CD-30 3694 tiene mag. 9.5 en el impreso (pag. 484) pero 9.0 en el digital.
 
+
+Nota 3:
+-------
+
+Viendo "log_gc" encontramos que los siguientes registros están ALONE:
+
+1) El primer registro (GC 51): observando su catálogo impreso (RONA14) no
+encontramos errores. La más cercana es CD -37°16 a 381 arcsec.
+Sin embargo, en el catálogo impreso de CD (RONA17) es claro que la estrella
+se corresponde con CD -37°17. Aquí hallamos que el catálogo digital tiene
+mal su declinación (minutos), donde dice 29.3 debe ser 20.3.
+Esta diferencia en 540 arcsec se manifiesta en "log_ppm" registro 49.
+También aparece en "log_cpd" registro 818.
+
+2) Registro 49 (GC 6712): observando catálogo impreso (RONA14) no
+encontramos errores. La más cercana es CD -25°2618 a 412 arcsec, sin
+embargo en el catálogo impreso de CD (RONA16) es claro que la estrella
+que se corresponde es la CD -25°2622. Viendo en el catálogo digital
+encontramos que esta estrella tiene mal su declinación (minutos), donde
+dice 49.8 debería decir 40.8.
+Esta diferencia en 540 arcsec se manifiesta en "log_ppm" registro 8.
+También aparece en "log_cpd" registro 173 y "log_agk" registro 41.
+
+3) Ocurre algo similar con el registro 296 (GC 28943) donde la más cercana es CD -25°15236.
+Sin embargo, en el catálogo impreso, por la columna de identificación de CD parece identificarse
+con CD -25°15231 (casi la misma RA y la misma magnitud). Aquí no hay errores de transcripción,
+sino que simplemente ambas coordenadas se encuentran lejos: solo en declinación tenemos la
+diferencia entre -25°9'1''3 y -25°38.8', es decir de 1787 arcsec.
+Efectivamente, esa estrella de CD figura en la "corrigenda" del paper "LIST OF ADDITIONAL ERRORS
+FOUND IN THE CORDOBA CATALOGUES", Thome J. AJ 364 pg. 30. Su declinación es -25°8.8'.
+Se manifiesta además en "log_agk" registro 147.
+
+4) Otras, como GC 6036 (registro 47), están marcadas como "nebulosas" en el catálogo impreso.
+También GC 18278 (registro 179) es omega Centauri.
+Otras, como GC 14007 (registro 119), simplemente no están en CD (esta estrella tiene mag. 10.7).
+
+5) Las siguientes estrellas de GC contienen errores en el catálogo digital de GC, al compararse
+con RONA14 + corrigenda. Lo documentamos con "valor digital -> valor impreso":
+          - GC 12588 (registro 94): RA 36s03 ->34s00     (es NGC 2808)
+          - GC 15231 (registro 133): se reporta 1 observación en vez de 2
+                                   (falta la primera obs.)
+          - GC 16823 (registro 153): RA 05s39 -> 04s76
+                                     DE 79º03'46''6 -> 27º07'14''5
