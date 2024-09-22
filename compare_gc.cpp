@@ -1,6 +1,6 @@
 
 /*
- * COMPARE_GC - Compara registros de CD contra GC
+ * COMPARE_GC - Compara registros de CD contra GC (y otros catálogos)
  * Made in 2024 by Daniel E. Severin
  */
 
@@ -14,13 +14,22 @@
 
 #define MAXGCSTAR 30000
 #define MAX_DISTANCE 360.0   // 6 minutos de arco
+#define MAX_DIST_YARNALL 180.0  // 3 minutos de arco
 #define MAX_MAGNITUDE 1.0
+#define HUGE_NUMBER 9999999999
+
+/* Para uso de la libreria WCS: */
+#define WCS_B1950 2 /* B1950(FK4) right ascension and declination */
+extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, double ep2,
+             double *dtheta, double *dphi, double *ptheta, double *pphi);
+
 
 struct GCstar_struct {
 	bool discard; /* true si debe ser descartada (por doble) */
     int gcRef; /* identificador con numero */
     int obs; /* cantidad de observaciones */
 	int RAh, RAm, RAs, Decld, Declm, Decls; /* detalle primera observacion */
+	double x, y, z; /* primera obs. en coordenadas rectangulares */
     double RA1875[10], Decl1875[10], epoch[10]; /* coordenadas y epoca de la observacion */
     double vmag; /* magnitud visual */
     int page; /* pagina donde se encuentra */
@@ -28,6 +37,8 @@ struct GCstar_struct {
 	double dist; /* distancia a la estrella CD */
 	int cdIndexWithinMag; /* indice a la CD más cercana, pero dentro del rango de magnitud */
 	double distWithinMag;
+	char yarnallRef[39]; /* identificador a catalogo de la USNO */
+	double distYarnall; /* distancia a USNO */
 } GCstar[MAXGCSTAR];
 
 int GCstars;
@@ -47,8 +58,13 @@ void writeRegisterGC(int index) {
 		GCstar[index].obs,
 		GCstar[index].page
 	);
+	if (GCstar[index].yarnallRef[0] != 0) {
+		printf("       corresponds to USNO %s at %.1f arcsec.\n",
+			GCstar[index].yarnallRef,
+			GCstar[index].distYarnall
+		);
+	}
 }
-
 
 /* lee estrellas del Primer Catalogo Argentino, coordenadas 1875.0
  * supuestamente todas estas estrellas deberian estar incluidas en el CD (excepto las que estan fuera de la faja)
@@ -135,7 +151,7 @@ void readGC()
         /* Busca la estrella asociada en DM; en caso de haber más de
 		 * una, escoge la de menor distancia */
         int cdIndex = -1;
-        double minDistance = 9999999999;
+        double minDistance = HUGE_NUMBER;
 		int cdIndexWithinMag = -1;
 		double minDistWithinMag = minDistance;
 		for (int i = 0; i < CDstars; i++) {
@@ -194,6 +210,9 @@ void readGC()
 		GCstar[GCstars].Decld = Decld;
 		GCstar[GCstars].Declm = Declm;
 		GCstar[GCstars].Decls = Decls;
+		GCstar[GCstars].x = x;
+		GCstar[GCstars].y = y;
+		GCstar[GCstars].z = z;
 	    GCstar[GCstars].RA1875[0] = RA;
 	    GCstar[GCstars].Decl1875[0] = Decl;
 	    GCstar[GCstars].epoch[0] = epoch;
@@ -203,7 +222,8 @@ void readGC()
 	    GCstar[GCstars].dist = minDistance;
 		GCstar[GCstars].cdIndexWithinMag = cdIndexWithinMag;
 		GCstar[GCstars].distWithinMag = minDistWithinMag;
-
+		GCstar[GCstars].yarnallRef[0] = 0;
+		GCstar[GCstars].distYarnall = HUGE_NUMBER;
 		/* proxima estrella */
 		GCstars++;
 		//printf("Pos %d: id=%d RA=%.4f Decl=%.4f (%.2f) Vmag=%.1f\n", GCstars, gcRef, RA, Decl, epoch, vmag);
@@ -233,6 +253,83 @@ void readGC()
 			}
 		}
 	}
+		
+	/* añadimos referencia al catálogo de la USNO */
+	printf("Reading USNO catalog...\n");
+    stream = fopen("cat/yarnall.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read yarnall.txt");
+		exit(1);
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+		/* lee signo declinación y descarta hemisferio norte */
+		readField(buffer, cell, 60, 1);
+		if (cell[0] != '-') continue;
+
+		/* lee ascension recta B1860.0 */
+		readField(buffer, cell, 40, 2);
+		int RAh = atoi(cell);
+        double RA = (double) RAh;
+		readField(buffer, cell, 42, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readField(buffer, cell, 44, 4);
+		int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1860.0 */
+		readField(buffer, cell, 61, 2);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readField(buffer, cell, 63, 2);
+		int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+		readField(buffer, cell, 65, 3);
+		int Decls = atoi(cell);
+        Decl += (((double) Decls)/10.0)/3600.0;
+		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
+    
+	    /* convierte coordenadas a 1875.0 */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        double pmRA = 0.0;
+        double pmDecl = 0.0;
+        wcsconp(WCS_B1950, WCS_B1950, 1860.0, 1875.0, 1860.0, 1875.0, &RA1875, &Decl1875, &pmRA, &pmDecl);
+    	if (Decl1875 > -22) continue;
+
+        /* calcula coordenadas rectangulares */
+        double x, y, z;
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+		/* lee referencia */
+		readField(buffer, cell, 1, 38);
+		cell[38] = 0;
+
+		/* barre estrellas de GC para identificarlas con este catálogo */
+        double minDistance = HUGE_NUMBER;
+		int gcIndex = -1;
+		for (int i = 0; i < GCstars; i++) {
+			if (GCstar[i].discard) continue;
+			double dist = 3600.0 * calcAngularDistance(x, y, z, GCstar[i].x, GCstar[i].y, GCstar[i].z);
+			if (dist < minDistance) {
+				gcIndex = i;
+				minDistance = dist;
+			}
+		}
+		if (minDistance > MAX_DIST_YARNALL) {
+			//printf("Warning: nearest star is GC %d at %.1f arcsec. from\n USNO %s\n",
+			//	GCstar[gcIndex].gcRef,
+			//	minDistance,
+			//	cell);
+			continue;
+		}
+		if (minDistance < GCstar[gcIndex].distYarnall) {
+			strncpy(GCstar[gcIndex].yarnallRef, cell, 39);
+			GCstar[gcIndex].distYarnall = minDistance;
+		}
+	}	
+
 	printf("Stars read from Catalogo General Argentino: %d  (discarded = %d)\n", GCstars, discarded);
 }
 
@@ -285,13 +382,16 @@ int main(int argc, char** argv)
             // supera umbral (estrella CD mas cercana de magnitud similar)
             magDiffError++;
             indexError++;
-            printf("%d) GC %d is alone within MAG = %.1f; similar CD %d°%d separated in %.1f arcsec.\n",
+            printf("%d) GC %d is alone within MAG = %.1f; similar CD %d°%d separated in %.1f arcsec although nearest CD %d°%d at %.1f arcsec.\n",
                 indexError,
                 GCstar[i].gcRef,
                 gcVmag,
                 CDstar[cdIndexWithinMag].declRef,
                 CDstar[cdIndexWithinMag].numRef,
-                distWithinMag);
+                distWithinMag,
+                CDstar[cdIndex].declRef,
+                CDstar[cdIndex].numRef,
+                dist);
 			writeRegisterGC(i);	
             writeRegister(cdIndexWithinMag);
             writeRegister(cdIndex);
