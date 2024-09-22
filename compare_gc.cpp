@@ -14,7 +14,7 @@
 
 #define MAXGCSTAR 30000
 #define MAX_DISTANCE 360.0   // 6 minutos de arco
-#define MAX_DIST_YARNALL 180.0  // 3 minutos de arco
+#define MAX_DIST_CATALOGS 180.0  // 3 minutos de arco
 #define MAX_MAGNITUDE 1.0
 #define HUGE_NUMBER 9999999999
 
@@ -37,8 +37,13 @@ struct GCstar_struct {
 	double dist; /* distancia a la estrella CD */
 	int cdIndexWithinMag; /* indice a la CD más cercana, pero dentro del rango de magnitud */
 	double distWithinMag;
-	char yarnallRef[39]; /* identificador a catalogo de la USNO */
+	char yarnallRef[35]; /* identificador a catalogo de la USNO */
 	double distYarnall; /* distancia a USNO */
+	double vmagYarnall; /* magnitud USNO */
+	int weissRef, oeltzenRef; /* identificador a catalogo de Weiss y OA */
+	double distWeiss; /* distancia a Weiss */
+	double distOeltzen; /* distancia a OA */
+	double vmagWeiss; /* magnitud Weiss */
 } GCstar[MAXGCSTAR];
 
 int GCstars;
@@ -59,9 +64,18 @@ void writeRegisterGC(int index) {
 		GCstar[index].page
 	);
 	if (GCstar[index].yarnallRef[0] != 0) {
-		printf("       corresponds to USNO %s at %.1f arcsec.\n",
+		printf("       corresponds to USNO %s (mag=%.1f) at %.1f arcsec.\n",
 			GCstar[index].yarnallRef,
+			GCstar[index].vmagYarnall,
 			GCstar[index].distYarnall
+		);
+	}
+	if (GCstar[index].weissRef != -1) {
+		printf("       corresponds to WEI %d or OA %d (mag=%.1f) at %.1f arcsec.\n",
+			GCstar[index].weissRef,
+			GCstar[index].oeltzenRef,
+			GCstar[index].vmagWeiss,
+			GCstar[index].distWeiss
 		);
 	}
 }
@@ -73,7 +87,7 @@ void readGC()
 {
     FILE *stream;
     char buffer[1024], cell[256];
-    double vmag;
+	double vmag;
 
     stream = fopen("cat/gc.txt", "rt");
     if (stream == NULL) {
@@ -87,7 +101,7 @@ void readGC()
     int page = 1;
     int entry = 0;
     GCstars = 0;
-    vmag = 0.0;
+	vmag = 0.0;
     while (fgets(buffer, 1023, stream) != NULL) {
 		//if (GCstars >= 500) break;
 		entry++;
@@ -224,6 +238,9 @@ void readGC()
 		GCstar[GCstars].distWithinMag = minDistWithinMag;
 		GCstar[GCstars].yarnallRef[0] = 0;
 		GCstar[GCstars].distYarnall = HUGE_NUMBER;
+		GCstar[GCstars].weissRef = -1;
+		GCstar[GCstars].oeltzenRef = -1;
+		GCstar[GCstars].distWeiss = HUGE_NUMBER;
 		/* proxima estrella */
 		GCstars++;
 		//printf("Pos %d: id=%d RA=%.4f Decl=%.4f (%.2f) Vmag=%.1f\n", GCstars, gcRef, RA, Decl, epoch, vmag);
@@ -261,6 +278,7 @@ void readGC()
         perror("Cannot read yarnall.txt");
 		exit(1);
     }
+	int countUSNO = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
 		/* lee signo declinación y descarta hemisferio norte */
 		readField(buffer, cell, 60, 1);
@@ -302,9 +320,11 @@ void readGC()
         double x, y, z;
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
-		/* lee referencia */
-		readField(buffer, cell, 1, 38);
-		cell[38] = 0;
+		/* lee magnitud y referencia */
+		readField(buffer, cell, 37, 2);
+		vmag = atof(cell)/10.0;
+		readField(buffer, cell, 1, 34);
+		cell[34] = 0;
 
 		/* barre estrellas de GC para identificarlas con este catálogo */
         double minDistance = HUGE_NUMBER;
@@ -317,7 +337,7 @@ void readGC()
 				minDistance = dist;
 			}
 		}
-		if (minDistance > MAX_DIST_YARNALL) {
+		if (minDistance > MAX_DIST_CATALOGS) {
 			//printf("Warning: nearest star is GC %d at %.1f arcsec. from\n USNO %s\n",
 			//	GCstar[gcIndex].gcRef,
 			//	minDistance,
@@ -325,10 +345,103 @@ void readGC()
 			continue;
 		}
 		if (minDistance < GCstar[gcIndex].distYarnall) {
-			strncpy(GCstar[gcIndex].yarnallRef, cell, 39);
+			strncpy(GCstar[gcIndex].yarnallRef, cell, 35);
 			GCstar[gcIndex].distYarnall = minDistance;
+			GCstar[gcIndex].vmagYarnall = vmag;
+			countUSNO++;
 		}
-	}	
+	}
+	printf("  cross-referenced with %d stars\n", countUSNO);
+		
+	/* añadimos referencia al catálogo de Weiss */
+	printf("Reading Weiss catalog...\n");
+    stream = fopen("cat/weiss.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read weiss.txt");
+		exit(1);
+    }
+	int countWeiss = 0;
+    while (fgets(buffer, 1023, stream) != NULL) {
+		/* descarta otras obs que no sean la primera */
+		readField(buffer, cell, 6, 1);
+		if (cell[0] != '1') continue;
+
+		/* lee ascension recta B1850.0 */
+		readField(buffer, cell, 13, 2);
+		int RAh = atoi(cell);
+        double RA = (double) RAh;
+		readField(buffer, cell, 15, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readField(buffer, cell, 17, 4);
+		int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1850.0 */
+		readField(buffer, cell, 22, 2);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readField(buffer, cell, 24, 2);
+		int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+		readField(buffer, cell, 26, 3);
+		int Decls = atoi(cell);
+        Decl += (((double) Decls)/10.0)/3600.0;
+		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
+    
+	    /* convierte coordenadas a 1875.0 */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        double pmRA = 0.0;
+        double pmDecl = 0.0;
+        wcsconp(WCS_B1950, WCS_B1950, 1850.0, 1875.0, 1850.0, 1875.0, &RA1875, &Decl1875, &pmRA, &pmDecl);
+    	if (Decl1875 > -22) continue;
+
+        /* calcula coordenadas rectangulares */
+        double x, y, z;
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+		/* lee numeración catálogo Weiss y Oeltzen-Argelander */
+		readField(buffer, cell, 1, 5);
+		int weissRef = atoi(cell);
+		readField(buffer, cell, 49, 5);
+		int oeltzenRef = atoi(cell);
+
+		/* lee magnitud */
+		readField(buffer, cell, 9, 1);
+		vmag = atof(cell);
+		readField(buffer, cell, 11, 1);
+		vmag += atof(cell)/10.0;
+
+		/* barre estrellas de GC para identificarlas con este catálogo */
+        double minDistance = HUGE_NUMBER;
+		int gcIndex = -1;
+		for (int i = 0; i < GCstars; i++) {
+			if (GCstar[i].discard) continue;
+			double dist = 3600.0 * calcAngularDistance(x, y, z, GCstar[i].x, GCstar[i].y, GCstar[i].z);
+			if (dist < minDistance) {
+				gcIndex = i;
+				minDistance = dist;
+			}
+		}
+		if (minDistance > MAX_DIST_CATALOGS) {
+			//printf("Warning: nearest star is GC %d at %.1f arcsec. from WEI %d or OA %d\n",
+			//	GCstar[gcIndex].gcRef,
+			//	minDistance,
+			//	weissRef,
+			//	oeltzenRef);
+			continue;
+		}
+		if (minDistance < GCstar[gcIndex].distWeiss) {
+			GCstar[gcIndex].weissRef = weissRef;
+			GCstar[gcIndex].oeltzenRef = oeltzenRef;
+			GCstar[gcIndex].distWeiss = minDistance;
+			GCstar[gcIndex].vmagWeiss = vmag;
+			countWeiss++;
+		}
+	}
+	printf("  cross-referenced with %d stars\n", countWeiss);
 
 	printf("Stars read from Catalogo General Argentino: %d  (discarded = %d)\n", GCstars, discarded);
 }

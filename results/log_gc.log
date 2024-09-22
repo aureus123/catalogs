@@ -622,6 +622,9 @@ Progress: stars = 28452, page = 618
 Progress: stars = 28491, page = 619
 Progress: stars = 28523, page = 620
 Reading USNO catalog...
+  cross-referenced with 3567 stars
+Reading Weiss catalog...
+  cross-referenced with 4530 stars
 Stars read from Catalogo General Argentino: 28552  (discarded = 648)
 1) GC 51 is ALONE; nearest CD -37°16 separated in 381.2 arcsec.
      Register GC 51: mag = 9.5, RA = 00h02m44s45, DE = 37°20'47''8, obs = 2 (pag 2)
@@ -651,6 +654,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -54°177 (en 0h):  8.3 | 42m53.1s | 1.3'     (pag. 69)
 8) GC 784 is alone within MAG = 8.7; similar CD -23°329 separated in 1140.3 arcsec although nearest CD -23°334 at 34.0 arcsec.
      Register GC 784: mag = 8.7, RA = 00h46m04s60, DE = 23°17'26''5, obs = 1 (pag 18)
+       corresponds to WEI 391 or OA 474 (mag=7.8) at 8.8 arcsec.
      Register CD -23°329 (en 0h):  9.0 | 44m58.2s | 28.8'     (pag. 56)
      Register CD -23°334 (en 0h):  7.1 | 46m5.0s | 18.0'     (pag. 56)
 9) GC 891 is ALONE; nearest CD -73°42 separated in 1488.7 arcsec.
@@ -705,6 +709,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -31°984 (en 2h):  7.0 | 22m34.3s | 0.7'     (pag. 542)
 24) GC 2940 is alone within MAG = 9.7; similar CD -25°1091 separated in 521.6 arcsec although nearest CD -25°1097 at 5.2 arcsec.
      Register GC 2940: mag = 9.7, RA = 02h40m26s10, DE = 25°44'13''6, obs = 1 (pag 60)
+       corresponds to WEI 1470 or OA 1797 (mag=8.9) at 1.2 arcsec.
      Register CD -25°1091 (en 2h):  10.0 | 39m47.5s | 44.3'     (pag. 180)
      Register CD -25°1097 (en 2h):  8.6 | 40m26.3s | 44.3'     (pag. 180)
 25) GC 3021 is alone within MAG = 9.7; similar CD -52°571 separated in 746.3 arcsec although nearest CD -52°574 at 11.6 arcsec.
@@ -721,7 +726,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -67°153 (en 2h):  8.0 | 50m31.0s | 49.0'     (pag. 117)
 28) GC 3182 is alone within MAG = 7.0; similar CD -25°1160 separated in 1855.9 arcsec although nearest CD -25°1168 at 21.9 arcsec.
      Register GC 3182: mag = 7.0, RA = 02h51m44s53, DE = 25°28'21''8, obs = 1 (pag 65)
-       corresponds to USNO 01322             LAC        009324071 at 4.6 arcsec.
+       corresponds to USNO 01322             LAC        00932 (mag=7.1) at 4.6 arcsec.
      Register CD -25°1160 (en 2h):  6.9 | 49m59.6s | 48.3'     (pag. 181)
      Register CD -25°1168 (en 2h):  8.3 | 51m43.3s | 28.6'     (pag. 181)
 29) GC 3211 is alone within MAG = 8.0; similar CD -61°532 separated in 506.7 arcsec although nearest CD -61°527 at 2.4 arcsec.
@@ -742,6 +747,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -53°732 (en 3h):  9.4 | 35m6.2s | 29.5'     (pag. 38)
 33) GC 4285 is alone within MAG = 9.7; similar CD -29°1451 separated in 498.9 arcsec although nearest CD -29°1448 at 28.1 arcsec.
      Register GC 4285: mag = 9.7, RA = 03h45m55s11, DE = 29°46'44''0, obs = 1 (pag 86)
+       corresponds to WEI 2143 or OA 2589 (mag=8.0) at 3.4 arcsec.
      Register CD -29°1451 (en 3h):  9.5 | 46m5.0s | 38.7'     (pag. 413)
      Register CD -29°1448 (en 3h):  7.5 | 45m55.3s | 47.2'     (pag. 413)
 34) GC 4349 is alone within MAG = 8.0; similar CD -70°203 separated in 405.5 arcsec although nearest CD -70°206 at 11.4 arcsec.
@@ -752,7 +758,8 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register GC 4750: mag = 8.7, RA = 04h09m28s45, DE = 65°31'59''3, obs = 1 (pag 95)
 36) GC 4763 is alone within MAG = 8.2; similar CD -30°1710 separated in 819.5 arcsec although nearest CD -30°1719 at 23.4 arcsec.
      Register GC 4763: mag = 8.2, RA = 04h10m08s60, DE = 30°23'12''5, obs = 2 (pag 96)
-       corresponds to USNO 01892             OARS       02930 077 at 3.4 arcsec.
+       corresponds to USNO 01892             OARS       02930 (mag=7.7) at 3.4 arcsec.
+       corresponds to WEI 2424 or OA 2930 (mag=8.0) at 4.8 arcsec.
      Register CD -30°1710 (en 4h):  7.3 | 9m6.4s | 25.8'     (pag. 478)
      Register CD -30°1719 (en 4h):  9.5 | 10m9.3s | 22.8'     (pag. 478)
 37) GC 4770 is alone within MAG = 7.0; similar CD -32°1671 separated in 1291.7 arcsec although nearest CD -32°1683 at 3.4 arcsec.
@@ -797,6 +804,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register GC 6036: mag = 8.0, RA = 05h10m00s67, DE = 40°11'27''7, obs = 2 (pag 120)
 48) GC 6386 is alone within MAG = 7.0; similar CD -22°2251 separated in 1484.2 arcsec although nearest CD -22°2263 at 35.7 arcsec.
      Register GC 6386: mag = 7.0, RA = 05h24m25s06, DE = 22°49'06''0, obs = 2 (pag 127)
+       corresponds to WEI 3364 or OA 4004 (mag=7.8) at 0.9 arcsec.
      Register CD -22°2251 (en 5h):  7.0 | 23m6.2s | 32.3'     (pag. 7)
      Register CD -22°2263 (en 5h):  8.2 | 24m25.1s | 49.7'     (pag. 7)
 49) GC 6712 is ALONE; nearest CD -25°2618 separated in 411.8 arcsec.
@@ -817,6 +825,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -68°343 (en 5h):  9.2 | 43m54.0s | 39.0'     (pag. 149)
 54) GC 7147 is alone within MAG = 7.0; similar CD -27°2680 separated in 899.2 arcsec although nearest CD -27°2670 at 47.1 arcsec.
      Register GC 7147: mag = 7.0, RA = 05h56m12s14, DE = 27°33'37''5, obs = 1 (pag 142)
+       corresponds to WEI 3828 or OA 4551 (mag=8.0) at 4.9 arcsec.
      Register CD -27°2680 (en 5h):  7.1 | 57m9.5s | 25.7'     (pag. 299)
      Register CD -27°2670 (en 5h):  8.5 | 56m12.7s | 34.4'     (pag. 299)
 55) GC 7376 is alone within MAG = 6.0; similar CD -22°2793 separated in 1464.0 arcsec although nearest CD -22°2806 at 40.9 arcsec.
@@ -831,11 +840,13 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register GC 7908: mag = 8.2, RA = 06h23m47s02, DE = 75°38'02''7, obs = 1 (pag 156)
 58) GC 8015 is alone within MAG = 7.2; similar CD -22°3206 separated in 1650.9 arcsec although nearest CD -22°3203 at 8.7 arcsec.
      Register GC 8015: mag = 7.2, RA = 06h27m54s87, DE = 22°30'61''9, obs = 2 (pag 158)
+       corresponds to WEI 4381 or OA 5268 (mag=8.0) at 4.2 arcsec.
      Register CD -22°3206 (en 6h):  8.1 | 28m1.8s | 58.5'     (pag. 10)
      Register CD -22°3203 (en 6h):  8.5 | 27m54.4s | 30.9'     (pag. 10)
 59) GC 8742 is alone within MAG = 6.6; similar CD -27°3460 separated in 1376.5 arcsec although nearest CD -26°3646 at 15.1 arcsec.
      Register GC 8742: mag = 6.6, RA = 06h53m06s42, DE = 26°59'50''2, obs = 2 (pag 172)
-       corresponds to USNO 02884             LAC        02543 053 at 0.7 arcsec.
+       corresponds to USNO 02884             LAC        02543 (mag=5.3) at 0.7 arcsec.
+       corresponds to WEI 4884 or OA 5972 (mag=7.0) at 2.7 arcsec.
      Register CD -27°3460 (en 6h):  6.6 | 52m43.4s | 22.2'     (pag. 302)
      Register CD -26°3646 (en 6h):  9.6 | 53m6.8s | 59.6'     (pag. 246)
 60) GC 8775 is alone within MAG = 7.7; similar CD -55°1603 separated in 1380.5 arcsec although nearest CD -54°1621 at 5.1 arcsec.
@@ -862,6 +873,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register GC 9806: mag = 9.0, RA = 07h31m06s81, DE = 75°29'23''2, obs = 1 (pag 194)
 66) GC 9946 is alone within MAG = 8.0; similar CD -26°4741 separated in 934.1 arcsec although nearest CD -26°4750 at 18.2 arcsec.
      Register GC 9946: mag = 8.0, RA = 07h35m42s16, DE = 26°03'53''6, obs = 1 (pag 197)
+       corresponds to WEI 5876 or OA 7241 (mag=9.0) at 18.5 arcsec.
      Register CD -26°4741 (en 7h):  8.0 | 35m10.1s | 17.7'     (pag. 249)
      Register CD -26°4750 (en 7h):  9.2 | 35m42.5s | 3.6'     (pag. 249)
 67) GC 9947 is alone within MAG = 8.5; similar CD -43°3424 separated in 903.7 arcsec although nearest CD -43°3441 at 4.2 arcsec.
@@ -902,7 +914,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -46°3928 (en 8h):  9.6 | 9m40.6s | 36.3'     (pag. 224)
 76) GC 11025 is alone within MAG = 8.5; similar CD -29°5858 separated in 580.9 arcsec although nearest CD -29°5836 at 33.1 arcsec.
      Register GC 11025: mag = 8.5, RA = 08h10m55s49, DE = 29°48'04''4, obs = 2 (pag 219)
-       corresponds to USNO 03407             LAC        03229 070 at 1.6 arcsec.
+       corresponds to USNO 03407             LAC        03229 (mag=7.0) at 1.6 arcsec.
      Register CD -29°5858 (en 8h):  9.4 | 11m31.3s | 42.3'     (pag. 428)
      Register CD -29°5836 (en 8h):  7.4 | 10m56.8s | 47.6'     (pag. 428)
 77) GC 11039 is alone within MAG = 7.0; similar CD -28°5699 separated in 2526.4 arcsec although nearest CD -27°5248 at 13.8 arcsec.
@@ -953,11 +965,13 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -42°4741 (en 8h):  9.4 | 47m57.8s | 17.0'     (pag. 15)
 89) GC 12283 is alone within MAG = 8.2; similar CD -24°7649 separated in 402.4 arcsec although nearest CD -24°7646 at 7.6 arcsec.
      Register GC 12283: mag = 8.2, RA = 08h56m15s29, DE = 24°56'36''5, obs = 1 (pag 243)
-       corresponds to USNO 03894             OARS       09258 078 at 2.1 arcsec.
+       corresponds to USNO 03894             OARS       09258 (mag=7.8) at 2.1 arcsec.
+       corresponds to WEI 7441 or OA 9258 (mag=7.8) at 0.3 arcsec.
      Register CD -24°7649 (en 8h):  8.4 | 56m43.9s | 54.9'     (pag. 142)
      Register CD -24°7646 (en 8h):  7.1 | 56m14.9s | 56.7'     (pag. 142)
 90) GC 12350 is alone within MAG = 9.5; similar CD -29°7089 separated in 391.4 arcsec although nearest CD -29°7086 at 13.1 arcsec.
      Register GC 12350: mag = 9.5, RA = 08h58m39s66, DE = 29°16'22''9, obs = 1 (pag 245)
+       corresponds to WEI 7480 or OA 9285 (mag=9.0) at 1.6 arcsec.
      Register CD -29°7089 (en 8h):  9.8 | 58m47.1s | 22.7'     (pag. 432)
      Register CD -29°7086 (en 8h):  8.4 | 58m39.1s | 16.2'     (pag. 432)
 91) GC 12452 is alone within MAG = 7.0; similar CD -61°2121 separated in 2288.0 arcsec although nearest CD -62°379 at 12.9 arcsec.
@@ -966,6 +980,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -62°379 (en 9h):  8.8 | 4m4.0s | 21.0'     (pag. 4)
 92) GC 12479 is alone within MAG = 8.7; similar CD -27°6320 separated in 487.7 arcsec although nearest CD -27°6319 at 30.1 arcsec.
      Register GC 12479: mag = 8.7, RA = 09h05m09s48, DE = 27°40'30''0, obs = 1 (pag 247)
+       corresponds to WEI 7584 or OA 9435 (mag=8.9) at 2.5 arcsec.
      Register CD -27°6320 (en 9h):  9.6 | 5m12.5s | 48.6'     (pag. 311)
      Register CD -27°6319 (en 9h):  7.5 | 5m9.3s | 40.0'     (pag. 311)
 93) GC 12510 is alone within MAG = 8.5; similar CD -35°5465 separated in 463.1 arcsec although nearest CD -35°5454 at 24.6 arcsec.
@@ -980,15 +995,17 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -67°708 (en 9h):  9.7 | 10m2.0s | 12.5'     (pag. 123)
 96) GC 12607 is alone within MAG = 8.7; similar CD -27°6411 separated in 849.1 arcsec although nearest CD -27°6415 at 5.5 arcsec.
      Register GC 12607: mag = 8.7, RA = 09h10m28s40, DE = 27°41'04''8, obs = 1 (pag 249)
-       corresponds to USNO 03977             MZ   105   00003 085 at 0.9 arcsec.
+       corresponds to USNO 03977             MZ   105   00003 (mag=8.5) at 0.9 arcsec.
      Register CD -27°6411 (en 9h):  8.7 | 10m9.5s | 54.6'     (pag. 312)
      Register CD -27°6415 (en 9h):  7.5 | 10m28.6s | 41.0'     (pag. 312)
 97) GC 12662 is alone within MAG = 8.0; similar CD -23°8236 separated in 498.1 arcsec although nearest CD -23°8248 at 19.3 arcsec.
      Register GC 12662: mag = 8.0, RA = 09h13m19s21, DE = 23°30'07''3, obs = 1 (pag 250)
+       corresponds to WEI 7698 or OA 9578 (mag=8.9) at 2.4 arcsec.
      Register CD -23°8236 (en 9h):  9.0 | 12m43.0s | 30.2'     (pag. 83)
      Register CD -23°8248 (en 9h):  9.1 | 13m19.2s | 29.8'     (pag. 83)
 98) GC 12689 is alone within MAG = 9.0; similar CD -27°6484 separated in 556.4 arcsec although nearest CD -27°6476 at 29.2 arcsec.
      Register GC 12689: mag = 9.0, RA = 09h14m31s14, DE = 27°14'55''0, obs = 1 (pag 251)
+       corresponds to WEI 7715 or OA 9598 (mag=7.0) at 0.2 arcsec.
      Register CD -27°6484 (en 9h):  9.6 | 15m11.7s | 17.1'     (pag. 312)
      Register CD -27°6476 (en 9h):  7.8 | 14m30.9s | 15.4'     (pag. 312)
 99) GC 12702 is alone within MAG = 7.5; similar CD -49°4273 separated in 2659.9 arcsec although nearest CD -48°4600 at 4.7 arcsec.
@@ -997,10 +1014,12 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -48°4600 (en 9h):  9.3 | 14m58.8s | 27.0'     (pag. 326)
 100) GC 12808 is alone within MAG = 8.5; similar CD -28°7229 separated in 375.3 arcsec although nearest CD -28°7219 at 18.5 arcsec.
      Register GC 12808: mag = 8.5, RA = 09h18m57s61, DE = 28°38'36''3, obs = 1 (pag 253)
+       corresponds to WEI 7775 or OA 9676 (mag=7.8) at 1.0 arcsec.
      Register CD -28°7229 (en 9h):  9.5 | 19m20.9s | 35.0'     (pag. 370)
      Register CD -28°7219 (en 9h):  7.2 | 18m57.4s | 38.3'     (pag. 370)
 101) GC 12811 is alone within MAG = 9.0; similar CD -27°6548 separated in 380.5 arcsec although nearest CD -27°6554 at 5.4 arcsec.
      Register GC 12811: mag = 9.0, RA = 09h19m05s04, DE = 27°28'01''8, obs = 1 (pag 253)
+       corresponds to WEI 7777 or OA 9678 (mag=8.0) at 4.3 arcsec.
      Register CD -27°6548 (en 9h):  10.0 | 18m38.9s | 30.6'     (pag. 312)
      Register CD -27°6554 (en 9h):  7.9 | 19m5.3s | 28.1'     (pag. 312)
 102) GC 12829 is alone within MAG = 9.2; similar CD -27°6571 separated in 533.9 arcsec although nearest CD -26°7033 at 21.3 arcsec.
@@ -1013,7 +1032,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -51°3824 (en 9h):  8.6 | 22m37.4s | 13.8'     (pag. 469)
 104) GC 12906 is alone within MAG = 7.5; similar CD -34°5906 separated in 444.4 arcsec although nearest CD -34°5905 at 23.4 arcsec.
      Register GC 12906: mag = 7.5, RA = 09h23m02s64, DE = 34°21'34''7, obs = 2 (pag 255)
-       corresponds to USNO 04049             LAC        03848 068 at 2.1 arcsec.
+       corresponds to USNO 04049             LAC        03848 (mag=6.8) at 2.1 arcsec.
      Register CD -34°5906 (en 9h):  7.9 | 23m6.1s | 14.2'     (pag. 136)
      Register CD -34°5905 (en 9h):  9.6 | 23m3.2s | 21.2'     (pag. 136)
 105) GC 13170 is alone within MAG = 8.5; similar CD -54°2925 separated in 372.4 arcsec although nearest CD -54°2933 at 4.7 arcsec.
@@ -1034,6 +1053,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register GC 13384: mag = 8.7, RA = 09h43m35s86, DE = 63°39'46''6, obs = 1 (pag 265)
 110) GC 13515 is alone within MAG = 8.5; similar CD -22°7708 separated in 855.5 arcsec although nearest CD -22°7719 at 3.8 arcsec.
      Register GC 13515: mag = 8.5, RA = 09h49m17s50, DE = 22°54'21''5, obs = 1 (pag 267)
+       corresponds to WEI 8207 or OA 10211 (mag=8.0) at 1.0 arcsec.
      Register CD -22°7708 (en 9h):  8.3 | 48m40.1s | 43.0'     (pag. 25)
      Register CD -22°7719 (en 9h):  7.4 | 49m17.4s | 54.3'     (pag. 25)
 111) GC 13538 is ALONE; nearest CD -62°418 separated in 860.7 arcsec.
@@ -1072,7 +1092,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -81°363 (en 10h):  9.8 | 15m40.0s | 10.5'     (pag. 377)
 121) GC 14160 is alone within MAG = 9.0; similar CD -27°7402 separated in 586.5 arcsec although nearest CD -27°7406 at 13.2 arcsec.
      Register GC 14160: mag = 9.0, RA = 10h17m05s01, DE = 27°23'00''7, obs = 1 (pag 281)
-       corresponds to USNO 04413             MZ   105   00056 089 at 2.6 arcsec.
+       corresponds to USNO 04413             MZ   105   00056 (mag=8.9) at 2.6 arcsec.
      Register CD -27°7402 (en 10h):  9.8 | 16m24.6s | 26.9'     (pag. 315)
      Register CD -27°7406 (en 10h):  7.6 | 17m4.5s | 23.2'     (pag. 315)
 122) GC 14203 is alone within MAG = 9.7; similar CD -60°3036 separated in 429.3 arcsec although nearest CD -60°3038 at 35.1 arcsec.
@@ -1105,11 +1125,13 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -60°3142 (en 10h):  8.2 | 34m50.9s | 19.3'     (pag. 264)
 129) GC 14593 is alone within MAG = 9.5; similar CD -27°7611 separated in 399.5 arcsec although nearest CD -27°7615 at 39.1 arcsec.
      Register GC 14593: mag = 9.5, RA = 10h35m24s89, DE = 27°28'51''0, obs = 1 (pag 289)
+       corresponds to WEI 8744 or OA 10814 (mag=8.9) at 3.8 arcsec.
      Register CD -27°7611 (en 10h):  10.0 | 35m4.8s | 33.8'     (pag. 316)
      Register CD -27°7615 (en 10h):  8.0 | 35m25.1s | 28.2'     (pag. 316)
 130) GC 14652 is alone within MAG = 8.5; similar CD -30°8681 separated in 636.6 arcsec although nearest CD -30°8662 at 18.3 arcsec.
      Register GC 14652: mag = 8.5, RA = 10h37m47s49, DE = 30°12'42''3, obs = 1 (pag 291)
-       corresponds to USNO 04570             OARS       10840 068 at 2.9 arcsec.
+       corresponds to USNO 04570             OARS       10840 (mag=6.8) at 2.9 arcsec.
+       corresponds to WEI 8766 or OA 10840 (mag=8.9) at 5.2 arcsec.
      Register CD -30°8681 (en 10h):  9.5 | 38m36.5s | 13.4'     (pag. 501)
      Register CD -30°8662 (en 10h):  7.3 | 37m47.5s | 12.4'     (pag. 501)
 131) GC 14908 is alone within MAG = 7.5; similar CD -56°3628 separated in 2592.3 arcsec although nearest CD -55°3717 at 15.0 arcsec.
@@ -1174,6 +1196,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -83°170 (en 11h):  9.7 | 44m13.0s | 28.7'     (pag. 389)
 146) GC 16229 is alone within MAG = 9.0; similar CD -27°8357 separated in 447.4 arcsec although nearest CD -27°8364 at 24.9 arcsec.
      Register GC 16229: mag = 9.0, RA = 11h47m16s57, DE = 27°34'59''8, obs = 1 (pag 321)
+       corresponds to WEI 9533 or OA 11738 (mag=8.0) at 7.5 arcsec.
      Register CD -27°8357 (en 11h):  9.6 | 46m47.1s | 31.4'     (pag. 318)
      Register CD -27°8364 (en 11h):  7.8 | 47m17.0s | 35.4'     (pag. 318)
 147) GC 16308 is alone within MAG = 7.0; similar CD -62°584 separated in 804.5 arcsec although nearest CD -62°588 at 24.2 arcsec.
@@ -1194,10 +1217,12 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -50°6688 (en 12h):  6.4 | 1m37.2s | 4.1'     (pag. 431)
 151) GC 16718 is alone within MAG = 8.5; similar CD -24°10233 separated in 857.6 arcsec although nearest CD -24°10236 at 20.1 arcsec.
      Register GC 16718: mag = 8.5, RA = 12h08m16s84, DE = 24°04'43''1, obs = 1 (pag 330)
+       corresponds to WEI 9771 or OA 12016 (mag=7.0) at 13.2 arcsec.
      Register CD -24°10233 (en 12h):  8.8 | 7m57.3s | 18.3'     (pag. 151)
      Register CD -24°10236 (en 12h):  7.3 | 8m17.3s | 4.4'     (pag. 151)
 152) GC 16773 is alone within MAG = 9.0; similar CD -27°8603 separated in 435.2 arcsec although nearest CD -27°8608 at 17.7 arcsec.
      Register GC 16773: mag = 9.0, RA = 12h11m17s36, DE = 27°34'30''9, obs = 1 (pag 331)
+       corresponds to WEI 9804 or OA 12053 (mag=7.8) at 2.5 arcsec.
      Register CD -27°8603 (en 12h):  9.6 | 10m55.1s | 29.2'     (pag. 319)
      Register CD -27°8608 (en 12h):  7.7 | 11m17.7s | 34.8'     (pag. 319)
 153) GC 16823 is ALONE; nearest CD -79°497 separated in 657.3 arcsec.
@@ -1208,6 +1233,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -62°651 (en 12h):  8.0 | 19m36.0s | 26.2'     (pag. 7)
 155) GC 17050 is alone within MAG = 8.5; similar CD -29°9773 separated in 597.3 arcsec although nearest CD -29°9782 at 4.3 arcsec.
      Register GC 17050: mag = 8.5, RA = 12h24m19s56, DE = 29°59'10''6, obs = 2 (pag 336)
+       corresponds to WEI 9955 or OA 12215 (mag=8.0) at 2.8 arcsec.
      Register CD -29°9773 (en 12h):  8.9 | 23m34.1s | 57.6'     (pag. 441)
      Register CD -29°9782 (en 12h):  7.2 | 24m19.5s | 59.1'     (pag. 441)
 156) GC 17062 is alone within MAG = 6.4; similar CD -58°4560 separated in 2468.2 arcsec although nearest CD -58°4603 at 20.0 arcsec.
@@ -1220,10 +1246,12 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -34°8318 (en 12h):  7.3 | 31m58.2s | 28.5'     (pag. 144)
 158) GC 17246 is alone within MAG = 9.5; similar CD -28°9649 separated in 853.7 arcsec although nearest CD -28°9643 at 10.7 arcsec.
      Register GC 17246: mag = 9.5, RA = 12h33m40s41, DE = 28°55'40''6, obs = 1 (pag 339)
+       corresponds to WEI 10056 or OA 12326 (mag=8.9) at 1.2 arcsec.
      Register CD -28°9649 (en 12h):  10.0 | 34m40.4s | 50.2'     (pag. 378)
      Register CD -28°9643 (en 12h):  8.0 | 33m40.5s | 55.5'     (pag. 378)
 159) GC 17310 is alone within MAG = 8.5; similar CD -30°10071 separated in 375.3 arcsec although nearest CD -30°10070 at 12.3 arcsec.
      Register GC 17310: mag = 8.5, RA = 12h36m06s60, DE = 30°15'38''5, obs = 1 (pag 340)
+       corresponds to WEI 10082 or OA 12356 (mag=8.0) at 4.7 arcsec.
      Register CD -30°10071 (en 12h):  8.9 | 36m28.3s | 11.5'     (pag. 506)
      Register CD -30°10070 (en 12h):  7.4 | 36m6.0s | 15.8'     (pag. 506)
 160) GC 17366 is alone within MAG = 5.7; similar CD -59°4424 separated in 2898.5 arcsec although nearest CD -60°4350 at 2.6 arcsec.
@@ -1244,11 +1272,12 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -59°4424 (en 12h):  6.4 | 42m49.7s | 43.3'     (pag. 240)
 164) GC 17550 is alone within MAG = 8.5; similar CD -27°8918 separated in 720.1 arcsec although nearest CD -27°8914 at 12.1 arcsec.
      Register GC 17550: mag = 8.5, RA = 12h47m32s48, DE = 27°16'45''1, obs = 1 (pag 344)
-       corresponds to USNO 05478             TRZ  234   00009 070 at 1.0 arcsec.
+       corresponds to USNO 05478             TRZ  234   00009 (mag=7.0) at 1.0 arcsec.
      Register CD -27°8918 (en 12h):  9.4 | 48m3.3s | 6.9'     (pag. 320)
      Register CD -27°8914 (en 12h):  7.1 | 47m33.1s | 16.9'     (pag. 320)
 165) GC 17609 is alone within MAG = 8.5; similar CD -23°10825 separated in 470.4 arcsec although nearest CD -23°10822 at 18.6 arcsec.
      Register GC 17609: mag = 8.5, RA = 12h50m01s56, DE = 23°46'23''5, obs = 1 (pag 345)
+       corresponds to WEI 10243 or OA 12534 (mag=8.0) at 6.2 arcsec.
      Register CD -23°10825 (en 12h):  8.0 | 50m22.5s | 52.6'     (pag. 92)
      Register CD -23°10822 (en 12h):  7.3 | 50m1.7s | 46.7'     (pag. 92)
 166) GC 17620 is ALONE; nearest CD -62°687 separated in 539.7 arcsec.
@@ -1271,6 +1300,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -36°8297 (en 12h):  7.7 | 58m3.0s | 50.8'     (pag. 253)
 172) GC 17966 is alone within MAG = 8.7; similar CD -30°10398 separated in 729.1 arcsec although nearest CD -30°10411 at 25.7 arcsec.
      Register GC 17966: mag = 8.7, RA = 13h06m02s95, DE = 30°03'07''5, obs = 1 (pag 352)
+       corresponds to WEI 10405 or OA 12713 (mag=8.0) at 3.3 arcsec.
      Register CD -30°10398 (en 13h):  9.0 | 5m6.8s | 3.3'     (pag. 507)
      Register CD -30°10411 (en 13h):  7.4 | 6m3.2s | 2.7'     (pag. 507)
 173) GC 17972 is alone within MAG = 8.0; similar CD -42°8220 separated in 907.0 arcsec although nearest CD -42°8206 at 1.5 arcsec.
@@ -1279,6 +1309,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -42°8206 (en 13h):  9.2 | 6m18.8s | 22.8'     (pag. 27)
 174) GC 18077 is alone within MAG = 9.5; similar CD -24°10818 separated in 446.2 arcsec although nearest CD -24°10824 at 20.1 arcsec.
      Register GC 18077: mag = 9.5, RA = 13h10m23s62, DE = 24°22'04''4, obs = 1 (pag 353)
+       corresponds to WEI 10449 or OA 12762 (mag=8.9) at 5.1 arcsec.
      Register CD -24°10818 (en 13h):  9.5 | 9m54.3s | 18.8'     (pag. 153)
      Register CD -24°10824 (en 13h):  8.4 | 10m23.3s | 22.4'     (pag. 153)
 175) GC 18083 is alone within MAG = 10.2; similar CD -23°10991 separated in 541.2 arcsec although nearest CD -23°10996 at 15.8 arcsec.
@@ -1287,6 +1318,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -23°10996 (en 13h):  9.0 | 10m42.8s | 13.0'     (pag. 92)
 176) GC 18094 is alone within MAG = 9.5; similar CD -23°10995 separated in 361.2 arcsec although nearest CD -23°10997 at 20.2 arcsec.
      Register GC 18094: mag = 9.5, RA = 13h11m05s74, DE = 23°39'37''9, obs = 1 (pag 354)
+       corresponds to WEI 10453 or OA 12767 (mag=8.9) at 5.5 arcsec.
      Register CD -23°10995 (en 13h):  10.0 | 10m40.7s | 37.8'     (pag. 92)
      Register CD -23°10997 (en 13h):  8.4 | 11m6.0s | 39.3'     (pag. 92)
 177) GC 18106 is alone within MAG = 7.0; similar CD -59°4680 separated in 1953.9 arcsec although nearest CD -58°4990 at 13.4 arcsec.
@@ -1309,7 +1341,8 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -53°5181 (en 13h):  8.4 | 22m44.5s | 17.3'     (pag. 53)
 183) GC 18372 is alone within MAG = 8.5; similar CD -22°9967 separated in 546.8 arcsec although nearest CD -22°9968 at 16.3 arcsec.
      Register GC 18372: mag = 8.5, RA = 13h23m38s83, DE = 23°00'10''2, obs = 1 (pag 359)
-       corresponds to USNO 05672             OARS       12908 075 at 4.2 arcsec.
+       corresponds to USNO 05672             OARS       12908 (mag=7.5) at 4.2 arcsec.
+       corresponds to WEI 10588 or OA 12908 (mag=7.8) at 4.0 arcsec.
      Register CD -22°9967 (en 13h):  8.9 | 23m35.0s | 51.1'     (pag. 33)
      Register CD -22°9968 (en 13h):  7.4 | 23m38.7s | 59.9'     (pag. 33)
 184) GC 18479 is alone within MAG = 8.0; similar CD -31°10485 separated in 884.8 arcsec although nearest CD -31°10478 at 12.8 arcsec.
@@ -1350,6 +1383,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -50°8297 (en 14h):  9.1 | 1m28.3s | 55.5'     (pag. 437)
 193) GC 19183 is alone within MAG = 9.7; similar CD -23°11508 separated in 374.1 arcsec although nearest CD -23°11515 at 38.5 arcsec.
      Register GC 19183: mag = 9.7, RA = 14h01m48s05, DE = 23°29'43''7, obs = 1 (pag 374)
+       corresponds to WEI 10997 or OA 13405 (mag=8.9) at 4.5 arcsec.
      Register CD -23°11508 (en 14h):  9.6 | 1m21.8s | 28.1'     (pag. 94)
      Register CD -23°11515 (en 14h):  8.6 | 1m48.6s | 29.1'     (pag. 94)
 194) GC 19223 is alone within MAG = 7.5; similar CD -67°1557 separated in 1204.9 arcsec although nearest CD -67°1555 at 347.9 arcsec.
@@ -1358,6 +1392,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -67°1555 (en 14h):  9.7 | 3m7.0s | 38.5'     (pag. 133)
 195) GC 19229 is alone within MAG = 8.7; similar CD -28°10497 separated in 391.8 arcsec although nearest CD -28°10490 at 11.1 arcsec.
      Register GC 19229: mag = 8.7, RA = 14h04m22s08, DE = 28°17'38''0, obs = 1 (pag 375)
+       corresponds to WEI 11026 or OA 13441 (mag=8.0) at 7.6 arcsec.
      Register CD -28°10497 (en 14h):  8.3 | 4m51.7s | 18.0'     (pag. 381)
      Register CD -28°10490 (en 14h):  10.0 | 4m21.5s | 17.5'     (pag. 381)
 196) GC 19271 is alone within MAG = 6.8; similar CD -82°250 separated in 3320.7 arcsec although nearest CD -82°255 at 4.5 arcsec.
@@ -1366,11 +1401,13 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -82°255 (en 14h):  8.0 | 6m5.0s | 16.1'     (pag. 386)
 197) GC 19401 is alone within MAG = 8.5; similar CD -24°11433 separated in 464.4 arcsec although nearest CD -23°11638 at 12.6 arcsec.
      Register GC 19401: mag = 8.5, RA = 14h13m29s68, DE = 23°55'54''2, obs = 2 (pag 378)
-       corresponds to USNO 06023             OARS       13544 072 at 2.4 arcsec.
+       corresponds to USNO 06023             OARS       13544 (mag=7.2) at 2.4 arcsec.
+       corresponds to WEI 11113 or OA 13544 (mag=7.8) at 3.0 arcsec.
      Register CD -24°11433 (en 14h):  8.6 | 13m48.1s | 2.4'     (pag. 155)
      Register CD -23°11638 (en 14h):  7.3 | 13m30.0s | 56.1'     (pag. 94)
 198) GC 19469 is alone within MAG = 9.5; similar CD -25°10311 separated in 391.7 arcsec although nearest CD -25°10307 at 5.4 arcsec.
      Register GC 19469: mag = 9.5, RA = 14h16m31s49, DE = 25°47'49''3, obs = 1 (pag 379)
+       corresponds to WEI 11138 or OA 13577 (mag=8.9) at 2.9 arcsec.
      Register CD -25°10311 (en 14h):  9.0 | 17m0.4s | 47.3'     (pag. 211)
      Register CD -25°10307 (en 14h):  8.2 | 16m31.3s | 47.9'     (pag. 211)
 199) GC 19712 is alone within MAG = 7.5; similar CD -45°9276 separated in 686.8 arcsec although nearest CD -45°9269 at 12.9 arcsec.
@@ -1399,7 +1436,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -31°11467 (en 14h):  7.4 | 40m20.8s | 43.1'     (pag. 577)
 205) GC 20084 is alone within MAG = 8.7; similar CD -36°9655 separated in 601.4 arcsec although nearest CD -36°9666 at 9.1 arcsec.
      Register GC 20084: mag = 8.7, RA = 14h42m18s32, DE = 36°52'26''3, obs = 1 (pag 390)
-       corresponds to USNO 06203             MZ   242   00111 090 at 1.0 arcsec.
+       corresponds to USNO 06203             MZ   242   00111 (mag=9.0) at 1.0 arcsec.
      Register CD -36°9655 (en 14h):  8.7 | 41m40.8s | 45.8'     (pag. 257)
      Register CD -36°9666 (en 14h):  7.5 | 42m18.0s | 52.3'     (pag. 257)
 206) GC 20104 is alone within MAG = 5.9; similar CD -82°262 separated in 761.5 arcsec although nearest CD -82°266 at 3.7 arcsec.
@@ -1456,12 +1493,12 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -52°6711 (en 15h):  7.7 | 21m49.7s | 12.0'     (pag. 22)
 219) GC 21210 is alone within MAG = 8.7; similar CD -35°10429 separated in 460.3 arcsec although nearest CD -35°10423 at 21.7 arcsec.
      Register GC 21210: mag = 8.7, RA = 15h31m56s61, DE = 35°45'44''3, obs = 1 (pag 410)
-       corresponds to USNO 06550                              075 at 0.5 arcsec.
+       corresponds to USNO 06550                              (mag=7.5) at 0.5 arcsec.
      Register CD -35°10429 (en 15h):  9.7 | 32m21.7s | 40.0'     (pag. 206)
      Register CD -35°10423 (en 15h):  7.5 | 31m56.6s | 46.1'     (pag. 206)
 220) GC 21279 is alone within MAG = 8.5; similar CD -31°12185 separated in 379.4 arcsec although nearest CD -31°12192 at 12.9 arcsec.
      Register GC 21279: mag = 8.5, RA = 15h34m50s91, DE = 31°46'59''8, obs = 2 (pag 412)
-       corresponds to USNO 06573             LAC        06491 065 at 0.7 arcsec.
+       corresponds to USNO 06573             LAC        06491 (mag=6.5) at 0.7 arcsec.
      Register CD -31°12185 (en 15h):  8.8 | 34m30.0s | 42.5'     (pag. 580)
      Register CD -31°12192 (en 15h):  7.3 | 34m50.5s | 47.2'     (pag. 580)
 221) GC 21341 is alone within MAG = 8.5; similar CD -37°10496 separated in 520.3 arcsec although nearest CD -37°10490 at 342.1 arcsec.
@@ -1644,7 +1681,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -41°13181 (en 18h):  9.5 | 43m30.0s | 3.9'     (pag. 531)
 268) GC 25795 is alone within MAG = 7.0; similar CD -30°16356 separated in 924.8 arcsec although nearest CD -31°16071 at 4.2 arcsec.
      Register GC 25795: mag = 7.0, RA = 18h44m22s90, DE = 31°07'56''7, obs = 1 (pag 495)
-       corresponds to USNO 08152             TRZ  120   00072 070 at 0.8 arcsec.
+       corresponds to USNO 08152             TRZ  120   00072 (mag=7.0) at 0.8 arcsec.
      Register CD -30°16356 (en 18h):  6.8 | 44m40.5s | 53.0'     (pag. 527)
      Register CD -31°16071 (en 18h):  8.4 | 44m22.7s | 8.0'     (pag. 593)
 269) GC 25843 is alone within MAG = 7.0; similar CD -52°8861 separated in 1460.6 arcsec although nearest CD -52°8888 at 6.6 arcsec.
@@ -1653,11 +1690,12 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -52°8888 (en 18h):  8.2 | 45m57.1s | 5.1'     (pag. 30)
 270) GC 25857 is alone within MAG = 7.2; similar CD -22°13397 separated in 423.5 arcsec although nearest CD -22°13401 at 14.2 arcsec.
      Register GC 25857: mag = 7.2, RA = 18h46m42s25, DE = 22°50'20''2, obs = 2 (pag 496)
-       corresponds to USNO 08169                              072 at 1.4 arcsec.
+       corresponds to USNO 08169                              (mag=7.2) at 1.4 arcsec.
      Register CD -22°13397 (en 18h):  8.1 | 46m34.6s | 43.5'     (pag. 45)
      Register CD -22°13401 (en 18h):  8.5 | 46m42.3s | 50.1'     (pag. 45)
 271) GC 26078 is alone within MAG = 7.2; similar CD -23°15008 separated in 774.3 arcsec although nearest CD -22°13563 at 29.1 arcsec.
      Register GC 26078: mag = 7.2, RA = 18h56m11s81, DE = 22°53'29''1, obs = 1 (pag 500)
+       corresponds to WEI 14966 or OA 18995 (mag=8.9) at 6.2 arcsec.
      Register CD -23°15008 (en 18h):  6.9 | 56m42.4s | 4.3'     (pag. 106)
      Register CD -22°13563 (en 18h):  8.4 | 56m11.9s | 53.0'     (pag. 45)
 272) GC 26122 is alone within MAG = 8.0; similar CD -41°13330 separated in 504.8 arcsec although nearest CD -41°13323 at 2.8 arcsec.
@@ -1670,7 +1708,8 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -67°2315 (en 19h):  8.4 | 0m9.0s | 17.0'     (pag. 142)
 274) GC 26195 is alone within MAG = 7.0; similar CD -24°15041 separated in 1598.4 arcsec although nearest CD -25°13770 at 8.5 arcsec.
      Register GC 26195: mag = 7.0, RA = 19h01m07s29, DE = 25°16'26''9, obs = 2 (pag 502)
-       corresponds to USNO 08313             BAC        06538 075 at 1.9 arcsec.
+       corresponds to USNO 08313             BAC        06538 (mag=7.5) at 1.9 arcsec.
+       corresponds to WEI 15052 or OA 19116 (mag=7.0) at 4.0 arcsec.
      Register CD -24°15041 (en 19h):  6.7 | 0m36.8s | 50.7'     (pag. 167)
      Register CD -25°13770 (en 19h):  10.0 | 1m7.4s | 16.3'     (pag. 223)
 275) GC 26378 is alone within MAG = 7.7; similar CD -63°1412 separated in 1033.8 arcsec although nearest CD -63°1411 at 28.2 arcsec.
@@ -1699,12 +1738,12 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -31°16930 (en 19h):  9.6 | 31m52.2s | 11.2'     (pag. 596)
 281) GC 26948 is alone within MAG = 7.2; similar CD -23°15625 separated in 1119.0 arcsec although nearest CD -23°15637 at 11.8 arcsec.
      Register GC 26948: mag = 7.2, RA = 19h33m33s50, DE = 23°56'12''9, obs = 1 (pag 515)
-       corresponds to USNO 08627             LAM        00358     at 3.0 arcsec.
+       corresponds to USNO 08627             LAM        00358 (mag=0.0) at 3.0 arcsec.
      Register CD -23°15625 (en 19h):  6.2 | 32m36.4s | 42.9'     (pag. 108)
      Register CD -23°15637 (en 19h):  8.6 | 33m33.2s | 56.4'     (pag. 108)
 282) GC 27132 is alone within MAG = 7.6; similar CD -42°14506 separated in 991.3 arcsec although nearest CD -42°14496 at 4.3 arcsec.
      Register GC 27132: mag = 7.6, RA = 19h42m01s31, DE = 42°10'14''2, obs = 1 (pag 518)
-       corresponds to USNO 08708             BAC        06778 069 at 4.1 arcsec.
+       corresponds to USNO 08708             BAC        06778 (mag=6.9) at 4.1 arcsec.
      Register CD -42°14506 (en 19h):  8.6 | 42m47.3s | 24.4'     (pag. 48)
      Register CD -42°14496 (en 19h):  8.9 | 42m1.5s | 10.3'     (pag. 48)
 283) GC 27313 is alone within MAG = 8.5; similar CD -33°14607 separated in 520.4 arcsec although nearest CD -32°15607 at 9.1 arcsec.
@@ -1721,6 +1760,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -77°1033 (en 20h):  7.7 | 15m57.0s | 42.0'     (pag. 338)
 286) GC 27954 is alone within MAG = 9.5; similar CD -27°14774 separated in 494.1 arcsec although nearest CD -27°14777 at 12.4 arcsec.
      Register GC 27954: mag = 9.5, RA = 20h16m57s68, DE = 27°18'00''7, obs = 1 (pag 533)
+       corresponds to WEI 16099 or OA 20464 (mag=8.9) at 5.0 arcsec.
      Register CD -27°14774 (en 20h):  10.0 | 16m26.3s | 22.4'     (pag. 340)
      Register CD -27°14777 (en 20h):  8.1 | 16m57.3s | 18.2'     (pag. 340)
 287) GC 28030 is alone within MAG = 8.7; similar CD -51°12570 separated in 1073.5 arcsec although nearest CD -51°12559 at 1.8 arcsec.
@@ -1757,6 +1797,7 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register CD -48°13776 (en 20h):  9.3 | 57m1.0s | 19.0'     (pag. 357)
 296) GC 28943 is ALONE; nearest CD -25°15236 separated in 483.7 arcsec.
      Register GC 28943: mag = 8.7, RA = 20h59m34s13, DE = 25°09'01''3, obs = 2 (pag 551)
+       corresponds to WEI 16603 or OA 21103 (mag=8.9) at 1.3 arcsec.
 297) GC 29010 is alone within MAG = 9.7; similar CD -37°14154 separated in 443.4 arcsec although nearest CD -37°14152 at 12.2 arcsec.
      Register GC 29010: mag = 9.7, RA = 21h03m15s74, DE = 37°47'28''4, obs = 1 (pag 553)
      Register CD -37°14154 (en 21h):  10.0 | 3m46.6s | 43.3'     (pag. 327)
@@ -1787,7 +1828,8 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
      Register GC 30576: mag = 9.0, RA = 22h17m28s58, DE = 67°44'38''5, obs = 1 (pag 582)
 306) GC 30670 is alone within MAG = 6.3; similar CD -26°16170 separated in 2868.0 arcsec although nearest CD -27°15932 at 6.9 arcsec.
      Register GC 30670: mag = 6.3, RA = 22h22m46s11, DE = 27°44'43''0, obs = 2 (pag 584)
-       corresponds to USNO 10153             OARS       22181 068 at 1.4 arcsec.
+       corresponds to USNO 10153             OARS       22181 (mag=6.8) at 1.4 arcsec.
+       corresponds to WEI 17429 or OA 22181 (mag=6.0) at 2.0 arcsec.
      Register CD -26°16170 (en 22h):  6.5 | 23m27.3s | 57.8'     (pag. 288)
      Register CD -27°15932 (en 22h):  9.3 | 22m46.7s | 44.7'     (pag. 344)
 307) GC 31343 is alone within MAG = 10.0; similar CD -83°298 separated in 1340.6 arcsec although nearest CD -83°296 at 1.4 arcsec.
