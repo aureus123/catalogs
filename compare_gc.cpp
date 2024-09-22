@@ -44,6 +44,9 @@ struct GCstar_struct {
 	double distWeiss; /* distancia a Weiss */
 	double distOeltzen; /* distancia a OA */
 	double vmagWeiss; /* magnitud Weiss */
+	int stoneRef, lacailleRef; /* identificador a catalogo de Stone y Lacaille */
+	double distStone; /* distancia a Stone */
+	double vmagStone; /* magnitud Stone */
 } GCstar[MAXGCSTAR];
 
 int GCstars;
@@ -76,6 +79,19 @@ void writeRegisterGC(int index) {
 			GCstar[index].oeltzenRef,
 			GCstar[index].vmagWeiss,
 			GCstar[index].distWeiss
+		);
+	}
+	if (GCstar[index].stoneRef != -1) {
+		char lacaille[20];
+		lacaille[0] = 0;
+		if (GCstar[index].lacailleRef != -1) {
+			snprintf(lacaille, 20, "or L. %d ", GCstar[index].lacailleRef);
+		}
+		printf("       corresponds to ST %d %s(mag=%.1f) at %.1f arcsec.\n",
+			GCstar[index].stoneRef,
+			lacaille,
+			GCstar[index].vmagStone,
+			GCstar[index].distStone
 		);
 	}
 }
@@ -241,6 +257,9 @@ void readGC()
 		GCstar[GCstars].weissRef = -1;
 		GCstar[GCstars].oeltzenRef = -1;
 		GCstar[GCstars].distWeiss = HUGE_NUMBER;
+		GCstar[GCstars].stoneRef = -1;
+		GCstar[GCstars].lacailleRef = -1;
+		GCstar[GCstars].distStone = HUGE_NUMBER;
 		/* proxima estrella */
 		GCstars++;
 		//printf("Pos %d: id=%d RA=%.4f Decl=%.4f (%.2f) Vmag=%.1f\n", GCstars, gcRef, RA, Decl, epoch, vmag);
@@ -351,6 +370,7 @@ void readGC()
 			countUSNO++;
 		}
 	}
+    fclose(stream);
 	printf("  cross-referenced with %d stars\n", countUSNO);
 		
 	/* añadimos referencia al catálogo de Weiss */
@@ -441,7 +461,104 @@ void readGC()
 			countWeiss++;
 		}
 	}
+    fclose(stream);
 	printf("  cross-referenced with %d stars\n", countWeiss);
+
+	/* añadimos referencia al catálogo de Stone */
+	printf("Reading Stone catalog...\n");
+    stream = fopen("cat/stone1.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read stone1.txt");
+		exit(1);
+    }
+	FILE *stream2 = fopen("cat/stone2.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read stone2.txt");
+		exit(1);
+    }
+
+	int countStone = 0;
+    while (fgets(buffer, 1023, stream) != NULL) {
+		char buffer2[1024];
+		fgets(buffer2, 1023, stream2);
+
+		/* lee ascension recta B1880.0 */
+		readField(buffer, cell, 33, 2);
+		int RAh = atoi(cell);
+        double RA = (double) RAh;
+		readField(buffer, cell, 35, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readField(buffer, cell, 37, 4);
+		int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1880.0 (en realidad NPD) */
+		readField(buffer2, cell, 21, 3);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readField(buffer2, cell, 24, 2);
+		int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+		readField(buffer2, cell, 26, 4);
+		int Decls = atoi(cell);
+        Decl += (((double) Decls)/100.0)/3600.0;
+		Decl = 90.0 - Decl; /* convertimos NPD a declinación */
+
+	    /* convierte coordenadas a 1875.0 según cada mean time */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        double pmRA = 0.0;
+        double pmDecl = 0.0;
+        wcsconp(WCS_B1950, WCS_B1950, 1880.0, 1875.0, 1880.0, 1875.0, &RA1875, &Decl1875, &pmRA, &pmDecl);
+    	if (Decl1875 > -22) continue;
+
+        /* calcula coordenadas rectangulares */
+        double x, y, z;
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+		/* lee numeración catálogo Stone y Lacaille */
+		readField(buffer, cell, 8, 5);
+		int stoneRef = atoi(cell);
+		readField(buffer, cell, 14, 4);
+		int lacailleRef = cell[0] == '&' ? -1 : atoi(cell);
+
+		/* lee magnitud */
+		readField(buffer, cell, 24, 1);
+		vmag = atof(cell);
+		readField(buffer, cell, 25, 1);
+		vmag += cell[0] == '&' ? 0 : atof(cell)/10.0;
+
+		/* barre estrellas de GC para identificarlas con este catálogo */
+        double minDistance = HUGE_NUMBER;
+		int gcIndex = -1;
+		for (int i = 0; i < GCstars; i++) {
+			if (GCstar[i].discard) continue;
+			double dist = 3600.0 * calcAngularDistance(x, y, z, GCstar[i].x, GCstar[i].y, GCstar[i].z);
+			if (dist < minDistance) {
+				gcIndex = i;
+				minDistance = dist;
+			}
+		}
+		if (minDistance > MAX_DIST_CATALOGS) {
+			//printf("Warning: nearest star is GC %d at %.1f arcsec. from ST %d\n",
+			//	GCstar[gcIndex].gcRef,
+			//	minDistance,
+			//	stoneRef);
+			continue;
+		}
+		if (minDistance < GCstar[gcIndex].distStone) {
+			GCstar[gcIndex].stoneRef = stoneRef;
+			GCstar[gcIndex].lacailleRef = lacailleRef;
+			GCstar[gcIndex].distStone = minDistance;
+			GCstar[gcIndex].vmagStone = vmag;
+			countStone++;
+		}
+	}
+    fclose(stream2);
+    fclose(stream);
+	printf("  cross-referenced with %d stars\n", countStone);
 
 	printf("Stars read from Catalogo General Argentino: %d  (discarded = %d)\n", GCstars, discarded);
 }
