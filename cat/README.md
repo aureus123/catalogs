@@ -26,7 +26,7 @@ These catalogs were downloaded from GAVO Data Center: https://dc.g-vo.org/arigfh
 - sd: Bonner (southern) durchmusterung from VizieR (code I/119)
 - cpd: Cape Photographic Durchmusterung from VizieR (code I/108)
 - gc: Argentine General Catalog from GAVO Data Center
-- weiss: Weiss. Catalog der Argelander'schen Zonen vom 15-31 grade
+- weiss: Weiss, Catalog der Argelander'schen Zonen vom 15-31 grade
 suedlicher Deklination in mittleren Positionen fuer 1850.0 from
 GAVO Data Center
 - yarnall: Yarnall-Frisby, Catalogue of stars observed at the USNO 
