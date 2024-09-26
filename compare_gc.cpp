@@ -33,20 +33,30 @@ struct GCstar_struct {
     double RA1875[10], Decl1875[10], epoch[10]; /* coordenadas y epoca de la observacion */
     double vmag; /* magnitud visual */
     int page; /* pagina donde se encuentra */
+	/* CD Cross-index */
     int cdIndex; /* indice (no identificador) a la estrella CD más cercana */
 	double dist; /* distancia a la estrella CD */
 	int cdIndexWithinMag; /* indice a la CD más cercana, pero dentro del rango de magnitud */
 	double distWithinMag;
-	char yarnallRef[35]; /* identificador a catalogo de la USNO */
+	/* Yarnall Cross-index */
+	int yarnallRef; /* identificador a catalogo de la USNO */
+	char yarnallCat[29]; /* referencia a otros catalogos */
 	double distYarnall; /* distancia a USNO */
 	double vmagYarnall; /* magnitud USNO */
+	/* Weiss Cross-index */
 	int weissRef, oeltzenRef; /* identificador a catalogo de Weiss y OA */
 	double distWeiss; /* distancia a Weiss */
 	double distOeltzen; /* distancia a OA */
 	double vmagWeiss; /* magnitud Weiss */
+	/* Stone Cross-index */
 	int stoneRef, lacailleRef; /* identificador a catalogo de Stone y Lacaille */
 	double distStone; /* distancia a Stone */
 	double vmagStone; /* magnitud Stone */
+	/* Gillis Cross-index */
+	int giRef; /* identificador a catalogo de Gillis */
+	char giCat[19]; /* referencia a otros catalogos */
+	double distGi; /* distance a Gillis */
+	double vmagGi; /* magnitud Gillis */
 } GCstar[MAXGCSTAR];
 
 int GCstars;
@@ -66,9 +76,10 @@ void writeRegisterGC(int index) {
 		GCstar[index].obs,
 		GCstar[index].page
 	);
-	if (GCstar[index].yarnallRef[0] != 0) {
-		printf("       corresponds to USNO %s (mag=%.1f) at %.1f arcsec.\n",
+	if (GCstar[index].yarnallRef != -1) {
+		printf("       corresponds to USNO %d <%s> (mag=%.1f) at %.1f arcsec.\n",
 			GCstar[index].yarnallRef,
+			GCstar[index].yarnallCat,
 			GCstar[index].vmagYarnall,
 			GCstar[index].distYarnall
 		);
@@ -94,6 +105,34 @@ void writeRegisterGC(int index) {
 			GCstar[index].distStone
 		);
 	}
+	if (GCstar[index].giRef != -1) {
+		printf("       corresponds to GI %d <%s> (mag=%.1f) at %.1f arcsec.\n",
+			GCstar[index].giRef,
+			GCstar[index].giCat,
+			GCstar[index].vmagGi,
+			GCstar[index].distGi
+		);
+	}
+}
+
+void copy(char *dest, char *src) {
+	bool previousIsSpace = true;
+	int srcPtr = 0;
+	int destPtr = 0;
+	while (src[srcPtr] != 0) {
+		if (src[srcPtr] != ' ') {
+			dest[destPtr++] = src[srcPtr];
+			previousIsSpace = false;
+		} else {
+			if (!previousIsSpace) {
+				// omit further consecutive spaces
+				previousIsSpace = true;
+				dest[destPtr++] = src[srcPtr];
+			}
+		}
+		srcPtr++;
+	}
+	dest[destPtr] = 0;
 }
 
 /* lee estrellas del Primer Catalogo Argentino, coordenadas 1875.0
@@ -252,7 +291,7 @@ void readGC()
 	    GCstar[GCstars].dist = minDistance;
 		GCstar[GCstars].cdIndexWithinMag = cdIndexWithinMag;
 		GCstar[GCstars].distWithinMag = minDistWithinMag;
-		GCstar[GCstars].yarnallRef[0] = 0;
+		GCstar[GCstars].yarnallRef = -1;
 		GCstar[GCstars].distYarnall = HUGE_NUMBER;
 		GCstar[GCstars].weissRef = -1;
 		GCstar[GCstars].oeltzenRef = -1;
@@ -260,6 +299,9 @@ void readGC()
 		GCstar[GCstars].stoneRef = -1;
 		GCstar[GCstars].lacailleRef = -1;
 		GCstar[GCstars].distStone = HUGE_NUMBER;
+		GCstar[GCstars].giRef = -1;
+		GCstar[GCstars].distGi = HUGE_NUMBER;
+
 		/* proxima estrella */
 		GCstars++;
 		//printf("Pos %d: id=%d RA=%.4f Decl=%.4f (%.2f) Vmag=%.1f\n", GCstars, gcRef, RA, Decl, epoch, vmag);
@@ -342,8 +384,10 @@ void readGC()
 		/* lee magnitud y referencia */
 		readField(buffer, cell, 37, 2);
 		vmag = atof(cell)/10.0;
-		readField(buffer, cell, 1, 34);
-		cell[34] = 0;
+		readField(buffer, cell, 1, 5);
+		int yarnallRef = atoi(cell);
+		readField(buffer, cell, 7, 28);
+		cell[28] = 0;
 
 		/* barre estrellas de GC para identificarlas con este catálogo */
         double minDistance = HUGE_NUMBER;
@@ -357,14 +401,15 @@ void readGC()
 			}
 		}
 		if (minDistance > MAX_DIST_CATALOGS) {
-			//printf("Warning: nearest star is GC %d at %.1f arcsec. from\n USNO %s\n",
+			//printf("Warning: nearest star is GC %d at %.1f arcsec. from USNO %d\n",
 			//	GCstar[gcIndex].gcRef,
 			//	minDistance,
-			//	cell);
+			//	yarnallRef);
 			continue;
 		}
 		if (minDistance < GCstar[gcIndex].distYarnall) {
-			strncpy(GCstar[gcIndex].yarnallRef, cell, 35);
+			copy(GCstar[gcIndex].yarnallCat, cell);
+			GCstar[gcIndex].yarnallRef = yarnallRef;
 			GCstar[gcIndex].distYarnall = minDistance;
 			GCstar[gcIndex].vmagYarnall = vmag;
 			countUSNO++;
@@ -560,6 +605,92 @@ void readGC()
     fclose(stream);
 	printf("  cross-referenced with %d stars\n", countStone);
 
+	/* añadimos referencia al catálogo de Gillis */
+	printf("Reading Gillis catalog...\n");
+    stream = fopen("cat/gillis.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read gillis.txt");
+		exit(1);
+    }
+	int countGi = 0;
+    while (fgets(buffer, 1023, stream) != NULL) {
+		/* lee signo declinación y descarta hemisferio norte */
+		readField(buffer, cell, 48, 1);
+		if (cell[0] != '-') continue;
+
+		/* lee ascension recta B1850.0 */
+		readField(buffer, cell, 33, 2);
+		int RAh = atoi(cell);
+        double RA = (double) RAh;
+		readField(buffer, cell, 35, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readField(buffer, cell, 37, 4);
+		int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1850.0 */
+		readField(buffer, cell, 49, 2);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readField(buffer, cell, 51, 2);
+		int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+		readField(buffer, cell, 53, 3);
+		int Decls = atoi(cell);
+        Decl += (((double) Decls)/10.0)/3600.0;
+		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
+    
+	    /* convierte coordenadas a 1875.0 */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        double pmRA = 0.0;
+        double pmDecl = 0.0;
+        wcsconp(WCS_B1950, WCS_B1950, 1850.0, 1875.0, 1850.0, 1875.0, &RA1875, &Decl1875, &pmRA, &pmDecl);
+    	if (Decl1875 > -22) continue;
+
+        /* calcula coordenadas rectangulares */
+        double x, y, z;
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+		/* lee magnitud y referencia */
+		readField(buffer, cell, 29, 3);
+		vmag = atof(cell)/10.0;
+		readField(buffer, cell, 1, 5);
+		int giRef = atoi(cell);
+		readField(buffer, cell, 7, 18);
+		cell[18] = 0;
+
+		/* barre estrellas de GC para identificarlas con este catálogo */
+        double minDistance = HUGE_NUMBER;
+		int gcIndex = -1;
+		for (int i = 0; i < GCstars; i++) {
+			if (GCstar[i].discard) continue;
+			double dist = 3600.0 * calcAngularDistance(x, y, z, GCstar[i].x, GCstar[i].y, GCstar[i].z);
+			if (dist < minDistance) {
+				gcIndex = i;
+				minDistance = dist;
+			}
+		}
+		if (minDistance > MAX_DIST_CATALOGS) {
+			//printf("Warning: nearest star is GC %d at %.1f arcsec. from GI %d\n",
+			//	GCstar[gcIndex].gcRef,
+			//	minDistance,
+			//	giRef);
+			continue;
+		}
+		if (minDistance < GCstar[gcIndex].distGi) {
+			copy(GCstar[gcIndex].giCat, cell);
+			GCstar[gcIndex].giRef = giRef;
+			GCstar[gcIndex].distGi = minDistance;
+			GCstar[gcIndex].vmagGi = vmag;
+			countGi++;
+		}
+	}
+    fclose(stream);
+	printf("  cross-referenced with %d stars\n", countGi);
+		
 	printf("Stars read from Catalogo General Argentino: %d  (discarded = %d)\n", GCstars, discarded);
 }
 
