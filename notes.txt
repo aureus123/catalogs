@@ -94,5 +94,7 @@ en RONA8 pag. 113, esta estrella tiene las coordenadas (1875.0):
      RA = 14h 55m 26s76    DE = -76º 50' 2.5''
 Una búsqueda en SIMBAD la identifica con HD 133251 o CPD -76º972. Sin embargo, la estrella más
 cercana a esa posición (en el catálogo CD digital) es CD -76º713, a una distancia de 684
-arcsec., pero quedaría corroborarlo con el impreso RONA21b. Sospecho que CD es menos denso / más
-incompleto cerca del Polo Sur (su último Tomo que va de -62 a -90).
+arcsec., pero quedaría corroborarlo con el impreso. Sospecho que CD es menos denso / más
+incompleto cerca del Polo Sur (su último Tomo RONA21b). De hecho, viendo el último número de
+cada declinación nos encontramos con que, para 60º, 61º, 62º, 63º y 64º tenemos 8168, 6922,
+1476, 1635 y 1451, por lo que cae drásticamente a partir del último Tomo (62º a 90º).
