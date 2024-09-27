@@ -405,6 +405,22 @@ void readGC()
 			//	GCstar[gcIndex].gcRef,
 			//	minDistance,
 			//	yarnallRef);
+			/* ya que no existe GC asociada, aprovechamos a revisar CD con esta estrella */
+			minDistance = HUGE_NUMBER;
+			int cdIndex;
+			findByCoordinates(x, y, z, &cdIndex, &minDistance);
+			if (minDistance > MAX_DISTANCE) {
+				char yarnallCat[28];
+				copy(yarnallCat, cell);
+				printf("  USNO %d <%s> is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
+					yarnallRef,
+					yarnallCat,
+					vmag,
+					CDstar[cdIndex].declRef,
+					CDstar[cdIndex].numRef,
+					minDistance
+				);
+			}
 			continue;
 		}
 		if (minDistance < GCstar[gcIndex].distYarnall) {
@@ -496,6 +512,20 @@ void readGC()
 			//	minDistance,
 			//	weissRef,
 			//	oeltzenRef);
+			/* ya que no existe GC asociada, aprovechamos a revisar CD con esta estrella */
+			minDistance = HUGE_NUMBER;
+			int cdIndex;
+			findByCoordinates(x, y, z, &cdIndex, &minDistance);
+			if (minDistance > MAX_DISTANCE) {
+				printf("  WEI %d or OA %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
+					weissRef,
+					oeltzenRef,
+					vmag,
+					CDstar[cdIndex].declRef,
+					CDstar[cdIndex].numRef,
+					minDistance
+				);
+			}
 			continue;
 		}
 		if (minDistance < GCstar[gcIndex].distWeiss) {
@@ -591,6 +621,19 @@ void readGC()
 			//	GCstar[gcIndex].gcRef,
 			//	minDistance,
 			//	stoneRef);
+			/* ya que no existe GC asociada, aprovechamos a revisar CD con esta estrella */
+			minDistance = HUGE_NUMBER;
+			int cdIndex;
+			findByCoordinates(x, y, z, &cdIndex, &minDistance);
+			if (minDistance > MAX_DISTANCE) {
+				printf("  ST %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
+					stoneRef,
+					vmag,
+					CDstar[cdIndex].declRef,
+					CDstar[cdIndex].numRef,
+					minDistance
+				);
+			}
 			continue;
 		}
 		if (minDistance < GCstar[gcIndex].distStone) {
@@ -678,6 +721,31 @@ void readGC()
 			//	GCstar[gcIndex].gcRef,
 			//	minDistance,
 			//	giRef);
+			/* ya que no existe GC asociada, aprovechamos a revisar CD con esta estrella
+			 * pero como Gillis es bastante denso cerca del Polo Sur, solo enumeramos
+			 * aquellas cuya referencia es la de Gould Zone-Catalog. */
+			if (cell[9] == 'Z' && cell[10] == 'C') {
+				char hour[3], num[6];
+				hour[0] = cell[11]; hour[1] = cell[12]; hour[2] = 0;
+				int gouldHour = atoi(hour);
+				num[0] = cell[13]; num[1] = cell[14]; num[2] = cell[15];
+				num[3] = cell[16]; num[4] = cell[17]; num[5] = 0;
+				int gouldNum = atoi(num);
+				minDistance = HUGE_NUMBER;
+				int cdIndex;
+				findByCoordinates(x, y, z, &cdIndex, &minDistance);
+				if (minDistance > MAX_DISTANCE) {
+					printf("  GI %d or GZC %dh %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
+						giRef,
+						gouldHour,
+						gouldNum,
+						vmag,
+						CDstar[cdIndex].declRef,
+						CDstar[cdIndex].numRef,
+						minDistance
+					);
+				}
+			}
 			continue;
 		}
 		if (minDistance < GCstar[gcIndex].distGi) {

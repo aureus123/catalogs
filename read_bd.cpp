@@ -254,3 +254,24 @@ void readDM(const char *filename)
     }
     fclose(stream);
 }
+
+
+/* 
+ * findByCoordinates - busca la estrella BD más cercana
+ * Aquí (x, y, z) son las coord rectangulares en 1855.
+ * minDistanceOutput debe ser una cota de la distancia a buscar.
+ * El resultado se almacena en (bdIndexOutput, minDistanceOutput).
+*/
+void findByCoordinates(double x, double y, double z, int *bdIndexOutput, double *minDistanceOutput) {
+    int bdIndex = -1;
+    double minDistance = *minDistanceOutput;
+	for (int i = 0; i < BDstars; i++) {
+        double dist = 3600.0 * calcAngularDistance(x, y, z, BDstar[i].x, BDstar[i].y, BDstar[i].z);
+        if (minDistance > dist) {
+        	bdIndex = i;
+        	minDistance = dist;
+        }
+    }
+    *bdIndexOutput = bdIndex;
+    *minDistanceOutput = minDistance;
+}

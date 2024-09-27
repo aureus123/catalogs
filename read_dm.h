@@ -26,3 +26,4 @@ bool isCD();
 struct DMstar_struct *getDMStruct();
 void writeRegister(int dmIndex);
 void readDM(const char *filename);
+void findByCoordinates(double x, double y, double z, int *index, double *minDistance);

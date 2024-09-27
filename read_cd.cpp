@@ -271,3 +271,23 @@ void readDM(const char *filename)
                 CDstarsTomo16, CDstarsTomo17, CDstarsTomo18, CDstarsTomo21a, CDstarsTomo21b);
     fclose(stream);
 }
+
+/* 
+ * findByCoordinates - busca la estrella CD más cercana
+ * Aquí (x, y, z) son las coord rectangulares en 1875.
+ * minDistanceOutput debe ser una cota de la distancia a buscar.
+ * El resultado se almacena en (cdIndexOutput, minDistanceOutput).
+*/
+void findByCoordinates(double x, double y, double z, int *cdIndexOutput, double *minDistanceOutput) {
+    int cdIndex = -1;
+    double minDistance = *minDistanceOutput;
+	for (int i = 0; i < CDstars; i++) {
+        double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
+        if (minDistance > dist) {
+        	cdIndex = i;
+        	minDistance = dist;
+        }
+    }
+    *cdIndexOutput = cdIndex;
+    *minDistanceOutput = minDistance;
+}

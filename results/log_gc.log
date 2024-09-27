@@ -622,12 +622,47 @@ Progress: stars = 28452, page = 618
 Progress: stars = 28491, page = 619
 Progress: stars = 28523, page = 620
 Reading USNO catalog...
+  USNO 3571 <MZ 096 00024> is ALONE with mag=8.0; nearest CD -30º6501 separated in 365.2 arcsec.
+  USNO 3880 <MZ 232 00047> is ALONE with mag=9.0; nearest CD -34º5449 separated in 388.9 arcsec.
+  USNO 6482 <LAC 06406> is ALONE with mag=8.0; nearest CD -38º10405 separated in 380.9 arcsec.
   cross-referenced with 3567 stars
 Reading Weiss catalog...
+  WEI 537 or OA 655 is ALONE with mag=9.0; nearest CD -30º358 separated in 437.8 arcsec.
+  WEI 1340 or OA 1630 is ALONE with mag=7.0; nearest CD -27º882 separated in 684.5 arcsec.
+  WEI 1488 or OA 1818 is ALONE with mag=9.0; nearest CD -27º974 separated in 482.6 arcsec.
+  WEI 3220 or OA 3851 is ALONE with mag=9.0; nearest CD -26º2137 separated in 457.7 arcsec.
+  WEI 3291 or OA 3927 is ALONE with mag=0.0; nearest CD -24º3063 separated in 377.2 arcsec.
+  WEI 10871 or OA 13258 is ALONE with mag=8.0; nearest CD -27º9501 separated in 406.4 arcsec.
+  WEI 10983 or OA 13390 is ALONE with mag=9.0; nearest CD -22º10293 separated in 765.7 arcsec.
+  WEI 12127 or OA 14841 is ALONE with mag=9.0; nearest CD -24º12266 separated in 380.9 arcsec.
+  WEI 12619 or OA 15581 is ALONE with mag=9.0; nearest CD -25º11490 separated in 525.3 arcsec.
+  WEI 17673 or OA 22501 is ALONE with mag=9.0; nearest CD -26º16384 separated in 370.5 arcsec.
+  WEI 17867 or OA 22746 is ALONE with mag=8.0; nearest CD -29º18647 separated in 582.1 arcsec.
   cross-referenced with 4530 stars
 Reading Stone catalog...
+  ST 766 is ALONE with mag=7.0; nearest CD -63º42 separated in 877.7 arcsec.
+  ST 4394 is ALONE with mag=9.0; nearest CD -68º553 separated in 459.6 arcsec.
+  ST 5406 is ALONE with mag=8.7; nearest CD -64º425 separated in 949.2 arcsec.
+  ST 5471 is ALONE with mag=7.8; nearest CD -51º4428 separated in 436.9 arcsec.
+  ST 7425 is ALONE with mag=0.0; nearest CD -70º1059 separated in 506.3 arcsec.
+  ST 8062 is ALONE with mag=7.0; nearest CD -82º262 separated in 580.9 arcsec.
+  ST 8457 is ALONE with mag=9.0; nearest CD -83º200 separated in 893.8 arcsec.
   cross-referenced with 11218 stars
 Reading Gillis catalog...
+  GI 29 or GZC 0h 110 is ALONE with mag=10.0; nearest CD -67º5 separated in 471.4 arcsec.
+  GI 5476 or GZC 8h 1466 is ALONE with mag=9.5; nearest CD -62º339 separated in 880.1 arcsec.
+  GI 5482 or GZC 8h 1495 is ALONE with mag=9.5; nearest CD -62º340 separated in 1087.5 arcsec.
+  GI 6512 or GZC 9h 3498 is ALONE with mag=10.0; nearest CD -62º412 separated in 361.2 arcsec.
+  GI 6624 or GZC 9h 4207 is ALONE with mag=10.0; nearest CD -62º427 separated in 395.5 arcsec.
+  GI 6825 or GZC 10h 751 is ALONE with mag=9.5; nearest CD -62º441 separated in 723.1 arcsec.
+  GI 6955 or GZC 10h 1378 is ALONE with mag=9.2; nearest CD -62º449 separated in 725.6 arcsec.
+  GI 6959 or GZC 10h 1417 is ALONE with mag=9.5; nearest CD -62º451 separated in 385.5 arcsec.
+  GI 7214 or GZC 10h 2612 is ALONE with mag=10.0; nearest CD -62º473 separated in 501.8 arcsec.
+  GI 7382 or GZC 10h 3348 is ALONE with mag=9.5; nearest CD -63º609 separated in 1075.7 arcsec.
+  GI 7437 or GZC 10h 3621 is ALONE with mag=9.5; nearest CD -62º486 separated in 1131.1 arcsec.
+  GI 7556 or GZC 10h 4322 is ALONE with mag=9.5; nearest CD -62º491 separated in 712.1 arcsec.
+  GI 10629 or GZC 14h 3519 is ALONE with mag=9.0; nearest CD -76º713 separated in 683.9 arcsec.
+  GI 11893 or GZC 16h 1783 is ALONE with mag=9.0; nearest CD -71º1291 separated in 566.4 arcsec.
   cross-referenced with 3220 stars
 Stars read from Catalogo General Argentino: 28552  (discarded = 648)
 1) GC 51 is ALONE; nearest CD -37°16 separated in 381.2 arcsec.
