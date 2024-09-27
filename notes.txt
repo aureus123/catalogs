@@ -71,7 +71,8 @@ Se manifiesta además en "log_agk" registro 147.
 
 4) Otras, como GC 6036 (registro 47), están marcadas como "nebulosas" en el catálogo impreso.
 También GC 18278 (registro 179) es omega Centauri.
-Otras, como GC 14007 (registro 119), simplemente no están en CD (esta estrella tiene mag. 10.7).
+Otras, como GC 14007 (registro 119), simplemente no están en CD posiblemente por lo débil que es
+(esta estrella tiene mag. 10.7). En general suelen ser estrellas del último Tomo (RONA21b).
 
 5) Las siguientes estrellas de GC contienen errores en el catálogo digital de GC, al compararse
 con RONA14 + corrigenda. Lo documentamos con "valor digital -> valor impreso":
@@ -80,3 +81,18 @@ con RONA14 + corrigenda. Lo documentamos con "valor digital -> valor impreso":
                                    (falta la primera obs.)
           - GC 16823 (registro 153): RA 05s39 -> 04s76
                                      DE 79º03'46''6 -> 27º07'14''5
+
+6) Con la herramienta "compare_gc" también logramos identificar estrellas del Catálogo de Zonas
+(RONA7 + RONA8) que no existen en el CD, a través de la identificación cruzada con un tercer
+catálogo (Gillis, A catalogue of 16,748 southern stars deduced by the United States Naval
+Observatory from the zone observations made at Santiago de Chile, 1895) y que se puede
+encontrar aquí:
+https://archive.org/details/catalogueof1674800unitrich
+
+Por ejemplo, la estrella 10629 (pag. 267) de magnitud 9 se identifica con GZC 14h 3519. Viendo
+en RONA8 pag. 113, esta estrella tiene las coordenadas (1875.0):
+     RA = 14h 55m 26s76    DE = -76º 50' 2.5''
+Una búsqueda en SIMBAD la identifica con HD 133251 o CPD -76º972. Sin embargo, la estrella más
+cercana a esa posición (en el catálogo CD digital) es CD -76º713, a una distancia de 684
+arcsec., pero quedaría corroborarlo con el impreso RONA21b. Sospecho que CD es menos denso / más
+incompleto cerca del Polo Sur (su último Tomo que va de -62 a -90).
