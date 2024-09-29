@@ -98,3 +98,23 @@ arcsec., pero quedaría corroborarlo con el impreso. Sospecho que CD es menos de
 incompleto cerca del Polo Sur (su último Tomo RONA21b). De hecho, viendo el último número de
 cada declinación nos encontramos con que, para 60º, 61º, 62º, 63º y 64º tenemos 8168, 6922,
 1476, 1635 y 1451, por lo que cae drásticamente a partir del último Tomo (62º a 90º).
+
+Nota 4:
+-------
+
+En "E. R. Minniti Morgan, Estrellas del CD ausentes" se mencionan varias estrellas que están
+presentes en algunos catálogos pero no en otros y que, por su cobertura en posición y magnitud
+deberían estarlo. Aquí enumeramos las entradas de RONA14 (GC):
+
+      nº     RA1875.0   DE1875.0     MAG REF                (nota del paper)
+ - GC  6247  5h19m18s46 -71º38'55''1 9.0 ------- (pag. 123)
+ - GC 10246  7h44m35s50 -34º55'51''2 6.4 L. 3002 (pag. 201) Nota: dice 7h46m12s31 -33º44'54''6 8.5
+ - GC 10294  7h46m12s31 -33º44'54''6 8.5 ------- (pag. 202) Nota: dice otras coord. en 1873.3
+ - GC 10434  7h51m05s92 -22º31'27''3 9.0 ------- (pag. 205) Nota: dice 27''7
+
+y el resultado de usar "compare_gc":
+ - GC 6247: nearest CD -71°269 separated in 35.0 arcsec.
+ - GC 10246: nearest CD -34°3970 separated in 24.8 arcsec.
+       corresponds to ST 3926 or L. 3002 (mag=6.0) at 2.4 arcsec.
+ - GC 10294: nearest CD -33°4218 separated in 5.4 arcsec.
+ - GC 10434: not found in GC digital version
