@@ -163,3 +163,4 @@ Las últimas dos columnas, a su vez, nos dan dos números que pueden ser buscado
 Por ej, la 14ava. de la Zona 736 figura en RONA6 pag. 587 con toda su reducción (aunque en RA
 dice 3s14 en vez de 3s12) y se sabe que fue observada el 22/07/1875. Para la 82ava. de la Zona
 751, vemos que figura en RONA6 pag. 629 con mismas coordenadas que RONA8, observada 03/08/1875.
+Búsquedas en SIMBAD solo arrojan estrellas muy débiles en sus cercanías.
