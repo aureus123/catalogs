@@ -21,8 +21,11 @@ Error comparing I88 and PPM:
 From the 202 differences in position, 51 was found by algorithm (25%).
 All (3 cases) magnitude differences was found by algorithm.
 
-Nota:
+Notas:
 -----
+
+Nota 1:
+-------
 
 En la fila 18 de log_sd encontramos:
 18) CD -22°15216 separated from SD -22°5630 in 4356.0 arcsec.
@@ -65,8 +68,8 @@ Sin embargo, en el catálogo impreso, por la columna de identificación de CD pa
 con CD -25°15231 (casi la misma RA y la misma magnitud). Aquí no hay errores de transcripción,
 sino que simplemente ambas coordenadas se encuentran lejos: solo en declinación tenemos la
 diferencia entre -25°9'1''3 y -25°38.8', es decir de 1787 arcsec.
-Efectivamente, esa estrella de CD figura en la "corrigenda" del paper "LIST OF ADDITIONAL ERRORS
-FOUND IN THE CORDOBA CATALOGUES", Thome J. AJ 364 pg. 30. Su declinación es -25°8.8'.
+Efectivamente, esa estrella de CD figura en la corrigenda del paper "List of Additional Errors
+found in the Cordoba Catalogues" (Thome, AJ 364, 1895) Su declinación es -25°8.8'.
 Se manifiesta además en "log_agk" registro 147.
 
 4) Otras, como GC 6036 (registro 47), están marcadas como "nebulosas" en el catálogo impreso.
@@ -99,12 +102,16 @@ incompleto cerca del Polo Sur (su último Tomo RONA21b). De hecho, viendo el úl
 cada declinación nos encontramos con que, para 60°, 61°, 62°, 63° y 64° tenemos 8168, 6922,
 1476, 1635 y 1451, por lo que cae drásticamente a partir del último Tomo (62° a 90°).
 
+
 Nota 4:
 -------
 
 En "E. R. Minniti Morgan, Estrellas del CD ausentes" se mencionan varias estrellas que están
 presentes en algunos catálogos pero no en otros y que, por su cobertura en posición y magnitud
-deberían estarlo. Aquí enumeramos las entradas de RONA14 (GC):
+deberían estarlo. Varias entradas de esa lista suelen coincidir con corrigendas en donde esa
+estrella se desestimó por no volverse a encontrar.  
+
+Aquí enumeramos las entradas de RONA14 (GC) propuestas en el paper:
 
       nº     RA1875.0   DE1875.0     MAG REF                (nota del paper)
  - GC  6247  5h19m18s46 -71°38'55''1 9.0 ------- (pag. 123)
@@ -112,14 +119,47 @@ deberían estarlo. Aquí enumeramos las entradas de RONA14 (GC):
  - GC 10294  7h46m12s31 -33°44'54''6 8.5 ------- (pag. 202) Nota: dice otras coord. en 1873.3
  - GC 10434  7h51m05s92 -22°31'27''3 9.0 ------- (pag. 205) Nota: dice 27''7
 
-y el resultado de usar "compare_gc":
+Podemos usar "compare_gc" para identificarlas con CD:
  - GC 6247: nearest CD -71°269 separated in 35.0 arcsec.
  - GC 10246: nearest CD -34°3970 separated in 24.8 arcsec.
        corresponds to ST 3926 or L. 3002 (mag=6.0) at 2.4 arcsec.
  - GC 10294: nearest CD -33°4218 separated in 5.4 arcsec.
  - GC 10434: not found in GC digital version
 
+3 de las 4 estrellas fueron identificadas satisfactoriamente, mientras que la restante no existe
+en el catálogo digital, pero si utilizamos la coordenada ofrecida en RONA14 podemos hacer una
+búsqueda en SIMBAD. La misma no arroja estrellas brillantes en su vecindad (a 20 arcsec. una
+estrella muy débil de Gaia, a 67 arcsec. a TYC 6553-1427-1 de mag. 12, y a 175 arcsec. a la más
+cercana de CD recién, que es CD -22°5388).
+
 Otras notas:
 En la corrigenda de RONA14 (hallada en RONA18) dice que GC 6247 "not found in Dm.". Sin
 embargo, el DM para la declinación -71° se realizó mucho después, en RONA21b (Siglo XX).
 En la misma corrigenda también se menciona que GC 10434 no existe.
+
+
+Nota 5:
+-------
+
+Usando la misma lógica que en el paper anterior, se halló que la estrella CD -25°12601 de mag.
+7.3 figura como inexistente en el paper "List of Additional Errors found in the Cordoba Catalogues"
+(Thome, AJ 364, 1895). Una búsqueda en SIMBAD arroja varias estrellas débiles en su vecindad, sin
+embargo podemos destacar la variable V4742 Sgr (también Nova Sgr 2002b) a 83 arcsec. que llegó
+hasta la 8va. magnitud en 2002. ¿Se habrá visto también en 1875 y es una nova recurrente?
+Link: https://www.institutocopernico.org/vs/v4742sgr.php
+https://www.institutocopernico.org/vs/v4742sgr.php
+
+Otra estrella que figura como inexistente en ese paper es la CD -27°6667; una búsqueda en SIMBAD
+no arroja nada en 3 arcmin. de radio.
+
+También en ese paper figuran estrellas de los Catálogos de Zonas inexistentes en CD (que también
+se mencionan en el paper de Minniti Morgan), por ejemplo de RONA8 figuran las estrellas:
+
+      nº         RA1875.0    DE1875.0      MAG  Zona nº            (nota del paper)
+ - GZC 15h 2202  15h32m03s12 -45°55'08''2  9.5  736  14 (pag. 141)
+ - GZC 15h 4094  15h58m31s80 -44°56'14''2  9.0  751  82 (pag. 162) Nota: dice 4096
+
+Las últimas dos columnas, a su vez, nos dan dos números que pueden ser buscados en otros Tomos.
+Por ej, la 14ava. de la Zona 736 figura en RONA6 pag. 587 con toda su reducción (aunque en RA
+dice 3s14 en vez de 3s12) y se sabe que fue observada el 22/07/1875. Para la 82ava. de la Zona
+751, vemos que figura en RONA6 pag. 629 con mismas coordenadas que RONA8, observada 03/08/1875.
