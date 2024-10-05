@@ -143,11 +143,11 @@ Nota 5:
 
 Usando la misma lógica que en el paper anterior, se halló que la estrella CD -25°12601 de mag.
 7.3 figura como inexistente en el paper "List of Additional Errors found in the Cordoba Catalogues"
-(Thome, AJ 364, 1895). Una búsqueda en SIMBAD arroja varias estrellas débiles en su vecindad, sin
+(Thome, AJ 364, 1895). Esta estrella también es mencionada en "Notes on Variable Stars" (Thome,
+AJ 360, 1895). Una búsqueda en SIMBAD arroja varias estrellas débiles en su vecindad, sin
 embargo podemos destacar la variable V4742 Sgr (también Nova Sgr 2002b) a 83 arcsec. que llegó
-hasta la 8va. magnitud en 2002. ¿Se habrá visto también en 1875 y es una nova recurrente?
+hasta la 8va. magnitud en 2002. ¿Se habrá visto también en el Siglo XIX y es una nova recurrente?
 Link: https://www.institutocopernico.org/vs/v4742sgr.php
-https://www.institutocopernico.org/vs/v4742sgr.php
 
 Otra estrella que figura como inexistente en ese paper es la CD -27°6667; una búsqueda en SIMBAD
 no arroja nada en 3 arcmin. de radio.
