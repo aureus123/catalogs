@@ -9,6 +9,25 @@
 #include <stdio.h>
 #include "trig.h"
 
+/* Para uso de la libreria WCS: */
+#define WCS_B1950 2 /* B1950(FK4) right ascension and declination */
+extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, double ep2,
+             double *dtheta, double *dphi, double *ptheta, double *pphi);
+
+
+/*
+ * Transforma coordenadas entre épocas (ep1 y ep2) en FK4
+ * No se consideran movimientos propios.
+ * 
+ * eq1, eq2 - Epoca origen y destino
+ * RA, Decl - Ascensión recta y declinación
+ */
+void transform(double eq1, double eq2, double *RA, double *Decl) {
+    double pmRA = 0.0;
+    double pmDecl = 0.0;
+    wcsconp(WCS_B1950, WCS_B1950, eq1, eq2, eq1, eq2, RA, Decl, &pmRA, &pmDecl);
+}
+
 /*
  * Funciones trigonométricas en grados sexagesimales
  */

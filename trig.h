@@ -6,8 +6,10 @@
 #define PI 3.1415926535897932384
 #define COSDISTTOL  0.999998476913288 /* cos(6 arcmin) */
 #define COSDISTDPLTOL 0.999999924785823 /* cos(80 arcsec) */
+#define HUGE_NUMBER 9999999999
 #define EPS 1E-8
 
+void transform(double eq1, double eq2, double *RA, double *Decl);
 double dcos(double angle);
 double dsin(double angle);
 double datan2(double y, double x);

@@ -20,11 +20,11 @@ compare_agk: compare_agk.o read_cd.o trig.o misc.o
 compare_agk.o: compare_agk.cpp
 	$(CC) $(CCFLAGS) -c $<
 
+compare_gc: compare_gc.o read_cd.o read_old.o trig.o misc.o
+	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
+
 compare_gc.o: compare_gc.cpp
 	$(CC) $(CCFLAGS) -c $<
-
-compare_gc: compare_gc.o read_cd.o trig.o misc.o
-	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 compare_cpd: compare_cpd.o read_cd.o read_cpd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
@@ -57,6 +57,9 @@ compare_ppm_bd.o: compare_ppm_bd.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 read_cd.o: read_cd.cpp
+	$(CC) $(CCFLAGS) -c $<
+
+read_old.o: read_old.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 mag_bd: mag_bd.o read_bd.o read_ppm.o trig.o misc.o

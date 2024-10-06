@@ -3,6 +3,8 @@
  * READ_CPD - Header
  */
 
+#define MAXCPDSTAR 454812
+
 struct CPDstar_struct {
     bool discard; /* true if should not be considered */
     int declRef, numRef; /* identificador con declinacion y numero */

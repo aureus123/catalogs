@@ -17,12 +17,6 @@
 #define MAX_MAGNITUDE 0.8
 #define MAXSDSTAR 10000
 
-/* Para uso de la libreria WCS: */
-#define WCS_B1950 2 /* B1950(FK4) right ascension and declination */
-extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, double ep2,
-             double *dtheta, double *dphi, double *ptheta, double *pphi);
-
-
 struct SDstar_struct {
     bool discard; /* true if should not be considered */
     int numRef; /* identificador con numero (siempre decl = -22) */
@@ -130,9 +124,7 @@ void readSD() {
         /* calcula coordenadas rectangulares, pero de 1875.0 */
         double RA1875 = RA;
         double Decl1875 = Decl;
-        double pmRA = 0.0;
-        double pmDecl = 0.0;
-        wcsconp(WCS_B1950, WCS_B1950, 1855.0, 1875.0, 1855.0, 1875.0, &RA1875, &Decl1875, &pmRA, &pmDecl);
+        transform(1855.0, 1875.0, &RA1875, &Decl1875);
         double x, y, z;
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 

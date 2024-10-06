@@ -17,12 +17,6 @@
 #define MAX_MAGNITUDE 1.0
 #define MAXAGKSTAR 50000
 
-/* Para uso de la libreria WCS: */
-#define WCS_B1950 2 /* B1950(FK4) right ascension and declination */
-extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, double ep2,
-             double *dtheta, double *dphi, double *ptheta, double *pphi);
-
-
 struct AGKstar_struct {
     int agkRef; /* identificador */
     char letter; /* Cordoba A, B o C */
@@ -105,9 +99,7 @@ void readAGK(
 	    /* convierte coordenadas a 1875.0 */
         double RA1875 = RA;
         double Decl1875 = Decl;
-        double pmRA = 0.0;
-        double pmDecl = 0.0;
-        wcsconp(WCS_B1950, WCS_B1950, 1900.0, 1875.0, 1900.0, 1875.0, &RA1875, &Decl1875, &pmRA, &pmDecl);
+        transform(1900.0, 1875.0, &RA1875, &Decl1875);
 
         /* calcula coordenadas rectangulares */
         double x, y, z;

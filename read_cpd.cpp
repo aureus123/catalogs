@@ -13,7 +13,6 @@
 #include "misc.h"
 #include "trig.h"
 
-#define MAXCPDSTAR 454812
 #define MAX_DECL 81
 #define MAX_NUM 12500
 
