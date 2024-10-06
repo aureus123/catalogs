@@ -45,4 +45,4 @@ struct GCstar_struct {
 int getGCStars();
 struct GCstar_struct *getGCStruct();
 void writeRegisterGC(int index);
-void readGC();
+void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int fictDeclm, int fictDecls);

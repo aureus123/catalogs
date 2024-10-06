@@ -27,7 +27,7 @@ int main(int argc, char** argv)
     struct DMstar_struct *CDstar = getDMStruct();
 
     /* leemos catalogo GC */
-    readGC();
+	readGC(true, 0, 0, 0, 0, 0, 0);
 	struct GCstar_struct *GCstar = getGCStruct();
 	int GCstars = getGCStars();
 

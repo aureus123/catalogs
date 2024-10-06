@@ -126,11 +126,18 @@ Podemos usar "compare_gc" para identificarlas con CD:
  - GC 10294: nearest CD -33°4218 separated in 5.4 arcsec.
  - GC 10434: not found in GC digital version
 
+Para la inexistente (GC 10434) usamos "find_coord" para hallar las más cercanas:
+ - Nearest CD -22°5388 (mag=9.6) separated in 173.9 arcsec.
+     Register GC 10434: RA = 07h51m05s92, DE = 22°31'27''3
+       corresponds to USNO 3267 <LAC 02998> (mag=6.5) at 6340.8 arcsec.
+       corresponds to WEI 6245 or OA 7700 (mag=3.0) at 332.0 arcsec.
+       corresponds to ST 3997 (mag=5.0) at 331.9 arcsec.
+       corresponds to GI 5352 <GAM 1ARG > (mag=3.0) at 88635.8 arcsec.
+
 3 de las 4 estrellas fueron identificadas satisfactoriamente, mientras que la restante no existe
 en el catálogo digital, pero si utilizamos la coordenada ofrecida en RONA14 podemos hacer una
 búsqueda en SIMBAD. La misma no arroja estrellas brillantes en su vecindad (a 20 arcsec. una
-estrella muy débil de Gaia, a 67 arcsec. a TYC 6553-1427-1 de mag. 12, y a 175 arcsec. a la más
-cercana de CD recién, que es CD -22°5388).
+estrella muy débil de Gaia, y a 67 arcsec. a TYC 6553-1427-1 de mag. 12).
 
 Otras notas:
 En la corrigenda de RONA14 (hallada en RONA18) dice que GC 6247 "not found in Dm.". Sin
@@ -164,3 +171,34 @@ Por ej, la 14ava. de la Zona 736 figura en RONA6 pag. 587 con toda su reducción
 dice 3s14 en vez de 3s12) y se sabe que fue observada el 22/07/1875. Para la 82ava. de la Zona
 751, vemos que figura en RONA6 pag. 629 con mismas coordenadas que RONA8, observada 03/08/1875.
 Búsquedas en SIMBAD solo arrojan estrellas muy débiles en sus cercanías.
+
+A modo informativo usamos "find_coord" para todas las estrellas mencionadas (donde claramente
+se observa que no se identifican con ningún otro catálogo de la época):
+
+ - Nearest CD -25°12601 (mag=7.3) separated in 0.0 arcsec.
+     Register: RA = 17h54m36s00, DE = 25°19'00''0
+       corresponds to USNO 7736 <MZ 123 00015> (mag=7.8) at 1817.2 arcsec.
+       corresponds to WEI 13891 or OA 17527 (mag=9.0) at 926.4 arcsec.
+       corresponds to ST 9841 or L. 7554 (mag=7.0) at 2265.4 arcsec.
+       corresponds to GI 13089 <GZC1800119> (mag=8.5) at 146008.2 arcsec.
+
+ - Nearest CD -27°6667 (mag=8.7) separated in 0.0 arcsec.
+     Register: RA = 09h25m09s20, DE = 27°51'06''0
+       corresponds to USNO 4062 <LAC 03864> (mag=7.1) at 775.3 arcsec.
+       corresponds to WEI 7871 or OA 9798 (mag=8.9) at 734.3 arcsec.
+       corresponds to ST 5096 or L. 3864 (mag=7.0) at 773.8 arcsec.
+       corresponds to GI 5352 <GAM 1ARG > (mag=3.0) at 88708.3 arcsec.
+
+- Nearest CD -45°10110 (mag=10.0) separated in 187.0 arcsec.
+     Register GZC 15h 2202: RA = 15h32m03s12, DE = 45°55'08''2
+       corresponds to USNO 6559 <LAC 06471> (mag=6.4) at 22845.7 arcsec.
+       corresponds to WEI 12173 or OA 14906 (mag=8.9) at 54582.6 arcsec.
+       corresponds to ST 8525 or L. 6481 (mag=7.0) at 1704.0 arcsec.
+       corresponds to GI 11069 <EPS 1TRA > (mag=4.8) at 71981.6 arcsec.
+
+- Nearest CD -45°10450 (mag=7.8) separated in 267.8 arcsec.
+     Register GZC 15h 4094: RA = 15h58m31s80, DE = 44°56'14''2
+       corresponds to USNO 6785 <BAC 05357> (mag=7.2) at 18626.8 arcsec.
+       corresponds to WEI 12502 or OA 15394 (mag=7.0) at 49286.2 arcsec.
+       corresponds to ST 8746 or L. 6670 (mag=7.0) at 264.0 arcsec.
+       corresponds to GI 11478 <GZC1503889> (mag=8.5) at 75376.0 arcsec.
