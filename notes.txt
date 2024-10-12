@@ -202,3 +202,25 @@ se observa que no se identifican con ningún otro catálogo de la época):
        corresponds to WEI 12502 or OA 15394 (mag=7.0) at 49286.2 arcsec.
        corresponds to ST 8746 or L. 6670 (mag=7.0) at 264.0 arcsec.
        corresponds to GI 11478 <GZC1503889> (mag=8.5) at 75376.0 arcsec.
+
+
+Nota 6:
+-------
+
+En el paper de Minniti Morgan, en su primer entrada, y en la corrigenda de RONA7 (hallada en
+RONA18), la siguiente estrella del catálogo de Zonas no se halló posteriormente:
+
+      nº         RA1875.0    DE1875.0      MAG  Zona nº 
+ - GZC 08h 1062  08h12m53s96 -24°12'43''6  9.0  230  43 (pag. 212)
+
+Efectivamente no está en CD, pues la estrella más cercana es -24°6769 de mag. 7.9 separada en
+127.1 arcsec., y que se corresponde con GZC 08h 1072. Se corresponden con HD 69924.
+No obstante, al buscar en los otros Tomos, específicamente RONA3, pag. 314, encontramos que
+es la estrella 43ava. de la Zona 230, y cuyos datos son:
+
+                 RA1875.0    DE1875.0      MAG 
+                 08h12m53s97 -24°02'43''6  9.0
+
+Es decir, hay un error de 0.01s en RA, pero de 10' en declinación! Buscando con la nueva
+coordenada, nos encontramos con CD -24°6767 de mag. 10 a 52 arcsec. Una búsqueda por SIMBAD
+reporta la estrella TYC 6560-648-1 de mag. 11 a 42 arcsec. del lugar.
