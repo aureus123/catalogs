@@ -224,3 +224,23 @@ es la estrella 43ava. de la Zona 230, y cuyos datos son:
 Es decir, hay un error de 0.01s en RA, pero de 10' en declinación! Buscando con la nueva
 coordenada, nos encontramos con CD -24°6767 de mag. 10 a 52 arcsec. Una búsqueda por SIMBAD
 reporta la estrella TYC 6560-648-1 de mag. 11 a 42 arcsec. del lugar.
+
+
+Nota 7:
+-------
+
+La estrella de Przybylski (HD 101065 / V816 Cen) es químicamente peculiar (en términos de su
+espectro) dado que contiene isótopos radioactivos de una duración inferior a su vida, como
+Technetium y Promethium. Ya que tiene mag. 8.0 nos preguntamos si existirá en catálogos del
+Siglo XIX. De los catálogos de Córdoba:
+
+- No se halló en el CGA (RONA14).
+- En CD (RONA18) figura como:
+
+      nº         RA1875.0    DE1875.0      MAG 
+ - CD -46°7232   11h31m32s7  -46° 1.2'     8.7
+
+- En el Cat. de Zonas (RONA8) y en RONA3 figura como:
+
+      nº         RA1875.0    DE1875.0      MAG  Zona nº  Observada 
+ - GZC 11h 2211  11h31m32s89 -46°01'08''0  8.5  257  10  29/4/1873
