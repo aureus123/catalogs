@@ -225,6 +225,24 @@ Es decir, hay un error de 0.01s en RA, pero de 10' en declinación! Buscando con
 coordenada, nos encontramos con CD -24°6767 de mag. 10 a 52 arcsec. Una búsqueda por SIMBAD
 reporta la estrella TYC 6560-648-1 de mag. 11 a 42 arcsec. del lugar.
 
+En la segunda entrada del paper encontramos:
+
+      nº         RA1875.0    DE1875.0      MAG  Zona nº 
+ - GZC 08h 1308  08h15m55s02 -43°59'45''9  9.5  627  9 (pag. 214)
+
+Efectivamente, la estrella más cercana es CD -43°4188 con mag. 9.9 separada a 137.1 arcsec.
+Buscamos la estrella en otros Tomos, encontrándose en RONA6, pag. 259, con misma magnitud y
+posición. Una búsqueda por SIMBAD reporta TYC 7673-1627-1 de mag. 11 a 140 arcsec.
+
+En la tercera entrada del paper encontramos:
+
+      nº         RA1875.0    DE1875.0      MAG  Zona nº 
+ - GZC 08h 3084  08h37m28s91 -31°57'38''9  9.0  609  117 (pag. 232)
+
+La estrella más cercana es CD -31°6445 con mag. 9.6 separada a 104.6 arcsec. Buscando en
+otros, se encuentra en RONA5, pag. 489, con misma posición pero magnitud 9.5. Una búsqueda
+por SIMBAD reporta TYC 7141-189-1 de mag. 11 a 84.5 arcsec.
+
 
 Nota 7:
 -------
