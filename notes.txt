@@ -63,7 +63,7 @@ dice 49.8 debería decir 40.8.
 Esta diferencia en 540 arcsec se manifiesta en "log_ppm" registro 8.
 También aparece en "log_cpd" registro 173 y "log_agk" registro 41.
 
-3) Ocurre algo similar con el registro 296 (GC 28943) donde la más cercana es CD -25°15236.
+3) Ocurre algo similar con el registro 295 (GC 28943) donde la más cercana es CD -25°15236.
 Sin embargo, en el catálogo impreso, por la columna de identificación de CD parece identificarse
 con CD -25°15231 (casi la misma RA y la misma magnitud). Aquí no hay errores de transcripción,
 sino que simplemente ambas coordenadas se encuentran lejos: solo en declinación tenemos la
