@@ -50,7 +50,7 @@ But in the printed catalog, it says 19°7'.9, thus leading to a separation of 30
 In 2018, with this approach 45 typo mistakes were found in the current CD catalog at VizieR (for declinations -23 and -24), see https://data.mendeley.com/datasets/5wwwtv7c8c/1/files/4934a81a-5a03-46b1-9098-4004733511a7
 
 We now enumerate those errors found by comparing CD and SD. In case more than
-one parameter mitmatches for the same star, columns dist1 and dist2 are only
+one parameter mismatches for the same star, columns dist1 and dist2 are only
 reported for the comparison of the parameter with larger difference:
 
 | Star | Parameter | current | corrected | dist1 | dist2 |
@@ -68,14 +68,15 @@ We now enumerate those errors found by comparing CD and PPM. We omit those swaps
 | CD -25°16747 | DEm | 21.8 | 24.8 | 180 | 169 |
 | CD -26°1304 | DEm | 27.0 | 7.0 | 1200 | 1168 |
 | CD -24°2783 | DEm | 30.2 | 20.2 | 600 | 615 |
-| CD -26°2132 | RAs | 17.4 | 17.9 | 8 | 1620 |
+| CD -26°2132 | RAs | 17.4 | 17.9 |  | 1620 |
 | CD -26°2132 | DEm | 17.9 | 44.2 | 1578 | 1620 |
+| CD -25°2622 | DEm | 49.8 | 40.8 | 540 | 546 |
 | CD -24°3857 | DEm | 51.0 | 54.0 | 180 | 193 |
 | CD -27°3496 | DEm | 39.1 | 29.1 | 600 | 558 |
-| CD -24°5418 | DEm |  |  |  |  |
-| CD -24°5418 | mag |  |  |  |  |
-| CD -24°5419 | DEm |  |  |  |  |
-| CD -24°5419 | mag |  |  |  |  |
+| CD -24°5418 | DEm | 35.0 | 22.1 |  |  |
+| CD -24°5418 | mag | 9.5 | 10.0 |  |  |
+| CD -24°5419 | DEm | 22.1 | 35.0 | 774 | 775 |
+| CD -24°5419 | mag | 10.0 | 9.5 |  |  |
 | CD -27°4804 | DEm | 20.4 | 29.4 | 540 | 578 |
 
 
