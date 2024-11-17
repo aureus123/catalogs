@@ -13,6 +13,7 @@
 #include "misc.h"
 #include "read_old.h"
 
+#define CD_SEARCH true // true if search nearest CD star over other old catalogs
 struct GCstar_struct GCstar[MAXGCSTAR];
 
 int GCstars;
@@ -116,7 +117,7 @@ void copy(char *dest, char *src) {
  *   Lee estrellas del Primer Catalogo Argentino, coordenadas 1875.0
  *   supuestamente todas estas estrellas deberian estar incluidas en el catálogo CD
  *   (excepto las que están fuera de la faja, y algunas de CD marcadas como "dobles")
- *   También lee otros catálogos antiguos (Yarnall, Stone, Weiss, Gillis).
+ *   También lee otros catálogos antiguos (Yarnall, Stone, Weiss, Gilliss).
  * mode = false:
  *   Recibe una coordenada en 1875.0 y genera una estrella ficticia llamada GC 1.
  *   Luego la cruza con los catálogos CD y otros antiguos.
@@ -175,25 +176,25 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			double epoch = (atof(cell)/100.0) + 1800.0;
 
 			/* lee ascension recta B1875.0 */
-			readField(buffer, cell, 16, 2);
+			readFieldSanitized(buffer, cell, 16, 2);
 			int RAh = atoi(cell);
 			double RA = (double) RAh;
-			readField(buffer, cell, 18, 2);
+			readFieldSanitized(buffer, cell, 18, 2);
 			int RAm = atoi(cell);
 			RA += ((double) RAm)/60.0;
-			readField(buffer, cell, 20, 4);
+			readFieldSanitized(buffer, cell, 20, 4);
 			int RAs = atoi(cell);
 			RA += (((double) RAs)/100.0)/3600.0;
 			RA *= 15.0; /* conversion horas a grados */
 
 			/* lee declinacion B1875.0 */
-			readField(buffer, cell, 39, 2);
+			readFieldSanitized(buffer, cell, 39, 2);
 			int Decld = atoi(cell);
 			double Decl = (double) Decld;
-			readField(buffer, cell, 41, 2);
+			readFieldSanitized(buffer, cell, 41, 2);
 			int Declm = atoi(cell);
 			Decl += ((double) Declm)/60.0;
-			readField(buffer, cell, 43, 3);
+			readFieldSanitized(buffer, cell, 43, 3);
 			int Decls = atoi(cell);
 			Decl += (((double) Decls)/10.0)/3600.0;
 			Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
@@ -278,15 +279,15 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			GCstar[GCstars].cdIndexWithinMag = cdIndexWithinMag;
 			GCstar[GCstars].distWithinMag = minDistWithinMag;
 			GCstar[GCstars].yarnallRef = -1;
-			GCstar[GCstars].distYarnall = HUGE_NUMBER;
+			GCstar[GCstars].distYarnall = MAX_DISTANCE;
 			GCstar[GCstars].weissRef = -1;
 			GCstar[GCstars].oeltzenRef = -1;
-			GCstar[GCstars].distWeiss = HUGE_NUMBER;
+			GCstar[GCstars].distWeiss = MAX_DISTANCE;
 			GCstar[GCstars].stoneRef = -1;
 			GCstar[GCstars].lacailleRef = -1;
-			GCstar[GCstars].distStone = HUGE_NUMBER;
+			GCstar[GCstars].distStone = MAX_DISTANCE;
 			GCstar[GCstars].giRef = -1;
-			GCstar[GCstars].distGi = HUGE_NUMBER;
+			GCstar[GCstars].distGi = MAX_DISTANCE;
 
 			/* proxima estrella */
 			GCstars++;
@@ -362,15 +363,15 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		GCstar[GCstars].cdIndexWithinMag = -1;
 		GCstar[GCstars].distWithinMag = HUGE_NUMBER;
 		GCstar[GCstars].yarnallRef = -1;
-		GCstar[GCstars].distYarnall = HUGE_NUMBER;
+		GCstar[GCstars].distYarnall = MAX_DISTANCE;
 		GCstar[GCstars].weissRef = -1;
 		GCstar[GCstars].oeltzenRef = -1;
-		GCstar[GCstars].distWeiss = HUGE_NUMBER;
+		GCstar[GCstars].distWeiss = MAX_DISTANCE;
 		GCstar[GCstars].stoneRef = -1;
 		GCstar[GCstars].lacailleRef = -1;
-		GCstar[GCstars].distStone = HUGE_NUMBER;
+		GCstar[GCstars].distStone = MAX_DISTANCE;
 		GCstar[GCstars].giRef = -1;
-		GCstar[GCstars].distGi = HUGE_NUMBER;
+		GCstar[GCstars].distGi = MAX_DISTANCE;
 		GCstars++;
 	}
 
@@ -388,25 +389,25 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		if (cell[0] != '-') continue;
 
 		/* lee ascension recta B1860.0 */
-		readField(buffer, cell, 40, 2);
+		readFieldSanitized(buffer, cell, 40, 2);
 		int RAh = atoi(cell);
         double RA = (double) RAh;
-		readField(buffer, cell, 42, 2);
+		readFieldSanitized(buffer, cell, 42, 2);
 		int RAm = atoi(cell);
         RA += ((double) RAm)/60.0;
-		readField(buffer, cell, 44, 4);
+		readFieldSanitized(buffer, cell, 44, 4);
 		int RAs = atoi(cell);
         RA += (((double) RAs)/100.0)/3600.0;
 		RA *= 15.0; /* conversion horas a grados */
 
 		/* lee declinacion B1860.0 */
-		readField(buffer, cell, 61, 2);
+		readFieldSanitized(buffer, cell, 61, 2);
 		int Decld = atoi(cell);
         double Decl = (double) Decld;
-		readField(buffer, cell, 63, 2);
+		readFieldSanitized(buffer, cell, 63, 2);
 		int Declm = atoi(cell);
         Decl += ((double) Declm)/60.0;
-		readField(buffer, cell, 65, 3);
+		readFieldSanitized(buffer, cell, 65, 3);
 		int Decls = atoi(cell);
         Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
@@ -440,16 +441,19 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				minDistance = dist;
 			}
 		}
-		if (mode && minDistance > MAX_DIST_CATALOGS) {
-			//printf("Warning: nearest star is GC %d at %.1f arcsec. from USNO %d\n",
-			//	GCstar[gcIndex].gcRef,
-			//	minDistance,
-			//	yarnallRef);
-			/* ya que no existe GC asociada, aprovechamos a revisar CD con esta estrella */
+		if (minDistance < GCstar[gcIndex].distYarnall) {
+			copy(GCstar[gcIndex].yarnallCat, cell);
+			GCstar[gcIndex].yarnallRef = yarnallRef;
+			GCstar[gcIndex].distYarnall = minDistance;
+			GCstar[gcIndex].vmagYarnall = vmag;
+			countUSNO++;
+		}
+		if (mode && CD_SEARCH) {
+			/* aprovechamos a revisar CD con esta estrella */
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
 			findByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance > MAX_DIST_CATALOGS) {
+			if (minDistance > MAX_DISTANCE) {
 				char yarnallCat[28];
 				copy(yarnallCat, cell);
 				printf("  USNO %d <%s> is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
@@ -460,15 +464,10 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 					CDstar[cdIndex].numRef,
 					minDistance
 				);
+				printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
+					RAh, RAm, RAs / 100, RAs % 100,
+					Decld, Declm, Decls / 10, Decls % 10);
 			}
-			continue;
-		}
-		if (minDistance < GCstar[gcIndex].distYarnall) {
-			copy(GCstar[gcIndex].yarnallCat, cell);
-			GCstar[gcIndex].yarnallRef = yarnallRef;
-			GCstar[gcIndex].distYarnall = minDistance;
-			GCstar[gcIndex].vmagYarnall = vmag;
-			countUSNO++;
 		}
 	}
     fclose(stream);
@@ -488,25 +487,25 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		if (cell[0] != '1') continue;
 
 		/* lee ascension recta B1850.0 */
-		readField(buffer, cell, 13, 2);
+		readFieldSanitized(buffer, cell, 13, 2);
 		int RAh = atoi(cell);
         double RA = (double) RAh;
-		readField(buffer, cell, 15, 2);
+		readFieldSanitized(buffer, cell, 15, 2);
 		int RAm = atoi(cell);
         RA += ((double) RAm)/60.0;
-		readField(buffer, cell, 17, 4);
+		readFieldSanitized(buffer, cell, 17, 4);
 		int RAs = atoi(cell);
         RA += (((double) RAs)/100.0)/3600.0;
 		RA *= 15.0; /* conversion horas a grados */
 
 		/* lee declinacion B1850.0 */
-		readField(buffer, cell, 22, 2);
+		readFieldSanitized(buffer, cell, 22, 2);
 		int Decld = atoi(cell);
         double Decl = (double) Decld;
-		readField(buffer, cell, 24, 2);
+		readFieldSanitized(buffer, cell, 24, 2);
 		int Declm = atoi(cell);
         Decl += ((double) Declm)/60.0;
-		readField(buffer, cell, 26, 3);
+		readFieldSanitized(buffer, cell, 26, 3);
 		int Decls = atoi(cell);
         Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
@@ -544,17 +543,19 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				minDistance = dist;
 			}
 		}
-		if (mode && minDistance > MAX_DIST_CATALOGS) {
-			//printf("Warning: nearest star is GC %d at %.1f arcsec. from WEI %d or OA %d\n",
-			//	GCstar[gcIndex].gcRef,
-			//	minDistance,
-			//	weissRef,
-			//	oeltzenRef);
-			/* ya que no existe GC asociada, aprovechamos a revisar CD con esta estrella */
+		if (minDistance < GCstar[gcIndex].distWeiss) {
+			GCstar[gcIndex].weissRef = weissRef;
+			GCstar[gcIndex].oeltzenRef = oeltzenRef;
+			GCstar[gcIndex].distWeiss = minDistance;
+			GCstar[gcIndex].vmagWeiss = vmag;
+			countWeiss++;
+		}
+		if (mode && CD_SEARCH) {
+			/* aprovechamos a revisar CD con esta estrella */
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
 			findByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance > MAX_DIST_CATALOGS) {
+			if (minDistance > MAX_DISTANCE) {
 				printf("  WEI %d or OA %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
 					weissRef,
 					oeltzenRef,
@@ -563,15 +564,10 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 					CDstar[cdIndex].numRef,
 					minDistance
 				);
+				printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
+					RAh, RAm, RAs / 100, RAs % 100,
+					Decld, Declm, Decls / 10, Decls % 10);
 			}
-			continue;
-		}
-		if (minDistance < GCstar[gcIndex].distWeiss) {
-			GCstar[gcIndex].weissRef = weissRef;
-			GCstar[gcIndex].oeltzenRef = oeltzenRef;
-			GCstar[gcIndex].distWeiss = minDistance;
-			GCstar[gcIndex].vmagWeiss = vmag;
-			countWeiss++;
 		}
 	}
     fclose(stream);
@@ -596,25 +592,25 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		fgets(buffer2, 1023, stream2);
 
 		/* lee ascension recta B1880.0 */
-		readField(buffer, cell, 33, 2);
+		readFieldSanitized(buffer, cell, 33, 2);
 		int RAh = atoi(cell);
         double RA = (double) RAh;
-		readField(buffer, cell, 35, 2);
+		readFieldSanitized(buffer, cell, 35, 2);
 		int RAm = atoi(cell);
         RA += ((double) RAm)/60.0;
-		readField(buffer, cell, 37, 4);
+		readFieldSanitized(buffer, cell, 37, 4);
 		int RAs = atoi(cell);
         RA += (((double) RAs)/100.0)/3600.0;
 		RA *= 15.0; /* conversion horas a grados */
 
 		/* lee declinacion B1880.0 (en realidad NPD) */
-		readField(buffer2, cell, 21, 3);
+		readFieldSanitized(buffer2, cell, 21, 3);
 		int Decld = atoi(cell);
         double Decl = (double) Decld;
-		readField(buffer2, cell, 24, 2);
+		readFieldSanitized(buffer2, cell, 24, 2);
 		int Declm = atoi(cell);
         Decl += ((double) Declm)/60.0;
-		readField(buffer2, cell, 26, 4);
+		readFieldSanitized(buffer2, cell, 26, 4);
 		int Decls = atoi(cell);
         Decl += (((double) Decls)/100.0)/3600.0;
 		Decl = 90.0 - Decl; /* convertimos NPD a declinación */
@@ -652,16 +648,19 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				minDistance = dist;
 			}
 		}
-		if (mode && minDistance > MAX_DIST_CATALOGS) {
-			//printf("Warning: nearest star is GC %d at %.1f arcsec. from ST %d\n",
-			//	GCstar[gcIndex].gcRef,
-			//	minDistance,
-			//	stoneRef);
-			/* ya que no existe GC asociada, aprovechamos a revisar CD con esta estrella */
+		if (minDistance < GCstar[gcIndex].distStone) {
+			GCstar[gcIndex].stoneRef = stoneRef;
+			GCstar[gcIndex].lacailleRef = lacailleRef;
+			GCstar[gcIndex].distStone = minDistance;
+			GCstar[gcIndex].vmagStone = vmag;
+			countStone++;
+		}
+		if (mode && CD_SEARCH) {
+			/* aprovechamos a revisar CD con esta estrella */
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
 			findByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance > MAX_DIST_CATALOGS) {
+			if (minDistance > MAX_DISTANCE) {
 				printf("  ST %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
 					stoneRef,
 					vmag,
@@ -670,53 +669,46 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 					minDistance
 				);
 			}
-			continue;
-		}
-		if (minDistance < GCstar[gcIndex].distStone) {
-			GCstar[gcIndex].stoneRef = stoneRef;
-			GCstar[gcIndex].lacailleRef = lacailleRef;
-			GCstar[gcIndex].distStone = minDistance;
-			GCstar[gcIndex].vmagStone = vmag;
-			countStone++;
 		}
 	}
     fclose(stream2);
     fclose(stream);
 	printf("  cross-referenced with %d stars\n", countStone);
 
-	/* añadimos referencia al catálogo de Gillis */
-	printf("Reading Gillis catalog...\n");
-    stream = fopen("cat/gillis.txt", "rt");
+	/* añadimos referencia al catálogo de Gilliss */
+	printf("Reading Gilliss catalog...\n");
+    stream = fopen("cat/gilliss.txt", "rt");
     if (stream == NULL) {
-        perror("Cannot read gillis.txt");
+        perror("Cannot read gilliss.txt");
 		exit(1);
     }
 	int countGi = 0;
+	int countGiCD = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
 		/* lee signo declinación y descarta hemisferio norte */
 		readField(buffer, cell, 48, 1);
 		if (cell[0] != '-') continue;
 
 		/* lee ascension recta B1850.0 */
-		readField(buffer, cell, 33, 2);
+		readFieldSanitized(buffer, cell, 33, 2);
 		int RAh = atoi(cell);
         double RA = (double) RAh;
-		readField(buffer, cell, 35, 2);
+		readFieldSanitized(buffer, cell, 35, 2);
 		int RAm = atoi(cell);
         RA += ((double) RAm)/60.0;
-		readField(buffer, cell, 37, 4);
+		readFieldSanitized(buffer, cell, 37, 4);
 		int RAs = atoi(cell);
         RA += (((double) RAs)/100.0)/3600.0;
 		RA *= 15.0; /* conversion horas a grados */
 
 		/* lee declinacion B1850.0 */
-		readField(buffer, cell, 49, 2);
+		readFieldSanitized(buffer, cell, 49, 2);
 		int Decld = atoi(cell);
         double Decl = (double) Decld;
-		readField(buffer, cell, 51, 2);
+		readFieldSanitized(buffer, cell, 51, 2);
 		int Declm = atoi(cell);
         Decl += ((double) Declm)/60.0;
-		readField(buffer, cell, 53, 3);
+		readFieldSanitized(buffer, cell, 53, 3);
 		int Decls = atoi(cell);
         Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
@@ -750,14 +742,18 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				minDistance = dist;
 			}
 		}
-		if (mode && minDistance > MAX_DIST_CATALOGS) {
-			//printf("Warning: nearest star is GC %d at %.1f arcsec. from GI %d\n",
-			//	GCstar[gcIndex].gcRef,
-			//	minDistance,
-			//	giRef);
-			/* ya que no existe GC asociada, aprovechamos a revisar CD con esta estrella
-			 * pero como Gillis es bastante denso cerca del Polo Sur, solo enumeramos
-			 * aquellas cuya referencia es la de Gould Zone-Catalog. */
+		if (minDistance < GCstar[gcIndex].distGi) {
+			copy(GCstar[gcIndex].giCat, cell);
+			GCstar[gcIndex].giRef = giRef;
+			GCstar[gcIndex].distGi = minDistance;
+			GCstar[gcIndex].vmagGi = vmag;
+			countGi++;
+		}
+		if (mode && CD_SEARCH) {
+			/* aprovechamos a revisar CD con esta estrella
+			 * (tambien mencionamos el numero de GZC en caso de haberlo)*/
+			char gouldZC[30];
+			gouldZC[0] = 0;
 			if (cell[9] == 'Z' && cell[10] == 'C') {
 				char hour[3], num[6];
 				hour[0] = cell[11]; hour[1] = cell[12]; hour[2] = 0;
@@ -765,29 +761,26 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				num[0] = cell[13]; num[1] = cell[14]; num[2] = cell[15];
 				num[3] = cell[16]; num[4] = cell[17]; num[5] = 0;
 				int gouldNum = atoi(num);
-				minDistance = HUGE_NUMBER;
-				int cdIndex;
-				findByCoordinates(x, y, z, &cdIndex, &minDistance);
-				if (minDistance > MAX_DIST_CATALOGS) {
-					printf("  GI %d or GZC %dh %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
-						giRef,
-						gouldHour,
-						gouldNum,
-						vmag,
-						CDstar[cdIndex].declRef,
-						CDstar[cdIndex].numRef,
-						minDistance
-					);
-				}
+				snprintf(gouldZC, 30, " or GZC %dh %d", gouldHour, gouldNum);
 			}
-			continue;
-		}
-		if (minDistance < GCstar[gcIndex].distGi) {
-			copy(GCstar[gcIndex].giCat, cell);
-			GCstar[gcIndex].giRef = giRef;
-			GCstar[gcIndex].distGi = minDistance;
-			GCstar[gcIndex].vmagGi = vmag;
-			countGi++;
+			minDistance = HUGE_NUMBER;
+			int cdIndex;
+			findByCoordinates(x, y, z, &cdIndex, &minDistance);
+			if (minDistance > MAX_DISTANCE) {
+				countGiCD++;
+				printf("  %d> GI %d%s is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
+					countGiCD,
+					giRef,
+					gouldZC,
+					vmag,
+					CDstar[cdIndex].declRef,
+					CDstar[cdIndex].numRef,
+					minDistance
+				);
+				printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
+					RAh, RAm, RAs / 100, RAs % 100,
+					Decld, Declm, Decls / 10, Decls % 10);
+			}
 		}
 	}
     fclose(stream);

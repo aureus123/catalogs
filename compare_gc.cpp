@@ -12,8 +12,6 @@
 #include "read_old.h"
 #include "misc.h"
 
-#define MAX_DISTANCE 360.0   // 6 minutos de arco
-
 /*
  * main - comienzo de la aplicacion
  */

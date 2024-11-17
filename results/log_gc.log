@@ -622,134 +622,952 @@ Progress: stars = 28452, page = 618
 Progress: stars = 28491, page = 619
 Progress: stars = 28523, page = 620
 Reading USNO catalog...
-  USNO 2528 <BAC 01915> is ALONE with mag=0.0; nearest CD -32º2656 separated in 322.4 arcsec.
-  USNO 2636 <> is ALONE with mag=9.2; nearest CD -27º2792 separated in 240.2 arcsec.
-  USNO 2729 <> is ALONE with mag=0.0; nearest CD -31º3379 separated in 277.4 arcsec.
-  USNO 2858 <> is ALONE with mag=0.0; nearest CD -24º4547 separated in 197.0 arcsec.
-  USNO 2931 <> is ALONE with mag=0.0; nearest CD -26º3877 separated in 208.9 arcsec.
-  USNO 3026 <> is ALONE with mag=8.3; nearest CD -30º4248 separated in 193.8 arcsec.
-  USNO 3077 <LAC 02790> is ALONE with mag=7.0; nearest CD -35º3562 separated in 269.6 arcsec.
-  USNO 3122 <> is ALONE with mag=9.2; nearest CD -29º4453 separated in 233.5 arcsec.
-  USNO 3134 <OARS 06951> is ALONE with mag=9.0; nearest CD -28º4454 separated in 185.2 arcsec.
-  USNO 3319 <OARS 07740> is ALONE with mag=8.5; nearest CD -27º4799 separated in 224.9 arcsec.
-  USNO 3434 <MZ 096 00014> is ALONE with mag=9.2; nearest CD -30º6057 separated in 227.4 arcsec.
-  USNO 3571 <MZ 096 00024> is ALONE with mag=8.0; nearest CD -30º6501 separated in 365.2 arcsec.
-  USNO 3854 <MER 090 00035> is ALONE with mag=0.0; nearest CD -31º6683 separated in 194.6 arcsec.
-  USNO 3880 <MZ 232 00047> is ALONE with mag=9.0; nearest CD -34º5449 separated in 388.9 arcsec.
-  USNO 4067 <LAC 03874> is ALONE with mag=7.0; nearest CD -32º6446 separated in 229.4 arcsec.
-  USNO 4094 <MZ 232 00077> is ALONE with mag=9.0; nearest CD -35º5803 separated in 275.5 arcsec.
-  USNO 4174 <> is ALONE with mag=0.0; nearest CD -40º5481 separated in 222.7 arcsec.
-  USNO 4194 <LAC 04031> is ALONE with mag=0.0; nearest CD -34º6160 separated in 231.2 arcsec.
-  USNO 6223 <GZ 1402879> is ALONE with mag=0.0; nearest CD -37º9765 separated in 194.1 arcsec.
-  USNO 6482 <LAC 06406> is ALONE with mag=8.0; nearest CD -38º10405 separated in 380.9 arcsec.
-  USNO 6522 <> is ALONE with mag=8.8; nearest CD -23º12390 separated in 251.0 arcsec.
-  USNO 6527 <TRZ 021 00009> is ALONE with mag=0.0; nearest CD -38º10518 separated in 285.7 arcsec.
-  USNO 7063 <> is ALONE with mag=9.5; nearest CD -24º12858 separated in 257.8 arcsec.
-  USNO 7069 <MZ 019 00094> is ALONE with mag=8.5; nearest CD -31º13267 separated in 229.9 arcsec.
-  USNO 7124 <> is ALONE with mag=0.0; nearest CD -37º11267 separated in 332.6 arcsec.
-  USNO 7491 <OARS 17094> is ALONE with mag=7.5; nearest CD -23º13512 separated in 210.3 arcsec.
-  USNO 7672 <> is ALONE with mag=0.0; nearest CD -28º13921 separated in 303.8 arcsec.
-  USNO 7676 <> is ALONE with mag=0.0; nearest CD -27º12176 separated in 273.1 arcsec.
-  USNO 7688 <MER 027 00080> is ALONE with mag=8.2; nearest CD -28º13961 separated in 253.6 arcsec.
-  USNO 7749 <MZ 171 00010> is ALONE with mag=8.5; nearest CD -24º13801 separated in 237.2 arcsec.
-  USNO 8501 <> is ALONE with mag=0.0; nearest CD -25º14074 separated in 193.1 arcsec.
-  USNO 8696 <> is ALONE with mag=0.0; nearest CD -28º16169 separated in 221.9 arcsec.
-  cross-referenced with 3567 stars
+  cross-referenced with 3609 stars
 Reading Weiss catalog...
-  WEI 48 or OA 54 is ALONE with mag=8.9; nearest CD -30º42 separated in 284.5 arcsec.
-  WEI 77 or OA 89 is ALONE with mag=9.0; nearest CD -23º62 separated in 228.5 arcsec.
-  WEI 181 or OA 214 is ALONE with mag=8.0; nearest CD -29º122 separated in 302.4 arcsec.
-  WEI 184 or OA 218 is ALONE with mag=7.0; nearest CD -25º155 separated in 265.9 arcsec.
-  WEI 359 or OA 438 is ALONE with mag=8.0; nearest CD -25º308 separated in 305.2 arcsec.
-  WEI 537 or OA 655 is ALONE with mag=9.0; nearest CD -30º358 separated in 437.8 arcsec.
-  WEI 1150 or OA 1402 is ALONE with mag=9.0; nearest CD -31º879 separated in 230.9 arcsec.
-  WEI 1340 or OA 1630 is ALONE with mag=7.0; nearest CD -27º882 separated in 684.5 arcsec.
-  WEI 1488 or OA 1818 is ALONE with mag=9.0; nearest CD -27º974 separated in 482.6 arcsec.
-  WEI 1954 or OA 2367 is ALONE with mag=7.0; nearest CD -31º1446 separated in 318.5 arcsec.
-  WEI 2622 or OA 3154 is ALONE with mag=7.0; nearest CD -29º1760 separated in 281.5 arcsec.
-  WEI 2629 or OA 3161 is ALONE with mag=8.0; nearest CD -30º1865 separated in 253.5 arcsec.
-  WEI 2692 or OA 3236 is ALONE with mag=7.0; nearest CD -23º2040 separated in 277.3 arcsec.
-  WEI 2739 or OA 3294 is ALONE with mag=9.0; nearest CD -24º2494 separated in 251.3 arcsec.
-  WEI 3194 or OA 3819 is ALONE with mag=7.0; nearest CD -22º2104 separated in 356.9 arcsec.
   WEI 3220 or OA 3851 is ALONE with mag=9.0; nearest CD -26º2137 separated in 457.7 arcsec.
+    RA 05h12m17s54 DE 26°46'37''5
   WEI 3291 or OA 3927 is ALONE with mag=0.0; nearest CD -24º3063 separated in 377.2 arcsec.
-  WEI 3704 or OA 4402 is ALONE with mag=9.0; nearest CD -26º2530 separated in 231.1 arcsec.
-  WEI 4782 or OA 5834 is ALONE with mag=7.0; nearest CD -25º3734 separated in 216.1 arcsec.
-  WEI 6273 or OA 7740 is ALONE with mag=8.9; nearest CD -27º4799 separated in 221.6 arcsec.
-  WEI 7038 or OA 8760 is ALONE with mag=7.8; nearest CD -23º7514 separated in 214.5 arcsec.
-  WEI 8151 or OA 10151 is ALONE with mag=8.9; nearest CD -23º8777 separated in 204.6 arcsec.
-  WEI 8472 or OA 10513 is ALONE with mag=8.9; nearest CD -28º8050 separated in 339.5 arcsec.
-  WEI 8518 or OA 10562 is ALONE with mag=7.8; nearest CD -29º8282 separated in 290.7 arcsec.
-  WEI 9016 or OA 11142 is ALONE with mag=9.0; nearest CD -25º8452 separated in 205.8 arcsec.
-  WEI 9081 or OA 11232 is ALONE with mag=9.0; nearest CD -30º9025 separated in 209.1 arcsec.
-  WEI 9151 or OA 11310 is ALONE with mag=8.9; nearest CD -27º8011 separated in 287.1 arcsec.
-  WEI 10317 or OA 12610 is ALONE with mag=9.0; nearest CD -29º10087 separated in 197.3 arcsec.
-  WEI 10871 or OA 13258 is ALONE with mag=8.0; nearest CD -27º9501 separated in 406.4 arcsec.
-  WEI 10983 or OA 13390 is ALONE with mag=9.0; nearest CD -22º10293 separated in 765.7 arcsec.
-  WEI 11071 or OA 13496 is ALONE with mag=9.0; nearest CD -26º10189 separated in 200.9 arcsec.
-  WEI 12127 or OA 14841 is ALONE with mag=9.0; nearest CD -24º12266 separated in 380.9 arcsec.
-  WEI 12173 or OA 14906 is ALONE with mag=8.9; nearest CD -30º12562 separated in 345.5 arcsec.
-  WEI 12333 or OA 15122 is ALONE with mag=9.0; nearest CD -30º12760 separated in 225.5 arcsec.
-  WEI 12340 or OA 15130 is ALONE with mag=9.0; nearest CD -30º12760 separated in 271.3 arcsec.
-  WEI 12550 or OA 15467 is ALONE with mag=0.0; nearest CD -22º11473 separated in 324.4 arcsec.
-  WEI 12619 or OA 15581 is ALONE with mag=9.0; nearest CD -25º11490 separated in 525.3 arcsec.
-  WEI 13059 or OA 16310 is ALONE with mag=8.9; nearest CD -26º11868 separated in 268.7 arcsec.
-  WEI 16380 or OA 20827 is ALONE with mag=7.8; nearest CD -25º15016 separated in 321.3 arcsec.
-  WEI 16410 or OA 20869 is ALONE with mag=9.0; nearest CD -26º15283 separated in 341.4 arcsec.
-  WEI 16534 or OA 21020 is ALONE with mag=9.0; nearest CD -23º16630 separated in 298.6 arcsec.
-  WEI 16863 or OA 21448 is ALONE with mag=9.0; nearest CD -23º16955 separated in 261.1 arcsec.
-  WEI 17377 or OA 22121 is ALONE with mag=8.9; nearest CD -29º18319 separated in 276.3 arcsec.
-  WEI 17453 or OA 22211 is ALONE with mag=9.0; nearest CD -26º16188 separated in 218.3 arcsec.
-  WEI 17673 or OA 22501 is ALONE with mag=9.0; nearest CD -26º16384 separated in 370.5 arcsec.
-  WEI 17867 or OA 22746 is ALONE with mag=8.0; nearest CD -29º18647 separated in 582.1 arcsec.
-  cross-referenced with 4530 stars
+    RA 05h17m59s26 DE 24°40'00''0
+  WEI 16603 or OA 21103 is ALONE with mag=8.9; nearest CD -25º15236 separated in 484.7 arcsec.
+    RA 20h58m06s09 DE 25°14'54''8
+  cross-referenced with 4699 stars
 Reading Stone catalog...
+  ST 373 is ALONE with mag=5.0; nearest CD -73º42 separated in 1487.1 arcsec.
+  ST 420 is ALONE with mag=5.0; nearest CD -71º48 separated in 726.5 arcsec.
   ST 766 is ALONE with mag=7.0; nearest CD -63º42 separated in 877.7 arcsec.
-  ST 2775 is ALONE with mag=7.8; nearest CD -56º1388 separated in 289.2 arcsec.
-  ST 4042 is ALONE with mag=6.7; nearest CD -48º3361 separated in 263.7 arcsec.
+  ST 2303 is ALONE with mag=0.0; nearest CD -40º1793 separated in 456.3 arcsec.
+  ST 2585 is ALONE with mag=8.0; nearest CD -68º334 separated in 773.7 arcsec.
   ST 4394 is ALONE with mag=9.0; nearest CD -68º553 separated in 459.6 arcsec.
-  ST 4985 is ALONE with mag=6.7; nearest CD -67º719 separated in 193.9 arcsec.
   ST 5406 is ALONE with mag=8.7; nearest CD -64º425 separated in 949.2 arcsec.
   ST 5471 is ALONE with mag=7.8; nearest CD -51º4428 separated in 436.9 arcsec.
-  ST 5768 is ALONE with mag=8.0; nearest CD -53º3558 separated in 207.5 arcsec.
-  ST 6695 is ALONE with mag=7.8; nearest CD -62º597 separated in 228.6 arcsec.
+  ST 7360 is ALONE with mag=0.0; nearest CD -46º8650 separated in 461.7 arcsec.
   ST 7425 is ALONE with mag=0.0; nearest CD -70º1059 separated in 506.3 arcsec.
   ST 8062 is ALONE with mag=7.0; nearest CD -82º262 separated in 580.9 arcsec.
   ST 8457 is ALONE with mag=9.0; nearest CD -83º200 separated in 893.8 arcsec.
-  ST 8527 is ALONE with mag=6.7; nearest CD -54º6356 separated in 305.2 arcsec.
-  ST 8661 is ALONE with mag=6.0; nearest CD -35º10611 separated in 284.5 arcsec.
-  ST 11123 is ALONE with mag=7.0; nearest CD -45º14108 separated in 250.9 arcsec.
-  ST 11354 is ALONE with mag=7.8; nearest CD -75º1210 separated in 233.1 arcsec.
-  ST 11376 is ALONE with mag=7.0; nearest CD -48º13915 separated in 293.5 arcsec.
-  cross-referenced with 11218 stars
-Reading Gillis catalog...
-  GI 29 or GZC 0h 110 is ALONE with mag=10.0; nearest CD -67º5 separated in 471.4 arcsec.
-  GI 332 or GZC 0h 913 is ALONE with mag=9.5; nearest CD -68º26 separated in 320.9 arcsec.
-  GI 2501 or GZC 4h 724 is ALONE with mag=9.5; nearest CD -70º237 separated in 292.1 arcsec.
-  GI 4747 or GZC 7h 1286 is ALONE with mag=9.5; nearest CD -64º265 separated in 245.0 arcsec.
-  GI 5284 or GZC 7h 4550 is ALONE with mag=9.5; nearest CD -62º325 separated in 195.5 arcsec.
-  GI 5327 or GZC 8h 211 is ALONE with mag=9.2; nearest CD -70º487 separated in 247.9 arcsec.
-  GI 5476 or GZC 8h 1466 is ALONE with mag=9.5; nearest CD -62º339 separated in 880.1 arcsec.
-  GI 5482 or GZC 8h 1495 is ALONE with mag=9.5; nearest CD -62º340 separated in 1087.5 arcsec.
-  GI 5638 or GZC 8h 2631 is ALONE with mag=10.0; nearest CD -62º349 separated in 344.5 arcsec.
-  GI 6512 or GZC 9h 3498 is ALONE with mag=10.0; nearest CD -62º412 separated in 361.2 arcsec.
-  GI 6624 or GZC 9h 4207 is ALONE with mag=10.0; nearest CD -62º427 separated in 395.5 arcsec.
-  GI 6690 or GZC 10h 70 is ALONE with mag=9.5; nearest CD -62º433 separated in 193.2 arcsec.
-  GI 6825 or GZC 10h 751 is ALONE with mag=9.5; nearest CD -62º441 separated in 723.1 arcsec.
-  GI 6928 or GZC 10h 1237 is ALONE with mag=9.0; nearest CD -62º447 separated in 194.6 arcsec.
-  GI 6955 or GZC 10h 1378 is ALONE with mag=9.2; nearest CD -62º449 separated in 725.6 arcsec.
-  GI 6959 or GZC 10h 1417 is ALONE with mag=9.5; nearest CD -62º451 separated in 385.5 arcsec.
-  GI 6962 or GZC 10h 1428 is ALONE with mag=9.5; nearest CD -62º451 separated in 269.2 arcsec.
-  GI 7165 or GZC 10h 2386 is ALONE with mag=9.5; nearest CD -62º468 separated in 343.2 arcsec.
-  GI 7214 or GZC 10h 2612 is ALONE with mag=10.0; nearest CD -62º473 separated in 501.8 arcsec.
-  GI 7382 or GZC 10h 3348 is ALONE with mag=9.5; nearest CD -63º609 separated in 1075.7 arcsec.
-  GI 7437 or GZC 10h 3621 is ALONE with mag=9.5; nearest CD -62º486 separated in 1131.1 arcsec.
-  GI 7556 or GZC 10h 4322 is ALONE with mag=9.5; nearest CD -62º491 separated in 712.1 arcsec.
-  GI 10615 or GZC 14h 3488 is ALONE with mag=10.0; nearest CD -76º709 separated in 231.2 arcsec.
-  GI 10629 or GZC 14h 3519 is ALONE with mag=9.0; nearest CD -76º713 separated in 683.9 arcsec.
-  GI 11887 or GZC 16h 1769 is ALONE with mag=8.2; nearest CD -72º1256 separated in 195.1 arcsec.
-  GI 11893 or GZC 16h 1783 is ALONE with mag=9.0; nearest CD -71º1291 separated in 566.4 arcsec.
-  cross-referenced with 3220 stars
+  ST 11503 is ALONE with mag=7.6; nearest CD -62º1370 separated in 1251.1 arcsec.
+  cross-referenced with 11244 stars
+Reading Gilliss catalog...
+  1> GI 29 or GZC 0h 110 is ALONE with mag=10.0; nearest CD -67º5 separated in 471.4 arcsec.
+    RA 00h02m45s94 DE 68°09'19''8
+  2> GI 59 is ALONE with mag=10.0; nearest CD -66º8 separated in 405.1 arcsec.
+    RA 00h06m24s26 DE 66°37'42''7
+  3> GI 98 is ALONE with mag=10.0; nearest CD -84º2 separated in 825.2 arcsec.
+    RA 00h10m27s20 DE 85°03'11''7
+  4> GI 107 is ALONE with mag=10.0; nearest CD -86º1 separated in 1187.7 arcsec.
+    RA 00h10m54s39 DE 86°34'37''2
+  5> GI 198 is ALONE with mag=9.9; nearest CD -85º4 separated in 1010.3 arcsec.
+    RA 00h18m45s13 DE 85°37'41''3
+  6> GI 211 is ALONE with mag=10.0; nearest CD -70º16 separated in 367.5 arcsec.
+    RA 00h20m07s19 DE 70°14'51''0
+  7> GI 254 is ALONE with mag=9.5; nearest CD -75º16 separated in 751.6 arcsec.
+    RA 00h24m57s56 DE 75°26'30''7
+  8> GI 267 is ALONE with mag=9.9; nearest CD -85º4 separated in 460.3 arcsec.
+    RA 00h26m27s38 DE 85°28'21''6
+  9> GI 274 is ALONE with mag=9.8; nearest CD -89º1 separated in 900.6 arcsec.
+    RA 00h27m24s74 DE 88°57'11''6
+  10> GI 286 is ALONE with mag=10.0; nearest CD -84º6 separated in 825.5 arcsec.
+    RA 00h28m40s34 DE 84°09'34''1
+  11> GI 304 is ALONE with mag=10.0; nearest CD -86º4 separated in 537.0 arcsec.
+    RA 00h30m13s23 DE 86°11'44''2
+  12> GI 309 is ALONE with mag=10.0; nearest CD -83º5 separated in 884.2 arcsec.
+    RA 00h30m55s29 DE 83°13'16''3
+  13> GI 312 is ALONE with mag=10.0; nearest CD -66º30 separated in 454.5 arcsec.
+    RA 00h31m28s36 DE 67°04'13''6
+  14> GI 333 is ALONE with mag=10.0; nearest CD -82º11 separated in 502.1 arcsec.
+    RA 00h33m10s76 DE 82°44'57''6
+  15> GI 334 is ALONE with mag=10.0; nearest CD -86º2 separated in 431.3 arcsec.
+    RA 00h33m16s90 DE 87°10'20''8
+  16> GI 338 is ALONE with mag=10.5; nearest CD -84º10 separated in 546.8 arcsec.
+    RA 00h33m34s92 DE 84°38'32''5
+  17> GI 383 is ALONE with mag=10.0; nearest CD -70º33 separated in 544.6 arcsec.
+    RA 00h38m04s62 DE 70°44'39''7
+  18> GI 400 is ALONE with mag=10.0; nearest CD -89º1 separated in 386.4 arcsec.
+    RA 00h40m04s00 DE 89°08'50''3
+  19> GI 438 is ALONE with mag=9.3; nearest CD -66º42 separated in 364.6 arcsec.
+    RA 00h44m18s37 DE 67°01'19''6
+  20> GI 481 is ALONE with mag=10.0; nearest CD -83º9 separated in 754.6 arcsec.
+    RA 00h48m54s21 DE 83°55'56''4
+  21> GI 487 is ALONE with mag=10.0; nearest CD -69º36 separated in 497.4 arcsec.
+    RA 00h49m36s28 DE 69°47'35''7
+  22> GI 494 is ALONE with mag=10.0; nearest CD -83º9 separated in 428.7 arcsec.
+    RA 00h50m07s86 DE 83°50'08''8
+  23> GI 495 is ALONE with mag=10.0; nearest CD -85º6 separated in 657.0 arcsec.
+    RA 00h50m19s43 DE 86°03'57''1
+  24> GI 507 is ALONE with mag=10.0; nearest CD -66º49 separated in 599.8 arcsec.
+    RA 00h51m30s09 DE 66°56'38''9
+  25> GI 516 is ALONE with mag=10.0; nearest CD -85º8 separated in 440.7 arcsec.
+    RA 00h52m21s01 DE 85°37'47''7
+  26> GI 534 is ALONE with mag=9.8; nearest CD -84º16 separated in 375.8 arcsec.
+    RA 00h55m06s78 DE 84°56'55''3
+  27> GI 550 is ALONE with mag=10.0; nearest CD -69º39 separated in 607.8 arcsec.
+    RA 00h56m16s92 DE 69°57'31''7
+  28> GI 562 is ALONE with mag=0.0; nearest CD -71º48 separated in 722.1 arcsec.
+    RA 00h58m07s80 DE 71°39'19''4
+  29> GI 675 is ALONE with mag=10.0; nearest CD -86º8 separated in 442.9 arcsec.
+    RA 01h11m25s41 DE 86°37'08''3
+  30> GI 696 is ALONE with mag=10.0; nearest CD -85º11 separated in 1372.6 arcsec.
+    RA 01h14m04s58 DE 85°12'27''2
+  31> GI 709 is ALONE with mag=10.0; nearest CD -85º11 separated in 1177.2 arcsec.
+    RA 01h15m13s99 DE 85°40'24''6
+  32> GI 727 is ALONE with mag=9.5; nearest CD -86º11 separated in 870.3 arcsec.
+    RA 01h17m05s51 DE 86°57'16''4
+  33> GI 797 is ALONE with mag=10.0; nearest CD -85º11 separated in 591.8 arcsec.
+    RA 01h24m52s14 DE 85°18'35''5
+  34> GI 806 is ALONE with mag=11.0; nearest CD -82º24 separated in 531.5 arcsec.
+    RA 01h26m16s82 DE 82°49'03''6
+  35> GI 874 is ALONE with mag=10.0; nearest CD -70º72 separated in 608.5 arcsec.
+    RA 01h33m06s95 DE 70°08'40''4
+  36> GI 878 is ALONE with mag=9.5; nearest CD -67º80 separated in 954.2 arcsec.
+    RA 01h33m37s99 DE 67°03'15''5
+  37> GI 879 is ALONE with mag=9.5; nearest CD -66º78 separated in 850.0 arcsec.
+    RA 01h33m38s93 DE 66°46'06''5
+  38> GI 880 is ALONE with mag=10.2; nearest CD -85º11 separated in 1114.0 arcsec.
+    RA 01h33m44s40 DE 85°10'25''2
+  39> GI 903 is ALONE with mag=10.2; nearest CD -85º11 separated in 1161.1 arcsec.
+    RA 01h36m32s71 DE 85°11'17''2
+  40> GI 906 is ALONE with mag=10.0; nearest CD -88º3 separated in 962.2 arcsec.
+    RA 01h36m45s27 DE 88°54'01''6
+  41> GI 916 is ALONE with mag=10.0; nearest CD -88º3 separated in 617.1 arcsec.
+    RA 01h37m45s52 DE 88°28'39''2
+  42> GI 921 is ALONE with mag=10.0; nearest CD -85º12 separated in 781.6 arcsec.
+    RA 01h38m29s25 DE 85°22'49''8
+  43> GI 955 is ALONE with mag=10.2; nearest CD -84º20 separated in 780.5 arcsec.
+    RA 01h42m16s56 DE 85°02'43''9
+  44> GI 1053 is ALONE with mag=10.0; nearest CD -82º32 separated in 387.1 arcsec.
+    RA 01h52m04s45 DE 82°58'14''6
+  45> GI 1087 is ALONE with mag=11.0; nearest CD -71º85 separated in 438.6 arcsec.
+    RA 01h55m32s98 DE 71°03'30''6
+  46> GI 1109 is ALONE with mag=10.0; nearest CD -66º100 separated in 642.0 arcsec.
+    RA 01h57m26s69 DE 66°53'34''8
+  47> GI 1115 is ALONE with mag=10.0; nearest CD -70º96 separated in 411.4 arcsec.
+    RA 01h57m47s61 DE 70°09'13''4
+  48> GI 1134 is ALONE with mag=10.0; nearest CD -69º87 separated in 616.3 arcsec.
+    RA 01h59m31s67 DE 69°19'03''5
+  49> GI 1144 is ALONE with mag=11.0; nearest CD -78º63 separated in 419.1 arcsec.
+    RA 02h00m32s99 DE 78°54'41''1
+  50> GI 1164 is ALONE with mag=10.0; nearest CD -87º9 separated in 1100.2 arcsec.
+    RA 02h02m51s34 DE 87°25'47''8
+  51> GI 1174 is ALONE with mag=10.0; nearest CD -86º12 separated in 710.4 arcsec.
+    RA 02h03m24s58 DE 87°06'26''4
+  52> GI 1176 is ALONE with mag=11.0; nearest CD -83º31 separated in 840.3 arcsec.
+    RA 02h03m34s17 DE 83°53'36''8
+  53> GI 1185 is ALONE with mag=10.0; nearest CD -83º32 separated in 1036.5 arcsec.
+    RA 02h04m37s65 DE 83°41'16''1
+  54> GI 1191 is ALONE with mag=10.0; nearest CD -71º93 separated in 880.1 arcsec.
+    RA 02h05m09s17 DE 71°09'47''4
+  55> GI 1206 is ALONE with mag=10.0; nearest CD -86º18 separated in 844.3 arcsec.
+    RA 02h07m40s00 DE 87°04'29''7
+  56> GI 1257 is ALONE with mag=10.0; nearest CD -68º104 separated in 524.7 arcsec.
+    RA 02h11m45s46 DE 68°43'27''5
+  57> GI 1259 is ALONE with mag=10.0; nearest CD -69º93 separated in 669.8 arcsec.
+    RA 02h11m58s07 DE 69°53'53''9
+  58> GI 1264 is ALONE with mag=10.0; nearest CD -83º33 separated in 1385.1 arcsec.
+    RA 02h12m37s25 DE 84°26'39''4
+  59> GI 1265 is ALONE with mag=10.0; nearest CD -84º23 separated in 371.6 arcsec.
+    RA 02h12m55s00 DE 85°00'56''4
+  60> GI 1289 is ALONE with mag=10.0; nearest CD -86º19 separated in 798.8 arcsec.
+    RA 02h15m25s00 DE 87°06'10''5
+  61> GI 1294 is ALONE with mag=9.8; nearest CD -83º33 separated in 1062.6 arcsec.
+    RA 02h15m54s76 DE 84°20'52''2
+  62> GI 1336 is ALONE with mag=9.5; nearest CD -83º34 separated in 605.0 arcsec.
+    RA 02h20m34s30 DE 84°09'18''5
+  63> GI 1390 is ALONE with mag=10.0; nearest CD -83º34 separated in 601.4 arcsec.
+    RA 02h24m49s89 DE 84°04'53''9
+  64> GI 1435 is ALONE with mag=10.0; nearest CD -83º41 separated in 1058.5 arcsec.
+    RA 02h29m15s47 DE 84°20'58''2
+  65> GI 1442 is ALONE with mag=10.0; nearest CD -66º127 separated in 690.7 arcsec.
+    RA 02h30m25s17 DE 66°36'00''2
+  66> GI 1482 is ALONE with mag=10.0; nearest CD -86º22 separated in 538.9 arcsec.
+    RA 02h34m33s09 DE 86°32'08''5
+  67> GI 1492 is ALONE with mag=10.0; nearest CD -71º121 separated in 610.4 arcsec.
+    RA 02h36m29s52 DE 71°10'15''9
+  68> GI 1494 is ALONE with mag=10.0; nearest CD -83º41 separated in 998.2 arcsec.
+    RA 02h35m36s23 DE 84°20'27''7
+  69> GI 1509 is ALONE with mag=11.0; nearest CD -69º109 separated in 526.7 arcsec.
+    RA 02h37m08s14 DE 69°55'23''3
+  70> GI 1814 is ALONE with mag=10.0; nearest CD -88º6 separated in 614.7 arcsec.
+    RA 03h08m52s94 DE 88°51'46''2
+  71> GI 1900 is ALONE with mag=12.0; nearest CD -69º147 separated in 385.2 arcsec.
+    RA 03h18m06s32 DE 69°49'00''0
+  72> GI 1901 is ALONE with mag=10.0; nearest CD -66º163 separated in 450.1 arcsec.
+    RA 03h18m08s36 DE 66°49'31''0
+  73> GI 1907 is ALONE with mag=10.0; nearest CD -69º147 separated in 471.3 arcsec.
+    RA 03h18m22s95 DE 69°48'52''7
+  74> GI 1934 is ALONE with mag=9.5; nearest CD -69º149 separated in 448.9 arcsec.
+    RA 03h20m45s94 DE 70°08'56''1
+  75> GI 2030 is ALONE with mag=10.0; nearest CD -85º31 separated in 568.8 arcsec.
+    RA 03h31m37s51 DE 85°15'34''3
+  76> GI 2034 is ALONE with mag=10.0; nearest CD -66º173 separated in 854.4 arcsec.
+    RA 03h31m57s84 DE 66°50'18''0
+  77> GI 2059 is ALONE with mag=10.0; nearest CD -67º199 separated in 542.2 arcsec.
+    RA 03h34m11s48 DE 67°50'04''1
+  78> GI 2078 is ALONE with mag=10.0; nearest CD -66º177 separated in 362.7 arcsec.
+    RA 03h36m09s45 DE 67°06'56''6
+  79> GI 2174 is ALONE with mag=9.5; nearest CD -87º14 separated in 579.6 arcsec.
+    RA 03h46m31s46 DE 87°40'10''4
+  80> GI 2331 is ALONE with mag=9.0; nearest CD -88º6 separated in 917.7 arcsec.
+    RA 04h05m50s32 DE 89°10'33''2
+  81> GI 2337 is ALONE with mag=10.0; nearest CD -75º152 separated in 507.3 arcsec.
+    RA 04h06m41s06 DE 75°57'00''2
+  82> GI 2376 is ALONE with mag=10.0; nearest CD -73º178 separated in 1155.3 arcsec.
+    RA 04h10m56s24 DE 73°06'47''7
+  83> GI 2439 is ALONE with mag=10.0; nearest CD -68º205 separated in 671.6 arcsec.
+    RA 04h17m01s77 DE 68°15'14''2
+  84> GI 2547 is ALONE with mag=9.8; nearest CD -88º10 separated in 635.4 arcsec.
+    RA 04h26m31s80 DE 88°25'46''2
+  85> GI 2567 is ALONE with mag=9.0; nearest CD -87º21 separated in 668.7 arcsec.
+    RA 04h28m52s16 DE 87°31'51''9
+  86> GI 2623 is ALONE with mag=9.8; nearest CD -88º10 separated in 838.0 arcsec.
+    RA 04h35m10s33 DE 88°26'55''5
+  87> GI 2748 is ALONE with mag=10.0; nearest CD -67º283 separated in 585.5 arcsec.
+    RA 04h47m24s05 DE 67°48'25''3
+  88> GI 2824 is ALONE with mag=10.0; nearest CD -67º292 separated in 645.6 arcsec.
+    RA 04h55m14s06 DE 67°10'02''1
+  89> GI 2830 is ALONE with mag=9.5; nearest CD -84º50 separated in 368.5 arcsec.
+    RA 04h55m14s93 DE 84°34'39''2
+  90> GI 2944 is ALONE with mag=9.5; nearest CD -85º46 separated in 459.1 arcsec.
+    RA 05h05m55s13 DE 85°18'00''9
+  91> GI 2944 is ALONE with mag=9.5; nearest CD -85º46 separated in 483.0 arcsec.
+    RA 05h05m63s90 DE 85°08'00''5
+  92> GI 2999 is ALONE with mag=9.8; nearest CD -87º23 separated in 669.0 arcsec.
+    RA 05h11m08s93 DE 87°28'49''9
+  93> GI 3006 is ALONE with mag=10.0; nearest CD -64º178 separated in 754.6 arcsec.
+    RA 05h11m54s30 DE 64°24'34''8
+  94> GI 3027 is ALONE with mag=10.0; nearest CD -69º283 separated in 539.9 arcsec.
+    RA 05h13m41s49 DE 69°54'01''9
+  95> GI 3067 is ALONE with mag=9.0; nearest CD -78º197 separated in 871.9 arcsec.
+    RA 05h17m12s30 DE 78°15'21''5
+  96> GI 3168 is ALONE with mag=10.0; nearest CD -64º187 separated in 593.8 arcsec.
+    RA 05h25m22s02 DE 64°52'24''3
+  97> GI 3190 is ALONE with mag=11.0; nearest CD -64º187 separated in 390.6 arcsec.
+    RA 05h27m00s74 DE 64°41'23''3
+  98> GI 3242 is ALONE with mag=10.0; nearest CD -68º313 separated in 610.9 arcsec.
+    RA 05h30m20s69 DE 68°58'45''6
+  99> GI 3244 is ALONE with mag=9.5; nearest CD -64º190 separated in 1069.2 arcsec.
+    RA 05h30m23s05 DE 64°40'39''4
+  100> GI 3249 is ALONE with mag=9.5; nearest CD -64º189 separated in 741.8 arcsec.
+    RA 05h30m38s56 DE 64°12'01''4
+  101> GI 3344 is ALONE with mag=9.7; nearest CD -64º191 separated in 1269.9 arcsec.
+    RA 05h37m59s34 DE 64°10'18''0
+  102> GI 3355 is ALONE with mag=10.0; nearest CD -83º96 separated in 727.4 arcsec.
+    RA 05h38m43s28 DE 83°20'46''3
+  103> GI 3360 is ALONE with mag=10.0; nearest CD -68º334 separated in 797.8 arcsec.
+    RA 05h39m12s65 DE 69°10'55''4
+  104> GI 3373 is ALONE with mag=0.0; nearest CD -68º334 separated in 781.8 arcsec.
+    RA 05h39m45s00 DE 69°10'43''9
+  105> GI 3376 is ALONE with mag=9.5; nearest CD -64º194 separated in 543.6 arcsec.
+    RA 05h39m58s04 DE 64°55'53''5
+  106> GI 3405 is ALONE with mag=10.5; nearest CD -83º97 separated in 391.0 arcsec.
+    RA 05h42m10s19 DE 83°06'19''4
+  107> GI 3409 is ALONE with mag=10.0; nearest CD -62º217 separated in 1567.7 arcsec.
+    RA 05h42m29s83 DE 62°32'08''5
+  108> GI 3421 is ALONE with mag=9.5; nearest CD -64º195 separated in 1112.2 arcsec.
+    RA 05h43m37s47 DE 64°24'30''1
+  109> GI 3457 is ALONE with mag=10.0; nearest CD -62º219 separated in 795.8 arcsec.
+    RA 05h45m59s32 DE 62°58'32''2
+  110> GI 3462 is ALONE with mag=9.2; nearest CD -63º213 separated in 919.0 arcsec.
+    RA 05h46m22s70 DE 62°57'48''2
+  111> GI 3471 is ALONE with mag=9.2; nearest CD -64º197 separated in 699.2 arcsec.
+    RA 05h46m46s12 DE 64°37'17''8
+  112> GI 3476 is ALONE with mag=10.0; nearest CD -63º213 separated in 1288.9 arcsec.
+    RA 05h47m16s61 DE 62°44'17''6
+  113> GI 3488 is ALONE with mag=10.0; nearest CD -62º220 separated in 775.8 arcsec.
+    RA 05h47m39s35 DE 62°16'18''5
+  114> GI 3491 is ALONE with mag=10.0; nearest CD -64º198 separated in 1117.3 arcsec.
+    RA 05h47m44s03 DE 64°01'57''7
+  115> GI 3502 is ALONE with mag=9.5; nearest CD -74º269 separated in 442.9 arcsec.
+    RA 05h48m25s00 DE 74°35'12''3
+  116> GI 3525 is ALONE with mag=9.5; nearest CD -63º213 separated in 901.1 arcsec.
+    RA 05h49m58s02 DE 62°53'39''2
+  117> GI 3562 is ALONE with mag=10.0; nearest CD -64º198 separated in 555.8 arcsec.
+    RA 05h51m54s55 DE 64°01'53''7
+  118> GI 3563 is ALONE with mag=10.0; nearest CD -64º199 separated in 759.9 arcsec.
+    RA 05h52m02s82 DE 64°53'19''6
+  119> GI 3635 is ALONE with mag=10.0; nearest CD -64º202 separated in 479.1 arcsec.
+    RA 05h57m14s27 DE 64°18'32''4
+  120> GI 3661 is ALONE with mag=9.5; nearest CD -64º202 separated in 397.0 arcsec.
+    RA 05h58m48s09 DE 64°28'27''4
+  121> GI 3718 is ALONE with mag=10.0; nearest CD -64º204 separated in 541.5 arcsec.
+    RA 06h02m33s04 DE 64°55'38''6
+  122> GI 3762 is ALONE with mag=10.0; nearest CD -84º64 separated in 445.0 arcsec.
+    RA 06h05m56s00 DE 84°58'46''2
+  123> GI 3771 is ALONE with mag=10.0; nearest CD -64º206 separated in 481.1 arcsec.
+    RA 06h06m34s28 DE 64°32'08''5
+  124> GI 3789 is ALONE with mag=10.0; nearest CD -73º282 separated in 638.1 arcsec.
+    RA 06h07m28s70 DE 73°46'44''7
+  125> GI 3797 is ALONE with mag=10.0; nearest CD -62º235 separated in 1255.9 arcsec.
+    RA 06h08m00s20 DE 62°20'56''7
+  126> GI 3837 is ALONE with mag=10.0; nearest CD -64º207 separated in 824.9 arcsec.
+    RA 06h11m31s70 DE 64°22'14''4
+  127> GI 3858 is ALONE with mag=9.5; nearest CD -64º208 separated in 1152.3 arcsec.
+    RA 06h13m16s36 DE 64°37'56''4
+  128> GI 3906 is ALONE with mag=10.0; nearest CD -63º238 separated in 382.8 arcsec.
+    RA 06h16m37s63 DE 64°04'17''6
+  129> GI 3920 is ALONE with mag=9.5; nearest CD -63º239 separated in 623.3 arcsec.
+    RA 06h17m45s82 DE 62°54'23''9
+  130> GI 3923 is ALONE with mag=9.5; nearest CD -64º209 separated in 501.0 arcsec.
+    RA 06h18m04s44 DE 64°29'07''6
+  131> GI 3929 is ALONE with mag=10.0; nearest CD -62º243 separated in 617.0 arcsec.
+    RA 06h18m17s07 DE 62°22'11''1
+  132> GI 3931 is ALONE with mag=10.0; nearest CD -64º210 separated in 419.8 arcsec.
+    RA 06h18m19s52 DE 64°50'44''4
+  133> GI 3941 is ALONE with mag=9.5; nearest CD -84º72 separated in 789.5 arcsec.
+    RA 06h18m45s28 DE 84°02'05''0
+  134> GI 3989 is ALONE with mag=9.5; nearest CD -64º212 separated in 433.3 arcsec.
+    RA 06h22m03s61 DE 64°21'00''1
+  135> GI 4001 is ALONE with mag=9.8; nearest CD -72º324 separated in 719.7 arcsec.
+    RA 06h23m00s06 DE 72°40'21''2
+  136> GI 4004 is ALONE with mag=9.5; nearest CD -83º104 separated in 1010.8 arcsec.
+    RA 06h23m15s24 DE 83°53'28''6
+  137> GI 4022 is ALONE with mag=9.5; nearest CD -64º215 separated in 496.2 arcsec.
+    RA 06h24m07s92 DE 64°40'52''3
+  138> GI 4029 is ALONE with mag=8.5; nearest CD -75º264 separated in 535.6 arcsec.
+    RA 06h24m39s51 DE 75°37'10''4
+  139> GI 4049 is ALONE with mag=10.0; nearest CD -63º252 separated in 847.1 arcsec.
+    RA 06h25m56s25 DE 62°52'25''4
+  140> GI 4066 is ALONE with mag=10.0; nearest CD -83º103 separated in 665.4 arcsec.
+    RA 06h26m46s04 DE 83°11'53''6
+  141> GI 4068 is ALONE with mag=10.0; nearest CD -63º252 separated in 828.2 arcsec.
+    RA 06h26m48s25 DE 62°51'19''2
+  142> GI 4080 is ALONE with mag=9.2; nearest CD -64º217 separated in 996.8 arcsec.
+    RA 06h27m29s74 DE 64°37'17''4
+  143> GI 4132 is ALONE with mag=9.5; nearest CD -64º222 separated in 711.8 arcsec.
+    RA 06h30m34s86 DE 64°47'12''1
+  144> GI 4175 is ALONE with mag=10.0; nearest CD -62º261 separated in 688.0 arcsec.
+    RA 06h34m17s18 DE 62°47'35''8
+  145> GI 4209 is ALONE with mag=10.0; nearest CD -71º352 separated in 563.5 arcsec.
+    RA 06h36m44s66 DE 71°24'00''0
+  146> GI 4275 is ALONE with mag=10.0; nearest CD -65º455 separated in 383.8 arcsec.
+    RA 06h41m31s96 DE 64°52'43''9
+  147> GI 4289 is ALONE with mag=10.0; nearest CD -68º417 separated in 368.0 arcsec.
+    RA 06h42m07s50 DE 68°53'13''9
+  148> GI 4290 is ALONE with mag=10.0; nearest CD -65º455 separated in 437.9 arcsec.
+    RA 06h42m52s51 DE 64°57'39''2
+  149> GI 4295 is ALONE with mag=9.2; nearest CD -86º58 separated in 595.3 arcsec.
+    RA 06h42m31s16 DE 86°40'18''6
+  150> GI 4310 is ALONE with mag=10.0; nearest CD -71º358 separated in 366.6 arcsec.
+    RA 06h43m22s54 DE 71°09'53''3
+  151> GI 4336 is ALONE with mag=10.0; nearest CD -63º269 separated in 1327.1 arcsec.
+    RA 06h45m03s32 DE 62°49'19''2
+  152> GI 4355 is ALONE with mag=9.5; nearest CD -83º110 separated in 572.7 arcsec.
+    RA 06h46m49s93 DE 83°51'43''6
+  153> GI 4405 is ALONE with mag=10.0; nearest CD -63º273 separated in 760.6 arcsec.
+    RA 06h51m31s31 DE 64°02'54''4
+  154> GI 4433 is ALONE with mag=10.5; nearest CD -84º74 separated in 1028.1 arcsec.
+    RA 06h52m44s65 DE 84°49'30''8
+  155> GI 4477 is ALONE with mag=9.5; nearest CD -64º245 separated in 436.6 arcsec.
+    RA 06h56m24s91 DE 64°44'42''2
+  156> GI 4483 is ALONE with mag=10.0; nearest CD -69º425 separated in 366.9 arcsec.
+    RA 06h56m41s88 DE 69°28'50''7
+  157> GI 4487 is ALONE with mag=9.5; nearest CD -84º73 separated in 1269.5 arcsec.
+    RA 06h56m53s78 DE 84°53'47''2
+  158> GI 4489 is ALONE with mag=9.5; nearest CD -84º73 separated in 1247.3 arcsec.
+    RA 06h57m05s04 DE 84°59'31''6
+  159> GI 4504 is ALONE with mag=9.8; nearest CD -62º276 separated in 483.0 arcsec.
+    RA 06h57m55s24 DE 62°41'45''0
+  160> GI 4513 is ALONE with mag=10.0; nearest CD -64º246 separated in 572.8 arcsec.
+    RA 06h58m42s46 DE 64°11'22''2
+  161> GI 4519 is ALONE with mag=11.0; nearest CD -82º137 separated in 368.7 arcsec.
+    RA 06h59m19s48 DE 82°00'48''0
+  162> GI 4556 is ALONE with mag=10.0; nearest CD -75º291 separated in 944.1 arcsec.
+    RA 07h02m29s41 DE 75°46'00''0
+  163> GI 4559 is ALONE with mag=10.0; nearest CD -62º278 separated in 796.0 arcsec.
+    RA 07h02m53s96 DE 62°26'22''2
+  164> GI 4569 is ALONE with mag=10.0; nearest CD -63º287 separated in 389.5 arcsec.
+    RA 07h03m41s20 DE 62°56'43''7
+  165> GI 4571 is ALONE with mag=9.7; nearest CD -87º34 separated in 799.4 arcsec.
+    RA 07h03m45s92 DE 87°16'20''9
+  166> GI 4590 is ALONE with mag=10.0; nearest CD -62º279 separated in 972.8 arcsec.
+    RA 07h05m31s28 DE 62°37'47''9
+  167> GI 4600 is ALONE with mag=9.5; nearest CD -62º281 separated in 1086.0 arcsec.
+    RA 07h06m36s34 DE 62°34'47''2
+  168> GI 4602 is ALONE with mag=9.5; nearest CD -62º279 separated in 847.2 arcsec.
+    RA 07h06m38s62 DE 62°51'57''4
+  169> GI 4608 is ALONE with mag=9.0; nearest CD -62º281 separated in 1057.4 arcsec.
+    RA 07h06m58s51 DE 62°32'39''0
+  170> GI 4612 is ALONE with mag=9.8; nearest CD -86º58 separated in 741.4 arcsec.
+    RA 07h07m37s12 DE 86°37'44''0
+  171> GI 4624 is ALONE with mag=9.0; nearest CD -64º257 separated in 884.1 arcsec.
+    RA 07h08m45s60 DE 64°49'45''0
+  172> GI 4634 is ALONE with mag=10.0; nearest CD -62º281 separated in 998.1 arcsec.
+    RA 07h09m40s22 DE 62°30'14''1
+  173> GI 4651 is ALONE with mag=9.8; nearest CD -86º58 separated in 879.2 arcsec.
+    RA 07h10m43s73 DE 86°42'29''3
+  174> GI 4695 is ALONE with mag=10.0; nearest CD -85º69 separated in 1282.7 arcsec.
+    RA 07h14m37s31 DE 84°56'41''8
+  175> GI 4696 is ALONE with mag=10.0; nearest CD -64º264 separated in 502.0 arcsec.
+    RA 07h15m39s44 DE 64°53'44''2
+  176> GI 4710 is ALONE with mag=10.0; nearest CD -62º288 separated in 487.2 arcsec.
+    RA 07h15m44s37 DE 62°36'59''6
+  177> GI 4714 is ALONE with mag=9.2; nearest CD -85º68 separated in 670.9 arcsec.
+    RA 07h15m57s28 DE 85°40'37''7
+  178> GI 4733 is ALONE with mag=10.0; nearest CD -64º266 separated in 533.0 arcsec.
+    RA 07h17m13s30 DE 64°33'35''0
+  179> GI 4761 is ALONE with mag=10.0; nearest CD -64º265 separated in 512.7 arcsec.
+    RA 07h19m23s99 DE 64°54'55''2
+  180> GI 4762 is ALONE with mag=10.0; nearest CD -62º290 separated in 627.2 arcsec.
+    RA 07h19m28s82 DE 62°29'59''3
+  181> GI 4764 is ALONE with mag=9.5; nearest CD -62º290 separated in 609.5 arcsec.
+    RA 07h19m40s70 DE 62°34'00''6
+  182> GI 4780 is ALONE with mag=10.0; nearest CD -62º290 separated in 1260.2 arcsec.
+    RA 07h20m58s37 DE 62°26'51''7
+  183> GI 4789 is ALONE with mag=10.0; nearest CD -64º267 separated in 1002.2 arcsec.
+    RA 07h21m34s41 DE 64°03'24''7
+  184> GI 4819 is ALONE with mag=9.8; nearest CD -86º60 separated in 807.0 arcsec.
+    RA 07h23m28s29 DE 86°40'03''0
+  185> GI 4822 is ALONE with mag=9.8; nearest CD -64º267 separated in 899.5 arcsec.
+    RA 07h23m32s36 DE 64°10'43''8
+  186> GI 4832 is ALONE with mag=9.8; nearest CD -64º271 separated in 1012.0 arcsec.
+    RA 07h24m22s18 DE 64°11'55''6
+  187> GI 4833 is ALONE with mag=9.2; nearest CD -64º271 separated in 814.4 arcsec.
+    RA 07h24m32s74 DE 64°05'37''4
+  188> GI 4860 is ALONE with mag=9.0; nearest CD -84º76 separated in 1025.5 arcsec.
+    RA 07h26m11s26 DE 84°32'14''3
+  189> GI 4863 is ALONE with mag=10.0; nearest CD -87º33 separated in 591.4 arcsec.
+    RA 07h26m24s75 DE 87°52'32''9
+  190> GI 4891 is ALONE with mag=9.5; nearest CD -62º294 separated in 533.1 arcsec.
+    RA 07h28m33s12 DE 62°31'10''4
+  191> GI 4894 is ALONE with mag=9.5; nearest CD -64º275 separated in 462.3 arcsec.
+    RA 07h28m49s96 DE 64°05'40''6
+  192> GI 4901 is ALONE with mag=9.7; nearest CD -64º276 separated in 680.4 arcsec.
+    RA 07h29m22s02 DE 64°14'13''3
+  193> GI 4914 is ALONE with mag=10.0; nearest CD -66º503 separated in 427.2 arcsec.
+    RA 07h30m15s65 DE 65°54'40''8
+  194> GI 4926 is ALONE with mag=9.0; nearest CD -63º320 separated in 373.3 arcsec.
+    RA 07h31m10s23 DE 62°53'27''1
+  195> GI 4996 is ALONE with mag=10.0; nearest CD -62º302 separated in 1024.2 arcsec.
+    RA 07h37m10s21 DE 62°26'08''3
+  196> GI 4997 is ALONE with mag=9.5; nearest CD -62º300 separated in 921.1 arcsec.
+    RA 07h37m14s28 DE 62°19'06''5
+  197> GI 5062 is ALONE with mag=10.0; nearest CD -65º563 separated in 1131.1 arcsec.
+    RA 07h42m09s47 DE 64°45'31''9
+  198> GI 5087 is ALONE with mag=9.8; nearest CD -64º285 separated in 547.0 arcsec.
+    RA 07h43m54s17 DE 64°13'39''4
+  199> GI 5110 is ALONE with mag=9.8; nearest CD -62º310 separated in 452.7 arcsec.
+    RA 07h45m44s92 DE 62°36'40''0
+  200> GI 5130 is ALONE with mag=11.0; nearest CD -64º288 separated in 438.7 arcsec.
+    RA 07h46m58s39 DE 64°34'42''2
+  201> GI 5134 is ALONE with mag=10.0; nearest CD -64º288 separated in 439.4 arcsec.
+    RA 07h47m08s19 DE 64°34'28''2
+  202> GI 5168 is ALONE with mag=10.0; nearest CD -62º314 separated in 436.3 arcsec.
+    RA 07h50m48s60 DE 62°35'02''3
+  203> GI 5177 is ALONE with mag=9.8; nearest CD -64º292 separated in 404.2 arcsec.
+    RA 07h51m26s30 DE 64°11'40''8
+  204> GI 5180 is ALONE with mag=10.0; nearest CD -62º318 separated in 526.4 arcsec.
+    RA 07h51m34s56 DE 62°34'31''3
+  205> GI 5209 is ALONE with mag=10.0; nearest CD -83º121 separated in 493.3 arcsec.
+    RA 07h53m44s49 DE 83°21'40''5
+  206> GI 5212 is ALONE with mag=9.5; nearest CD -68º510 separated in 380.8 arcsec.
+    RA 07h53m50s29 DE 68°30'30''8
+  207> GI 5214 is ALONE with mag=10.0; nearest CD -62º318 separated in 984.2 arcsec.
+    RA 07h53m53s69 DE 62°15'48''2
+  208> GI 5216 is ALONE with mag=10.0; nearest CD -62º318 separated in 601.9 arcsec.
+    RA 07h53m55s53 DE 62°34'10''1
+  209> GI 5317 is ALONE with mag=9.5; nearest CD -62º329 separated in 402.9 arcsec.
+    RA 08h02m02s65 DE 62°17'59''2
+  210> GI 5318 is ALONE with mag=11.0; nearest CD -86º61 separated in 852.1 arcsec.
+    RA 08h03m02s86 DE 86°30'07''6
+  211> GI 5328 is ALONE with mag=10.2; nearest CD -86º61 separated in 854.3 arcsec.
+    RA 08h03m00s26 DE 86°30'08''1
+  212> GI 5343 is ALONE with mag=10.0; nearest CD -66º566 separated in 672.0 arcsec.
+    RA 08h04m21s93 DE 65°50'45''3
+  213> GI 5348 is ALONE with mag=10.0; nearest CD -66º566 separated in 642.4 arcsec.
+    RA 08h04m19s30 DE 65°51'19''8
+  214> GI 5363 is ALONE with mag=9.8; nearest CD -85º72 separated in 926.5 arcsec.
+    RA 08h06m00s06 DE 85°53'55''6
+  215> GI 5376 is ALONE with mag=10.0; nearest CD -82º153 separated in 706.4 arcsec.
+    RA 08h07m38s96 DE 82°00'15''4
+  216> GI 5396 is ALONE with mag=10.0; nearest CD -82º153 separated in 472.1 arcsec.
+    RA 08h09m25s32 DE 82°02'42''6
+  217> GI 5445 is ALONE with mag=9.5; nearest CD -62º339 separated in 529.9 arcsec.
+    RA 08h14m38s34 DE 62°15'23''1
+  218> GI 5476 or GZC 8h 1466 is ALONE with mag=9.5; nearest CD -62º339 separated in 880.1 arcsec.
+    RA 08h17m15s65 DE 62°24'33''1
+  219> GI 5481 is ALONE with mag=9.5; nearest CD -62º340 separated in 893.4 arcsec.
+    RA 08h17m40s97 DE 62°29'00''3
+  220> GI 5482 or GZC 8h 1495 is ALONE with mag=9.5; nearest CD -62º340 separated in 1087.5 arcsec.
+    RA 08h17m43s97 DE 62°18'38''4
+  221> GI 5533 is ALONE with mag=10.0; nearest CD -62º341 separated in 496.7 arcsec.
+    RA 08h21m01s58 DE 62°32'03''1
+  222> GI 5537 is ALONE with mag=9.8; nearest CD -87º45 separated in 1035.6 arcsec.
+    RA 08h21m18s54 DE 86°47'06''8
+  223> GI 5578 is ALONE with mag=10.0; nearest CD -82º154 separated in 692.4 arcsec.
+    RA 08h26m01s24 DE 82°28'40''8
+  224> GI 5623 is ALONE with mag=10.0; nearest CD -62º349 separated in 608.7 arcsec.
+    RA 08h30m06s24 DE 62°25'32''7
+  225> GI 5644 is ALONE with mag=9.0; nearest CD -62º348 separated in 685.5 arcsec.
+    RA 08h32m39s89 DE 62°43'25''8
+  226> GI 5646 is ALONE with mag=10.0; nearest CD -62º349 separated in 847.1 arcsec.
+    RA 08h32m47s06 DE 62°36'15''9
+  227> GI 5680 is ALONE with mag=9.5; nearest CD -62º357 separated in 594.9 arcsec.
+    RA 08h36m25s81 DE 62°39'32''7
+  228> GI 5717 is ALONE with mag=9.5; nearest CD -62º358 separated in 379.5 arcsec.
+    RA 08h39m45s06 DE 62°38'04''5
+  229> GI 5742 is ALONE with mag=9.5; nearest CD -62º358 separated in 435.2 arcsec.
+    RA 08h41m31s68 DE 62°39'40''7
+  230> GI 5772 is ALONE with mag=10.0; nearest CD -70º545 separated in 741.7 arcsec.
+    RA 08h41m59s85 DE 70°33'39''4
+  231> GI 5870 is ALONE with mag=9.5; nearest CD -62º374 separated in 563.4 arcsec.
+    RA 08h53m22s01 DE 62°37'47''8
+  232> GI 5873 is ALONE with mag=10.0; nearest CD -85º81 separated in 539.4 arcsec.
+    RA 08h53m37s64 DE 85°42'09''0
+  233> GI 5900 is ALONE with mag=9.7; nearest CD -86º66 separated in 808.3 arcsec.
+    RA 08h55m56s35 DE 86°36'30''3
+  234> GI 5930 is ALONE with mag=10.0; nearest CD -62º377 separated in 486.1 arcsec.
+    RA 08h58m07s64 DE 62°27'41''7
+  235> GI 6022 is ALONE with mag=9.5; nearest CD -62º382 separated in 497.4 arcsec.
+    RA 09h06m50s56 DE 62°18'07''9
+  236> GI 6041 is ALONE with mag=10.0; nearest CD -62º382 separated in 953.4 arcsec.
+    RA 09h09m01s15 DE 62°34'23''9
+  237> GI 6068 is ALONE with mag=9.5; nearest CD -62º383 separated in 1242.0 arcsec.
+    RA 09h10m42s14 DE 62°35'08''9
+  238> GI 6076 is ALONE with mag=9.5; nearest CD -62º385 separated in 1232.8 arcsec.
+    RA 09h11m14s15 DE 62°33'04''4
+  239> GI 6088 is ALONE with mag=10.0; nearest CD -62º388 separated in 955.7 arcsec.
+    RA 09h12m16s99 DE 62°36'07''2
+  240> GI 6117 is ALONE with mag=10.0; nearest CD -62º387 separated in 494.6 arcsec.
+    RA 09h15m00s57 DE 62°19'29''8
+  241> GI 6129 is ALONE with mag=9.5; nearest CD -85º83 separated in 650.5 arcsec.
+    RA 09h15m54s36 DE 84°52'43''8
+  242> GI 6169 is ALONE with mag=10.0; nearest CD -62º390 separated in 491.3 arcsec.
+    RA 09h18m31s70 DE 62°15'52''2
+  243> GI 6223 is ALONE with mag=10.0; nearest CD -84º91 separated in 840.9 arcsec.
+    RA 09h22m42s54 DE 84°45'53''8
+  244> GI 6234 is ALONE with mag=9.5; nearest CD -62º392 separated in 1111.1 arcsec.
+    RA 09h24m01s24 DE 62°14'57''4
+  245> GI 6239 is ALONE with mag=10.0; nearest CD -62º393 separated in 422.0 arcsec.
+    RA 09h24m19s08 DE 62°38'03''1
+  246> GI 6270 is ALONE with mag=10.0; nearest CD -62º396 separated in 1072.2 arcsec.
+    RA 09h26m19s44 DE 62°17'44''0
+  247> GI 6323 is ALONE with mag=10.0; nearest CD -62º396 separated in 786.6 arcsec.
+    RA 09h29m59s69 DE 62°15'35''6
+  248> GI 6343 is ALONE with mag=10.0; nearest CD -62º397 separated in 599.6 arcsec.
+    RA 09h31m05s57 DE 62°40'26''9
+  249> GI 6355 is ALONE with mag=9.5; nearest CD -62º401 separated in 1267.1 arcsec.
+    RA 09h32m19s65 DE 62°17'35''7
+  250> GI 6358 is ALONE with mag=10.0; nearest CD -62º401 separated in 1185.6 arcsec.
+    RA 09h32m29s12 DE 62°16'31''2
+  251> GI 6374 is ALONE with mag=9.8; nearest CD -87º50 separated in 560.5 arcsec.
+    RA 09h34m17s97 DE 86°53'03''0
+  252> GI 6415 is ALONE with mag=10.0; nearest CD -82º188 separated in 477.4 arcsec.
+    RA 09h37m17s76 DE 82°14'32''7
+  253> GI 6416 is ALONE with mag=10.0; nearest CD -87º50 separated in 579.6 arcsec.
+    RA 09h37m16s85 DE 86°47'28''6
+  254> GI 6427 is ALONE with mag=9.5; nearest CD -62º406 separated in 633.7 arcsec.
+    RA 09h38m07s51 DE 62°14'13''4
+  255> GI 6485 is ALONE with mag=8.5; nearest CD -63º496 separated in 391.8 arcsec.
+    RA 09h42m56s87 DE 63°32'48''9
+  256> GI 6508 is ALONE with mag=10.0; nearest CD -89º7 separated in 927.8 arcsec.
+    RA 09h44m17s32 DE 89°01'57''3
+  257> GI 6512 or GZC 9h 3498 is ALONE with mag=10.0; nearest CD -62º412 separated in 361.2 arcsec.
+    RA 09h44m26s75 DE 62°30'48''3
+  258> GI 6525 is ALONE with mag=10.0; nearest CD -82º188 separated in 539.1 arcsec.
+    RA 09h45m11s02 DE 82°15'39''7
+  259> GI 6548 is ALONE with mag=10.0; nearest CD -82º191 separated in 643.9 arcsec.
+    RA 09h47m18s59 DE 82°18'00''7
+  260> GI 6624 or GZC 9h 4207 is ALONE with mag=10.0; nearest CD -62º427 separated in 395.5 arcsec.
+    RA 09h53m48s61 DE 62°38'37''6
+  261> GI 6625 is ALONE with mag=10.0; nearest CD -62º427 separated in 600.3 arcsec.
+    RA 09h53m49s20 DE 62°30'27''6
+  262> GI 6696 is ALONE with mag=10.0; nearest CD -84º98 separated in 795.7 arcsec.
+    RA 10h00m59s98 DE 85°02'48''7
+  263> GI 6732 is ALONE with mag=10.0; nearest CD -62º438 separated in 774.1 arcsec.
+    RA 10h03m20s20 DE 62°15'44''5
+  264> GI 6825 or GZC 10h 751 is ALONE with mag=9.5; nearest CD -62º441 separated in 723.1 arcsec.
+    RA 10h09m26s37 DE 62°41'10''1
+  265> GI 6831 is ALONE with mag=9.5; nearest CD -62º442 separated in 966.6 arcsec.
+    RA 10h10m48s88 DE 62°23'49''7
+  266> GI 6875 is ALONE with mag=10.0; nearest CD -76º459 separated in 394.5 arcsec.
+    RA 10h12m55s29 DE 76°34'42''9
+  267> GI 6954 is ALONE with mag=9.0; nearest CD -62º451 separated in 593.8 arcsec.
+    RA 10h17m46s73 DE 62°29'00''8
+  268> GI 6955 or GZC 10h 1378 is ALONE with mag=9.2; nearest CD -62º449 separated in 725.6 arcsec.
+    RA 10h17m54s80 DE 62°16'09''3
+  269> GI 6959 or GZC 10h 1417 is ALONE with mag=9.5; nearest CD -62º451 separated in 385.5 arcsec.
+    RA 10h18m27s10 DE 62°44'29''7
+  270> GI 6978 is ALONE with mag=9.5; nearest CD -62º454 separated in 457.7 arcsec.
+    RA 10h20m12s19 DE 62°35'19''9
+  271> GI 7119 is ALONE with mag=9.8; nearest CD -84º106 separated in 400.7 arcsec.
+    RA 10h29m09s06 DE 83°58'10''6
+  272> GI 7162 is ALONE with mag=9.5; nearest CD -62º467 separated in 512.0 arcsec.
+    RA 10h32m07s11 DE 62°30'34''6
+  273> GI 7178 is ALONE with mag=9.0; nearest CD -77º455 separated in 432.1 arcsec.
+    RA 10h32m42s19 DE 77°08'59''9
+  274> GI 7186 is ALONE with mag=10.0; nearest CD -62º470 separated in 371.4 arcsec.
+    RA 10h32m58s80 DE 62°22'44''4
+  275> GI 7191 is ALONE with mag=10.0; nearest CD -62º470 separated in 483.3 arcsec.
+    RA 10h33m17s82 DE 62°23'53''0
+  276> GI 7214 or GZC 10h 2612 is ALONE with mag=10.0; nearest CD -62º473 separated in 501.8 arcsec.
+    RA 10h34m58s70 DE 62°20'01''5
+  277> GI 7382 or GZC 10h 3348 is ALONE with mag=9.5; nearest CD -63º609 separated in 1075.7 arcsec.
+    RA 10h45m00s49 DE 62°35'03''8
+  278> GI 7387 is ALONE with mag=9.5; nearest CD -62º486 separated in 1016.0 arcsec.
+    RA 10h45m10s10 DE 62°25'25''8
+  279> GI 7437 or GZC 10h 3621 is ALONE with mag=9.5; nearest CD -62º486 separated in 1131.1 arcsec.
+    RA 10h48m54s64 DE 62°32'08''5
+  280> GI 7546 is ALONE with mag=10.0; nearest CD -84º111 separated in 1275.1 arcsec.
+    RA 10h57m48s38 DE 84°37'27''6
+  281> GI 7555 is ALONE with mag=10.0; nearest CD -81º400 separated in 1266.5 arcsec.
+    RA 10h58m25s80 DE 82°09'46''6
+  282> GI 7556 or GZC 10h 4322 is ALONE with mag=9.5; nearest CD -62º491 separated in 712.1 arcsec.
+    RA 10h58m29s86 DE 62°43'02''7
+  283> GI 7568 is ALONE with mag=10.0; nearest CD -83º162 separated in 1895.6 arcsec.
+    RA 10h59m04s48 DE 83°06'25''7
+  284> GI 7610 is ALONE with mag=10.0; nearest CD -85º98 separated in 1300.1 arcsec.
+    RA 11h01m23s50 DE 84°36'26''2
+  285> GI 7619 is ALONE with mag=9.5; nearest CD -62º496 separated in 421.8 arcsec.
+    RA 11h02m59s18 DE 62°24'29''0
+  286> GI 7680 is ALONE with mag=10.0; nearest CD -83º167 separated in 1211.7 arcsec.
+    RA 11h08m44s78 DE 83°09'32''6
+  287> GI 7766 is ALONE with mag=9.8; nearest CD -83º166 separated in 1160.2 arcsec.
+    RA 11h14m54s60 DE 83°52'14''6
+  288> GI 7837 is ALONE with mag=10.0; nearest CD -83º168 separated in 659.8 arcsec.
+    RA 11h20m07s99 DE 83°41'42''6
+  289> GI 7977 is ALONE with mag=9.5; nearest CD -63º664 separated in 762.0 arcsec.
+    RA 11h30m39s32 DE 63°52'23''9
+  290> GI 8004 is ALONE with mag=10.0; nearest CD -67º1109 separated in 495.4 arcsec.
+    RA 11h32m37s11 DE 67°16'18''1
+  291> GI 8162 is ALONE with mag=10.0; nearest CD -63º674 separated in 570.4 arcsec.
+    RA 11h42m41s77 DE 63°06'53''1
+  292> GI 8165 is ALONE with mag=10.0; nearest CD -84º118 separated in 840.3 arcsec.
+    RA 11h42m56s84 DE 84°45'51''9
+  293> GI 8263 is ALONE with mag=10.0; nearest CD -83º170 separated in 846.3 arcsec.
+    RA 11h51m11s33 DE 83°17'30''2
+  294> GI 8322 is ALONE with mag=10.0; nearest CD -84º122 separated in 1224.1 arcsec.
+    RA 11h54m46s88 DE 84°25'46''8
+  295> GI 8388 is ALONE with mag=10.0; nearest CD -86º79 separated in 459.3 arcsec.
+    RA 11h58m17s18 DE 86°36'49''1
+  296> GI 8564 is ALONE with mag=10.2; nearest CD -83º173 separated in 866.8 arcsec.
+    RA 12h13m08s34 DE 83°09'09''0
+  297> GI 8574 is ALONE with mag=10.2; nearest CD -83º173 separated in 898.3 arcsec.
+    RA 12h14m17s58 DE 83°11'17''4
+  298> GI 8637 is ALONE with mag=10.0; nearest CD -87º64 separated in 753.4 arcsec.
+    RA 12h20m27s30 DE 87°43'46''8
+  299> GI 8675 is ALONE with mag=9.5; nearest CD -81º460 separated in 1251.6 arcsec.
+    RA 12h24m01s45 DE 82°09'08''9
+  300> GI 8786 is ALONE with mag=10.0; nearest CD -85º106 separated in 415.3 arcsec.
+    RA 12h32m53s66 DE 85°13'02''1
+  301> GI 8855 is ALONE with mag=10.0; nearest CD -83º177 separated in 1012.3 arcsec.
+    RA 12h39m00s54 DE 83°42'18''2
+  302> GI 8857 is ALONE with mag=9.8; nearest CD -83º177 separated in 1256.7 arcsec.
+    RA 12h39m08s24 DE 83°27'31''9
+  303> GI 8907 is ALONE with mag=10.0; nearest CD -86º84 separated in 1063.7 arcsec.
+    RA 12h43m39s62 DE 86°07'07''3
+  304> GI 8908 is ALONE with mag=10.0; nearest CD -82º237 separated in 1543.8 arcsec.
+    RA 12h43m45s75 DE 83°09'46''4
+  305> GI 8950 is ALONE with mag=9.5; nearest CD -82º239 separated in 460.5 arcsec.
+    RA 12h47m24s07 DE 82°08'42''9
+  306> GI 8951 is ALONE with mag=10.0; nearest CD -87º65 separated in 821.9 arcsec.
+    RA 12h47m24s52 DE 87°15'24''9
+  307> GI 8988 is ALONE with mag=10.0; nearest CD -84º128 separated in 814.4 arcsec.
+    RA 12h50m18s81 DE 84°20'24''4
+  308> GI 8989 is ALONE with mag=11.0; nearest CD -84º128 separated in 730.7 arcsec.
+    RA 12h50m27s17 DE 84°21'53''6
+  309> GI 9003 is ALONE with mag=10.0; nearest CD -76º567 separated in 596.4 arcsec.
+    RA 12h51m19s37 DE 76°22'37''4
+  310> GI 9014 is ALONE with mag=10.0; nearest CD -86º84 separated in 1368.9 arcsec.
+    RA 12h52m07s04 DE 86°02'46''0
+  311> GI 9016 is ALONE with mag=10.0; nearest CD -88º36 separated in 541.1 arcsec.
+    RA 12h57m10s62 DE 88°00'55''1
+  312> GI 9027 is ALONE with mag=11.0; nearest CD -82º239 separated in 1510.4 arcsec.
+    RA 12h53m08s51 DE 82°37'46''1
+  313> GI 9037 is ALONE with mag=9.8; nearest CD -83º181 separated in 2121.1 arcsec.
+    RA 12h54m18s75 DE 82°58'28''9
+  314> GI 9094 is ALONE with mag=10.2; nearest CD -83º181 separated in 1606.8 arcsec.
+    RA 12h59m04s92 DE 83°02'28''2
+  315> GI 9135 is ALONE with mag=9.6; nearest CD -86º84 separated in 915.5 arcsec.
+    RA 13h02m05s41 DE 86°24'52''4
+  316> GI 9163 is ALONE with mag=10.3; nearest CD -86º86 separated in 425.4 arcsec.
+    RA 13h04m29s30 DE 86°37'48''3
+  317> GI 9192 is ALONE with mag=9.0; nearest CD -83º180 separated in 504.0 arcsec.
+    RA 13h06m49s16 DE 83°26'03''8
+  318> GI 9212 is ALONE with mag=10.0; nearest CD -85º110 separated in 427.2 arcsec.
+    RA 13h07m46s01 DE 85°12'46''3
+  319> GI 9218 is ALONE with mag=10.0; nearest CD -83º180 separated in 719.5 arcsec.
+    RA 13h08m22s82 DE 83°16'48''7
+  320> GI 9277 is ALONE with mag=10.0; nearest CD -83º180 separated in 773.0 arcsec.
+    RA 13h13m17s50 DE 83°14'47''8
+  321> GI 9294 is ALONE with mag=10.0; nearest CD -76º583 separated in 725.6 arcsec.
+    RA 13h14m05s62 DE 76°23'06''9
+  322> GI 9298 is ALONE with mag=9.5; nearest CD -76º583 separated in 750.1 arcsec.
+    RA 13h14m23s29 DE 76°22'53''4
+  323> GI 9302 is ALONE with mag=10.5; nearest CD -82º242 separated in 1382.9 arcsec.
+    RA 13h14m30s96 DE 82°13'43''2
+  324> GI 9330 is ALONE with mag=9.0; nearest CD -66º1416 separated in 371.7 arcsec.
+    RA 13h17m03s04 DE 65°57'52''6
+  325> GI 9331 is ALONE with mag=10.0; nearest CD -83º183 separated in 402.5 arcsec.
+    RA 13h17m07s26 DE 83°08'02''4
+  326> GI 9466 is ALONE with mag=10.0; nearest CD -82º242 separated in 792.0 arcsec.
+    RA 13h27m54s95 DE 82°07'05''5
+  327> GI 9505 is ALONE with mag=9.8; nearest CD -86º90 separated in 447.9 arcsec.
+    RA 13h30m57s29 DE 85°53'43''9
+  328> GI 9529 is ALONE with mag=9.8; nearest CD -86º90 separated in 1167.0 arcsec.
+    RA 13h33m15s88 DE 85°36'36''3
+  329> GI 9570 is ALONE with mag=9.9; nearest CD -86º90 separated in 944.2 arcsec.
+    RA 13h36m36s98 DE 85°45'28''3
+  330> GI 9588 is ALONE with mag=10.0; nearest CD -84º131 separated in 880.4 arcsec.
+    RA 13h37m59s36 DE 84°17'29''8
+  331> GI 9617 is ALONE with mag=10.0; nearest CD -84º130 separated in 997.5 arcsec.
+    RA 13h40m39s10 DE 84°38'47''9
+  332> GI 9697 is ALONE with mag=9.8; nearest CD -86º92 separated in 1116.3 arcsec.
+    RA 13h46m09s64 DE 86°39'04''4
+  333> GI 9715 is ALONE with mag=10.0; nearest CD -85º117 separated in 924.5 arcsec.
+    RA 13h48m11s15 DE 85°19'59''0
+  334> GI 9717 is ALONE with mag=10.0; nearest CD -82º251 separated in 1225.3 arcsec.
+    RA 13h48m16s98 DE 82°28'57''7
+  335> GI 9871 is ALONE with mag=9.2; nearest CD -87º69 separated in 504.8 arcsec.
+    RA 14h00m06s06 DE 87°33'47''1
+  336> GI 10392 is ALONE with mag=9.2; nearest CD -82º262 separated in 580.2 arcsec.
+    RA 14h37m11s26 DE 82°46'04''7
+  337> GI 10410 is ALONE with mag=10.0; nearest CD -85º128 separated in 750.2 arcsec.
+    RA 14h38m43s92 DE 85°57'38''8
+  338> GI 10441 is ALONE with mag=10.0; nearest CD -87º75 separated in 728.3 arcsec.
+    RA 14h40m41s04 DE 86°51'26''3
+  339> GI 10501 is ALONE with mag=10.0; nearest CD -85º128 separated in 651.4 arcsec.
+    RA 14h44m14s47 DE 85°39'40''0
+  340> GI 10524 is ALONE with mag=10.0; nearest CD -85º128 separated in 752.4 arcsec.
+    RA 14h45m37s40 DE 85°38'59''6
+  341> GI 10581 is ALONE with mag=9.5; nearest CD -85º130 separated in 1064.9 arcsec.
+    RA 14h49m52s38 DE 85°32'52''9
+  342> GI 10629 or GZC 14h 3519 is ALONE with mag=9.0; nearest CD -76º713 separated in 683.9 arcsec.
+    RA 14h52m31s77 DE 76°43'59''8
+  343> GI 10716 is ALONE with mag=10.0; nearest CD -83º197 separated in 1132.7 arcsec.
+    RA 14h58m33s87 DE 83°38'41''8
+  344> GI 10727 is ALONE with mag=10.0; nearest CD -84º143 separated in 1332.8 arcsec.
+    RA 14h59m42s89 DE 84°35'53''9
+  345> GI 10807 is ALONE with mag=10.0; nearest CD -77º721 separated in 493.1 arcsec.
+    RA 15h05m46s62 DE 77°53'57''2
+  346> GI 10822 is ALONE with mag=9.5; nearest CD -84º147 separated in 1324.5 arcsec.
+    RA 15h06m20s95 DE 84°35'48''2
+  347> GI 10835 is ALONE with mag=9.5; nearest CD -66º1739 separated in 469.4 arcsec.
+    RA 15h09m02s32 DE 66°39'27''5
+  348> GI 10854 is ALONE with mag=9.3; nearest CD -84º147 separated in 1910.3 arcsec.
+    RA 15h08m39s16 DE 84°45'23''1
+  349> GI 10858 is ALONE with mag=9.5; nearest CD -66º1739 separated in 468.8 arcsec.
+    RA 15h09m02s50 DE 66°39'27''0
+  350> GI 10959 is ALONE with mag=11.0; nearest CD -85º132 separated in 423.3 arcsec.
+    RA 15h15m43s77 DE 85°46'12''5
+  351> GI 11017 is ALONE with mag=9.8; nearest CD -88º42 separated in 934.8 arcsec.
+    RA 15h19m31s83 DE 88°07'39''2
+  352> GI 11029 is ALONE with mag=9.8; nearest CD -84º150 separated in 560.8 arcsec.
+    RA 15h19m55s28 DE 83°56'40''7
+  353> GI 11142 is ALONE with mag=10.0; nearest CD -85º132 separated in 564.1 arcsec.
+    RA 15h28m16s02 DE 85°44'40''5
+  354> GI 11158 is ALONE with mag=10.0; nearest CD -86º99 separated in 2186.3 arcsec.
+    RA 15h29m47s68 DE 86°26'02''1
+  355> GI 11265 is ALONE with mag=10.0; nearest CD -82º279 separated in 1392.6 arcsec.
+    RA 15h37m39s56 DE 82°44'41''5
+  356> GI 11280 is ALONE with mag=10.0; nearest CD -87º83 separated in 1990.7 arcsec.
+    RA 15h39m06s44 DE 86°29'39''4
+  357> GI 11324 is ALONE with mag=10.0; nearest CD -85º133 separated in 590.8 arcsec.
+    RA 15h41m40s96 DE 85°31'57''2
+  358> GI 11328 is ALONE with mag=9.3; nearest CD -87º82 separated in 706.2 arcsec.
+    RA 15h41m58s09 DE 87°21'09''0
+  359> GI 11369 is ALONE with mag=9.5; nearest CD -85º135 separated in 887.9 arcsec.
+    RA 15h45m12s82 DE 85°21'45''8
+  360> GI 11385 is ALONE with mag=9.2; nearest CD -87º83 separated in 912.0 arcsec.
+    RA 15h46m27s61 DE 86°46'38''6
+  361> GI 11465 is ALONE with mag=9.5; nearest CD -87º83 separated in 1063.1 arcsec.
+    RA 15h51m51s90 DE 86°41'51''9
+  362> GI 11494 is ALONE with mag=9.2; nearest CD -87º83 separated in 452.8 arcsec.
+    RA 15h53m55s70 DE 86°51'57''8
+  363> GI 11529 is ALONE with mag=10.0; nearest CD -82º279 separated in 999.0 arcsec.
+    RA 15h57m03s22 DE 82°41'34''1
+  364> GI 11618 is ALONE with mag=9.8; nearest CD -88º47 separated in 380.7 arcsec.
+    RA 16h03m01s29 DE 88°33'22''0
+  365> GI 11754 is ALONE with mag=9.5; nearest CD -74º1111 separated in 845.8 arcsec.
+    RA 16h12m37s03 DE 74°38'54''0
+  366> GI 11843 is ALONE with mag=9.5; nearest CD -82º285 separated in 1133.3 arcsec.
+    RA 16h19m57s10 DE 82°31'24''0
+  367> GI 11893 or GZC 16h 1783 is ALONE with mag=9.0; nearest CD -71º1291 separated in 566.4 arcsec.
+    RA 16h23m09s74 DE 71°09'21''5
+  368> GI 11941 is ALONE with mag=10.0; nearest CD -82º286 separated in 634.8 arcsec.
+    RA 16h26m50s67 DE 82°48'50''6
+  369> GI 11947 is ALONE with mag=9.5; nearest CD -88º48 separated in 1206.9 arcsec.
+    RA 16h27m30s36 DE 88°12'48''6
+  370> GI 12180 is ALONE with mag=10.0; nearest CD -71º1325 separated in 372.3 arcsec.
+    RA 16h44m45s03 DE 71°16'18''5
+  371> GI 12309 is ALONE with mag=9.0; nearest CD -65º2248 separated in 428.7 arcsec.
+    RA 16h54m19s35 DE 65°59'10''3
+  372> GI 12351 is ALONE with mag=10.0; nearest CD -83º223 separated in 1296.4 arcsec.
+    RA 16h57m18s10 DE 83°54'22''1
+  373> GI 12394 is ALONE with mag=10.0; nearest CD -71º1345 separated in 705.9 arcsec.
+    RA 17h00m38s17 DE 70°58'48''1
+  374> GI 12403 is ALONE with mag=9.5; nearest CD -75º969 separated in 645.7 arcsec.
+    RA 17h01m30s93 DE 75°51'56''2
+  375> GI 12606 is ALONE with mag=9.0; nearest CD -66º2113 separated in 643.0 arcsec.
+    RA 17h18m22s36 DE 66°27'21''8
+  376> GI 12756 is ALONE with mag=10.0; nearest CD -85º148 separated in 651.5 arcsec.
+    RA 17h30m35s32 DE 85°05'22''2
+  377> GI 12936 is ALONE with mag=10.5; nearest CD -85º150 separated in 394.3 arcsec.
+    RA 17h46m06s10 DE 85°51'43''6
+  378> GI 12948 is ALONE with mag=10.0; nearest CD -74º1247 separated in 1295.0 arcsec.
+    RA 17h46m56s00 DE 74°36'19''9
+  379> GI 12980 is ALONE with mag=10.0; nearest CD -84º170 separated in 629.2 arcsec.
+    RA 17h49m49s72 DE 84°40'47''8
+  380> GI 13046 is ALONE with mag=10.2; nearest CD -88º52 separated in 1355.4 arcsec.
+    RA 17h54m38s82 DE 88°39'53''6
+  381> GI 13049 is ALONE with mag=10.2; nearest CD -88º50 separated in 1117.5 arcsec.
+    RA 17h55m03s96 DE 88°31'14''2
+  382> GI 13160 is ALONE with mag=10.0; nearest CD -83º233 separated in 1105.9 arcsec.
+    RA 18h05m05s52 DE 83°25'42''8
+  383> GI 13252 is ALONE with mag=10.0; nearest CD -74º1262 separated in 796.9 arcsec.
+    RA 18h14m36s18 DE 74°39'05''7
+  384> GI 13514 is ALONE with mag=10.0; nearest CD -65º2518 separated in 546.0 arcsec.
+    RA 18h35m19s24 DE 65°50'46''0
+  385> GI 13718 is ALONE with mag=9.5; nearest CD -83º243 separated in 676.5 arcsec.
+    RA 18h58m32s43 DE 83°56'41''5
+  386> GI 13725 is ALONE with mag=9.5; nearest CD -70º1676 separated in 1005.7 arcsec.
+    RA 18h59m15s99 DE 70°17'32''9
+  387> GI 13735 is ALONE with mag=10.0; nearest CD -70º1677 separated in 939.5 arcsec.
+    RA 19h00m02s35 DE 70°15'09''3
+  388> GI 13744 is ALONE with mag=11.0; nearest CD -70º1677 separated in 525.9 arcsec.
+    RA 19h01m00s11 DE 70°21'06''8
+  389> GI 13915 is ALONE with mag=9.4; nearest CD -85º158 separated in 705.2 arcsec.
+    RA 19h14m44s60 DE 85°26'44''0
+  390> GI 13947 is ALONE with mag=9.8; nearest CD -85º159 separated in 1163.2 arcsec.
+    RA 19h18m37s78 DE 85°50'04''6
+  391> GI 13983 is ALONE with mag=10.0; nearest CD -86º122 separated in 1591.8 arcsec.
+    RA 19h21m52s61 DE 86°06'22''8
+  392> GI 14002 is ALONE with mag=9.5; nearest CD -78º891 separated in 640.9 arcsec.
+    RA 19h23m17s77 DE 78°04'18''3
+  393> GI 14060 is ALONE with mag=9.6; nearest CD -84º191 separated in 556.4 arcsec.
+    RA 19h28m01s32 DE 84°49'51''9
+  394> GI 14110 is ALONE with mag=9.8; nearest CD -82º327 separated in 701.8 arcsec.
+    RA 19h31m59s68 DE 82°41'12''8
+  395> GI 14112 is ALONE with mag=9.5; nearest CD -83º249 separated in 386.4 arcsec.
+    RA 19h32m06s36 DE 83°43'13''1
+  396> GI 14131 is ALONE with mag=9.8; nearest CD -86º121 separated in 932.5 arcsec.
+    RA 19h33m56s74 DE 86°54'21''3
+  397> GI 14136 is ALONE with mag=9.4; nearest CD -86º122 separated in 888.5 arcsec.
+    RA 19h34m48s74 DE 86°13'55''0
+  398> GI 14155 is ALONE with mag=10.0; nearest CD -76º1018 separated in 656.3 arcsec.
+    RA 19h36m06s22 DE 76°50'09''8
+  399> GI 14173 is ALONE with mag=10.0; nearest CD -77º992 separated in 604.1 arcsec.
+    RA 19h37m30s44 DE 78°03'11''0
+  400> GI 14418 is ALONE with mag=10.0; nearest CD -87º104 separated in 1208.7 arcsec.
+    RA 20h00m24s42 DE 87°56'18''2
+  401> GI 14418 is ALONE with mag=10.0; nearest CD -87º104 separated in 1208.7 arcsec.
+    RA 20h00m24s42 DE 87°56'18''2
+  402> GI 14453 is ALONE with mag=9.8; nearest CD -66º2378 separated in 404.3 arcsec.
+    RA 20h03m32s52 DE 66°16'18''2
+  403> GI 14519 is ALONE with mag=9.8; nearest CD -85º160 separated in 452.6 arcsec.
+    RA 20h09m22s62 DE 85°41'54''3
+  404> GI 14592 is ALONE with mag=10.0; nearest CD -85º164 separated in 765.4 arcsec.
+    RA 20h16m07s15 DE 85°11'22''3
+  405> GI 14604 is ALONE with mag=10.0; nearest CD -65º2676 separated in 375.1 arcsec.
+    RA 20h16m41s68 DE 65°59'56''2
+  406> GI 14610 is ALONE with mag=11.0; nearest CD -83º255 separated in 942.0 arcsec.
+    RA 20h17m42s28 DE 83°04'07''0
+  407> GI 14633 is ALONE with mag=10.0; nearest CD -83º256 separated in 1199.7 arcsec.
+    RA 20h19m59s05 DE 83°50'28''1
+  408> GI 14692 is ALONE with mag=9.5; nearest CD -83º256 separated in 624.3 arcsec.
+    RA 20h24m49s73 DE 83°43'17''4
+  409> GI 14718 is ALONE with mag=10.0; nearest CD -69º1943 separated in 1124.6 arcsec.
+    RA 20h27m41s26 DE 69°42'22''6
+  410> GI 14743 is ALONE with mag=10.5; nearest CD -87º105 separated in 435.8 arcsec.
+    RA 20h30m21s16 DE 87°26'46''1
+  411> GI 14744 is ALONE with mag=10.0; nearest CD -68º2186 separated in 447.7 arcsec.
+    RA 20h30m39s88 DE 68°00'08''7
+  412> GI 14809 is ALONE with mag=10.0; nearest CD -67º2449 separated in 462.7 arcsec.
+    RA 20h36m51s73 DE 67°51'20''4
+  413> GI 14853 is ALONE with mag=10.0; nearest CD -70º1799 separated in 676.6 arcsec.
+    RA 20h42m23s32 DE 70°38'21''2
+  414> GI 14888 is ALONE with mag=9.5; nearest CD -82º351 separated in 493.1 arcsec.
+    RA 20h45m28s54 DE 82°23'37''5
+  415> GI 14933 is ALONE with mag=10.0; nearest CD -69º1963 separated in 507.4 arcsec.
+    RA 20h50m25s63 DE 69°54'25''2
+  416> GI 14934 is ALONE with mag=10.5; nearest CD -88º54 separated in 650.0 arcsec.
+    RA 20h50m37s65 DE 88°33'54''4
+  417> GI 15063 is ALONE with mag=10.0; nearest CD -67º2468 separated in 477.7 arcsec.
+    RA 21h04m12s60 DE 68°05'45''5
+  418> GI 15105 is ALONE with mag=10.0; nearest CD -84º204 separated in 572.5 arcsec.
+    RA 21h08m22s60 DE 84°31'05''4
+  419> GI 15119 is ALONE with mag=10.0; nearest CD -85º174 separated in 981.2 arcsec.
+    RA 21h09m39s33 DE 85°08'29''0
+  420> GI 15243 is ALONE with mag=9.5; nearest CD -67º2485 separated in 439.5 arcsec.
+    RA 21h22m04s56 DE 67°49'52''7
+  421> GI 15349 is ALONE with mag=9.5; nearest CD -67º2499 separated in 781.7 arcsec.
+    RA 21h33m36s61 DE 67°59'26''4
+  422> GI 15445 is ALONE with mag=9.6; nearest CD -85º178 separated in 766.9 arcsec.
+    RA 21h41m59s44 DE 85°37'31''7
+  423> GI 15462 is ALONE with mag=10.0; nearest CD -89º15 separated in 666.6 arcsec.
+    RA 21h43m11s88 DE 89°30'15''6
+  424> GI 15525 is ALONE with mag=10.0; nearest CD -69º2023 separated in 699.7 arcsec.
+    RA 21h50m24s85 DE 69°28'54''9
+  425> GI 15718 is ALONE with mag=10.0; nearest CD -73º1602 separated in 587.2 arcsec.
+    RA 22h10m53s57 DE 73°23'43''9
+  426> GI 15762 is ALONE with mag=9.2; nearest CD -67º2542 separated in 1061.9 arcsec.
+    RA 22h15m36s17 DE 67°52'07''7
+  427> GI 15776 is ALONE with mag=10.0; nearest CD -71º1744 separated in 659.5 arcsec.
+    RA 22h16m55s75 DE 71°10'40''5
+  428> GI 15791 is ALONE with mag=10.0; nearest CD -83º291 separated in 386.2 arcsec.
+    RA 22h18m29s72 DE 83°29'49''6
+  429> GI 15795 is ALONE with mag=10.0; nearest CD -68º2288 separated in 849.8 arcsec.
+    RA 22h19m00s18 DE 68°36'55''8
+  430> GI 15820 is ALONE with mag=10.5; nearest CD -85º183 separated in 450.9 arcsec.
+    RA 22h20m36s28 DE 85°40'48''1
+  431> GI 15824 is ALONE with mag=10.0; nearest CD -71º1744 separated in 520.5 arcsec.
+    RA 22h20m46s48 DE 71°16'46''7
+  432> GI 16066 is ALONE with mag=10.0; nearest CD -67º2568 separated in 758.4 arcsec.
+    RA 22h46m21s34 DE 67°57'23''0
+  433> GI 16131 is ALONE with mag=10.0; nearest CD -68º2324 separated in 578.2 arcsec.
+    RA 22h53m45s39 DE 68°35'23''7
+  434> GI 16132 is ALONE with mag=10.0; nearest CD -83º296 separated in 1403.6 arcsec.
+    RA 22h53m57s12 DE 82°48'47''5
+  435> GI 16146 is ALONE with mag=10.0; nearest CD -86º147 separated in 681.6 arcsec.
+    RA 22h55m18s94 DE 87°01'32''6
+  436> GI 16171 is ALONE with mag=10.0; nearest CD -82º375 separated in 1080.0 arcsec.
+    RA 22h57m54s73 DE 82°45'47''5
+  437> GI 16221 is ALONE with mag=10.0; nearest CD -70º1916 separated in 950.5 arcsec.
+    RA 23h02m51s64 DE 70°38'28''8
+  438> GI 16222 is ALONE with mag=10.0; nearest CD -69º2086 separated in 625.4 arcsec.
+    RA 23h03m03s65 DE 69°26'04''9
+  439> GI 16225 is ALONE with mag=10.0; nearest CD -69º2087 separated in 625.2 arcsec.
+    RA 23h03m18s00 DE 69°44'14''8
+  440> GI 16249 is ALONE with mag=10.0; nearest CD -88º60 separated in 387.0 arcsec.
+    RA 23h05m32s36 DE 88°24'33''3
+  441> GI 16289 is ALONE with mag=10.0; nearest CD -85º196 separated in 396.9 arcsec.
+    RA 23h08m32s05 DE 85°26'28''0
+  442> GI 16340 is ALONE with mag=9.5; nearest CD -82º377 separated in 852.5 arcsec.
+    RA 23h15m19s91 DE 82°58'10''3
+  443> GI 16355 is ALONE with mag=10.0; nearest CD -69º2099 separated in 433.0 arcsec.
+    RA 23h17m31s74 DE 69°47'41''1
+  444> GI 16374 is ALONE with mag=10.0; nearest CD -77º1165 separated in 607.0 arcsec.
+    RA 23h19m48s40 DE 76°59'07''1
+  445> GI 16416 is ALONE with mag=10.0; nearest CD -77º1168 separated in 823.0 arcsec.
+    RA 23h24m49s45 DE 77°45'49''3
+  446> GI 16421 is ALONE with mag=10.0; nearest CD -77º1168 separated in 703.2 arcsec.
+    RA 23h25m24s65 DE 77°45'04''3
+  447> GI 16460 is ALONE with mag=10.0; nearest CD -85º198 separated in 910.2 arcsec.
+    RA 23h30m20s63 DE 86°14'45''2
+  448> GI 16478 is ALONE with mag=9.8; nearest CD -82º380 separated in 528.3 arcsec.
+    RA 23h31m44s00 DE 82°52'13''8
+  449> GI 16497 is ALONE with mag=10.5; nearest CD -85º197 separated in 458.4 arcsec.
+    RA 23h33m54s89 DE 85°24'00''0
+  450> GI 16527 is ALONE with mag=10.0; nearest CD -69º2109 separated in 417.4 arcsec.
+    RA 23h36m43s64 DE 69°14'42''6
+  451> GI 16550 is ALONE with mag=10.0; nearest CD -82º379 separated in 513.5 arcsec.
+    RA 23h39m30s41 DE 82°45'40''2
+  452> GI 16557 is ALONE with mag=10.0; nearest CD -82º379 separated in 1634.7 arcsec.
+    RA 23h40m29s46 DE 82°20'27''5
+  453> GI 16584 is ALONE with mag=10.0; nearest CD -67º2613 separated in 381.5 arcsec.
+    RA 23h43m09s46 DE 67°07'10''9
+  454> GI 16585 is ALONE with mag=10.0; nearest CD -87º120 separated in 686.6 arcsec.
+    RA 23h43m09s70 DE 87°37'28''2
+  455> GI 16616 is ALONE with mag=10.0; nearest CD -83º305 separated in 452.1 arcsec.
+    RA 23h46m19s20 DE 83°57'33''8
+  456> GI 16648 is ALONE with mag=10.0; nearest CD -67º2621 separated in 645.6 arcsec.
+    RA 23h49m55s40 DE 67°29'25''2
+  457> GI 16702 is ALONE with mag=9.9; nearest CD -86º152 separated in 583.5 arcsec.
+    RA 23h55m05s50 DE 86°28'43''4
+  458> GI 16704 is ALONE with mag=10.0; nearest CD -87º1 separated in 435.1 arcsec.
+    RA 23h55m32s93 DE 87°05'29''6
+  459> GI 16736 is ALONE with mag=10.0; nearest CD -68º2380 separated in 488.4 arcsec.
+    RA 23h58m34s60 DE 68°59'42''9
+  460> GI 16747 is ALONE with mag=9.8; nearest CD -85º198 separated in 1237.7 arcsec.
+    RA 23h59m50s63 DE 86°12'44''0
+  cross-referenced with 3443 stars
 Stars read from Catalogo General Argentino: 28552  (discarded = 648)
 1) GC 51 is ALONE; nearest CD -37°16 separated in 381.2 arcsec.
      Register GC 51: mag = 9.5, RA = 00h02m44s45, DE = 37°20'47''8, obs = 2 (pag 2)
@@ -1984,158 +2802,153 @@ Stars read from Catalogo General Argentino: 28552  (discarded = 648)
        corresponds to ST 10571 or L. 8146 (mag=7.0) at 1.0 arcsec.
      Register CD -46°13043 (en 19h):  7.1 | 22m14.8s | 31.8'     (pag. 255)
      Register CD -46°13090 (en 19h):  8.1 | 27m3.7s | 25.2'     (pag. 255)
-280) GC 26912 is alone within MAG = 8.5; similar CD -31°16937 separated in 393.5 arcsec although nearest CD -31°16930 at 200.5 arcsec.
-     Register GC 26912: mag = 8.5, RA = 19h32m00s08, DE = 31°14'05''1, obs = 1 (pag 515)
-       corresponds to ST 10603 or L. 8178 (mag=0.0) at 72.8 arcsec.
-     Register CD -31°16937 (en 19h):  9.5 | 32m17.4s | 19.5'     (pag. 596)
-     Register CD -31°16930 (en 19h):  9.6 | 31m52.2s | 11.2'     (pag. 596)
-281) GC 26948 is alone within MAG = 7.2; similar CD -23°15625 separated in 1119.0 arcsec although nearest CD -23°15637 at 11.8 arcsec.
+280) GC 26948 is alone within MAG = 7.2; similar CD -23°15625 separated in 1119.0 arcsec although nearest CD -23°15637 at 11.8 arcsec.
      Register GC 26948: mag = 7.2, RA = 19h33m33s50, DE = 23°56'12''9, obs = 1 (pag 515)
        corresponds to USNO 8627 <LAM 00358> (mag=0.0) at 3.0 arcsec.
      Register CD -23°15625 (en 19h):  6.2 | 32m36.4s | 42.9'     (pag. 108)
      Register CD -23°15637 (en 19h):  8.6 | 33m33.2s | 56.4'     (pag. 108)
-282) GC 27132 is alone within MAG = 7.6; similar CD -42°14506 separated in 991.3 arcsec although nearest CD -42°14496 at 4.3 arcsec.
+281) GC 27132 is alone within MAG = 7.6; similar CD -42°14506 separated in 991.3 arcsec although nearest CD -42°14496 at 4.3 arcsec.
      Register GC 27132: mag = 7.6, RA = 19h42m01s31, DE = 42°10'14''2, obs = 1 (pag 518)
        corresponds to USNO 8708 <BAC 06778> (mag=6.9) at 4.1 arcsec.
        corresponds to ST 10664 or L. 8233 (mag=7.0) at 0.5 arcsec.
      Register CD -42°14506 (en 19h):  8.6 | 42m47.3s | 24.4'     (pag. 48)
      Register CD -42°14496 (en 19h):  8.9 | 42m1.5s | 10.3'     (pag. 48)
-283) GC 27313 is alone within MAG = 8.5; similar CD -33°14607 separated in 520.4 arcsec although nearest CD -32°15607 at 9.1 arcsec.
+282) GC 27313 is alone within MAG = 8.5; similar CD -33°14607 separated in 520.4 arcsec although nearest CD -32°15607 at 9.1 arcsec.
      Register GC 27313: mag = 8.5, RA = 19h50m35s40, DE = 32°57'44''3, obs = 1 (pag 521)
      Register CD -33°14607 (en 19h):  8.7 | 50m37.6s | 6.4'     (pag. 108)
      Register CD -32°15607 (en 19h):  7.4 | 50m35.1s | 57.6'     (pag. 52)
-284) GC 27549 is alone within MAG = 7.1; similar CD -44°13763 separated in 433.9 arcsec although nearest CD -44°13755 at 8.3 arcsec.
+283) GC 27549 is alone within MAG = 7.1; similar CD -44°13763 separated in 433.9 arcsec although nearest CD -44°13755 at 8.3 arcsec.
      Register GC 27549: mag = 7.1, RA = 20h00m44s33, DE = 44°16'39''9, obs = 2 (pag 526)
        corresponds to ST 10799 or L. 8344 (mag=7.0) at 0.8 arcsec.
      Register CD -44°13763 (en 20h):  7.4 | 1m24.0s | 15.3'     (pag. 154)
      Register CD -44°13755 (en 20h):  8.2 | 0m44.6s | 16.8'     (pag. 154)
-285) GC 27924 is alone within MAG = 9.0; similar CD -77°1032 separated in 391.0 arcsec although nearest CD -77°1033 at 14.9 arcsec.
+284) GC 27924 is alone within MAG = 9.0; similar CD -77°1032 separated in 391.0 arcsec although nearest CD -77°1033 at 14.9 arcsec.
      Register GC 27924: mag = 9.0, RA = 20h15m58s50, DE = 77°42'14''1, obs = 1 (pag 532)
        corresponds to ST 10900 or L. 8377 (mag=7.0) at 1.6 arcsec.
        corresponds to GI 14557 <LAC 08377> (mag=8.8) at 1.6 arcsec.
      Register CD -77°1032 (en 20h):  8.2 | 15m23.0s | 36.0'     (pag. 338)
      Register CD -77°1033 (en 20h):  7.7 | 15m57.0s | 42.0'     (pag. 338)
-286) GC 27954 is alone within MAG = 9.5; similar CD -27°14774 separated in 494.1 arcsec although nearest CD -27°14777 at 12.4 arcsec.
+285) GC 27954 is alone within MAG = 9.5; similar CD -27°14774 separated in 494.1 arcsec although nearest CD -27°14777 at 12.4 arcsec.
      Register GC 27954: mag = 9.5, RA = 20h16m57s68, DE = 27°18'00''7, obs = 1 (pag 533)
        corresponds to WEI 16099 or OA 20464 (mag=8.9) at 5.0 arcsec.
      Register CD -27°14774 (en 20h):  10.0 | 16m26.3s | 22.4'     (pag. 340)
      Register CD -27°14777 (en 20h):  8.1 | 16m57.3s | 18.2'     (pag. 340)
-287) GC 28030 is alone within MAG = 8.7; similar CD -51°12570 separated in 1073.5 arcsec although nearest CD -51°12559 at 1.8 arcsec.
+286) GC 28030 is alone within MAG = 8.7; similar CD -51°12570 separated in 1073.5 arcsec although nearest CD -51°12559 at 1.8 arcsec.
      Register GC 28030: mag = 8.7, RA = 20h19m51s31, DE = 51°29'43''8, obs = 1 (pag 534)
        corresponds to ST 10922 (mag=7.0) at 1.0 arcsec.
      Register CD -51°12570 (en 20h):  9.4 | 21m11.9s | 17.0'     (pag. 498)
      Register CD -51°12559 (en 20h):  7.5 | 19m51.3s | 29.7'     (pag. 498)
-288) GC 28034 is alone within MAG = 7.5; similar CD -45°13840 separated in 476.3 arcsec although nearest CD -45°13829 at 3.9 arcsec.
+287) GC 28034 is alone within MAG = 7.5; similar CD -45°13840 separated in 476.3 arcsec although nearest CD -45°13829 at 3.9 arcsec.
      Register GC 28034: mag = 7.5, RA = 20h20m03s66, DE = 45°47'44''5, obs = 1 (pag 534)
      Register CD -45°13840 (en 20h):  8.5 | 20m49.2s | 47.7'     (pag. 206)
      Register CD -45°13829 (en 20h):  9.3 | 20m3.5s | 47.8'     (pag. 206)
-289) GC 28067 is ALONE; nearest CD -87°99 separated in 1761.3 arcsec.
+288) GC 28067 is ALONE; nearest CD -87°99 separated in 1761.3 arcsec.
      Register GC 28067: mag = 10.2, RA = 20h21m26s32, DE = 88°14'14''0, obs = 1 (pag 535)
-290) GC 28173 is alone within MAG = 8.0; similar CD -60°7482 separated in 419.8 arcsec although nearest CD -60°7492 at 30.3 arcsec.
+289) GC 28173 is alone within MAG = 8.0; similar CD -60°7482 separated in 419.8 arcsec although nearest CD -60°7492 at 30.3 arcsec.
      Register GC 28173: mag = 8.0, RA = 20h26m49s04, DE = 60°06'34''7, obs = 2 (pag 537)
      Register CD -60°7482 (en 20h):  7.6 | 25m52.9s | 6.0'     (pag. 278)
      Register CD -60°7492 (en 20h):  9.6 | 26m48.5s | 7.1'     (pag. 278)
-291) GC 28222 is alone within MAG = 7.5; similar CD -65°2683 separated in 1175.0 arcsec although nearest CD -65°2688 at 9.3 arcsec.
+290) GC 28222 is alone within MAG = 7.5; similar CD -65°2683 separated in 1175.0 arcsec although nearest CD -65°2688 at 9.3 arcsec.
      Register GC 28222: mag = 7.5, RA = 20h29m08s69, DE = 65°30'23''9, obs = 2 (pag 538)
      Register CD -65°2683 (en 20h):  6.8 | 26m2.0s | 27.5'     (pag. 82)
      Register CD -65°2688 (en 20h):  9.0 | 29m10.0s | 30.5'     (pag. 82)
-292) GC 28467 is ALONE; nearest CD -88°54 separated in 1524.6 arcsec.
+291) GC 28467 is ALONE; nearest CD -88°54 separated in 1524.6 arcsec.
      Register GC 28467: mag = 10.0, RA = 20h39m04s36, DE = 88°13'34''3, obs = 2 (pag 542)
-293) GC 28559 is alone within MAG = 9.0; similar CD -30°18206 separated in 487.3 arcsec although nearest CD -30°18214 at 20.5 arcsec.
+292) GC 28559 is alone within MAG = 9.0; similar CD -30°18206 separated in 487.3 arcsec although nearest CD -30°18214 at 20.5 arcsec.
      Register GC 28559: mag = 9.0, RA = 20h42m38s88, DE = 30°53'08''5, obs = 1 (pag 544)
      Register CD -30°18206 (en 20h):  9.9 | 42m3.1s | 55.8'     (pag. 533)
      Register CD -30°18214 (en 20h):  7.7 | 42m38.9s | 52.8'     (pag. 533)
-294) GC 28573 is alone within MAG = 8.2; similar CD -83°263 separated in 589.0 arcsec although nearest CD -83°259 at 3.6 arcsec.
+293) GC 28573 is alone within MAG = 8.2; similar CD -83°263 separated in 589.0 arcsec although nearest CD -83°259 at 3.6 arcsec.
      Register GC 28573: mag = 8.2, RA = 20h43m29s60, DE = 83°47'20''5, obs = 2 (pag 544)
        corresponds to GI 14816 <GOU 28573> (mag=10.0) at 1.5 arcsec.
      Register CD -83°263 (en 20h):  9.0 | 49m24.0s | 49.6'     (pag. 390)
      Register CD -83°259 (en 20h):  9.3 | 43m30.0s | 47.4'     (pag. 390)
-295) GC 28869 is alone within MAG = 8.0; similar CD -48°13768 separated in 1017.5 arcsec although nearest CD -48°13776 at 4.9 arcsec.
+294) GC 28869 is alone within MAG = 8.0; similar CD -48°13768 separated in 1017.5 arcsec although nearest CD -48°13776 at 4.9 arcsec.
      Register GC 28869: mag = 8.0, RA = 20h57m01s33, DE = 48°19'03''6, obs = 1 (pag 550)
      Register CD -48°13768 (en 20h):  7.0 | 55m31.4s | 27.1'     (pag. 357)
      Register CD -48°13776 (en 20h):  9.3 | 57m1.0s | 19.0'     (pag. 357)
-296) GC 28943 is ALONE; nearest CD -25°15236 separated in 483.7 arcsec.
+295) GC 28943 is ALONE; nearest CD -25°15236 separated in 483.7 arcsec.
      Register GC 28943: mag = 8.7, RA = 20h59m34s13, DE = 25°09'01''3, obs = 2 (pag 551)
        corresponds to WEI 16603 or OA 21103 (mag=8.9) at 1.3 arcsec.
-297) GC 29010 is alone within MAG = 9.7; similar CD -37°14154 separated in 443.4 arcsec although nearest CD -37°14152 at 12.2 arcsec.
+296) GC 29010 is alone within MAG = 9.7; similar CD -37°14154 separated in 443.4 arcsec although nearest CD -37°14152 at 12.2 arcsec.
      Register GC 29010: mag = 9.7, RA = 21h03m15s74, DE = 37°47'28''4, obs = 1 (pag 553)
      Register CD -37°14154 (en 21h):  10.0 | 3m46.6s | 43.3'     (pag. 327)
      Register CD -37°14152 (en 21h):  8.5 | 3m15.2s | 47.3'     (pag. 327)
-298) GC 29507 is ALONE; nearest CD -83°276 separated in 610.4 arcsec.
+297) GC 29507 is ALONE; nearest CD -83°276 separated in 610.4 arcsec.
      Register GC 29507: mag = 10.0, RA = 21h25m58s45, DE = 83°20'38''0, obs = 1 (pag 562)
-299) GC 29615 is alone within MAG = 8.2; similar CD -58°8122 separated in 766.6 arcsec although nearest CD -57°8363 at 14.8 arcsec.
+298) GC 29615 is alone within MAG = 8.2; similar CD -58°8122 separated in 766.6 arcsec although nearest CD -57°8363 at 14.8 arcsec.
      Register GC 29615: mag = 8.2, RA = 21h31m10s69, DE = 57°47'32''6, obs = 1 (pag 564)
        corresponds to ST 11425 (mag=8.0) at 1.1 arcsec.
      Register CD -58°8122 (en 21h):  7.4 | 31m5.3s | 0.3'     (pag. 223)
      Register CD -57°8363 (en 21h):  9.5 | 31m10.4s | 47.3'     (pag. 193)
-300) GC 29657 is alone within MAG = 9.5; similar CD -29°17934 separated in 580.7 arcsec although nearest CD -29°17936 at 1.5 arcsec.
+299) GC 29657 is alone within MAG = 9.5; similar CD -29°17934 separated in 580.7 arcsec although nearest CD -29°17936 at 1.5 arcsec.
      Register GC 29657: mag = 9.5, RA = 21h33m12s01, DE = 29°47'43''0, obs = 1 (pag 565)
      Register CD -29°17934 (en 21h):  10.0 | 32m55.4s | 56.7'     (pag. 468)
      Register CD -29°17936 (en 21h):  8.4 | 33m12.1s | 47.7'     (pag. 468)
-301) GC 29699 is alone within MAG = 7.7; similar CD -55°8916 separated in 1859.0 arcsec although nearest CD -54°9063 at 12.7 arcsec.
+300) GC 29699 is alone within MAG = 7.7; similar CD -55°8916 separated in 1859.0 arcsec although nearest CD -54°9063 at 12.7 arcsec.
      Register GC 29699: mag = 7.7, RA = 21h35m10s96, DE = 54°32'48''7, obs = 2 (pag 566)
        corresponds to ST 11459 or L. 8883 (mag=7.0) at 1.4 arcsec.
      Register CD -55°8916 (en 21h):  7.3 | 35m14.4s | 3.8'     (pag. 132)
      Register CD -54°9063 (en 21h):  6.5 | 35m11.0s | 32.6'     (pag. 99)
-302) GC 29855 is ALONE; nearest CD -62°1370 separated in 1249.9 arcsec.
+301) GC 29855 is ALONE; nearest CD -62°1370 separated in 1249.9 arcsec.
      Register GC 29855: mag = 7.2, RA = 21h42m50s75, DE = 62°37'53''7, obs = 2 (pag 569)
        corresponds to ST 11503 or L. 8920 (mag=7.6) at 2.6 arcsec.
-303) GC 29948 is alone within MAG = 8.7; similar CD -60°7809 separated in 1031.3 arcsec although nearest CD -60°7811 at 9.0 arcsec.
+302) GC 29948 is alone within MAG = 8.7; similar CD -60°7809 separated in 1031.3 arcsec although nearest CD -60°7811 at 9.0 arcsec.
      Register GC 29948: mag = 8.7, RA = 21h47m07s92, DE = 60°49'08''9, obs = 1 (pag 570)
      Register CD -60°7809 (en 21h):  9.7 | 46m58.3s | 32.0'     (pag. 280)
      Register CD -60°7811 (en 21h):  7.5 | 47m8.1s | 49.0'     (pag. 280)
-304) GC 29978 is ALONE; nearest CD -65°2800 separated in 365.0 arcsec.
+303) GC 29978 is ALONE; nearest CD -65°2800 separated in 365.0 arcsec.
      Register GC 29978: mag = 8.7, RA = 21h48m20s02, DE = 65°11'23''2, obs = 1 (pag 571)
-305) GC 30576 is ALONE; nearest CD -67°2542 separated in 1060.2 arcsec.
+304) GC 30576 is ALONE; nearest CD -67°2542 separated in 1060.2 arcsec.
      Register GC 30576: mag = 9.0, RA = 22h17m28s58, DE = 67°44'38''5, obs = 1 (pag 582)
        corresponds to GI 15762 <GOU 30576> (mag=9.2) at 2.0 arcsec.
-306) GC 30670 is alone within MAG = 6.3; similar CD -26°16170 separated in 2868.0 arcsec although nearest CD -27°15932 at 6.9 arcsec.
+305) GC 30670 is alone within MAG = 6.3; similar CD -26°16170 separated in 2868.0 arcsec although nearest CD -27°15932 at 6.9 arcsec.
      Register GC 30670: mag = 6.3, RA = 22h22m46s11, DE = 27°44'43''0, obs = 2 (pag 584)
        corresponds to USNO 10153 <OARS 22181> (mag=6.8) at 1.4 arcsec.
        corresponds to WEI 17429 or OA 22181 (mag=6.0) at 2.0 arcsec.
        corresponds to ST 11755 or L. 9151 (mag=6.7) at 1.8 arcsec.
      Register CD -26°16170 (en 22h):  6.5 | 23m27.3s | 57.8'     (pag. 288)
      Register CD -27°15932 (en 22h):  9.3 | 22m46.7s | 44.7'     (pag. 344)
-307) GC 31343 is alone within MAG = 10.0; similar CD -83°298 separated in 1340.6 arcsec although nearest CD -83°296 at 1.4 arcsec.
+306) GC 31343 is alone within MAG = 10.0; similar CD -83°298 separated in 1340.6 arcsec although nearest CD -83°296 at 1.4 arcsec.
      Register GC 31343: mag = 10.0, RA = 22h57m22s08, DE = 83°04'04''6, obs = 1 (pag 598)
        corresponds to GI 16139 <GOU 31343> (mag=10.0) at 11.6 arcsec.
      Register CD -83°298 (en 23h):  9.7 | 0m20.0s | 25.8'     (pag. 391)
      Register CD -83°296 (en 22h):  7.4 | 57m22.0s | 4.1'     (pag. 390)
-308) GC 31347 is alone within MAG = 10.2; similar CD -83°298 separated in 1300.6 arcsec although nearest CD -83°297 at 5.4 arcsec.
+307) GC 31347 is alone within MAG = 10.2; similar CD -83°298 separated in 1300.6 arcsec although nearest CD -83°297 at 5.4 arcsec.
      Register GC 31347: mag = 10.2, RA = 22h57m27s34, DE = 83°04'43''5, obs = 1 (pag 598)
        corresponds to GI 16141 <GOU 31347> (mag=10.0) at 6.3 arcsec.
      Register CD -83°298 (en 23h):  9.7 | 0m20.0s | 25.8'     (pag. 391)
      Register CD -83°297 (en 22h):  7.4 | 57m29.0s | 4.8'     (pag. 390)
-309) GC 31485 is alone within MAG = 9.2; similar CD -60°8039 separated in 1057.1 arcsec although nearest CD -61°6796 at 19.6 arcsec.
+308) GC 31485 is alone within MAG = 9.2; similar CD -60°8039 separated in 1057.1 arcsec although nearest CD -61°6796 at 19.6 arcsec.
      Register GC 31485: mag = 9.2, RA = 23h05m53s50, DE = 61°07'25''6, obs = 1 (pag 600)
      Register CD -60°8039 (en 23h):  9.6 | 6m19.8s | 50.1'     (pag. 280)
      Register CD -61°6796 (en 23h):  8.1 | 5m53.5s | 7.1'     (pag. 304)
-310) GC 31575 is ALONE; nearest CD -88°60 separated in 387.2 arcsec.
+309) GC 31575 is ALONE; nearest CD -88°60 separated in 387.2 arcsec.
      Register GC 31575: mag = 10.0, RA = 23h11m06s80, DE = 88°16'24''9, obs = 1 (pag 602)
        corresponds to GI 16249 <GOU 31575> (mag=10.0) at 0.2 arcsec.
-311) GC 31647 is alone within MAG = 9.0; similar CD -36°15842 separated in 534.5 arcsec although nearest CD -36°15839 at 9.5 arcsec.
+310) GC 31647 is alone within MAG = 9.0; similar CD -36°15842 separated in 534.5 arcsec although nearest CD -36°15839 at 9.5 arcsec.
      Register GC 31647: mag = 9.0, RA = 23h14m45s16, DE = 36°40'03''1, obs = 1 (pag 604)
      Register CD -36°15842 (en 23h):  10.0 | 15m22.4s | 35.2'     (pag. 278)
      Register CD -36°15839 (en 23h):  7.9 | 14m45.4s | 39.9'     (pag. 278)
-312) GC 31657 is alone within MAG = 8.2; similar CD -43°15352 separated in 646.1 arcsec although nearest CD -44°15218 at 3.1 arcsec.
+311) GC 31657 is alone within MAG = 8.2; similar CD -43°15352 separated in 646.1 arcsec although nearest CD -44°15218 at 3.1 arcsec.
      Register GC 31657: mag = 8.2, RA = 23h15m35s99, DE = 44°02'45''1, obs = 1 (pag 604)
        corresponds to ST 12115 or L. 9451 (mag=8.0) at 1.8 arcsec.
      Register CD -43°15352 (en 23h):  7.6 | 15m21.6s | 52.3'     (pag. 107)
      Register CD -44°15218 (en 23h):  9.4 | 15m35.9s | 2.8'     (pag. 159)
-313) GC 31750 is alone within MAG = 5.7; similar CD -57°8799 separated in 5918.4 arcsec although nearest CD -59°8132 at 25.7 arcsec.
+312) GC 31750 is alone within MAG = 5.7; similar CD -57°8799 separated in 5918.4 arcsec although nearest CD -59°8132 at 25.7 arcsec.
      Register GC 31750: mag = 5.7, RA = 23h20m06s53, DE = 59°09'57''8, obs = 2 (pag 606)
        corresponds to ST 12147 or L. 9474 (mag=5.6) at 1.4 arcsec.
      Register CD -57°8799 (en 23h):  5.5 | 18m10.7s | 32.5'     (pag. 194)
      Register CD -59°8132 (en 23h):  7.0 | 20m5.9s | 10.4'     (pag. 252)
-314) GC 31804 is alone within MAG = 9.2; similar CD -59°8145 separated in 722.4 arcsec although nearest CD -59°8144 at 6.1 arcsec.
+313) GC 31804 is alone within MAG = 9.2; similar CD -59°8145 separated in 722.4 arcsec although nearest CD -59°8144 at 6.1 arcsec.
      Register GC 31804: mag = 9.2, RA = 23h23m37s49, DE = 59°19'53''9, obs = 1 (pag 607)
      Register CD -59°8145 (en 23h):  9.3 | 24m23.6s | 9.4'     (pag. 252)
      Register CD -59°8144 (en 23h):  8.0 | 23m37.4s | 20.0'     (pag. 252)
-315) GC 31984 is alone within MAG = 9.2; similar CD -71°1802 separated in 1513.3 arcsec although nearest CD -71°1798 at 12.2 arcsec.
+314) GC 31984 is alone within MAG = 9.2; similar CD -71°1802 separated in 1513.3 arcsec although nearest CD -71°1798 at 12.2 arcsec.
      Register GC 31984: mag = 9.2, RA = 23h32m49s40, DE = 71°48'29''3, obs = 2 (pag 610)
        corresponds to GI 16471 <GOU 31984> (mag=10.0) at 2.2 arcsec.
      Register CD -71°1802 (en 23h):  9.2 | 38m9.0s | 52.5'     (pag. 239)
      Register CD -71°1798 (en 23h):  8.1 | 32m52.0s | 48.5'     (pag. 239)
-Total errors: 315 (alone: 40, mag: 275)
-RSME of distance (arcsec) = 26.93  among a total of 27554 stars
-RSME of visual magnitude = 0.35862  among a total of 27554 stars
+Total errors: 314 (alone: 40, mag: 274)
+RSME of distance (arcsec) = 26.92  among a total of 27555 stars
+RSME of visual magnitude = 0.35866  among a total of 27555 stars

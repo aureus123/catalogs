@@ -49,8 +49,19 @@ But in the printed catalog, it says 19°7'.9, thus leading to a separation of 30
 
 In 2018, with this approach 45 typo mistakes were found in the current CD catalog at VizieR (for declinations -23 and -24), see https://data.mendeley.com/datasets/5wwwtv7c8c/1/files/4934a81a-5a03-46b1-9098-4004733511a7
 
+We now enumerate those errors found by comparing CD and SD. In case more than
+one parameter mitmatches for the same star, columns dist1 and dist2 are only
+reported for the comparison of the parameter with larger difference:
+
+| Star | Parameter | current | corrected | dist1 | dist2 |
+| --- | --- | --- | --- | --- | --- |
+| CD -22°9541 | RAs | 35.2 | 35.3 |  |  |
+| CD -22°9541 | DEm | 6.5 | 29.9 | 1404 | 1389 |
+| CD -22°9542 | RAs | 35.3 | 35.2 |  |  |
+| CD -22°9542 | DEm | 29.9 | 6.5 |  |  |
+
 We now enumerate those errors found by comparing CD and PPM. We omit those swaps
-(e.g. CD -24°5836 and CD -24°5837):
+(i.e. two consecutive stars in a wrong order, e.g. CD -24°5836 and CD -24°5837):
 
 | Star | Parameter | current | corrected | dist1 | dist2 |
 | --- | --- | --- | --- | --- | --- |

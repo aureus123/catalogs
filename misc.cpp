@@ -34,3 +34,14 @@ void readField(char *buffer, char *cell, int initial, int bytes)
     }
     cell[bytes] = 0;
 }
+
+/*
+ * readFieldSanitized - lee un campo de una longitud determinada en "bytes"
+ * En caso de encontrar espacios, los reemplaza por ceros.
+ */
+void readFieldSanitized(char *buffer, char *cell, int initial, int bytes) {
+    readField(buffer, cell, initial, bytes);
+    for (int i = 0; i < bytes; i++) {
+        if (cell[i] == ' ') cell[i] = '0';
+    }
+}

@@ -33,7 +33,7 @@ GAVO Data Center
 during years 1845 to 1877. 3rd. Edition. from GAVO Data Center
 - stone: Stone, Cape catalog of 12441 stars observed during years 1871
 to 1879 from GAVO Data Center
-- gillis: Gillis, A catalogue of 16748 southern stars deduced by the
+- gilliss: Gilliss, A catalogue of 16748 southern stars deduced by the
 United States Naval Observatory from the zone observations made at
 Santiago de Chile, from GAVO Data Center
 - 4005: Table of Correspondences BD/CD/CPD (Jung, Bischoffl 1971) from NASA-ADC CD-ROMs, also on Vizier (code IV/5)
