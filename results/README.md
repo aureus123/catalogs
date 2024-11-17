@@ -60,8 +60,9 @@ reported for the comparison of the parameter with larger difference:
 | CD -22°9542 | RAs | 35.3 | 35.2 |  |  |
 | CD -22°9542 | DEm | 29.9 | 6.5 |  |  |
 
-We now enumerate those errors found by comparing CD and PPM. We omit those swaps
-(i.e. two consecutive stars in a wrong order, e.g. CD -24°5836 and CD -24°5837):
+We now enumerate those errors found by comparing CD and PPM. Those swaps
+(i.e. two consecutive stars in a wrong order) are given next to the following
+table:
 
 | Star | Parameter | current | corrected | dist1 | dist2 |
 | --- | --- | --- | --- | --- | --- |
@@ -79,7 +80,9 @@ We now enumerate those errors found by comparing CD and PPM. We omit those swaps
 | CD -24°5419 | mag | 10.0 | 9.5 |  |  |
 | CD -27°4804 | DEm | 20.4 | 29.4 | 540 | 578 |
 
-
+Swaps:
+- CD -26°1425 and CD -26°1426
+- CD -24°5836 and CD -24°5837
 
 
 
