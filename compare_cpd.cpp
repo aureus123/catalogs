@@ -61,7 +61,7 @@ int main(int argc, char** argv)
                 CPDstar[i].declRef,
                 CPDstar[i].numRef,
                 dist);
-            writeRegister(cdIndex);
+            writeRegister(cdIndex, false);
             continue;
         }
         if (dist > MAX_DISTANCE) {
@@ -77,7 +77,7 @@ int main(int argc, char** argv)
             if (CPDstar[i].declRef2 != -1) {
                 printf("    (also identified as CD %d°%d)\n", CPDstar[i].declRef2, CPDstar[i].numRef2);
             }
-            writeRegister(cdIndex);
+            writeRegister(cdIndex, true);
             fprintf(posStream, "%d,%d,%d,CPD %d°%d,%.0f\n",
                 indexError,
                 CDstar[cdIndex].declRef,

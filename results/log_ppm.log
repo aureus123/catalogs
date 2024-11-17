@@ -71,160 +71,361 @@ Star DM -69°325 not found (corresponding to PPM 776057). Discarding PPM star.
 Stars read from PPM: 172220
 1) CD -25°16747 separated from PPM 242413 in 169.0 arcsec.
      Register CD -25°16747 (en 23h):  9.6 | 54m36.2s | 21.8'     (pag. 233)
+   Neighbors:
+     Register CD -25°16746 (en 23h):  9.6 | 54m35.3s | 24.8'     (pag. 233)
+     Register CD -25°16748 (en 23h):  9.8 | 54m48.4s | 52.3'     (pag. 233)
 2) CD -26°705 separated from PPM 244476 in 2597.2 arcsec.
      Register CD -26°705 (en 1h):  9.1 | 51m47.3s | 6.4'     (pag. 236)
+   Neighbors:
+     Register CD -26°704 (en 1h):  8.5 | 51m35.6s | 49.5'     (pag. 236)
+     Register CD -26°706 (en 1h):  9.9 | 51m49.3s | 57.5'     (pag. 236)
 3) CD -26°706 separated from PPM 244481 in 3026.4 arcsec.
      Register CD -26°706 (en 1h):  9.9 | 51m49.3s | 57.5'     (pag. 236)
+   Neighbors:
+     Register CD -26°705 (en 1h):  9.1 | 51m47.3s | 6.4'     (pag. 236)
+     Register CD -26°707 (en 1h):  10.0 | 51m53.2s | 50.0'     (pag. 236)
 4) CD -26°1304 separated from PPM 246277 (PROBLEM) in 1167.6 arcsec.
      Register CD -26°1304 (en 3h):  9.3 | 22m42.7s | 27.0'     (pag. 238)
+   Neighbors:
+     Register CD -26°1303 (en 3h):  10.0 | 22m38.2s | 34.9'     (pag. 238)
+     Register CD -26°1305 (en 3h):  10.0 | 22m43.6s | 27.7'     (pag. 238)
 5) CD -26°1426 separated from PPM 246657 in 1629.7 arcsec.
      Register CD -26°1426 (en 3h):  10.0 | 40m24.1s | 27.8'     (pag. 238)
+   Neighbors:
+     Register CD -26°1425 (en 3h):  9.2 | 40m23.4s | 1.6'     (pag. 238)
+     Register CD -26°1427 (en 3h):  9.9 | 40m39.4s | 42.2'     (pag. 238)
 6) CD -24°2783 separated from PPM 248371 in 615.4 arcsec.
      Register CD -24°2783 (en 4h):  9.2 | 57m43.0s | 30.2'     (pag. 126)
+   Neighbors:
+     Register CD -24°2782 (en 4h):  9.9 | 57m41.5s | 46.5'     (pag. 126)
+     Register CD -24°2784 (en 4h):  9.8 | 57m58.2s | 33.6'     (pag. 126)
 7) CD -26°2132 separated from PPM 248732 in 1619.5 arcsec.
      Register CD -26°2132 (en 5h):  8.8 | 13m17.4s | 17.9'     (pag. 240)
+   Neighbors:
+     Register CD -26°2131 (en 5h):  9.2 | 13m17.4s | 36.9'     (pag. 240)
+     Register CD -26°2133 (en 5h):  9.0 | 13m20.9s | 26.2'     (pag. 240)
 8) CD -25°2622 separated from PPM 249281 in 545.6 arcsec.
      Register CD -25°2622 (en 5h):  8.3 | 38m25.1s | 49.8'     (pag. 186)
+   Neighbors:
+     Register CD -25°2621 (en 5h):  9.7 | 38m18.2s | 5.7'     (pag. 186)
+     Register CD -25°2623 (en 5h):  10.0 | 38m27.2s | 13.2'     (pag. 186)
 9) CD -24°3857 separated from PPM 250124 in 193.2 arcsec.
      Register CD -24°3857 (en 6h):  8.1 | 11m42.3s | 51.0'     (pag. 129)
+   Neighbors:
+     Register CD -24°3856 (en 6h):  10.0 | 11m40.2s | 31.8'     (pag. 129)
+     Register CD -24°3858 (en 6h):  10.0 | 11m45.0s | 6.6'     (pag. 129)
 10) CD -24°4356 reports mag=9.6 but it should be mag=7.8 from PPM 250893: Delta = 1.8.
      Register CD -24°4356 (en 6h):  9.6 | 38m2.4s | 19.1'     (pag. 131)
 11) CD -26°3646 reports mag=9.6 but it should be mag=6.7 from PPM 251329 (PROBLEM): Delta = 2.9.
      Register CD -26°3646 (en 6h):  9.6 | 53m6.8s | 59.6'     (pag. 246)
 12) CD -28°3661 separated from PPM 251337 in 167.4 arcsec.
      Register CD -28°3661 (en 6h):  9.3 | 53m30.4s | 51.6'     (pag. 358)
+   Neighbors:
+     Register CD -28°3660 (en 6h):  10.0 | 53m29.8s | 22.6'     (pag. 358)
+     Register CD -28°3662 (en 6h):  9.6 | 53m36.2s | 56.6'     (pag. 358)
 13) CD -27°3496 separated from PPM 251386 in 558.0 arcsec.
      Register CD -27°3496 (en 6h):  8.7 | 54m54.9s | 39.1'     (pag. 302)
+   Neighbors:
+     Register CD -27°3495 (en 6h):  9.0 | 54m49.3s | 7.6'     (pag. 302)
+     Register CD -27°3497 (en 6h):  10.0 | 54m58.4s | 16.1'     (pag. 302)
 14) CD -24°5419 separated from PPM 252425 in 775.1 arcsec.
      Register CD -24°5419 (en 7h):  10.0 | 21m55.0s | 22.1'     (pag. 135)
+   Neighbors:
+     Register CD -24°5418 (en 7h):  9.5 | 21m55.1s | 35.0'     (pag. 135)
+     Register CD -24°5420 (en 7h):  10.0 | 22m0.0s | 58.7'     (pag. 135)
 15) CD -24°5836 separated from PPM 253024 in 1652.0 arcsec.
      Register CD -24°5836 (en 7h):  10.0 | 37m52.5s | 45.5'     (pag. 136)
+   Neighbors:
+     Register CD -24°5835 (en 7h):  9.5 | 37m49.5s | 26.4'     (pag. 136)
+     Register CD -24°5837 (en 7h):  9.4 | 37m52.6s | 17.8'     (pag. 136)
 16) CD -27°4804 separated from PPM 253548 in 578.6 arcsec.
      Register CD -27°4804 (en 7h):  8.0 | 52m52.5s | 20.4'     (pag. 306)
+   Neighbors:
+     Register CD -27°4803 (en 7h):  9.4 | 52m52.3s | 53.4'     (pag. 306)
+     Register CD -27°4805 (en 7h):  10.0 | 53m2.3s | 21.4'     (pag. 306)
 17) CD -23°6942 separated from PPM 254043 in 581.4 arcsec.
      Register CD -23°6942 (en 8h):  9.4 | 6m52.7s | 28.2'     (pag. 79)
+   Neighbors:
+     Register CD -23°6941 (en 8h):  10.0 | 6m44.9s | 3.4'     (pag. 79)
+     Register CD -23°6943 (en 8h):  10.0 | 6m52.9s | 47.8'     (pag. 79)
 18) CD -27°5405 separated from PPM 254394 in 2030.5 arcsec.
      Register CD -27°5405 (en 8h):  10.0 | 18m12.7s | 35.4'     (pag. 308)
+   Neighbors:
+     Register CD -27°5404 (en 8h):  8.6 | 18m12.6s | 1.5'     (pag. 308)
+     Register CD -27°5406 (en 8h):  9.6 | 18m12.7s | 42.9'     (pag. 308)
 19) CD -24°6945 separated from PPM 254512 in 145.5 arcsec.
      Register CD -24°6945 (en 8h):  9.3 | 21m24.7s | 6.1'     (pag. 140)
+   Neighbors:
+     Register CD -24°6944 (en 8h):  9.5 | 21m19.8s | 39.6'     (pag. 140)
+     Register CD -24°6946 (en 8h):  10.0 | 21m26.3s | 17.8'     (pag. 140)
 20) CD -23°8777 separated from PPM 256819 in 205.7 arcsec.
      Register CD -23°8777 (en 9h):  8.6 | 44m27.9s | 51.0'     (pag. 85)
+   Neighbors:
+     Register CD -23°8776 (en 9h):  9.0 | 44m22.1s | 59.7'     (pag. 85)
+     Register CD -23°8778 (en 9h):  9.6 | 44m30.3s | 2.8'     (pag. 85)
 21) CD -27°8178 separated from PPM 259164 in 565.2 arcsec.
      Register CD -27°8178 (en 11h):  7.7 | 28m19.0s | 26.4'     (pag. 318)
+   Neighbors:
+     Register CD -27°8177 (en 11h):  8.5 | 28m13.1s | 29.4'     (pag. 318)
+     Register CD -27°8179 (en 11h):  8.6 | 28m22.5s | 41.4'     (pag. 318)
 22) CD -27°8492 reports mag=5.5 but it should be mag=9.6 from PPM 259845: Delta = 4.1.
      Register CD -27°8492 (en 11h):  5.5 | 59m17.9s | 36.5'     (pag. 319)
 23) CD -25°9325 separated from PPM 260535 in 527.6 arcsec.
      Register CD -25°9325 (en 12h):  9.1 | 28m57.1s | 50.3'     (pag. 208)
+   Neighbors:
+     Register CD -25°9324 (en 12h):  10.0 | 28m51.2s | 6.7'     (pag. 208)
+     Register CD -25°9326 (en 12h):  9.8 | 28m57.3s | 28.7'     (pag. 208)
 24) CD -27°9346 separated from PPM 261901 in 414.5 arcsec.
      Register CD -27°9346 (en 13h):  9.0 | 32m7.3s | 11.4'     (pag. 322)
+   Neighbors:
+     Register CD -27°9345 (en 13h):  10.0 | 31m49.4s | 7.7'     (pag. 322)
+     Register CD -27°9347 (en 13h):  10.0 | 32m10.0s | 47.6'     (pag. 322)
 25) CD -27°9429 reports mag=7.5 but it should be mag=5.9 from PPM 262109 (PROBLEM): Delta = 1.6.
      Register CD -27°9429 (en 13h):  7.5 | 42m0.8s | 44.2'     (pag. 322)
 26) CD -27°9680 separated from PPM 262645 in 1328.8 arcsec.
      Register CD -27°9680 (en 14h):  10.0 | 5m21.5s | 46.9'     (pag. 323)
+   Neighbors:
+     Register CD -27°9679 (en 14h):  9.2 | 5m58.6s | 26.4'     (pag. 323)
+     Register CD -27°9681 (en 14h):  10.0 | 6m3.6s | 33.3'     (pag. 323)
 27) CD -24°11477 reports mag=8.2 but it should be mag=9.8 from PPM 262905: Delta = 1.6.
      Register CD -24°11477 (en 14h):  8.2 | 18m26.6s | 42.2'     (pag. 155)
 28) CD -24°11535 separated from PPM 263064 (PROBLEM) in 1771.8 arcsec.
      Register CD -24°11535 (en 14h):  9.3 | 24m8.5s | 16.4'     (pag. 155)
+   Neighbors:
+     Register CD -24°11534 (en 14h):  9.7 | 24m8.5s | 39.7'     (pag. 155)
+     Register CD -24°11536 (en 14h):  10.0 | 24m9.1s | 58.3'     (pag. 155)
 29) CD -25°10836 separated from PPM 264039 in 545.4 arcsec.
      Register CD -25°10836 (en 15h):  9.1 | 9m4.3s | 20.0'     (pag. 213)
+   Neighbors:
+     Register CD -25°10835 (en 15h):  10.0 | 9m0.0s | 15.2'     (pag. 213)
+     Register CD -25°10837 (en 15h):  9.6 | 9m6.9s | 22.7'     (pag. 213)
 30) CD -23°12414 separated from PPM 264450 in 2104.8 arcsec.
      Register CD -23°12414 (en 15h):  10.0 | 29m36.6s | 18.8'     (pag. 97)
+   Neighbors:
+     Register CD -23°12413 (en 15h):  9.0 | 29m36.0s | 53.5'     (pag. 97)
+     Register CD -23°12415 (en 15h):  10.0 | 29m38.0s | 25.1'     (pag. 97)
 31) CD -25°11369 reports mag=6.6 but it should be mag=5.0 from PPM 265162: Delta = 1.6.
      Register CD -25°11369 (en 16h):  6.6 | 0m31.7s | 59.7'     (pag. 215)
 32) CD -27°10862 separated from PPM 265292 in 586.0 arcsec.
      Register CD -27°10862 (en 16h):  9.1 | 6m36.4s | 24.7'     (pag. 327)
+   Neighbors:
+     Register CD -27°10861 (en 16h):  9.8 | 6m33.1s | 26.4'     (pag. 327)
+     Register CD -27°10863 (en 16h):  9.9 | 6m57.9s | 37.3'     (pag. 327)
 33) CD -26°12149 separated from PPM 266936 in 616.5 arcsec.
      Register CD -26°12149 (en 17h):  9.0 | 22m12.7s | 39.9'     (pag. 274)
+   Neighbors:
+     Register CD -26°12148 (en 17h):  10.0 | 21m35.7s | 37.4'     (pag. 274)
+     Register CD -26°12150 (en 17h):  9.7 | 22m20.1s | 55.7'     (pag. 274)
 34) CD -24°13475 separated from PPM 267289 in 1175.4 arcsec.
      Register CD -24°13475 (en 17h):  9.0 | 39m22.9s | 50.1'     (pag. 162)
+   Neighbors:
+     Register CD -24°13474 (en 17h):  9.7 | 39m22.0s | 48.1'     (pag. 162)
+     Register CD -24°13476 (en 17h):  10.0 | 39m30.8s | 27.5'     (pag. 162)
 35) CD -24°13579 separated from PPM 267456 (PROBLEM) in 762.8 arcsec.
      Register CD -24°13579 (en 17h):  9.9 | 45m20.3s | 51.4'     (pag. 162)
+   Neighbors:
+     Register CD -24°13578 (en 17h):  8.7 | 45m20.2s | 38.4'     (pag. 162)
+     Register CD -24°13580 (en 17h):  10.0 | 45m23.3s | 24.7'     (pag. 162)
 36) CD -24°14202 separated from PPM 268272 in 2833.4 arcsec.
      Register CD -24°14202 (en 18h):  10.0 | 13m13.0s | 46.9'     (pag. 164)
+   Neighbors:
+     Register CD -24°14201 (en 18h):  9.8 | 13m11.9s | 25.0'     (pag. 164)
+     Register CD -24°14203 (en 18h):  9.3 | 13m13.5s | 0.1'     (pag. 164)
 37) CD -28°14598 separated from PPM 268429 in 1798.1 arcsec.
      Register CD -28°14598 (en 18h):  9.3 | 19m32.5s | 19.6'     (pag. 395)
+   Neighbors:
+     Register CD -28°14597 (en 18h):  10.0 | 19m32.2s | 51.0'     (pag. 395)
+     Register CD -28°14599 (en 18h):  9.6 | 19m33.9s | 40.1'     (pag. 395)
 38) CD -25°13770 reports mag=10.0 but it should be mag=7.4 from PPM 269368: Delta = 2.6.
      Register CD -25°13770 (en 19h):  10.0 | 1m7.4s | 16.3'     (pag. 223)
 39) CD -27°13714 separated from PPM 269507 in 671.6 arcsec.
      Register CD -27°13714 (en 19h):  8.5 | 6m42.5s | 35.6'     (pag. 336)
+   Neighbors:
+     Register CD -27°13713 (en 19h):  9.9 | 6m40.4s | 10.2'     (pag. 336)
+     Register CD -27°13715 (en 19h):  9.3 | 6m42.9s | 24.7'     (pag. 336)
 40) CD -27°13715 separated from PPM 269508 in 641.9 arcsec.
      Register CD -27°13715 (en 19h):  9.3 | 6m42.9s | 24.7'     (pag. 336)
+   Neighbors:
+     Register CD -27°13714 (en 19h):  8.5 | 6m42.5s | 35.6'     (pag. 336)
+     Register CD -27°13716 (en 19h):  9.9 | 6m45.1s | 45.1'     (pag. 336)
 41) CD -27°14302 separated from PPM 270327 in 602.4 arcsec.
      Register CD -27°14302 (en 19h):  9.1 | 42m24.2s | 36.3'     (pag. 338)
+   Neighbors:
+     Register CD -27°14301 (en 19h):  10.0 | 42m22.4s | 5.9'     (pag. 338)
+     Register CD -27°14303 (en 19h):  10.0 | 42m31.8s | 39.7'     (pag. 338)
 42) CD -25°14906 separated from PPM 271386 in 2416.0 arcsec.
      Register CD -25°14906 (en 20h):  9.3 | 29m19.8s | 17.5'     (pag. 227)
+   Neighbors:
+     Register CD -25°14905 (en 20h):  10.0 | 29m15.3s | 15.3'     (pag. 227)
+     Register CD -25°14907 (en 20h):  9.5 | 29m20.9s | 44.8'     (pag. 227)
 43) CD -25°15944 separated from PPM 273854 in 1802.5 arcsec.
      Register CD -25°15944 (en 22h):  9.2 | 22m18.4s | 16.4'     (pag. 230)
+   Neighbors:
+     Register CD -25°15943 (en 22h):  10.0 | 22m1.9s | 0.5'     (pag. 230)
+     Register CD -25°15945 (en 22h):  8.6 | 22m21.5s | 12.1'     (pag. 230)
 44) CD -27°15932 reports mag=9.3 but it should be mag=6.5 from PPM 273867: Delta = 2.8.
      Register CD -27°15932 (en 22h):  9.3 | 22m46.7s | 44.7'     (pag. 344)
 45) CD -26°16170 reports mag=6.5 but it should be mag=9.4 from PPM 273886: Delta = 2.9.
      Register CD -26°16170 (en 22h):  6.5 | 23m27.3s | 57.8'     (pag. 288)
 46) CD -27°16182 separated from PPM 274605 in 194.4 arcsec.
      Register CD -27°16182 (en 23h):  9.0 | 0m13.7s | 13.6'     (pag. 345)
+   Neighbors:
+     Register CD -27°16181 (en 23h):  10.0 | 0m4.2s | 45.5'     (pag. 345)
+     Register CD -27°16183 (en 23h):  9.9 | 0m20.5s | 6.3'     (pag. 345)
 47) CD -25°16414 separated from PPM 274855 in 167.3 arcsec.
      Register CD -25°16414 (en 23h):  9.2 | 13m51.8s | 51.6'     (pag. 232)
+   Neighbors:
+     Register CD -25°16413 (en 23h):  9.7 | 13m49.9s | 51.7'     (pag. 232)
+     Register CD -25°16415 (en 23h):  8.9 | 14m7.6s | 50.1'     (pag. 232)
 48) CD -24°17893 separated from PPM 275432 in 2430.4 arcsec.
      Register CD -24°17893 (en 23h):  9.9 | 46m35.0s | 55.6'     (pag. 177)
+   Neighbors:
+     Register CD -24°17892 (en 23h):  9.5 | 46m31.3s | 0.6'     (pag. 177)
+     Register CD -24°17894 (en 23h):  9.0 | 46m35.5s | 15.1'     (pag. 177)
 49) CD -37°17 separated from PPM 275745 in 509.5 arcsec.
      Register CD -37°17 (en 0h):  9.2 | 2m43.9s | 29.3'     (pag. 279)
+   Neighbors:
+     Register CD -37°16 (en 0h):  8.0 | 2m26.1s | 26.0'     (pag. 279)
+     Register CD -37°18 (en 0h):  9.5 | 3m11.4s | 39.5'     (pag. 279)
 50) CD -37°74 separated from PPM 275891 in 126.4 arcsec.
      Register CD -37°74 (en 0h):  6.6 | 12m12.7s | 11.9'     (pag. 279)
+   Neighbors:
+     Register CD -37°73 (en 0h):  9.9 | 11m56.7s | 42.5'     (pag. 279)
+     Register CD -37°75 (en 0h):  9.9 | 12m20.8s | 13.5'     (pag. 279)
 51) CD -37°358 separated from PPM 276557 in 698.2 arcsec.
      Register CD -37°358 (en 0h):  8.7 | 53m31.3s | 43.9'     (pag. 280)
+   Neighbors:
+     Register CD -37°357 (en 0h):  10.0 | 53m27.2s | 53.6'     (pag. 280)
+     Register CD -37°359 (en 0h):  9.6 | 53m37.3s | 40.0'     (pag. 280)
 52) CD -33°525 reports mag=8.0 but it should be mag=5.5 from PPM 277044 (PROBLEM): Delta = 2.5.
      Register CD -33°525 (en 1h):  8.0 | 21m12.7s | 12.1'     (pag. 61)
 53) CD -37°664 separated from PPM 277290 in 161.2 arcsec.
      Register CD -37°664 (en 1h):  9.5 | 38m24.6s | 48.3'     (pag. 281)
+   Neighbors:
+     Register CD -37°663 (en 1h):  8.3 | 38m21.2s | 54.3'     (pag. 281)
+     Register CD -37°665 (en 1h):  10.0 | 38m27.3s | 54.5'     (pag. 281)
 54) CD -31°791 separated from PPM 277456 in 377.0 arcsec.
      Register CD -31°791 (en 1h):  9.0 | 49m23.1s | 56.5'     (pag. 541)
+   Neighbors:
+     Register CD -31°790 (en 1h):  10.0 | 49m22.1s | 5.1'     (pag. 541)
+     Register CD -31°792 (en 1h):  10.0 | 49m31.6s | 34.2'     (pag. 541)
 55) CD -31°792 separated from PPM 277457 in 1349.3 arcsec.
      Register CD -31°792 (en 1h):  10.0 | 49m31.6s | 34.2'     (pag. 541)
+   Neighbors:
+     Register CD -31°791 (en 1h):  9.0 | 49m23.1s | 56.5'     (pag. 541)
+     Register CD -31°793 (en 1h):  9.9 | 49m38.0s | 43.4'     (pag. 541)
 56) CD -31°905 separated from PPM 277800 in 333.7 arcsec.
      Register CD -31°905 (en 2h):  9.3 | 10m48.9s | 50.9'     (pag. 542)
+   Neighbors:
+     Register CD -31°904 (en 2h):  9.0 | 10m42.7s | 55.9'     (pag. 542)
+     Register CD -31°906 (en 2h):  10.0 | 10m49.7s | 53.4'     (pag. 542)
 57) CD -31°906 separated from PPM 277801 in 143.0 arcsec.
      Register CD -31°906 (en 2h):  10.0 | 10m49.7s | 53.4'     (pag. 542)
+   Neighbors:
+     Register CD -31°905 (en 2h):  9.3 | 10m48.9s | 50.9'     (pag. 542)
+     Register CD -31°907 (en 2h):  10.0 | 10m57.6s | 48.4'     (pag. 542)
 58) CD -31°914 separated from PPM 277812 in 3212.9 arcsec.
      Register CD -31°914 (en 2h):  10.0 | 11m44.2s | 54.9'     (pag. 542)
+   Neighbors:
+     Register CD -31°913 (en 2h):  8.5 | 11m40.2s | 1.0'     (pag. 542)
+     Register CD -31°915 (en 2h):  10.0 | 11m44.4s | 44.4'     (pag. 542)
 59) CD -31°917 separated from PPM 277813 (PROBLEM) in 1333.1 arcsec.
      Register CD -31°917 (en 2h):  9.3 | 11m49.2s | 20.1'     (pag. 542)
+   Neighbors:
+     Register CD -31°916 (en 2h):  9.1 | 11m48.7s | 42.4'     (pag. 542)
+     Register CD -31°918 (en 2h):  10.0 | 11m56.3s | 41.1'     (pag. 542)
 60) CD -31°918 separated from PPM 277814 in 1244.1 arcsec.
      Register CD -31°918 (en 2h):  10.0 | 11m56.3s | 41.1'     (pag. 542)
+   Neighbors:
+     Register CD -31°917 (en 2h):  9.3 | 11m49.2s | 20.1'     (pag. 542)
+     Register CD -31°919 (en 2h):  7.4 | 11m58.0s | 17.8'     (pag. 542)
 61) CD -31°920 separated from PPM 277819 (PROBLEM) in 1003.7 arcsec.
      Register CD -31°920 (en 2h):  10.0 | 12m13.8s | 34.4'     (pag. 542)
+   Neighbors:
+     Register CD -31°919 (en 2h):  7.4 | 11m58.0s | 17.8'     (pag. 542)
+     Register CD -31°921 (en 2h):  8.0 | 12m26.2s | 2.7'     (pag. 542)
 62) CD -31°922 separated from PPM 277824 in 551.3 arcsec.
      Register CD -31°922 (en 2h):  10.0 | 12m28.3s | 12.0'     (pag. 542)
+   Neighbors:
+     Register CD -31°921 (en 2h):  8.0 | 12m26.2s | 2.7'     (pag. 542)
+     Register CD -31°923 (en 2h):  7.5 | 12m35.5s | 56.9'     (pag. 542)
 63) CD -31°924 separated from PPM 277827 in 1025.3 arcsec.
      Register CD -31°924 (en 2h):  8.8 | 12m44.4s | 39.8'     (pag. 542)
+   Neighbors:
+     Register CD -31°923 (en 2h):  7.5 | 12m35.5s | 56.9'     (pag. 542)
+     Register CD -31°925 (en 2h):  7.7 | 12m47.0s | 22.5'     (pag. 542)
 64) CD -31°925 separated from PPM 277831 in 1049.7 arcsec.
      Register CD -31°925 (en 2h):  7.7 | 12m47.0s | 22.5'     (pag. 542)
+   Neighbors:
+     Register CD -31°924 (en 2h):  8.8 | 12m44.4s | 39.8'     (pag. 542)
+     Register CD -31°926 (en 2h):  9.4 | 12m55.1s | 9.1'     (pag. 542)
 65) CD -31°926 separated from PPM 277833 in 782.7 arcsec.
      Register CD -31°926 (en 2h):  9.4 | 12m55.1s | 9.1'     (pag. 542)
+   Neighbors:
+     Register CD -31°925 (en 2h):  7.7 | 12m47.0s | 22.5'     (pag. 542)
+     Register CD -31°927 (en 2h):  9.2 | 12m55.6s | 0.0'     (pag. 542)
 66) CD -31°928 separated from PPM 277838 in 849.5 arcsec.
      Register CD -31°928 (en 2h):  10.0 | 13m18.5s | 13.5'     (pag. 542)
+   Neighbors:
+     Register CD -31°927 (en 2h):  9.2 | 12m55.6s | 0.0'     (pag. 542)
+     Register CD -31°929 (en 2h):  9.9 | 13m39.1s | 30.5'     (pag. 542)
 67) CD -31°934 separated from PPM 277854 in 1927.7 arcsec.
      Register CD -31°934 (en 2h):  10.0 | 14m37.6s | 6.2'     (pag. 542)
+   Neighbors:
+     Register CD -31°933 (en 2h):  9.3 | 14m35.0s | 38.0'     (pag. 542)
+     Register CD -31°935 (en 2h):  10.0 | 14m42.7s | 58.9'     (pag. 542)
 68) CD -31°938 separated from PPM 277865 in 261.2 arcsec.
      Register CD -31°938 (en 2h):  9.8 | 15m43.6s | 30.8'     (pag. 542)
+   Neighbors:
+     Register CD -31°937 (en 2h):  9.0 | 15m23.0s | 31.1'     (pag. 542)
+     Register CD -31°939 (en 2h):  10.0 | 15m44.9s | 36.5'     (pag. 542)
 69) CD -31°942 separated from PPM 277871 in 1471.5 arcsec.
      Register CD -31°942 (en 2h):  8.3 | 15m52.2s | 31.1'     (pag. 542)
+   Neighbors:
+     Register CD -31°941 (en 2h):  8.8 | 15m52.0s | 6.5'     (pag. 542)
+     Register CD -31°943 (en 2h):  9.3 | 16m0.7s | 47.4'     (pag. 542)
 70) CD -31°943 separated from PPM 277873 in 1014.0 arcsec.
      Register CD -31°943 (en 2h):  9.3 | 16m0.7s | 47.4'     (pag. 542)
+   Neighbors:
+     Register CD -31°942 (en 2h):  8.3 | 15m52.2s | 31.1'     (pag. 542)
+     Register CD -31°944 (en 2h):  10.0 | 16m6.1s | 3.5'     (pag. 542)
 71) CD -31°949 separated from PPM 277889 in 1150.0 arcsec.
      Register CD -31°949 (en 2h):  9.3 | 17m5.2s | 55.9'     (pag. 542)
+   Neighbors:
+     Register CD -31°948 (en 2h):  8.7 | 16m49.4s | 37.4'     (pag. 542)
+     Register CD -31°950 (en 2h):  9.3 | 17m7.0s | 12.7'     (pag. 542)
 72) CD -31°950 separated from PPM 277894 in 2627.3 arcsec.
      Register CD -31°950 (en 2h):  9.3 | 17m7.0s | 12.7'     (pag. 542)
+   Neighbors:
+     Register CD -31°949 (en 2h):  9.3 | 17m5.2s | 55.9'     (pag. 542)
+     Register CD -31°951 (en 2h):  10.0 | 17m7.1s | 59.4'     (pag. 542)
 73) CD -40°736 separated from PPM 278419 in 679.2 arcsec.
      Register CD -40°736 (en 2h):  6.5 | 44m58.3s | 26.6'     (pag. 438)
+   Neighbors:
+     Register CD -40°735 (en 2h):  10.0 | 44m33.5s | 56.4'     (pag. 438)
+     Register CD -40°737 (en 2h):  9.7 | 46m9.6s | 44.0'     (pag. 438)
 74) CD -37°1089 separated from PPM 278479 in 121.5 arcsec.
      Register CD -37°1089 (en 2h):  9.0 | 49m25.8s | 57.0'     (pag. 283)
+   Neighbors:
+     Register CD -37°1088 (en 2h):  9.9 | 49m22.0s | 26.7'     (pag. 283)
+     Register CD -37°1090 (en 2h):  9.1 | 49m35.5s | 24.7'     (pag. 283)
 75) CD -31°1585 separated from PPM 279582 in 769.4 arcsec.
      Register CD -31°1585 (en 3h):  9.0 | 47m45.7s | 37.4'     (pag. 544)
+   Neighbors:
+     Register CD -31°1584 (en 3h):  10.0 | 47m33.2s | 35.4'     (pag. 544)
+     Register CD -31°1586 (en 3h):  10.0 | 47m59.9s | 20.7'     (pag. 544)
 76) CD -31°1588 separated from PPM 279591 in 782.1 arcsec.
      Register CD -31°1588 (en 3h):  9.2 | 48m1.4s | 18.3'     (pag. 544)
+   Neighbors:
+     Register CD -31°1587 (en 3h):  10.0 | 48m0.1s | 36.3'     (pag. 544)
+     Register CD -31°1589 (en 3h):  9.9 | 48m13.0s | 39.3'     (pag. 544)
 77) CD -30°1719 reports mag=9.5 but it should be mag=7.9 from PPM 280020 (PROBLEM): Delta = 1.6.
      Register CD -30°1719 (en 4h):  9.5 | 10m9.3s | 22.8'     (pag. 478)
 78) CD -34°2056 separated from PPM 281038 in 342.8 arcsec.
      Register CD -34°2056 (en 5h):  9.9 | 0m50.5s | 53.9'     (pag. 123)
+   Neighbors:
+     Register CD -34°2055 (en 5h):  10.0 | 0m48.3s | 50.2'     (pag. 123)
+     Register CD -34°2057 (en 5h):  9.0 | 1m3.3s | 59.2'     (pag. 123)
 79) CD -33°2251 reports mag=9.0 but it should be mag=7.3 from PPM 281315: Delta = 1.7.
      Register CD -33°2251 (en 5h):  9.0 | 14m42.6s | 50.3'     (pag. 67)
 80) CD -35°2291 reports mag=8.5 but it should be mag=6.9 from PPM 281444 (PROBLEM): Delta = 1.6.
@@ -233,106 +434,241 @@ Stars read from PPM: 172220
      Note: Also associated to discarded PPM 281443 (dist = 17.4 arcsec).
 81) CD -36°2749 separated from PPM 282436 in 199.1 arcsec.
      Register CD -36°2749 (en 6h):  9.0 | 10m50.5s | 31.3'     (pag. 234)
+   Neighbors:
+     Register CD -36°2748 (en 6h):  9.7 | 10m49.4s | 50.2'     (pag. 234)
+     Register CD -36°2750 (en 6h):  9.6 | 10m56.4s | 15.5'     (pag. 234)
 82) CD -36°2804 separated from PPM 282509 in 1802.4 arcsec.
      Register CD -36°2804 (en 6h):  8.0 | 14m50.7s | 58.5'     (pag. 234)
+   Neighbors:
+     Register CD -36°2803 (en 6h):  9.9 | 14m50.5s | 44.4'     (pag. 234)
+     Register CD -36°2805 (en 6h):  10.0 | 14m55.5s | 34.9'     (pag. 234)
 83) CD -33°3445 separated from PPM 283440 in 321.7 arcsec.
      Register CD -33°3445 (en 6h):  10.0 | 58m27.1s | 0.8'     (pag. 71)
+   Neighbors:
+     Register CD -33°3444 (en 6h):  8.7 | 58m15.0s | 5.7'     (pag. 71)
+     Register CD -33°3446 (en 6h):  9.6 | 58m28.3s | 1.7'     (pag. 71)
 84) CD -38°3240 separated from PPM 283632 in 124.1 arcsec.
      Register CD -38°3240 (en 7h):  9.0 | 7m49.8s | 53.3'     (pag. 342)
+   Neighbors:
+     Register CD -38°3239 (en 7h):  10.0 | 7m46.3s | 29.6'     (pag. 342)
+     Register CD -38°3241 (en 7h):  9.1 | 7m55.0s | 35.0'     (pag. 342)
 85) CD -29°4070 separated from PPM 283657 in 159.5 arcsec.
      Register CD -29°4070 (en 7h):  9.2 | 8m23.8s | 56.9'     (pag. 422)
+   Neighbors:
+     Register CD -29°4069 (en 7h):  9.4 | 8m23.0s | 6.2'     (pag. 422)
+     Register CD -29°4071 (en 7h):  9.7 | 8m24.4s | 34.7'     (pag. 422)
 86) CD -35°3551 reports mag=7.7 but it should be mag=6.1 from PPM 283868 (PROBLEM): Delta = 1.6.
      Register CD -35°3551 (en 7h):  7.7 | 17m47.0s | 41.0'     (pag. 183)
 87) CD -31°4590 reports mag=7.4 but it should be mag=5.6 from PPM 284007 (PROBLEM): Delta = 1.8.
      Register CD -31°4590 (en 7h):  7.4 | 24m3.9s | 35.3'     (pag. 554)
 88) CD -29°4868 separated from PPM 284357 (PROBLEM) in 3278.5 arcsec.
      Register CD -29°4868 (en 7h):  7.9 | 39m24.5s | 1.5'     (pag. 424)
+   Neighbors:
+     Register CD -29°4867 (en 7h):  9.9 | 39m24.8s | 56.3'     (pag. 424)
+     Register CD -29°4869 (en 7h):  10.0 | 39m26.8s | 17.9'     (pag. 424)
 89) CD -36°4160 separated from PPM 284751 in 358.3 arcsec.
      Register CD -36°4160 (en 7h):  8.9 | 59m0.6s | 3.7'     (pag. 239)
+   Neighbors:
+     Register CD -36°4159 (en 7h):  10.0 | 59m39.6s | 55.8'     (pag. 239)
+     Register CD -36°4161 (en 7h):  10.0 | 59m30.9s | 42.9'     (pag. 239)
 90) CD -33°4843 separated from PPM 285083 in 285.6 arcsec.
      Register CD -33°4843 (en 8h):  9.0 | 14m33.2s | 25.5'     (pag. 76)
+   Neighbors:
+     Register CD -33°4842 (en 8h):  9.2 | 14m25.7s | 33.4'     (pag. 76)
+     Register CD -33°4844 (en 8h):  8.0 | 14m33.2s | 20.5'     (pag. 76)
 91) CD -29°6327 separated from PPM 285354 in 178.6 arcsec.
      Register CD -29°6327 (en 8h):  9.1 | 27m8.3s | 41.8'     (pag. 429)
+   Neighbors:
+     Register CD -29°6326 (en 8h):  9.5 | 27m2.1s | 21.0'     (pag. 429)
+     Register CD -29°6328 (en 8h):  10.0 | 27m10.0s | 26.5'     (pag. 429)
 92) CD -32°5706 separated from PPM 285637 in 590.2 arcsec.
      Register CD -32°5706 (en 8h):  8.6 | 41m27.3s | 32.9'     (pag. 19)
+   Neighbors:
+     Register CD -32°5705 (en 8h):  10.0 | 41m22.3s | 26.3'     (pag. 19)
+     Register CD -32°5707 (en 8h):  8.1 | 41m29.4s | 14.8'     (pag. 19)
 93) CD -34°5905 reports mag=9.6 but it should be mag=7.8 from PPM 286496: Delta = 1.8.
      Register CD -34°5905 (en 9h):  9.6 | 23m3.2s | 21.2'     (pag. 136)
 94) CD -36°5782 separated from PPM 286623 in 162.5 arcsec.
      Register CD -36°5782 (en 9h):  9.0 | 28m58.9s | 31.8'     (pag. 244)
+   Neighbors:
+     Register CD -36°5781 (en 9h):  10.0 | 28m57.2s | 39.3'     (pag. 244)
+     Register CD -36°5783 (en 9h):  9.8 | 29m1.6s | 14.3'     (pag. 244)
 95) CD -37°6041 reports mag=9.7 but it should be mag=7.9 from PPM 286853: Delta = 1.8.
      Register CD -37°6041 (en 9h):  9.7 | 40m17.5s | 9.9'     (pag. 299)
 96) CD -31°8102 separated from PPM 287490 in 217.0 arcsec.
      Register CD -31°8102 (en 10h):  7.7 | 10m13.7s | 36.9'     (pag. 566)
+   Neighbors:
+     Register CD -31°8101 (en 10h):  9.9 | 10m12.2s | 53.8'     (pag. 566)
+     Register CD -31°8103 (en 10h):  9.9 | 10m17.5s | 46.8'     (pag. 566)
 97) CD -32°7804 separated from PPM 288386 in 1796.7 arcsec.
      Register CD -32°7804 (en 10h):  9.2 | 53m42.0s | 52.4'     (pag. 26)
+   Neighbors:
+     Register CD -32°7803 (en 10h):  7.9 | 53m38.2s | 24.4'     (pag. 26)
+     Register CD -32°7805 (en 10h):  9.3 | 53m49.1s | 22.4'     (pag. 26)
 98) CD -32°7805 separated from PPM 288387 in 1800.7 arcsec.
      Register CD -32°7805 (en 10h):  9.3 | 53m49.1s | 22.4'     (pag. 26)
+   Neighbors:
+     Register CD -32°7804 (en 10h):  9.2 | 53m42.0s | 52.4'     (pag. 26)
+     Register CD -32°7806 (en 10h):  9.6 | 53m49.1s | 11.4'     (pag. 26)
 99) CD -34°7161 separated from PPM 288448 in 1796.6 arcsec.
      Register CD -34°7161 (en 10h):  10.0 | 56m54.5s | 54.0'     (pag. 140)
+   Neighbors:
+     Register CD -34°7160 (en 10h):  8.7 | 56m43.8s | 23.8'     (pag. 140)
+     Register CD -34°7162 (en 10h):  9.4 | 56m55.5s | 24.3'     (pag. 140)
 100) CD -32°7928 separated from PPM 288593 (PROBLEM) in 559.4 arcsec.
      Register CD -32°7928 (en 11h):  9.6 | 4m46.5s | 10.5'     (pag. 26)
+   Neighbors:
+     Register CD -32°7927 (en 11h):  10.0 | 4m46.5s | 12.3'     (pag. 26)
+     Register CD -32°7929 (en 11h):  8.6 | 4m49.9s | 20.0'     (pag. 26)
 101) CD -32°7930 separated from PPM 288595 in 2451.5 arcsec.
      Register CD -32°7930 (en 11h):  9.9 | 4m51.5s | 42.5'     (pag. 26)
+   Neighbors:
+     Register CD -32°7929 (en 11h):  8.6 | 4m49.9s | 20.0'     (pag. 26)
+     Register CD -32°7931 (en 11h):  9.0 | 4m54.3s | 2.4'     (pag. 26)
 102) CD -32°7933 separated from PPM 288602 in 1443.2 arcsec.
      Register CD -32°7933 (en 11h):  9.9 | 4m59.1s | 52.0'     (pag. 26)
+   Neighbors:
+     Register CD -32°7932 (en 11h):  10.0 | 4m56.9s | 44.5'     (pag. 26)
+     Register CD -32°7934 (en 11h):  8.9 | 5m11.1s | 27.8'     (pag. 26)
 103) CD -32°7934 separated from PPM 288624 in 874.5 arcsec.
      Register CD -32°7934 (en 11h):  8.9 | 5m11.1s | 27.8'     (pag. 26)
+   Neighbors:
+     Register CD -32°7933 (en 11h):  9.9 | 4m59.1s | 52.0'     (pag. 26)
+     Register CD -32°7935 (en 11h):  8.8 | 6m1.9s | 18.1'     (pag. 26)
 104) CD -37°7586 separated from PPM 289610 in 1258.2 arcsec.
      Register CD -37°7586 (en 11h):  10.0 | 53m19.5s | 17.5'     (pag. 305)
+   Neighbors:
+     Register CD -37°7585 (en 11h):  9.7 | 53m18.6s | 0.0'     (pag. 305)
+     Register CD -37°7587 (en 11h):  9.0 | 53m26.0s | 37.8'     (pag. 305)
 105) CD -32°8979 separated from PPM 290662 in 2043.1 arcsec.
      Register CD -32°8979 (en 12h):  9.7 | 44m43.0s | 36.1'     (pag. 30)
+   Neighbors:
+     Register CD -32°8978 (en 12h):  9.2 | 44m40.1s | 1.8'     (pag. 30)
+     Register CD -32°8980 (en 12h):  9.9 | 44m45.6s | 9.1'     (pag. 30)
 106) CD -35°8321 separated from PPM 290797 in 138.9 arcsec.
      Register CD -35°8321 (en 12h):  9.5 | 51m10.6s | 12.0'     (pag. 199)
+   Neighbors:
+     Register CD -35°8320 (en 12h):  10.0 | 51m5.4s | 46.3'     (pag. 199)
+     Register CD -35°8322 (en 12h):  9.7 | 51m12.0s | 55.3'     (pag. 199)
 107) CD -36°8704 separated from PPM 291593 in 1730.7 arcsec.
      Register CD -36°8704 (en 13h):  9.8 | 29m10.0s | 24.0'     (pag. 254)
+   Neighbors:
+     Register CD -36°8703 (en 13h):  10.0 | 29m0.3s | 47.7'     (pag. 254)
+     Register CD -36°8705 (en 13h):  8.7 | 29m11.7s | 52.7'     (pag. 254)
 108) CD -36°8707 separated from PPM 291599 in 2033.5 arcsec.
      Register CD -36°8707 (en 13h):  9.6 | 29m12.6s | 3.2'     (pag. 254)
+   Neighbors:
+     Register CD -36°8706 (en 13h):  9.4 | 29m12.1s | 32.3'     (pag. 254)
+     Register CD -36°8708 (en 13h):  9.5 | 29m22.4s | 37.5'     (pag. 254)
 109) CD -31°10729 separated from PPM 291934 (PROBLEM) in 195.7 arcsec.
      Register CD -31°10729 (en 13h):  5.2 | 46m1.8s | 15.3'     (pag. 575)
+   Neighbors:
+     Register CD -31°10728 (en 13h):  9.6 | 46m1.5s | 26.5'     (pag. 575)
+     Register CD -31°10730 (en 13h):  8.9 | 46m12.0s | 56.2'     (pag. 575)
 110) CD -31°10817 separated from PPM 292074 in 194.8 arcsec.
      Register CD -31°10817 (en 13h):  8.9 | 52m29.5s | 57.7'     (pag. 575)
+   Neighbors:
+     Register CD -31°10816 (en 13h):  9.3 | 52m24.4s | 37.9'     (pag. 575)
+     Register CD -31°10818 (en 13h):  10.0 | 52m33.9s | 33.1'     (pag. 575)
 111) CD -33°10035 separated from PPM 293016 in 174.2 arcsec.
      Register CD -33°10035 (en 14h):  9.0 | 37m20.7s | 48.1'     (pag. 93)
+   Neighbors:
+     Register CD -33°10034 (en 14h):  9.9 | 37m13.1s | 24.9'     (pag. 93)
+     Register CD -33°10036 (en 14h):  10.0 | 37m20.8s | 14.1'     (pag. 93)
 112) CD -31°11651 separated from PPM 293375 in 561.9 arcsec.
      Register CD -31°11651 (en 14h):  9.2 | 54m27.2s | 40.1'     (pag. 578)
+   Neighbors:
+     Register CD -31°11650 (en 14h):  9.4 | 54m25.0s | 40.8'     (pag. 578)
+     Register CD -31°11652 (en 14h):  9.9 | 54m33.0s | 17.4'     (pag. 578)
 113) CD -30°12566 separated from PPM 294308 in 553.0 arcsec.
      Register CD -30°12566 (en 15h):  8.4 | 41m43.9s | 43.3'     (pag. 514)
+   Neighbors:
+     Register CD -30°12565 (en 15h):  7.6 | 41m43.2s | 41.4'     (pag. 514)
+     Register CD -30°12567 (en 15h):  10.0 | 41m45.7s | 35.6'     (pag. 514)
 114) CD -30°12756 separated from PPM 294563 (PROBLEM) in 510.1 arcsec.
      Register CD -30°12756 (en 15h):  9.2 | 54m10.7s | 29.7'     (pag. 515)
+   Neighbors:
+     Register CD -30°12755 (en 15h):  10.0 | 54m9.7s | 5.6'     (pag. 515)
+     Register CD -30°12757 (en 15h):  9.4 | 54m16.4s | 27.0'     (pag. 515)
 115) CD -29°12801 separated from PPM 295439 in 564.7 arcsec.
      Register CD -29°12801 (en 16h):  9.0 | 37m9.4s | 50.4'     (pag. 451)
+   Neighbors:
+     Register CD -29°12800 (en 16h):  10.0 | 37m6.5s | 9.4'     (pag. 451)
+     Register CD -29°12802 (en 16h):  9.9 | 37m18.0s | 55.4'     (pag. 451)
 116) CD -31°13502 separated from PPM 295835 in 604.4 arcsec.
      Register CD -31°13502 (en 16h):  7.1 | 55m14.7s | 36.0'     (pag. 584)
+   Neighbors:
+     Register CD -31°13501 (en 16h):  9.7 | 55m9.5s | 58.2'     (pag. 584)
+     Register CD -31°13503 (en 16h):  10.0 | 55m16.3s | 13.9'     (pag. 584)
 117) CD -36°11399 separated from PPM 296182 in 452.0 arcsec.
      Register CD -36°11399 (en 17h):  10.0 | 10m12.4s | 50.1'     (pag. 263)
+   Neighbors:
+     Register CD -36°11398 (en 17h):  10.0 | 10m2.6s | 39.6'     (pag. 263)
+     Register CD -36°11400 (en 17h):  9.1 | 10m23.0s | 57.6'     (pag. 263)
 118) CD -36°11406 separated from PPM 296201 in 1186.1 arcsec.
      Register CD -36°11406 (en 17h):  10.0 | 10m55.3s | 38.3'     (pag. 263)
+   Neighbors:
+     Register CD -36°11405 (en 17h):  10.0 | 10m54.7s | 28.6'     (pag. 263)
+     Register CD -36°11407 (en 17h):  9.0 | 10m55.5s | 58.1'     (pag. 263)
 119) CD -35°12351 separated from PPM 297359 in 142.1 arcsec.
      Register CD -35°12351 (en 18h):  9.8 | 3m1.0s | 10.0'     (pag. 212)
+   Neighbors:
+     Register CD -35°12350 (en 18h):  9.3 | 2m54.5s | 8.4'     (pag. 212)
+     Register CD -35°12352 (en 18h):  9.7 | 3m3.3s | 30.1'     (pag. 212)
 120) CD -38°12729 reports mag=6.5 but it should be mag=4.9 from PPM 297606: Delta = 1.6.
      Register CD -38°12729 (en 18h):  6.5 | 13m41.8s | 42.9'     (pag. 374)
 121) CD -32°14091 separated from PPM 297634 in 146.0 arcsec.
      Register CD -32°14091 (en 18h):  9.0 | 15m20.7s | 6.0'     (pag. 47)
+   Neighbors:
+     Register CD -32°14090 (en 18h):  9.8 | 15m19.6s | 50.4'     (pag. 47)
+     Register CD -32°14092 (en 18h):  9.6 | 15m22.1s | 34.8'     (pag. 47)
 122) CD -36°13423 separated from PPM 298713 in 595.7 arcsec.
      Register CD -36°13423 (en 19h):  9.3 | 5m21.1s | 38.6'     (pag. 270)
+   Neighbors:
+     Register CD -36°13422 (en 19h):  9.7 | 5m18.0s | 2.1'     (pag. 270)
+     Register CD -36°13424 (en 19h):  10.0 | 5m22.6s | 33.5'     (pag. 270)
 123) CD -33°14076 reports mag=6.9 but it should be mag=8.5 from PPM 298783: Delta = 1.6.
      Register CD -33°14076 (en 19h):  6.9 | 8m23.1s | 44.2'     (pag. 107)
 124) CD -39°13250 separated from PPM 298932 in 1222.1 arcsec.
      Register CD -39°13250 (en 19h):  9.0 | 15m3.8s | 45.6'     (pag. 429)
+   Neighbors:
+     Register CD -39°13249 (en 19h):  10.0 | 15m1.8s | 40.0'     (pag. 429)
+     Register CD -39°13251 (en 19h):  9.3 | 15m9.7s | 11.2'     (pag. 429)
 125) CD -34°14096 separated from PPM 299688 in 142.7 arcsec.
      Register CD -34°14096 (en 19h):  10.0 | 53m50.9s | 3.1'     (pag. 163)
+   Neighbors:
+     Register CD -34°14095 (en 19h):  9.0 | 53m37.7s | 0.3'     (pag. 163)
+     Register CD -34°14097 (en 19h):  9.8 | 54m6.9s | 23.6'     (pag. 163)
 126) CD -31°17508 separated from PPM 300076 in 1801.1 arcsec.
      Register CD -31°17508 (en 20h):  9.0 | 13m6.6s | 3.3'     (pag. 597)
+   Neighbors:
+     Register CD -31°17507 (en 20h):  9.8 | 13m2.9s | 56.8'     (pag. 597)
+     Register CD -31°17509 (en 20h):  8.7 | 13m8.3s | 42.5'     (pag. 597)
 127) CD -39°14114 separated from PPM 301009 in 294.4 arcsec.
      Register CD -39°14114 (en 20h):  8.7 | 59m15.0s | 29.1'     (pag. 431)
+   Neighbors:
+     Register CD -39°14113 (en 20h):  10.0 | 58m27.1s | 28.6'     (pag. 431)
+     Register CD -39°14115 (en 20h):  9.0 | 59m20.8s | 45.9'     (pag. 431)
 128) CD -32°16655 separated from PPM 301611 in 139.4 arcsec.
      Register CD -32°16655 (en 21h):  8.6 | 29m12.0s | 47.9'     (pag. 55)
+   Neighbors:
+     Register CD -32°16654 (en 21h):  9.3 | 28m51.0s | 47.2'     (pag. 55)
+     Register CD -32°16656 (en 21h):  9.5 | 29m27.0s | 20.6'     (pag. 55)
 129) CD -35°14927 separated from PPM 301755 in 128.3 arcsec.
      Register CD -35°14927 (en 21h):  9.7 | 35m55.7s | 58.0'     (pag. 221)
+   Neighbors:
+     Register CD -35°14926 (en 21h):  9.6 | 35m50.6s | 40.3'     (pag. 221)
+     Register CD -35°14928 (en 21h):  9.8 | 35m55.9s | 15.1'     (pag. 221)
 130) CD -38°14807 separated from PPM 302034 in 187.8 arcsec.
      Register CD -38°14807 (en 21h):  8.9 | 50m6.2s | 51.9'     (pag. 381)
+   Neighbors:
+     Register CD -38°14806 (en 21h):  9.4 | 50m1.9s | 43.3'     (pag. 381)
+     Register CD -38°14808 (en 21h):  10.0 | 50m7.7s | 53.3'     (pag. 381)
 131) CD -33°16481 separated from PPM 303607 in 604.7 arcsec.
      Register CD -33°16481 (en 23h):  8.0 | 12m43.0s | 32.7'     (pag. 115)
+   Neighbors:
+     Register CD -33°16480 (en 23h):  9.5 | 12m29.0s | 58.1'     (pag. 115)
+     Register CD -33°16482 (en 23h):  10.0 | 12m48.1s | 53.0'     (pag. 115)
 132) CD -44°4051 reports mag=5.8 but it should be mag=4.1 from PPM 312586: Delta = 1.7.
      Register CD -44°4051 (en 8h):  5.8 | 2m40.0s | 54.4'     (pag. 121)
 133) CD -47°4004 reports mag=5.5 but it should be mag=9.3 from PPM 313131 (PROBLEM): Delta = 3.8.
@@ -350,20 +686,41 @@ Stars read from PPM: 172220
      Register CD -48°7753 (en 12h):  5.0 | 46m3.6s | 15.7'     (pag. 337)
 139) CD -43°7998 separated from PPM 318040 in 2014.3 arcsec.
      Register CD -43°7998 (en 12h):  10.0 | 53m23.5s | 40.5'     (pag. 82)
+   Neighbors:
+     Register CD -43°7997 (en 12h):  10.0 | 53m11.2s | 30.0'     (pag. 82)
+     Register CD -43°7999 (en 12h):  9.4 | 53m49.3s | 7.5'     (pag. 82)
 140) CD -43°8003 separated from PPM 318048 in 247.9 arcsec.
      Register CD -43°8003 (en 12h):  10.0 | 54m10.7s | 4.7'     (pag. 82)
+   Neighbors:
+     Register CD -43°8002 (en 12h):  10.0 | 53m58.7s | 34.3'     (pag. 82)
+     Register CD -43°8004 (en 12h):  8.3 | 54m13.8s | 0.8'     (pag. 82)
 141) CD -43°8009 separated from PPM 318061 (PROBLEM) in 605.2 arcsec.
      Register CD -43°8009 (en 12h):  10.0 | 54m44.5s | 41.4'     (pag. 82)
+   Neighbors:
+     Register CD -43°8008 (en 12h):  10.0 | 54m28.2s | 28.3'     (pag. 82)
+     Register CD -43°8010 (en 12h):  8.7 | 54m49.9s | 31.3'     (pag. 82)
 142) CD -43°8022 separated from PPM 318083 in 2099.5 arcsec.
      Register CD -43°8022 (en 12h):  10.0 | 56m9.5s | 18.4'     (pag. 82)
+   Neighbors:
+     Register CD -43°8021 (en 12h):  10.0 | 56m6.8s | 7.6'     (pag. 82)
+     Register CD -43°8023 (en 12h):  8.1 | 56m12.1s | 53.4'     (pag. 82)
 143) CD -43°8025 separated from PPM 318087 in 147.7 arcsec.
      Register CD -43°8025 (en 12h):  10.0 | 56m17.5s | 10.0'     (pag. 82)
+   Neighbors:
+     Register CD -43°8024 (en 12h):  10.0 | 56m15.5s | 17.0'     (pag. 82)
+     Register CD -43°8026 (en 12h):  8.3 | 56m20.6s | 12.3'     (pag. 82)
 144) CD -43°8329 separated from PPM 318556 in 228.4 arcsec.
      Register CD -43°8329 (en 13h):  10.0 | 22m57.6s | 17.5'     (pag. 83)
+   Neighbors:
+     Register CD -43°8328 (en 13h):  9.5 | 22m57.6s | 13.4'     (pag. 83)
+     Register CD -43°8330 (en 13h):  9.4 | 23m0.9s | 58.0'     (pag. 83)
 145) CD -49°8095 reports mag=6.8 but it should be mag=5.2 from PPM 318713: Delta = 1.6.
      Register CD -49°8095 (en 13h):  6.8 | 32m17.0s | 18.9'     (pag. 388)
 146) CD -39°8429 separated from PPM 318776 (PROBLEM) in 133.1 arcsec.
      Register CD -39°8429 (en 13h):  7.0 | 36m27.2s | 30.6'     (pag. 412)
+   Neighbors:
+     Register CD -39°8428 (en 13h):  10.0 | 36m24.6s | 17.1'     (pag. 412)
+     Register CD -39°8430 (en 13h):  10.0 | 36m45.2s | 7.1'     (pag. 412)
 147) CD -44°9040 reports mag=5.0 but it should be mag=3.4 from PPM 319099: Delta = 1.6.
      Register CD -44°9040 (en 13h):  5.0 | 53m56.4s | 59.9'     (pag. 138)
 148) CD -48°9198 reports mag=4.5 but it should be mag=2.9 from PPM 319720: Delta = 1.6.
@@ -388,6 +745,9 @@ Stars read from PPM: 172220
      Register CD -41°11022 (en 16h):  9.5 | 45m13.9s | 30.3'     (pag. 524)
 158) CD -48°11389 separated from PPM 322549 in 131.4 arcsec.
      Register CD -48°11389 (en 16h):  7.4 | 53m48.6s | 7.0'     (pag. 349)
+   Neighbors:
+     Register CD -48°11388 (en 16h):  9.7 | 53m46.0s | 25.0'     (pag. 349)
+     Register CD -48°11390 (en 16h):  10.0 | 54m3.0s | 25.0'     (pag. 349)
 159) CD -49°12153 reports mag=4.5 but it should be mag=2.4 from PPM 324133: Delta = 2.1.
      Register CD -49°12153 (en 18h):  4.5 | 19m12.2s | 8.2'     (pag. 401)
 160) CD -41°13181 reports mag=9.5 but it should be mag=7.6 from PPM 324521: Delta = 1.9.
@@ -416,6 +776,9 @@ Stars read from PPM: 172220
      Register CD -59°3654 (en 11h):  9.3 | 11m46.9s | 5.5'     (pag. 237)
 172) CD -51°6012 separated from PPM 340378 in 531.8 arcsec.
      Register CD -51°6012 (en 11h):  8.1 | 39m38.0s | 50.9'     (pag. 476)
+   Neighbors:
+     Register CD -51°6011 (en 11h):  9.7 | 39m33.6s | 23.5'     (pag. 476)
+     Register CD -51°6013 (en 11h):  10.0 | 39m39.3s | 45.4'     (pag. 476)
 173) CD -59°4005 reports mag=11.0 but it should be mag=9.1 from PPM 340477: Delta = 1.9.
      Register CD -59°4005 (en 11h):  11.0 | 46m48.8s | 3.8'     (pag. 238)
 174) CD -59°4104 reports mag=10.0 but it should be mag=8.4 from PPM 340699: Delta = 1.6.

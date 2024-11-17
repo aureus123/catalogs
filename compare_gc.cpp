@@ -74,8 +74,8 @@ int main(int argc, char** argv)
                 CDstar[cdIndex].numRef,
                 dist);
 			writeRegisterGC(i);	
-            writeRegister(cdIndexWithinMag);
-            writeRegister(cdIndex);
+            writeRegister(cdIndexWithinMag, false);
+            writeRegister(cdIndex, false);
             continue;
         }
         goodStars++;

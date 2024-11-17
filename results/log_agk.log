@@ -277,100 +277,202 @@ Warning: Decl = -34 of AGK 12714 does not coincide with CD -35°16008
 Stars read from AGK: 43885
 1) CD -23°26 separated from AGK A48 in 1725.1 arcsec.
      Register CD -23°26 (en 0h):  10.0 | 3m26.5s | 3.2'     (pag. 55)
+   Neighbors:
+     Register CD -23°25 (en 0h):  10.0 | 3m17.2s | 4.7'     (pag. 55)
+     Register CD -23°27 (en 0h):  10.0 | 3m43.5s | 44.2'     (pag. 55)
      Also check CD -22°26 (dist = 1887.0 arcsec.)
      Register CD -22°26 (en 0h):  10.0 | 4m46.0s | 6.7'     (pag. 0)
 2) CD -23°111 reports mag=7.3 but it should be mag=8.9 from AGK A135: Delta = 1.6.
      Register CD -23°111 (en 0h):  7.3 | 15m33.0s | 41.5'     (pag. 56)
 3) CD -27°116 separated from AGK A149 in 2385.4 arcsec.
      Register CD -27°116 (en 0h):  9.9 | 19m33.5s | 11.0'     (pag. 291)
+   Neighbors:
+     Register CD -27°115 (en 0h):  9.5 | 19m24.1s | 34.0'     (pag. 291)
+     Register CD -27°117 (en 0h):  9.4 | 19m47.3s | 4.6'     (pag. 291)
      Also check CD -26°116 (dist = 2909.3 arcsec.)
      Register CD -26°116 (en 0h):  9.9 | 17m4.3s | 2.8'     (pag. 234)
 4) CD -24°156 separated from AGK A185 in 228.6 arcsec.
      Register CD -24°156 (en 0h):  9.1 | 21m38.3s | 50.0'     (pag. 117)
+   Neighbors:
+     Register CD -24°155 (en 0h):  9.7 | 21m32.7s | 12.6'     (pag. 117)
+     Register CD -24°157 (en 0h):  9.0 | 21m45.7s | 39.7'     (pag. 117)
 5) CD -24°298 separated from AGK A349 in 1682.9 arcsec.
      Register CD -24°298 (en 0h):  9.8 | 38m52.0s | 18.2'     (pag. 117)
+   Neighbors:
+     Register CD -24°297 (en 0h):  9.1 | 38m36.6s | 21.8'     (pag. 117)
+     Register CD -24°299 (en 0h):  9.0 | 39m0.6s | 46.3'     (pag. 117)
 6) CD -24°376 reports mag=5.7 but it should be mag=9.4 from AGK A415: Delta = 3.7.
      Register CD -24°376 (en 0h):  5.7 | 46m32.4s | 40.7'     (pag. 118)
 7) CD -25°338 reports mag=6.6 but it should be mag=9.1 from AGK A420: Delta = 2.5.
      Register CD -25°338 (en 0h):  6.6 | 47m4.4s | 27.4'     (pag. 178)
 8) CD -22°338 separated from AGK A479 in 1950.2 arcsec.
      Register CD -22°338 (en 0h):  10.0 | 54m5.2s | 37.9'     (pag. 1)
+   Neighbors:
+     Register CD -22°337 (en 0h):  9.5 | 54m2.8s | 52.5'     (pag. 1)
+     Register CD -22°339 (en 0h):  9.5 | 54m5.2s | 5.2'     (pag. 1)
 9) CD -23°387 separated from AGK A508 in 435.8 arcsec.
      Register CD -23°387 (en 0h):  9.3 | 58m12.6s | 10.0'     (pag. 57)
+   Neighbors:
+     Register CD -23°386 (en 0h):  10.0 | 57m37.9s | 7.0'     (pag. 57)
+     Register CD -23°388 (en 0h):  8.8 | 58m19.7s | 9.0'     (pag. 57)
 10) CD -26°357 reports mag=8.1 but it should be mag=9.2 from AGK A519: Delta = 1.1.
      Register CD -26°357 (en 0h):  8.1 | 59m48.8s | 9.2'     (pag. 235)
 11) CD -26°371 separated from AGK A549 in 1299.9 arcsec.
      Register CD -26°371 (en 1h):  10.0 | 2m55.1s | 33.8'     (pag. 235)
+   Neighbors:
+     Register CD -26°370 (en 1h):  9.4 | 2m50.3s | 9.6'     (pag. 235)
+     Register CD -26°372 (en 1h):  8.5 | 3m1.7s | 11.9'     (pag. 235)
 12) CD -23°473 reports mag=8.5 but it should be mag=9.7 from AGK A607: Delta = 1.2.
      Register CD -23°473 (en 1h):  8.5 | 11m4.8s | 53.2'     (pag. 57)
 13) CD -24°675 separated from AGK A768 in 1240.3 arcsec.
      Register CD -24°675 (en 1h):  9.9 | 30m23.2s | 36.3'     (pag. 119)
+   Neighbors:
+     Register CD -24°674 (en 1h):  9.3 | 30m20.6s | 58.8'     (pag. 119)
+     Register CD -24°676 (en 1h):  10.0 | 30m37.2s | 8.2'     (pag. 119)
 14) CD -24°677 separated from AGK A770 in 2350.9 arcsec.
      Register CD -24°677 (en 1h):  10.0 | 30m40.0s | 4.9'     (pag. 119)
+   Neighbors:
+     Register CD -24°676 (en 1h):  10.0 | 30m37.2s | 8.2'     (pag. 119)
+     Register CD -24°678 (en 1h):  10.0 | 30m43.9s | 41.1'     (pag. 119)
 15) CD -24°678 separated from AGK A773 in 1484.9 arcsec.
      Register CD -24°678 (en 1h):  10.0 | 30m43.9s | 41.1'     (pag. 119)
+   Neighbors:
+     Register CD -24°677 (en 1h):  10.0 | 30m40.0s | 4.9'     (pag. 119)
+     Register CD -24°679 (en 1h):  9.7 | 30m58.8s | 38.6'     (pag. 119)
 16) CD -23°715 separated from AGK A889 in 627.3 arcsec.
      Register CD -23°715 (en 1h):  10.0 | 49m59.7s | 1.0'     (pag. 58)
+   Neighbors:
+     Register CD -23°714 (en 1h):  9.0 | 49m58.4s | 16.7'     (pag. 58)
+     Register CD -23°716 (en 1h):  8.7 | 50m1.9s | 11.0'     (pag. 58)
 17) CD -26°704 separated from AGK A904 in 2154.0 arcsec.
      Register CD -26°704 (en 1h):  8.5 | 51m35.6s | 49.5'     (pag. 236)
+   Neighbors:
+     Register CD -26°703 (en 1h):  7.3 | 51m14.4s | 14.1'     (pag. 236)
+     Register CD -26°705 (en 1h):  9.1 | 51m47.3s | 6.4'     (pag. 236)
 18) CD -26°705 separated from AGK A907 in 2596.1 arcsec.
      Register CD -26°705 (en 1h):  9.1 | 51m47.3s | 6.4'     (pag. 236)
+   Neighbors:
+     Register CD -26°704 (en 1h):  8.5 | 51m35.6s | 49.5'     (pag. 236)
+     Register CD -26°706 (en 1h):  9.9 | 51m49.3s | 57.5'     (pag. 236)
 19) CD -26°706 separated from AGK A909 in 3024.9 arcsec.
      Register CD -26°706 (en 1h):  9.9 | 51m49.3s | 57.5'     (pag. 236)
+   Neighbors:
+     Register CD -26°705 (en 1h):  9.1 | 51m47.3s | 6.4'     (pag. 236)
+     Register CD -26°707 (en 1h):  10.0 | 51m53.2s | 50.0'     (pag. 236)
 20) CD -26°996 reports mag=7.2 but it should be mag=9.0 from AGK A1241: Delta = 1.8.
      Register CD -26°996 (en 2h):  7.2 | 38m41.6s | 1.8'     (pag. 237)
 21) CD -23°1092 separated from AGK A1312 in 847.6 arcsec.
      Register CD -23°1092 (en 2h):  10.0 | 46m30.0s | 18.0'     (pag. 59)
+   Neighbors:
+     Register CD -23°1091 (en 2h):  8.4 | 46m13.4s | 42.0'     (pag. 59)
+     Register CD -23°1093 (en 2h):  9.3 | 46m40.8s | 32.0'     (pag. 59)
 22) CD -23°1092 separated from AGK A1313 in 851.0 arcsec.
      Register CD -23°1092 (en 2h):  10.0 | 46m30.0s | 18.0'     (pag. 59)
+   Neighbors:
+     Register CD -23°1091 (en 2h):  8.4 | 46m13.4s | 42.0'     (pag. 59)
+     Register CD -23°1093 (en 2h):  9.3 | 46m40.8s | 32.0'     (pag. 59)
 23) CD -22°1054 reports mag=8.8 but it should be mag=6.0 from AGK A1432: Delta = 2.8.
      Register CD -22°1054 (en 2h):  8.8 | 59m51.0s | 39.6'     (pag. 3)
 24) CD -26°1159 reports mag=9.4 but it should be mag=8.3 from AGK A1460: Delta = 1.1.
      Register CD -26°1159 (en 3h):  9.4 | 3m14.2s | 55.7'     (pag. 237)
 25) CD -26°1304 separated from AGK A1608 in 1168.5 arcsec.
      Register CD -26°1304 (en 3h):  9.3 | 22m42.7s | 27.0'     (pag. 238)
+   Neighbors:
+     Register CD -26°1303 (en 3h):  10.0 | 22m38.2s | 34.9'     (pag. 238)
+     Register CD -26°1305 (en 3h):  10.0 | 22m43.6s | 27.7'     (pag. 238)
 26) CD -24°1836 separated from AGK A1719 in 899.0 arcsec.
      Register CD -24°1836 (en 3h):  9.6 | 38m27.7s | 54.4'     (pag. 122)
+   Neighbors:
+     Register CD -24°1835 (en 3h):  9.8 | 38m23.1s | 5.5'     (pag. 122)
+     Register CD -24°1837 (en 3h):  10.0 | 38m31.3s | 20.8'     (pag. 122)
 27) CD -23°1537 separated from AGK A1734 in 905.4 arcsec.
      Register CD -23°1537 (en 3h):  9.9 | 38m38.2s | 56.2'     (pag. 60)
+   Neighbors:
+     Register CD -23°1536 (en 3h):  10.0 | 38m32.8s | 51.4'     (pag. 60)
+     Register CD -23°1538 (en 3h):  10.0 | 38m42.5s | 38.4'     (pag. 60)
 28) CD -26°1426 separated from AGK A1744 in 1629.4 arcsec.
      Register CD -26°1426 (en 3h):  10.0 | 40m24.1s | 27.8'     (pag. 238)
+   Neighbors:
+     Register CD -26°1425 (en 3h):  9.2 | 40m23.4s | 1.6'     (pag. 238)
+     Register CD -26°1427 (en 3h):  9.9 | 40m39.4s | 42.2'     (pag. 238)
 29) CD -23°1600 reports mag=7.8 but it should be mag=9.7 from AGK A1796: Delta = 1.9.
      Register CD -23°1600 (en 3h):  7.8 | 46m17.8s | 17.9'     (pag. 61)
 30) CD -26°1572 separated from AGK A1925 in 1098.2 arcsec.
      Register CD -26°1572 (en 4h):  9.4 | 3m16.9s | 38.9'     (pag. 239)
+   Neighbors:
+     Register CD -26°1571 (en 4h):  10.0 | 3m12.3s | 36.6'     (pag. 239)
+     Register CD -26°1573 (en 4h):  9.7 | 3m52.2s | 9.3'     (pag. 239)
 31) CD -26°1574 separated from AGK A1928 in 1429.8 arcsec.
      Register CD -26°1574 (en 4h):  9.4 | 3m53.0s | 30.3'     (pag. 239)
+   Neighbors:
+     Register CD -26°1573 (en 4h):  9.7 | 3m52.2s | 9.3'     (pag. 239)
+     Register CD -26°1575 (en 4h):  7.6 | 4m19.8s | 20.9'     (pag. 239)
 32) CD -23°1810 reports mag=6.6 but it should be mag=8.1 from AGK A1978: Delta = 1.5.
      Register CD -23°1810 (en 4h):  6.6 | 7m44.0s | 26.6'     (pag. 61)
 33) CD -23°1831 separated from AGK A1993 in 818.8 arcsec.
      Register CD -23°1831 (en 4h):  9.4 | 10m4.0s | 40.9'     (pag. 61)
+   Neighbors:
+     Register CD -23°1830 (en 4h):  9.9 | 9m46.4s | 21.3'     (pag. 61)
+     Register CD -23°1832 (en 4h):  9.8 | 10m5.7s | 36.2'     (pag. 61)
 34) CD -25°1820 separated from AGK A2020 in 597.8 arcsec.
      Register CD -25°1820 (en 4h):  9.2 | 12m5.9s | 16.4'     (pag. 183)
+   Neighbors:
+     Register CD -25°1819 (en 4h):  10.0 | 11m54.0s | 32.5'     (pag. 183)
+     Register CD -25°1821 (en 4h):  9.0 | 12m9.3s | 37.8'     (pag. 183)
 35) CD -26°1773 separated from AGK A2204 in 2559.1 arcsec.
      Register CD -26°1773 (en 4h):  9.9 | 33m49.3s | 3.9'     (pag. 239)
+   Neighbors:
+     Register CD -26°1772 (en 4h):  9.0 | 33m32.7s | 46.0'     (pag. 239)
+     Register CD -26°1774 (en 4h):  10.0 | 34m3.2s | 32.7'     (pag. 239)
 36) CD -26°1928 separated from AGK A2390 in 3055.2 arcsec.
      Register CD -26°1928 (en 4h):  9.1 | 51m52.4s | 52.3'     (pag. 240)
+   Neighbors:
+     Register CD -26°1927 (en 4h):  10.0 | 51m49.3s | 51.2'     (pag. 240)
+     Register CD -26°1929 (en 4h):  9.2 | 52m9.2s | 1.5'     (pag. 240)
 37) CD -24°2783 separated from AGK A2446 in 615.3 arcsec.
      Register CD -24°2783 (en 4h):  9.2 | 57m43.0s | 30.2'     (pag. 126)
+   Neighbors:
+     Register CD -24°2782 (en 4h):  9.9 | 57m41.5s | 46.5'     (pag. 126)
+     Register CD -24°2784 (en 4h):  9.8 | 57m58.2s | 33.6'     (pag. 126)
 38) CD -26°2132 separated from AGK A2631 in 1619.8 arcsec.
      Register CD -26°2132 (en 5h):  8.8 | 13m17.4s | 17.9'     (pag. 240)
+   Neighbors:
+     Register CD -26°2131 (en 5h):  9.2 | 13m17.4s | 36.9'     (pag. 240)
+     Register CD -26°2133 (en 5h):  9.0 | 13m20.9s | 26.2'     (pag. 240)
 39) CD -25°2451 separated from AGK A2737 in 2673.1 arcsec.
      Register CD -25°2451 (en 5h):  10.0 | 22m33.5s | 0.0'     (pag. 185)
+   Neighbors:
+     Register CD -25°2450 (en 5h):  9.6 | 22m31.0s | 24.3'     (pag. 185)
+     Register CD -25°2452 (en 5h):  7.2 | 22m40.0s | 44.5'     (pag. 185)
 40) CD -25°2601 reports mag=9.7 but it should be mag=8.7 from AGK A2888: Delta = 1.0.
      Register CD -25°2601 (en 5h):  9.7 | 36m14.7s | 19.4'     (pag. 186)
 41) CD -25°2622 separated from AGK A2911 in 545.2 arcsec.
      Register CD -25°2622 (en 5h):  8.3 | 38m25.1s | 49.8'     (pag. 186)
+   Neighbors:
+     Register CD -25°2621 (en 5h):  9.7 | 38m18.2s | 5.7'     (pag. 186)
+     Register CD -25°2623 (en 5h):  10.0 | 38m27.2s | 13.2'     (pag. 186)
 42) CD -25°2666 separated from AGK A2973 in 253.9 arcsec.
      Register CD -25°2666 (en 5h):  9.6 | 42m0.9s | 12.5'     (pag. 186)
+   Neighbors:
+     Register CD -25°2665 (en 5h):  9.0 | 41m55.0s | 16.7'     (pag. 186)
+     Register CD -25°2667 (en 5h):  9.5 | 42m6.1s | 2.7'     (pag. 186)
 43) CD -24°3857 separated from AGK A3429 in 193.8 arcsec.
      Register CD -24°3857 (en 6h):  8.1 | 11m42.3s | 51.0'     (pag. 129)
+   Neighbors:
+     Register CD -24°3856 (en 6h):  10.0 | 11m40.2s | 31.8'     (pag. 129)
+     Register CD -24°3858 (en 6h):  10.0 | 11m45.0s | 6.6'     (pag. 129)
 44) CD -22°2917 reports mag=6.6 but it should be mag=9.5 from AGK A3436: Delta = 2.9.
      Register CD -22°2917 (en 6h):  6.6 | 11m48.4s | 39.2'     (pag. 9)
 45) CD -25°3107 separated from AGK A3461 in 2292.6 arcsec.
      Register CD -25°3107 (en 6h):  10.0 | 14m5.5s | 41.0'     (pag. 187)
+   Neighbors:
+     Register CD -25°3106 (en 6h):  10.0 | 14m2.4s | 6.2'     (pag. 187)
+     Register CD -25°3108 (en 6h):  9.9 | 14m5.9s | 29.2'     (pag. 187)
 46) CD -25°3297 separated from AGK A3690 in 511.6 arcsec.
      Register CD -25°3297 (en 6h):  9.3 | 25m26.6s | 59.8'     (pag. 188)
+   Neighbors:
+     Register CD -25°3296 (en 6h):  10.0 | 25m26.0s | 17.7'     (pag. 188)
+     Register CD -25°3298 (en 6h):  9.5 | 25m32.0s | 31.2'     (pag. 188)
 47) CD -23°3991 reports mag=4.5 but it should be mag=6.0 from AGK A3720: Delta = 1.5.
      Register CD -23°3991 (en 6h):  4.5 | 26m39.1s | 19.9'     (pag. 69)
 48) CD -23°4144 reports mag=6.9 but it should be mag=7.9 from AGK A3834: Delta = 1.0.
@@ -379,8 +481,14 @@ Stars read from AGK: 43885
      Register CD -24°4356 (en 6h):  9.6 | 38m2.4s | 19.1'     (pag. 131)
 50) CD -24°4384 separated from AGK A3959 in 472.5 arcsec.
      Register CD -24°4384 (en 6h):  10.0 | 39m36.1s | 1.4'     (pag. 131)
+   Neighbors:
+     Register CD -24°4383 (en 6h):  10.0 | 39m32.4s | 12.3'     (pag. 131)
+     Register CD -24°4385 (en 6h):  10.0 | 39m43.2s | 35.1'     (pag. 131)
 51) CD -22°3491 separated from AGK A3997 in 1095.1 arcsec.
      Register CD -22°3491 (en 6h):  10.0 | 41m39.2s | 56.0'     (pag. 11)
+   Neighbors:
+     Register CD -22°3490 (en 6h):  10.0 | 41m35.8s | 9.6'     (pag. 11)
+     Register CD -22°3492 (en 6h):  9.5 | 41m40.3s | 37.6'     (pag. 11)
 52) CD -24°4559 reports mag=8.4 but it should be mag=9.5 from AGK A4142: Delta = 1.1.
      Register CD -24°4559 (en 6h):  8.4 | 48m29.2s | 14.4'     (pag. 132)
 53) CD -25°3773 reports mag=8.0 but it should be mag=9.2 from AGK A4165: Delta = 1.2.
@@ -389,24 +497,39 @@ Stars read from AGK: 43885
      Register CD -24°4639 (en 6h):  8.4 | 52m1.1s | 59.5'     (pag. 132)
 55) CD -22°3867 separated from AGK A4301 in 504.9 arcsec.
      Register CD -22°3867 (en 6h):  9.6 | 55m48.3s | 58.9'     (pag. 13)
+   Neighbors:
+     Register CD -22°3866 (en 6h):  8.7 | 55m48.1s | 50.3'     (pag. 13)
+     Register CD -22°3868 (en 6h):  10.0 | 55m50.0s | 2.9'     (pag. 13)
 56) CD -23°4735 separated from AGK A4309 in 1114.5 arcsec.
      Register CD -23°4735 (en 6h):  10.0 | 55m29.8s | 52.3'     (pag. 71)
+   Neighbors:
+     Register CD -23°4734 (en 6h):  10.0 | 55m27.6s | 50.3'     (pag. 71)
+     Register CD -23°4736 (en 6h):  9.8 | 55m30.6s | 57.3'     (pag. 71)
      Also check CD -24°4735 (dist = 1759.8 arcsec.)
      Register CD -24°4735 (en 6h):  10.0 | 56m7.3s | 38.3'     (pag. 132)
 57) CD -25°4005 reports mag=10.0 but it should be mag=9.0 from AGK A4419: Delta = 1.0.
      Register CD -25°4005 (en 7h):  10.0 | 0m3.0s | 39.2'     (pag. 190)
 58) CD -22°4043 separated from AGK A4472 in 938.9 arcsec.
      Register CD -22°4043 (en 7h):  10.0 | 2m15.4s | 22.5'     (pag. 13)
+   Neighbors:
+     Register CD -22°4042 (en 7h):  9.1 | 2m12.2s | 38.3'     (pag. 13)
+     Register CD -22°4044 (en 7h):  10.0 | 2m19.4s | 7.4'     (pag. 13)
 59) CD -24°4940 reports mag=10.0 but it should be mag=9.0 from AGK A4532: Delta = 1.0.
      Register CD -24°4940 (en 7h):  10.0 | 4m39.7s | 21.0'     (pag. 133)
 60) CD -23°5189 reports mag=5.3 but it should be mag=6.4 from AGK A4680: Delta = 1.1.
      Register CD -23°5189 (en 7h):  5.3 | 11m20.7s | 5.7'     (pag. 73)
 61) CD -24°5419 separated from AGK A4960 in 775.3 arcsec.
      Register CD -24°5419 (en 7h):  10.0 | 21m55.0s | 22.1'     (pag. 135)
+   Neighbors:
+     Register CD -24°5418 (en 7h):  9.5 | 21m55.1s | 35.0'     (pag. 135)
+     Register CD -24°5420 (en 7h):  10.0 | 22m0.0s | 58.7'     (pag. 135)
 62) CD -22°4587 reports mag=5.4 but it should be mag=6.4 from AGK A5026: Delta = 1.0.
      Register CD -22°4587 (en 7h):  5.4 | 24m32.5s | 46.2'     (pag. 15)
 63) CD -25°4596 separated from AGK A5035 in 184.9 arcsec.
      Register CD -25°4596 (en 7h):  9.2 | 24m41.4s | 52.2'     (pag. 192)
+   Neighbors:
+     Register CD -25°4595 (en 7h):  10.0 | 24m37.8s | 20.5'     (pag. 192)
+     Register CD -25°4597 (en 7h):  9.1 | 24m43.6s | 48.7'     (pag. 192)
 64) CD -23°5768 reports mag=9.7 but it should be mag=8.6 from AGK A5173: Delta = 1.1.
      Register CD -23°5768 (en 7h):  9.7 | 30m53.5s | 12.4'     (pag. 75)
 65) CD -26°4707 reports mag=4.0 but it should be mag=7.0 from AGK A5248: Delta = 3.0.
@@ -415,26 +538,47 @@ Stars read from AGK: 43885
      Register CD -26°4707 (en 7h):  4.0 | 33m42.9s | 30.9'     (pag. 249)
 67) CD -24°5836 separated from AGK A5372 in 1651.7 arcsec.
      Register CD -24°5836 (en 7h):  10.0 | 37m52.5s | 45.5'     (pag. 136)
+   Neighbors:
+     Register CD -24°5835 (en 7h):  9.5 | 37m49.5s | 26.4'     (pag. 136)
+     Register CD -24°5837 (en 7h):  9.4 | 37m52.6s | 17.8'     (pag. 136)
 68) CD -25°5218 reports mag=10.0 but it should be mag=8.7 from AGK A5636: Delta = 1.3.
      Register CD -25°5218 (en 7h):  10.0 | 48m12.4s | 14.0'     (pag. 194)
 69) CD -26°5349 separated from AGK A5816 in 1985.7 arcsec.
      Register CD -26°5349 (en 7h):  9.5 | 55m21.0s | 20.3'     (pag. 251)
+   Neighbors:
+     Register CD -26°5348 (en 7h):  9.9 | 55m19.6s | 16.8'     (pag. 251)
+     Register CD -26°5350 (en 7h):  10.0 | 55m22.5s | 44.1'     (pag. 251)
 70) CD -25°5710 separated from AGK A6069 in 1005.8 arcsec.
      Register CD -25°5710 (en 8h):  9.5 | 6m25.9s | 36.4'     (pag. 196)
+   Neighbors:
+     Register CD -25°5709 (en 8h):  10.0 | 6m24.1s | 46.4'     (pag. 196)
+     Register CD -25°5711 (en 8h):  9.0 | 6m26.2s | 19.7'     (pag. 196)
 71) CD -23°6942 separated from AGK A6075 in 581.1 arcsec.
      Register CD -23°6942 (en 8h):  9.4 | 6m52.7s | 28.2'     (pag. 79)
+   Neighbors:
+     Register CD -23°6941 (en 8h):  10.0 | 6m44.9s | 3.4'     (pag. 79)
+     Register CD -23°6943 (en 8h):  10.0 | 6m52.9s | 47.8'     (pag. 79)
 72) CD -23°7143 reports mag=7.7 but it should be mag=6.5 from AGK A6239: Delta = 1.2.
      Register CD -23°7143 (en 8h):  7.7 | 14m40.2s | 4.3'     (pag. 79)
 73) CD -26°5993 separated from AGK A6342 in 2040.0 arcsec.
      Register CD -26°5993 (en 8h):  9.3 | 19m22.6s | 14.1'     (pag. 253)
+   Neighbors:
+     Register CD -26°5992 (en 8h):  9.2 | 19m21.6s | 47.5'     (pag. 253)
+     Register CD -26°5994 (en 8h):  9.1 | 19m23.8s | 51.5'     (pag. 253)
 74) CD -26°6394 separated from AGK A6716 in 2833.6 arcsec.
      Register CD -26°6394 (en 8h):  9.9 | 39m6.4s | 51.0'     (pag. 255)
+   Neighbors:
+     Register CD -26°6393 (en 8h):  9.9 | 39m5.6s | 2.2'     (pag. 255)
+     Register CD -26°6395 (en 8h):  9.0 | 39m10.0s | 3.7'     (pag. 255)
 *) CD -25°6669 too separated from AGK A6830 in 3609.7 arcsec.
      Register CD -25°6669 (en 8h):  9.1 | 46m55.1s | 33.7'     (pag. 199)
 75) CD -23°7902 reports mag=6.7 but it should be mag=9.2 from AGK A6886: Delta = 2.5.
      Register CD -23°7902 (en 8h):  6.7 | 50m25.0s | 20.1'     (pag. 82)
 76) CD -25°7113 separated from AGK A7244 in 1985.8 arcsec.
      Register CD -25°7113 (en 9h):  9.4 | 15m48.5s | 59.1'     (pag. 201)
+   Neighbors:
+     Register CD -25°7112 (en 9h):  10.0 | 15m45.8s | 52.2'     (pag. 201)
+     Register CD -25°7114 (en 9h):  5.2 | 15m57.6s | 25.6'     (pag. 201)
 77) CD -26°7150 reports mag=9.7 but it should be mag=8.7 from AGK A7403: Delta = 1.0.
      Register CD -26°7150 (en 9h):  9.7 | 26m6.9s | 8.2'     (pag. 257)
 78) CD -24°8247 reports mag=8.0 but it should be mag=9.1 from AGK A7480: Delta = 1.1.
@@ -445,12 +589,24 @@ Stars read from AGK: 43885
      Register CD -26°7412 (en 9h):  7.0 | 40m49.8s | 30.6'     (pag. 258)
 81) CD -23°8777 separated from AGK A7705 in 207.3 arcsec.
      Register CD -23°8777 (en 9h):  8.6 | 44m27.9s | 51.0'     (pag. 85)
+   Neighbors:
+     Register CD -23°8776 (en 9h):  9.0 | 44m22.1s | 59.7'     (pag. 85)
+     Register CD -23°8778 (en 9h):  9.6 | 44m30.3s | 2.8'     (pag. 85)
 82) CD -23°8801 separated from AGK A7735 in 256.1 arcsec.
      Register CD -23°8801 (en 9h):  8.0 | 46m15.6s | 37.9'     (pag. 85)
+   Neighbors:
+     Register CD -23°8800 (en 9h):  9.7 | 46m14.6s | 35.9'     (pag. 85)
+     Register CD -23°8802 (en 9h):  9.8 | 46m16.6s | 16.8'     (pag. 85)
 83) CD -22°7991 separated from AGK A7994 in 635.2 arcsec.
      Register CD -22°7991 (en 10h):  9.8 | 6m8.3s | 46.9'     (pag. 26)
+   Neighbors:
+     Register CD -22°7990 (en 10h):  9.7 | 6m4.6s | 38.6'     (pag. 26)
+     Register CD -22°7992 (en 10h):  8.8 | 6m10.1s | 36.0'     (pag. 26)
 84) CD -22°8093 separated from AGK A8087 in 1531.0 arcsec.
      Register CD -22°8093 (en 10h):  10.0 | 13m8.2s | 6.8'     (pag. 27)
+   Neighbors:
+     Register CD -22°8092 (en 10h):  10.0 | 13m6.6s | 14.5'     (pag. 27)
+     Register CD -22°8094 (en 10h):  8.4 | 13m12.4s | 32.1'     (pag. 27)
 85) CD -23°9206 reports mag=7.7 but it should be mag=9.4 from AGK A8107: Delta = 1.7.
      Register CD -23°9206 (en 10h):  7.7 | 14m40.6s | 1.1'     (pag. 86)
 86) CD -23°9206 reports mag=7.7 but it should be mag=6.5 from AGK A8108: Delta = 1.2.
@@ -459,12 +615,21 @@ Stars read from AGK: 43885
      Register CD -23°9296 (en 10h):  9.3 | 21m25.1s | 9.1'     (pag. 87)
 88) CD -24°9390 separated from AGK A8490 in 974.9 arcsec.
      Register CD -24°9390 (en 10h):  10.0 | 47m37.5s | 25.5'     (pag. 148)
+   Neighbors:
+     Register CD -24°9389 (en 10h):  10.0 | 47m27.6s | 44.5'     (pag. 148)
+     Register CD -24°9391 (en 10h):  7.8 | 47m41.0s | 8.9'     (pag. 148)
 89) CD -23°9699 reports mag=9.2 but it should be mag=8.2 from AGK A8596: Delta = 1.0.
      Register CD -23°9699 (en 10h):  9.2 | 57m18.6s | 6.0'     (pag. 88)
 90) CD -23°9705 separated from AGK A8604 in 1750.4 arcsec.
      Register CD -23°9705 (en 10h):  9.6 | 57m50.7s | 41.9'     (pag. 88)
+   Neighbors:
+     Register CD -23°9704 (en 10h):  9.8 | 57m41.1s | 47.1'     (pag. 88)
+     Register CD -23°9706 (en 10h):  9.5 | 57m50.9s | 36.1'     (pag. 88)
 91) CD -25°8541 separated from AGK A8701 in 2169.8 arcsec.
      Register CD -25°8541 (en 11h):  9.6 | 8m26.5s | 59.8'     (pag. 206)
+   Neighbors:
+     Register CD -25°8540 (en 11h):  10.0 | 8m4.5s | 48.3'     (pag. 206)
+     Register CD -25°8542 (en 11h):  8.0 | 8m30.4s | 23.3'     (pag. 206)
 92) CD -23°10009 reports mag=6.0 but it should be mag=9.1 from AGK A8851: Delta = 3.1.
      Register CD -23°10009 (en 11h):  6.0 | 23m25.9s | 46.6'     (pag. 89)
 93) CD -24°9859 reports mag=8.4 but it should be mag=9.5 from AGK A8921: Delta = 1.1.
@@ -483,54 +648,102 @@ Stars read from AGK: 43885
      Register CD -22°9344 (en 12h):  6.7 | 9m18.4s | 39.5'     (pag. 31)
 100) CD -26°9072 separated from AGK A9292 in 2030.0 arcsec.
      Register CD -26°9072 (en 12h):  9.7 | 10m50.4s | 15.3'     (pag. 264)
+   Neighbors:
+     Register CD -26°9071 (en 12h):  9.9 | 10m49.1s | 33.9'     (pag. 264)
+     Register CD -26°9073 (en 12h):  9.2 | 10m55.7s | 49.3'     (pag. 264)
 101) CD -24°10290 separated from AGK A9331 in 2360.6 arcsec.
      Register CD -24°10290 (en 12h):  10.0 | 14m51.8s | 54.4'     (pag. 151)
+   Neighbors:
+     Register CD -24°10289 (en 12h):  9.6 | 14m44.5s | 31.7'     (pag. 151)
+     Register CD -24°10291 (en 12h):  9.4 | 15m0.6s | 14.7'     (pag. 151)
 102) CD -22°9451 separated from AGK A9398 in 1413.2 arcsec.
      Register CD -22°9451 (en 12h):  9.0 | 21m35.2s | 6.5'     (pag. 31)
+   Neighbors:
+     Register CD -22°9450 (en 12h):  8.5 | 21m32.8s | 32.0'     (pag. 31)
+     Register CD -22°9452 (en 12h):  9.9 | 21m35.3s | 29.9'     (pag. 31)
 103) CD -25°9325 separated from AGK A9466 in 528.6 arcsec.
      Register CD -25°9325 (en 12h):  9.1 | 28m57.1s | 50.3'     (pag. 208)
+   Neighbors:
+     Register CD -25°9324 (en 12h):  10.0 | 28m51.2s | 6.7'     (pag. 208)
+     Register CD -25°9326 (en 12h):  9.8 | 28m57.3s | 28.7'     (pag. 208)
 104) CD -24°10582 separated from AGK A9633 in 773.9 arcsec.
      Register CD -24°10582 (en 12h):  10.0 | 46m49.4s | 59.2'     (pag. 152)
+   Neighbors:
+     Register CD -24°10581 (en 12h):  9.5 | 46m49.3s | 56.2'     (pag. 152)
+     Register CD -24°10583 (en 12h):  8.8 | 46m51.4s | 35.3'     (pag. 152)
 105) CD -24°10588 separated from AGK A9638 in 1770.3 arcsec.
      Register CD -24°10588 (en 12h):  9.7 | 47m25.0s | 17.3'     (pag. 152)
+   Neighbors:
+     Register CD -24°10587 (en 12h):  9.3 | 47m9.3s | 0.5'     (pag. 152)
+     Register CD -24°10589 (en 12h):  10.0 | 47m26.6s | 23.3'     (pag. 152)
 106) CD -24°10780 separated from AGK A9795 in 1537.5 arcsec.
      Register CD -24°10780 (en 13h):  9.7 | 6m36.3s | 55.4'     (pag. 153)
+   Neighbors:
+     Register CD -24°10779 (en 13h):  9.7 | 6m35.6s | 38.8'     (pag. 153)
+     Register CD -24°10781 (en 13h):  9.9 | 6m40.9s | 31.3'     (pag. 153)
 107) CD -25°9900 reports mag=5.8 but it should be mag=8.0 from AGK A9993: Delta = 2.2.
      Register CD -25°9900 (en 13h):  5.8 | 29m52.6s | 51.7'     (pag. 210)
 *) CD -24°12001 too separated from AGK A10095 in 74802.9 arcsec.
      Register CD -24°12001 (en 15h):  8.9 | 12m52.1s | 31.3'     (pag. 157)
 108) CD -23°11490 separated from AGK A10250 in 2919.4 arcsec.
      Register CD -23°11490 (en 14h):  9.8 | 0m8.5s | 8.2'     (pag. 94)
+   Neighbors:
+     Register CD -23°11489 (en 14h):  10.0 | 0m7.3s | 55.8'     (pag. 94)
+     Register CD -23°11491 (en 14h):  8.6 | 0m12.2s | 57.0'     (pag. 94)
 109) CD -24°11477 reports mag=8.2 but it should be mag=9.5 from AGK A10419: Delta = 1.3.
      Register CD -24°11477 (en 14h):  8.2 | 18m26.6s | 42.2'     (pag. 155)
 110) CD -24°11523 reports mag=7.6 but it should be mag=9.2 from AGK A10459: Delta = 1.6.
      Register CD -24°11523 (en 14h):  7.6 | 22m39.4s | 58.8'     (pag. 155)
 111) CD -24°11535 separated from AGK A10473 in 1772.7 arcsec.
      Register CD -24°11535 (en 14h):  9.3 | 24m8.5s | 16.4'     (pag. 155)
+   Neighbors:
+     Register CD -24°11534 (en 14h):  9.7 | 24m8.5s | 39.7'     (pag. 155)
+     Register CD -24°11536 (en 14h):  10.0 | 24m9.1s | 58.3'     (pag. 155)
 *) CD -23°11891 too separated from AGK A10491 in 10618.0 arcsec.
      Register CD -23°11891 (en 14h):  9.7 | 39m20.0s | 18.7'     (pag. 95)
 112) CD -24°11663 separated from AGK A10601 in 1305.4 arcsec.
      Register CD -24°11663 (en 14h):  9.8 | 39m0.4s | 21.5'     (pag. 156)
+   Neighbors:
+     Register CD -24°11662 (en 14h):  10.0 | 38m57.0s | 17.9'     (pag. 156)
+     Register CD -24°11664 (en 14h):  9.0 | 39m21.7s | 11.9'     (pag. 156)
 113) CD -24°11659 separated from AGK A10606 in 786.2 arcsec.
      Register CD -24°11659 (en 14h):  9.7 | 38m39.2s | 27.5'     (pag. 156)
+   Neighbors:
+     Register CD -24°11658 (en 14h):  10.0 | 38m33.3s | 32.9'     (pag. 156)
+     Register CD -24°11660 (en 14h):  9.9 | 38m42.9s | 1.9'     (pag. 156)
 114) CD -24°11661 reports mag=5.2 but it should be mag=8.5 from AGK A10612: Delta = 3.3.
      Register CD -24°11661 (en 14h):  5.2 | 38m46.5s | 54.8'     (pag. 156)
 115) CD -23°11981 separated from AGK A10713 in 1995.9 arcsec.
      Register CD -23°11981 (en 14h):  8.7 | 49m42.4s | 51.2'     (pag. 96)
+   Neighbors:
+     Register CD -23°11980 (en 14h):  10.0 | 49m40.0s | 57.5'     (pag. 96)
+     Register CD -23°11982 (en 14h):  10.0 | 49m43.5s | 43.0'     (pag. 96)
 116) CD -25°10836 separated from AGK A10878 in 545.4 arcsec.
      Register CD -25°10836 (en 15h):  9.1 | 9m4.3s | 20.0'     (pag. 213)
+   Neighbors:
+     Register CD -25°10835 (en 15h):  10.0 | 9m0.0s | 15.2'     (pag. 213)
+     Register CD -25°10837 (en 15h):  9.6 | 9m6.9s | 22.7'     (pag. 213)
 117) CD -24°12155 reports mag=6.7 but it should be mag=8.0 from AGK A11020: Delta = 1.3.
      Register CD -24°12155 (en 15h):  6.7 | 25m46.3s | 3.6'     (pag. 157)
 118) CD -23°12414 separated from AGK A11049 in 2105.8 arcsec.
      Register CD -23°12414 (en 15h):  10.0 | 29m36.6s | 18.8'     (pag. 97)
+   Neighbors:
+     Register CD -23°12413 (en 15h):  9.0 | 29m36.0s | 53.5'     (pag. 97)
+     Register CD -23°12415 (en 15h):  10.0 | 29m38.0s | 25.1'     (pag. 97)
 119) CD -25°11148 separated from AGK A11172 in 609.3 arcsec.
      Register CD -25°11148 (en 15h):  9.3 | 44m30.7s | 8.1'     (pag. 214)
+   Neighbors:
+     Register CD -25°11147 (en 15h):  9.0 | 44m21.6s | 59.8'     (pag. 214)
+     Register CD -25°11149 (en 15h):  9.1 | 44m33.3s | 44.8'     (pag. 214)
 120) CD -24°12481 reports mag=7.5 but it should be mag=9.6 from AGK A11277: Delta = 2.1.
      Register CD -24°12481 (en 15h):  7.5 | 55m21.5s | 40.4'     (pag. 158)
 121) CD -23°12700 reports mag=6.2 but it should be mag=9.1 from AGK A11314: Delta = 2.9.
      Register CD -23°12700 (en 15h):  6.2 | 58m39.8s | 15.5'     (pag. 98)
 122) CD -26°11245 separated from AGK A11361 in 2673.7 arcsec.
      Register CD -26°11245 (en 16h):  10.0 | 3m48.6s | 53.1'     (pag. 271)
+   Neighbors:
+     Register CD -26°11244 (en 16h):  8.7 | 3m48.1s | 8.4'     (pag. 271)
+     Register CD -26°11246 (en 16h):  9.0 | 3m51.4s | 25.2'     (pag. 271)
 123) CD -25°11485 reports mag=3.4 but it should be mag=8.9 from AGK A11444: Delta = 5.5.
      Register CD -25°11485 (en 16h):  3.4 | 13m37.2s | 17.1'     (pag. 215)
 124) CD -23°12861 reports mag=4.8 but it should be mag=7.3 from AGK A11474: Delta = 2.5.
@@ -543,30 +756,57 @@ Stars read from AGK: 43885
      Register CD -24°13255 (en 17h):  5.5 | 10m23.9s | 8.4'     (pag. 161)
 128) CD -26°12149 separated from AGK A12049 in 615.4 arcsec.
      Register CD -26°12149 (en 17h):  9.0 | 22m12.7s | 39.9'     (pag. 274)
+   Neighbors:
+     Register CD -26°12148 (en 17h):  10.0 | 21m35.7s | 37.4'     (pag. 274)
+     Register CD -26°12150 (en 17h):  9.7 | 22m20.1s | 55.7'     (pag. 274)
 129) CD -24°13475 separated from AGK A12172 in 1176.1 arcsec.
      Register CD -24°13475 (en 17h):  9.0 | 39m22.9s | 50.1'     (pag. 162)
+   Neighbors:
+     Register CD -24°13474 (en 17h):  9.7 | 39m22.0s | 48.1'     (pag. 162)
+     Register CD -24°13476 (en 17h):  10.0 | 39m30.8s | 27.5'     (pag. 162)
 130) CD -24°13579 separated from AGK A12244 in 763.0 arcsec.
      Register CD -24°13579 (en 17h):  9.9 | 45m20.3s | 51.4'     (pag. 162)
+   Neighbors:
+     Register CD -24°13578 (en 17h):  8.7 | 45m20.2s | 38.4'     (pag. 162)
+     Register CD -24°13580 (en 17h):  10.0 | 45m23.3s | 24.7'     (pag. 162)
 131) CD -23°13936 separated from AGK A12488 in 1964.5 arcsec.
      Register CD -23°13936 (en 18h):  9.6 | 0m2.5s | 55.4'     (pag. 102)
+   Neighbors:
+     Register CD -23°13935 (en 18h):  9.9 | 0m0.8s | 13.6'     (pag. 102)
+     Register CD -23°13937 (en 18h):  9.7 | 0m3.1s | 22.5'     (pag. 102)
 132) CD -23°14011 separated from AGK A12540 in 606.8 arcsec.
      Register CD -23°14011 (en 18h):  9.8 | 2m40.0s | 15.6'     (pag. 102)
+   Neighbors:
+     Register CD -23°14010 (en 18h):  9.7 | 2m38.8s | 48.0'     (pag. 102)
+     Register CD -23°14012 (en 18h):  9.0 | 2m40.4s | 26.2'     (pag. 102)
 133) CD -26°12900 separated from AGK A12552 in 604.2 arcsec.
      Register CD -26°12900 (en 18h):  10.0 | 3m17.0s | 51.9'     (pag. 277)
+   Neighbors:
+     Register CD -26°12899 (en 18h):  10.0 | 3m16.1s | 29.4'     (pag. 277)
+     Register CD -26°12901 (en 18h):  9.9 | 3m19.2s | 57.1'     (pag. 277)
 134) CD -23°14202 separated from AGK A12700 in 2381.2 arcsec.
      Register CD -23°14202 (en 18h):  9.9 | 10m53.1s | 36.4'     (pag. 103)
+   Neighbors:
+     Register CD -23°14201 (en 18h):  9.2 | 10m50.0s | 5.2'     (pag. 103)
+     Register CD -23°14203 (en 18h):  9.7 | 10m54.7s | 37.4'     (pag. 103)
 135) CD -25°13320 reports mag=8.5 but it should be mag=9.5 from AGK A12952: Delta = 1.0.
      Register CD -25°13320 (en 18h):  8.5 | 32m9.1s | 37.6'     (pag. 222)
 136) CD -22°13399 reports mag=5.0 but it should be mag=6.0 from AGK A13128: Delta = 1.0.
      Register CD -22°13399 (en 18h):  5.0 | 46m37.6s | 53.7'     (pag. 45)
 137) CD -26°13790 separated from AGK A13292 in 2284.2 arcsec.
      Register CD -26°13790 (en 18h):  9.7 | 58m27.9s | 33.4'     (pag. 280)
+   Neighbors:
+     Register CD -26°13789 (en 18h):  9.4 | 58m24.3s | 45.4'     (pag. 280)
+     Register CD -26°13791 (en 18h):  9.9 | 58m29.8s | 52.9'     (pag. 280)
      Also check CD -27°13790 (dist = 7831.9 arcsec.)
      Register CD -27°13790 (en 19h):  9.9 | 9m59.4s | 25.8'     (pag. 337)
 138) CD -25°13770 reports mag=10.0 but it should be mag=7.2 from AGK A13301: Delta = 2.8.
      Register CD -25°13770 (en 19h):  10.0 | 1m7.4s | 16.3'     (pag. 223)
 139) CD -24°15184 separated from AGK A13411 in 321.4 arcsec.
      Register CD -24°15184 (en 19h):  9.6 | 9m31.0s | 3.8'     (pag. 167)
+   Neighbors:
+     Register CD -24°15183 (en 19h):  9.8 | 9m28.4s | 18.8'     (pag. 167)
+     Register CD -24°15185 (en 19h):  9.1 | 9m41.3s | 43.6'     (pag. 167)
 140) CD -26°14337 reports mag=8.0 but it should be mag=9.3 from AGK A13642: Delta = 1.3.
      Register CD -26°14337 (en 19h):  8.0 | 28m24.6s | 10.6'     (pag. 282)
 141) CD -26°14336 reports mag=9.9 but it should be mag=7.9 from AGK A13643: Delta = 2.0.
@@ -575,82 +815,187 @@ Stars read from AGK: 43885
      Register CD -26°14362 (en 19h):  8.2 | 29m53.8s | 31.7'     (pag. 282)
 143) CD -26°14918 separated from AGK A14105 in 1326.7 arcsec.
      Register CD -26°14918 (en 20h):  9.8 | 11m2.5s | 25.6'     (pag. 283)
+   Neighbors:
+     Register CD -26°14917 (en 20h):  10.0 | 10m59.7s | 3.4'     (pag. 283)
+     Register CD -26°14919 (en 20h):  10.0 | 11m4.4s | 35.6'     (pag. 283)
 144) CD -26°15065 separated from AGK A14236 in 808.2 arcsec.
      Register CD -26°15065 (en 20h):  10.0 | 22m31.3s | 29.0'     (pag. 284)
+   Neighbors:
+     Register CD -26°15064 (en 20h):  8.4 | 22m31.1s | 46.7'     (pag. 284)
+     Register CD -26°15066 (en 20h):  10.0 | 22m58.7s | 31.6'     (pag. 284)
 145) CD -25°14906 separated from AGK A14302 in 2417.6 arcsec.
      Register CD -25°14906 (en 20h):  9.3 | 29m19.8s | 17.5'     (pag. 227)
+   Neighbors:
+     Register CD -25°14905 (en 20h):  10.0 | 29m15.3s | 15.3'     (pag. 227)
+     Register CD -25°14907 (en 20h):  9.5 | 29m20.9s | 44.8'     (pag. 227)
 146) CD -22°14939 separated from AGK A14369 in 189.2 arcsec.
      Register CD -22°14939 (en 20h):  8.7 | 35m50.8s | 21.4'     (pag. 50)
+   Neighbors:
+     Register CD -22°14938 (en 20h):  10.0 | 35m46.6s | 51.2'     (pag. 50)
+     Register CD -22°14940 (en 20h):  9.7 | 35m55.9s | 5.1'     (pag. 50)
 147) CD -25°15231 separated from AGK A14589 in 1786.2 arcsec.
      Register CD -25°15231 (en 20h):  8.8 | 59m34.2s | 38.8'     (pag. 228)
+   Neighbors:
+     Register CD -25°15230 (en 20h):  10.0 | 59m26.8s | 49.6'     (pag. 228)
+     Register CD -25°15232 (en 20h):  9.8 | 59m37.8s | 29.6'     (pag. 228)
 148) CD -25°15489 reports mag=10.0 but it should be mag=8.9 from AGK A14822: Delta = 1.1.
      Register CD -25°15489 (en 21h):  10.0 | 26m29.8s | 47.8'     (pag. 229)
 149) CD -24°16860 reports mag=8.0 but it should be mag=9.1 from AGK A14953: Delta = 1.1.
      Register CD -24°16860 (en 21h):  8.0 | 43m28.9s | 46.3'     (pag. 173)
 150) CD -25°15944 separated from AGK A15248 in 1803.7 arcsec.
      Register CD -25°15944 (en 22h):  9.2 | 22m18.4s | 16.4'     (pag. 230)
+   Neighbors:
+     Register CD -25°15943 (en 22h):  10.0 | 22m1.9s | 0.5'     (pag. 230)
+     Register CD -25°15945 (en 22h):  8.6 | 22m21.5s | 12.1'     (pag. 230)
 151) CD -24°17466 separated from AGK A15516 in 494.3 arcsec.
      Register CD -24°17466 (en 22h):  10.0 | 57m19.0s | 19.5'     (pag. 175)
+   Neighbors:
+     Register CD -24°17465 (en 22h):  9.9 | 57m8.5s | 55.9'     (pag. 175)
+     Register CD -24°17467 (en 22h):  8.5 | 57m25.6s | 27.5'     (pag. 175)
 152) CD -24°17470 separated from AGK A15518 in 279.1 arcsec.
      Register CD -24°17470 (en 22h):  10.0 | 57m32.8s | 38.1'     (pag. 175)
+   Neighbors:
+     Register CD -24°17469 (en 22h):  9.6 | 57m29.3s | 46.5'     (pag. 175)
+     Register CD -24°17471 (en 22h):  9.3 | 57m37.3s | 42.0'     (pag. 175)
 153) CD -24°17471 separated from AGK A15519 in 321.4 arcsec.
      Register CD -24°17471 (en 22h):  9.3 | 57m37.3s | 42.0'     (pag. 175)
+   Neighbors:
+     Register CD -24°17470 (en 22h):  10.0 | 57m32.8s | 38.1'     (pag. 175)
+     Register CD -24°17472 (en 22h):  8.7 | 57m39.7s | 47.0'     (pag. 175)
 154) CD -24°17478 separated from AGK A15525 in 1709.9 arcsec.
      Register CD -24°17478 (en 22h):  10.0 | 58m12.4s | 59.4'     (pag. 175)
+   Neighbors:
+     Register CD -24°17477 (en 22h):  9.8 | 58m0.8s | 49.0'     (pag. 175)
+     Register CD -24°17479 (en 22h):  8.3 | 58m18.1s | 30.7'     (pag. 175)
 155) CD -24°17484 separated from AGK A15529 in 210.2 arcsec.
      Register CD -24°17484 (en 22h):  10.0 | 58m45.6s | 55.4'     (pag. 175)
+   Neighbors:
+     Register CD -24°17483 (en 22h):  9.8 | 58m40.0s | 37.3'     (pag. 175)
+     Register CD -24°17485 (en 22h):  8.8 | 58m47.0s | 58.7'     (pag. 175)
 156) CD -24°17487 separated from AGK A15531 in 2100.0 arcsec.
      Register CD -24°17487 (en 22h):  9.8 | 59m0.7s | 35.5'     (pag. 175)
+   Neighbors:
+     Register CD -24°17486 (en 22h):  10.0 | 58m53.3s | 52.1'     (pag. 175)
+     Register CD -24°17488 (en 22h):  9.2 | 59m15.8s | 0.6'     (pag. 175)
 157) CD -24°17489 separated from AGK A15533 in 544.2 arcsec.
      Register CD -24°17489 (en 22h):  10.0 | 59m28.9s | 22.2'     (pag. 175)
+   Neighbors:
+     Register CD -24°17488 (en 22h):  9.2 | 59m15.8s | 0.6'     (pag. 175)
+     Register CD -24°17490 (en 22h):  8.9 | 59m31.0s | 31.2'     (pag. 175)
 158) CD -25°16359 separated from AGK A15615 in 1176.3 arcsec.
      Register CD -25°16359 (en 23h):  10.0 | 9m9.8s | 36.2'     (pag. 232)
+   Neighbors:
+     Register CD -25°16358 (en 23h):  9.1 | 9m9.7s | 55.7'     (pag. 232)
+     Register CD -25°16360 (en 23h):  9.9 | 9m15.8s | 46.5'     (pag. 232)
 159) CD -22°16457 separated from AGK A15854 in 1421.7 arcsec.
      Register CD -22°16457 (en 23h):  9.9 | 41m29.5s | 12.7'     (pag. 55)
+   Neighbors:
+     Register CD -22°16456 (en 23h):  9.1 | 41m29.5s | 36.5'     (pag. 55)
+     Register CD -22°16458 (en 23h):  9.9 | 41m34.0s | 37.5'     (pag. 55)
 160) CD -24°17893 separated from AGK A15892 in 2430.5 arcsec.
      Register CD -24°17893 (en 23h):  9.9 | 46m35.0s | 55.6'     (pag. 177)
+   Neighbors:
+     Register CD -24°17892 (en 23h):  9.5 | 46m31.3s | 0.6'     (pag. 177)
+     Register CD -24°17894 (en 23h):  9.0 | 46m35.5s | 15.1'     (pag. 177)
 161) CD -22°16507 separated from AGK A15904 in 842.4 arcsec.
      Register CD -22°16507 (en 23h):  9.9 | 48m46.5s | 33.5'     (pag. 55)
+   Neighbors:
+     Register CD -22°16506 (en 23h):  9.7 | 48m46.0s | 0.0'     (pag. 55)
+     Register CD -22°16508 (en 23h):  9.3 | 48m46.5s | 19.6'     (pag. 55)
 162) CD -24°17901 separated from AGK A15907 in 1526.3 arcsec.
      Register CD -24°17901 (en 23h):  10.0 | 48m14.2s | 33.8'     (pag. 177)
+   Neighbors:
+     Register CD -24°17900 (en 23h):  10.0 | 48m4.8s | 46.4'     (pag. 177)
+     Register CD -24°17902 (en 23h):  9.6 | 48m26.2s | 5.6'     (pag. 177)
 163) CD -24°17903 separated from AGK A15909 in 1626.1 arcsec.
      Register CD -24°17903 (en 23h):  9.6 | 48m37.3s | 43.1'     (pag. 177)
+   Neighbors:
+     Register CD -24°17902 (en 23h):  9.6 | 48m26.2s | 5.6'     (pag. 177)
+     Register CD -24°17904 (en 23h):  9.5 | 48m39.7s | 23.7'     (pag. 177)
 164) CD -30°478 reports mag=7.0 but it should be mag=9.0 from AGK B513: Delta = 2.0.
      Register CD -30°478 (en 1h):  7.0 | 21m16.6s | 53.0'     (pag. 473)
 165) CD -31°791 separated from AGK B703 in 377.8 arcsec.
      Register CD -31°791 (en 1h):  9.0 | 49m23.1s | 56.5'     (pag. 541)
+   Neighbors:
+     Register CD -31°790 (en 1h):  10.0 | 49m22.1s | 5.1'     (pag. 541)
+     Register CD -31°792 (en 1h):  10.0 | 49m31.6s | 34.2'     (pag. 541)
 166) CD -31°792 separated from AGK B704 in 1349.0 arcsec.
      Register CD -31°792 (en 1h):  10.0 | 49m31.6s | 34.2'     (pag. 541)
+   Neighbors:
+     Register CD -31°791 (en 1h):  9.0 | 49m23.1s | 56.5'     (pag. 541)
+     Register CD -31°793 (en 1h):  9.9 | 49m38.0s | 43.4'     (pag. 541)
 167) CD -31°905 separated from AGK B873 in 332.4 arcsec.
      Register CD -31°905 (en 2h):  9.3 | 10m48.9s | 50.9'     (pag. 542)
+   Neighbors:
+     Register CD -31°904 (en 2h):  9.0 | 10m42.7s | 55.9'     (pag. 542)
+     Register CD -31°906 (en 2h):  10.0 | 10m49.7s | 53.4'     (pag. 542)
 168) CD -31°914 separated from AGK B875 in 3212.7 arcsec.
      Register CD -31°914 (en 2h):  10.0 | 11m44.2s | 54.9'     (pag. 542)
+   Neighbors:
+     Register CD -31°913 (en 2h):  8.5 | 11m40.2s | 1.0'     (pag. 542)
+     Register CD -31°915 (en 2h):  10.0 | 11m44.4s | 44.4'     (pag. 542)
 169) CD -31°917 separated from AGK B876 in 1333.7 arcsec.
      Register CD -31°917 (en 2h):  9.3 | 11m49.2s | 20.1'     (pag. 542)
+   Neighbors:
+     Register CD -31°916 (en 2h):  9.1 | 11m48.7s | 42.4'     (pag. 542)
+     Register CD -31°918 (en 2h):  10.0 | 11m56.3s | 41.1'     (pag. 542)
 170) CD -31°918 separated from AGK B877 in 1244.2 arcsec.
      Register CD -31°918 (en 2h):  10.0 | 11m56.3s | 41.1'     (pag. 542)
+   Neighbors:
+     Register CD -31°917 (en 2h):  9.3 | 11m49.2s | 20.1'     (pag. 542)
+     Register CD -31°919 (en 2h):  7.4 | 11m58.0s | 17.8'     (pag. 542)
 171) CD -31°920 separated from AGK B879 in 1004.4 arcsec.
      Register CD -31°920 (en 2h):  10.0 | 12m13.8s | 34.4'     (pag. 542)
+   Neighbors:
+     Register CD -31°919 (en 2h):  7.4 | 11m58.0s | 17.8'     (pag. 542)
+     Register CD -31°921 (en 2h):  8.0 | 12m26.2s | 2.7'     (pag. 542)
 172) CD -31°922 separated from AGK B881 in 551.9 arcsec.
      Register CD -31°922 (en 2h):  10.0 | 12m28.3s | 12.0'     (pag. 542)
+   Neighbors:
+     Register CD -31°921 (en 2h):  8.0 | 12m26.2s | 2.7'     (pag. 542)
+     Register CD -31°923 (en 2h):  7.5 | 12m35.5s | 56.9'     (pag. 542)
 173) CD -31°924 separated from AGK B884 in 1024.6 arcsec.
      Register CD -31°924 (en 2h):  8.8 | 12m44.4s | 39.8'     (pag. 542)
+   Neighbors:
+     Register CD -31°923 (en 2h):  7.5 | 12m35.5s | 56.9'     (pag. 542)
+     Register CD -31°925 (en 2h):  7.7 | 12m47.0s | 22.5'     (pag. 542)
 174) CD -31°925 separated from AGK B885 in 1048.5 arcsec.
      Register CD -31°925 (en 2h):  7.7 | 12m47.0s | 22.5'     (pag. 542)
+   Neighbors:
+     Register CD -31°924 (en 2h):  8.8 | 12m44.4s | 39.8'     (pag. 542)
+     Register CD -31°926 (en 2h):  9.4 | 12m55.1s | 9.1'     (pag. 542)
 175) CD -31°926 separated from AGK B886 in 783.5 arcsec.
      Register CD -31°926 (en 2h):  9.4 | 12m55.1s | 9.1'     (pag. 542)
+   Neighbors:
+     Register CD -31°925 (en 2h):  7.7 | 12m47.0s | 22.5'     (pag. 542)
+     Register CD -31°927 (en 2h):  9.2 | 12m55.6s | 0.0'     (pag. 542)
 176) CD -31°928 separated from AGK B888 in 849.1 arcsec.
      Register CD -31°928 (en 2h):  10.0 | 13m18.5s | 13.5'     (pag. 542)
+   Neighbors:
+     Register CD -31°927 (en 2h):  9.2 | 12m55.6s | 0.0'     (pag. 542)
+     Register CD -31°929 (en 2h):  9.9 | 13m39.1s | 30.5'     (pag. 542)
 177) CD -30°815 reports mag=8.0 but it should be mag=9.2 from AGK B890: Delta = 1.2.
      Register CD -30°815 (en 2h):  8.0 | 13m5.5s | 14.7'     (pag. 475)
 178) CD -31°938 separated from AGK B900 in 259.8 arcsec.
      Register CD -31°938 (en 2h):  9.8 | 15m43.6s | 30.8'     (pag. 542)
+   Neighbors:
+     Register CD -31°937 (en 2h):  9.0 | 15m23.0s | 31.1'     (pag. 542)
+     Register CD -31°939 (en 2h):  10.0 | 15m44.9s | 36.5'     (pag. 542)
 179) CD -31°942 separated from AGK B903 in 1465.0 arcsec.
      Register CD -31°942 (en 2h):  8.3 | 15m52.2s | 31.1'     (pag. 542)
+   Neighbors:
+     Register CD -31°941 (en 2h):  8.8 | 15m52.0s | 6.5'     (pag. 542)
+     Register CD -31°943 (en 2h):  9.3 | 16m0.7s | 47.4'     (pag. 542)
 180) CD -31°943 separated from AGK B904 in 1015.7 arcsec.
      Register CD -31°943 (en 2h):  9.3 | 16m0.7s | 47.4'     (pag. 542)
+   Neighbors:
+     Register CD -31°942 (en 2h):  8.3 | 15m52.2s | 31.1'     (pag. 542)
+     Register CD -31°944 (en 2h):  10.0 | 16m6.1s | 3.5'     (pag. 542)
 181) CD -31°949 separated from AGK B909 in 1149.6 arcsec.
      Register CD -31°949 (en 2h):  9.3 | 17m5.2s | 55.9'     (pag. 542)
+   Neighbors:
+     Register CD -31°948 (en 2h):  8.7 | 16m49.4s | 37.4'     (pag. 542)
+     Register CD -31°950 (en 2h):  9.3 | 17m7.0s | 12.7'     (pag. 542)
 182) CD -30°909 reports mag=7.7 but it should be mag=8.9 from AGK B963: Delta = 1.2.
      Register CD -30°909 (en 2h):  7.7 | 24m57.0s | 54.8'     (pag. 475)
 183) CD -28°819 reports mag=4.9 but it should be mag=8.4 from AGK B986: Delta = 3.5.
@@ -659,8 +1004,14 @@ Stars read from AGK: 43885
      Register CD -28°875 (en 2h):  7.0 | 38m19.1s | 25.5'     (pag. 349)
 185) CD -31°1585 separated from AGK B1536 in 770.3 arcsec.
      Register CD -31°1585 (en 3h):  9.0 | 47m45.7s | 37.4'     (pag. 544)
+   Neighbors:
+     Register CD -31°1584 (en 3h):  10.0 | 47m33.2s | 35.4'     (pag. 544)
+     Register CD -31°1586 (en 3h):  10.0 | 47m59.9s | 20.7'     (pag. 544)
 186) CD -31°1588 separated from AGK B1537 in 784.1 arcsec.
      Register CD -31°1588 (en 3h):  9.2 | 48m1.4s | 18.3'     (pag. 544)
+   Neighbors:
+     Register CD -31°1587 (en 3h):  10.0 | 48m0.1s | 36.3'     (pag. 544)
+     Register CD -31°1589 (en 3h):  9.9 | 48m13.0s | 39.3'     (pag. 544)
 187) CD -30°1719 reports mag=9.5 but it should be mag=7.8 from AGK B1717: Delta = 1.7.
      Register CD -30°1719 (en 4h):  9.5 | 10m9.3s | 22.8'     (pag. 478)
 *) CD -27°1917 too separated from AGK B1821 in 16975.5 arcsec.
@@ -675,6 +1026,9 @@ Stars read from AGK: 43885
      Register CD -31°3407 (en 6h):  6.0 | 27m58.1s | 55.9'     (pag. 550)
 191) CD -31°3408 separated from AGK B3081 in 3093.2 arcsec.
      Register CD -31°3408 (en 6h):  9.9 | 28m14.5s | 6.6'     (pag. 550)
+   Neighbors:
+     Register CD -31°3407 (en 6h):  6.0 | 27m58.1s | 55.9'     (pag. 550)
+     Register CD -31°3409 (en 6h):  10.0 | 28m16.9s | 16.7'     (pag. 550)
 192) CD -29°3225 reports mag=7.3 but it should be mag=8.7 from AGK B3085: Delta = 1.4.
      Register CD -29°3225 (en 6h):  7.3 | 29m17.7s | 32.2'     (pag. 419)
 193) CD -30°3505 reports mag=6.3 but it should be mag=9.0 from AGK B3253: Delta = 2.7.
@@ -683,22 +1037,37 @@ Stars read from AGK: 43885
      Register CD -27°3353 (en 6h):  9.7 | 47m39.2s | 24.9'     (pag. 301)
 195) CD -30°3714 separated from AGK B3439 in 567.6 arcsec.
      Register CD -30°3714 (en 6h):  9.0 | 51m57.2s | 29.4'     (pag. 484)
+   Neighbors:
+     Register CD -30°3713 (en 6h):  9.5 | 51m54.9s | 2.3'     (pag. 484)
+     Register CD -30°3715 (en 6h):  9.2 | 51m58.4s | 29.3'     (pag. 484)
 196) CD -30°3757 reports mag=6.7 but it should be mag=9.3 from AGK B3474: Delta = 2.6.
      Register CD -30°3757 (en 6h):  6.7 | 53m57.8s | 49.7'     (pag. 484)
 197) CD -28°3678 separated from AGK B3479 in 184.9 arcsec.
      Register CD -28°3678 (en 6h):  9.0 | 54m18.9s | 51.7'     (pag. 358)
+   Neighbors:
+     Register CD -28°3677 (en 6h):  9.7 | 54m18.3s | 14.8'     (pag. 358)
+     Register CD -28°3679 (en 6h):  9.7 | 54m20.6s | 0.4'     (pag. 358)
 198) CD -27°3496 separated from AGK B3488 in 555.6 arcsec.
      Register CD -27°3496 (en 6h):  8.7 | 54m54.9s | 39.1'     (pag. 302)
+   Neighbors:
+     Register CD -27°3495 (en 6h):  9.0 | 54m49.3s | 7.6'     (pag. 302)
+     Register CD -27°3497 (en 6h):  10.0 | 54m58.4s | 16.1'     (pag. 302)
 *) CD -31°3980 too separated from AGK B3569 in 3652.8 arcsec.
      Register CD -31°3980 (en 6h):  10.0 | 59m23.6s | 59.6'     (pag. 552)
 199) CD -31°4265 reports mag=9.8 but it should be mag=8.7 from AGK B3811: Delta = 1.1.
      Register CD -31°4265 (en 7h):  9.8 | 11m22.5s | 2.0'     (pag. 553)
 200) CD -28°4258 separated from AGK B3942 in 978.0 arcsec.
      Register CD -28°4258 (en 7h):  9.9 | 17m57.7s | 33.8'     (pag. 360)
+   Neighbors:
+     Register CD -28°4257 (en 7h):  10.0 | 17m56.7s | 21.0'     (pag. 360)
+     Register CD -28°4259 (en 7h):  9.1 | 17m57.7s | 50.2'     (pag. 360)
 201) CD -31°4590 reports mag=7.4 but it should be mag=8.5 from AGK B4062: Delta = 1.1.
      Register CD -31°4590 (en 7h):  7.4 | 24m3.9s | 35.3'     (pag. 554)
 202) CD -29°4868 separated from AGK B4366 in 3277.7 arcsec.
      Register CD -29°4868 (en 7h):  7.9 | 39m24.5s | 1.5'     (pag. 424)
+   Neighbors:
+     Register CD -29°4867 (en 7h):  9.9 | 39m24.8s | 56.3'     (pag. 424)
+     Register CD -29°4869 (en 7h):  10.0 | 39m26.8s | 17.9'     (pag. 424)
 203) CD -31°5025 reports mag=8.7 but it should be mag=9.8 from AGK B4391: Delta = 1.1.
      Register CD -31°5025 (en 7h):  8.7 | 40m43.4s | 52.8'     (pag. 555)
 204) CD -30°5059 reports mag=10.0 but it should be mag=9.0 from AGK B4406: Delta = 1.0.
@@ -707,18 +1076,30 @@ Stars read from AGK: 43885
      Register CD -30°5275 (en 7h):  7.0 | 50m18.0s | 35.4'     (pag. 490)
 206) CD -27°4804 separated from AGK B4618 in 578.5 arcsec.
      Register CD -27°4804 (en 7h):  8.0 | 52m52.5s | 20.4'     (pag. 306)
+   Neighbors:
+     Register CD -27°4803 (en 7h):  9.4 | 52m52.3s | 53.4'     (pag. 306)
+     Register CD -27°4805 (en 7h):  10.0 | 53m2.3s | 21.4'     (pag. 306)
 207) CD -31°5338 separated from AGK B4650 in 230.3 arcsec.
      Register CD -31°5338 (en 7h):  9.1 | 54m21.5s | 51.2'     (pag. 557)
+   Neighbors:
+     Register CD -31°5337 (en 7h):  10.0 | 54m19.5s | 43.3'     (pag. 557)
+     Register CD -31°5339 (en 7h):  9.5 | 54m23.6s | 45.4'     (pag. 557)
 208) CD -29°5319 reports mag=7.8 but it should be mag=9.0 from AGK B4663: Delta = 1.2.
      Register CD -29°5319 (en 7h):  7.8 | 55m5.0s | 10.2'     (pag. 426)
 209) CD -27°4894 reports mag=7.5 but it should be mag=9.1 from AGK B4714: Delta = 1.6.
      Register CD -27°4894 (en 7h):  7.5 | 57m28.6s | 12.0'     (pag. 307)
 210) CD -30°6084 separated from AGK B5024 in 1787.3 arcsec.
      Register CD -30°6084 (en 8h):  9.8 | 15m43.9s | 40.8'     (pag. 492)
+   Neighbors:
+     Register CD -30°6083 (en 8h):  9.8 | 15m41.9s | 16.3'     (pag. 492)
+     Register CD -30°6085 (en 8h):  10.0 | 15m44.9s | 46.1'     (pag. 492)
 211) CD -31°5979 reports mag=9.5 but it should be mag=8.5 from AGK B5056: Delta = 1.0.
      Register CD -31°5979 (en 8h):  9.5 | 17m59.3s | 1.8'     (pag. 559)
 212) CD -27°5405 separated from AGK B5059 in 2030.8 arcsec.
      Register CD -27°5405 (en 8h):  10.0 | 18m12.7s | 35.4'     (pag. 308)
+   Neighbors:
+     Register CD -27°5404 (en 8h):  8.6 | 18m12.6s | 1.5'     (pag. 308)
+     Register CD -27°5406 (en 8h):  9.6 | 18m12.7s | 42.9'     (pag. 308)
 213) CD -27°5678 reports mag=10.0 but it should be mag=8.8 from AGK B5291: Delta = 1.2.
      Register CD -27°5678 (en 8h):  10.0 | 30m40.1s | 29.8'     (pag. 309)
 214) CD -27°5879 reports mag=7.3 but it should be mag=9.2 from AGK B5465: Delta = 1.9.
@@ -729,6 +1110,9 @@ Stars read from AGK: 43885
      Register CD -29°6965 (en 8h):  8.0 | 51m49.3s | 21.6'     (pag. 431)
 217) CD -27°6162 separated from AGK B5722 in 2630.3 arcsec.
      Register CD -27°6162 (en 8h):  10.0 | 55m58.5s | 9.0'     (pag. 311)
+   Neighbors:
+     Register CD -27°6161 (en 8h):  8.1 | 55m47.2s | 52.6'     (pag. 311)
+     Register CD -27°6163 (en 8h):  7.9 | 56m1.0s | 49.5'     (pag. 311)
 218) CD -31°6914 reports mag=7.7 but it should be mag=9.3 from AGK B5797: Delta = 1.6.
      Register CD -31°6914 (en 9h):  7.7 | 1m4.0s | 5.1'     (pag. 562)
 219) CD -29°7194 reports mag=6.0 but it should be mag=9.1 from AGK B5861: Delta = 3.1.
@@ -747,142 +1131,265 @@ Stars read from AGK: 43885
      Register CD -31°7355 (en 9h):  5.6 | 25m25.5s | 20.5'     (pag. 563)
 226) CD -31°8102 separated from AGK B6765 in 216.5 arcsec.
      Register CD -31°8102 (en 10h):  7.7 | 10m13.7s | 36.9'     (pag. 566)
+   Neighbors:
+     Register CD -31°8101 (en 10h):  9.9 | 10m12.2s | 53.8'     (pag. 566)
+     Register CD -31°8103 (en 10h):  9.9 | 10m17.5s | 46.8'     (pag. 566)
 227) CD -31°8303 reports mag=8.7 but it should be mag=10.0 from AGK B6935: Delta = 1.3.
      Register CD -31°8303 (en 10h):  8.7 | 24m49.7s | 9.2'     (pag. 566)
 228) CD -27°7546 reports mag=8.2 but it should be mag=9.5 from AGK B6976: Delta = 1.3.
      Register CD -27°7546 (en 10h):  8.2 | 29m16.0s | 44.2'     (pag. 316)
 229) CD -28°8525 separated from AGK B7199 in 306.5 arcsec.
      Register CD -28°8525 (en 10h):  9.3 | 49m21.7s | 2.2'     (pag. 375)
+   Neighbors:
+     Register CD -28°8524 (en 10h):  9.7 | 49m15.8s | 19.8'     (pag. 375)
+     Register CD -28°8526 (en 10h):  9.6 | 49m27.0s | 43.2'     (pag. 375)
 230) CD -28°8688 reports mag=7.6 but it should be mag=8.7 from AGK B7359: Delta = 1.1.
      Register CD -28°8688 (en 11h):  7.6 | 3m56.3s | 54.8'     (pag. 375)
 231) CD -27°8011 separated from AGK B7471 in 291.9 arcsec.
      Register CD -27°8011 (en 11h):  8.3 | 13m42.4s | 51.1'     (pag. 317)
+   Neighbors:
+     Register CD -27°8010 (en 11h):  10.0 | 13m41.1s | 43.8'     (pag. 317)
+     Register CD -27°8012 (en 11h):  10.0 | 14m2.7s | 23.3'     (pag. 317)
 232) CD -28°8902 separated from AGK B7567 in 2333.7 arcsec.
      Register CD -28°8902 (en 11h):  9.9 | 24m10.2s | 40.6'     (pag. 376)
+   Neighbors:
+     Register CD -28°8901 (en 11h):  10.0 | 24m9.0s | 51.4'     (pag. 376)
+     Register CD -28°8903 (en 11h):  9.9 | 24m13.1s | 6.9'     (pag. 376)
 233) CD -27°8178 separated from AGK B7607 in 564.4 arcsec.
      Register CD -27°8178 (en 11h):  7.7 | 28m19.0s | 26.4'     (pag. 318)
+   Neighbors:
+     Register CD -27°8177 (en 11h):  8.5 | 28m13.1s | 29.4'     (pag. 318)
+     Register CD -27°8179 (en 11h):  8.6 | 28m22.5s | 41.4'     (pag. 318)
 234) CD -27°8914 reports mag=7.1 but it should be mag=9.1 from AGK B8256: Delta = 2.0.
      Register CD -27°8914 (en 12h):  7.1 | 47m33.1s | 16.9'     (pag. 320)
 235) CD -27°9346 separated from AGK B8650 in 414.9 arcsec.
      Register CD -27°9346 (en 13h):  9.0 | 32m7.3s | 11.4'     (pag. 322)
+   Neighbors:
+     Register CD -27°9345 (en 13h):  10.0 | 31m49.4s | 7.7'     (pag. 322)
+     Register CD -27°9347 (en 13h):  10.0 | 32m10.0s | 47.6'     (pag. 322)
 236) CD -31°10729 separated from AGK B8793 in 195.3 arcsec.
      Register CD -31°10729 (en 13h):  5.2 | 46m1.8s | 15.3'     (pag. 575)
+   Neighbors:
+     Register CD -31°10728 (en 13h):  9.6 | 46m1.5s | 26.5'     (pag. 575)
+     Register CD -31°10730 (en 13h):  8.9 | 46m12.0s | 56.2'     (pag. 575)
 237) CD -31°10757 reports mag=7.4 but it should be mag=9.3 from AGK B8813: Delta = 1.9.
      Register CD -31°10757 (en 13h):  7.4 | 48m4.5s | 29.0'     (pag. 575)
 238) CD -27°9680 separated from AGK B8988 in 1329.5 arcsec.
      Register CD -27°9680 (en 14h):  10.0 | 5m21.5s | 46.9'     (pag. 323)
+   Neighbors:
+     Register CD -27°9679 (en 14h):  9.2 | 5m58.6s | 26.4'     (pag. 323)
+     Register CD -27°9681 (en 14h):  10.0 | 6m3.6s | 33.3'     (pag. 323)
 239) CD -31°11380 separated from AGK B9250 in 1888.4 arcsec.
      Register CD -31°11380 (en 14h):  10.0 | 33m18.7s | 15.7'     (pag. 577)
+   Neighbors:
+     Register CD -31°11379 (en 14h):  9.9 | 33m17.2s | 56.8'     (pag. 577)
+     Register CD -31°11381 (en 14h):  7.2 | 33m21.6s | 47.3'     (pag. 577)
 *) CD -28°10367 too separated from AGK B9358 in 40826.8 arcsec.
      Register CD -28°10367 (en 13h):  9.8 | 53m29.9s | 19.6'     (pag. 381)
 240) CD -31°11651 separated from AGK B9452 in 563.3 arcsec.
      Register CD -31°11651 (en 14h):  9.2 | 54m27.2s | 40.1'     (pag. 578)
+   Neighbors:
+     Register CD -31°11650 (en 14h):  9.4 | 54m25.0s | 40.8'     (pag. 578)
+     Register CD -31°11652 (en 14h):  9.9 | 54m33.0s | 17.4'     (pag. 578)
 241) CD -28°11153 separated from AGK B9498 in 1195.1 arcsec.
      Register CD -28°11153 (en 14h):  9.7 | 58m23.1s | 24.6'     (pag. 383)
+   Neighbors:
+     Register CD -28°11152 (en 14h):  9.7 | 58m23.1s | 8.4'     (pag. 383)
+     Register CD -28°11154 (en 14h):  10.0 | 58m28.8s | 40.0'     (pag. 383)
 242) CD -28°11446 separated from AGK B9771 in 335.3 arcsec.
      Register CD -28°11446 (en 15h):  9.3 | 29m35.6s | 58.8'     (pag. 384)
+   Neighbors:
+     Register CD -28°11445 (en 15h):  9.4 | 29m33.8s | 51.8'     (pag. 384)
+     Register CD -28°11447 (en 15h):  9.5 | 29m44.0s | 59.8'     (pag. 384)
 243) CD -30°12566 separated from AGK B9919 in 552.7 arcsec.
      Register CD -30°12566 (en 15h):  8.4 | 41m43.9s | 43.3'     (pag. 514)
+   Neighbors:
+     Register CD -30°12565 (en 15h):  7.6 | 41m43.2s | 41.4'     (pag. 514)
+     Register CD -30°12567 (en 15h):  10.0 | 41m45.7s | 35.6'     (pag. 514)
 244) CD -30°12756 separated from AGK B10058 in 509.1 arcsec.
      Register CD -30°12756 (en 15h):  9.2 | 54m10.7s | 29.7'     (pag. 515)
+   Neighbors:
+     Register CD -30°12755 (en 15h):  10.0 | 54m9.7s | 5.6'     (pag. 515)
+     Register CD -30°12757 (en 15h):  9.4 | 54m16.4s | 27.0'     (pag. 515)
 245) CD -27°10836 reports mag=8.0 but it should be mag=9.6 from AGK B10154: Delta = 1.6.
      Register CD -27°10836 (en 16h):  8.0 | 4m10.8s | 13.2'     (pag. 327)
 246) CD -27°10862 separated from AGK B10183 in 586.9 arcsec.
      Register CD -27°10862 (en 16h):  9.1 | 6m36.4s | 24.7'     (pag. 327)
+   Neighbors:
+     Register CD -27°10861 (en 16h):  9.8 | 6m33.1s | 26.4'     (pag. 327)
+     Register CD -27°10863 (en 16h):  9.9 | 6m57.9s | 37.3'     (pag. 327)
 247) CD -29°12513 reports mag=5.9 but it should be mag=7.0 from AGK B10264: Delta = 1.1.
      Register CD -29°12513 (en 16h):  5.9 | 16m49.4s | 25.1'     (pag. 450)
 248) CD -29°12801 separated from AGK B10488 in 564.6 arcsec.
      Register CD -29°12801 (en 16h):  9.0 | 37m9.4s | 50.4'     (pag. 451)
+   Neighbors:
+     Register CD -29°12800 (en 16h):  10.0 | 37m6.5s | 9.4'     (pag. 451)
+     Register CD -29°12802 (en 16h):  9.9 | 37m18.0s | 55.4'     (pag. 451)
 249) CD -27°11284 reports mag=10.0 but it should be mag=9.0 from AGK B10649: Delta = 1.0.
      Register CD -27°11284 (en 16h):  10.0 | 48m25.5s | 34.4'     (pag. 328)
 *) CD -28°13109 too separated from AGK B10720 in 18951.7 arcsec.
      Register CD -28°13109 (en 17h):  10.0 | 16m58.7s | 54.1'     (pag. 390)
 250) CD -31°13502 separated from AGK B10748 in 603.6 arcsec.
      Register CD -31°13502 (en 16h):  7.1 | 55m14.7s | 36.0'     (pag. 584)
+   Neighbors:
+     Register CD -31°13501 (en 16h):  9.7 | 55m9.5s | 58.2'     (pag. 584)
+     Register CD -31°13503 (en 16h):  10.0 | 55m16.3s | 13.9'     (pag. 584)
 251) CD -30°14802 reports mag=7.5 but it should be mag=8.9 from AGK B11359: Delta = 1.4.
      Register CD -30°14802 (en 17h):  7.5 | 43m9.8s | 30.7'     (pag. 522)
 *) CD -28°13741 too separated from AGK B11386 in 4521.6 arcsec.
      Register CD -28°13741 (en 17h):  10.0 | 44m29.6s | 36.5'     (pag. 392)
 252) CD -30°15015 separated from AGK B11495 in 1251.1 arcsec.
      Register CD -30°15015 (en 17h):  9.6 | 50m28.6s | 1.3'     (pag. 522)
+   Neighbors:
+     Register CD -30°15014 (en 17h):  9.5 | 50m28.4s | 9.0'     (pag. 522)
+     Register CD -30°15016 (en 17h):  9.3 | 50m30.3s | 21.8'     (pag. 522)
 253) CD -30°15035 reports mag=5.4 but it should be mag=8.9 from AGK B11512: Delta = 3.5.
      Register CD -30°15035 (en 17h):  5.4 | 51m4.1s | 14.2'     (pag. 522)
 254) CD -28°14598 separated from AGK B11969 in 1797.4 arcsec.
      Register CD -28°14598 (en 18h):  9.3 | 19m32.5s | 19.6'     (pag. 395)
+   Neighbors:
+     Register CD -28°14597 (en 18h):  10.0 | 19m32.2s | 51.0'     (pag. 395)
+     Register CD -28°14599 (en 18h):  9.6 | 19m33.9s | 40.1'     (pag. 395)
 255) CD -31°15917 separated from AGK B12183 in 1546.7 arcsec.
      Register CD -31°15917 (en 18h):  10.0 | 36m40.6s | 55.0'     (pag. 592)
+   Neighbors:
+     Register CD -31°15916 (en 18h):  10.0 | 36m39.4s | 10.0'     (pag. 592)
+     Register CD -31°15918 (en 18h):  9.8 | 36m41.6s | 19.8'     (pag. 592)
 256) CD -30°16736 separated from AGK B12531 in 2936.0 arcsec.
      Register CD -30°16736 (en 19h):  9.8 | 3m21.8s | 1.2'     (pag. 528)
+   Neighbors:
+     Register CD -30°16735 (en 19h):  10.0 | 3m20.0s | 13.8'     (pag. 528)
+     Register CD -30°16737 (en 19h):  8.6 | 3m22.1s | 50.6'     (pag. 528)
 257) CD -27°13715 separated from AGK B12568 in 642.0 arcsec.
      Register CD -27°13715 (en 19h):  9.3 | 6m42.9s | 24.7'     (pag. 336)
+   Neighbors:
+     Register CD -27°13714 (en 19h):  8.5 | 6m42.5s | 35.6'     (pag. 336)
+     Register CD -27°13716 (en 19h):  9.9 | 6m45.1s | 45.1'     (pag. 336)
 258) CD -27°14004 reports mag=6.0 but it should be mag=9.0 from AGK B12757: Delta = 3.0.
      Register CD -27°14004 (en 19h):  6.0 | 22m8.3s | 14.5'     (pag. 337)
 259) CD -27°14302 separated from AGK B13016 in 603.0 arcsec.
      Register CD -27°14302 (en 19h):  9.1 | 42m24.2s | 36.3'     (pag. 338)
+   Neighbors:
+     Register CD -27°14301 (en 19h):  10.0 | 42m22.4s | 5.9'     (pag. 338)
+     Register CD -27°14303 (en 19h):  10.0 | 42m31.8s | 39.7'     (pag. 338)
 260) CD -30°17446 reports mag=8.1 but it should be mag=9.4 from AGK B13051: Delta = 1.3.
      Register CD -30°17446 (en 19h):  8.1 | 45m35.5s | 35.5'     (pag. 530)
 261) CD -31°17271 reports mag=8.8 but it should be mag=10.0 from AGK B13180: Delta = 1.2.
      Register CD -31°17271 (en 19h):  8.8 | 55m50.2s | 58.9'     (pag. 597)
 262) CD -31°17508 separated from AGK B13394 in 1800.8 arcsec.
      Register CD -31°17508 (en 20h):  9.0 | 13m6.6s | 3.3'     (pag. 597)
+   Neighbors:
+     Register CD -31°17507 (en 20h):  9.8 | 13m2.9s | 56.8'     (pag. 597)
+     Register CD -31°17509 (en 20h):  8.7 | 13m8.3s | 42.5'     (pag. 597)
 263) CD -27°15024 reports mag=10.0 but it should be mag=8.6 from AGK B13669: Delta = 1.4.
      Register CD -27°15024 (en 20h):  10.0 | 38m57.5s | 18.4'     (pag. 341)
 *) CD -28°18384 too separated from AGK B14020 in 122196.9 arcsec.
      Register CD -28°18384 (en 23h):  10.0 | 47m30.2s | 40.1'     (pag. 408)
 264) CD -29°18028 separated from AGK B14259 in 2450.1 arcsec.
      Register CD -29°18028 (en 21h):  10.0 | 42m42.3s | 42.3'     (pag. 469)
+   Neighbors:
+     Register CD -29°18027 (en 21h):  10.0 | 42m36.8s | 53.1'     (pag. 469)
+     Register CD -29°18029 (en 21h):  9.2 | 42m42.5s | 38.0'     (pag. 469)
 265) CD -27°15671 separated from AGK B14292 in 1729.1 arcsec.
      Register CD -27°15671 (en 21h):  9.0 | 46m46.1s | 45.8'     (pag. 343)
+   Neighbors:
+     Register CD -27°15670 (en 21h):  9.7 | 46m33.5s | 23.2'     (pag. 343)
+     Register CD -27°15672 (en 21h):  8.8 | 46m56.2s | 7.4'     (pag. 343)
 266) CD -28°17523 separated from AGK B14325 in 572.9 arcsec.
      Register CD -28°17523 (en 21h):  8.8 | 50m31.9s | 32.0'     (pag. 405)
+   Neighbors:
+     Register CD -28°17522 (en 21h):  10.0 | 49m51.8s | 39.0'     (pag. 405)
+     Register CD -28°17524 (en 21h):  9.5 | 50m36.6s | 17.7'     (pag. 405)
 267) CD -31°18597 reports mag=10.0 but it should be mag=9.0 from AGK B14354: Delta = 1.0.
      Register CD -31°18597 (en 21h):  10.0 | 54m38.0s | 56.4'     (pag. 601)
 268) CD -27°15932 reports mag=9.3 but it should be mag=6.3 from AGK B14548: Delta = 3.0.
      Register CD -27°15932 (en 22h):  9.3 | 22m46.7s | 44.7'     (pag. 344)
 269) CD -27°16182 separated from AGK B14795 in 193.3 arcsec.
      Register CD -27°16182 (en 23h):  9.0 | 0m13.7s | 13.6'     (pag. 345)
+   Neighbors:
+     Register CD -27°16181 (en 23h):  10.0 | 0m4.2s | 45.5'     (pag. 345)
+     Register CD -27°16183 (en 23h):  9.9 | 0m20.5s | 6.3'     (pag. 345)
 270) CD -37°162 separated from AGK C127 in 2102.9 arcsec.
      Register CD -37°162 (en 0h):  10.0 | 24m34.3s | 45.3'     (pag. 280)
+   Neighbors:
+     Register CD -37°161 (en 0h):  10.0 | 24m33.2s | 39.5'     (pag. 280)
+     Register CD -37°163 (en 0h):  9.7 | 24m38.9s | 8.2'     (pag. 280)
      Also check CD -38°162 (dist = 3028.9 arcsec.)
      Register CD -38°162 (en 0h):  9.7 | 26m47.0s | 47.7'     (pag. 332)
 271) CD -33°153 separated from AGK C128 in 977.2 arcsec.
      Register CD -33°153 (en 0h):  9.7 | 22m4.7s | 15.5'     (pag. 60)
+   Neighbors:
+     Register CD -33°152 (en 0h):  5.2 | 21m44.1s | 42.2'     (pag. 60)
+     Register CD -33°154 (en 0h):  9.6 | 22m18.2s | 47.3'     (pag. 60)
 272) CD -35°170 reports mag=6.5 but it should be mag=8.9 from AGK C149: Delta = 2.4.
      Register CD -35°170 (en 0h):  6.5 | 27m36.5s | 40.3'     (pag. 171)
 273) CD -36°201 separated from AGK C175 in 2678.2 arcsec.
      Register CD -36°201 (en 0h):  9.5 | 29m42.2s | 15.2'     (pag. 225)
+   Neighbors:
+     Register CD -36°200 (en 0h):  9.6 | 29m34.0s | 27.9'     (pag. 225)
+     Register CD -36°202 (en 0h):  10.0 | 30m26.3s | 6.2'     (pag. 225)
 274) CD -34°411 reports mag=6.5 but it should be mag=9.9 from AGK C282: Delta = 3.4.
      Register CD -34°411 (en 0h):  6.5 | 58m38.7s | 12.5'     (pag. 117)
 275) CD -33°525 reports mag=8.0 but it should be mag=5.4 from AGK C389: Delta = 2.6.
      Register CD -33°525 (en 1h):  8.0 | 21m12.7s | 12.1'     (pag. 61)
 276) CD -36°679 separated from AGK C469 in 606.7 arcsec.
      Register CD -36°679 (en 1h):  10.0 | 42m25.3s | 40.1'     (pag. 227)
+   Neighbors:
+     Register CD -36°678 (en 1h):  8.5 | 42m25.0s | 56.1'     (pag. 227)
+     Register CD -36°680 (en 1h):  10.0 | 42m27.3s | 8.2'     (pag. 227)
 277) CD -34°749 separated from AGK C514 in 746.6 arcsec.
      Register CD -34°749 (en 1h):  9.0 | 51m33.4s | 17.4'     (pag. 118)
+   Neighbors:
+     Register CD -34°748 (en 1h):  7.7 | 51m33.3s | 33.4'     (pag. 118)
+     Register CD -34°750 (en 1h):  10.0 | 51m47.4s | 52.4'     (pag. 118)
 278) CD -32°771 separated from AGK C537 in 1197.9 arcsec.
      Register CD -32°771 (en 1h):  9.1 | 54m15.4s | 38.4'     (pag. 2)
+   Neighbors:
+     Register CD -32°770 (en 1h):  10.0 | 54m7.0s | 49.5'     (pag. 2)
+     Register CD -32°772 (en 1h):  8.3 | 54m27.0s | 21.2'     (pag. 2)
 279) CD -34°874 separated from AGK C638 in 1803.6 arcsec.
      Register CD -34°874 (en 2h):  10.0 | 16m48.2s | 48.7'     (pag. 119)
+   Neighbors:
+     Register CD -34°873 (en 2h):  10.0 | 16m46.9s | 24.3'     (pag. 119)
+     Register CD -34°875 (en 2h):  10.0 | 16m51.4s | 54.9'     (pag. 119)
      Also check CD -35°874 (dist = 9324.8 arcsec.)
      Register CD -35°874 (en 2h):  10.0 | 27m27.3s | 18.1'     (pag. 174)
 280) CD -33°886 separated from AGK C689 in 1940.7 arcsec.
      Register CD -33°886 (en 2h):  9.9 | 30m51.5s | 28.8'     (pag. 62)
+   Neighbors:
+     Register CD -33°885 (en 2h):  10.0 | 30m49.5s | 35.4'     (pag. 62)
+     Register CD -33°887 (en 2h):  10.0 | 30m57.8s | 41.4'     (pag. 62)
 281) CD -42°893 separated from AGK C707 in 3378.0 arcsec.
      Register CD -42°893 (en 2h):  10.0 | 36m18.1s | 47.2'     (pag. 3)
+   Neighbors:
+     Register CD -42°892 (en 2h):  10.0 | 35m52.8s | 18.0'     (pag. 2)
+     Register CD -42°894 (en 2h):  8.6 | 36m19.8s | 34.2'     (pag. 3)
      Also check CD -43°893 (dist = 12586.3 arcsec.)
      Register CD -43°893 (en 2h):  10.0 | 50m58.9s | 17.5'     (pag. 58)
 282) CD -33°1113 separated from AGK C832 in 2573.3 arcsec.
      Register CD -33°1113 (en 3h):  10.0 | 5m46.6s | 54.2'     (pag. 63)
+   Neighbors:
+     Register CD -33°1112 (en 3h):  10.0 | 5m44.5s | 16.6'     (pag. 63)
+     Register CD -33°1114 (en 3h):  10.0 | 5m49.7s | 57.5'     (pag. 63)
      Also check CD -34°1113 (dist = 3011.6 arcsec.)
      Register CD -34°1113 (en 3h):  10.0 | 0m35.8s | 58.5'     (pag. 120)
 283) CD -36°1310 reports mag=6.6 but it should be mag=9.8 from AGK C931: Delta = 3.2.
      Register CD -36°1310 (en 3h):  6.6 | 23m22.4s | 16.9'     (pag. 229)
 284) CD -32°1332 separated from AGK C950 in 535.8 arcsec.
      Register CD -32°1332 (en 3h):  7.7 | 26m33.1s | 6.0'     (pag. 4)
+   Neighbors:
+     Register CD -32°1331 (en 3h):  10.0 | 26m30.1s | 51.6'     (pag. 4)
+     Register CD -32°1333 (en 3h):  9.8 | 26m33.2s | 45.5'     (pag. 4)
 285) CD -32°1468 separated from AGK C1030 in 777.9 arcsec.
      Register CD -32°1468 (en 3h):  10.0 | 42m13.6s | 24.7'     (pag. 4)
+   Neighbors:
+     Register CD -32°1467 (en 3h):  10.0 | 42m7.0s | 24.6'     (pag. 4)
+     Register CD -32°1469 (en 3h):  9.0 | 42m18.2s | 21.7'     (pag. 4)
 286) CD -32°1563 separated from AGK C1109 in 950.3 arcsec.
      Register CD -32°1563 (en 3h):  9.3 | 55m43.3s | 42.1'     (pag. 5)
+   Neighbors:
+     Register CD -32°1562 (en 3h):  9.6 | 55m37.9s | 32.8'     (pag. 5)
+     Register CD -32°1564 (en 3h):  10.0 | 55m45.7s | 37.9'     (pag. 5)
 287) CD -34°1626 reports mag=6.7 but it should be mag=9.1 from AGK C1221: Delta = 2.4.
      Register CD -34°1626 (en 4h):  6.7 | 14m21.0s | 12.4'     (pag. 121)
 *) CD -31°1878 too separated from AGK C1272 in 4407.6 arcsec.
@@ -891,36 +1398,75 @@ Stars read from AGK: 43885
      Register CD -35°1650 (en 4h):  9.9 | 14m9.3s | 15.9'     (pag. 176)
 288) CD -36°1913 separated from AGK C1440 in 687.2 arcsec.
      Register CD -36°1913 (en 4h):  8.7 | 46m50.5s | 57.0'     (pag. 231)
+   Neighbors:
+     Register CD -36°1912 (en 4h):  10.0 | 46m42.0s | 20.5'     (pag. 231)
+     Register CD -36°1914 (en 4h):  10.0 | 47m7.7s | 51.9'     (pag. 231)
 *) CD -35°2023 too separated from AGK C1479 in 7362.4 arcsec.
      Register CD -35°2023 (en 4h):  7.5 | 53m13.9s | 5.4'     (pag. 177)
 289) CD -33°2086 separated from AGK C1511 in 2010.1 arcsec.
      Register CD -33°2086 (en 4h):  9.9 | 59m1.3s | 51.5'     (pag. 66)
+   Neighbors:
+     Register CD -33°2085 (en 4h):  9.9 | 58m57.7s | 43.5'     (pag. 66)
+     Register CD -33°2087 (en 4h):  9.9 | 59m3.1s | 13.1'     (pag. 66)
 290) CD -34°2056 separated from AGK C1527 in 345.0 arcsec.
      Register CD -34°2056 (en 5h):  9.9 | 0m50.5s | 53.9'     (pag. 123)
+   Neighbors:
+     Register CD -34°2055 (en 5h):  10.0 | 0m48.3s | 50.2'     (pag. 123)
+     Register CD -34°2057 (en 5h):  9.0 | 1m3.3s | 59.2'     (pag. 123)
 291) CD -32°2116 separated from AGK C1531 in 3079.6 arcsec.
      Register CD -32°2116 (en 4h):  9.5 | 58m21.1s | 48.3'     (pag. 7)
+   Neighbors:
+     Register CD -32°2115 (en 4h):  9.6 | 58m18.3s | 46.3'     (pag. 7)
+     Register CD -32°2117 (en 4h):  9.6 | 58m24.6s | 3.9'     (pag. 7)
 292) CD -33°2116 separated from AGK C1535 in 1776.0 arcsec.
      Register CD -33°2116 (en 5h):  8.7 | 1m20.0s | 13.1'     (pag. 66)
+   Neighbors:
+     Register CD -33°2115 (en 5h):  10.0 | 1m19.4s | 41.6'     (pag. 66)
+     Register CD -33°2117 (en 5h):  10.0 | 1m22.8s | 47.0'     (pag. 66)
 293) CD -34°2176 separated from AGK C1619 in 931.7 arcsec.
      Register CD -34°2176 (en 5h):  10.0 | 13m22.8s | 25.5'     (pag. 123)
+   Neighbors:
+     Register CD -34°2175 (en 5h):  10.0 | 13m17.3s | 36.6'     (pag. 123)
+     Register CD -34°2177 (en 5h):  8.8 | 13m29.5s | 9.7'     (pag. 123)
 294) CD -33°2268 separated from AGK C1642 in 423.5 arcsec.
      Register CD -33°2268 (en 5h):  10.0 | 16m15.8s | 46.3'     (pag. 67)
+   Neighbors:
+     Register CD -33°2267 (en 5h):  9.9 | 16m4.4s | 1.0'     (pag. 67)
+     Register CD -33°2269 (en 5h):  9.1 | 16m24.0s | 44.8'     (pag. 67)
 295) CD -32°2296 separated from AGK C1647 in 302.3 arcsec.
      Register CD -32°2296 (en 5h):  7.5 | 17m32.0s | 39.7'     (pag. 7)
+   Neighbors:
+     Register CD -32°2295 (en 5h):  9.9 | 17m27.3s | 15.0'     (pag. 7)
+     Register CD -32°2297 (en 5h):  9.5 | 17m36.5s | 24.1'     (pag. 7)
 296) CD -33°2720 separated from AGK C1979 in 699.5 arcsec.
      Register CD -33°2720 (en 6h):  10.0 | 0m34.0s | 19.9'     (pag. 68)
+   Neighbors:
+     Register CD -33°2719 (en 6h):  10.0 | 0m23.3s | 40.6'     (pag. 68)
+     Register CD -33°2721 (en 6h):  9.1 | 0m36.0s | 7.9'     (pag. 68)
 297) CD -36°2749 separated from AGK C2061 in 197.2 arcsec.
      Register CD -36°2749 (en 6h):  9.0 | 10m50.5s | 31.3'     (pag. 234)
+   Neighbors:
+     Register CD -36°2748 (en 6h):  9.7 | 10m49.4s | 50.2'     (pag. 234)
+     Register CD -36°2750 (en 6h):  9.6 | 10m56.4s | 15.5'     (pag. 234)
 298) CD -32°2934 separated from AGK C2093 in 291.5 arcsec.
      Register CD -32°2934 (en 6h):  9.0 | 14m36.0s | 5.9'     (pag. 9)
+   Neighbors:
+     Register CD -32°2933 (en 6h):  9.9 | 14m34.1s | 42.2'     (pag. 9)
+     Register CD -32°2935 (en 6h):  9.6 | 15m3.6s | 48.9'     (pag. 9)
 299) CD -36°2804 separated from AGK C2094 in 1802.0 arcsec.
      Register CD -36°2804 (en 6h):  8.0 | 14m50.7s | 58.5'     (pag. 234)
+   Neighbors:
+     Register CD -36°2803 (en 6h):  9.9 | 14m50.5s | 44.4'     (pag. 234)
+     Register CD -36°2805 (en 6h):  10.0 | 14m55.5s | 34.9'     (pag. 234)
 300) CD -34°2810 reports mag=9.3 but it should be mag=5.9 from AGK C2109: Delta = 3.4.
      Register CD -34°2810 (en 6h):  9.3 | 16m9.0s | 52.2'     (pag. 125)
 *) CD -34°2584 too separated from AGK C2113 in 15772.1 arcsec.
      Register CD -34°2584 (en 5h):  10.0 | 55m33.0s | 29.7'     (pag. 125)
 301) CD -34°2864 separated from AGK C2159 in 3597.4 arcsec.
      Register CD -34°2864 (en 6h):  7.1 | 21m2.6s | 59.5'     (pag. 126)
+   Neighbors:
+     Register CD -34°2863 (en 6h):  9.3 | 21m0.2s | 9.5'     (pag. 126)
+     Register CD -34°2865 (en 6h):  10.0 | 21m4.7s | 2.6'     (pag. 126)
      Also check CD -33°2864 (dist = 6458.9 arcsec.)
      Register CD -33°2864 (en 6h):  9.9 | 13m6.7s | 16.9'     (pag. 69)
 302) CD -32°3074 reports mag=9.7 but it should be mag=7.8 from AGK C2186: Delta = 1.9.
@@ -929,10 +1475,16 @@ Stars read from AGK: 43885
      Register CD -33°2943 (en 6h):  10.0 | 19m0.6s | 46.0'     (pag. 69)
 303) CD -34°3035 separated from AGK C2304 in 745.8 arcsec.
      Register CD -34°3035 (en 6h):  7.5 | 36m40.0s | 23.7'     (pag. 126)
+   Neighbors:
+     Register CD -34°3034 (en 6h):  9.9 | 36m39.4s | 33.9'     (pag. 126)
+     Register CD -34°3036 (en 6h):  9.7 | 36m44.0s | 30.4'     (pag. 126)
 *) CD -33°3329 too separated from AGK C2402 in 4846.6 arcsec.
      Register CD -33°3329 (en 6h):  10.0 | 49m19.2s | 15.7'     (pag. 71)
 304) CD -34°3181 separated from AGK C2430 in 3585.2 arcsec.
      Register CD -34°3181 (en 6h):  9.5 | 49m32.1s | 58.4'     (pag. 127)
+   Neighbors:
+     Register CD -34°3180 (en 6h):  10.0 | 49m24.4s | 18.2'     (pag. 127)
+     Register CD -34°3182 (en 6h):  7.3 | 49m42.0s | 4.0'     (pag. 127)
      Also check CD -33°3181 (dist = 7757.4 arcsec.)
      Register CD -33°3181 (en 6h):  10.0 | 39m14.4s | 41.6'     (pag. 70)
 305) CD -36°3227 reports mag=10.0 but it should be mag=9.0 from AGK C2442: Delta = 1.0.
@@ -943,24 +1495,42 @@ Stars read from AGK: 43885
      Register CD -33°3402 (en 6h):  6.9 | 55m4.9s | 17.9'     (pag. 71)
 308) CD -33°3439 separated from AGK C2520 in 570.9 arcsec.
      Register CD -33°3439 (en 6h):  9.9 | 57m38.7s | 12.8'     (pag. 71)
+   Neighbors:
+     Register CD -33°3438 (en 6h):  9.5 | 57m34.6s | 3.1'     (pag. 71)
+     Register CD -33°3440 (en 6h):  10.0 | 57m38.7s | 0.5'     (pag. 71)
 309) CD -33°3445 separated from AGK C2526 in 321.9 arcsec.
      Register CD -33°3445 (en 6h):  10.0 | 58m27.1s | 0.8'     (pag. 71)
+   Neighbors:
+     Register CD -33°3444 (en 6h):  8.7 | 58m15.0s | 5.7'     (pag. 71)
+     Register CD -33°3446 (en 6h):  9.6 | 58m28.3s | 1.7'     (pag. 71)
 310) CD -33°3447 separated from AGK C2528 in 2609.0 arcsec.
      Register CD -33°3447 (en 6h):  9.6 | 58m30.6s | 45.0'     (pag. 71)
+   Neighbors:
+     Register CD -33°3446 (en 6h):  9.6 | 58m28.3s | 1.7'     (pag. 71)
+     Register CD -33°3448 (en 6h):  10.0 | 58m34.8s | 54.0'     (pag. 71)
 311) CD -34°3327 reports mag=6.6 but it should be mag=7.6 from AGK C2554: Delta = 1.0.
      Register CD -34°3327 (en 7h):  6.6 | 1m0.6s | 36.1'     (pag. 127)
 312) CD -34°3327 reports mag=6.6 but it should be mag=9.0 from AGK C2555: Delta = 2.4.
      Register CD -34°3327 (en 7h):  6.6 | 1m0.6s | 36.1'     (pag. 127)
 313) CD -33°3506 separated from AGK C2572 in 394.9 arcsec.
      Register CD -33°3506 (en 7h):  9.9 | 2m14.1s | 57.6'     (pag. 71)
+   Neighbors:
+     Register CD -33°3505 (en 7h):  9.7 | 2m4.3s | 51.1'     (pag. 71)
+     Register CD -33°3507 (en 7h):  9.7 | 2m18.0s | 0.3'     (pag. 71)
 *) CD -32°3792 too separated from AGK C2652 in 3601.5 arcsec.
      Register CD -32°3792 (en 7h):  8.5 | 9m3.5s | 1.2'     (pag. 12)
 *) CD -33°3286 too separated from AGK C2676 in 18449.4 arcsec.
      Register CD -33°3286 (en 6h):  10.0 | 46m31.6s | 10.1'     (pag. 70)
 314) CD -35°3521 separated from AGK C2723 in 2361.6 arcsec.
      Register CD -35°3521 (en 7h):  10.0 | 15m23.7s | 23.2'     (pag. 183)
+   Neighbors:
+     Register CD -35°3520 (en 7h):  9.3 | 15m18.5s | 53.4'     (pag. 183)
+     Register CD -35°3522 (en 7h):  9.9 | 15m24.9s | 25.5'     (pag. 183)
 315) CD -32°3893 separated from AGK C2734 in 3558.1 arcsec.
      Register CD -32°3893 (en 7h):  9.0 | 15m7.3s | 7.2'     (pag. 13)
+   Neighbors:
+     Register CD -32°3892 (en 7h):  9.9 | 15m0.4s | 0.7'     (pag. 13)
+     Register CD -32°3894 (en 7h):  9.0 | 15m11.9s | 12.3'     (pag. 13)
      Also check CD -33°3893 (dist = 8922.5 arcsec.)
      Register CD -33°3893 (en 7h):  10.0 | 26m58.6s | 5.6'     (pag. 72)
 *) CD -33°3707 too separated from AGK C2739 in 3617.0 arcsec.
@@ -971,26 +1541,44 @@ Stars read from AGK: 43885
      Register CD -35°3727 (en 7h):  8.5 | 32m33.5s | 2.5'     (pag. 183)
 318) CD -34°4002 separated from AGK C3156 in 2965.1 arcsec.
      Register CD -34°4002 (en 7h):  8.5 | 46m13.7s | 23.6'     (pag. 129)
+   Neighbors:
+     Register CD -34°4001 (en 7h):  10.0 | 46m9.1s | 41.5'     (pag. 129)
+     Register CD -34°4003 (en 7h):  8.0 | 46m14.1s | 2.7'     (pag. 129)
 319) CD -35°4030 reports mag=8.3 but it should be mag=9.5 from AGK C3221: Delta = 1.2.
      Register CD -35°4030 (en 7h):  8.3 | 51m21.0s | 34.9'     (pag. 184)
 320) CD -36°4102 reports mag=8.5 but it should be mag=9.8 from AGK C3288: Delta = 1.3.
      Register CD -36°4102 (en 7h):  8.5 | 56m19.4s | 26.4'     (pag. 238)
 321) CD -36°4160 separated from AGK C3341 in 359.9 arcsec.
      Register CD -36°4160 (en 7h):  8.9 | 59m0.6s | 3.7'     (pag. 239)
+   Neighbors:
+     Register CD -36°4159 (en 7h):  10.0 | 59m39.6s | 55.8'     (pag. 239)
+     Register CD -36°4161 (en 7h):  10.0 | 59m30.9s | 42.9'     (pag. 239)
 322) CD -33°4525 reports mag=6.6 but it should be mag=9.2 from AGK C3369: Delta = 2.6.
      Register CD -33°4525 (en 8h):  6.6 | 0m56.1s | 12.3'     (pag. 75)
 323) CD -36°4196 reports mag=8.2 but it should be mag=9.4 from AGK C3376: Delta = 1.2.
      Register CD -36°4196 (en 8h):  8.2 | 1m30.6s | 3.3'     (pag. 239)
 324) CD -34°4400 separated from AGK C3421 in 1758.5 arcsec.
      Register CD -34°4400 (en 8h):  10.0 | 4m38.5s | 53.3'     (pag. 131)
+   Neighbors:
+     Register CD -34°4399 (en 8h):  9.9 | 4m34.0s | 27.9'     (pag. 131)
+     Register CD -34°4401 (en 8h):  9.1 | 4m41.8s | 24.3'     (pag. 131)
 325) CD -36°4291 reports mag=6.8 but it should be mag=2.8 from AGK C3456: Delta = 4.0.
      Register CD -36°4291 (en 8h):  6.8 | 6m24.3s | 55.4'     (pag. 239)
 326) CD -33°4843 separated from AGK C3599 in 286.8 arcsec.
      Register CD -33°4843 (en 8h):  9.0 | 14m33.2s | 25.5'     (pag. 76)
+   Neighbors:
+     Register CD -33°4842 (en 8h):  9.2 | 14m25.7s | 33.4'     (pag. 76)
+     Register CD -33°4844 (en 8h):  8.0 | 14m33.2s | 20.5'     (pag. 76)
 327) CD -33°4844 separated from AGK C3600 in 306.7 arcsec.
      Register CD -33°4844 (en 8h):  8.0 | 14m33.2s | 20.5'     (pag. 76)
+   Neighbors:
+     Register CD -33°4843 (en 8h):  9.0 | 14m33.2s | 25.5'     (pag. 76)
+     Register CD -33°4845 (en 8h):  9.9 | 14m37.9s | 48.0'     (pag. 76)
 328) CD -32°5301 separated from AGK C3706 in 591.6 arcsec.
      Register CD -32°5301 (en 8h):  7.9 | 21m35.9s | 48.3'     (pag. 17)
+   Neighbors:
+     Register CD -32°5300 (en 8h):  9.7 | 21m34.2s | 31.4'     (pag. 17)
+     Register CD -32°5302 (en 8h):  10.0 | 21m37.1s | 59.2'     (pag. 17)
 329) CD -34°4842 reports mag=6.3 but it should be mag=9.2 from AGK C3737: Delta = 2.9.
      Register CD -34°4842 (en 8h):  6.3 | 23m9.0s | 42.3'     (pag. 132)
 330) CD -36°4731 reports mag=7.8 but it should be mag=9.3 from AGK C3795: Delta = 1.5.
@@ -1001,10 +1589,16 @@ Stars read from AGK: 43885
      Register CD -34°5222 (en 8h):  8.3 | 40m34.6s | 10.0'     (pag. 133)
 332) CD -32°5706 separated from AGK C3971 in 591.6 arcsec.
      Register CD -32°5706 (en 8h):  8.6 | 41m27.3s | 32.9'     (pag. 19)
+   Neighbors:
+     Register CD -32°5705 (en 8h):  10.0 | 41m22.3s | 26.3'     (pag. 19)
+     Register CD -32°5707 (en 8h):  8.1 | 41m29.4s | 14.8'     (pag. 19)
 333) CD -35°5098 reports mag=7.0 but it should be mag=9.8 from AGK C4025: Delta = 2.8.
      Register CD -35°5098 (en 8h):  7.0 | 45m29.5s | 28.0'     (pag. 188)
 334) CD -33°5637 separated from AGK C4135 in 746.2 arcsec.
      Register CD -33°5637 (en 8h):  8.8 | 54m43.0s | 36.0'     (pag. 78)
+   Neighbors:
+     Register CD -33°5636 (en 8h):  10.0 | 54m36.2s | 30.8'     (pag. 78)
+     Register CD -33°5638 (en 8h):  9.9 | 54m48.9s | 2.3'     (pag. 78)
 335) CD -34°5657 reports mag=8.5 but it should be mag=9.6 from AGK C4269: Delta = 1.1.
      Register CD -34°5657 (en 9h):  8.5 | 6m26.1s | 26.8'     (pag. 135)
 336) CD -33°5953 reports mag=7.3 but it should be mag=9.2 from AGK C4342: Delta = 1.9.
@@ -1019,6 +1613,9 @@ Stars read from AGK: 43885
      Register CD -35°5778 (en 9h):  7.7 | 28m0.8s | 50.9'     (pag. 190)
 339) CD -35°5805 separated from AGK C4527 in 729.6 arcsec.
      Register CD -35°5805 (en 9h):  9.5 | 30m19.0s | 15.1'     (pag. 190)
+   Neighbors:
+     Register CD -35°5804 (en 9h):  9.0 | 30m6.2s | 2.8'     (pag. 190)
+     Register CD -35°5806 (en 9h):  9.7 | 30m20.7s | 49.0'     (pag. 190)
 *) CD -32°6035 too separated from AGK C4547 in 24637.9 arcsec.
      Register CD -32°6035 (en 9h):  10.0 | 0m17.7s | 17.4'     (pag. 20)
 *) CD -33°6070 too separated from AGK C4598 in 12792.7 arcsec.
@@ -1029,10 +1626,16 @@ Stars read from AGK: 43885
      Register CD -34°6170 (en 9h):  7.5 | 43m25.7s | 26.4'     (pag. 137)
 342) CD -32°6770 separated from AGK C4646 in 3592.6 arcsec.
      Register CD -32°6770 (en 9h):  9.3 | 43m24.8s | 5.2'     (pag. 22)
+   Neighbors:
+     Register CD -32°6769 (en 9h):  9.8 | 43m23.3s | 11.2'     (pag. 22)
+     Register CD -32°6771 (en 9h):  8.2 | 43m32.8s | 14.5'     (pag. 22)
      Also check CD -31°6770 (dist = 37657.4 arcsec.)
      Register CD -31°6770 (en 8h):  9.9 | 54m30.0s | 10.9'     (pag. 561)
 343) CD -33°6505 separated from AGK C4726 in 3580.2 arcsec.
      Register CD -33°6505 (en 9h):  9.0 | 50m14.2s | 59.3'     (pag. 81)
+   Neighbors:
+     Register CD -33°6504 (en 9h):  9.9 | 50m13.9s | 40.5'     (pag. 81)
+     Register CD -33°6506 (en 9h):  10.0 | 50m20.8s | 51.5'     (pag. 81)
      Also check CD -32°6505 (dist = 16647.9 arcsec.)
      Register CD -32°6505 (en 9h):  9.6 | 28m12.8s | 49.2'     (pag. 21)
 *) CD -32°6909 too separated from AGK C4743 in 3623.6 arcsec.
@@ -1047,36 +1650,72 @@ Stars read from AGK: 43885
      Register CD -33°6909 (en 10h):  9.0 | 16m43.8s | 16.6'     (pag. 83)
 345) CD -36°6364 separated from AGK C5052 in 2402.2 arcsec.
      Register CD -36°6364 (en 10h):  10.0 | 19m48.3s | 47.4'     (pag. 246)
+   Neighbors:
+     Register CD -36°6363 (en 10h):  9.7 | 19m42.1s | 41.5'     (pag. 246)
+     Register CD -36°6365 (en 10h):  9.0 | 19m48.8s | 37.8'     (pag. 246)
 346) CD -35°6477 separated from AGK C5119 in 1420.7 arcsec.
      Register CD -35°6477 (en 10h):  10.0 | 25m3.3s | 12.2'     (pag. 192)
+   Neighbors:
+     Register CD -35°6476 (en 10h):  9.6 | 25m3.2s | 1.7'     (pag. 192)
+     Register CD -35°6478 (en 10h):  10.0 | 25m8.2s | 48.5'     (pag. 192)
 347) CD -33°7110 separated from AGK C5192 in 530.3 arcsec.
      Register CD -33°7110 (en 10h):  9.2 | 31m33.3s | 43.8'     (pag. 83)
+   Neighbors:
+     Register CD -33°7109 (en 10h):  9.6 | 31m14.8s | 38.6'     (pag. 83)
+     Register CD -33°7111 (en 10h):  9.5 | 31m43.5s | 33.6'     (pag. 83)
 348) CD -36°6562 reports mag=9.4 but it should be mag=6.0 from AGK C5201: Delta = 3.4.
      Register CD -36°6562 (en 10h):  9.4 | 33m22.2s | 6.7'     (pag. 247)
 349) CD -32°7583 separated from AGK C5257 in 579.0 arcsec.
      Register CD -32°7583 (en 10h):  9.2 | 37m39.5s | 58.9'     (pag. 25)
+   Neighbors:
+     Register CD -32°7582 (en 10h):  10.0 | 37m35.0s | 49.0'     (pag. 25)
+     Register CD -32°7584 (en 10h):  10.0 | 37m42.9s | 12.0'     (pag. 25)
 *) CD -32°7007 too separated from AGK C5340 in 35234.1 arcsec.
      Register CD -32°7007 (en 9h):  9.6 | 57m42.5s | 43.5'     (pag. 23)
 350) CD -33°7396 separated from AGK C5440 in 3579.6 arcsec.
      Register CD -33°7396 (en 10h):  8.5 | 53m9.2s | 57.8'     (pag. 84)
+   Neighbors:
+     Register CD -33°7395 (en 10h):  8.8 | 53m4.8s | 49.2'     (pag. 84)
+     Register CD -33°7397 (en 10h):  9.7 | 53m11.6s | 27.2'     (pag. 84)
      Also check CD -34°7396 (dist = 16630.5 arcsec.)
      Register CD -34°7396 (en 11h):  9.7 | 15m34.2s | 35.3'     (pag. 141)
 351) CD -32°7804 separated from AGK C5454 in 1797.9 arcsec.
      Register CD -32°7804 (en 10h):  9.2 | 53m42.0s | 52.4'     (pag. 26)
+   Neighbors:
+     Register CD -32°7803 (en 10h):  7.9 | 53m38.2s | 24.4'     (pag. 26)
+     Register CD -32°7805 (en 10h):  9.3 | 53m49.1s | 22.4'     (pag. 26)
 352) CD -32°7805 separated from AGK C5455 in 1802.0 arcsec.
      Register CD -32°7805 (en 10h):  9.3 | 53m49.1s | 22.4'     (pag. 26)
+   Neighbors:
+     Register CD -32°7804 (en 10h):  9.2 | 53m42.0s | 52.4'     (pag. 26)
+     Register CD -32°7806 (en 10h):  9.6 | 53m49.1s | 11.4'     (pag. 26)
 353) CD -34°7161 separated from AGK C5481 in 1798.7 arcsec.
      Register CD -34°7161 (en 10h):  10.0 | 56m54.5s | 54.0'     (pag. 140)
+   Neighbors:
+     Register CD -34°7160 (en 10h):  8.7 | 56m43.8s | 23.8'     (pag. 140)
+     Register CD -34°7162 (en 10h):  9.4 | 56m55.5s | 24.3'     (pag. 140)
 *) CD -33°7919 too separated from AGK C5549 in 25684.5 arcsec.
      Register CD -33°7919 (en 11h):  9.0 | 37m35.0s | 3.5'     (pag. 86)
 354) CD -32°7928 separated from AGK C5560 in 897.7 arcsec.
      Register CD -32°7928 (en 11h):  9.6 | 4m46.5s | 10.5'     (pag. 26)
+   Neighbors:
+     Register CD -32°7927 (en 11h):  10.0 | 4m46.5s | 12.3'     (pag. 26)
+     Register CD -32°7929 (en 11h):  8.6 | 4m49.9s | 20.0'     (pag. 26)
 355) CD -32°7930 separated from AGK C5562 in 2450.8 arcsec.
      Register CD -32°7930 (en 11h):  9.9 | 4m51.5s | 42.5'     (pag. 26)
+   Neighbors:
+     Register CD -32°7929 (en 11h):  8.6 | 4m49.9s | 20.0'     (pag. 26)
+     Register CD -32°7931 (en 11h):  9.0 | 4m54.3s | 2.4'     (pag. 26)
 356) CD -32°7933 separated from AGK C5568 in 1442.3 arcsec.
      Register CD -32°7933 (en 11h):  9.9 | 4m59.1s | 52.0'     (pag. 26)
+   Neighbors:
+     Register CD -32°7932 (en 11h):  10.0 | 4m56.9s | 44.5'     (pag. 26)
+     Register CD -32°7934 (en 11h):  8.9 | 5m11.1s | 27.8'     (pag. 26)
 357) CD -32°7934 separated from AGK C5579 in 875.1 arcsec.
      Register CD -32°7934 (en 11h):  8.9 | 5m11.1s | 27.8'     (pag. 26)
+   Neighbors:
+     Register CD -32°7933 (en 11h):  9.9 | 4m59.1s | 52.0'     (pag. 26)
+     Register CD -32°7935 (en 11h):  8.8 | 6m1.9s | 18.1'     (pag. 26)
 *) CD -34°8068 too separated from AGK C5592 in 47828.5 arcsec.
      Register CD -34°8068 (en 12h):  9.7 | 12m34.5s | 35.0'     (pag. 143)
 *) CD -35°7616 too separated from AGK C5773 in 22450.6 arcsec.
@@ -1095,12 +1734,21 @@ Stars read from AGK: 43885
      Register CD -36°7586 (en 11h):  8.1 | 53m53.5s | 2.9'     (pag. 250)
 361) CD -36°7617 separated from AGK C6126 in 990.7 arcsec.
      Register CD -36°7617 (en 11h):  9.6 | 57m2.3s | 55.4'     (pag. 250)
+   Neighbors:
+     Register CD -36°7616 (en 11h):  10.0 | 56m55.6s | 22.9'     (pag. 250)
+     Register CD -36°7618 (en 11h):  8.5 | 57m5.5s | 38.9'     (pag. 250)
 362) CD -34°7896 separated from AGK C6141 in 2515.7 arcsec.
      Register CD -34°7896 (en 11h):  10.0 | 58m31.1s | 15.2'     (pag. 142)
+   Neighbors:
+     Register CD -34°7895 (en 11h):  9.6 | 58m27.3s | 8.0'     (pag. 142)
+     Register CD -34°7897 (en 11h):  8.4 | 58m35.6s | 57.5'     (pag. 142)
 363) CD -32°8503 reports mag=6.8 but it should be mag=8.9 from AGK C6156: Delta = 2.1.
      Register CD -32°8503 (en 11h):  6.8 | 59m40.6s | 15.4'     (pag. 28)
 364) CD -34°7908 separated from AGK C6158 in 226.3 arcsec.
      Register CD -34°7908 (en 11h):  8.5 | 59m41.1s | 12.5'     (pag. 143)
+   Neighbors:
+     Register CD -34°7907 (en 11h):  9.9 | 59m35.3s | 3.7'     (pag. 143)
+     Register CD -34°7909 (en 11h):  9.6 | 59m41.8s | 28.7'     (pag. 143)
 365) CD -33°8233 reports mag=9.0 but it should be mag=8.0 from AGK C6221: Delta = 1.0.
      Register CD -33°8233 (en 12h):  9.0 | 4m56.7s | 45.6'     (pag. 87)
 *) CD -32°7679 too separated from AGK C6352 in 71155.1 arcsec.
@@ -1109,28 +1757,49 @@ Stars read from AGK: 43885
      Register CD -33°8120 (en 11h):  9.7 | 54m44.5s | 38.2'     (pag. 87)
 366) CD -34°8202 separated from AGK C6406 in 3136.4 arcsec.
      Register CD -34°8202 (en 12h):  9.0 | 23m25.1s | 58.8'     (pag. 144)
+   Neighbors:
+     Register CD -34°8201 (en 12h):  10.0 | 23m18.7s | 33.0'     (pag. 144)
+     Register CD -34°8203 (en 12h):  8.1 | 23m27.1s | 6.5'     (pag. 144)
 367) CD -36°8089 separated from AGK C6558 in 1284.7 arcsec.
      Register CD -36°8089 (en 12h):  10.0 | 40m27.5s | 43.4'     (pag. 252)
+   Neighbors:
+     Register CD -36°8088 (en 12h):  10.0 | 40m22.0s | 39.2'     (pag. 252)
+     Register CD -36°8090 (en 12h):  9.9 | 40m29.3s | 2.7'     (pag. 252)
 368) CD -34°8456 reports mag=8.5 but it should be mag=6.6 from AGK C6603: Delta = 1.9.
      Register CD -34°8456 (en 12h):  8.5 | 43m58.7s | 57.7'     (pag. 144)
 369) CD -32°8979 separated from AGK C6609 in 2042.7 arcsec.
      Register CD -32°8979 (en 12h):  9.7 | 44m43.0s | 36.1'     (pag. 30)
+   Neighbors:
+     Register CD -32°8978 (en 12h):  9.2 | 44m40.1s | 1.8'     (pag. 30)
+     Register CD -32°8980 (en 12h):  9.9 | 44m45.6s | 9.1'     (pag. 30)
 370) CD -32°9088 reports mag=7.3 but it should be mag=8.8 from AGK C6706: Delta = 1.5.
      Register CD -32°9088 (en 12h):  7.3 | 54m12.5s | 57.2'     (pag. 30)
 371) CD -34°8731 reports mag=8.3 but it should be mag=9.6 from AGK C6833: Delta = 1.3.
      Register CD -34°8731 (en 13h):  8.3 | 6m12.8s | 40.0'     (pag. 145)
 372) CD -36°8552 separated from AGK C6942 in 2385.9 arcsec.
      Register CD -36°8552 (en 13h):  9.5 | 18m2.3s | 58.7'     (pag. 253)
+   Neighbors:
+     Register CD -36°8551 (en 13h):  9.9 | 17m59.7s | 2.4'     (pag. 253)
+     Register CD -36°8553 (en 13h):  9.8 | 18m12.8s | 37.6'     (pag. 253)
 373) CD -35°8828 reports mag=8.0 but it should be mag=9.0 from AGK C7049: Delta = 1.0.
      Register CD -35°8828 (en 13h):  8.0 | 28m3.5s | 0.3'     (pag. 200)
 374) CD -36°8704 separated from AGK C7062 in 1729.5 arcsec.
      Register CD -36°8704 (en 13h):  9.8 | 29m10.0s | 24.0'     (pag. 254)
+   Neighbors:
+     Register CD -36°8703 (en 13h):  10.0 | 29m0.3s | 47.7'     (pag. 254)
+     Register CD -36°8705 (en 13h):  8.7 | 29m11.7s | 52.7'     (pag. 254)
 375) CD -34°9015 separated from AGK C7074 in 251.1 arcsec.
      Register CD -34°9015 (en 13h):  9.7 | 30m22.7s | 28.5'     (pag. 146)
+   Neighbors:
+     Register CD -34°9014 (en 13h):  9.8 | 30m17.1s | 59.6'     (pag. 146)
+     Register CD -34°9016 (en 13h):  7.0 | 30m25.0s | 25.0'     (pag. 146)
 376) CD -33°9259 reports mag=7.3 but it should be mag=8.6 from AGK C7121: Delta = 1.3.
      Register CD -33°9259 (en 13h):  7.3 | 35m11.1s | 20.7'     (pag. 90)
 377) CD -32°9578 separated from AGK C7141 in 579.7 arcsec.
      Register CD -32°9578 (en 13h):  8.7 | 36m52.2s | 16.8'     (pag. 32)
+   Neighbors:
+     Register CD -32°9577 (en 13h):  10.0 | 36m46.7s | 14.2'     (pag. 32)
+     Register CD -32°9579 (en 13h):  9.7 | 36m55.3s | 36.9'     (pag. 32)
 378) CD -35°9019 reports mag=6.8 but it should be mag=9.6 from AGK C7192: Delta = 2.8.
      Register CD -35°9019 (en 13h):  6.8 | 41m43.3s | 4.0'     (pag. 201)
 379) CD -32°9676 reports mag=4.7 but it should be mag=7.1 from AGK C7223: Delta = 2.4.
@@ -1141,6 +1810,9 @@ Stars read from AGK: 43885
      Register CD -33°9490 (en 13h):  9.5 | 54m8.9s | 9.5'     (pag. 91)
 381) CD -31°10817 separated from AGK C7335 in 191.0 arcsec.
      Register CD -31°10817 (en 13h):  8.9 | 52m29.5s | 57.7'     (pag. 575)
+   Neighbors:
+     Register CD -31°10816 (en 13h):  9.3 | 52m24.4s | 37.9'     (pag. 575)
+     Register CD -31°10818 (en 13h):  10.0 | 52m33.9s | 33.1'     (pag. 575)
 382) CD -35°9249 reports mag=8.3 but it should be mag=9.4 from AGK C7402: Delta = 1.1.
      Register CD -35°9249 (en 13h):  8.3 | 58m5.1s | 56.7'     (pag. 202)
 383) CD -34°9357 reports mag=9.3 but it should be mag=7.2 from AGK C7411: Delta = 2.1.
@@ -1163,10 +1835,16 @@ Stars read from AGK: 43885
      Register CD -36°9642 (en 14h):  8.7 | 40m27.7s | 15.6'     (pag. 257)
 391) CD -33°10111 separated from AGK C7950 in 717.4 arcsec.
      Register CD -33°10111 (en 14h):  9.1 | 43m17.3s | 55.8'     (pag. 93)
+   Neighbors:
+     Register CD -33°10110 (en 14h):  10.0 | 43m9.1s | 53.7'     (pag. 93)
+     Register CD -33°10112 (en 14h):  10.0 | 43m35.2s | 17.0'     (pag. 93)
      Also check CD -34°10111 (dist = 7825.7 arcsec.)
      Register CD -34°10111 (en 14h):  10.0 | 53m4.3s | 57.6'     (pag. 150)
 392) CD -32°10484 separated from AGK C8016 in 769.6 arcsec.
      Register CD -32°10484 (en 14h):  10.0 | 49m3.1s | 16.2'     (pag. 35)
+   Neighbors:
+     Register CD -32°10483 (en 14h):  9.9 | 49m3.0s | 20.7'     (pag. 35)
+     Register CD -32°10485 (en 14h):  9.9 | 49m5.7s | 25.2'     (pag. 35)
 393) CD -36°9839 reports mag=7.5 but it should be mag=9.4 from AGK C8081: Delta = 1.9.
      Register CD -36°9839 (en 14h):  7.5 | 53m57.8s | 26.0'     (pag. 258)
 394) CD -36°10142 reports mag=10.0 but it should be mag=7.5 from AGK C8300: Delta = 2.5.
@@ -1177,6 +1855,9 @@ Stars read from AGK: 43885
      Register CD -33°10826 (en 15h):  5.2 | 48m54.5s | 35.6'     (pag. 96)
 396) CD -32°11280 separated from AGK C8556 in 3037.3 arcsec.
      Register CD -32°11280 (en 15h):  8.3 | 49m35.1s | 24.6'     (pag. 37)
+   Neighbors:
+     Register CD -32°11279 (en 15h):  9.3 | 49m33.2s | 26.0'     (pag. 37)
+     Register CD -32°11281 (en 15h):  9.6 | 49m41.3s | 16.8'     (pag. 37)
 *) CD -38°10829 too separated from AGK C8561 in 4224.3 arcsec.
      Register CD -38°10829 (en 15h):  10.0 | 54m33.0s | 50.8'     (pag. 368)
 *) CD -33°10302 too separated from AGK C8575 in 39652.3 arcsec.
@@ -1189,6 +1870,9 @@ Stars read from AGK: 43885
      Register CD -32°11456 (en 16h):  6.6 | 1m34.2s | 19.3'     (pag. 38)
 400) CD -33°10997 separated from AGK C8719 in 746.1 arcsec.
      Register CD -33°10997 (en 16h):  8.7 | 4m52.9s | 30.4'     (pag. 96)
+   Neighbors:
+     Register CD -33°10996 (en 16h):  10.0 | 4m46.0s | 29.3'     (pag. 96)
+     Register CD -33°10998 (en 16h):  9.9 | 4m57.4s | 59.2'     (pag. 96)
 *) CD -36°10589 too separated from AGK C8751 in 11760.7 arcsec.
      Register CD -36°10589 (en 15h):  9.4 | 53m11.1s | 37.2'     (pag. 260)
 401) CD -34°10911 reports mag=7.5 but it should be mag=8.6 from AGK C8757: Delta = 1.1.
@@ -1203,6 +1887,9 @@ Stars read from AGK: 43885
      Register CD -38°11217 (en 16h):  9.5 | 39m39.6s | 0.6'     (pag. 369)
 404) CD -32°11839 separated from AGK C8902 in 3577.3 arcsec.
      Register CD -32°11839 (en 16h):  9.0 | 28m1.8s | 24.8'     (pag. 39)
+   Neighbors:
+     Register CD -32°11838 (en 16h):  10.0 | 28m0.9s | 4.1'     (pag. 39)
+     Register CD -32°11840 (en 16h):  9.9 | 28m18.1s | 2.4'     (pag. 39)
      Also check CD -33°11839 (dist = 27921.1 arcsec.)
      Register CD -33°11839 (en 17h):  10.0 | 5m4.2s | 1.5'     (pag. 99)
 *) CD -34°11504 too separated from AGK C8934 in 22399.4 arcsec.
@@ -1213,24 +1900,48 @@ Stars read from AGK: 43885
      Register CD -34°11178 (en 16h):  7.8 | 32m22.3s | 3.1'     (pag. 154)
 406) CD -33°11390 separated from AGK C8980 in 2612.3 arcsec.
      Register CD -33°11390 (en 16h):  10.0 | 34m56.3s | 4.4'     (pag. 98)
+   Neighbors:
+     Register CD -33°11389 (en 16h):  9.9 | 34m53.4s | 39.3'     (pag. 98)
+     Register CD -33°11391 (en 16h):  9.0 | 35m6.6s | 47.9'     (pag. 98)
 407) CD -33°11396 separated from AGK C8989 in 1393.9 arcsec.
      Register CD -33°11396 (en 16h):  10.0 | 35m28.0s | 23.6'     (pag. 98)
+   Neighbors:
+     Register CD -33°11395 (en 16h):  10.0 | 35m27.0s | 34.6'     (pag. 98)
+     Register CD -33°11397 (en 16h):  9.7 | 35m37.1s | 1.9'     (pag. 98)
 408) CD -35°11115 separated from AGK C9011 in 2087.9 arcsec.
      Register CD -35°11115 (en 16h):  10.0 | 40m36.6s | 18.1'     (pag. 208)
+   Neighbors:
+     Register CD -35°11114 (en 16h):  10.0 | 40m23.3s | 30.4'     (pag. 208)
+     Register CD -35°11116 (en 16h):  10.0 | 40m37.3s | 50.8'     (pag. 208)
 409) CD -35°11119 separated from AGK C9017 in 1050.8 arcsec.
      Register CD -35°11119 (en 16h):  10.0 | 41m3.4s | 48.8'     (pag. 208)
+   Neighbors:
+     Register CD -35°11118 (en 16h):  10.0 | 40m48.2s | 42.0'     (pag. 208)
+     Register CD -35°11120 (en 16h):  10.0 | 41m6.5s | 40.8'     (pag. 208)
 410) CD -37°11341 separated from AGK C9256 in 2982.8 arcsec.
      Register CD -37°11341 (en 17h):  9.9 | 2m18.6s | 31.8'     (pag. 317)
+   Neighbors:
+     Register CD -37°11340 (en 17h):  10.0 | 2m15.6s | 37.3'     (pag. 317)
+     Register CD -37°11342 (en 17h):  10.0 | 2m24.9s | 30.6'     (pag. 317)
 411) CD -33°11882 separated from AGK C9279 in 583.0 arcsec.
      Register CD -33°11882 (en 17h):  8.0 | 7m25.5s | 41.5'     (pag. 99)
+   Neighbors:
+     Register CD -33°11881 (en 17h):  9.7 | 7m19.5s | 7.5'     (pag. 99)
+     Register CD -33°11883 (en 17h):  9.9 | 7m28.7s | 57.8'     (pag. 99)
 412) CD -36°11399 separated from AGK C9320 in 452.1 arcsec.
      Register CD -36°11399 (en 17h):  10.0 | 10m12.4s | 50.1'     (pag. 263)
+   Neighbors:
+     Register CD -36°11398 (en 17h):  10.0 | 10m2.6s | 39.6'     (pag. 263)
+     Register CD -36°11400 (en 17h):  9.1 | 10m23.0s | 57.6'     (pag. 263)
 413) CD -34°11626 reports mag=6.1 but it should be mag=7.8 from AGK C9322: Delta = 1.7.
      Register CD -34°11626 (en 17h):  6.1 | 10m27.9s | 50.3'     (pag. 155)
 414) CD -34°11626 reports mag=6.1 but it should be mag=8.2 from AGK C9323: Delta = 2.1.
      Register CD -34°11626 (en 17h):  6.1 | 10m27.9s | 50.3'     (pag. 155)
 415) CD -36°11406 separated from AGK C9329 in 1187.1 arcsec.
      Register CD -36°11406 (en 17h):  10.0 | 10m55.3s | 38.3'     (pag. 263)
+   Neighbors:
+     Register CD -36°11405 (en 17h):  10.0 | 10m54.7s | 28.6'     (pag. 263)
+     Register CD -36°11407 (en 17h):  9.0 | 10m55.5s | 58.1'     (pag. 263)
 *) CD -36°14423 too separated from AGK C9341 in 148661.9 arcsec.
      Register CD -36°14423 (en 20h):  9.6 | 41m39.2s | 46.0'     (pag. 273)
 *) CD -32°12462 too separated from AGK C9342 in 6912.6 arcsec.
@@ -1239,16 +1950,31 @@ Stars read from AGK: 43885
      Register CD -35°11561 (en 17h):  10.0 | 18m14.1s | 4.9'     (pag. 210)
 416) CD -36°11642 separated from AGK C9455 in 558.3 arcsec.
      Register CD -36°11642 (en 17h):  10.0 | 25m27.1s | 42.0'     (pag. 264)
+   Neighbors:
+     Register CD -36°11641 (en 17h):  9.5 | 25m25.9s | 31.7'     (pag. 264)
+     Register CD -36°11643 (en 17h):  10.0 | 25m30.6s | 49.3'     (pag. 264)
 417) CD -33°12228 reports mag=9.5 but it should be mag=8.3 from AGK C9486: Delta = 1.2.
      Register CD -33°12228 (en 17h):  9.5 | 27m17.9s | 39.5'     (pag. 100)
 418) CD -34°11833 separated from AGK C9499 in 1613.9 arcsec.
      Register CD -34°11833 (en 17h):  10.0 | 28m4.5s | 58.0'     (pag. 156)
+   Neighbors:
+     Register CD -34°11832 (en 17h):  9.9 | 28m1.0s | 8.0'     (pag. 156)
+     Register CD -34°11834 (en 17h):  10.0 | 28m4.6s | 47.9'     (pag. 156)
 419) CD -32°13140 separated from AGK C9583 in 2170.7 arcsec.
      Register CD -32°13140 (en 17h):  8.0 | 32m46.1s | 45.8'     (pag. 44)
+   Neighbors:
+     Register CD -32°13139 (en 17h):  9.6 | 32m45.8s | 17.5'     (pag. 44)
+     Register CD -32°13141 (en 17h):  10.0 | 32m47.4s | 32.4'     (pag. 44)
 420) CD -34°11922 separated from AGK C9630 in 2839.5 arcsec.
      Register CD -34°11922 (en 17h):  9.9 | 31m42.9s | 16.2'     (pag. 156)
+   Neighbors:
+     Register CD -34°11921 (en 17h):  10.0 | 31m27.8s | 3.6'     (pag. 156)
+     Register CD -34°11923 (en 17h):  10.0 | 31m44.2s | 58.9'     (pag. 156)
 421) CD -35°11933 separated from AGK C9690 in 266.6 arcsec.
      Register CD -35°11933 (en 17h):  10.0 | 39m46.5s | 46.4'     (pag. 211)
+   Neighbors:
+     Register CD -35°11932 (en 17h):  9.9 | 39m36.2s | 40.4'     (pag. 211)
+     Register CD -35°11934 (en 17h):  7.7 | 39m50.9s | 50.8'     (pag. 211)
 422) CD -32°13472 reports mag=8.3 but it should be mag=9.4 from AGK C9794: Delta = 1.1.
      Register CD -32°13472 (en 17h):  8.3 | 45m42.1s | 26.4'     (pag. 45)
 423) CD -36°12064 reports mag=7.3 but it should be mag=8.4 from AGK C9866: Delta = 1.1.
@@ -1263,6 +1989,9 @@ Stars read from AGK: 43885
      Register CD -34°12582 (en 18h):  9.7 | 4m17.2s | 18.2'     (pag. 158)
 427) CD -36°12318 separated from AGK C10047 in 1081.7 arcsec.
      Register CD -36°12318 (en 18h):  9.8 | 3m31.3s | 41.5'     (pag. 266)
+   Neighbors:
+     Register CD -36°12317 (en 18h):  9.5 | 3m29.5s | 14.6'     (pag. 266)
+     Register CD -36°12319 (en 18h):  9.7 | 3m32.5s | 24.1'     (pag. 266)
 428) CD -35°12476 reports mag=8.5 but it should be mag=9.7 from AGK C10123: Delta = 1.2.
      Register CD -35°12476 (en 18h):  8.5 | 10m10.6s | 6.0'     (pag. 213)
 *) CD -33°13082 too separated from AGK C10132 in 3608.4 arcsec.
@@ -1275,6 +2004,9 @@ Stars read from AGK: 43885
      Register CD -36°13248 (en 18h):  7.5 | 54m19.6s | 16.5'     (pag. 269)
 431) CD -33°13933 separated from AGK C10628 in 1534.2 arcsec.
      Register CD -33°13933 (en 18h):  10.0 | 59m28.0s | 53.4'     (pag. 106)
+   Neighbors:
+     Register CD -33°13932 (en 18h):  9.9 | 59m20.1s | 11.2'     (pag. 106)
+     Register CD -33°13934 (en 18h):  10.0 | 59m31.5s | 21.7'     (pag. 106)
 432) CD -35°13230 reports mag=8.9 but it should be mag=9.9 from AGK C10662: Delta = 1.0.
      Register CD -35°13230 (en 19h):  8.9 | 0m24.9s | 37.0'     (pag. 215)
 *) CD -34°13653 too separated from AGK C10663 in 12042.1 arcsec.
@@ -1283,10 +2015,16 @@ Stars read from AGK: 43885
      Register CD -33°14136 (en 19h):  7.7 | 12m45.5s | 16.7'     (pag. 107)
 434) CD -34°13759 separated from AGK C10864 in 269.6 arcsec.
      Register CD -34°13759 (en 19h):  9.0 | 25m32.7s | 48.2'     (pag. 162)
+   Neighbors:
+     Register CD -34°13758 (en 19h):  9.7 | 25m31.4s | 54.4'     (pag. 162)
+     Register CD -34°13760 (en 19h):  6.9 | 25m32.7s | 27.9'     (pag. 162)
 *) CD -35°13484 too separated from AGK C10910 in 11443.9 arcsec.
      Register CD -35°13484 (en 19h):  9.9 | 17m39.3s | 38.9'     (pag. 216)
 435) CD -34°13936 separated from AGK C10956 in 381.0 arcsec.
      Register CD -34°13936 (en 19h):  8.3 | 40m11.1s | 55.0'     (pag. 163)
+   Neighbors:
+     Register CD -34°13935 (en 19h):  10.0 | 40m5.1s | 29.1'     (pag. 163)
+     Register CD -34°13937 (en 19h):  9.8 | 40m18.8s | 16.5'     (pag. 163)
      Also check CD -35°13936 (dist = 14795.3 arcsec.)
      Register CD -35°13936 (en 20h):  10.0 | 0m10.2s | 33.2'     (pag. 218)
 436) CD -34°13952 reports mag=8.4 but it should be mag=9.7 from AGK C10966: Delta = 1.3.
@@ -1297,6 +2035,9 @@ Stars read from AGK: 43885
      Register CD -34°14220 (en 20h):  6.9 | 5m41.3s | 29.5'     (pag. 164)
 438) CD -32°15987 separated from AGK C11280 in 591.9 arcsec.
      Register CD -32°15987 (en 20h):  9.0 | 21m3.3s | 30.6'     (pag. 53)
+   Neighbors:
+     Register CD -32°15986 (en 20h):  9.5 | 21m2.3s | 29.1'     (pag. 53)
+     Register CD -32°15988 (en 20h):  10.0 | 21m6.2s | 6.4'     (pag. 53)
 *) CD -33°15062 too separated from AGK C11334 in 15096.7 arcsec.
      Register CD -33°15062 (en 20h):  8.7 | 29m11.7s | 5.3'     (pag. 110)
 *) CD -34°15120 too separated from AGK C11366 in 39003.2 arcsec.
@@ -1307,18 +2048,36 @@ Stars read from AGK: 43885
      Register CD -33°15393 (en 20h):  10.0 | 59m47.5s | 36.4'     (pag. 111)
 440) CD -32°16327 separated from AGK C11503 in 494.0 arcsec.
      Register CD -32°16327 (en 20h):  9.1 | 50m13.6s | 7.3'     (pag. 54)
+   Neighbors:
+     Register CD -32°16326 (en 20h):  9.7 | 50m7.3s | 16.3'     (pag. 54)
+     Register CD -32°16328 (en 20h):  9.7 | 50m28.1s | 29.4'     (pag. 54)
 441) CD -35°15039 separated from AGK C11926 in 728.0 arcsec.
      Register CD -35°15039 (en 21h):  8.7 | 47m40.8s | 13.1'     (pag. 221)
+   Neighbors:
+     Register CD -35°15038 (en 21h):  9.4 | 47m32.7s | 46.4'     (pag. 221)
+     Register CD -35°15040 (en 21h):  8.0 | 47m54.0s | 14.1'     (pag. 221)
 442) CD -34°15390 separated from AGK C11997 in 432.6 arcsec.
      Register CD -34°15390 (en 21h):  10.0 | 57m3.1s | 14.6'     (pag. 168)
+   Neighbors:
+     Register CD -34°15389 (en 21h):  9.5 | 57m2.7s | 7.6'     (pag. 168)
+     Register CD -34°15391 (en 21h):  8.3 | 57m10.4s | 22.6'     (pag. 168)
 443) CD -33°16257 separated from AGK C12338 in 583.8 arcsec.
      Register CD -33°16257 (en 22h):  8.8 | 44m27.4s | 30.8'     (pag. 114)
+   Neighbors:
+     Register CD -33°16256 (en 22h):  8.7 | 44m17.1s | 38.2'     (pag. 114)
+     Register CD -33°16258 (en 22h):  10.0 | 44m38.8s | 12.7'     (pag. 114)
 *) CD -33°16406 too separated from AGK C12444 in 4666.8 arcsec.
      Register CD -33°16406 (en 23h):  10.0 | 1m57.4s | 32.8'     (pag. 114)
 444) CD -33°16481 separated from AGK C12505 in 603.8 arcsec.
      Register CD -33°16481 (en 23h):  8.0 | 12m43.0s | 32.7'     (pag. 115)
+   Neighbors:
+     Register CD -33°16480 (en 23h):  9.5 | 12m29.0s | 58.1'     (pag. 115)
+     Register CD -33°16482 (en 23h):  10.0 | 12m48.1s | 53.0'     (pag. 115)
 445) CD -36°15865 separated from AGK C12555 in 2421.9 arcsec.
      Register CD -36°15865 (en 23h):  9.4 | 18m7.1s | 26.2'     (pag. 278)
+   Neighbors:
+     Register CD -36°15864 (en 23h):  9.6 | 18m6.9s | 20.7'     (pag. 278)
+     Register CD -36°15866 (en 23h):  7.6 | 18m30.0s | 52.2'     (pag. 278)
 *) CD -34°16159 too separated from AGK C12635 in 6506.3 arcsec.
      Register CD -34°16159 (en 23h):  10.0 | 38m27.9s | 45.6'     (pag. 170)
 *) CD -33°16668 too separated from AGK C12642 in 3612.6 arcsec.

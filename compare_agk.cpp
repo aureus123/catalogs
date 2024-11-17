@@ -229,7 +229,7 @@ int main(int argc, char** argv)
                 AGKstar[i].letter,
                 AGKstar[i].agkRef,
                 dist);
-            writeRegister(cdIndex);
+            writeRegister(cdIndex, false);
             continue;
         }
         if (dist > MAX_DISTANCE) {
@@ -243,7 +243,7 @@ int main(int argc, char** argv)
                 AGKstar[i].letter,
                 AGKstar[i].agkRef,
                 dist);
-            writeRegister(cdIndex);
+            writeRegister(cdIndex, true);
             int cdIndexWarning = AGKstar[i].cdIndexWarning;
             if (cdIndexWarning != -1) {
                 double distWarning = 3600.0 * calcAngularDistance(
@@ -253,7 +253,7 @@ int main(int argc, char** argv)
                     CDstar[cdIndexWarning].declRef,
                     CDstar[cdIndexWarning].numRef,
                     distWarning);
-                writeRegister(cdIndexWarning);
+                writeRegister(cdIndexWarning, false);
             }
             fprintf(posStream, "%d,%d,%d,AGK %c%d,%.0f\n",
                 indexError,
@@ -284,7 +284,7 @@ int main(int argc, char** argv)
                 AGKstar[i].letter,
                 AGKstar[i].agkRef,
                 delta);
-            writeRegister(cdIndex);
+            writeRegister(cdIndex, false);
             fprintf(magStream, "%d,%d,%d,AGK %c%d,%.0f\n",
                 indexError,
                 CDstar[cdIndex].declRef,

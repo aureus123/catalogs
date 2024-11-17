@@ -75,7 +75,7 @@ struct DMstar_struct *getDMStruct()
 /*
  * writeRegister - escribe en pantalla un registro de CD en formato ONA
  */
-void writeRegister(int cdIndex)
+void writeRegister(int cdIndex, bool neighbors)
 {
     struct DMstar_struct *s = &CDstar[cdIndex];
 
@@ -107,6 +107,11 @@ void writeRegister(int cdIndex)
                 s->raseg,
                 s->declmin,
                 page);
+    if (neighbors) {
+        printf("   Neighbors:\n");
+        writeRegister(cdIndex - 1, false);
+        writeRegister(cdIndex + 1, false);
+    }
 }
 
 /*

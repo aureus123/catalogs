@@ -81,7 +81,7 @@ int main(int argc, char** argv)
                 PPMstar[i].ppmRef,
                 isProblematic ? " (PROBLEM)" : "",
                 dist);
-            writeRegister(bdIndex);
+            writeRegister(bdIndex, true);
             if (!revise(i)) totalErrorsMinusDoubles++;
             fprintf(posStream, "%d,%d,%d,%d,%.0f\n",
                 indexError,
@@ -113,7 +113,7 @@ int main(int argc, char** argv)
                 PPMstar[i].ppmRef,
                 isProblematic ? " (PROBLEM)" : "",
                 delta);
-            writeRegister(bdIndex);
+            writeRegister(bdIndex, false);
             if (!revise(i)) totalErrorsMinusDoubles++;
             fprintf(magStream, "%d,%d,%d,%d,%.0f\n",
                 indexError,

@@ -262,3 +262,11 @@ Siglo XIX. De los catálogos de Córdoba:
 
       nº         RA1875.0    DE1875.0      MAG  Zona nº  Observada 
  - GZC 11h 2211  11h31m32s89 -46°01'08''0  8.5  257  10  29/4/1873
+
+
+
+Nota 8:
+-------
+
+Errores en el catálogo digital de Gilliss:
+- GI 13514 18h35m19s24, 65°50'46''0 -> 18h38m19s24, 65°50'46''7

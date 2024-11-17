@@ -70,7 +70,7 @@ struct DMstar_struct *getDMStruct()
 /*
  * writeRegister - escribe en pantalla un registro de BD en su formato
  */
-void writeRegister(int bdIndex)
+void writeRegister(int bdIndex, bool neighbors)
 {
     struct DMstar_struct *s = &BDstar[bdIndex];
 
@@ -86,6 +86,11 @@ void writeRegister(int bdIndex)
                 s->raseg,
                 s->declmin,
                 page);
+    if (neighbors) {
+        printf("   Neighbors:\n");
+        writeRegister(bdIndex - 1, false);
+        writeRegister(bdIndex + 1, false);
+    }
 }
 
 /*

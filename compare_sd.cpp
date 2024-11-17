@@ -296,7 +296,7 @@ int main(int argc, char** argv)
                 CDstar[cdIndex].numRef,
                 SDstar[i].numRef,
                 dist);
-            writeRegister(cdIndex);
+            writeRegister(cdIndex, false);
             writeRegisterSD(i);
             continue;
         }
@@ -310,7 +310,7 @@ int main(int argc, char** argv)
                 CDstar[cdIndex].numRef,
                 SDstar[i].numRef,
                 dist);
-            writeRegister(cdIndex);
+            writeRegister(cdIndex, true);
             writeRegisterSD(i);
             fprintf(posStream, "%d,%d,%d,SD -22°%d,%.0f\n",
                 indexError,
@@ -339,7 +339,7 @@ int main(int argc, char** argv)
                 sdVmag,
                 SDstar[i].numRef,
                 delta);
-            writeRegister(cdIndex);
+            writeRegister(cdIndex, false);
             writeRegisterSD(i);
             fprintf(magStream, "%d,%d,%d,SD -22°%d,%.0f\n",
                 indexError,
