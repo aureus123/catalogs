@@ -20,7 +20,7 @@ extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, 
  * No se consideran movimientos propios.
  * 
  * eq1, eq2 - Epoca origen y destino
- * RA, Decl - Ascensión recta y declinación
+ * RA, Decl - Ascensión recta y declinación (ambos, en grados)
  */
 void transform(double eq1, double eq2, double *RA, double *Decl) {
     double pmRA = 0.0;

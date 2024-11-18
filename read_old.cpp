@@ -135,14 +135,14 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 	int discarded = 0;
     GCstars = 0;
 
-	if (mode) {
-		// Lee Catálogo General Argentino
-		stream = fopen("cat/gc.txt", "rt");
-		if (stream == NULL) {
-			perror("Cannot read gc.txt");
-			exit(1);
-		}
+	// Lee Catálogo General Argentino
+	stream = fopen("cat/gc.txt", "rt");
+	if (stream == NULL) {
+		perror("Cannot read gc.txt");
+		exit(1);
+	}
 
+	if (mode) {
 		vmag = 0.0;
 		while (fgets(buffer, 1023, stream) != NULL) {
 			//if (GCstars >= 500) break;
@@ -293,7 +293,6 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			GCstars++;
 			//printf("Pos %d: id=%d RA=%.4f Decl=%.4f (%.2f) Vmag=%.1f\n", GCstars, gcRef, RA, Decl, epoch, vmag);
 		}
-		fclose(stream);
 
 		/* descartamos aquellas dobles cercanas débiles (cuya estrella CD es la misma) */
 		for (int i = 0; i < GCstars; i++) {
@@ -341,6 +340,51 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		int cdIndex;
 		findByCoordinates(x, y, z, &cdIndex, &minDistance);
 
+		/* ahora busca en el catálogo GC */
+		int minGcRef = 0;
+		double minGcDistance = MAX_DISTANCE;
+		while (fgets(buffer, 1023, stream) != NULL) {
+			/* lee numeracion */
+			readField(buffer, cell, 1, 5);
+			int gcRef = atoi(cell);
+
+			/* lee ascension recta B1875.0 */
+			readFieldSanitized(buffer, cell, 16, 2);
+			int RAh = atoi(cell);
+			double cRA = (double) RAh;
+			readFieldSanitized(buffer, cell, 18, 2);
+			int RAm = atoi(cell);
+			cRA += ((double) RAm)/60.0;
+			readFieldSanitized(buffer, cell, 20, 4);
+			int RAs = atoi(cell);
+			cRA += (((double) RAs)/100.0)/3600.0;
+			cRA *= 15.0; /* conversion horas a grados */
+
+			/* lee declinacion B1875.0 */
+			readFieldSanitized(buffer, cell, 39, 2);
+			int Decld = atoi(cell);
+			double cDecl = (double) Decld;
+			readFieldSanitized(buffer, cell, 41, 2);
+			int Declm = atoi(cell);
+			cDecl += ((double) Declm)/60.0;
+			readFieldSanitized(buffer, cell, 43, 3);
+			int Decls = atoi(cell);
+			cDecl += (((double) Decls)/10.0)/3600.0;
+			cDecl = -cDecl; /* incorpora signo negativo (en nuestro caso, siempre) */
+
+			/* calcula coordenadas rectangulares y distancia a la ficticia */
+			double cx, cy, cz;
+			sph2rec(cRA, cDecl, &cx, &cy, &cz);
+			double dist = 3600.0 * calcAngularDistance(x, y, z, cx, cy, cz);
+			if (minGcDistance > dist) {
+				minGcDistance = dist;
+				minGcRef = gcRef;
+			}
+		}
+		if (minGcRef > 0) {
+			printf("Matched with GC %d at %.1f arcsec!\n", minGcRef, minGcDistance);
+		}
+
 		GCstar[GCstars].discard = false;
 		GCstar[GCstars].gcRef = 1;
 		GCstar[GCstars].obs = 1;
@@ -374,6 +418,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		GCstar[GCstars].distGi = MAX_DISTANCE;
 		GCstars++;
 	}
+	fclose(stream);
 
 	/* añadimos referencia al catálogo de la USNO */
 	printf("Reading USNO catalog...\n");
