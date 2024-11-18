@@ -12,18 +12,26 @@
 #include "read_old.h"
 #include "misc.h"
 
+/* Para uso de la libreria WCS: */
+#define WCS_J2000 1 /* J2000(FK5) right ascension and declination */
+#define WCS_B1950 2 /* B1950(FK4) right ascension and declination */
+extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, double ep2,
+             double *dtheta, double *dphi, double *ptheta, double *pphi);
+
 /*
  * main - comienzo de la aplicacion
  */
 int main(int argc, char** argv)
 {
-    printf("FIND_COORD - Find near stars around given coordinate in B1875 FK4.\n");
+    printf("FIND_COORD - Find near stars around given coordinate in %s.\n",
+        TRANSFORM ? "J2000.0" : "B1875.0 FK4");
     printf("Made in 2024 by Daniel Severin.\n");
 
     if (argc < 7) {
         printf("\nUsage: find_coord RAh RAm 100*RAs -Decld Declm 10*Decls\n");
         printf("\nExample: find_coord 12 35 4789 24 15 83\n");
-        printf("  find by coordinates 12h 35m 47s89 -24° 15' 8''3 (1875)\n");
+        printf("  find by coordinates 12h 35m 47s89 -24° 15' 8''3 (%d)\n",
+            TRANSFORM ? 2000 : 1875);
         return -1;
     }
 
@@ -57,6 +65,29 @@ int main(int argc, char** argv)
     if (Decls < 0 || Decls > 599) {
         printf("Decls must be between 0 and 599\n");
         return -1;
+    }
+
+    if (TRANSFORM) {
+        /* transformamos de J2000 y a B1875 */
+        double RA = (double) RAh + ((double) RAm)/60.0 + (((double) RAs)/100.0)/3600.0;
+        double Decl = (double) Decld + ((double) Declm)/60.0 + (((double) Decls)/10.0)/3600.0;
+        double pmRA = 0.0;
+        double pmDecl = 0.0;
+        RA *= 15.0; Decl = -Decl;
+        wcsconp(WCS_J2000, WCS_B1950, 0.0, 1875.0, 2000.001278, 1875.0, &RA, &Decl, &pmRA, &pmDecl);
+        RA /= 15.0; Decl = -Decl;
+        double dRAh = floor(RA);
+        RAh = (int) dRAh;
+        double dRAm = floor((RA-dRAh) * 60.0);
+        RAm = (int) dRAm;
+        double dRAs = floor((((RA-dRAh) * 60.0) - dRAm) * 6000.0);
+        RAs = (int) dRAs;
+        double dDecld = floor(Decl);
+        Decld = (int) dDecld;
+        double dDeclm = floor((Decl-dDecld) * 60.0);
+        Declm = (int) dDeclm;
+        double dDecls = floor((((Decl-dDecld) * 60.0) - dDeclm) * 600.0);
+        Decls = (int) dDecls;
     }
 
     /* leemos catalogo CD */

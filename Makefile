@@ -6,7 +6,7 @@ CC = g++
 CCOPT = -Wall
 CCLNFLAGS = -L wcstools-3.9.7/libwcs/ -lwcs
 
-all: compare_ppm compare_agk compare_cpd compare_ppm_bd compare_gc compare_sd compare_cd find_coord mag_cd mag_bd
+all: compare_ppm compare_agk compare_cpd compare_ppm_bd compare_gc compare_sd compare_cd find_coord find_coord2000 mag_cd mag_bd
 
 mag_cd: mag_cd.o read_cd.o read_ppm.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
@@ -60,7 +60,13 @@ find_coord: find_coord.o read_cd.o read_old.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 find_coord.o: find_coord.cpp
-	$(CC) $(CCFLAGS) -c $<
+	$(CC) $(CCFLAGS) -c $< -D TRANSFORM=false
+
+find_coord2000: find_coord2000.o read_cd.o read_old.o trig.o misc.o
+	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
+
+find_coord2000.o: find_coord.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@ -D TRANSFORM=true
 
 read_cd.o: read_cd.cpp
 	$(CC) $(CCFLAGS) -c $<
@@ -93,4 +99,4 @@ misc.o: misc.cpp
 
 clean:
 	rm -f *.o
-	rm -f compare_ppm compare_agk compare_cpd compare_ppm_bd compare_gc compare_sd compare_cd find_coord mag_cd mag_bd
+	rm -f compare_ppm compare_agk compare_cpd compare_ppm_bd compare_gc compare_sd compare_cd find_coord find_coord2000 mag_cd mag_bd
