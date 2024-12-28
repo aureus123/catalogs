@@ -120,6 +120,7 @@ void copy(char *dest, char *src) {
  *   supuestamente todas estas estrellas deberian estar incluidas en el catálogo CD
  *   (excepto las que están fuera de la faja, y algunas de CD marcadas como "dobles")
  *   También lee otros catálogos antiguos (Yarnall, Stone, Weiss, Gilliss).
+ *   También genera identificaciones cruzadas con PPM y CD.
  * mode = false:
  *   Recibe una coordenada en 1875.0 y genera una estrella ficticia llamada GC 1.
  *   Luego la cruza con los catálogos CD y otros antiguos.
@@ -127,9 +128,10 @@ void copy(char *dest, char *src) {
 void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int fictDeclm, int fictDecls)
 {
     FILE *stream;
-    char buffer[1024], cell[256];
+    char buffer[1024], cell[256], cdName[20], ppmName[20], catName[20];
 	double vmag;
 	
+	struct PPMstar_struct *PPMstar = getPPMStruct();
     struct DMstar_struct *CDstar = getDMStruct();
 	int CDstars = getDMStars();
     int page = 1;
@@ -137,14 +139,8 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 	int discarded = 0;
     GCstars = 0;
 
-	if (PPM_SEARCH) {
-		/* leemos catalogo PPM (de ser necesario)
-		 * pero sin identificaciones cruzadas */
-    	readPPM(false, true, 1875.0);
-    	int PPMstars = getPPMStars();
-    	struct PPMstar_struct *PPMstar = getPPMStruct();
-	}
-
+	FILE *crossCDStream;
+	FILE *crossPPMStream;
 	// Lee Catálogo General Argentino
 	stream = fopen("cat/gc.txt", "rt");
 	if (stream == NULL) {
@@ -153,6 +149,14 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 	}
 
 	if (mode) {
+		if (CD_SEARCH) crossCDStream = openCrossFile("results/cross_gc_cd.csv");
+		if (PPM_SEARCH) {
+			/* leemos catalogo PPM (de ser necesario)
+			* pero sin identificaciones cruzadas */
+			readPPM(false, true, 1875.0);
+			crossPPMStream = openCrossFile("results/cross_gc_ppm.csv");
+		}
+
 		vmag = 0.0;
 		while (fgets(buffer, 1023, stream) != NULL) {
 			//if (GCstars >= 500) break;
@@ -208,14 +212,29 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			int Decls = atoi(cell);
 			Decl += (((double) Decls)/10.0)/3600.0;
 			Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
-			if (Decl > -22) continue;
 
 			/* calcula coordenadas rectangulares) */
 			double x, y, z;
 			sph2rec(RA, Decl, &x, &y, &z);
 
+			if (PPM_SEARCH) {
+				int previous = GCstars - 1;
+				if (previous < 0 || gcRef != GCstar[previous].gcRef) {				double minDistance = HUGE_NUMBER;
+					int ppmIndex;
+					findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+					if (minDistance < MAX_DISTANCE) {
+						snprintf(catName, 20, "GC %d", gcRef);
+						snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+						writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+					} else {
+						printf("Warning: GC %d has no PPM star near it.\n", gcRef);
+					}
+				}
+			}
+
 			/* Busca la estrella asociada en DM; en caso de haber más de
 			* una, escoge la de menor distancia */
+			if (Decl > -22) continue;
 			int cdIndex = -1;
 			double minDistance = HUGE_NUMBER;
 			int cdIndexWithinMag = -1;
@@ -261,6 +280,14 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				continue;
 			}
 
+			if (CD_SEARCH) {
+				if (minDistance < MAX_DISTANCE) {
+					snprintf(catName, 20, "GC %d", gcRef);
+					snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
+					writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+				}
+			}
+
 			if (GCstars == MAXGCSTAR) {
 				printf("Max amount reached!\n");
 				exit(1);
@@ -303,6 +330,8 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			GCstars++;
 			//printf("Pos %d: id=%d RA=%.4f Decl=%.4f (%.2f) Vmag=%.1f\n", GCstars, gcRef, RA, Decl, epoch, vmag);
 		}
+		if (PPM_SEARCH) fclose(crossPPMStream);
+		if (CD_SEARCH) fclose(crossCDStream);
 
 		/* descartamos aquellas dobles cercanas débiles (cuya estrella CD es la misma) */
 		for (int i = 0; i < GCstars; i++) {
@@ -437,12 +466,15 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
         perror("Cannot read yarnall.txt");
 		exit(1);
     }
+
+	if (mode && CD_SEARCH) crossCDStream = openCrossFile("results/cross_usno_cd.csv");
+	if (mode && PPM_SEARCH) {
+		readPPM(false, true, 1860.0);
+		crossPPMStream = openCrossFile("results/cross_usno_ppm.csv");
+	}
+
 	int countUSNO = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
-		/* lee signo declinación y descarta hemisferio norte */
-		readField(buffer, cell, 60, 1);
-		if (cell[0] != '-') continue;
-
 		/* lee ascension recta B1860.0 */
 		readFieldSanitized(buffer, cell, 40, 2);
 		int RAh = atoi(cell);
@@ -465,9 +497,29 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		readFieldSanitized(buffer, cell, 65, 3);
 		int Decls = atoi(cell);
         Decl += (((double) Decls)/10.0)/3600.0;
-		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
+		readField(buffer, cell, 60, 1);
+		if (cell[0] == '-') Decl = -Decl;
+
+		/* lee numeracion */
+		readField(buffer, cell, 1, 5);
+		int yarnallRef = atoi(cell);
+
+		if (mode && PPM_SEARCH) {
+        	double x, y, z;
+        	sph2rec(RA, Decl, &x, &y, &z);
+			double minDistance = HUGE_NUMBER;
+			int ppmIndex;
+			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+			if (minDistance < MAX_DISTANCE) {
+				snprintf(catName, 20, "USNO %d", yarnallRef);
+				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			} else {
+				printf("Warning: USNO %d has no PPM star near it.\n", yarnallRef);
+			}
+		}
     
-	    /* convierte coordenadas a 1875.0 */
+	    /* convierte coordenadas a 1875.0, y descarta estrellas fuera de la cobertura de CD */
         double RA1875 = RA;
         double Decl1875 = Decl;
         transform(1860.0, 1875.0, &RA1875, &Decl1875);
@@ -480,8 +532,6 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		/* lee magnitud y referencia */
 		readField(buffer, cell, 37, 2);
 		vmag = atof(cell)/10.0;
-		readField(buffer, cell, 1, 5);
-		int yarnallRef = atoi(cell);
 		readField(buffer, cell, 7, 28);
 		cell[28] = 0;
 
@@ -508,7 +558,11 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
 			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance > MAX_DISTANCE) {
+			if (minDistance < MAX_DISTANCE) {
+				snprintf(catName, 20, "USNO %d", yarnallRef);
+				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
+				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+			} else {
 				char yarnallCat[28];
 				copy(yarnallCat, cell);
 				printf("  USNO %d <%s> is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
@@ -525,6 +579,8 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			}
 		}
 	}
+	if (mode && PPM_SEARCH) fclose(crossPPMStream);
+	if (mode && CD_SEARCH) fclose(crossCDStream);
     fclose(stream);
 	printf("  cross-referenced with %d stars\n", countUSNO);
 		
@@ -535,6 +591,13 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
         perror("Cannot read weiss.txt");
 		exit(1);
     }
+
+	if (mode && CD_SEARCH) crossCDStream = openCrossFile("results/cross_weiss_cd.csv");
+	if (mode && PPM_SEARCH) {
+		readPPM(false, true, 1850.0);
+		crossPPMStream = openCrossFile("results/cross_weiss_ppm.csv");
+	}
+	
 	int countWeiss = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
 		/* descarta otras obs que no sean la primera */
@@ -564,7 +627,26 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		int Decls = atoi(cell);
         Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
-    
+
+		/* lee numeración catálogo Weiss */
+		readField(buffer, cell, 1, 5);
+		int weissRef = atoi(cell);
+
+		if (mode && PPM_SEARCH) {
+			double x, y, z;
+			sph2rec(RA, Decl, &x, &y, &z);
+			double minDistance = HUGE_NUMBER;
+			int ppmIndex;
+			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+			if (minDistance < MAX_DISTANCE) {
+				snprintf(catName, 20, "WEI %d", weissRef);
+				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			} else {
+				printf("Warning: WEI %d has no PPM star near it.\n", weissRef);
+			}
+		}
+
 	    /* convierte coordenadas a 1875.0 */
         double RA1875 = RA;
         double Decl1875 = Decl;
@@ -575,9 +657,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
         double x, y, z;
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
-		/* lee numeración catálogo Weiss y Oeltzen-Argelander */
-		readField(buffer, cell, 1, 5);
-		int weissRef = atoi(cell);
+		/* lee numeración catálogo  Oeltzen-Argelander */
 		readField(buffer, cell, 49, 5);
 		int oeltzenRef = atoi(cell);
 
@@ -610,7 +690,11 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
 			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance > MAX_DISTANCE) {
+			if (minDistance < MAX_DISTANCE) {
+				snprintf(catName, 20, "WEI %d", weissRef);
+				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
+				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+			} else {
 				printf("  WEI %d or OA %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
 					weissRef,
 					oeltzenRef,
@@ -625,8 +709,144 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			}
 		}
 	}
+	if (mode && PPM_SEARCH) fclose(crossPPMStream);
+	if (mode && CD_SEARCH) fclose(crossCDStream);
     fclose(stream);
 	printf("  cross-referenced with %d stars\n", countWeiss);
+
+	/* añadimos referencia al catálogo de Gilliss */
+	printf("Reading Gilliss catalog...\n");
+    stream = fopen("cat/gilliss.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read gilliss.txt");
+		exit(1);
+    }
+
+	if (mode && CD_SEARCH) crossCDStream = openCrossFile("results/cross_gilliss_cd.csv");
+	if (mode && PPM_SEARCH) crossPPMStream = openCrossFile("results/cross_gilliss_ppm.csv");
+
+	int countGi = 0;
+	int countGiCD = 0;
+    while (fgets(buffer, 1023, stream) != NULL) {
+		/* lee ascension recta B1850.0 */
+		readFieldSanitized(buffer, cell, 33, 2);
+		int RAh = atoi(cell);
+        double RA = (double) RAh;
+		readFieldSanitized(buffer, cell, 35, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readFieldSanitized(buffer, cell, 37, 4);
+		int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1850.0 */
+		readFieldSanitized(buffer, cell, 49, 2);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readFieldSanitized(buffer, cell, 51, 2);
+		int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+		readFieldSanitized(buffer, cell, 53, 3);
+		int Decls = atoi(cell);
+        Decl += (((double) Decls)/10.0)/3600.0;
+		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
+    
+		/* lee numeración catálogo Gilliss */
+		readField(buffer, cell, 1, 5);
+		int giRef = atoi(cell);
+
+		if (mode && PPM_SEARCH) {
+			double x, y, z;
+			sph2rec(RA, Decl, &x, &y, &z);
+			double minDistance = HUGE_NUMBER;
+			int ppmIndex;
+			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+			if (minDistance < MAX_DISTANCE) {
+				snprintf(catName, 20, "GI %d", giRef);
+				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			} else {
+				printf("Warning: GI %d has no PPM star near it.\n", giRef);
+			}
+		}
+
+	    /* convierte coordenadas a 1875.0 */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        transform(1850.0, 1875.0, &RA1875, &Decl1875);
+    	if (mode && Decl1875 > -22) continue;
+
+        /* calcula coordenadas rectangulares */
+        double x, y, z;
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+		/* lee magnitud y referencia */
+		readField(buffer, cell, 29, 3);
+		vmag = atof(cell)/10.0;
+		readField(buffer, cell, 7, 18);
+		cell[18] = 0;
+
+		/* barre estrellas de GC para identificarlas con este catálogo */
+        double minDistance = HUGE_NUMBER;
+		int gcIndex = -1;
+		for (int i = 0; i < GCstars; i++) {
+			if (GCstar[i].discard) continue;
+			double dist = 3600.0 * calcAngularDistance(x, y, z, GCstar[i].x, GCstar[i].y, GCstar[i].z);
+			if (dist < minDistance) {
+				gcIndex = i;
+				minDistance = dist;
+			}
+		}
+		if (minDistance < GCstar[gcIndex].distGi) {
+			copy(GCstar[gcIndex].giCat, cell);
+			GCstar[gcIndex].giRef = giRef;
+			GCstar[gcIndex].distGi = minDistance;
+			GCstar[gcIndex].vmagGi = vmag;
+			countGi++;
+		}
+		if (mode && CD_SEARCH) {
+			/* aprovechamos a revisar CD con esta estrella
+			 * (tambien mencionamos el numero de GZC en caso de haberlo) */
+			char gouldZC[30];
+			gouldZC[0] = 0;
+			if (cell[9] == 'Z' && cell[10] == 'C') {
+				char hour[3], num[6];
+				hour[0] = cell[11]; hour[1] = cell[12]; hour[2] = 0;
+				int gouldHour = atoi(hour);
+				num[0] = cell[13]; num[1] = cell[14]; num[2] = cell[15];
+				num[3] = cell[16]; num[4] = cell[17]; num[5] = 0;
+				int gouldNum = atoi(num);
+				snprintf(gouldZC, 30, " or GZC %dh %d", gouldHour, gouldNum);
+			}
+			minDistance = HUGE_NUMBER;
+			int cdIndex;
+			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
+			if (minDistance < MAX_DISTANCE) {
+				snprintf(catName, 20, "GI %d", giRef);
+				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
+				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+			} else {
+				countGiCD++;
+				printf("  %d> GI %d%s is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
+					countGiCD,
+					giRef,
+					gouldZC,
+					vmag,
+					CDstar[cdIndex].declRef,
+					CDstar[cdIndex].numRef,
+					minDistance
+				);
+				printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
+					RAh, RAm, RAs / 100, RAs % 100,
+					Decld, Declm, Decls / 10, Decls % 10);
+			}
+		}
+	}
+	if (mode && PPM_SEARCH) fclose(crossPPMStream);
+	if (mode && CD_SEARCH) fclose(crossCDStream);
+    fclose(stream);
+	printf("  cross-referenced with %d stars\n", countGi);
 
 	/* añadimos referencia al catálogo de Stone */
 	printf("Reading Stone catalog...\n");
@@ -710,136 +930,10 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			GCstar[gcIndex].vmagStone = vmag;
 			countStone++;
 		}
-		if (mode && CD_SEARCH) {
-			/* aprovechamos a revisar CD con esta estrella */
-			minDistance = HUGE_NUMBER;
-			int cdIndex;
-			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance > MAX_DISTANCE) {
-				printf("  ST %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
-					stoneRef,
-					vmag,
-					CDstar[cdIndex].declRef,
-					CDstar[cdIndex].numRef,
-					minDistance
-				);
-			}
-		}
 	}
     fclose(stream2);
     fclose(stream);
 	printf("  cross-referenced with %d stars\n", countStone);
-
-	/* añadimos referencia al catálogo de Gilliss */
-	printf("Reading Gilliss catalog...\n");
-    stream = fopen("cat/gilliss.txt", "rt");
-    if (stream == NULL) {
-        perror("Cannot read gilliss.txt");
-		exit(1);
-    }
-	int countGi = 0;
-	int countGiCD = 0;
-    while (fgets(buffer, 1023, stream) != NULL) {
-		/* lee signo declinación y descarta hemisferio norte */
-		readField(buffer, cell, 48, 1);
-		if (cell[0] != '-') continue;
-
-		/* lee ascension recta B1850.0 */
-		readFieldSanitized(buffer, cell, 33, 2);
-		int RAh = atoi(cell);
-        double RA = (double) RAh;
-		readFieldSanitized(buffer, cell, 35, 2);
-		int RAm = atoi(cell);
-        RA += ((double) RAm)/60.0;
-		readFieldSanitized(buffer, cell, 37, 4);
-		int RAs = atoi(cell);
-        RA += (((double) RAs)/100.0)/3600.0;
-		RA *= 15.0; /* conversion horas a grados */
-
-		/* lee declinacion B1850.0 */
-		readFieldSanitized(buffer, cell, 49, 2);
-		int Decld = atoi(cell);
-        double Decl = (double) Decld;
-		readFieldSanitized(buffer, cell, 51, 2);
-		int Declm = atoi(cell);
-        Decl += ((double) Declm)/60.0;
-		readFieldSanitized(buffer, cell, 53, 3);
-		int Decls = atoi(cell);
-        Decl += (((double) Decls)/10.0)/3600.0;
-		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
-    
-	    /* convierte coordenadas a 1875.0 */
-        double RA1875 = RA;
-        double Decl1875 = Decl;
-        transform(1850.0, 1875.0, &RA1875, &Decl1875);
-    	if (mode && Decl1875 > -22) continue;
-
-        /* calcula coordenadas rectangulares */
-        double x, y, z;
-        sph2rec(RA1875, Decl1875, &x, &y, &z);
-
-		/* lee magnitud y referencia */
-		readField(buffer, cell, 29, 3);
-		vmag = atof(cell)/10.0;
-		readField(buffer, cell, 1, 5);
-		int giRef = atoi(cell);
-		readField(buffer, cell, 7, 18);
-		cell[18] = 0;
-
-		/* barre estrellas de GC para identificarlas con este catálogo */
-        double minDistance = HUGE_NUMBER;
-		int gcIndex = -1;
-		for (int i = 0; i < GCstars; i++) {
-			if (GCstar[i].discard) continue;
-			double dist = 3600.0 * calcAngularDistance(x, y, z, GCstar[i].x, GCstar[i].y, GCstar[i].z);
-			if (dist < minDistance) {
-				gcIndex = i;
-				minDistance = dist;
-			}
-		}
-		if (minDistance < GCstar[gcIndex].distGi) {
-			copy(GCstar[gcIndex].giCat, cell);
-			GCstar[gcIndex].giRef = giRef;
-			GCstar[gcIndex].distGi = minDistance;
-			GCstar[gcIndex].vmagGi = vmag;
-			countGi++;
-		}
-		if (mode && CD_SEARCH) {
-			/* aprovechamos a revisar CD con esta estrella
-			 * (tambien mencionamos el numero de GZC en caso de haberlo)*/
-			char gouldZC[30];
-			gouldZC[0] = 0;
-			if (cell[9] == 'Z' && cell[10] == 'C') {
-				char hour[3], num[6];
-				hour[0] = cell[11]; hour[1] = cell[12]; hour[2] = 0;
-				int gouldHour = atoi(hour);
-				num[0] = cell[13]; num[1] = cell[14]; num[2] = cell[15];
-				num[3] = cell[16]; num[4] = cell[17]; num[5] = 0;
-				int gouldNum = atoi(num);
-				snprintf(gouldZC, 30, " or GZC %dh %d", gouldHour, gouldNum);
-			}
-			minDistance = HUGE_NUMBER;
-			int cdIndex;
-			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance > MAX_DISTANCE) {
-				countGiCD++;
-				printf("  %d> GI %d%s is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
-					countGiCD,
-					giRef,
-					gouldZC,
-					vmag,
-					CDstar[cdIndex].declRef,
-					CDstar[cdIndex].numRef,
-					minDistance
-				);
-				printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
-					RAh, RAm, RAs / 100, RAs % 100,
-					Decld, Declm, Decls / 10, Decls % 10);
-			}
-		}
-	}
-    fclose(stream);
-	printf("  cross-referenced with %d stars\n", countGi);
 
 	if (mode) {	
 		printf("Stars read from Catalogo General Argentino: %d  (discarded = %d)\n", GCstars, discarded);

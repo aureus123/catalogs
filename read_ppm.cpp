@@ -177,140 +177,142 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
 
     PPMstars = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
-        /* lee la zona de declinacion (solo continua si existe y esta en el rango necesario) */
+      bool zoneSign;
+      int declRefAbs, numRef, declRef;
+      if (useDurch) {
         readField(buffer, cell, 10, 1);
-        bool zoneSign = (cell[0] == '-');
+        zoneSign = (cell[0] == '-');
         readField(buffer, cell, 11, 2);
-        int declRefAbs = atoi(cell);
-        if (useDurch) {
-          if (isCD()) {
-            /* para CD: de -23 hasta el polo sur, excepto que allSky=false en cuyo es el 1er. volumen */
-            if (!zoneSign) continue;
-            if (declRefAbs < 23) continue;
-            if (!allSky && declRefAbs > 31) continue;
-          } else {
-            /* para BD: entre -01 y +19 */
-            if (declRefAbs > 19 && !zoneSign) continue;
-            if (declRefAbs > 1 && zoneSign) continue;
-          }
+        declRefAbs = atoi(cell);
+
+        if (isCD()) {
+          /* para CD: de -23 hasta el polo sur, excepto que allSky=false en cuyo es el 1er. volumen */
+          if (!zoneSign) continue;
+          if (declRefAbs < 23) continue;
+          if (!allSky && declRefAbs > 31) continue;
+        } else {
+          /* para BD: entre -01 y +19 */
+          if (declRefAbs > 19 && !zoneSign) continue;
+          if (declRefAbs > 1 && zoneSign) continue;
         }
-        int declRef = zoneSign ? -declRefAbs : declRefAbs;
+        declRef = zoneSign ? -declRefAbs : declRefAbs;
 
         readField(buffer, cell, 13, 5);
-        int numRef = atoi(cell);
+        numRef = atoi(cell);
         if (numRef == 0) continue;
+      }
 
-        /* lee identificacion PPM */
-        readField(buffer, cell, 2, 6);
-        int ppmRef = atoi(cell);
+      /* lee identificacion PPM */
+      readField(buffer, cell, 2, 6);
+      int ppmRef = atoi(cell);
 
-        /* lee ascension recta J2000 */
-        readField(buffer, cell, 28, 2);
-        double RA = atof(cell);
-        readField(buffer, cell, 31, 2);
-        RA += atof(cell)/60.0;
-        readField(buffer, cell, 34, 6);
-        RA += atof(cell)/3600.0;
-        RA *= 15.0; /* conversion horas a grados */
+      /* lee ascension recta J2000 */
+      readField(buffer, cell, 28, 2);
+      double RA = atof(cell);
+      readField(buffer, cell, 31, 2);
+      RA += atof(cell)/60.0;
+      readField(buffer, cell, 34, 6);
+      RA += atof(cell)/3600.0;
+      RA *= 15.0; /* conversion horas a grados */
 
-        /* lee declinacion J2000 */
-        readField(buffer, cell, 42, 1);
-        char sign = cell[0];
-        readField(buffer, cell, 43, 2);
-        double Decl = atof(cell);
-        readField(buffer, cell, 46, 2);
-        Decl += atof(cell)/60.0;
-        readField(buffer, cell, 49, 5);
-        Decl += atof(cell)/3600.0;
-        if (sign == '-') Decl = -Decl; /* incorpora signo negativo en caso de ser necesario */
+      /* lee declinacion J2000 */
+      readField(buffer, cell, 42, 1);
+      char sign = cell[0];
+      readField(buffer, cell, 43, 2);
+      double Decl = atof(cell);
+      readField(buffer, cell, 46, 2);
+      Decl += atof(cell)/60.0;
+      readField(buffer, cell, 49, 5);
+      Decl += atof(cell)/3600.0;
+      if (sign == '-') Decl = -Decl; /* incorpora signo negativo en caso de ser necesario */
 
-        /* lee mov. propio en asc. recta */
-        readField(buffer, cell, 56, 7);
-        double pmRA = atof(cell);
-        pmRA /= 240; /* conversion de s/yr a grados/yr (juliano) */
-        
-        /* lee mov. propio en declinacion */
-        readField(buffer, cell, 64, 6);
-        double pmDecl = atof(cell);
-        pmDecl /= 3600; /* conversion de arcsec/yr a grados/yr (juliano) */
+      /* lee mov. propio en asc. recta */
+      readField(buffer, cell, 56, 7);
+      double pmRA = atof(cell);
+      pmRA /= 240; /* conversion de s/yr a grados/yr (juliano) */
+      
+      /* lee mov. propio en declinacion */
+      readField(buffer, cell, 64, 6);
+      double pmDecl = atof(cell);
+      pmDecl /= 3600; /* conversion de arcsec/yr a grados/yr (juliano) */
 
-        /* convierte coordenadas al Siglo XIX: como hay que introducir la epoca besseliana de J2000, usamos la formula de SOFA:
-         * B = 1900 + (2451545 - 2415020.31352) / 365.242198781 = 2000.001278 */
-        double RAtarget = RA;
-        double Decltarget = Decl;
-        wcsconp(WCS_J2000, WCS_B1950, 0.0, targetYear, 2000.001278, targetYear, &RAtarget, &Decltarget, &pmRA, &pmDecl);
+      /* convierte coordenadas al Siglo XIX: como hay que introducir la epoca besseliana de J2000, usamos la formula de SOFA:
+        * B = 1900 + (2451545 - 2415020.31352) / 365.242198781 = 2000.001278 */
+      double RAtarget = RA;
+      double Decltarget = Decl;
+      wcsconp(WCS_J2000, WCS_B1950, 0.0, targetYear, 2000.001278, targetYear, &RAtarget, &Decltarget, &pmRA, &pmDecl);
 
-        /* calcula coordenadas rectangulares (segun el catálogo destino) */
-        double x, y, z;
-        sph2rec(RAtarget, Decltarget, &x, &y, &z);
+      /* calcula coordenadas rectangulares (segun el catálogo destino) */
+      double x, y, z;
+      sph2rec(RAtarget, Decltarget, &x, &y, &z);
 
-        /* lee magnitud (si Flag5 != 'V' la magnitud es fotografica o hay una remark --> poner 0.0) */
-        double vmag = 0.0;
-        readField(buffer, cell, 131, 1);
-        if (cell[0] == 'V') {
-            readField(buffer, cell, 20, 4);
-            vmag = atof(cell);
+      /* lee magnitud (si Flag5 != 'V' la magnitud es fotografica o hay una remark --> poner 0.0) */
+      double vmag = 0.0;
+      readField(buffer, cell, 131, 1);
+      if (cell[0] == 'V') {
+          readField(buffer, cell, 20, 4);
+          vmag = atof(cell);
+      }
+
+      /* lee si la estrella es "problematica" */
+      char problem = 0;
+      readField(buffer, cell, 127, 1);
+      if (cell[0] == 'P' || cell[0] == 'C') problem = 1;
+      readField(buffer, cell, 128, 1);
+      if (cell[0] == 'D') problem = 1;
+
+      int dmIndex = -1;
+      double minDistance = HUGE_NUMBER;
+      if (useDurch) {
+        /* lee el numero DM y busca la estrella asociada en DM
+        * en caso de haber más de una, escoger la de menor distancia */
+        char dm[20];
+        snprintf(dm, 20, "DM %s%d°%d", zoneSign ? "-" : "+", declRefAbs, numRef);
+        int i = getDMindex(zoneSign, declRef, numRef);
+        while (i != -1) {
+          double dist = 3600.0 * calcAngularDistance(x, y, z, DMstar[i].x, DMstar[i].y, DMstar[i].z);
+          if (minDistance > dist) {
+            dmIndex = i;
+            minDistance = dist;
+          }
+          i = DMstar[i].next;
+        }
+        if (dmIndex == -1) {
+          printf("Star %s not found (corresponding to PPM %d). Discarding PPM star.\n", dm, ppmRef);
+          continue;
         }
 
-        /* lee si la estrella es "problematica" */
-        char problem = 0;
-        readField(buffer, cell, 127, 1);
-        if (cell[0] == 'P' || cell[0] == 'C') problem = 1;
-        readField(buffer, cell, 128, 1);
-        if (cell[0] == 'D') problem = 1;
-
-        int dmIndex = -1;
-        double minDistance = 9999999999;
-        if (useDurch) {
-          /* lee el numero DM y busca la estrella asociada en DM
-          * en caso de haber más de una, escoger la de menor distancia */
-          char dm[20];
-          snprintf(dm, 20, "DM %s%d°%d", zoneSign ? "-" : "+", declRefAbs, numRef);
-          int i = getDMindex(zoneSign, declRef, numRef);
-          while (i != -1) {
-            double dist = 3600.0 * calcAngularDistance(x, y, z, DMstar[i].x, DMstar[i].y, DMstar[i].z);
-            if (minDistance > dist) {
-              dmIndex = i;
-              minDistance = dist;
-            }
-            i = DMstar[i].next;
-          }
-          if (dmIndex == -1) {
-            printf("Star %s not found (corresponding to PPM %d). Discarding PPM star.\n", dm, ppmRef);
-            continue;
-          }
-
-          /* asocia la DM a la PPM mas cercana */
-          if (DMstar[dmIndex].catIndex == -1) {
+        /* asocia la DM a la PPM mas cercana */
+        if (DMstar[dmIndex].catIndex == -1) {
+          DMstar[dmIndex].catIndex = PPMstars;
+        } else {
+          /* ya hay otra PPM con misma DM asociada */
+          int previousPPMIndex = DMstar[dmIndex].catIndex;
+          if (minDistance < PPMstar[previousPPMIndex].dist) {
+            printf("PPM %d is removed because PPM %d is nearer to same %s\n", PPMstar[previousPPMIndex].ppmRef, ppmRef, dm);
+            PPMstar[previousPPMIndex].discard = true;
             DMstar[dmIndex].catIndex = PPMstars;
           } else {
-            /* ya hay otra PPM con misma DM asociada */
-            int previousPPMIndex = DMstar[dmIndex].catIndex;
-            if (minDistance < PPMstar[previousPPMIndex].dist) {
-              printf("PPM %d is removed because PPM %d is nearer to same %s\n", PPMstar[previousPPMIndex].ppmRef, ppmRef, dm);
-              PPMstar[previousPPMIndex].discard = true;
-              DMstar[dmIndex].catIndex = PPMstars;
-            } else {
-              printf("PPM %d is removed because PPM %d is nearer to same %s\n", ppmRef, PPMstar[previousPPMIndex].ppmRef, dm);
-              continue;
-            }
+            printf("PPM %d is removed because PPM %d is nearer to same %s\n", ppmRef, PPMstar[previousPPMIndex].ppmRef, dm);
+            continue;
           }
         }
+      }
 
-        /* la almacena en memoria */
-		    if (PPMstars == MAXPPMSTAR) bye("Maximum amount reached!\n");
-        PPMstar[PPMstars].ppmRef = ppmRef;
-        PPMstar[PPMstars].discard = false;
-        PPMstar[PPMstars].vmag = vmag;
-        PPMstar[PPMstars].problem = problem;
-        PPMstar[PPMstars].dmIndex = dmIndex;
-        PPMstar[PPMstars].x = x;
-        PPMstar[PPMstars].y = y;
-        PPMstar[PPMstars].z = z;
-        PPMstar[PPMstars].dist = minDistance;
+      /* la almacena en memoria */
+      if (PPMstars == MAXPPMSTAR) bye("Maximum amount reached!\n");
+      PPMstar[PPMstars].ppmRef = ppmRef;
+      PPMstar[PPMstars].discard = false;
+      PPMstar[PPMstars].vmag = vmag;
+      PPMstar[PPMstars].problem = problem;
+      PPMstar[PPMstars].dmIndex = dmIndex;
+      PPMstar[PPMstars].x = x;
+      PPMstar[PPMstars].y = y;
+      PPMstar[PPMstars].z = z;
+      PPMstar[PPMstars].dist = minDistance;
 
-        /* proxima estrella */
-        PPMstars++;
+      /* proxima estrella */
+      PPMstars++;
     }
     printf("Stars read from PPM: %d\n", PPMstars);
     fclose(stream);
