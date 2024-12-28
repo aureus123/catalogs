@@ -49,7 +49,7 @@ int main(int argc, char** argv)
     struct DMstar_struct *CDstar = getDMStruct();
 
     /* leemos catalogo PPM */
-    readPPM(allSky);
+    readPPM(true, allSky, 1875.0);
     int PPMstars = getPPMStars();
     struct PPMstar_struct *PPMstar = getPPMStruct();
 
