@@ -316,3 +316,22 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
     fclose(stream);
 }
 
+/* 
+ * findPPMByCoordinates - busca la estrella PPM más cercana
+ * Aquí (x, y, z) son las coord rectangulares en el año target.
+ * minDistanceOutput debe ser una cota de la distancia a buscar.
+ * El resultado se almacena en (ppmIndexOutput, minDistanceOutput).
+*/
+void findPPMByCoordinates(double x, double y, double z, int *ppmIndexOutput, double *minDistanceOutput) {
+  int ppmIndex = -1;
+  double minDistance = *minDistanceOutput;
+	for (int i = 0; i < PPMstars; i++) {
+        double dist = 3600.0 * calcAngularDistance(x, y, z, PPMstar[i].x, PPMstar[i].y, PPMstar[i].z);
+        if (minDistance > dist) {
+        	ppmIndex = i;
+        	minDistance = dist;
+        }
+    }
+    *ppmIndexOutput = ppmIndex;
+    *minDistanceOutput = minDistance;
+}

@@ -25,6 +25,8 @@ int main(int argc, char** argv)
     printf("COMPARE_CPD - Compare CD and CPD catalogs.\n");
     printf("Made in 2024 by Daniel Severin.\n");
 
+    char cpdName[20];
+
     /* leemos catalogo CD */
     readDM("cat/cd.txt");
     struct DMstar_struct *CDstar = getDMStruct();
@@ -35,14 +37,8 @@ int main(int argc, char** argv)
     struct CPDstar_struct *CPDstar = getCPDStruct();
 
     /* revisamos la identificación cruzada y generamos una planilla */
-    FILE *posStream, *magStream;
-
-    posStream = fopen("results/table_pos_cpd.csv", "wt");
-    if (posStream == NULL) {
-        perror("Cannot write in table_pos_cpd.csv");
-        exit(1);
-    }
-    fprintf(posStream, "index,decl,num,ref,dist10\n");
+    FILE *posStream;
+    posStream = openPositionFile("results/table_pos_cpd.csv");
 
     int dropDistError = 0;
     int indexError = 0;
@@ -78,13 +74,13 @@ int main(int argc, char** argv)
                 printf("    (also identified as CD %d°%d)\n", CPDstar[i].declRef2, CPDstar[i].numRef2);
             }
             writeRegister(cdIndex, true);
-            fprintf(posStream, "%d,%d,%d,CPD %d°%d,%.0f\n",
+            snprintf(cpdName, 20, "CPD %d°%d", CPDstar[i].declRef, CPDstar[i].numRef);
+            writePositionEntry(posStream,
                 indexError,
                 CDstar[cdIndex].declRef,
                 CDstar[cdIndex].numRef,
-                CPDstar[i].declRef,
-                CPDstar[i].numRef,
-                10.0 * dist);
+                cpdName,
+                dist);
             continue;
         }
         goodStarsPosition++;

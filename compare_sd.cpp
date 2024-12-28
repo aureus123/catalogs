@@ -252,6 +252,8 @@ int main(int argc, char** argv)
     printf("COMPARE_SD - Compare CD and SD catalogs.\n");
     printf("Made in 2024 by Daniel Severin.\n");
 
+    char sdName[20];
+
     /* leemos catalogo CD */
     readDM("cat/cd.txt");
     struct DMstar_struct *CDstar = getDMStruct();
@@ -261,20 +263,8 @@ int main(int argc, char** argv)
 
     /* revisamos la identificación cruzada y generamos dos planillas */
     FILE *posStream, *magStream;
-
-    posStream = fopen("results/table_pos_sd.csv", "wt");
-    if (posStream == NULL) {
-        perror("Cannot write in table_pos_sd.csv");
-        exit(1);
-    }
-    fprintf(posStream, "index,decl,num,ref,dist10\n");
-
-    magStream = fopen("results/table_mag_sd.csv", "wt");
-    if (magStream == NULL) {
-        perror("Cannot write in table_mag_sd.csv");
-        exit(1);
-    }
-    fprintf(magStream, "index,decl,num,ref,delta10\n");
+    posStream = openPositionFile("results/table_pos_sd.csv");
+    magStream = openMagnitudeFile("results/table_mag_sd.csv");
 
     int dropDistError = 0;
     int maxDistError = 0;
@@ -312,12 +302,13 @@ int main(int argc, char** argv)
                 dist);
             writeRegister(cdIndex, true);
             writeRegisterSD(i);
-            fprintf(posStream, "%d,%d,%d,SD -22°%d,%.0f\n",
+            snprintf(sdName, 20, "SD -22°%d", SDstar[i].numRef);
+            writePositionEntry(posStream,
                 indexError,
                 CDstar[cdIndex].declRef,
                 CDstar[cdIndex].numRef,
-                SDstar[i].numRef,
-                10.0 * dist);
+                sdName,
+                dist);
             continue;
         }
         goodStarsPosition++;
@@ -341,12 +332,13 @@ int main(int argc, char** argv)
                 delta);
             writeRegister(cdIndex, false);
             writeRegisterSD(i);
-            fprintf(magStream, "%d,%d,%d,SD -22°%d,%.0f\n",
+            snprintf(sdName, 20, "SD -22°%d", SDstar[i].numRef);
+            writeMagnitudeEntry(magStream,
                 indexError,
                 CDstar[cdIndex].declRef,
                 CDstar[cdIndex].numRef,
-                SDstar[i].numRef,
-                10.0 * delta);
+                sdName,
+                delta);
             continue;
         }
         goodStarsMagnitude++;

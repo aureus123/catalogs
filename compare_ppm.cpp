@@ -55,20 +55,8 @@ int main(int argc, char** argv)
 
     /* revisamos la identificación cruzada y generamos dos planillas */
     FILE *posStream, *magStream;
-
-    posStream = fopen("results/table_pos_ppm.csv", "wt");
-    if (posStream == NULL) {
-        perror("Cannot write in table_pos_cd.csv");
-        exit(1);
-    }
-    fprintf(posStream, "index,decl,num,ref,dist10\n");
-
-    magStream = fopen("results/table_mag_ppm.csv", "wt");
-    if (magStream == NULL) {
-        perror("Cannot write in table_mag_cd.csv");
-        exit(1);
-    }
-    fprintf(magStream, "index,decl,num,ref,delta10\n");
+    posStream = openPositionFile("results/table_pos_ppm.csv");
+    magStream = openMagnitudeFile("results/table_mag_ppm.csv");
 
     int maxDistError = 0;
     int magDiffError = 0;
@@ -102,12 +90,13 @@ int main(int argc, char** argv)
                 dist);
             writeRegister(cdIndex, true);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            fprintf(posStream, "%d,%d,%d,PPM %d,%.0f\n",
+            snprintf(buffer, 64, "PPM %d", PPMstar[i].ppmRef);
+            writePositionEntry(posStream,
                 indexError,
                 CDstar[cdIndex].declRef,
                 CDstar[cdIndex].numRef,
-                PPMstar[i].ppmRef,
-                10.0 * dist);
+                buffer,
+                dist);
             continue;
         }
         goodStarsPosition++;
@@ -133,12 +122,13 @@ int main(int argc, char** argv)
                 delta);
             writeRegister(cdIndex, false);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            fprintf(magStream, "%d,%d,%d,PPM %d,%.0f\n",
+            snprintf(buffer, 64, "PPM %d", PPMstar[i].ppmRef);
+            writeMagnitudeEntry(magStream,
                 indexError,
                 CDstar[cdIndex].declRef,
                 CDstar[cdIndex].numRef,
-                PPMstar[i].ppmRef,
-                10.0 * delta);
+                buffer,
+                delta);
             continue;
         }
         goodStarsMagnitude++;

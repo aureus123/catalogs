@@ -181,6 +181,8 @@ int main(int argc, char** argv)
     printf("COMPARE_AGK - Compare CD and AGK catalogs.\n");
     printf("Made in 2024 by Daniel Severin.\n");
 
+    char agkName[20];
+
     /* leemos catalogo CD */
     readDM("cat/cd.txt");
     struct DMstar_struct *CDstar = getDMStruct();
@@ -194,20 +196,8 @@ int main(int argc, char** argv)
 
     /* revisamos la identificación cruzada y generamos dos planillas */
     FILE *posStream, *magStream;
-
-    posStream = fopen("results/table_pos_agk.csv", "wt");
-    if (posStream == NULL) {
-        perror("Cannot write in table_pos_agk.csv");
-        exit(1);
-    }
-    fprintf(posStream, "index,decl,num,ref,dist10\n");
-
-    magStream = fopen("results/table_mag_agk.csv", "wt");
-    if (magStream == NULL) {
-        perror("Cannot write in table_mag_agk.csv");
-        exit(1);
-    }
-    fprintf(magStream, "index,decl,num,ref,delta10\n");
+    posStream = openPositionFile("results/table_pos_agk.csv");
+    magStream = openMagnitudeFile("results/table_mag_agk.csv");
 
     int dropDistError = 0;
     int maxDistError = 0;
@@ -255,13 +245,13 @@ int main(int argc, char** argv)
                     distWarning);
                 writeRegister(cdIndexWarning, false);
             }
-            fprintf(posStream, "%d,%d,%d,AGK %c%d,%.0f\n",
+            snprintf(agkName, 20, "AGK %c%d", AGKstar[i].letter, AGKstar[i].agkRef);
+            writePositionEntry(posStream,
                 indexError,
                 CDstar[cdIndex].declRef,
                 CDstar[cdIndex].numRef,
-                AGKstar[i].letter,
-                AGKstar[i].agkRef,
-                10.0 * dist);
+                agkName,
+                dist);
             continue;
         }
         goodStarsPosition++;
@@ -285,13 +275,13 @@ int main(int argc, char** argv)
                 AGKstar[i].agkRef,
                 delta);
             writeRegister(cdIndex, false);
-            fprintf(magStream, "%d,%d,%d,AGK %c%d,%.0f\n",
+            snprintf(agkName, 20, "AGK %c%d", AGKstar[i].letter, AGKstar[i].agkRef);
+            writeMagnitudeEntry(magStream,
                 indexError,
                 CDstar[cdIndex].declRef,
                 CDstar[cdIndex].numRef,
-                AGKstar[i].letter,
-                AGKstar[i].agkRef,
-                10.0 * delta);
+                agkName,
+                delta);
             continue;
         }
         goodStarsMagnitude++;

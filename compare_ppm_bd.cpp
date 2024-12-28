@@ -24,6 +24,8 @@ int main(int argc, char** argv)
     printf("COMPARE_PPM_BD - Compare BD and PPM catalogs.\n");
     printf("Made in 2024 by Daniel Severin.\n");
 
+    char ppmName[20];
+
     /* leemos catalogo BD */
     readDM("cat/bd.txt");
     struct DMstar_struct *BDstar = getDMStruct();
@@ -35,20 +37,8 @@ int main(int argc, char** argv)
 
     /* revisamos la identificación cruzada y generamos dos planillas */
     FILE *posStream, *magStream;
-
-    posStream = fopen("results/table_pos_ppm_bd.csv", "wt");
-    if (posStream == NULL) {
-        perror("Cannot write in table_pos_bd.csv");
-        exit(1);
-    }
-    fprintf(posStream, "index,decl,num,ppm,dist10\n");
-
-    magStream = fopen("results/table_mag_ppm_bd.csv", "wt");
-    if (magStream == NULL) {
-        perror("Cannot write in table_mag_bd.csv");
-        exit(1);
-    }
-    fprintf(magStream, "index,decl,num,ppm,delta10\n");
+    posStream = openPositionFile("results/table_pos_bd.csv");
+    magStream = openMagnitudeFile("results/table_mag_bd.csv");
 
     int maxDistError = 0;
     int magDiffError = 0;
@@ -83,12 +73,13 @@ int main(int argc, char** argv)
                 dist);
             writeRegister(bdIndex, true);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            fprintf(posStream, "%d,%d,%d,%d,%.0f\n",
+            snprintf(ppmName, 20, "PPM %d", PPMstar[i].ppmRef);
+            writePositionEntry(posStream,
                 indexError,
                 BDstar[bdIndex].declRef,
                 BDstar[bdIndex].numRef,
-                PPMstar[i].ppmRef,
-                10.0 * dist);
+                ppmName,
+                dist);
             continue;
         }
         goodStarsPosition++;
@@ -115,12 +106,13 @@ int main(int argc, char** argv)
                 delta);
             writeRegister(bdIndex, false);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            fprintf(magStream, "%d,%d,%d,%d,%.0f\n",
+            snprintf(ppmName, 20, "PPM %d", PPMstar[i].ppmRef);
+            writeMagnitudeEntry(magStream,
                 indexError,
                 BDstar[bdIndex].declRef,
                 BDstar[bdIndex].numRef,
-                PPMstar[i].ppmRef,
-                10.0 * delta);
+                ppmName,
+                delta);
             continue;
         }
         goodStarsMagnitude++;

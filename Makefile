@@ -20,7 +20,7 @@ compare_agk: compare_agk.o read_cd.o trig.o misc.o
 compare_agk.o: compare_agk.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-compare_gc: compare_gc.o read_cd.o read_old.o trig.o misc.o
+compare_gc: compare_gc.o read_cd.o read_ppm.o read_old.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 compare_gc.o: compare_gc.cpp
@@ -56,13 +56,13 @@ compare_ppm_bd: compare_ppm_bd.o read_bd.o read_ppm.o trig.o misc.o
 compare_ppm_bd.o: compare_ppm_bd.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-find_coord: find_coord.o read_cd.o read_old.o trig.o misc.o
+find_coord: find_coord.o read_cd.o read_ppm.o read_old.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 find_coord.o: find_coord.cpp
 	$(CC) $(CCFLAGS) -c $< -D TRANSFORM=false
 
-find_coord2000: find_coord2000.o read_cd.o read_old.o trig.o misc.o
+find_coord2000: find_coord2000.o read_cd.o read_ppm.o read_old.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 find_coord2000.o: find_coord.cpp

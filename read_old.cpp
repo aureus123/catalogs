@@ -9,11 +9,13 @@
 #include <math.h>
 #include <string.h>
 #include "read_dm.h"
+#include "read_ppm.h"
 #include "trig.h"
 #include "misc.h"
 #include "read_old.h"
 
 #define CD_SEARCH true // true if search nearest CD star over other old catalogs
+#define PPM_SEARCH true // true if search nearest PPM star over other old catalogs (very intensive)
 struct GCstar_struct GCstar[MAXGCSTAR];
 
 int GCstars;
@@ -134,6 +136,14 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
     int entry = 0;
 	int discarded = 0;
     GCstars = 0;
+
+	if (PPM_SEARCH) {
+		/* leemos catalogo PPM (de ser necesario)
+		 * pero sin identificaciones cruzadas */
+    	readPPM(false, true, 1875.0);
+    	int PPMstars = getPPMStars();
+    	struct PPMstar_struct *PPMstar = getPPMStruct();
+	}
 
 	// Lee Catálogo General Argentino
 	stream = fopen("cat/gc.txt", "rt");
@@ -338,7 +348,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		/* Busca la estrella asociada en DM más cercana */
 		double minDistance = HUGE_NUMBER;
 		int cdIndex;
-		findByCoordinates(x, y, z, &cdIndex, &minDistance);
+		findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
 
 		/* ahora busca en el catálogo GC */
 		int minGcRef = 0;
@@ -497,7 +507,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			/* aprovechamos a revisar CD con esta estrella */
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
-			findByCoordinates(x, y, z, &cdIndex, &minDistance);
+			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
 			if (minDistance > MAX_DISTANCE) {
 				char yarnallCat[28];
 				copy(yarnallCat, cell);
@@ -599,7 +609,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			/* aprovechamos a revisar CD con esta estrella */
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
-			findByCoordinates(x, y, z, &cdIndex, &minDistance);
+			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
 			if (minDistance > MAX_DISTANCE) {
 				printf("  WEI %d or OA %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
 					weissRef,
@@ -704,7 +714,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			/* aprovechamos a revisar CD con esta estrella */
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
-			findByCoordinates(x, y, z, &cdIndex, &minDistance);
+			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
 			if (minDistance > MAX_DISTANCE) {
 				printf("  ST %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
 					stoneRef,
@@ -810,7 +820,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			}
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
-			findByCoordinates(x, y, z, &cdIndex, &minDistance);
+			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
 			if (minDistance > MAX_DISTANCE) {
 				countGiCD++;
 				printf("  %d> GI %d%s is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
