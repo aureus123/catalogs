@@ -19,5 +19,5 @@ struct PPMstar_struct {
 int getPPMStars();
 struct PPMstar_struct *getPPMStruct();
 bool revise(int ppmIndex);
-void readPPM(bool useDurch, bool allSky, double targetYear);
+void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south, double targetYear);
 void findPPMByCoordinates(double x, double y, double z, int *ppmIndex, double *minDistance);

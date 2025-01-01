@@ -158,9 +158,11 @@ Note on Flag5:
  *
  * si useDurch = true, lee la identificacion cruzada con Durchmusterung y
  *   sino lee todo el catálogo PPM sin la identificación a BD/CD
+ * si discard_north = true, descarta el hemisferio norte (en J2000)
+ * si discard_south = true, descarta el hemisferio sur (en J2000)
  * (para CD) si allSky = true, de -22 al polo sur; si es false, hasta -31 inclusive
  */
-void readPPM(bool useDurch, bool allSky, double targetYear)
+void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south, double targetYear)
 {
     FILE *stream;
     char buffer[1024];
@@ -178,9 +180,18 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
 
     PPMstars = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
+      dmString[0] = 0;
+
+      readField(buffer, cell, 42, 1);
+      bool signPPM = (cell[0] == '-');
+      if (signPPM) {
+        if (discard_south) continue;
+      } else {
+        if (discard_north) continue;
+      }
+
       bool zoneSign;
       int declRef, numRef;
-      dmString[0] = 0;
 
       readField(buffer, cell, 10, 1);
       if (cell[0] == '+' || cell[0] == '-') {
@@ -238,8 +249,7 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
       Decl += atof(cell)/60.0;
       readField(buffer, cell, 49, 5);
       Decl += atof(cell)/3600.0;
-      readField(buffer, cell, 42, 1);
-      if (cell[0] == '-') Decl = -Decl; /* incorpora signo negativo en caso de ser necesario */
+      if (signPPM) Decl = -Decl; /* incorpora signo negativo en caso de ser necesario */
 
       /* lee mov. propio en asc. recta */
       readField(buffer, cell, 56, 7);

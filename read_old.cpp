@@ -153,7 +153,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		if (PPM_SEARCH) {
 			/* leemos catalogo PPM (de ser necesario)
 			* pero sin identificaciones cruzadas */
-			readPPM(false, true, 1875.0);
+			readPPM(false, true, false, false, 1875.0);
 			crossPPMStream = openCrossFile("results/cross_gc_ppm.csv");
 		}
 
@@ -469,7 +469,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 
 	if (mode && CD_SEARCH) crossCDStream = openCrossFile("results/cross_usno_cd.csv");
 	if (mode && PPM_SEARCH) {
-		readPPM(false, true, 1860.0);
+		readPPM(false, true, false, false, 1860.0);
 		crossPPMStream = openCrossFile("results/cross_usno_ppm.csv");
 	}
 
@@ -594,7 +594,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 
 	if (mode && CD_SEARCH) crossCDStream = openCrossFile("results/cross_weiss_cd.csv");
 	if (mode && PPM_SEARCH) {
-		readPPM(false, true, 1850.0);
+		readPPM(false, true, true, false, 1850.0);
 		crossPPMStream = openCrossFile("results/cross_weiss_ppm.csv");
 	}
 	

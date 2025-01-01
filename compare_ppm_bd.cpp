@@ -31,7 +31,7 @@ int main(int argc, char** argv)
     struct DMstar_struct *BDstar = getDMStruct();
 
     /* leemos catalogo PPM */
-    readPPM(true, true, 1855.0);
+    readPPM(true, true, false, false, 1855.0);
     int PPMstars = getPPMStars();
     struct PPMstar_struct *PPMstar = getPPMStruct();
 
