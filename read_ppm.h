@@ -11,6 +11,7 @@ struct PPMstar_struct {
     double vmag; /* Magnitud Johnson V. Si vmag = 0.0 la magnitud original era fotografica y no la consideramos */
     char problem; /* = 1 solo si la estrella esta marcada como doble o "problematica" */
     int dmIndex; /* Indice a BD o CD */
+    char dmString[14]; /* String con la identificación */
     double x, y, z; /* coordenadas rectangulares en circulo unidad */
     double dist; /* distancia angular a su CD asociada (en arcsec) */
 };

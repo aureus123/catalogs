@@ -260,7 +260,6 @@ void readDM(const char *filename)
     fclose(stream);
 }
 
-
 /* 
  * findDMByCoordinates - busca la estrella BD más cercana
  * Aquí (x, y, z) son las coord rectangulares en 1855.

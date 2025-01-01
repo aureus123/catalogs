@@ -157,14 +157,15 @@ Note on Flag5:
   V - the magnitude is a photographic V magnitude copied from CPC-2.
  *
  * si useDurch = true, lee la identificacion cruzada con Durchmusterung y
- *   usa flag allSky, sino lee todo el catálogo PPM sin la identificación a BD/CD
- * si allSky = true, de -22 al polo sur; si es false, hasta -31 inclusive
+ *   sino lee todo el catálogo PPM sin la identificación a BD/CD
+ * (para CD) si allSky = true, de -22 al polo sur; si es false, hasta -31 inclusive
  */
 void readPPM(bool useDurch, bool allSky, double targetYear)
 {
     FILE *stream;
     char buffer[1024];
     char cell[256];
+    char dmString[14];
 
     int DMstars = getDMStars();
     struct DMstar_struct *DMstar = getDMStruct();
@@ -178,28 +179,43 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
     PPMstars = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
       bool zoneSign;
-      int declRefAbs, numRef, declRef;
-      if (useDurch) {
-        readField(buffer, cell, 10, 1);
+      int declRef, numRef;
+      dmString[0] = 0;
+
+      readField(buffer, cell, 10, 1);
+      if (cell[0] == '+' || cell[0] == '-') {
         zoneSign = (cell[0] == '-');
         readField(buffer, cell, 11, 2);
-        declRefAbs = atoi(cell);
-
-        if (isCD()) {
-          /* para CD: de -23 hasta el polo sur, excepto que allSky=false en cuyo es el 1er. volumen */
-          if (!zoneSign) continue;
-          if (declRefAbs < 23) continue;
-          if (!allSky && declRefAbs > 31) continue;
-        } else {
-          /* para BD: entre -01 y +19 */
-          if (declRefAbs > 19 && !zoneSign) continue;
-          if (declRefAbs > 1 && zoneSign) continue;
-        }
-        declRef = zoneSign ? -declRefAbs : declRefAbs;
-
+        int declRefAbs = atoi(cell);
         readField(buffer, cell, 13, 5);
         numRef = atoi(cell);
-        if (numRef == 0) continue;
+        if (numRef == 0) {
+          bye("Error in DM numRef!");
+        }
+        char durchCatalog = 'B';
+        if (zoneSign) {
+          // South hemisphere
+          if (declRefAbs > 22) durchCatalog = 'C';
+          else if (declRefAbs > 1) durchCatalog = 'S';
+        }
+
+        snprintf(dmString, 14, "%cD %s%d°%d", durchCatalog, zoneSign ? "-" : "+", declRefAbs, numRef);
+
+        if (useDurch) {
+          if (isCD()) {
+            /* para CD: de -23 hasta el polo sur, excepto que allSky=false en cuyo es el 1er. volumen */
+            if (!zoneSign) continue;
+            if (declRefAbs < 23) continue;
+            if (!allSky && declRefAbs > 31) continue;
+          } else {
+            /* para BD: entre -01 y +19 */
+            if (declRefAbs > 19 && !zoneSign) continue;
+            if (declRefAbs > 1 && zoneSign) continue;
+          }
+          declRef = zoneSign ? -declRefAbs : declRefAbs;
+        }
+      } else {
+        if (useDurch) continue;
       }
 
       /* lee identificacion PPM */
@@ -216,15 +232,14 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
       RA *= 15.0; /* conversion horas a grados */
 
       /* lee declinacion J2000 */
-      readField(buffer, cell, 42, 1);
-      char sign = cell[0];
       readField(buffer, cell, 43, 2);
       double Decl = atof(cell);
       readField(buffer, cell, 46, 2);
       Decl += atof(cell)/60.0;
       readField(buffer, cell, 49, 5);
       Decl += atof(cell)/3600.0;
-      if (sign == '-') Decl = -Decl; /* incorpora signo negativo en caso de ser necesario */
+      readField(buffer, cell, 42, 1);
+      if (cell[0] == '-') Decl = -Decl; /* incorpora signo negativo en caso de ser necesario */
 
       /* lee mov. propio en asc. recta */
       readField(buffer, cell, 56, 7);
@@ -266,8 +281,6 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
       if (useDurch) {
         /* lee el numero DM y busca la estrella asociada en DM
         * en caso de haber más de una, escoger la de menor distancia */
-        char dm[20];
-        snprintf(dm, 20, "DM %s%d°%d", zoneSign ? "-" : "+", declRefAbs, numRef);
         int i = getDMindex(zoneSign, declRef, numRef);
         while (i != -1) {
           double dist = 3600.0 * calcAngularDistance(x, y, z, DMstar[i].x, DMstar[i].y, DMstar[i].z);
@@ -278,7 +291,7 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
           i = DMstar[i].next;
         }
         if (dmIndex == -1) {
-          printf("Star %s not found (corresponding to PPM %d). Discarding PPM star.\n", dm, ppmRef);
+          printf("Star %s not found (corresponding to PPM %d). Discarding PPM star.\n", dmString, ppmRef);
           continue;
         }
 
@@ -289,11 +302,11 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
           /* ya hay otra PPM con misma DM asociada */
           int previousPPMIndex = DMstar[dmIndex].catIndex;
           if (minDistance < PPMstar[previousPPMIndex].dist) {
-            printf("PPM %d is removed because PPM %d is nearer to same %s\n", PPMstar[previousPPMIndex].ppmRef, ppmRef, dm);
+            printf("PPM %d is removed because PPM %d is nearer to same %s\n", PPMstar[previousPPMIndex].ppmRef, ppmRef, dmString);
             PPMstar[previousPPMIndex].discard = true;
             DMstar[dmIndex].catIndex = PPMstars;
           } else {
-            printf("PPM %d is removed because PPM %d is nearer to same %s\n", ppmRef, PPMstar[previousPPMIndex].ppmRef, dm);
+            printf("PPM %d is removed because PPM %d is nearer to same %s\n", ppmRef, PPMstar[previousPPMIndex].ppmRef, dmString);
             continue;
           }
         }
@@ -306,6 +319,7 @@ void readPPM(bool useDurch, bool allSky, double targetYear)
       PPMstar[PPMstars].vmag = vmag;
       PPMstar[PPMstars].problem = problem;
       PPMstar[PPMstars].dmIndex = dmIndex;
+      strncpy(PPMstar[PPMstars].dmString, dmString, 14);
       PPMstar[PPMstars].x = x;
       PPMstar[PPMstars].y = y;
       PPMstar[PPMstars].z = z;

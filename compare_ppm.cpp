@@ -76,15 +76,15 @@ int main(int argc, char** argv)
             problematic++;
         }
         int cdIndex = PPMstar[i].dmIndex;
+        char *cdString = PPMstar[i].dmString;
         float dist = PPMstar[i].dist;
         if (dist > MAX_DISTANCE) {
             // posiciones muy separadas, supera umbral
             maxDistError++;
             indexError++;
-            printf("%d) CD %d°%d separated from PPM %d%s in %.1f arcsec.\n",
+            printf("%d) %s separated from PPM %d%s in %.1f arcsec.\n",
                 indexError,
-                CDstar[cdIndex].declRef,
-                CDstar[cdIndex].numRef,
+                cdString,
                 PPMstar[i].ppmRef,
                 isProblematic ? " (PROBLEM)" : "",
                 dist);
@@ -111,10 +111,9 @@ int main(int argc, char** argv)
             // diferencia en magnitud V y visual supera umbral
             magDiffError++;
             indexError++;
-            printf("%d) CD %d°%d reports mag=%.1f but it should be mag=%.1f from PPM %d%s: Delta = %.1f.\n",
+            printf("%d) %s reports mag=%.1f but it should be mag=%.1f from PPM %d%s: Delta = %.1f.\n",
                 indexError,
-                CDstar[cdIndex].declRef,
-                CDstar[cdIndex].numRef,
+                cdString,
                 cdVmag,
                 ppmVmag,
                 PPMstar[i].ppmRef,
