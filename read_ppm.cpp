@@ -312,11 +312,11 @@ void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south,
           /* ya hay otra PPM con misma DM asociada */
           int previousPPMIndex = DMstar[dmIndex].catIndex;
           if (minDistance < PPMstar[previousPPMIndex].dist) {
-            printf("PPM %d is removed because PPM %d is nearer to same %s\n", PPMstar[previousPPMIndex].ppmRef, ppmRef, dmString);
+            //printf("PPM %d is removed because PPM %d is nearer to same %s\n", PPMstar[previousPPMIndex].ppmRef, ppmRef, dmString);
             PPMstar[previousPPMIndex].discard = true;
             DMstar[dmIndex].catIndex = PPMstars;
           } else {
-            printf("PPM %d is removed because PPM %d is nearer to same %s\n", ppmRef, PPMstar[previousPPMIndex].ppmRef, dmString);
+            //printf("PPM %d is removed because PPM %d is nearer to same %s\n", ppmRef, PPMstar[previousPPMIndex].ppmRef, dmString);
             continue;
           }
         }

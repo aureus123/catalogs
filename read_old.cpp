@@ -63,7 +63,7 @@ void writeRegisterGC(int index) {
 		);
 	}
 	if (GCstar[index].weissRef != -1) {
-		printf("       corresponds to WEI %d or OA %d (mag=%.1f) at %.1f arcsec.\n",
+		printf("       corresponds to W %d or OA %d (mag=%.1f) at %.1f arcsec.\n",
 			GCstar[index].weissRef,
 			GCstar[index].oeltzenRef,
 			GCstar[index].vmagWeiss,
@@ -84,7 +84,7 @@ void writeRegisterGC(int index) {
 		);
 	}
 	if (GCstar[index].giRef != -1) {
-		printf("       corresponds to GI %d <%s> (mag=%.1f) at %.1f arcsec.\n",
+		printf("       corresponds to G %d <%s> (mag=%.1f) at %.1f arcsec.\n",
 			GCstar[index].giRef,
 			GCstar[index].giCat,
 			GCstar[index].vmagGi,
@@ -639,11 +639,11 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			int ppmIndex;
 			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
 			if (minDistance < MAX_DISTANCE) {
-				snprintf(catName, 20, "WEI %d", weissRef);
+				snprintf(catName, 20, "W %d", weissRef);
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 			} else {
-				printf("Warning: WEI %d has no PPM star near it.\n", weissRef);
+				printf("Warning: W %d has no PPM star near it.\n", weissRef);
 			}
 		}
 
@@ -691,11 +691,11 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			int cdIndex;
 			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
 			if (minDistance < MAX_DISTANCE) {
-				snprintf(catName, 20, "WEI %d", weissRef);
+				snprintf(catName, 20, "W %d", weissRef);
 				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 			} else {
-				printf("  WEI %d or OA %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
+				printf("  W %d or OA %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
 					weissRef,
 					oeltzenRef,
 					vmag,
@@ -763,11 +763,11 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			int ppmIndex;
 			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
 			if (minDistance < MAX_DISTANCE) {
-				snprintf(catName, 20, "GI %d", giRef);
+				snprintf(catName, 20, "G %d", giRef);
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 			} else {
-				printf("Warning: GI %d has no PPM star near it.\n", giRef);
+				printf("Warning: G %d has no PPM star near it.\n", giRef);
 			}
 		}
 
@@ -823,12 +823,12 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			int cdIndex;
 			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
 			if (minDistance < MAX_DISTANCE) {
-				snprintf(catName, 20, "GI %d", giRef);
+				snprintf(catName, 20, "G %d", giRef);
 				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 			} else {
 				countGiCD++;
-				printf("  %d> GI %d%s is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
+				printf("  %d> G %d%s is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
 					countGiCD,
 					giRef,
 					gouldZC,

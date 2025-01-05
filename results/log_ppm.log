@@ -2,72 +2,10 @@ COMPARE_PPM - Compare CD and PPM catalogs.
 Made in 2024 by Daniel Severin.
 Stars read from Cordoba Durchmusterung: 613778
    Tomo XVI: 179745, Tomo XVII: 160381, Tomo XVIII: 149433, Tomo XXIa: 89128, Tomo XXIb: 35091
-PPM 242959 is removed because PPM 242957 is nearer to same DM -26°164
-PPM 244868 is removed because PPM 244869 is nearer to same DM -30°815
-PPM 245384 is removed because PPM 245382 is nearer to same DM -23°1055
-PPM 251580 is removed because PPM 251581 is nearer to same DM -29°3852
-PPM 252310 is removed because PPM 252307 is nearer to same DM -24°5326
-PPM 254987 is removed because PPM 254989 is nearer to same DM -23°7642
-PPM 255149 is removed because PPM 255151 is nearer to same DM -27°5927
-PPM 255394 is removed because PPM 255397 is nearer to same DM -23°7902
-PPM 258633 is removed because PPM 258635 is nearer to same DM -28°8688
-PPM 259065 is removed because PPM 259064 is nearer to same DM -23°10009
-PPM 259117 is removed because PPM 259116 is nearer to same DM -28°8928
-PPM 263376 is removed because PPM 263375 is nearer to same DM -24°11661
-PPM 266057 is removed because PPM 266061 is nearer to same DM -28°12497
-PPM 268785 is removed because PPM 268784 is nearer to same DM -23°14643
-PPM 272914 is removed because PPM 272915 is nearer to same DM -27°15611
-PPM 276422 is removed because PPM 276423 is nearer to same DM -35°278
-PPM 276710 is removed because PPM 276709 is nearer to same DM -35°381
-PPM 279474 is removed because PPM 279475 is nearer to same DM -32°1479
-PPM 279812 is removed because PPM 279814 is nearer to same DM -36°1587
-PPM 281322 is removed because PPM 281323 is nearer to same DM -30°2320
-PPM 281442 is removed because PPM 281443 is nearer to same DM -35°2291
-PPM 281443 is removed because PPM 281444 is nearer to same DM -35°2291
-PPM 282800 is removed because PPM 282801 is nearer to same DM -31°3407
-PPM 283012 is removed because PPM 283013 is nearer to same DM -38°2844
-PPM 283348 is removed because PPM 283349 is nearer to same DM -35°3243
-PPM 283869 is removed because PPM 283868 is nearer to same DM -35°3551
-PPM 284341 is removed because PPM 284340 is nearer to same DM -39°3531
-PPM 284490 is removed because PPM 284491 is nearer to same DM -31°5130
-PPM 284593 is removed because PPM 284592 is nearer to same DM -35°4030
-PPM 285226 is removed because PPM 285229 is nearer to same DM -38°4462
-PPM 285270 is removed because PPM 285269 is nearer to same DM -34°4842
-PPM 287808 is removed because PPM 287807 is nearer to same DM -31°8319
-PPM 288346 is removed because PPM 288347 is nearer to same DM -30°8855
-PPM 289210 is removed because PPM 289208 is nearer to same DM -37°7399
-PPM 291079 is removed because PPM 291082 is nearer to same DM -31°10142
-PPM 291567 is removed because PPM 291566 is nearer to same DM -35°8828
-PPM 291849 is removed because PPM 291850 is nearer to same DM -35°9019
-PPM 292187 is removed because PPM 292186 is nearer to same DM -35°9249
-PPM 292315 is removed because PPM 292313 is nearer to same DM -35°9314
-PPM 293554 is removed because PPM 293553 is nearer to same DM -32°10658
-PPM 293636 is removed because PPM 293635 is nearer to same DM -36°10010
-PPM 294446 is removed because PPM 294447 is nearer to same DM -34°10622
-PPM 294448 is removed because PPM 294449 is nearer to same DM -33°10826
-PPM 294468 is removed because PPM 294471 is nearer to same DM -35°10616
-PPM 294532 is removed because PPM 294533 is nearer to same DM -35°10650
-PPM 294735 is removed because PPM 294737 is nearer to same DM -32°11456
-PPM 294987 is removed because PPM 294986 is nearer to same DM -30°13092
-PPM 295879 is removed because PPM 295878 is nearer to same DM -33°11713
-PPM 297869 is removed because PPM 297868 is nearer to same DM -38°12896
-PPM 298426 is removed because PPM 298425 is nearer to same DM -36°13211
-PPM 298577 is removed because PPM 298575 is nearer to same DM -36°13322
-PPM 298700 is removed because PPM 298699 is nearer to same DM -31°16460
-PPM 298887 is removed because PPM 298886 is nearer to same DM -33°14136
-PPM 301489 is removed because PPM 301487 is nearer to same DM -35°14815
-PPM 307195 is removed because PPM 307196 is nearer to same DM -40°771
-PPM 310073 is removed because PPM 310071 is nearer to same DM -44°2247
-PPM 312504 is removed because PPM 312505 is nearer to same DM -40°3776
-PPM 313129 is removed because PPM 313131 is nearer to same DM -47°4004
-PPM 324945 is removed because PPM 324944 is nearer to same DM -50°12407
-PPM 337115 is removed because PPM 337114 is nearer to same DM -52°2484
-PPM 344287 is removed because PPM 344285 is nearer to same DM -54°6419
-PPM 344835 is removed because PPM 344836 is nearer to same DM -50°10370
-Star DM -69°297 not found (corresponding to PPM 354686). Discarding PPM star.
-Star DM -69°324 not found (corresponding to PPM 354885). Discarding PPM star.
-Star DM -71°46 not found (corresponding to PPM 367144). Discarding PPM star.
-Star DM -69°325 not found (corresponding to PPM 776057). Discarding PPM star.
+Star CD -69°297 not found (corresponding to PPM 354686). Discarding PPM star.
+Star CD -69°324 not found (corresponding to PPM 354885). Discarding PPM star.
+Star CD -71°46 not found (corresponding to PPM 367144). Discarding PPM star.
+Star CD -69°325 not found (corresponding to PPM 776057). Discarding PPM star.
 Stars read from PPM: 172220
 1) CD -25°16747 separated from PPM 242413 in 169.0 arcsec.
      Register CD -25°16747 (en 23h):  9.6 | 54m36.2s | 21.8'     (pag. 233)

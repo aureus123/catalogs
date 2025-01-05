@@ -6,12 +6,21 @@ CC = g++
 CCOPT = -Wall
 CCLNFLAGS = -L wcstools-3.9.7/libwcs/ -lwcs
 
-all: compare_ppm compare_agk compare_cpd compare_ppm_bd compare_gc compare_sd compare_cd find_coord find_coord2000 mag_cd mag_bd
+all: compare_ppm compare_agk compare_cpd compare_ppm_bd compare_gc compare_sd compare_cd gen_tycho2_north gen_tycho2_south find_coord find_coord2000 mag_cd mag_bd
 
 mag_cd: mag_cd.o read_cd.o read_ppm.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 mag_cd.o: mag_cd.cpp
+	$(CC) $(CCFLAGS) -c $<
+
+gen_tycho2_north: gen_tycho2.o read_bd.o read_ppm.o trig.o misc.o
+	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
+
+gen_tycho2_south: gen_tycho2.o read_cd.o read_ppm.o trig.o misc.o
+	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
+
+gen_tycho2.o: gen_tycho2.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 compare_agk: compare_agk.o read_cd.o trig.o misc.o

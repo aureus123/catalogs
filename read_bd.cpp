@@ -74,11 +74,12 @@ void writeRegister(int bdIndex, bool neighbors)
 {
     struct DMstar_struct *s = &BDstar[bdIndex];
 
-    int declRef = s->declRef;
+    int declAbsRef = abs(s->declRef);
     int numRef = s->numRef;
     int page = 1 + 378 * reindexByIndex[bdIndex] / BDstars;
-    printf("     Register BD %d°%d (en %.0fh):  %.1f | %.0fm%.1fs | %.1f'     (pag. %d)\n",
-                declRef,
+    printf("     Register BD %c%d°%d (en %.0fh):  %.1f | %.0fm%.1fs | %.1f'     (pag. %d)\n",
+                s->signRef ? '-' : '+',
+                declAbsRef,
                 numRef,
                 s->rah,
                 s->vmag,
