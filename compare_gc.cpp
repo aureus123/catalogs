@@ -29,6 +29,9 @@ int main(int argc, char** argv)
 	struct GCstar_struct *GCstar = getGCStruct();
 	int GCstars = getGCStars();
 
+	printf("\n***************************************\n");
+    printf("Perform comparison between GC and CD...\n");
+
     int maxDistError = 0;
     int magDiffError = 0;
     int indexError = 0;

@@ -6,6 +6,8 @@
 #define MAXGCSTAR 30000
 #define MAX_MAGNITUDE 1.0
 #define MAX_DISTANCE 360.0   // 6 minutos de arco
+#define MAX_DIST_PPM 30.0    // 1/2 minuto de arco
+#define MAX_DIST_CD 90.0    // 3/2 minuto de arco
 
 struct GCstar_struct {
 	bool discard; /* true si debe ser descartada (por doble) */

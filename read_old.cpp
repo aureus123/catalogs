@@ -157,6 +157,10 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			crossPPMStream = openCrossFile("results/cross_gc_ppm.csv");
 		}
 
+		/* Comenzamos leyendo Catálogo General Argentino */
+		printf("\n***************************************\n");
+		printf("Reading GC catalog...\n");
+
 		vmag = 0.0;
 		while (fgets(buffer, 1023, stream) != NULL) {
 			//if (GCstars >= 500) break;
@@ -222,7 +226,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				if (previous < 0 || gcRef != GCstar[previous].gcRef) {				double minDistance = HUGE_NUMBER;
 					int ppmIndex;
 					findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
-					if (minDistance < MAX_DISTANCE) {
+					if (minDistance < MAX_DIST_PPM) {
 						snprintf(catName, 20, "GC %d", gcRef);
 						snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 						writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
@@ -281,10 +285,12 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			}
 
 			if (CD_SEARCH) {
-				if (minDistance < MAX_DISTANCE) {
+				if (minDistance < MAX_DIST_CD) {
 					snprintf(catName, 20, "GC %d", gcRef);
 					snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 					writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+				} else {
+					printf("Warning: GC %d has no CD star near it.\n", gcRef);
 				}
 			}
 
@@ -460,6 +466,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 	fclose(stream);
 
 	/* añadimos referencia al catálogo de la USNO */
+	printf("\n***************************************\n");
 	printf("Reading USNO catalog...\n");
     stream = fopen("cat/yarnall.txt", "rt");
     if (stream == NULL) {
@@ -510,7 +517,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			double minDistance = HUGE_NUMBER;
 			int ppmIndex;
 			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
-			if (minDistance < MAX_DISTANCE) {
+			if (minDistance < MAX_DIST_PPM) {
 				snprintf(catName, 20, "USNO %d", yarnallRef);
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
@@ -558,7 +565,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
 			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance < MAX_DISTANCE) {
+			if (minDistance < MAX_DIST_CD) {
 				snprintf(catName, 20, "USNO %d", yarnallRef);
 				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
@@ -585,6 +592,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 	printf("  cross-referenced with %d stars\n", countUSNO);
 		
 	/* añadimos referencia al catálogo de Weiss */
+	printf("\n***************************************\n");
 	printf("Reading Weiss catalog...\n");
     stream = fopen("cat/weiss.txt", "rt");
     if (stream == NULL) {
@@ -638,7 +646,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			double minDistance = HUGE_NUMBER;
 			int ppmIndex;
 			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
-			if (minDistance < MAX_DISTANCE) {
+			if (minDistance < MAX_DIST_PPM) {
 				snprintf(catName, 20, "W %d", weissRef);
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
@@ -690,7 +698,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
 			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance < MAX_DISTANCE) {
+			if (minDistance < MAX_DIST_CD) {
 				snprintf(catName, 20, "W %d", weissRef);
 				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
@@ -715,6 +723,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 	printf("  cross-referenced with %d stars\n", countWeiss);
 
 	/* añadimos referencia al catálogo de Gilliss */
+	printf("\n***************************************\n");
 	printf("Reading Gilliss catalog...\n");
     stream = fopen("cat/gilliss.txt", "rt");
     if (stream == NULL) {
@@ -762,7 +771,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			double minDistance = HUGE_NUMBER;
 			int ppmIndex;
 			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
-			if (minDistance < MAX_DISTANCE) {
+			if (minDistance < MAX_DIST_PPM) {
 				snprintf(catName, 20, "G %d", giRef);
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
@@ -822,7 +831,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			minDistance = HUGE_NUMBER;
 			int cdIndex;
 			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance < MAX_DISTANCE) {
+			if (minDistance < MAX_DIST_CD) {
 				snprintf(catName, 20, "G %d", giRef);
 				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
@@ -849,6 +858,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 	printf("  cross-referenced with %d stars\n", countGi);
 
 	/* añadimos referencia al catálogo de Stone */
+	printf("\n***************************************\n");
 	printf("Reading Stone catalog...\n");
     stream = fopen("cat/stone1.txt", "rt");
     if (stream == NULL) {
