@@ -102,6 +102,10 @@ incompleto cerca del Polo Sur (su último Tomo RONA21b). De hecho, viendo el úl
 cada declinación nos encontramos con que, para 60°, 61°, 62°, 63° y 64° tenemos 8168, 6922,
 1476, 1635 y 1451, por lo que cae drásticamente a partir del último Tomo (62° a 90°).
 
+7) Viendo "log_gc" encontramos que la estrella denominada como USNO 3319, OA 7740, Weiss 6273
+(no está en GC) no se encuentra en CD digital, no obstante es la PPM 253548 que se identifica
+con CD -27°4804. Efectivamente se trata de un error en el catálogo digital de CD. 
+
 
 Nota 4:
 -------
@@ -269,4 +273,4 @@ Nota 8:
 -------
 
 Errores en el catálogo digital de Gilliss:
-- GI 13514 18h35m19s24, 65°50'46''0 -> 18h38m19s24, 65°50'46''7
+- G 13514 18h35m19s24, 65°50'46''0 -> 18h38m19s24, 65°50'46''7
