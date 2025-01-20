@@ -106,6 +106,13 @@ cada declinación nos encontramos con que, para 60°, 61°, 62°, 63° y 64° te
 (no está en GC) no se encuentra en CD digital, no obstante es la PPM 253548 que se identifica
 con CD -27°4804. Efectivamente se trata de un error en el catálogo digital de CD. 
 
+8) Viendo "log_gc" encontramos que la estrella 2567 (pag. 65) del catálogo de Gilliss, y que
+reporta magnitud 9, no tiene contraparte ni en los catálogos de Gould ni PPM. Haciendo una
+búsqueda por SIMBAD hallamos que en 6 arcmin no se encuentra nada (algunos objetos de magnitud
+16 en banda B), por lo que es probable que se trate de: 1) un error en las coordenadas, 2) un
+planeta menor (aunque es raro que se halle en la declinación -87 por estar lejos de la
+eclíptica), 3) una estrella variable que perdió brillo, 4) una estrella de alto movimiento
+propio.
 
 Nota 4:
 -------
@@ -134,9 +141,9 @@ Para la inexistente (GC 10434) usamos "find_coord" para hallar las más cercanas
  - Nearest CD -22°5388 (mag=9.6) separated in 173.9 arcsec.
      Register GC 10434: RA = 07h51m05s92, DE = 22°31'27''3
        corresponds to USNO 3267 <LAC 02998> (mag=6.5) at 6340.8 arcsec.
-       corresponds to WEI 6245 or OA 7700 (mag=3.0) at 332.0 arcsec.
+       corresponds to W 6245 or OA 7700 (mag=3.0) at 332.0 arcsec.
        corresponds to ST 3997 (mag=5.0) at 331.9 arcsec.
-       corresponds to GI 5352 <GAM 1ARG > (mag=3.0) at 88635.8 arcsec.
+       corresponds to G 5352 <GAM 1ARG > (mag=3.0) at 88635.8 arcsec.
 
 3 de las 4 estrellas fueron identificadas satisfactoriamente, mientras que la restante no existe
 en el catálogo digital, pero si utilizamos la coordenada ofrecida en RONA14 podemos hacer una
@@ -182,30 +189,30 @@ se observa que no se identifican con ningún otro catálogo de la época):
  - Nearest CD -25°12601 (mag=7.3) separated in 0.0 arcsec.
      Register: RA = 17h54m36s00, DE = 25°19'00''0
        corresponds to USNO 7736 <MZ 123 00015> (mag=7.8) at 1817.2 arcsec.
-       corresponds to WEI 13891 or OA 17527 (mag=9.0) at 926.4 arcsec.
+       corresponds to W 13891 or OA 17527 (mag=9.0) at 926.4 arcsec.
        corresponds to ST 9841 or L. 7554 (mag=7.0) at 2265.4 arcsec.
-       corresponds to GI 13089 <GZC1800119> (mag=8.5) at 146008.2 arcsec.
+       corresponds to G 13089 <GZC1800119> (mag=8.5) at 146008.2 arcsec.
 
  - Nearest CD -27°6667 (mag=8.7) separated in 0.0 arcsec.
      Register: RA = 09h25m09s20, DE = 27°51'06''0
        corresponds to USNO 4062 <LAC 03864> (mag=7.1) at 775.3 arcsec.
-       corresponds to WEI 7871 or OA 9798 (mag=8.9) at 734.3 arcsec.
+       corresponds to W 7871 or OA 9798 (mag=8.9) at 734.3 arcsec.
        corresponds to ST 5096 or L. 3864 (mag=7.0) at 773.8 arcsec.
-       corresponds to GI 5352 <GAM 1ARG > (mag=3.0) at 88708.3 arcsec.
+       corresponds to G 5352 <GAM 1ARG > (mag=3.0) at 88708.3 arcsec.
 
 - Nearest CD -45°10110 (mag=10.0) separated in 187.0 arcsec.
      Register GZC 15h 2202: RA = 15h32m03s12, DE = 45°55'08''2
        corresponds to USNO 6559 <LAC 06471> (mag=6.4) at 22845.7 arcsec.
-       corresponds to WEI 12173 or OA 14906 (mag=8.9) at 54582.6 arcsec.
+       corresponds to W 12173 or OA 14906 (mag=8.9) at 54582.6 arcsec.
        corresponds to ST 8525 or L. 6481 (mag=7.0) at 1704.0 arcsec.
-       corresponds to GI 11069 <EPS 1TRA > (mag=4.8) at 71981.6 arcsec.
+       corresponds to G 11069 <EPS 1TRA > (mag=4.8) at 71981.6 arcsec.
 
 - Nearest CD -45°10450 (mag=7.8) separated in 267.8 arcsec.
      Register GZC 15h 4094: RA = 15h58m31s80, DE = 44°56'14''2
        corresponds to USNO 6785 <BAC 05357> (mag=7.2) at 18626.8 arcsec.
-       corresponds to WEI 12502 or OA 15394 (mag=7.0) at 49286.2 arcsec.
+       corresponds to W 12502 or OA 15394 (mag=7.0) at 49286.2 arcsec.
        corresponds to ST 8746 or L. 6670 (mag=7.0) at 264.0 arcsec.
-       corresponds to GI 11478 <GZC1503889> (mag=8.5) at 75376.0 arcsec.
+       corresponds to G 11478 <GZC1503889> (mag=8.5) at 75376.0 arcsec.
 
 
 Nota 6:
@@ -268,9 +275,10 @@ Siglo XIX. De los catálogos de Córdoba:
  - GZC 11h 2211  11h31m32s89 -46°01'08''0  8.5  257  10  29/4/1873
 
 
-
 Nota 8:
 -------
 
 Errores en el catálogo digital de Gilliss:
+- G 5327 08h02m36s91, 69°55'01''0 -> 08h02m36s88, 65°55'1''2
+- G 8894 12h41m05s51 -> 12h42m15s51
 - G 13514 18h35m19s24, 65°50'46''0 -> 18h38m19s24, 65°50'46''7

@@ -16,6 +16,7 @@
 
 #define CD_SEARCH true // true if search nearest CD star over other old catalogs
 #define PPM_SEARCH true // true if search nearest PPM star over other old catalogs (very intensive)
+#define PRINT_WARNINGS false // true if print warnings about stars without CD or PPM star near them
 struct GCstar_struct GCstar[MAXGCSTAR];
 
 int GCstars;
@@ -140,7 +141,10 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
     GCstars = 0;
 
 	FILE *crossCDStream;
+	FILE *crossCDStream2;
 	FILE *crossPPMStream;
+	FILE *crossPPMStream2;
+	
 	// Lee Catálogo General Argentino
 	stream = fopen("cat/gc.txt", "rt");
 	if (stream == NULL) {
@@ -221,6 +225,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			double x, y, z;
 			sph2rec(RA, Decl, &x, &y, &z);
 
+			bool ppm_found = true;
 			if (PPM_SEARCH) {
 				int previous = GCstars - 1;
 				if (previous < 0 || gcRef != GCstar[previous].gcRef) {				double minDistance = HUGE_NUMBER;
@@ -231,7 +236,10 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 						snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 						writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 					} else {
-						printf("Warning: GC %d has no PPM star near it.\n", gcRef);
+						if (PRINT_WARNINGS) {
+							printf("Warning: GC %d has no PPM star near it.\n", gcRef);
+						}
+						ppm_found = false;
 					}
 				}
 			}
@@ -284,14 +292,22 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				continue;
 			}
 
+			bool cd_found = true;
 			if (CD_SEARCH) {
 				if (minDistance < MAX_DIST_CD) {
 					snprintf(catName, 20, "GC %d", gcRef);
 					snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 					writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 				} else {
-					printf("Warning: GC %d has no CD star near it.\n", gcRef);
+					if (PRINT_WARNINGS) {
+						printf("Warning: GC %d has no CD star near it.\n", gcRef);
+					}
+					cd_found = false;
 				}
+			}
+
+			if (!ppm_found && !cd_found) {
+				printf("GC %d is ALONE with mag %.1f.\n", gcRef, vmag);
 			}
 
 			if (GCstars == MAXGCSTAR) {
@@ -511,6 +527,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		readField(buffer, cell, 1, 5);
 		int yarnallRef = atoi(cell);
 
+		bool ppm_found = true;
 		if (mode && PPM_SEARCH) {
         	double x, y, z;
         	sph2rec(RA, Decl, &x, &y, &z);
@@ -522,7 +539,10 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 			} else {
-				printf("Warning: USNO %d has no PPM star near it.\n", yarnallRef);
+				if (PRINT_WARNINGS) {
+					printf("Warning: USNO %d has no PPM star near it.\n", yarnallRef);
+				}
+				ppm_found = false;
 			}
 		}
     
@@ -560,6 +580,8 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			GCstar[gcIndex].vmagYarnall = vmag;
 			countUSNO++;
 		}
+
+		bool cd_found = true;
 		if (mode && CD_SEARCH) {
 			/* aprovechamos a revisar CD con esta estrella */
 			minDistance = HUGE_NUMBER;
@@ -570,20 +592,25 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 			} else {
-				char yarnallCat[28];
-				copy(yarnallCat, cell);
-				printf("  USNO %d <%s> is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
-					yarnallRef,
-					yarnallCat,
-					vmag,
-					CDstar[cdIndex].declRef,
-					CDstar[cdIndex].numRef,
-					minDistance
-				);
-				printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
-					RAh, RAm, RAs / 100, RAs % 100,
-					Decld, Declm, Decls / 10, Decls % 10);
+				if (PRINT_WARNINGS) {
+					printf("Warning: USNO %d has no CD star near it.\n", yarnallRef);
+				}
+				cd_found = false;
 			}
+		}
+
+		if (!ppm_found && !cd_found) {
+			char yarnallCat[28];
+			copy(yarnallCat, cell);
+			printf("  USNO %d <%s> is ALONE with mag=%.1f.\n",
+				yarnallRef,
+				yarnallCat,
+				vmag
+			);
+			printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
+				RAh, RAm, RAs / 100, RAs % 100,
+				Decld, Declm, Decls / 10, Decls % 10);
+
 		}
 	}
 	if (mode && PPM_SEARCH) fclose(crossPPMStream);
@@ -600,10 +627,14 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		exit(1);
     }
 
-	if (mode && CD_SEARCH) crossCDStream = openCrossFile("results/cross_weiss_cd.csv");
+	if (mode && CD_SEARCH) {
+		crossCDStream = openCrossFile("results/cross_weiss_cd.csv");
+		crossCDStream2 = openCrossFile("results/cross_oa_cd.csv");
+	}
 	if (mode && PPM_SEARCH) {
 		readPPM(false, true, true, false, 1850.0);
 		crossPPMStream = openCrossFile("results/cross_weiss_ppm.csv");
+		crossPPMStream2 = openCrossFile("results/cross_oa_ppm.csv");
 	}
 	
 	int countWeiss = 0;
@@ -636,10 +667,13 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
         Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
 
-		/* lee numeración catálogo Weiss */
+		/* lee numeración catálogo Weiss y Oeltzen-Argelander */
 		readField(buffer, cell, 1, 5);
 		int weissRef = atoi(cell);
+		readField(buffer, cell, 49, 5);
+		int oeltzenRef = atoi(cell);
 
+		bool ppm_found = true;
 		if (mode && PPM_SEARCH) {
 			double x, y, z;
 			sph2rec(RA, Decl, &x, &y, &z);
@@ -650,8 +684,13 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				snprintf(catName, 20, "W %d", weissRef);
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+				snprintf(catName, 20, "OA %d", oeltzenRef);
+				writeCrossEntry(crossPPMStream2, catName, ppmName, minDistance);
 			} else {
-				printf("Warning: W %d has no PPM star near it.\n", weissRef);
+				if (PRINT_WARNINGS) {
+					printf("Warning: W %d has no PPM star near it.\n", weissRef);
+				}
+				ppm_found = false;
 			}
 		}
 
@@ -664,10 +703,6 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
         /* calcula coordenadas rectangulares */
         double x, y, z;
         sph2rec(RA1875, Decl1875, &x, &y, &z);
-
-		/* lee numeración catálogo  Oeltzen-Argelander */
-		readField(buffer, cell, 49, 5);
-		int oeltzenRef = atoi(cell);
 
 		/* lee magnitud */
 		readField(buffer, cell, 9, 1);
@@ -693,6 +728,8 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			GCstar[gcIndex].vmagWeiss = vmag;
 			countWeiss++;
 		}
+
+		bool cd_found = true;
 		if (mode && CD_SEARCH) {
 			/* aprovechamos a revisar CD con esta estrella */
 			minDistance = HUGE_NUMBER;
@@ -702,23 +739,35 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				snprintf(catName, 20, "W %d", weissRef);
 				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+				snprintf(catName, 20, "OA %d", oeltzenRef);
+				writeCrossEntry(crossCDStream2, catName, cdName, minDistance);
 			} else {
-				printf("  W %d or OA %d is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
-					weissRef,
-					oeltzenRef,
-					vmag,
-					CDstar[cdIndex].declRef,
-					CDstar[cdIndex].numRef,
-					minDistance
-				);
-				printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
-					RAh, RAm, RAs / 100, RAs % 100,
-					Decld, Declm, Decls / 10, Decls % 10);
+				if (PRINT_WARNINGS) {
+					printf("Warning: W %d has no CD star near it.\n", weissRef);
+				}
+				cd_found = false;
 			}
 		}
+
+		if (!ppm_found && !cd_found) {
+			printf("  W %d or OA %d is ALONE with mag=%.1f.\n",
+				weissRef,
+				oeltzenRef,
+				vmag
+			);
+			printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
+				RAh, RAm, RAs / 100, RAs % 100,
+				Decld, Declm, Decls / 10, Decls % 10);
+		}
 	}
-	if (mode && PPM_SEARCH) fclose(crossPPMStream);
-	if (mode && CD_SEARCH) fclose(crossCDStream);
+	if (mode && PPM_SEARCH) {
+		fclose(crossPPMStream2);
+		fclose(crossPPMStream);
+	}
+	if (mode && CD_SEARCH) {
+		fclose(crossCDStream2);
+		fclose(crossCDStream);
+	}
     fclose(stream);
 	printf("  cross-referenced with %d stars\n", countWeiss);
 
@@ -765,6 +814,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		readField(buffer, cell, 1, 5);
 		int giRef = atoi(cell);
 
+		bool ppm_found = true;
 		if (mode && PPM_SEARCH) {
 			double x, y, z;
 			sph2rec(RA, Decl, &x, &y, &z);
@@ -776,7 +826,10 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 			} else {
-				printf("Warning: G %d has no PPM star near it.\n", giRef);
+				if (PRINT_WARNINGS) {
+					printf("Warning: G %d has no PPM star near it.\n", giRef);
+				}
+				ppm_found = false;
 			}
 		}
 
@@ -814,9 +867,27 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			GCstar[gcIndex].vmagGi = vmag;
 			countGi++;
 		}
+
+		bool cd_found = true;
 		if (mode && CD_SEARCH) {
-			/* aprovechamos a revisar CD con esta estrella
-			 * (tambien mencionamos el numero de GZC en caso de haberlo) */
+			/* aprovechamos a revisar CD con esta estrella */
+			minDistance = HUGE_NUMBER;
+			int cdIndex;
+			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
+			if (minDistance < MAX_DIST_CD) {
+				snprintf(catName, 20, "G %d", giRef);
+				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
+				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+			} else {
+				if (PRINT_WARNINGS) {
+					printf("Warning: G %d has no CD star near it.\n", giRef);
+				}
+				cd_found = false;
+			}
+		}
+
+		if (!ppm_found && !cd_found) {			
+			countGiCD++;
 			char gouldZC[30];
 			gouldZC[0] = 0;
 			if (cell[9] == 'Z' && cell[10] == 'C') {
@@ -828,28 +899,14 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 				int gouldNum = atoi(num);
 				snprintf(gouldZC, 30, " or GZC %dh %d", gouldHour, gouldNum);
 			}
-			minDistance = HUGE_NUMBER;
-			int cdIndex;
-			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
-			if (minDistance < MAX_DIST_CD) {
-				snprintf(catName, 20, "G %d", giRef);
-				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
-			} else {
-				countGiCD++;
-				printf("  %d> G %d%s is ALONE with mag=%.1f; nearest CD %dº%d separated in %.1f arcsec.\n",
-					countGiCD,
-					giRef,
-					gouldZC,
-					vmag,
-					CDstar[cdIndex].declRef,
-					CDstar[cdIndex].numRef,
-					minDistance
-				);
-				printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
-					RAh, RAm, RAs / 100, RAs % 100,
-					Decld, Declm, Decls / 10, Decls % 10);
-			}
+			printf("  %d> G %d%s is ALONE with mag=%.1f.\n",
+				countGiCD,
+				giRef,
+				gouldZC,
+				vmag);
+			printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
+				RAh, RAm, RAs / 100, RAs % 100,
+				Decld, Declm, Decls / 10, Decls % 10);
 		}
 	}
 	if (mode && PPM_SEARCH) fclose(crossPPMStream);
