@@ -8,7 +8,7 @@
  * Para el hemisferio sur en J2000, primero se utiliza PPM y luego CD (obsérvese que
  * no están BD/SD por lo que sólo se mencionan estos catálogos a través de la
  * identificación cruzada con PPM). Por otra parte, se utilizan las identificaciones
- * del Catálogo General Argentino (GC), Weiss y las de Gilliss.
+ * del Catálogo General Argentino (GC), Oeltzen-Argelander (OA) y las de Gilliss (G).
  * Made in 2024 by Daniel E. Severin
  */
 
@@ -127,7 +127,7 @@ int main(int argc, char** argv) {
 
     if (isCD()) {
         /* leemos identificaciones cruzadas y renombramos designaciones */
-        readCrossFile("results/cross_weiss_ppm.csv", PPMstar, PPMstars, "results/cross_weiss_cd.csv", DMstar, DMstars);
+        readCrossFile("results/cross_oa_ppm.csv", PPMstar, PPMstars, "results/cross_oa_cd.csv", DMstar, DMstars);
         readCrossFile("results/cross_gilliss_ppm.csv", PPMstar, PPMstars, "results/cross_gilliss_cd.csv", DMstar, DMstars);
         readCrossFile("results/cross_gc_ppm.csv", PPMstar, PPMstars, "results/cross_gc_cd.csv", DMstar, DMstars);
     }
