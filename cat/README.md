@@ -6,6 +6,7 @@ This folder has a copy of different digital catalogs.
 
 - cd: Current catalog from VizieR (code I/114)
 - cd_vol1: Same as "cd" but only first volume (Resultados del Observatorio Nacional Argentino, Tomo XVI, declinaciones -22 a -31)
+- cd_vol1_curated: Same as "cd_vol1" but after correcting typo errors
 - 1114: Catalog from NASA-ADC CD-ROMs, circa 1994
 - I88: Old version of first volume from VizieR (code I/88), circa 1982
 

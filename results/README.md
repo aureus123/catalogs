@@ -21,6 +21,10 @@ An experiment was carried out to analize the efficiency in finding errors in CD 
 
 The thresholds used in both experiments was 2 arcmin for the position and 1.5 for the magnitude.
 
+- *Compare files cd_vol1 and cd_vol1_curated*: Here, the first volume of the latest CD catalog is compared against the one after correcting typo errors:
+there are 78 differences in RA, 40 in declination and 8 in magnitude. See
+section 3 for details.
+
 ### 2. Typo errors found in Bonner Durchmusterung digital catalog
 
 By using tool *compare_ppm_bd* with 180 arcsec and 0.4 magnitude units as thresholds, a total of 86 warnings were found (82 in position and 4 in magnitude). By manually comparing those registers with the printed catalog, 13 typo errors in position were found (see file *log_ppm_bd*). It gives a success rate of 15%. If the position threshold is reduced to 150 arcsec, 61 new warnings are generated but almost all of them are false-positives while only 1 typo error is found.
@@ -74,6 +78,8 @@ Those swaps (i.e. two or more consecutive stars in a wrong order) are given next
 
 | Star | Parameter | current | corrected | dist1 | dist2 |
 | --- | --- | --- | --- | --- | --- |
+| CD -25°16741 | DEm | 10.4 | 36.5 | | |
+| CD -25°16746 | DEm | 24.8 | 10.4 | | |
 | CD -25°16747 | DEm | 21.8 | 24.8 | 180 | 169 |
 | CD -26°1304  | DEm | 27.0 | 7.0 | 1200 | 1168 |
 | CD -24°2783  | DEm | 30.2 | 20.2 | 600 | 615 |
@@ -136,9 +142,11 @@ Swaps:
 - CD -24°13578 and CD -24°13579
 - CD -24°14202 and CD -24°14203
 - CD -27°13714 and CD -27°13715
-- CD -31°790, 791 and 792 (rotation)
+- CD -31°788, 789, 790, 791 and 792 (wrong order)
 - from CD -31°903 to 950 (rotation)
   (after rotation, change -31°903 mag from 9.3 to 10 and RAm from 17 to 10) 
 
-
-🚧 In construction
+Curated version of Cordoba Durchmusterung (first volume, i.e. Resultados XVI)
+can be found in file *cat/cd_vol1_curated.txt*. This version contains all
+corrections from 2018 version and those presented in this section.
+After running "compare_ppm" over that file, only false positives are shown.

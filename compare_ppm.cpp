@@ -30,12 +30,13 @@ int main(int argc, char** argv)
         printf("        cd.txt = Current CD catalog at Vizier\n");
         printf("        1114.txt = NASA-ADC CD catalog (has some errors)\n");
         printf("        cd_vol1.txt = same as cd.txt but only 1st. Volume (Resultados XVI)\n");
+        printf("        cd_vol1_curated.txt = curated version of cd_vol1.txt\n");
         printf("        I88.txt = 1982 CD catalog version (has some errors)\n");
         exit(-1);
     }
     bool allSky = true;
     if (strcmp(argv[1], "cd.txt") && strcmp(argv[1], "1114.txt")) {
-        if (strcmp(argv[1], "cd_vol1.txt") && strcmp(argv[1], "I88.txt")) {
+        if (strcmp(argv[1], "cd_vol1.txt") && strcmp(argv[1], "cd_vol1_curated.txt") && strcmp(argv[1], "I88.txt")) {
             printf("Bad file name. See usage.\n");
             exit(-1);
         }
