@@ -70,22 +70,22 @@ reported for the comparison of the parameter with larger difference:
 | CD -22°9452 | DEm | 29.9 | 6.5 |  |  |
 
 We now enumerate those errors found by comparing CD (first volume) and PPM.
-Those swaps (i.e. two consecutive stars in a wrong order) are given next to the following table:
+Those swaps (i.e. two or more consecutive stars in a wrong order) are given next to the following table:
 
 | Star | Parameter | current | corrected | dist1 | dist2 |
 | --- | --- | --- | --- | --- | --- |
 | CD -25°16747 | DEm | 21.8 | 24.8 | 180 | 169 |
 | CD -26°1304  | DEm | 27.0 | 7.0 | 1200 | 1168 |
 | CD -24°2783  | DEm | 30.2 | 20.2 | 600 | 615 |
-| CD -26°2132  | RAs | 17.4 | 17.9 |  | 1620 |
+| CD -26°2132  | RAs | 17.4 | 17.9 | | |
 | CD -26°2132  | DEm | 17.9 | 44.2 | 1578 | 1620 |
 | CD -25°2622  | DEm | 49.8 | 40.8 | 540 | 546 |
 | CD -24°3857  | DEm | 51.0 | 54.0 | 180 | 193 |
 | CD -27°3496  | DEm | 39.1 | 29.1 | 600 | 558 |
-| CD -24°5418  | DEm | 35.0 | 22.1 |  |  |
-| CD -24°5418  | mag | 9.5 | 10.0 |  |  |
+| CD -24°5418  | DEm | 35.0 | 22.1 | | |
+| CD -24°5418  | mag | 9.5 | 10.0 | | |
 | CD -24°5419  | DEm | 22.1 | 35.0 | 774 | 775 |
-| CD -24°5419  | mag | 10.0 | 9.5 |  |  |
+| CD -24°5419  | mag | 10.0 | 9.5 | | |
 | CD -27°4804  | DEm | 20.4 | 29.4 | 540 | 578 |
 | CD -23°6942  | DEm | 28.2 | 38.2 | 600 | 581 |
 | CD -23°8777  | DEm | 51.0 | 54.0 | 180 | 206 |
@@ -102,17 +102,43 @@ Those swaps (i.e. two consecutive stars in a wrong order) are given next to the 
 | CD -28°14598 | DEm | 19.6 | 49.6 | 1800 | 1798 |
 | CD -25°13770 | mag | 10.0 | 7.0 | | |
 | CD -27°14302 | DEm | 36.3 | 26.3 | 600 | 602 |
+| CD -25°14906 | DEm | 17.5 | 57.5 | 2400 | 2416 |
+| CD -25°15944 | DEm | 16.4 | 46.4 | 1800 | 1803 |
+| CD -27°15932 | mag | 9.3 | 6.3 | | |
+| CD -26°16170 | mag | 6.5 | 9.5 | | |
+| CD -25°16414 | DEm | 51.6 | 54.6 | 180 | 167 |
+| CD -24°17893 | mag | 9.9 | 9.0 | | |
+| CD -24°17893 | RAs | 35.0 | 35.5 | | |
+| CD -24°17893 | DEm | 55.6 | 15.1 | 2430 | 2430 |
+| CD -24°17894 | mag | 9.0 | 9.9 | | |
+| CD -24°17894 | RAs | 35.5 | 35.6 | | |
+| CD -24°17894 | DEm | 15.1 | 55.6 | | |
+| CD -30°1719  | mag | 9.5 | 7.5 | | |
+| CD -29°4070  | DEm | 56.9 | 59.6 | 162 | 160 |
+| CD -29°4867  | DEm | 56.3 | 1.5 | | |
+| CD -29°4868  | DEm | 1.5 | 56.3 | 3288 | 3279 |
+| CD -31°8102  | DEm | 36.9 | 32.9 | 240 | 217 |
+| CD -31°10729 | DEm | 15.3 | 18.3 | 180 | 196 |
+| CD -31°11651 | DEm | 40.1 | 49.1 | 540 | 562 |
+| CD -30°12566 | DEm | 43.3 | 53.3 | 600 | 553 |
+| CD -30°12756 | DEm | 29.7 | 20.7 | 540 | 510 |
+| CD -29°12801 | DEm | 50.4 | 59.4 | 540 | 565 |
+| CD -31°13502 | DEm | 36.0 | 26.0 | 600 | 604 |
+| CD -31°17508 | DEm | 3.3 | 33.3 | 1800 | 1801 |
+| CD -26°7412 | mag | 7.0 | 8.8 | | |
 
 Swaps:
 - CD -26°1425 and CD -26°1426
 - CD -24°5836 and CD -24°5837
-- CD -27°5403, 5404 and 5405
-- CD -27°9676, 9677, 9678, 9679, 9680
+- CD -27°5403, 5404 and 5405 (rotation)
+- CD -27°9676, 9677, 9678, 9679, 9680 (rotation)
 - CD -23°12413 and CD -23°12414
 - CD -24°13578 and CD -24°13579
 - CD -24°14202 and CD -24°14203
 - CD -27°13714 and CD -27°13715
-
+- CD -31°790, 791 and 792 (rotation)
+- from CD -31°903 to 950 (rotation)
+  (after rotation, change -31°903 mag from 9.3 to 10 and RAm from 17 to 10) 
 
 
 🚧 In construction
