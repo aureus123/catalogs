@@ -58,6 +58,10 @@ For instance, the star BD +19°4871 reports 19°37'.9 in declination:
 But in the printed catalog, it says 19°7'.9, thus leading to a separation of 30 arcmin. In fact, star PPM 141127 is near the printed position, as expected. Below, a portion of the BD catalog is shown:
 ![Alt text](bd.png?raw=true "Printed catalog")
 
+Curated version can be found in file *cat/bd_curated.txt* (but take into account
+that only errors found above were corrected, I mean, declinations up to +19 were
+considered).
+
 ### 3. Typo errors found in Cordoba Durchmusterung digital catalog
 
 In 2018, with this approach 45 typo mistakes were found in the current CD catalog at VizieR (for declinations -23 and -24), see https://data.mendeley.com/datasets/5wwwtv7c8c/1/files/4934a81a-5a03-46b1-9098-4004733511a7
@@ -150,3 +154,7 @@ Curated version of Cordoba Durchmusterung (first volume, i.e. Resultados XVI)
 can be found in file *cat/cd_vol1_curated.txt*. This version contains all
 corrections from 2018 version and those presented in this section.
 After running "compare_ppm" over that file, only false positives are shown.
+
+Curated version of full catalogue can be found in file *cat/cd_curated.txt* (but
+take into account that only errors found above were corrected, I mean,
+declinations up to -31 were considered).

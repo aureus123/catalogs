@@ -1,6 +1,7 @@
 # Cross identifications with Tycho-2 catalogue
 
-Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues. Designation are for DM (BD/SD/CD) and other old catalogues. In the case of PPM stars, DM designation are taken from their DM column. In north hemisfere, also BD stars (from -1 to +19) are used. In south hemisfere, also CD stars are used. However, designations for GC (Catálogo General Argentino), OA (Oeltzen-Argelander catalogue) and G (Gilliss catalogue) are prioritized.
+Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues. Designation are for DM (BD/SD/CD) and other old catalogues. In the case of PPM stars, DM designation are taken from their DM column. In north hemisfere, also BD stars (from -1 to +19) are used. In south hemisfere, also CD stars are used. However, designations for GC (Catálogo General Argentino), OA (Oeltzen-Argelander catalogue) and G (Gilliss catalogue) are prioritized due to its higher precision.
+
 Since all identifications are performed just by angular distance thresholds, misidentifications might happen.
 
 Before executing *gen_tycho2*, download Tycho-2 catalog from VizieR (I/259) and concatenate data files into a single *cat/tyc2.txt* file.
