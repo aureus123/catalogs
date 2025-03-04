@@ -27,14 +27,16 @@
 extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, double ep2,
              double *dtheta, double *dphi, double *ptheta, double *pphi);
 
-static char dmStringDM[MAXDMSTAR][14];
+#define STRING_SIZE 20
+
+static char dmStringDM[MAXDMSTAR][STRING_SIZE];
 
 /*
  * readCrossFile - lee archivos de identificaciones cruzadas en formato CSV
  */
 void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPMstars, const char *cd_file, struct DMstar_struct *DMstar, int DMstars) {
     char buffer[1024];
-    char targetRef[14];
+    char targetRef[STRING_SIZE];
     int ppmRef, cdDeclRef, cdNumRef;
     float minDistance;
 
@@ -60,14 +62,15 @@ void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPM
         }
         for (int i = 0; i < PPMstars; i++) {
             if (PPMstar[i].ppmRef == ppmRef) {
-                strncpy(PPMstar[i].dmString, targetRef, 14);
+                strncpy(PPMstar[i].dmString, targetRef, STRING_SIZE);
                 break;
             }
         }
     }
     fclose(stream);
 
-    /* read cross file between CD and target */
+    /* read cross file between CD and target (optative) */
+    if (DMstars == 0) return;
     stream = fopen(cd_file, "rt");
     if (stream == NULL) {
         snprintf(buffer, 1024, "Cannot read %s", cd_file);
@@ -89,7 +92,7 @@ void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPM
         }
         for (int i = 0; i < DMstars; i++) {
             if (DMstar[i].declRef == cdDeclRef && DMstar[i].numRef == cdNumRef) {
-                strncpy(dmStringDM[i], targetRef, 14);
+                strncpy(dmStringDM[i], targetRef, STRING_SIZE);
                 break;
             }
         }
@@ -106,14 +109,14 @@ int main(int argc, char** argv) {
     char cell[256];
 
     /* leemos catalogo BD/CD */
-    readDM(isCD() ? "cat/cd.txt" : "cat/bd.txt");
+    readDM(isCD() ? "cat/cd_curated.txt" : "cat/bd_curated.txt");
     struct DMstar_struct *DMstar = getDMStruct();
     int DMstars = getDMStars();
     bool is_north = !isCD();
 
     /* generamos identificadores de DM */
     for (int i = 0; i < DMstars; i++) {
-        snprintf(dmStringDM[i], 14, "%cD %c%d°%d",
+        snprintf(dmStringDM[i], STRING_SIZE, "%cD %c%d°%d",
                 isCD() ? 'C' : 'B',
                 DMstar[i].signRef ? '-' : '+',
                 abs(DMstar[i].declRef),
@@ -127,9 +130,13 @@ int main(int argc, char** argv) {
 
     if (isCD()) {
         /* leemos identificaciones cruzadas y renombramos designaciones */
-        readCrossFile("results/cross_oa_ppm.csv", PPMstar, PPMstars, "results/cross_oa_cd.csv", DMstar, DMstars);
         readCrossFile("results/cross_gilliss_ppm.csv", PPMstar, PPMstars, "results/cross_gilliss_cd.csv", DMstar, DMstars);
+        readCrossFile("results/cross_usno_ppm.csv", PPMstar, PPMstars, "results/cross_usno_cd.csv", DMstar, DMstars);
+        readCrossFile("results/cross_oa_ppm.csv", PPMstar, PPMstars, "results/cross_oa_cd.csv", DMstar, DMstars);
         readCrossFile("results/cross_gc_ppm.csv", PPMstar, PPMstars, "results/cross_gc_cd.csv", DMstar, DMstars);
+    } else {
+        /* leemos identificaciones cruzadas y renombramos designaciones, solo para PPM-USNO */
+        readCrossFile("results/cross_usno_ppm.csv", PPMstar, PPMstars, "", nullptr, 0);
     }
 
     stream = fopen("cat/tyc2.txt", "rt");
@@ -161,8 +168,8 @@ int main(int argc, char** argv) {
         readField(buffer, cell, 12, 1);
         int tyc3Ref = atoi(cell);
 
-        char tycString[20];
-        snprintf(tycString, 20, "TYC %d-%d-%d", tyc1Ref, tyc2Ref, tyc3Ref);
+        char tycString[STRING_SIZE];
+        snprintf(tycString, STRING_SIZE, "TYC %d-%d-%d", tyc1Ref, tyc2Ref, tyc3Ref);
 
         /* lee RA y Decl (epoch) */
         readField(buffer, cell, 153, 12);

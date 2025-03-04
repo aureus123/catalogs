@@ -535,7 +535,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			int ppmIndex;
 			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
 			if (minDistance < MAX_DIST_PPM) {
-				snprintf(catName, 20, "USNO %d", yarnallRef);
+				snprintf(catName, 20, "U %d", yarnallRef);
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 			} else {
@@ -588,7 +588,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			int cdIndex;
 			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CD) {
-				snprintf(catName, 20, "USNO %d", yarnallRef);
+				snprintf(catName, 20, "U %d", yarnallRef);
 				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 			} else {
@@ -813,6 +813,21 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 		/* lee numeración catálogo Gilliss */
 		readField(buffer, cell, 1, 5);
 		int giRef = atoi(cell);
+		snprintf(catName, 20, "G %d", giRef);
+
+		/* sin embargo, si tiene numeración Gould usamos esta última */
+		char gouldZCifpresent[30];
+		gouldZCifpresent[0] = 0;
+		if (cell[9] == 'Z' && cell[10] == 'C') {
+			char hour[3], num[6];
+			hour[0] = cell[11]; hour[1] = cell[12]; hour[2] = 0;
+			int gouldHour = atoi(hour);
+			num[0] = cell[13]; num[1] = cell[14]; num[2] = cell[15];
+			num[3] = cell[16]; num[4] = cell[17]; num[5] = 0;
+			int gouldNum = atoi(num);
+			snprintf(catName, 20, "GZC %dh %d", gouldHour, gouldNum);
+			snprintf(gouldZCifpresent, 30, " or %s", catName);
+		}
 
 		bool ppm_found = true;
 		if (mode && PPM_SEARCH) {
@@ -822,7 +837,6 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			int ppmIndex;
 			findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
 			if (minDistance < MAX_DIST_PPM) {
-				snprintf(catName, 20, "G %d", giRef);
 				snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 				writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 			} else {
@@ -875,7 +889,6 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			int cdIndex;
 			findDMByCoordinates(x, y, z, &cdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CD) {
-				snprintf(catName, 20, "G %d", giRef);
 				snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 				writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 			} else {
@@ -886,23 +899,12 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			}
 		}
 
-		if (!ppm_found && !cd_found) {			
+		if (!ppm_found && !cd_found) {
 			countGiCD++;
-			char gouldZC[30];
-			gouldZC[0] = 0;
-			if (cell[9] == 'Z' && cell[10] == 'C') {
-				char hour[3], num[6];
-				hour[0] = cell[11]; hour[1] = cell[12]; hour[2] = 0;
-				int gouldHour = atoi(hour);
-				num[0] = cell[13]; num[1] = cell[14]; num[2] = cell[15];
-				num[3] = cell[16]; num[4] = cell[17]; num[5] = 0;
-				int gouldNum = atoi(num);
-				snprintf(gouldZC, 30, " or GZC %dh %d", gouldHour, gouldNum);
-			}
 			printf("  %d> G %d%s is ALONE with mag=%.1f.\n",
 				countGiCD,
 				giRef,
-				gouldZC,
+				gouldZCifpresent,
 				vmag);
 			printf("    RA %02dh%02dm%02ds%02d DE %02d°%02d'%02d''%01d\n",
 				RAh, RAm, RAs / 100, RAs % 100,

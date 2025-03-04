@@ -12,6 +12,8 @@
 #include "read_old.h"
 #include "misc.h"
 
+#define CURATED true // true if curated CD catalog should be used
+
 /*
  * main - comienzo de la aplicacion
  */
@@ -21,7 +23,7 @@ int main(int argc, char** argv)
     printf("Made in 2024 by Daniel Severin.\n");
 
     /* leemos catalogo CD */
-    readDM("cat/cd.txt");
+    readDM(CURATED ? "cat/cd_curated.txt" : "cat/cd.txt");
     struct DMstar_struct *CDstar = getDMStruct();
 
     /* leemos catalogo GC */
