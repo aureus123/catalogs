@@ -27,7 +27,7 @@
 extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, double ep2,
              double *dtheta, double *dphi, double *ptheta, double *pphi);
 
-#define STRING_SIZE 20
+#define STRING_SIZE 14
 
 static char dmStringDM[MAXDMSTAR][STRING_SIZE];
 
@@ -41,6 +41,7 @@ void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPM
     float minDistance;
 
     /* read cross file between PPM and target */
+    printf("Reading cross file %s... ", ppm_file);
     FILE *stream = fopen(ppm_file, "rt");
     if (stream == NULL) {
         snprintf(buffer, 1024, "Cannot read %s", ppm_file);
@@ -54,7 +55,7 @@ void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPM
             first_line = false;
             continue;
         }
-        sscanf(buffer, "%10[^,],PPM %d,%f\n", targetRef, &ppmRef, &minDistance);
+        sscanf(buffer, "%13[^,],PPM %d,%f\n", targetRef, &ppmRef, &minDistance);
         // printf("Cross: %s, PPM %d, dist = %.1f arcsec.\n", targetRef, ppmRef, minDistance);
         if (minDistance < __FLT_EPSILON__ || minDistance > 15.0) {
             // omit identifications with zero distance (bug) or too far away
@@ -68,9 +69,11 @@ void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPM
         }
     }
     fclose(stream);
+    printf("done!\n");
 
     /* read cross file between CD and target (optative) */
     if (DMstars == 0) return;
+    printf("Reading cross file %s... ", cd_file);
     stream = fopen(cd_file, "rt");
     if (stream == NULL) {
         snprintf(buffer, 1024, "Cannot read %s", cd_file);
@@ -84,7 +87,7 @@ void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPM
             first_line = false;
             continue;
         }
-        sscanf(buffer, "%10[^,],CD %d°%d,%f\n", targetRef, &cdDeclRef, &cdNumRef, &minDistance);
+        sscanf(buffer, "%13[^,],CD %d°%d,%f\n", targetRef, &cdDeclRef, &cdNumRef, &minDistance);
         // printf("Cross: %s, CD %d°%d, dist = %.1f arcsec.\n", targetRef, cdDeclRef, cdNumRef, minDistance);
         if (minDistance < __FLT_EPSILON__ || minDistance > 30.0) {
             // omit identifications with zero distance (bug) or too far away
@@ -98,6 +101,7 @@ void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPM
         }
     }
     fclose(stream);
+    printf("done!\n");
 }
 
 /*
@@ -155,10 +159,22 @@ int main(int argc, char** argv) {
     while (fgets(buffer, 1023, stream) != NULL) {
         // if (TYCstarsPPM > 100) break;
 		entry++;
-		if (entry == 10000) {
-			entry = 0;
-			printf("Progress: PPM = %d, DM = %d, unidentified = %d\n", TYCstarsPPM, TYCstarsDM, TYCunidentified);
+		if (entry % 10000 == 0) {
+			printf("Progress (%.2f%%): PPM = %d, DM = %d, unidentified = %d\n",
+                (100.0 * (float) entry) / 2539913.0,
+                TYCstarsPPM,
+                TYCstarsDM,
+                TYCunidentified);
 		}
+
+        /* lee declinación y descarta tempranamente (con un márgen de 2 grados) */
+        readField(buffer, cell, 166, 12);
+        double Decl = atof(cell);
+        if (is_north) {
+            if (Decl < -2.0) continue;
+        } else {
+            if (Decl > +2.0) continue;
+        }
 
         /* lee numeración */
         readField(buffer, cell, 1, 4);
@@ -174,8 +190,6 @@ int main(int argc, char** argv) {
         /* lee RA y Decl (epoch) */
         readField(buffer, cell, 153, 12);
         double RA = atof(cell);
-        readField(buffer, cell, 166, 12);
-        double Decl = atof(cell);
         readField(buffer, cell, 179, 4);
         double epRA = atof(cell);
         readField(buffer, cell, 184, 4);
@@ -206,9 +220,9 @@ int main(int argc, char** argv) {
         double pmDecltarget = pmDecl;
         wcsconp(WCS_J2000, WCS_J2000, 0.0, 0.0, epoch, 2000.0, &RAtarget, &Decltarget, &pmRAtarget, &pmDecltarget);
         if (is_north) {
-            if (Decltarget < 0) continue;
+            if (Decltarget < 0.0) continue;
         } else {
-            if (Decltarget > 0) continue;
+            if (Decltarget > 0.0) continue;
         }
 
         /* convertir a 2000 (B1950) */
