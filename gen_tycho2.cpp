@@ -184,8 +184,8 @@ int main(int argc, char** argv) {
         readField(buffer, cell, 12, 1);
         int tyc3Ref = atoi(cell);
 
-        char tycString[STRING_SIZE];
-        snprintf(tycString, STRING_SIZE, "TYC %d-%d-%d", tyc1Ref, tyc2Ref, tyc3Ref);
+        char tycString[20];
+        snprintf(tycString, 20, "TYC %d-%d-%d", tyc1Ref, tyc2Ref, tyc3Ref);
 
         /* lee RA y Decl (epoch) */
         readField(buffer, cell, 153, 12);
