@@ -14,7 +14,7 @@ between PPM/DM and GC/OA/U/GZC/G.
 Other further improvements (not done yet) might be to use a better
 cross-identification algorithm, e.g. that maximizes likelihood between positions
 and magnitudes when comparing Tycho-2 and a target catalogue, with Hungarian
-algorithm, see https://doi.org/10.1016/j.endm.2018.07.005. Finally, Tycho-2 supplementary stars are not considered.
+algorithm, see this [paper](https://doi.org/10.1016/j.endm.2018.07.005). Finally, Tycho-2 supplementary stars are not considered.
 
 ### Instructions
 
@@ -31,3 +31,10 @@ In order to use plotann.py, replace it. Then, copy the CSV files here to the tar
 Example:
 ![Alt text](image.ann.png?raw=true "Southern Pleyades")
 
+Some stars that you can see in the example:
+
+| Star (SIMBAD) | Old designation | Tycho-2 | Where to find it |
+| --- | --- | --- | --- |
+| HD 93540 | GC 14764 | 8965-1767-1 | Resultados del Observatorio Nacional Argentino, [Vol XIV](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0014&type=SCREEN_THMB), pag. 291 |
+| HD 93269 | GZC 10h 2923 | 8965-288-1 | Resultados del Observatorio Nacional  Argentino, [Vol VII](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0007&type=SCREEN_THMB), pag. 337 |
+| HD 93600 | G 7322 | 8965-547-1 | [A catalogue of 16748 southern stars](https://archive.org/details/catalogueof1674800unitrich/catalogueof1674800unitrich/) deduced by the United States Naval Observatory from the zone observations made at Santiago de Chile, pag. 184 |
