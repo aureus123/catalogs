@@ -810,20 +810,23 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
         Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
     
-		/* lee numeración catálogo Gilliss */
+		/* lee numeración catálogo Gilliss y referencia */
 		readField(buffer, cell, 1, 5);
 		int giRef = atoi(cell);
 		snprintf(catName, 20, "G %d", giRef);
+		char giCat[19];
+		readField(buffer, giCat, 7, 18);
+		giCat[18] = 0;
 
 		/* sin embargo, si tiene numeración Gould usamos esta última */
 		char gouldZCifpresent[30];
 		gouldZCifpresent[0] = 0;
-		if (cell[9] == 'Z' && cell[10] == 'C') {
+		if (giCat[9] == 'Z' && giCat[10] == 'C') {
 			char hour[3], num[6];
-			hour[0] = cell[11]; hour[1] = cell[12]; hour[2] = 0;
+			hour[0] = giCat[11]; hour[1] = giCat[12]; hour[2] = 0;
 			int gouldHour = atoi(hour);
-			num[0] = cell[13]; num[1] = cell[14]; num[2] = cell[15];
-			num[3] = cell[16]; num[4] = cell[17]; num[5] = 0;
+			num[0] = giCat[13]; num[1] = giCat[14]; num[2] = giCat[15];
+			num[3] = giCat[16]; num[4] = giCat[17]; num[5] = 0;
 			int gouldNum = atoi(num);
 			snprintf(catName, 20, "GZC %dh %d", gouldHour, gouldNum);
 			snprintf(gouldZCifpresent, 30, " or %s", catName);
@@ -857,11 +860,9 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
         double x, y, z;
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
-		/* lee magnitud y referencia */
+		/* lee magnitud */
 		readField(buffer, cell, 29, 3);
 		vmag = atof(cell)/10.0;
-		readField(buffer, cell, 7, 18);
-		cell[18] = 0;
 
 		/* barre estrellas de GC para identificarlas con este catálogo */
         double minDistance = HUGE_NUMBER;
@@ -875,7 +876,7 @@ void readGC(bool mode, int fictRAh, int fictRAm, int fictRAs, int fictDecld, int
 			}
 		}
 		if (minDistance < GCstar[gcIndex].distGi) {
-			copy(GCstar[gcIndex].giCat, cell);
+			copy(GCstar[gcIndex].giCat, giCat);
 			GCstar[gcIndex].giRef = giRef;
 			GCstar[gcIndex].distGi = minDistance;
 			GCstar[gcIndex].vmagGi = vmag;
