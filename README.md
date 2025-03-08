@@ -7,7 +7,7 @@ The comparison consists of computing the angular distance between the position o
 The threshold used for comparing CD and PPM is 2 arcmin, and for magnitude is 1.5 units.
 The hypothesis is that, since the cross-identifications between both catalogs were also transcribed from older documents, it provides an independent matching between both catalogs (i.e. the cross-identification does not comes from the comparison between the digital version of the Durchmusterung and the target catalog, but from a man-made identification between the printed version and the target catalog).
 
-### Algorithm:
+### Algorithm
 
 📄 The approach considers two catalogs, the source (e.g. CD) and the target (e.g PPM).
 In first place, all stars from the target catalog having a cross-identification between both catalogs are considered. Then, coordinates are precessed to the epoch of the source catalog (e.g from J2000 to B1875) and corrected by proper motion.
@@ -18,13 +18,13 @@ estimated.
 One can compare these data against the real printed catalog, in order to
 find typo errors during the confection of the digital version of BD or CD.
 
-### Limitations of the approach:
+### Limitations of the approach
 
 🛑 On the one hand, only typo mistakes that leads to an excess in the thresholds can be corrected. For instance, a threshold of 0.5 for magnitudes will find some errors in the first digit of them (e.g. if the value reported is 8.8 but the real is 9.3) and will skip some other (e.g. if the real is 9.1), however mistakes in the second digit will not be found. Naturally, one can reduce the threshold to raise the number of hits, but at the expense of increase a lot the number of false-positives (see Experiment 2 in the results folder).
 
 ✋ On the other hand, the approach is limited to the cross-identified stars. In the case of CD, from a total of 613778 stars, only 171303 has useful cross-identifications with PPM. That means that there are roughly 72% of stars in the CD digital catalog that the algorithm does not explore.  
 
-### Comparison schemes:
+### Comparison schemes
 
 - *compare_ppm*: Compares CD and PPM (from declination -23 to south pole)
 - *compare_ppm_bd*: Compares BD and PPM (only Vol 1, from declination -1 to +19)
@@ -32,7 +32,7 @@ find typo errors during the confection of the digital version of BD or CD.
 - *compare_cpd*: Compares CD and CPD, through catalogs 4005 or 4011
 - *compare_agk*: Compares CD and AGK (Cordoba A, B and C, from declination -22 to -37)
 
-### Other experiments:
+### Other experiments
 
 - *compare_gc*: Cross-identifies CD and GC (Argentine General Catalog) and compares them (here *log_gc.log* was generated with original CD while cross CSV
 files were generated with curated CD).
@@ -44,6 +44,13 @@ files were generated with curated CD).
 
 🚰 Sources of WCSTools 3.9.7 from http://tdc-www.harvard.edu/wcstools should be downloaded to wcstools-3.9.7 folder, and compiled.
 The routine "wcsconp" is used for transforming coordinates.
+
+### Wishlist
+
+- Use cross-identification algorithm based on a matching that maximizes likelihood (see bibliography) instead of simple angular distance thresholds.
+- Write a list of all double stars from footnotes of Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB) (only declinations -22, -23 and -24 were transcripted at the moment) and perform a cross-identification of that CD volume with a modern catalog.
+- Correct typo error of all CD catalog.
+- Refactor code! Consider Jupyter Lab and AstroPy instead of C++ code.
 
 ### Bibliography
 

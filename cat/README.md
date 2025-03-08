@@ -4,12 +4,12 @@ This folder has a copy of different digital catalogs.
 
 ### Cordoba Durchmusterung
 
-- cd: Current catalog from VizieR (code I/114)
+- cd: Current catalog from _VizieR_ (code I/114)
 - cd_curated: Same as "cd" but after correcting typo error
 - cd_vol1: Same as "cd" but only first volume (Resultados del Observatorio Nacional Argentino, Tomo XVI, declinaciones -22 a -31)
 - cd_vol1_curated: Same as "cd_vol1" but after correcting typo errors
-- 1114: Catalog from NASA-ADC CD-ROMs, circa 1994
-- I88: Old version of first volume from VizieR (code I/88), circa 1982
+- 1114: Catalog from _NASA-ADC CD-ROMs_, circa 1994
+- I88: Old version of first volume from _VizieR_ (code I/88), circa 1982
 
 These catalogs were downloaded from _NAOJ Astronomy Data Center_ and _VizieR_: https://vizier.cds.unistra.fr
 
@@ -40,7 +40,23 @@ United States Naval Observatory from the zone observations made at
 Santiago de Chile, from _GAVO Data Center_
 - 4005: Table of Correspondences BD/CD/CPD (Jung, Bischoffl 1971) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/5)
 - 4011: Correspondences CD/CPD, Zones -18 to -39 (Bonnet) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/11)
-- 4019: CD/CPD Cross Index (Rappaport, Warren 1987) from _NASA-ADC CD-ROMs_
+
+In the "other" subfolder there are catalogs not used yet by the current code. The following were downloaded from _GAVO Data Center_:
+
+- gc2: Catálogo de 5791 estrellas (época 1900.0), segundo Catálogo General Argentino
+- cordd: Cordoba D, epoch 1950.0, declinations -37 to -47
+- corde: Cordoba E, epoch 1950.0, declinations -82 to south pole
+- laplataa: La Plata A, epoch 1925.0, declinations -52 to -57
+- laplatab: La Plata B, epoch 1925.0, declinations -57 to -62
+- laplatac: La Plata C, epoch 1925.0, declinations -62 to -66
+- oargn: Oeltzen-Argelander's Zonen-Beobachtungen vom 45. bis 80. Grade noerdlicher Declination in mittleren Positionen fuer 1842.0
+- lacaille: N. L. de Lacaille, T. Henderson, A catalogue of 9766 stars in the southern hemisphere
+- lalande: F. Baily, J. Lalande, Catalogue of those stars in the Histoire Celeste Francaise of Jerome Delalande
+- taylor: Taylor's general catalogue of stars for the equinox 1835.0 from observations made at the Madras Observatory during the years 1831 to 1842
+
+The following was part of _NASA-ADC CD-ROMs_:
+
+- 4019: CD/CPD Cross Index (Rappaport, Warren 1987)
 
 _Note_: a buggy line from catalog 4019 was deleted.
 
