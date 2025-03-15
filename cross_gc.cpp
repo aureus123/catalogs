@@ -1,12 +1,13 @@
 
 /*
- * CROSS_GC - Compara registros de PPM y CD contra GC
+ * CROSS_GC - Compara registros de PPM, CD y CPD contra GC
  * Made in 2025 by Daniel E. Severin
  */
 
 #include <stdio.h>
 #include <math.h>
 #include "read_ppm.h"
+#include "read_cpd.h"
 #include "read_dm.h"
 #include "read_gc.h"
 #include "trig.h"
@@ -27,8 +28,13 @@ int main(int argc, char** argv)
 
     /* leemos catalogo CD */
     readDM(CURATED ? "cat/cd_curated.txt" : "cat/cd.txt");
-    struct DMstar_struct *CDstar = getDMStruct();
+    struct DMstar_struct *P = getDMStruct();
     int CDstars = getDMStars();
+
+    /** leemos catalogo CPD */
+    readCPD(false, false);
+    struct CPDstar_struct *CPDstar = getCPDStruct();
+    int CPDstars = getCPDStars();
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
     readPPM(false, true, false, false, 1875.0);
@@ -44,6 +50,7 @@ int main(int argc, char** argv)
     printf("Perform comparison between GC and PPM/CD...\n");
 
 	FILE *crossCDStream = openCrossFile("results/cross_gc_cd.csv");
+	FILE *crossCPDStream = openCrossFile("results/cross_gc_cpd.csv");
 	FILE *crossPPMStream = openCrossFile("results/cross_gc_ppm.csv");
 
     int countDist = 0;
@@ -51,6 +58,7 @@ int main(int argc, char** argv)
     int countDelta = 0;
     double akkuDeltaError = 0.0;
     int countCD = 0;
+    int countCPD = 0;
     int errors = 0;
     for (int gcIndex = 0; gcIndex < GCstars; gcIndex++) {
         double x = GCstar[gcIndex].x;
@@ -59,9 +67,9 @@ int main(int argc, char** argv)
         float vmag = GCstar[gcIndex].vmag;
         int gcRef = GCstar[gcIndex].gcRef;
 
+        bool ppmFound = false;
 		int ppmIndex = -1;
 		double minDistance = HUGE_NUMBER;
-        bool ppmFound = false;
 		/* busca la PPM mas cercana y genera el cruzamiento */
 		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
 		if (minDistance < MAX_DIST_PPM) {
@@ -95,21 +103,48 @@ int main(int argc, char** argv)
                 writeRegisterGC(gcIndex);
             }
 		}
+
+        bool cpdFound = false;
+        /* busca la CPD mas cercana y genera el cruzamiento */
+        if (GCstar[gcIndex].Decld >= 18) {
+            int cpdIndex = -1;
+            minDistance = HUGE_NUMBER;
+            for (int i = 0; i < CPDstars; i++) {
+			    double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
+			    if (minDistance > dist) {
+				    cpdIndex = i;
+				    minDistance = dist;
+			    }
+            }
+			if (minDistance < MAX_DIST_CPD) {
+                countCPD++;
+                cpdFound = true;
+
+			    snprintf(catName, 20, "GC %d", gcRef);
+			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
+			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+			} else {
+				if (PRINT_WARNINGS) {
+					printf("Warning: GC has no CPD star near it.\n");
+                    writeRegisterGC(gcIndex);
+				}
+			}
+        }
 		
-		int cdIndex = -1;
-        minDistance = HUGE_NUMBER;
         bool cdFound = false;
 		/* busca la CD mas cercana y genera el cruzamiento */
 		if (GCstar[gcIndex].Decld >= 22) {
-		    for (int i = 0; i < CDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
+            int cdIndex = -1;
+            minDistance = HUGE_NUMBER;
+            for (int i = 0; i < CDstars; i++) {
+			    double dist = 3600.0 * calcAngularDistance(x, y, z, P[i].x, P[i].y, P[i].z);
 			    if (minDistance > dist) {
 				    cdIndex = i;
 				    minDistance = dist;
 			    }
             }
 			if (minDistance < MAX_DIST_CD) {
-			    float cdVmag = CDstar[cdIndex].vmag;
+			    float cdVmag = P[cdIndex].vmag;
 			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9 && !GCstar[gcIndex].dpl) {
 				    float delta = fabs(vmag - cdVmag);
 				    if (delta >= MAX_MAGNITUDE) {
@@ -125,7 +160,7 @@ int main(int argc, char** argv)
                 cdFound = true;
 
 			    snprintf(catName, 20, "GC %d", gcRef);
-			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
+			    snprintf(cdName, 20, "CD %d°%d", P[cdIndex].declRef, P[cdIndex].numRef);
 			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 			} else {
 				if (PRINT_WARNINGS) {
@@ -135,8 +170,8 @@ int main(int argc, char** argv)
 			}
 		}
 
-        if (!ppmFound && !cdFound) {
-            printf("%d) Warning: GC is ALONE (no PPM or CD star near it).\n", ++errors);
+        if (!ppmFound && !cdFound && !cpdFound) {
+            printf("%d) Warning: GC is ALONE (no PPM or CD or CPD star near it).\n", ++errors);
             writeRegisterGC(gcIndex);
             if (GCstar[gcIndex].cum) {
                 printf("  Possible cause: cumulus.\n");
@@ -153,8 +188,8 @@ int main(int argc, char** argv)
             if (GCstar[gcIndex].vmag > 9.9) {
                 printf("  Possible cause: dim star.\n");
             }
-            if (GCstar[gcIndex].Decld < 22) {
-                printf("  Note: no CD coverage for stars below 22°.\n");
+            if (GCstar[gcIndex].Decld < 18) {
+                printf("  Note: no CD/CPD coverage for stars below 18°.\n");
             }
             if (GCstar[gcIndex].Decld > 61) {
                 printf("  Note: poor CD coverage for stars above 61°.\n");
@@ -162,9 +197,10 @@ int main(int argc, char** argv)
         }
 	}
 	fclose(crossPPMStream);
+	fclose(crossCPDStream);
 	fclose(crossCDStream);
 
-    printf("Stars from GC identified with PPM = %d, and CD = %d\n", countDist, countCD);
+    printf("Stars from GC identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);

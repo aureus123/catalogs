@@ -29,7 +29,7 @@ compare_agk: compare_agk.o read_cd.o trig.o misc.o
 compare_agk.o: compare_agk.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-cross_gc: cross_gc.o read_cd.o read_ppm.o read_gc.o trig.o misc.o
+cross_gc: cross_gc.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 cross_gc.o: cross_gc.cpp
