@@ -34,11 +34,9 @@ find typo errors during the confection of the digital version of BD or CD.
 
 ### Other experiments
 
-- *compare_gc*: Cross-identifies CD and GC (Argentine General Catalog) and compares them (here *log_gc.log* was generated with original CD while cross CSV
-files were generated with curated CD).
+- *cross_gc*: Cross-identifies curated CD and GC (Argentine General Catalog) and compares them
 - *compare_cd*: Logs differences between two digital versions of CD
 - *gen_tycho2_north* and *gen_tycho2_south*: See README in tycho2 folder
-- *find_coord*: Tool to find by coordinates on old catalogs 
 
 ### Requirements
 

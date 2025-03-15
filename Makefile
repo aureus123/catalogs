@@ -6,7 +6,7 @@ CC = g++
 CCOPT = -Wall
 CCLNFLAGS = -L wcstools-3.9.7/libwcs/ -lwcs
 
-all: compare_ppm compare_agk compare_cpd compare_ppm_bd compare_gc compare_sd compare_cd gen_tycho2_north gen_tycho2_south find_coord find_coord2000 mag_cd mag_bd
+all: compare_ppm compare_agk compare_cpd compare_ppm_bd cross_gc compare_sd compare_cd gen_tycho2_north gen_tycho2_south find_coord find_coord2000 mag_cd mag_bd
 
 mag_cd: mag_cd.o read_cd.o read_ppm.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
@@ -29,10 +29,10 @@ compare_agk: compare_agk.o read_cd.o trig.o misc.o
 compare_agk.o: compare_agk.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-compare_gc: compare_gc.o read_cd.o read_ppm.o read_old.o trig.o misc.o
+cross_gc: cross_gc.o read_cd.o read_ppm.o read_gc.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
-compare_gc.o: compare_gc.cpp
+cross_gc.o: cross_gc.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 compare_cpd: compare_cpd.o read_cd.o read_cpd.o trig.o misc.o
@@ -65,22 +65,22 @@ compare_ppm_bd: compare_ppm_bd.o read_bd.o read_ppm.o trig.o misc.o
 compare_ppm_bd.o: compare_ppm_bd.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-find_coord: find_coord.o read_cd.o read_ppm.o read_old.o trig.o misc.o
-	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
+# find_coord: find_coord.o read_cd.o read_ppm.o read_old.o trig.o misc.o
+#	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
-find_coord.o: find_coord.cpp
-	$(CC) $(CCFLAGS) -c $< -D TRANSFORM=false
+# find_coord.o: find_coord.cpp
+#	$(CC) $(CCFLAGS) -c $< -D TRANSFORM=false
 
-find_coord2000: find_coord2000.o read_cd.o read_ppm.o read_old.o trig.o misc.o
-	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
+# find_coord2000: find_coord2000.o read_cd.o read_ppm.o read_old.o trig.o misc.o
+#	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
-find_coord2000.o: find_coord.cpp
-	$(CC) $(CCFLAGS) -c $< -o $@ -D TRANSFORM=true
+# find_coord2000.o: find_coord.cpp
+#	$(CC) $(CCFLAGS) -c $< -o $@ -D TRANSFORM=true
 
 read_cd.o: read_cd.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-read_old.o: read_old.cpp
+read_gc.o: read_gc.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 mag_bd: mag_bd.o read_bd.o read_ppm.o trig.o misc.o
@@ -108,4 +108,4 @@ misc.o: misc.cpp
 
 clean:
 	rm -f *.o
-	rm -f compare_ppm compare_agk compare_cpd compare_ppm_bd compare_gc compare_sd compare_cd find_coord find_coord2000 mag_cd mag_bd
+	rm -f compare_ppm compare_agk compare_cpd compare_ppm_bd cross_gc compare_sd compare_cd find_coord find_coord2000 mag_cd mag_bd

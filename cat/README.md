@@ -29,7 +29,7 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 - bd_curated †: Same as "bd" but after correcting typo error
 - sd : Bonner (southern) durchmusterung from _VizieR_ (code I/119)
 - cpd : Cape Photographic Durchmusterung from _VizieR_ (code I/108)
-- gc : Argentine General Catalog from _GAVO Data Center_
+- gc †: Argentine General Catalog from _GAVO Data Center_
 - weiss : Weiss, Catalog der Argelander'schen Zonen vom 15-31 grade
 suedlicher Deklination in mittleren Positionen fuer 1850.0 from
 _GAVO Data Center_
@@ -72,5 +72,6 @@ Some catalogs in this folder were sanitized but their original version was store
 
 - 4005 : 51 registers
 - 4011 : 76 registers
+- gc : 3 registers
 - corda : 3 registers
 - cordc : 7 registers
