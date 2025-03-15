@@ -32,7 +32,7 @@ int main(int argc, char** argv)
     struct DMstar_struct *CDstar = getDMStruct();
 
     /* leemos catalogo CPD */
-    readCPD(CROSS_CATALOG);
+    readCPD(true, CROSS_CATALOG);
     int CPDstars = getCPDStars();
     struct CPDstar_struct *CPDstar = getCPDStruct();
 

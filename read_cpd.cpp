@@ -13,7 +13,7 @@
 #include "misc.h"
 #include "trig.h"
 
-#define MAX_DECL 81
+#define MAX_DECL 90
 #define MAX_NUM 12500
 
 static struct CPDstar_struct CPDstar[MAXCPDSTAR];
@@ -82,10 +82,12 @@ struct CPDstar_struct *getCPDStruct()
  * Nota: se descartan objetos nebulares y suplementarias
  * (no hay suplementarias antes de la declinación -60)
  * 
+ * Si "cross" es true, se lee el archivo de identificación cruzada
+ * catalog:
  * true = utiliza catálogo 4011
  * false = utiliza catálogo 4005
  */
-void readCPD(bool catalog)
+void readCPD(bool cross, bool catalog)
 {
     FILE *stream;
     char buffer[1024];
@@ -180,6 +182,8 @@ void readCPD(bool catalog)
     }
     printf("Stars read from Cape Photographic Durchmusterung: %d\n", CPDstars);
     fclose(stream);
+
+    if (!cross) return;
 
     if (catalog) {
         /* siguiente fase: leer identificación cruzada del catálogo 4011 (Bonnet) */

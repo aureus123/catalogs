@@ -46,8 +46,12 @@ Santiago de Chile, from _GAVO Data Center_
 - thome1884 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 232-249, from _GAVO Data Center_
 - 4005 †: Table of Correspondences BD/CD/CPD (Jung, Bischoffl 1971) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/5)
 - 4011 †: Correspondences CD/CPD, Zones -18 to -39 (Bonnet) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/11)
+- 4019 †: CD/CPD Cross Index (Rappaport, Warren 1987), from _NASA-ADC CD-ROMs_
 
-In the "other" subfolder there are catalogs not used yet by the current code. The following were downloaded from _GAVO Data Center_:
+_Note_: a buggy line from catalog 4019 was deleted.
+
+In the "other" subfolder there are catalogs from _GAVO Data Center_ not used yet
+by the current code:
 
 - gc2 : Catálogo de 5791 estrellas (época 1900.0), segundo Catálogo General Argentino
 - cordd : Cordoba D, epoch 1950.0, declinations -37 to -47
@@ -59,12 +63,6 @@ In the "other" subfolder there are catalogs not used yet by the current code. Th
 - lacaille : N. L. de Lacaille, T. Henderson, A catalogue of 9766 stars in the southern hemisphere
 - lalande : F. Baily, J. Lalande, Catalogue of those stars in the Histoire Celeste Francaise of Jerome Delalande
 - taylor : Taylor's general catalogue of stars for the equinox 1835.0 from observations made at the Madras Observatory during the years 1831 to 1842
-
-The following was part of _NASA-ADC CD-ROMs_:
-
-- 4019 †: CD/CPD Cross Index (Rappaport, Warren 1987)
-
-_Note_: a buggy line from catalog 4019 was deleted.
 
 ### Original catalogs
 

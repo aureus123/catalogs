@@ -11,7 +11,7 @@ Ommitting star CPD -60°46a
 Ommitting star CPD -60°91a
 Ommitting star CPD -60°136a
 Ommitting star CPD -78°848b
-Stars read from Cape Photographic Durchmusterung: 423992
+Stars read from Cape Photographic Durchmusterung: 428982
 Number of CPD stars cross-identified with CD stars: 45993
 Warning: cross-identifications differ for CPD -22°2334: CD -22°4692 vs -22°4703
 Warning: cross-identifications differ for CPD -23°2938: CD -23°6249 vs -23°6243
@@ -318,415 +318,865 @@ Warning: cross-identifications differ for CPD -62°2564: CD -62°612 vs -62°608
 1) CD -26°5166 separated from CPD -26°2774 in 1010.4 arcsec.
     (also identified as CD -26°5199)
      Register CD -26°5166 (en 7h):  9.3 | 49m5.5s | 7.1'     (pag. 251)
+   Neighbors:
+     Register CD -26°5165 (en 7h):  10.0 | 49m5.3s | 52.1'     (pag. 251)
+     Register CD -26°5167 (en 7h):  10.0 | 49m7.3s | 47.6'     (pag. 251)
 2) CD -39°4385 separated from CPD -39°2454 in 248.9 arcsec.
      Register CD -39°4385 (en 8h):  9.3 | 24m18.0s | 53.1'     (pag. 399)
+   Neighbors:
+     Register CD -39°4384 (en 8h):  9.6 | 24m16.5s | 29.8'     (pag. 399)
+     Register CD -39°4386 (en 8h):  9.6 | 24m18.0s | 3.0'     (pag. 399)
 3) CD -39°5170 separated from CPD -39°3196 in 1062.0 arcsec.
     (also identified as CD -39°5169)
      Register CD -39°5170 (en 9h):  9.3 | 1m29.0s | 46.2'     (pag. 401)
+   Neighbors:
+     Register CD -39°5169 (en 9h):  9.8 | 1m26.4s | 28.9'     (pag. 401)
+     Register CD -39°5171 (en 9h):  9.7 | 1m37.8s | 2.6'     (pag. 401)
 4) CD -39°7085 separated from CPD -39°5056 in 2346.8 arcsec.
     (also identified as CD -39°7083)
      Register CD -39°7085 (en 11h):  8.1 | 17m52.8s | 49.5'     (pag. 408)
+   Neighbors:
+     Register CD -39°7084 (en 11h):  10.0 | 17m50.0s | 10.1'     (pag. 408)
+     Register CD -39°7086 (en 11h):  10.0 | 17m56.6s | 35.0'     (pag. 408)
 5) CD -39°8699 separated from CPD -39°6191 in 788.6 arcsec.
     (also identified as CD -39°8689)
      Register CD -39°8699 (en 13h):  9.3 | 59m12.6s | 37.1'     (pag. 413)
+   Neighbors:
+     Register CD -39°8698 (en 13h):  9.7 | 59m8.2s | 19.6'     (pag. 413)
+     Register CD -39°8700 (en 13h):  9.7 | 59m14.6s | 8.9'     (pag. 413)
 6) CD -39°10960 separated from CPD -39°7207 in 218.2 arcsec.
     (also identified as CD -39°10962)
      Register CD -39°10960 (en 16h):  9.3 | 51m9.5s | 59.6'     (pag. 421)
+   Neighbors:
+     Register CD -39°10959 (en 16h):  9.5 | 51m8.6s | 22.4'     (pag. 421)
+     Register CD -39°10961 (en 16h):  9.7 | 51m11.8s | 5.5'     (pag. 421)
 7) CD -39°13207 separated from CPD -39°8386 in 300.9 arcsec.
     (also identified as CD -39°13206)
      Register CD -39°13207 (en 19h):  9.5 | 8m46.3s | 49.6'     (pag. 428)
+   Neighbors:
+     Register CD -39°13206 (en 19h):  9.7 | 8m44.5s | 54.5'     (pag. 428)
+     Register CD -39°13208 (en 19h):  9.3 | 9m2.2s | 47.6'     (pag. 428)
 8) CD -40°736 separated from CPD -40°239 in 683.9 arcsec.
      Register CD -40°736 (en 2h):  6.5 | 44m58.3s | 26.6'     (pag. 438)
+   Neighbors:
+     Register CD -40°735 (en 2h):  10.0 | 44m33.5s | 56.4'     (pag. 438)
+     Register CD -40°737 (en 2h):  9.7 | 46m9.6s | 44.0'     (pag. 438)
 9) CD -40°1936 separated from CPD -40°740 in 1074.0 arcsec.
      Register CD -40°1936 (en 5h):  9.7 | 27m43.3s | 56.9'     (pag. 442)
+   Neighbors:
+     Register CD -40°1935 (en 5h):  10.0 | 27m30.6s | 58.9'     (pag. 442)
+     Register CD -40°1937 (en 5h):  9.3 | 27m44.5s | 39.5'     (pag. 442)
 10) CD -40°2737 separated from CPD -40°1192 in 426.0 arcsec.
     (also identified as CD -40°2738)
      Register CD -40°2737 (en 6h):  10.0 | 47m35.8s | 38.0'     (pag. 444)
+   Neighbors:
+     Register CD -40°2736 (en 6h):  10.0 | 47m30.1s | 55.2'     (pag. 444)
+     Register CD -40°2738 (en 6h):  9.6 | 47m36.4s | 31.0'     (pag. 444)
 11) CD -40°2819 separated from CPD -40°1256 in 312.4 arcsec.
      Register CD -40°2819 (en 6h):  9.3 | 54m52.4s | 33.4'     (pag. 445)
+   Neighbors:
+     Register CD -40°2818 (en 6h):  10.0 | 54m48.0s | 35.8'     (pag. 445)
+     Register CD -40°2820 (en 6h):  9.9 | 54m55.2s | 28.8'     (pag. 445)
 12) CD -40°5930 separated from CPD -40°4332 in 1088.0 arcsec.
     (also identified as CD -40°5913)
      Register CD -40°5930 (en 10h):  10.0 | 14m4.6s | 23.3'     (pag. 455)
+   Neighbors:
+     Register CD -40°5929 (en 10h):  9.9 | 13m53.7s | 56.9'     (pag. 455)
+     Register CD -40°5931 (en 10h):  10.0 | 14m7.6s | 58.9'     (pag. 455)
 13) CD -40°8943 separated from CPD -40°6692 in 223.5 arcsec.
     (also identified as CD -40°8941)
      Register CD -40°8943 (en 14h):  9.5 | 37m28.3s | 49.7'     (pag. 465)
+   Neighbors:
+     Register CD -40°8942 (en 14h):  10.0 | 37m25.8s | 9.4'     (pag. 465)
+     Register CD -40°8944 (en 14h):  10.0 | 37m33.3s | 38.4'     (pag. 465)
 14) CD -40°9686 separated from CPD -40°7016 in 1608.1 arcsec.
     (also identified as CD -40°9687)
      Register CD -40°9686 (en 15h):  9.7 | 22m48.5s | 35.4'     (pag. 468)
+   Neighbors:
+     Register CD -40°9685 (en 15h):  9.4 | 22m46.8s | 19.9'     (pag. 468)
+     Register CD -40°9687 (en 15h):  9.0 | 22m50.0s | 8.4'     (pag. 468)
 15) CD -40°9778 separated from CPD -40°7050 in 409.2 arcsec.
     (also identified as CD -40°9779)
      Register CD -40°9778 (en 15h):  9.3 | 28m2.0s | 40.6'     (pag. 468)
+   Neighbors:
+     Register CD -40°9777 (en 15h):  10.0 | 27m57.9s | 53.9'     (pag. 468)
+     Register CD -40°9779 (en 15h):  9.7 | 28m3.9s | 33.4'     (pag. 468)
 16) CD -40°10475 separated from CPD -40°7348 in 2352.2 arcsec.
     (also identified as CD -40°10473)
      Register CD -40°10475 (en 16h):  9.3 | 22m56.0s | 19.3'     (pag. 470)
+   Neighbors:
+     Register CD -40°10474 (en 16h):  9.0 | 22m53.9s | 33.7'     (pag. 470)
+     Register CD -40°10476 (en 16h):  10.0 | 22m56.6s | 43.0'     (pag. 470)
 17) CD -40°11483 separated from CPD -40°7841 in 750.7 arcsec.
     (also identified as CD -40°11482)
      Register CD -40°11483 (en 17h):  8.0 | 19m40.2s | 13.8'     (pag. 474)
+   Neighbors:
+     Register CD -40°11482 (en 17h):  9.3 | 19m36.2s | 26.1'     (pag. 474)
+     Register CD -40°11484 (en 17h):  10.0 | 19m43.3s | 37.7'     (pag. 474)
 18) CD -40°13963 separated from CPD -40°9343 in 2910.1 arcsec.
     (also identified as CD -40°13987)
      Register CD -40°13963 (en 20h):  9.5 | 29m57.3s | 24.5'     (pag. 482)
+   Neighbors:
+     Register CD -40°13962 (en 20h):  9.9 | 29m56.2s | 59.4'     (pag. 482)
+     Register CD -40°13964 (en 20h):  10.0 | 30m7.0s | 52.7'     (pag. 482)
 19) CD -40°14881 separated from CPD -40°9727 in 1194.0 arcsec.
      Register CD -40°14881 (en 22h):  7.7 | 36m4.2s | 39.6'     (pag. 485)
+   Neighbors:
+     Register CD -40°14880 (en 22h):  10.0 | 35m49.6s | 29.0'     (pag. 485)
+     Register CD -40°14882 (en 22h):  7.3 | 36m16.2s | 46.9'     (pag. 485)
 20) CD -41°1386 separated from CPD -41°472 in 851.8 arcsec.
     (also identified as CD -41°1385)
      Register CD -41°1386 (en 4h):  8.0 | 17m43.0s | 30.5'     (pag. 491)
+   Neighbors:
+     Register CD -41°1385 (en 4h):  9.7 | 17m4.8s | 18.1'     (pag. 491)
+     Register CD -41°1387 (en 4h):  9.8 | 17m45.4s | 31.5'     (pag. 491)
 21) CD -41°2494 separated from CPD -41°1043 in 643.1 arcsec.
     (also identified as CD -41°2484)
      Register CD -41°2494 (en 6h):  9.4 | 33m22.8s | 18.5'     (pag. 495)
+   Neighbors:
+     Register CD -41°2493 (en 6h):  10.0 | 33m18.0s | 9.8'     (pag. 495)
+     Register CD -41°2495 (en 6h):  8.9 | 33m36.8s | 51.6'     (pag. 495)
 22) CD -41°2506 separated from CPD -41°1056 in 1867.3 arcsec.
     (also identified as CD -41°2500)
      Register CD -41°2506 (en 6h):  10.0 | 34m51.7s | 26.3'     (pag. 495)
+   Neighbors:
+     Register CD -41°2505 (en 6h):  10.0 | 34m48.5s | 7.8'     (pag. 495)
+     Register CD -41°2507 (en 6h):  10.0 | 34m56.0s | 12.8'     (pag. 495)
 23) CD -41°4492 separated from CPD -41°2955 in 2214.1 arcsec.
     (also identified as CD -41°4491)
      Register CD -41°4492 (en 8h):  9.6 | 42m34.6s | 13.1'     (pag. 502)
+   Neighbors:
+     Register CD -41°4491 (en 8h):  9.4 | 42m33.3s | 50.1'     (pag. 502)
+     Register CD -41°4493 (en 8h):  9.3 | 42m37.8s | 44.2'     (pag. 502)
 24) CD -41°4779 separated from CPD -41°3302 in 3271.9 arcsec.
     (also identified as CD -40°4879)
      Register CD -41°4779 (en 8h):  10.0 | 59m50.7s | 54.6'     (pag. 503)
+   Neighbors:
+     Register CD -41°4778 (en 8h):  9.6 | 59m50.1s | 30.2'     (pag. 503)
+     Register CD -41°4780 (en 8h):  10.0 | 59m54.8s | 22.4'     (pag. 503)
 25) CD -41°5774 separated from CPD -41°4481 in 254.6 arcsec.
     (also identified as CD -41°5775)
      Register CD -41°5774 (en 10h):  10.0 | 13m59.9s | 27.3'     (pag. 506)
+   Neighbors:
+     Register CD -41°5773 (en 10h):  10.0 | 13m54.0s | 47.1'     (pag. 506)
+     Register CD -41°5775 (en 10h):  9.4 | 14m0.5s | 32.0'     (pag. 506)
 26) CD -41°6851 separated from CPD -41°5637 in 421.1 arcsec.
     (also identified as CD -41°6850)
      Register CD -41°6851 (en 11h):  9.3 | 49m13.1s | 38.2'     (pag. 510)
+   Neighbors:
+     Register CD -41°6850 (en 11h):  9.7 | 49m10.2s | 45.6'     (pag. 510)
+     Register CD -41°6852 (en 11h):  9.6 | 49m13.4s | 3.8'     (pag. 510)
 27) CD -41°7668 separated from CPD -41°6265 in 209.5 arcsec.
     (also identified as CD -41°7667)
      Register CD -41°7668 (en 13h):  8.9 | 6m14.0s | 6.0'     (pag. 513)
+   Neighbors:
+     Register CD -41°7667 (en 13h):  9.0 | 6m8.7s | 3.0'     (pag. 513)
+     Register CD -41°7669 (en 13h):  10.0 | 6m17.7s | 39.2'     (pag. 513)
 28) CD -41°7670 separated from CPD -41°6266 in 784.5 arcsec.
     (also identified as CD -41°7668)
      Register CD -41°7670 (en 13h):  9.5 | 6m21.0s | 18.2'     (pag. 513)
+   Neighbors:
+     Register CD -41°7669 (en 13h):  10.0 | 6m17.7s | 39.2'     (pag. 513)
+     Register CD -41°7671 (en 13h):  8.2 | 6m24.5s | 27.5'     (pag. 513)
 29) CD -41°9450 separated from CPD -41°7021 in 1806.0 arcsec.
      Register CD -41°9450 (en 14h):  9.0 | 56m29.4s | 58.0'     (pag. 519)
+   Neighbors:
+     Register CD -41°9449 (en 14h):  10.0 | 56m25.8s | 20.0'     (pag. 518)
+     Register CD -41°9451 (en 14h):  9.7 | 56m34.7s | 43.4'     (pag. 519)
 30) CD -41°13023 separated from CPD -41°8756 in 918.3 arcsec.
     (also identified as CD -41°13039)
      Register CD -41°13023 (en 18h):  8.9 | 33m7.8s | 51.4'     (pag. 531)
+   Neighbors:
+     Register CD -41°13022 (en 18h):  9.8 | 33m1.4s | 0.6'     (pag. 531)
+     Register CD -41°13024 (en 18h):  10.0 | 33m7.8s | 12.0'     (pag. 531)
 31) CD -42°1061 separated from CPD -42°291 in 505.7 arcsec.
     (also identified as CD -42°1059)
      Register CD -42°1061 (en 3h):  10.0 | 11m35.0s | 33.6'     (pag. 3)
+   Neighbors:
+     Register CD -42°1060 (en 3h):  9.8 | 11m33.3s | 11.8'     (pag. 3)
+     Register CD -42°1062 (en 3h):  10.0 | 11m38.5s | 44.3'     (pag. 3)
 32) CD -42°1066 separated from CPD -42°294 in 2666.2 arcsec.
     (also identified as CD -42°1064)
      Register CD -42°1066 (en 3h):  9.4 | 12m34.8s | 15.0'     (pag. 3)
+   Neighbors:
+     Register CD -42°1065 (en 3h):  10.0 | 12m26.0s | 24.5'     (pag. 3)
+     Register CD -42°1067 (en 3h):  9.3 | 12m39.2s | 51.3'     (pag. 3)
 33) CD -42°1069 separated from CPD -42°296 in 454.1 arcsec.
     (also identified as CD -42°1067)
      Register CD -42°1069 (en 3h):  10.0 | 13m20.4s | 50.4'     (pag. 3)
+   Neighbors:
+     Register CD -42°1068 (en 3h):  10.0 | 12m52.6s | 45.9'     (pag. 3)
+     Register CD -42°1070 (en 3h):  9.0 | 13m34.8s | 1.8'     (pag. 3)
 34) CD -42°1072 separated from CPD -42°297 in 2287.3 arcsec.
     (also identified as CD -42°1070)
      Register CD -42°1072 (en 3h):  10.0 | 14m5.5s | 39.6'     (pag. 3)
+   Neighbors:
+     Register CD -42°1071 (en 3h):  8.1 | 13m57.6s | 43.9'     (pag. 3)
+     Register CD -42°1073 (en 3h):  9.2 | 14m12.2s | 13.0'     (pag. 3)
 35) CD -42°1073 separated from CPD -42°298 in 1854.8 arcsec.
     (also identified as CD -42°1071)
      Register CD -42°1073 (en 3h):  9.2 | 14m12.2s | 13.0'     (pag. 3)
+   Neighbors:
+     Register CD -42°1072 (en 3h):  10.0 | 14m5.5s | 39.6'     (pag. 3)
+     Register CD -42°1074 (en 3h):  9.2 | 14m12.3s | 5.0'     (pag. 3)
 36) CD -42°1075 separated from CPD -42°300 in 668.5 arcsec.
     (also identified as CD -42°1073)
      Register CD -42°1075 (en 3h):  10.0 | 14m22.0s | 24.0'     (pag. 3)
+   Neighbors:
+     Register CD -42°1074 (en 3h):  9.2 | 14m12.3s | 5.0'     (pag. 3)
+     Register CD -42°1076 (en 3h):  9.9 | 14m29.8s | 23.6'     (pag. 3)
 37) CD -42°1084 separated from CPD -42°302 in 1565.5 arcsec.
     (also identified as CD -42°1082)
      Register CD -42°1084 (en 3h):  10.0 | 16m35.7s | 34.0'     (pag. 3)
+   Neighbors:
+     Register CD -42°1083 (en 3h):  9.8 | 16m15.0s | 18.8'     (pag. 3)
+     Register CD -42°1085 (en 3h):  10.0 | 16m45.9s | 59.8'     (pag. 3)
 38) CD -42°1770 separated from CPD -42°602 in 925.5 arcsec.
     (also identified as CD -41°1710)
      Register CD -42°1770 (en 5h):  10.0 | 2m35.3s | 15.6'     (pag. 5)
+   Neighbors:
+     Register CD -42°1769 (en 5h):  10.0 | 2m16.8s | 19.9'     (pag. 5)
+     Register CD -42°1771 (en 5h):  10.0 | 2m47.8s | 19.5'     (pag. 5)
 39) CD -42°3879 separated from CPD -42°2015 in 1857.5 arcsec.
     (also identified as CD -42°3849)
      Register CD -42°3879 (en 8h):  10.0 | 1m39.4s | 45.0'     (pag. 13)
+   Neighbors:
+     Register CD -42°3878 (en 8h):  10.0 | 1m39.4s | 25.4'     (pag. 13)
+     Register CD -42°3880 (en 8h):  9.7 | 1m41.3s | 11.6'     (pag. 13)
 40) CD -42°9280 separated from CPD -42°6649 in 2581.5 arcsec.
     (also identified as CD -42°9283)
      Register CD -42°9280 (en 14h):  9.9 | 15m9.6s | 49.4'     (pag. 31)
+   Neighbors:
+     Register CD -42°9279 (en 14h):  9.6 | 15m4.7s | 55.4'     (pag. 31)
+     Register CD -42°9281 (en 14h):  9.9 | 15m14.2s | 43.4'     (pag. 31)
 41) CD -42°9348 separated from CPD -42°6673 in 936.8 arcsec.
     (also identified as CD -42°9344)
      Register CD -42°9348 (en 14h):  9.8 | 20m18.4s | 1.4'     (pag. 31)
+   Neighbors:
+     Register CD -42°9347 (en 14h):  10.0 | 20m18.1s | 53.0'     (pag. 31)
+     Register CD -42°9349 (en 14h):  9.2 | 20m18.6s | 11.4'     (pag. 31)
 42) CD -42°15038 separated from CPD -42°9133 in 1370.6 arcsec.
     (also identified as CD -42°15039)
      Register CD -42°15038 (en 20h):  9.7 | 33m19.2s | 42.5'     (pag. 50)
+   Neighbors:
+     Register CD -42°15037 (en 20h):  10.0 | 33m16.2s | 27.4'     (pag. 50)
+     Register CD -42°15039 (en 20h):  10.0 | 33m25.6s | 19.6'     (pag. 50)
 43) CD -43°2042 separated from CPD -43°692 in 1889.3 arcsec.
     (also identified as CD -43°2072)
      Register CD -43°2042 (en 5h):  9.6 | 43m37.7s | 50.5'     (pag. 62)
+   Neighbors:
+     Register CD -43°2041 (en 5h):  10.0 | 43m36.4s | 48.4'     (pag. 62)
+     Register CD -43°2043 (en 5h):  10.0 | 43m40.6s | 40.4'     (pag. 62)
 44) CD -42°4295 separated from CPD -43°2590 in 3303.5 arcsec.
     (also identified as CD -43°4295)
      Register CD -42°4295 (en 8h):  10.0 | 24m49.7s | 39.1'     (pag. 14)
+   Neighbors:
+     Register CD -42°4294 (en 8h):  10.0 | 24m47.0s | 34.6'     (pag. 14)
+     Register CD -42°4296 (en 8h):  10.0 | 24m51.0s | 34.3'     (pag. 14)
 45) CD -43°7998 separated from CPD -43°5973 in 2018.9 arcsec.
     (also identified as CD -43°7999)
      Register CD -43°7998 (en 12h):  10.0 | 53m23.5s | 40.5'     (pag. 82)
+   Neighbors:
+     Register CD -43°7997 (en 12h):  10.0 | 53m11.2s | 30.0'     (pag. 82)
+     Register CD -43°7999 (en 12h):  9.4 | 53m49.3s | 7.5'     (pag. 82)
 46) CD -43°8003 separated from CPD -43°5976 in 242.6 arcsec.
     (also identified as CD -43°8004)
      Register CD -43°8003 (en 12h):  10.0 | 54m10.7s | 4.7'     (pag. 82)
+   Neighbors:
+     Register CD -43°8002 (en 12h):  10.0 | 53m58.7s | 34.3'     (pag. 82)
+     Register CD -43°8004 (en 12h):  8.3 | 54m13.8s | 0.8'     (pag. 82)
 47) CD -43°8004 separated from CPD -43°5977 in 2574.1 arcsec.
     (also identified as CD -43°8005)
      Register CD -43°8004 (en 12h):  8.3 | 54m13.8s | 0.8'     (pag. 82)
+   Neighbors:
+     Register CD -43°8003 (en 12h):  10.0 | 54m10.7s | 4.7'     (pag. 82)
+     Register CD -43°8005 (en 12h):  9.4 | 54m14.8s | 44.0'     (pag. 82)
 48) CD -43°8009 separated from CPD -43°5980 in 614.5 arcsec.
     (also identified as CD -43°8010)
      Register CD -43°8009 (en 12h):  10.0 | 54m44.5s | 41.4'     (pag. 82)
+   Neighbors:
+     Register CD -43°8008 (en 12h):  10.0 | 54m28.2s | 28.3'     (pag. 82)
+     Register CD -43°8010 (en 12h):  8.7 | 54m49.9s | 31.3'     (pag. 82)
 49) CD -43°8010 separated from CPD -43°5981 in 1467.8 arcsec.
     (also identified as CD -43°8011)
      Register CD -43°8010 (en 12h):  8.7 | 54m49.9s | 31.3'     (pag. 82)
+   Neighbors:
+     Register CD -43°8009 (en 12h):  10.0 | 54m44.5s | 41.4'     (pag. 82)
+     Register CD -43°8011 (en 12h):  9.4 | 54m58.8s | 7.0'     (pag. 82)
 50) CD -43°8012 separated from CPD -43°5983 in 1014.6 arcsec.
     (also identified as CD -43°8013)
      Register CD -43°8012 (en 12h):  10.0 | 55m17.3s | 19.6'     (pag. 82)
+   Neighbors:
+     Register CD -43°8011 (en 12h):  9.4 | 54m58.8s | 7.0'     (pag. 82)
+     Register CD -43°8013 (en 12h):  9.1 | 55m20.7s | 36.6'     (pag. 82)
 51) CD -43°8015 separated from CPD -43°5985 in 2172.3 arcsec.
     (also identified as CD -43°8016)
      Register CD -43°8015 (en 12h):  10.0 | 55m21.9s | 44.5'     (pag. 82)
+   Neighbors:
+     Register CD -43°8014 (en 12h):  10.0 | 55m21.9s | 26.3'     (pag. 82)
+     Register CD -43°8016 (en 12h):  9.2 | 55m24.4s | 8.1'     (pag. 82)
 52) CD -43°8018 separated from CPD -43°5987 in 2676.9 arcsec.
     (also identified as CD -43°8019)
      Register CD -43°8018 (en 12h):  10.0 | 55m31.9s | 58.5'     (pag. 82)
+   Neighbors:
+     Register CD -43°8017 (en 12h):  9.8 | 55m28.6s | 17.1'     (pag. 82)
+     Register CD -43°8019 (en 12h):  9.5 | 55m48.5s | 13.8'     (pag. 82)
 53) CD -43°8022 separated from CPD -43°5989 in 2100.1 arcsec.
     (also identified as CD -43°8023)
      Register CD -43°8022 (en 12h):  10.0 | 56m9.5s | 18.4'     (pag. 82)
+   Neighbors:
+     Register CD -43°8021 (en 12h):  10.0 | 56m6.8s | 7.6'     (pag. 82)
+     Register CD -43°8023 (en 12h):  8.1 | 56m12.1s | 53.4'     (pag. 82)
 54) CD -43°8114 separated from CPD -43°6061 in 235.1 arcsec.
     (also identified as CD -43°8113)
      Register CD -43°8114 (en 13h):  9.4 | 4m56.1s | 53.4'     (pag. 83)
+   Neighbors:
+     Register CD -43°8113 (en 13h):  9.1 | 4m53.9s | 57.4'     (pag. 83)
+     Register CD -43°8115 (en 13h):  10.0 | 5m7.2s | 8.8'     (pag. 83)
 55) CD -43°8329 separated from CPD -43°6168 in 234.1 arcsec.
      Register CD -43°8329 (en 13h):  10.0 | 22m57.6s | 17.5'     (pag. 83)
+   Neighbors:
+     Register CD -43°8328 (en 13h):  9.5 | 22m57.6s | 13.4'     (pag. 83)
+     Register CD -43°8330 (en 13h):  9.4 | 23m0.9s | 58.0'     (pag. 83)
 56) CD -43°9478 separated from CPD -43°6800 in 1443.4 arcsec.
     (also identified as CD -43°9477)
      Register CD -43°9478 (en 14h):  9.2 | 48m49.6s | 56.8'     (pag. 87)
+   Neighbors:
+     Register CD -43°9477 (en 14h):  10.0 | 48m41.6s | 32.6'     (pag. 87)
+     Register CD -43°9479 (en 14h):  9.5 | 48m54.6s | 6.2'     (pag. 87)
 57) CD -43°11422 separated from CPD -43°7842 in 1377.7 arcsec.
     (also identified as CD -43°11398)
      Register CD -43°11422 (en 16h):  10.0 | 58m20.0s | 2.1'     (pag. 94)
+   Neighbors:
+     Register CD -43°11421 (en 16h):  10.0 | 58m18.0s | 17.6'     (pag. 94)
+     Register CD -43°11423 (en 16h):  9.2 | 58m26.0s | 39.6'     (pag. 94)
 58) CD -43°11903 separated from CPD -43°8188 in 1212.0 arcsec.
     (also identified as CD -43°11900)
      Register CD -43°11903 (en 17h):  9.3 | 30m9.3s | 45.6'     (pag. 95)
+   Neighbors:
+     Register CD -43°11902 (en 17h):  10.0 | 30m4.2s | 16.8'     (pag. 95)
+     Register CD -43°11904 (en 17h):  8.0 | 30m21.4s | 5.2'     (pag. 95)
 59) CD -43°11918 separated from CPD -43°8205 in 379.1 arcsec.
     (also identified as CD -43°11924)
      Register CD -43°11918 (en 17h):  9.6 | 31m26.4s | 12.1'     (pag. 95)
+   Neighbors:
+     Register CD -43°11917 (en 17h):  9.0 | 31m23.8s | 47.3'     (pag. 95)
+     Register CD -43°11919 (en 17h):  10.0 | 31m28.0s | 1.9'     (pag. 95)
 60) CD -43°13231 separated from CPD -43°8951 in 594.0 arcsec.
      Register CD -43°13231 (en 19h):  9.8 | 6m52.1s | 36.8'     (pag. 100)
+   Neighbors:
+     Register CD -43°13230 (en 19h):  9.9 | 6m45.1s | 8.2'     (pag. 100)
+     Register CD -43°13232 (en 19h):  9.9 | 6m56.5s | 38.0'     (pag. 100)
 61) CD -43°13396 separated from CPD -43°9006 in 600.0 arcsec.
      Register CD -43°13396 (en 19h):  9.3 | 20m38.5s | 51.2'     (pag. 100)
+   Neighbors:
+     Register CD -43°13395 (en 19h):  5.9 | 20m30.8s | 41.7'     (pag. 100)
+     Register CD -43°13397 (en 19h):  10.0 | 20m44.1s | 16.7'     (pag. 100)
 62) CD -43°13957 separated from CPD -43°9216 in 1146.1 arcsec.
     (also identified as CD -43°13958)
      Register CD -43°13957 (en 20h):  9.9 | 14m55.8s | 24.1'     (pag. 102)
+   Neighbors:
+     Register CD -43°13956 (en 20h):  10.0 | 14m51.6s | 34.2'     (pag. 102)
+     Register CD -43°13958 (en 20h):  9.9 | 14m56.5s | 43.3'     (pag. 102)
 63) CD -43°15378 separated from CPD -43°9747 in 1788.8 arcsec.
     (also identified as CD -43°15388)
      Register CD -43°15378 (en 23h):  10.0 | 20m35.8s | 12.1'     (pag. 107)
+   Neighbors:
+     Register CD -43°15377 (en 23h):  10.0 | 20m32.8s | 36.2'     (pag. 107)
+     Register CD -43°15379 (en 23h):  10.0 | 20m54.4s | 4.7'     (pag. 107)
 64) CD -44°4330 separated from CPD -44°2562 in 2429.8 arcsec.
     (also identified as CD -43°4230)
      Register CD -44°4330 (en 8h):  8.4 | 17m30.5s | 36.4'     (pag. 122)
+   Neighbors:
+     Register CD -44°4329 (en 8h):  10.0 | 17m29.8s | 41.4'     (pag. 122)
+     Register CD -44°4331 (en 8h):  10.0 | 17m37.0s | 55.0'     (pag. 122)
 65) CD -44°4977 separated from CPD -44°3244 in 817.8 arcsec.
     (also identified as CD -44°4967)
      Register CD -44°4977 (en 8h):  10.0 | 52m39.4s | 40.5'     (pag. 125)
+   Neighbors:
+     Register CD -44°4976 (en 8h):  10.0 | 52m39.3s | 30.1'     (pag. 125)
+     Register CD -44°4978 (en 8h):  10.0 | 52m39.7s | 16.2'     (pag. 125)
 66) CD -44°5220 separated from CPD -44°3510 in 2112.0 arcsec.
     (also identified as CD -44°5221)
      Register CD -44°5220 (en 9h):  9.4 | 7m6.9s | 2.0'     (pag. 125)
+   Neighbors:
+     Register CD -44°5219 (en 9h):  10.0 | 7m6.2s | 32.2'     (pag. 125)
+     Register CD -44°5221 (en 9h):  9.8 | 7m7.1s | 37.4'     (pag. 125)
 67) CD -44°5356 separated from CPD -44°3663 in 672.4 arcsec.
     (also identified as CD -44°5358)
      Register CD -44°5356 (en 9h):  10.0 | 13m59.8s | 45.0'     (pag. 126)
+   Neighbors:
+     Register CD -44°5355 (en 9h):  8.6 | 13m58.2s | 5.3'     (pag. 126)
+     Register CD -44°5357 (en 9h):  10.0 | 14m1.0s | 40.1'     (pag. 126)
 68) CD -44°5411 separated from CPD -44°3718 in 1494.7 arcsec.
     (also identified as CD -44°5413)
      Register CD -44°5411 (en 9h):  9.3 | 17m3.4s | 23.7'     (pag. 126)
+   Neighbors:
+     Register CD -44°5410 (en 9h):  10.0 | 17m3.3s | 25.0'     (pag. 126)
+     Register CD -44°5412 (en 9h):  10.0 | 17m5.6s | 49.8'     (pag. 126)
 69) CD -44°6582 separated from CPD -44°4846 in 2628.5 arcsec.
     (also identified as CD -44°6524)
      Register CD -44°6582 (en 10h):  6.7 | 26m36.8s | 25.4'     (pag. 130)
+   Neighbors:
+     Register CD -44°6581 (en 10h):  9.7 | 26m32.0s | 48.5'     (pag. 130)
+     Register CD -44°6583 (en 10h):  6.3 | 26m37.7s | 25.2'     (pag. 130)
 70) CD -44°6911 separated from CPD -44°5186 in 1794.0 arcsec.
      Register CD -44°6911 (en 10h):  9.5 | 48m50.7s | 17.7'     (pag. 131)
+   Neighbors:
+     Register CD -44°6910 (en 10h):  10.0 | 48m48.9s | 41.6'     (pag. 131)
+     Register CD -44°6912 (en 10h):  10.0 | 48m54.0s | 37.3'     (pag. 131)
 71) CD -44°9431 separated from CPD -44°6841 in 612.2 arcsec.
     (also identified as CD -44°9432)
      Register CD -44°9431 (en 14h):  10.0 | 25m36.3s | 27.4'     (pag. 140)
+   Neighbors:
+     Register CD -44°9430 (en 14h):  9.9 | 25m29.8s | 38.2'     (pag. 140)
+     Register CD -44°9432 (en 14h):  10.0 | 25m37.3s | 39.8'     (pag. 140)
 72) CD -44°9903 separated from CPD -44°7203 in 1812.0 arcsec.
      Register CD -44°9903 (en 15h):  8.8 | 1m30.0s | 10.2'     (pag. 141)
+   Neighbors:
+     Register CD -44°9902 (en 15h):  9.9 | 1m24.8s | 57.7'     (pag. 141)
+     Register CD -44°9904 (en 15h):  10.0 | 1m36.1s | 57.2'     (pag. 141)
 73) CD -44°10698 separated from CPD -44°7805 in 672.0 arcsec.
      Register CD -44°10698 (en 16h):  9.3 | 3m41.0s | 28.6'     (pag. 144)
+   Neighbors:
+     Register CD -44°10697 (en 16h):  9.9 | 3m30.4s | 49.1'     (pag. 144)
+     Register CD -44°10699 (en 16h):  9.8 | 3m52.5s | 24.4'     (pag. 144)
 74) CD -44°10851 separated from CPD -44°7855 in 2608.3 arcsec.
     (also identified as CD -44°10806)
      Register CD -44°10851 (en 16h):  9.1 | 17m8.3s | 26.1'     (pag. 144)
+   Neighbors:
+     Register CD -44°10850 (en 16h):  10.0 | 16m50.5s | 43.2'     (pag. 144)
+     Register CD -44°10852 (en 16h):  10.0 | 17m11.3s | 29.9'     (pag. 144)
 75) CD -44°11052 separated from CPD -44°8003 in 546.1 arcsec.
     (also identified as CD -44°11053)
      Register CD -44°11052 (en 16h):  9.6 | 32m22.8s | 22.0'     (pag. 145)
+   Neighbors:
+     Register CD -44°11051 (en 16h):  10.0 | 32m17.0s | 49.9'     (pag. 145)
+     Register CD -44°11053 (en 16h):  10.0 | 32m28.3s | 16.7'     (pag. 145)
 76) CD -44°14356 separated from CPD -44°9967 in 641.6 arcsec.
      Register CD -44°14356 (en 21h):  8.5 | 6m7.6s | 20.0'     (pag. 156)
+   Neighbors:
+     Register CD -44°14355 (en 21h):  10.0 | 6m3.7s | 5.6'     (pag. 156)
+     Register CD -44°14357 (en 21h):  10.0 | 6m12.4s | 10.3'     (pag. 156)
 77) CD -44°14358 separated from CPD -44°9968 in 641.4 arcsec.
      Register CD -44°14358 (en 21h):  8.8 | 6m16.2s | 26.9'     (pag. 156)
+   Neighbors:
+     Register CD -44°14357 (en 21h):  10.0 | 6m12.4s | 10.3'     (pag. 156)
+     Register CD -44°14359 (en 21h):  9.9 | 6m17.7s | 8.0'     (pag. 156)
 78) CD -44°14360 separated from CPD -44°9970 in 641.9 arcsec.
      Register CD -44°14360 (en 21h):  9.2 | 6m22.3s | 30.2'     (pag. 156)
+   Neighbors:
+     Register CD -44°14359 (en 21h):  9.9 | 6m17.7s | 8.0'     (pag. 156)
+     Register CD -44°14361 (en 21h):  9.9 | 6m23.9s | 13.8'     (pag. 156)
 79) CD -44°14362 separated from CPD -44°9972 in 639.4 arcsec.
      Register CD -44°14362 (en 21h):  8.9 | 6m44.3s | 44.1'     (pag. 156)
+   Neighbors:
+     Register CD -44°14361 (en 21h):  9.9 | 6m23.9s | 13.8'     (pag. 156)
+     Register CD -44°14363 (en 21h):  10.0 | 7m2.2s | 17.0'     (pag. 156)
 80) CD -44°15220 separated from CPD -44°10315 in 2591.7 arcsec.
     (also identified as CD -44°15210)
      Register CD -44°15220 (en 23h):  8.8 | 16m6.5s | 50.1'     (pag. 159)
+   Neighbors:
+     Register CD -44°15219 (en 23h):  10.0 | 15m45.4s | 37.0'     (pag. 159)
+     Register CD -44°15221 (en 23h):  9.4 | 16m17.5s | 47.5'     (pag. 159)
 81) CD -44°15337 separated from CPD -44°10370 in 3103.8 arcsec.
     (also identified as CD -44°15357)
      Register CD -44°15337 (en 23h):  10.0 | 36m57.0s | 44.8'     (pag. 159)
+   Neighbors:
+     Register CD -44°15336 (en 23h):  9.9 | 36m55.4s | 59.9'     (pag. 159)
+     Register CD -44°15338 (en 23h):  8.6 | 37m15.6s | 17.3'     (pag. 159)
 82) CD -45°372 separated from CPD -45°132 in 633.6 arcsec.
     (also identified as CD -45°379)
      Register CD -45°372 (en 1h):  10.0 | 3m9.9s | 9.0'     (pag. 161)
+   Neighbors:
+     Register CD -45°371 (en 1h):  9.1 | 2m24.9s | 28.4'     (pag. 161)
+     Register CD -45°373 (en 1h):  10.0 | 3m12.2s | 24.5'     (pag. 161)
 83) CD -45°2195 separated from CPD -45°706 in 1139.1 arcsec.
     (also identified as CD -45°2199)
      Register CD -45°2195 (en 5h):  9.9 | 47m37.0s | 43.4'     (pag. 167)
+   Neighbors:
+     Register CD -45°2194 (en 5h):  9.1 | 47m19.7s | 46.8'     (pag. 167)
+     Register CD -45°2196 (en 5h):  10.0 | 47m52.6s | 53.2'     (pag. 167)
 84) CD -45°2250 separated from CPD -45°737 in 2615.2 arcsec.
     (also identified as CD -45°2260)
      Register CD -45°2250 (en 5h):  10.0 | 54m16.3s | 48.7'     (pag. 167)
+   Neighbors:
+     Register CD -45°2249 (en 5h):  10.0 | 54m11.9s | 59.3'     (pag. 167)
+     Register CD -45°2251 (en 5h):  10.0 | 54m28.8s | 49.2'     (pag. 167)
 85) CD -45°2660 separated from CPD -45°981 in 606.0 arcsec.
      Register CD -45°2660 (en 6h):  8.7 | 36m6.4s | 26.8'     (pag. 169)
+   Neighbors:
+     Register CD -45°2659 (en 6h):  10.0 | 36m1.8s | 47.2'     (pag. 169)
+     Register CD -45°2661 (en 6h):  10.0 | 36m12.9s | 9.2'     (pag. 169)
 86) CD -45°3760 separated from CPD -45°2106 in 390.6 arcsec.
     (also identified as CD -45°3768)
      Register CD -45°3760 (en 8h):  10.0 | 1m52.7s | 52.7'     (pag. 172)
+   Neighbors:
+     Register CD -45°3759 (en 8h):  8.5 | 1m52.3s | 38.3'     (pag. 172)
+     Register CD -45°3761 (en 8h):  9.7 | 1m54.1s | 28.8'     (pag. 172)
 87) CD -45°4305 separated from CPD -45°2732 in 960.1 arcsec.
     (also identified as CD -45°4314)
      Register CD -45°4305 (en 8h):  10.0 | 32m52.0s | 26.5'     (pag. 174)
+   Neighbors:
+     Register CD -45°4304 (en 8h):  9.2 | 32m44.1s | 5.1'     (pag. 174)
+     Register CD -45°4306 (en 8h):  10.0 | 32m53.9s | 21.4'     (pag. 174)
 88) CD -45°6928 separated from CPD -45°5420 in 1194.0 arcsec.
      Register CD -45°6928 (en 11h):  8.7 | 16m32.4s | 59.7'     (pag. 183)
+   Neighbors:
+     Register CD -45°6927 (en 11h):  10.0 | 16m32.2s | 57.7'     (pag. 183)
+     Register CD -45°6929 (en 11h):  9.3 | 16m33.6s | 14.5'     (pag. 183)
 89) CD -45°11383 separated from CPD -45°8455 in 241.3 arcsec.
     (also identified as CD -45°11384)
      Register CD -45°11383 (en 17h):  10.0 | 9m47.5s | 49.6'     (pag. 198)
+   Neighbors:
+     Register CD -45°11382 (en 17h):  10.0 | 9m45.9s | 49.4'     (pag. 198)
+     Register CD -45°11384 (en 17h):  10.0 | 9m49.1s | 45.6'     (pag. 198)
 90) CD -45°13200 separated from CPD -45°9713 in 594.0 arcsec.
     (also identified as CD -45°13201)
      Register CD -45°13200 (en 19h):  9.4 | 16m38.0s | 47.8'     (pag. 204)
+   Neighbors:
+     Register CD -45°13199 (en 19h):  9.1 | 16m33.0s | 12.1'     (pag. 204)
+     Register CD -45°13201 (en 19h):  10.0 | 16m39.9s | 53.7'     (pag. 204)
 91) CD -45°14271 separated from CPD -45°10123 in 180.2 arcsec.
      Register CD -45°14271 (en 21h):  8.2 | 6m47.9s | 3.0'     (pag. 208)
+   Neighbors:
+     Register CD -45°14270 (en 21h):  10.0 | 6m22.0s | 1.6'     (pag. 208)
+     Register CD -45°14272 (en 21h):  9.3 | 6m59.8s | 53.0'     (pag. 208)
 92) CD -45°15023 separated from CPD -45°10421 in 2802.6 arcsec.
     (also identified as CD -45°15022)
      Register CD -45°15023 (en 23h):  8.8 | 18m13.3s | 46.8'     (pag. 210)
+   Neighbors:
+     Register CD -45°15022 (en 23h):  9.8 | 18m6.8s | 0.2'     (pag. 210)
+     Register CD -45°15024 (en 23h):  10.0 | 18m19.3s | 24.7'     (pag. 210)
 93) CD -45°15024 separated from CPD -45°10422 in 1333.4 arcsec.
     (also identified as CD -45°15023)
      Register CD -45°15024 (en 23h):  10.0 | 18m19.3s | 24.7'     (pag. 210)
+   Neighbors:
+     Register CD -45°15023 (en 23h):  8.8 | 18m13.3s | 46.8'     (pag. 210)
+     Register CD -45°15025 (en 23h):  10.0 | 18m19.8s | 47.7'     (pag. 210)
 94) CD -45°15059 separated from CPD -45°10435 in 606.0 arcsec.
      Register CD -45°15059 (en 23h):  6.8 | 25m53.6s | 48.6'     (pag. 210)
+   Neighbors:
+     Register CD -45°15058 (en 23h):  9.9 | 25m17.2s | 39.6'     (pag. 210)
+     Register CD -45°15060 (en 23h):  10.0 | 26m8.2s | 7.2'     (pag. 210)
 95) CD -45°15193 separated from CPD -45°10502 in 1323.1 arcsec.
     (also identified as CD -45°15199)
      Register CD -45°15193 (en 23h):  10.0 | 52m19.8s | 57.0'     (pag. 211)
+   Neighbors:
+     Register CD -45°15192 (en 23h):  10.0 | 52m10.0s | 54.1'     (pag. 211)
+     Register CD -45°15194 (en 23h):  10.0 | 52m23.6s | 35.7'     (pag. 211)
 96) CD -46°5420 separated from CPD -46°3858 in 2994.0 arcsec.
      Register CD -46°5420 (en 9h):  8.7 | 37m18.8s | 55.0'     (pag. 229)
+   Neighbors:
+     Register CD -46°5419 (en 9h):  10.0 | 37m18.4s | 31.8'     (pag. 229)
+     Register CD -46°5421 (en 9h):  10.0 | 37m19.8s | 22.7'     (pag. 229)
 97) CD -46°8821 separated from CPD -46°6476 in 1081.6 arcsec.
     (also identified as CD -46°8825)
      Register CD -46°8821 (en 13h):  9.8 | 36m25.5s | 59.9'     (pag. 241)
+   Neighbors:
+     Register CD -46°8820 (en 13h):  8.6 | 36m18.9s | 5.5'     (pag. 241)
+     Register CD -46°8822 (en 13h):  8.9 | 36m26.0s | 27.2'     (pag. 241)
 98) CD -46°9501 separated from CPD -46°6927 in 1800.0 arcsec.
      Register CD -46°9501 (en 14h):  2.6 | 33m38.0s | 51.0'     (pag. 243)
+   Neighbors:
+     Register CD -46°9500 (en 14h):  7.3 | 33m32.0s | 44.2'     (pag. 243)
+     Register CD -46°9502 (en 14h):  9.9 | 33m43.7s | 44.4'     (pag. 243)
 99) CD -46°10129 separated from CPD -46°7484 in 1032.3 arcsec.
     (also identified as CD -45°9969)
      Register CD -46°10129 (en 15h):  10.0 | 22m42.8s | 17.2'     (pag. 245)
+   Neighbors:
+     Register CD -46°10128 (en 15h):  9.7 | 22m39.0s | 20.0'     (pag. 245)
+     Register CD -46°10130 (en 15h):  9.6 | 22m42.8s | 42.7'     (pag. 245)
 100) CD -46°10911 separated from CPD -46°8114 in 1806.0 arcsec.
      Register CD -46°10911 (en 16h):  10.0 | 30m38.9s | 49.8'     (pag. 248)
+   Neighbors:
+     Register CD -46°10910 (en 16h):  9.4 | 30m36.4s | 36.5'     (pag. 248)
+     Register CD -46°10912 (en 16h):  9.2 | 30m39.7s | 51.4'     (pag. 248)
 101) CD -46°11288 separated from CPD -46°8446 in 552.0 arcsec.
      Register CD -46°11288 (en 17h):  9.4 | 3m7.3s | 32.2'     (pag. 249)
+   Neighbors:
+     Register CD -46°11287 (en 17h):  9.5 | 3m6.3s | 1.8'     (pag. 249)
+     Register CD -46°11289 (en 17h):  10.0 | 3m20.8s | 2.2'     (pag. 249)
 102) CD -46°12092 separated from CPD -46°9084 in 630.1 arcsec.
     (also identified as CD -46°12090)
      Register CD -46°12092 (en 17h):  9.8 | 56m36.9s | 0.6'     (pag. 252)
+   Neighbors:
+     Register CD -46°12091 (en 17h):  10.0 | 56m32.1s | 43.4'     (pag. 252)
+     Register CD -46°12093 (en 17h):  10.0 | 56m39.2s | 45.4'     (pag. 252)
 103) CD -47°131 separated from CPD -47°50 in 1746.6 arcsec.
     (also identified as CD -47°137)
      Register CD -47°131 (en 0h):  10.0 | 24m22.6s | 6.1'     (pag. 262)
+   Neighbors:
+     Register CD -47°130 (en 0h):  10.0 | 24m19.9s | 49.8'     (pag. 262)
+     Register CD -47°132 (en 0h):  8.8 | 24m27.9s | 43.5'     (pag. 262)
 104) CD -47°2868 separated from CPD -47°1159 in 600.0 arcsec.
      Register CD -47°2868 (en 7h):  9.7 | 8m38.0s | 25.8'     (pag. 271)
+   Neighbors:
+     Register CD -47°2867 (en 7h):  9.5 | 8m36.0s | 11.7'     (pag. 271)
+     Register CD -47°2869 (en 7h):  9.2 | 8m38.0s | 32.3'     (pag. 271)
 105) CD -47°4238 separated from CPD -47°2561 in 468.1 arcsec.
     (also identified as CD -47°4236)
      Register CD -47°4238 (en 8h):  10.0 | 37m52.6s | 42.8'     (pag. 275)
+   Neighbors:
+     Register CD -47°4237 (en 8h):  10.0 | 37m52.2s | 22.4'     (pag. 275)
+     Register CD -47°4239 (en 8h):  10.0 | 37m52.7s | 25.3'     (pag. 275)
 106) CD -47°4479 separated from CPD -47°2885 in 1794.1 arcsec.
      Register CD -47°4479 (en 8h):  10.0 | 49m31.2s | 26.9'     (pag. 276)
+   Neighbors:
+     Register CD -47°4478 (en 8h):  10.0 | 49m28.3s | 25.9'     (pag. 276)
+     Register CD -47°4480 (en 8h):  5.8 | 49m39.0s | 2.8'     (pag. 276)
 107) CD -47°10007 separated from CPD -47°7141 in 2322.4 arcsec.
     (also identified as CD -47°10005)
      Register CD -47°10007 (en 15h):  9.7 | 19m52.8s | 48.8'     (pag. 295)
+   Neighbors:
+     Register CD -47°10006 (en 15h):  10.0 | 19m49.3s | 27.4'     (pag. 295)
+     Register CD -47°10008 (en 15h):  10.0 | 19m54.2s | 8.2'     (pag. 295)
 108) CD -47°11687 separated from CPD -47°8389 in 2621.7 arcsec.
     (also identified as CD -47°11671)
      Register CD -47°11687 (en 17h):  9.8 | 29m13.8s | 19.5'     (pag. 300)
+   Neighbors:
+     Register CD -47°11686 (en 17h):  10.0 | 29m4.5s | 30.4'     (pag. 300)
+     Register CD -47°11688 (en 17h):  9.2 | 29m22.1s | 5.9'     (pag. 300)
 109) CD -47°12218 separated from CPD -47°8836 in 856.6 arcsec.
     (also identified as CD -47°12228)
      Register CD -47°12218 (en 18h):  10.0 | 11m10.7s | 41.0'     (pag. 302)
+   Neighbors:
+     Register CD -47°12217 (en 18h):  9.8 | 10m59.3s | 39.6'     (pag. 302)
+     Register CD -47°12219 (en 18h):  10.0 | 11m19.5s | 35.9'     (pag. 302)
 110) CD -47°13120 separated from CPD -47°9371 in 420.1 arcsec.
     (also identified as CD -47°13119)
      Register CD -47°13120 (en 19h):  10.0 | 42m54.8s | 40.2'     (pag. 305)
+   Neighbors:
+     Register CD -47°13119 (en 19h):  9.9 | 42m53.4s | 47.3'     (pag. 305)
+     Register CD -47°13121 (en 19h):  8.2 | 42m55.2s | 10.5'     (pag. 305)
 111) CD -48°207 separated from CPD -48°107 in 2292.1 arcsec.
     (also identified as CD -48°208)
      Register CD -48°207 (en 0h):  9.9 | 47m49.3s | 44.9'     (pag. 312)
+   Neighbors:
+     Register CD -48°206 (en 0h):  9.0 | 47m30.2s | 30.9'     (pag. 312)
+     Register CD -48°208 (en 0h):  9.8 | 47m51.6s | 7.0'     (pag. 312)
 112) CD -48°510 separated from CPD -48°224 in 502.6 arcsec.
      Register CD -48°510 (en 1h):  8.8 | 50m57.1s | 26.4'     (pag. 313)
+   Neighbors:
+     Register CD -48°509 (en 1h):  10.0 | 50m41.3s | 28.6'     (pag. 313)
+     Register CD -48°511 (en 1h):  9.2 | 51m12.5s | 50.9'     (pag. 313)
 113) CD -48°1710 separated from CPD -48°622 in 3060.1 arcsec.
     (also identified as CD -48°1711)
      Register CD -48°1710 (en 5h):  10.0 | 12m6.6s | 52.0'     (pag. 317)
+   Neighbors:
+     Register CD -48°1709 (en 5h):  9.8 | 12m1.8s | 14.6'     (pag. 317)
+     Register CD -48°1711 (en 5h):  9.9 | 12m8.6s | 1.0'     (pag. 317)
 114) CD -48°4364 separated from CPD -48°2176 in 408.2 arcsec.
     (also identified as CD -48°4360)
      Register CD -48°4364 (en 8h):  9.9 | 58m48.3s | 12.0'     (pag. 326)
+   Neighbors:
+     Register CD -48°4363 (en 8h):  10.0 | 58m45.6s | 54.3'     (pag. 326)
+     Register CD -48°4365 (en 8h):  10.0 | 58m48.4s | 35.8'     (pag. 326)
 115) CD -48°14532 separated from CPD -48°10905 in 1204.1 arcsec.
     (also identified as CD -48°14531)
      Register CD -48°14532 (en 23h):  9.9 | 25m44.4s | 58.5'     (pag. 360)
+   Neighbors:
+     Register CD -48°14531 (en 23h):  8.7 | 25m3.4s | 39.6'     (pag. 360)
+     Register CD -48°14533 (en 23h):  10.0 | 25m57.2s | 39.8'     (pag. 360)
 116) CD -49°1218 separated from CPD -49°501 in 612.0 arcsec.
     (also identified as CD -49°1219)
      Register CD -49°1218 (en 4h):  9.5 | 3m2.7s | 49.3'     (pag. 364)
+   Neighbors:
+     Register CD -49°1217 (en 4h):  10.0 | 2m58.9s | 43.6'     (pag. 364)
+     Register CD -49°1219 (en 4h):  10.0 | 3m19.3s | 55.3'     (pag. 364)
 117) CD -49°2205 separated from CPD -49°930 in 606.0 arcsec.
     (also identified as CD -49°2201)
      Register CD -49°2205 (en 6h):  9.3 | 18m30.3s | 39.2'     (pag. 368)
+   Neighbors:
+     Register CD -49°2204 (en 6h):  10.0 | 18m28.6s | 9.9'     (pag. 368)
+     Register CD -49°2206 (en 6h):  10.0 | 18m30.5s | 10.7'     (pag. 368)
 118) CD -49°2340 separated from CPD -49°984 in 734.2 arcsec.
     (also identified as CD -49°2330)
      Register CD -49°2340 (en 6h):  9.6 | 34m2.4s | 56.2'     (pag. 368)
+   Neighbors:
+     Register CD -49°2339 (en 6h):  10.0 | 34m0.9s | 51.3'     (pag. 368)
+     Register CD -49°2341 (en 6h):  9.9 | 34m3.5s | 47.7'     (pag. 368)
 119) CD -49°3374 separated from CPD -49°1514 in 1989.5 arcsec.
     (also identified as CD -49°3371)
      Register CD -49°3374 (en 8h):  10.0 | 5m36.2s | 34.7'     (pag. 372)
+   Neighbors:
+     Register CD -49°3373 (en 8h):  10.0 | 5m8.6s | 12.3'     (pag. 372)
+     Register CD -49°3375 (en 8h):  9.8 | 5m40.8s | 37.2'     (pag. 372)
 120) CD -49°3993 separated from CPD -49°2037 in 798.0 arcsec.
      Register CD -49°3993 (en 8h):  10.0 | 52m55.2s | 20.5'     (pag. 374)
+   Neighbors:
+     Register CD -49°3992 (en 8h):  9.6 | 52m53.9s | 18.2'     (pag. 374)
+     Register CD -49°3994 (en 8h):  7.3 | 52m55.5s | 12.0'     (pag. 374)
 121) CD -49°7937 separated from CPD -49°6084 in 532.3 arcsec.
     (also identified as CD -49°7931)
      Register CD -49°7937 (en 13h):  10.0 | 19m55.6s | 0.8'     (pag. 387)
+   Neighbors:
+     Register CD -49°7936 (en 13h):  10.0 | 19m54.4s | 25.2'     (pag. 387)
+     Register CD -49°7938 (en 13h):  10.0 | 20m4.3s | 25.6'     (pag. 387)
 122) CD -49°8685 separated from CPD -49°6850 in 3074.2 arcsec.
     (also identified as CD -49°8620)
      Register CD -49°8685 (en 14h):  8.3 | 14m5.3s | 16.6'     (pag. 390)
+   Neighbors:
+     Register CD -49°8684 (en 14h):  10.0 | 13m51.2s | 54.0'     (pag. 390)
+     Register CD -49°8686 (en 14h):  10.0 | 14m7.5s | 31.6'     (pag. 390)
 123) CD -49°8895 separated from CPD -49°7162 in 192.0 arcsec.
      Register CD -49°8895 (en 14h):  7.3 | 29m12.1s | 32.3'     (pag. 390)
+   Neighbors:
+     Register CD -49°8894 (en 14h):  10.0 | 29m11.8s | 21.2'     (pag. 390)
+     Register CD -49°8896 (en 14h):  9.2 | 29m15.4s | 1.8'     (pag. 390)
 124) CD -49°9302 separated from CPD -49°7679 in 380.5 arcsec.
     (also identified as CD -49°9311)
      Register CD -49°9302 (en 14h):  9.9 | 56m22.9s | 48.0'     (pag. 392)
+   Neighbors:
+     Register CD -49°9301 (en 14h):  10.0 | 56m18.8s | 58.3'     (pag. 392)
+     Register CD -49°9303 (en 14h):  10.0 | 56m23.2s | 2.6'     (pag. 392)
 125) CD -49°10039 separated from CPD -49°8629 in 2388.0 arcsec.
      Register CD -49°10039 (en 15h):  9.5 | 40m56.6s | 45.9'     (pag. 394)
+   Neighbors:
+     Register CD -49°10038 (en 15h):  10.0 | 40m48.5s | 1.5'     (pag. 394)
+     Register CD -49°10040 (en 15h):  9.9 | 41m0.0s | 51.3'     (pag. 394)
 126) CD -49°10259 separated from CPD -49°8873 in 1890.8 arcsec.
     (also identified as CD -49°10252)
      Register CD -49°10259 (en 15h):  10.0 | 52m47.3s | 4.8'     (pag. 395)
+   Neighbors:
+     Register CD -49°10258 (en 15h):  8.3 | 52m42.7s | 36.5'     (pag. 395)
+     Register CD -49°10260 (en 15h):  10.0 | 52m49.4s | 55.7'     (pag. 395)
 127) CD -49°10986 separated from CPD -49°9599 in 1759.2 arcsec.
     (also identified as CD -49°10966)
      Register CD -49°10986 (en 16h):  9.3 | 39m48.4s | 21.0'     (pag. 397)
+   Neighbors:
+     Register CD -49°10985 (en 16h):  9.9 | 39m40.1s | 56.1'     (pag. 397)
+     Register CD -49°10987 (en 16h):  7.8 | 39m54.5s | 45.5'     (pag. 397)
 128) CD -50°67 separated from CPD -50°45 in 2329.4 arcsec.
     (also identified as CD -50°69)
      Register CD -50°67 (en 0h):  9.9 | 16m15.2s | 21.1'     (pag. 409)
+   Neighbors:
+     Register CD -50°66 (en 0h):  10.0 | 15m39.4s | 6.2'     (pag. 409)
+     Register CD -50°68 (en 0h):  10.0 | 16m58.2s | 36.2'     (pag. 409)
 129) CD -50°3560 separated from CPD -50°1788 in 2616.0 arcsec.
     (also identified as CD -50°3559)
      Register CD -50°3560 (en 8h):  9.5 | 42m30.0s | 5.4'     (pag. 421)
+   Neighbors:
+     Register CD -50°3559 (en 8h):  9.8 | 42m27.9s | 48.9'     (pag. 421)
+     Register CD -50°3561 (en 8h):  10.0 | 42m50.4s | 43.6'     (pag. 421)
 130) CD -50°3813 separated from CPD -50°2033 in 286.0 arcsec.
     (also identified as CD -50°3812)
      Register CD -50°3813 (en 9h):  9.9 | 1m12.5s | 18.4'     (pag. 421)
+   Neighbors:
+     Register CD -50°3812 (en 9h):  9.7 | 1m1.4s | 23.0'     (pag. 421)
+     Register CD -50°3814 (en 9h):  10.0 | 1m14.6s | 1.4'     (pag. 421)
 131) CD -50°3814 separated from CPD -50°2034 in 1020.1 arcsec.
     (also identified as CD -50°3813)
      Register CD -50°3814 (en 9h):  10.0 | 1m14.6s | 1.4'     (pag. 421)
+   Neighbors:
+     Register CD -50°3813 (en 9h):  9.9 | 1m12.5s | 18.4'     (pag. 421)
+     Register CD -50°3815 (en 9h):  9.7 | 1m19.6s | 38.0'     (pag. 421)
 132) CD -50°4905 separated from CPD -50°3153 in 600.0 arcsec.
      Register CD -50°4905 (en 10h):  10.0 | 7m34.9s | 39.1'     (pag. 425)
+   Neighbors:
+     Register CD -50°4904 (en 10h):  10.0 | 7m34.6s | 21.2'     (pag. 425)
+     Register CD -50°4906 (en 10h):  10.0 | 7m34.9s | 40.4'     (pag. 425)
 133) CD -50°5581 separated from CPD -50°3827 in 2356.6 arcsec.
     (also identified as CD -50°5561)
      Register CD -50°5581 (en 10h):  10.0 | 54m50.1s | 49.3'     (pag. 427)
+   Neighbors:
+     Register CD -50°5580 (en 10h):  10.0 | 54m49.2s | 12.0'     (pag. 427)
+     Register CD -50°5582 (en 10h):  10.0 | 55m3.0s | 44.8'     (pag. 427)
 134) CD -50°5587 separated from CPD -50°3830 in 2306.2 arcsec.
     (also identified as CD -50°5567)
      Register CD -50°5587 (en 10h):  10.0 | 55m19.1s | 53.4'     (pag. 427)
+   Neighbors:
+     Register CD -50°5586 (en 10h):  9.3 | 55m10.3s | 6.2'     (pag. 427)
+     Register CD -50°5588 (en 10h):  10.0 | 55m29.7s | 37.2'     (pag. 427)
 135) CD -50°8073 separated from CPD -50°6366 in 216.6 arcsec.
     (also identified as CD -50°8069)
      Register CD -50°8073 (en 13h):  10.0 | 43m1.3s | 35.2'     (pag. 436)
+   Neighbors:
+     Register CD -50°8072 (en 13h):  10.0 | 43m1.0s | 53.8'     (pag. 436)
+     Register CD -50°8074 (en 13h):  10.0 | 43m3.7s | 14.7'     (pag. 436)
 136) CD -50°8877 separated from CPD -50°7314 in 1188.1 arcsec.
      Register CD -50°8877 (en 14h):  9.9 | 44m30.9s | 30.8'     (pag. 439)
+   Neighbors:
+     Register CD -50°8876 (en 14h):  10.0 | 44m23.1s | 43.2'     (pag. 439)
+     Register CD -50°8878 (en 14h):  10.0 | 44m32.3s | 16.7'     (pag. 439)
 137) CD -50°13283 separated from CPD -50°11506 in 537.7 arcsec.
     (also identified as CD -50°13282)
      Register CD -50°13283 (en 21h):  9.8 | 7m20.6s | 36.8'     (pag. 453)
+   Neighbors:
+     Register CD -50°13282 (en 21h):  9.9 | 7m13.6s | 45.7'     (pag. 453)
+     Register CD -50°13284 (en 21h):  8.9 | 7m25.9s | 52.0'     (pag. 453)
 138) CD -51°4494 separated from CPD -51°2994 in 1308.4 arcsec.
     (also identified as CD -51°4493)
      Register CD -51°4494 (en 10h):  9.9 | 3m9.7s | 24.8'     (pag. 471)
+   Neighbors:
+     Register CD -51°4493 (en 10h):  10.0 | 3m6.3s | 3.0'     (pag. 471)
+     Register CD -51°4495 (en 10h):  9.3 | 3m37.2s | 8.6'     (pag. 471)
 139) CD -51°6012 separated from CPD -51°4449 in 528.0 arcsec.
      Register CD -51°6012 (en 11h):  8.1 | 39m38.0s | 50.9'     (pag. 476)
+   Neighbors:
+     Register CD -51°6011 (en 11h):  9.7 | 39m33.6s | 23.5'     (pag. 476)
+     Register CD -51°6013 (en 11h):  10.0 | 39m39.3s | 45.4'     (pag. 476)
 140) CD -51°6914 separated from CPD -51°5411 in 588.1 arcsec.
      Register CD -51°6914 (en 12h):  9.8 | 34m56.5s | 38.0'     (pag. 479)
+   Neighbors:
+     Register CD -51°6913 (en 12h):  9.9 | 34m47.0s | 40.9'     (pag. 479)
+     Register CD -51°6915 (en 12h):  9.9 | 35m6.2s | 18.5'     (pag. 479)
 141) CD -51°10147 separated from CPD -51°9505 in 192.0 arcsec.
     (also identified as CD -51°10146)
      Register CD -51°10147 (en 16h):  10.0 | 15m49.9s | 38.1'     (pag. 490)
+   Neighbors:
+     Register CD -51°10146 (en 16h):  10.0 | 15m48.8s | 34.8'     (pag. 490)
+     Register CD -51°10148 (en 16h):  9.9 | 15m55.1s | 44.0'     (pag. 490)
 142) CD -51°12081 separated from CPD -51°11232 in 1812.0 arcsec.
     (also identified as CD -51°12080)
      Register CD -51°12081 (en 19h):  10.0 | 16m5.3s | 2.9'     (pag. 497)
+   Neighbors:
+     Register CD -51°12080 (en 19h):  9.6 | 16m4.8s | 33.6'     (pag. 497)
+     Register CD -51°12082 (en 19h):  9.5 | 16m15.8s | 40.1'     (pag. 497)
 143) CD -51°12676 separated from CPD -51°11550 in 1133.1 arcsec.
     (also identified as CD -51°12684)
      Register CD -51°12676 (en 20h):  10.0 | 33m13.7s | 31.9'     (pag. 499)
+   Neighbors:
+     Register CD -51°12675 (en 20h):  10.0 | 33m7.1s | 32.4'     (pag. 499)
+     Register CD -51°12677 (en 20h):  10.0 | 33m20.5s | 45.6'     (pag. 499)
 144) CD -57°3407 separated from CPD -57°3665 in 1007.9 arcsec.
      Register CD -57°3407 (en 10h):  10.0 | 34m20.6s | 58.1'     (pag. 176)
+   Neighbors:
+     Register CD -57°3406 (en 10h):  9.6 | 34m19.1s | 51.7'     (pag. 176)
+     Register CD -57°3408 (en 10h):  11.0 | 34m21.1s | 54.5'     (pag. 176)
 145) CD -58°3567 separated from CPD -58°2725 in 498.1 arcsec.
      Register CD -58°3567 (en 10h):  10.3 | 43m15.0s | 0.8'     (pag. 207)
+   Neighbors:
+     Register CD -58°3566 (en 10h):  10.3 | 43m11.8s | 11.8'     (pag. 207)
+     Register CD -58°3568 (en 10h):  10.0 | 43m25.5s | 28.7'     (pag. 207)
 146) CD -58°3926 separated from CPD -58°3329 in 1352.1 arcsec.
     (also identified as CD -58°3925)
      Register CD -58°3926 (en 11h):  10.8 | 8m47.1s | 31.5'     (pag. 208)
+   Neighbors:
+     Register CD -58°3925 (en 11h):  10.0 | 8m37.3s | 8.3'     (pag. 208)
+     Register CD -58°3927 (en 11h):  10.3 | 8m47.6s | 51.5'     (pag. 208)
 147) CD -58°7076 separated from CPD -58°7399 in 289.6 arcsec.
      Register CD -58°7076 (en 18h):  10.0 | 19m53.8s | 19.7'     (pag. 219)
+   Neighbors:
+     Register CD -58°7075 (en 18h):  10.5 | 19m23.6s | 7.7'     (pag. 219)
+     Register CD -58°7077 (en 18h):  10.3 | 19m55.1s | 46.2'     (pag. 219)
 148) CD -60°2899 separated from CPD -60°1602 in 547.6 arcsec.
     (also identified as CD -60°2889)
      Register CD -60°2899 (en 10h):  8.7 | 0m1.6s | 42.0'     (pag. 263)
+   Neighbors:
+     Register CD -60°2898 (en 9h):  11.0 | 59m52.5s | 13.1'     (pag. 263)
+     Register CD -60°2900 (en 10h):  9.5 | 0m5.3s | 55.0'     (pag. 263)
 149) CD -61°4204 separated from CPD -61°4317 in 2005.7 arcsec.
     (also identified as CD -61°4202)
      Register CD -61°4204 (en 13h):  9.5 | 56m30.7s | 20.9'     (pag. 295)
+   Neighbors:
+     Register CD -61°4203 (en 13h):  9.3 | 56m21.5s | 59.9'     (pag. 295)
+     Register CD -61°4205 (en 13h):  10.5 | 56m32.4s | 36.9'     (pag. 295)
 150) CD -62°608 separated from CPD -62°2564 in 502.0 arcsec.
     (also identified as CD -62°612)
      Register CD -62°608 (en 11h):  9.2 | 57m16.0s | 7.0'     (pag. 6)
+   Neighbors:
+     Register CD -62°607 (en 11h):  8.5 | 57m4.0s | 46.3'     (pag. 6)
+     Register CD -62°609 (en 11h):  9.0 | 57m31.0s | 20.5'     (pag. 6)
 Total errors: 150, Drops = 0
 RSME of distance (arcsec) = 16.03  among a total of 44316 stars

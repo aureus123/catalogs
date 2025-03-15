@@ -17,4 +17,4 @@ struct CPDstar_struct {
 
 int getCPDStars();
 struct CPDstar_struct *getCPDStruct();
-void readCPD(bool catalog);
+void readCPD(bool cross, bool catalog);
