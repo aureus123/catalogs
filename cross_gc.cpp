@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 
     /* leemos catalogo CD */
     readDM(CURATED ? "cat/cd_curated.txt" : "cat/cd.txt");
-    struct DMstar_struct *P = getDMStruct();
+    struct DMstar_struct *CDstar = getDMStruct();
     int CDstars = getDMStars();
 
     /** leemos catalogo CPD */
@@ -47,7 +47,7 @@ int main(int argc, char** argv)
 	int GCstars = getGCStars();
 
 	printf("\n***************************************\n");
-    printf("Perform comparison between GC and PPM/CD...\n");
+    printf("Perform comparison between GC and PPM/CD/CPD...\n");
 
 	FILE *crossCDStream = openCrossFile("results/cross_gc_cd.csv");
 	FILE *crossCPDStream = openCrossFile("results/cross_gc_cpd.csv");
@@ -137,14 +137,14 @@ int main(int argc, char** argv)
             int cdIndex = -1;
             minDistance = HUGE_NUMBER;
             for (int i = 0; i < CDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, P[i].x, P[i].y, P[i].z);
+			    double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
 			    if (minDistance > dist) {
 				    cdIndex = i;
 				    minDistance = dist;
 			    }
             }
 			if (minDistance < MAX_DIST_CD) {
-			    float cdVmag = P[cdIndex].vmag;
+			    float cdVmag = CDstar[cdIndex].vmag;
 			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9 && !GCstar[gcIndex].dpl) {
 				    float delta = fabs(vmag - cdVmag);
 				    if (delta >= MAX_MAGNITUDE) {
@@ -160,7 +160,7 @@ int main(int argc, char** argv)
                 cdFound = true;
 
 			    snprintf(catName, 20, "GC %d", gcRef);
-			    snprintf(cdName, 20, "CD %d°%d", P[cdIndex].declRef, P[cdIndex].numRef);
+			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 			} else {
 				if (PRINT_WARNINGS) {

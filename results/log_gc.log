@@ -17,7 +17,7 @@ Stars read from Catalogo General Argentino: 32379
    Doubles: 1633, Cumulus: 10, Nebulae: 17, Variables: 67
 
 ***************************************
-Perform comparison between GC and PPM/CD...
+Perform comparison between GC and PPM/CD/CPD...
 1) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 322: mag = 4.5, RA = 00h18m29s63, DE = 72°46'39''2 (pag 8) cum 
   Possible cause: cumulus.
