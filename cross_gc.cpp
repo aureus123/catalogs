@@ -173,7 +173,7 @@ int main(int argc, char** argv)
         if (!ppmFound && !cdFound && !cpdFound) {
             printf("%d) Warning: GC is ALONE (no PPM or CD or CPD star near it).\n", ++errors);
             writeRegisterGC(gcIndex);
-            logCauses(GCstar[gcIndex].cum, GCstar[gcIndex].neb, GCstar[gcIndex].vmag, GCstar[gcIndex].RAs, GCstar[gcIndex].Decld, GCstar[gcIndex].Decls);
+            logCauses(GCstar[gcIndex].cum, GCstar[gcIndex].neb, GCstar[gcIndex].vmag, GCstar[gcIndex].RAs, GCstar[gcIndex].Decl1875, GCstar[gcIndex].Decls);
         }
 	}
 	fclose(crossPPMStream);
