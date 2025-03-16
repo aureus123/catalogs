@@ -13,6 +13,7 @@
 struct GCstar_struct {
     int gcRef; /* identificador con numero */
 	int RAh, RAm, RAs, Decld, Declm, Decls; /* detalle primera observacion */
+	double RA1875, Decl1875; /* coordenadas ecuatoriales (1875) */
 	double x, y, z; /* primera obs. en coordenadas rectangulares (1875) */
     double vmag; /* magnitud visual */
     int page; /* pagina donde se encuentra */
@@ -25,3 +26,4 @@ int getGCStars();
 struct GCstar_struct *getGCStruct();
 void writeRegisterGC(int index);
 void readGC();
+void logCauses(bool cumulus, bool nebula, double vmag, int RAs, double Decl, int Decls);

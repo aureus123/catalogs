@@ -3,7 +3,7 @@
  * READ_PPM - Header
  */
 
-#define MAXPPMSTAR 468586
+#define MAXPPMSTAR 468861
 
 struct PPMstar_struct {
     int ppmRef; /* identificador PPM */

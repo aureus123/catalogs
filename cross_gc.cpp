@@ -173,27 +173,7 @@ int main(int argc, char** argv)
         if (!ppmFound && !cdFound && !cpdFound) {
             printf("%d) Warning: GC is ALONE (no PPM or CD or CPD star near it).\n", ++errors);
             writeRegisterGC(gcIndex);
-            if (GCstar[gcIndex].cum) {
-                printf("  Possible cause: cumulus.\n");
-            }
-            if (GCstar[gcIndex].neb) {
-                printf("  Possible cause: nebula.\n");
-            }
-            if (GCstar[gcIndex].RAs == 0) {
-                printf("  Possible cause: lack of RA (s).\n");
-            }
-            if (GCstar[gcIndex].Decls == 0) {
-                printf("  Possible cause: lack of Decl (s).\n");
-            }
-            if (GCstar[gcIndex].vmag > 9.9) {
-                printf("  Possible cause: dim star.\n");
-            }
-            if (GCstar[gcIndex].Decld < 18) {
-                printf("  Note: no CD/CPD coverage for stars below 18°.\n");
-            }
-            if (GCstar[gcIndex].Decld > 61) {
-                printf("  Note: poor CD coverage for stars above 61°.\n");
-            }
+            logCauses(GCstar[gcIndex].cum, GCstar[gcIndex].neb, GCstar[gcIndex].vmag, GCstar[gcIndex].RAs, GCstar[gcIndex].Decld, GCstar[gcIndex].Decls);
         }
 	}
 	fclose(crossPPMStream);
