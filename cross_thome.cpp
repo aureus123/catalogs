@@ -14,9 +14,10 @@
 #include "misc.h"
 
 #define MAXOASTAR 19000
-#define MAXLACSTAR 19000
-#define MAX_DIST_OA_CAT 30.0 // Threshold for OA stars
-#define MAX_DIST_ST_CAT 20.0 // Threshold for Stone stars
+#define MAXLACSTAR 10000
+#define MAX_DIST_OA_PPM 20.0
+#define MAX_DIST_OA_CPD 30.0
+#define MAX_DIST_ST_CPD 30.0
 #define CURATED true // true if curated CD catalog should be used
 
 // Here, we save 1875.0 coordinates of OA stars in rectangular form
@@ -117,7 +118,7 @@ void readWeiss() {
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_OA_CAT) {
+		if (minDistance < MAX_DIST_OA_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
 			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
@@ -163,7 +164,7 @@ void readWeiss() {
 				    minDistance = dist;
 			    }
             }
-			if (minDistance < MAX_DIST_OA_CAT) {
+			if (minDistance < MAX_DIST_OA_CPD) {
                 countCPD++;
                 cpdFound = true;
 
@@ -347,7 +348,7 @@ void readStone() {
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_ST_CAT) {
+		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
 			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
@@ -393,7 +394,7 @@ void readStone() {
 				    minDistance = dist;
 			    }
             }
-			if (minDistance < MAX_DIST_ST_CAT) {
+			if (minDistance < MAX_DIST_ST_CPD) {
                 countCPD++;
                 cpdFound = true;
 
