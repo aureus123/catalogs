@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #include "read_ppm.h"
 #include "read_cpd.h"
 #include "read_dm.h"
@@ -24,6 +25,7 @@
 #define MAX_DIST_ST_CPD 30.0
 #define MAX_DIST_USNO_PPM 20.0
 #define MAX_DIST_USNO_CPD 30.0
+#define MAX_DIST_CROSS 15.0
 #define CURATED true // true if curated CD catalog should be used
 
 // Here, we save 1875.0 coordinates of OA stars in rectangular form
@@ -225,7 +227,7 @@ void readWeiss() {
                 ++errors,
                 weissRef,
                 oeltzenRef);
-            logCauses(false, false, vmag, RAs, Decld, Decls);
+            logCauses(false, false, vmag, RAs, Decl1875, Decls);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -236,7 +238,7 @@ void readWeiss() {
         oaX[countOA] = x;
         oaY[countOA] = y;
         oaZ[countOA] = z;
-        oaRef[countOA] = weissRef;
+        oaRef[countOA] = oeltzenRef;
         countOA++;
     }
 	fclose(crossPPMStream);
@@ -441,7 +443,7 @@ void readStone() {
                 ++errors,
                 stoneRef,
                 lacailleRef);
-            logCauses(false, false, vmag, RAs, Decld, Decls);
+            logCauses(false, false, vmag, RAs, Decl1875, Decls);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -472,6 +474,7 @@ void readStone() {
 /*
  * readUSNO - lee y cruza catalogo de Yarnall-Frisby
  * (ya se deben haber leidos los catalogs CD y CPD)
+ * tambien revisa referencias cruzadas a OA y Lacaille
  */
 void readUSNO() {
     char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
@@ -644,14 +647,41 @@ void readUSNO() {
             printf("%d) Warning: U %d is ALONE (no PPM or CD or CPD star near it).\n",
                 ++errors,
                 numRef);
-            logCauses(false, false, vmag, RAs, Decld, Decls);
+            logCauses(false, false, vmag, RAs, Decl1875, Decls);
         }
 
-        /* lee referencia (que queda en "cell") */
-		readField(buffer, cell, 7, 28);
-		cell[28] = 0;
+        /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
+		readField(buffer, cell, 30, 5);
+        int numRefCat = atoi(cell);
+		readField(buffer, cell, 19, 4);
 
-        // TODO: chequear referencias cruzadas
+        if (!strncmp(cell, "LAC ", 4)) {
+            for (int i = 0; i < countLac; i++) {
+                if (lacRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: U %d is FAR from L %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        numRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
+        if (!strncmp(cell, "OARS", 4)) {
+            for (int i = 0; i < countOA; i++) {
+                if (oaRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: U %d is FAR from OA %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        numRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
 
         /* la almacenamos para futuras identificaciones */
         if (countUSNO >= MAXUSNOSTAR) {
