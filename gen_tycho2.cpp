@@ -17,6 +17,7 @@
 #include <math.h>
 #include <string.h>
 #include "read_dm.h"
+#include "read_cpd.h"
 #include "read_ppm.h"
 #include "trig.h"
 #include "misc.h"
@@ -28,16 +29,26 @@ extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, 
              double *dtheta, double *dphi, double *ptheta, double *pphi);
 
 #define STRING_SIZE 14
+#define THRESHOLD_PPM 15.0
+#define THRESHOLD_CPD 30.0
+#define THRESHOLD_CD 45.0
+#define DIST_PPM_TYC 15.0
+#define DIST_CPD_TYC 30.0 
+#define DIST_DM_TYC 60.0
 
 static char dmStringDM[MAXDMSTAR][STRING_SIZE];
+static char dmStringCPD[MAXCPDSTAR][STRING_SIZE];
 
 /*
  * readCrossFile - lee archivos de identificaciones cruzadas en formato CSV
  */
-void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPMstars, const char *cd_file, struct DMstar_struct *DMstar, int DMstars) {
+void readCrossFile(
+        const char *ppm_file, struct PPMstar_struct *PPMstar, int PPMstars,
+        const char *cd_file, struct DMstar_struct *DMstar, int DMstars,
+        const char *cpd_file, struct CPDstar_struct *CPDstar, int CPDstars) {
     char buffer[1024];
     char targetRef[STRING_SIZE];
-    int ppmRef, cdDeclRef, cdNumRef;
+    int ppmRef, cdDeclRef, cdNumRef, cpdDeclRef, cpdNumRef;
     float minDistance;
 
     /* read cross file between PPM and target */
@@ -57,7 +68,7 @@ void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPM
         }
         sscanf(buffer, "%13[^,],PPM %d,%f\n", targetRef, &ppmRef, &minDistance);
         // printf("Cross: %s, PPM %d, dist = %.1f arcsec.\n", targetRef, ppmRef, minDistance);
-        if (minDistance < __FLT_EPSILON__ || minDistance > 15.0) {
+        if (minDistance < __FLT_EPSILON__ || minDistance > THRESHOLD_PPM) {
             // omit identifications with zero distance (bug) or too far away
             continue;
         }
@@ -71,37 +82,71 @@ void readCrossFile(const char *ppm_file, struct PPMstar_struct *PPMstar, int PPM
     fclose(stream);
     printf("done!\n");
 
-    /* read cross file between CD and target (optative) */
-    if (DMstars == 0) return;
-    printf("Reading cross file %s... ", cd_file);
-    stream = fopen(cd_file, "rt");
-    if (stream == NULL) {
-        snprintf(buffer, 1024, "Cannot read %s", cd_file);
-        perror(buffer);
-        exit(1);
-    }
-    first_line = true;
-    while (fgets(buffer, 1023, stream) != NULL) {
-        if (first_line) {
-            // omit first line (header)
-            first_line = false;
-            continue;
+    /* read cross file between CPD and target (optative) */
+    if (CPDstars != 0) {
+        printf("Reading cross file %s... ", cpd_file);
+        stream = fopen(cpd_file, "rt");
+        if (stream == NULL) {
+            snprintf(buffer, 1024, "Cannot read %s", cpd_file);
+            perror(buffer);
+            exit(1);
         }
-        sscanf(buffer, "%13[^,],CD %d°%d,%f\n", targetRef, &cdDeclRef, &cdNumRef, &minDistance);
-        // printf("Cross: %s, CD %d°%d, dist = %.1f arcsec.\n", targetRef, cdDeclRef, cdNumRef, minDistance);
-        if (minDistance < __FLT_EPSILON__ || minDistance > 30.0) {
-            // omit identifications with zero distance (bug) or too far away
-            continue;
-        }
-        for (int i = 0; i < DMstars; i++) {
-            if (DMstar[i].declRef == cdDeclRef && DMstar[i].numRef == cdNumRef) {
-                strncpy(dmStringDM[i], targetRef, STRING_SIZE);
-                break;
+        first_line = true;
+        while (fgets(buffer, 1023, stream) != NULL) {
+            if (first_line) {
+                // omit first line (header)
+                first_line = false;
+                continue;
+            }
+            sscanf(buffer, "%13[^,],CPD %d°%d,%f\n", targetRef, &cpdDeclRef, &cpdNumRef, &minDistance);
+            // printf("Cross: %s, CPD %d°%d, dist = %.1f arcsec.\n", targetRef, cpdDeclRef, cpdNumRef, minDistance);
+            if (minDistance < __FLT_EPSILON__ || minDistance > THRESHOLD_CPD) {
+                // omit identifications with zero distance (bug) or too far away
+                continue;
+            }
+            for (int i = 0; i < DMstars; i++) {
+                if (CPDstar[i].declRef == cpdDeclRef && CPDstar[i].numRef == cpdNumRef) {
+                    strncpy(dmStringCPD[i], targetRef, STRING_SIZE);
+                    break;
+                }
             }
         }
+        fclose(stream);
+        printf("done!\n");
     }
-    fclose(stream);
-    printf("done!\n");
+
+    /* read cross file between CD and target (optative) */
+    if (DMstars != 0) {
+        printf("Reading cross file %s... ", cd_file);
+        stream = fopen(cd_file, "rt");
+        if (stream == NULL) {
+            snprintf(buffer, 1024, "Cannot read %s", cd_file);
+            perror(buffer);
+            exit(1);
+        }
+        first_line = true;
+        while (fgets(buffer, 1023, stream) != NULL) {
+            if (first_line) {
+                // omit first line (header)
+                first_line = false;
+                continue;
+            }
+            sscanf(buffer, "%13[^,],CD %d°%d,%f\n", targetRef, &cdDeclRef, &cdNumRef, &minDistance);
+            // printf("Cross: %s, CD %d°%d, dist = %.1f arcsec.\n", targetRef, cdDeclRef, cdNumRef, minDistance);
+            if (minDistance < __FLT_EPSILON__ || minDistance > THRESHOLD_CD) {
+                // omit identifications with zero distance (bug) or too far away
+                continue;
+            }
+            for (int i = 0; i < DMstars; i++) {
+                if (DMstar[i].declRef == cdDeclRef && DMstar[i].numRef == cdNumRef) {
+                    strncpy(dmStringDM[i], targetRef, STRING_SIZE);
+                    break;
+                }
+            }
+        }
+        fclose(stream);
+        printf("done!\n");
+    }
 }
 
 /*
@@ -127,6 +172,22 @@ int main(int argc, char** argv) {
                 DMstar[i].numRef);
     }
 
+    /* leemos catalogo CPD (en caso de ubicarnos en el Sur) */
+    struct CPDstar_struct *CPDstar = nullptr;
+    int CPDstars = 0;
+    if (!is_north) {
+        readCPD(false, false);
+        CPDstar = getCPDStruct();
+        CPDstars = getCPDStars();
+
+        /* generamos identificadores de CPD */
+        for (int i = 0; i < CPDstars; i++) {
+            snprintf(dmStringCPD[i], STRING_SIZE, "CPD %d°%d",
+                CPDstar[i].declRef,
+                CPDstar[i].numRef);
+        }
+    }
+
     /* leemos catalogo PPM (2000 en B1950) */
     readPPM(false, true, !is_north, is_north, 2000.0);
     struct PPMstar_struct *PPMstar = getPPMStruct();
@@ -134,13 +195,32 @@ int main(int argc, char** argv) {
 
     if (isCD()) {
         /* leemos identificaciones cruzadas y renombramos designaciones */
-        readCrossFile("results/cross_gilliss_ppm.csv", PPMstar, PPMstars, "results/cross_gilliss_cd.csv", DMstar, DMstars);
-        readCrossFile("results/cross_usno_ppm.csv", PPMstar, PPMstars, "results/cross_usno_cd.csv", DMstar, DMstars);
-        readCrossFile("results/cross_oa_ppm.csv", PPMstar, PPMstars, "results/cross_oa_cd.csv", DMstar, DMstars);
-        readCrossFile("results/cross_gc_ppm.csv", PPMstar, PPMstars, "results/cross_gc_cd.csv", DMstar, DMstars);
+        readCrossFile(
+            "results/cross_gilliss_ppm.csv", PPMstar, PPMstars,
+            "results/cross_gilliss_cd.csv", DMstar, DMstars,
+            "results/cross_gilliss_cpd.csv", CPDstar, CPDstars);
+        readCrossFile(
+            "results/cross_usno_ppm.csv", PPMstar, PPMstars,
+            "results/cross_usno_cd.csv", DMstar, DMstars,
+            "results/cross_usno_cpd.csv", CPDstar, CPDstars);
+        readCrossFile(
+            "results/cross_oa_ppm.csv", PPMstar, PPMstars,
+            "results/cross_oa_cd.csv", DMstar, DMstars,
+            "results/cross_oa_cpd.csv", CPDstar, CPDstars);
+        readCrossFile(
+            "results/cross_zc_ppm.csv", PPMstar, PPMstars,
+            "results/cross_zc_cd.csv", DMstar, DMstars,
+            "results/cross_zc_cpd.csv", CPDstar, CPDstars);
+        readCrossFile(
+            "results/cross_gc_ppm.csv", PPMstar, PPMstars,
+            "results/cross_gc_cd.csv", DMstar, DMstars,
+            "results/cross_gc_cpd.csv", CPDstar, CPDstars);
     } else {
         /* leemos identificaciones cruzadas y renombramos designaciones, solo para PPM-USNO */
-        readCrossFile("results/cross_usno_ppm.csv", PPMstar, PPMstars, "", nullptr, 0);
+        readCrossFile(
+            "results/cross_usno_ppm.csv", PPMstar, PPMstars,
+            "", nullptr, 0,
+            "", nullptr, 0);
     }
 
     stream = fopen("cat/tyc2.txt", "rt");
@@ -154,16 +234,18 @@ int main(int argc, char** argv) {
 
     int TYCstarsPPM = 0;
     int TYCstarsDM = 0;
+    int TYCstarsCPD = 0;
     int TYCunidentified = 0;
     int entry = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
         // if (TYCstarsPPM > 100) break;
 		entry++;
 		if (entry % 10000 == 0) {
-			printf("Progress (%.2f%%): PPM = %d, DM = %d, unidentified = %d\n",
+			printf("Progress (%.2f%%): PPM = %d, DM = %d, CPD = %d, unidentified = %d\n",
                 (100.0 * (float) entry) / 2539913.0,
                 TYCstarsPPM,
                 TYCstarsDM,
+                TYCstarsCPD,
                 TYCunidentified);
 		}
 
@@ -241,7 +323,7 @@ int main(int argc, char** argv) {
         int ppmIndex = -1;
         double minDistance = HUGE_NUMBER;
         findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
-        if (ppmIndex != -1 && minDistance < 15.0) {
+        if (ppmIndex != -1 && minDistance < DIST_PPM_TYC) {
             if (PPMstar[ppmIndex].dmString[0] != 0) {
                 /* se almacena la identificación cruzada con la DM dada por PPM */
                 writeCrossEntry(crossStream, tycString, PPMstar[ppmIndex].dmString, minDistance);
@@ -262,19 +344,42 @@ int main(int argc, char** argv) {
         sph2rec(RAtarget, Decltarget, &x, &y, &z);
 
         /* halla la DM más cercana, dentro de 60 arcsec */
-        int dmIndex = -1;
-        minDistance = HUGE_NUMBER;
-        findDMByCoordinates(x, y, z, &dmIndex, &minDistance);
-        if (dmIndex != -1 && minDistance < 60.0) {
-            /* se almacena la identificación cruzada con la DM */
-            writeCrossEntry(crossStream, tycString, dmStringDM[dmIndex], minDistance);
-            TYCstarsDM++;
-            continue;
+        if (is_north || Decltarget <= -22.0) {
+            int dmIndex = -1;
+            minDistance = HUGE_NUMBER;
+            findDMByCoordinates(x, y, z, &dmIndex, &minDistance);
+            if (dmIndex != -1 && minDistance < DIST_DM_TYC) {
+                /* se almacena la identificación cruzada con la DM */
+                writeCrossEntry(crossStream, tycString, dmStringDM[dmIndex], minDistance);
+                TYCstarsDM++;
+                continue;
+            }
         }
+
+        /* halla la CPD más cercana, dentro de 30 arcsec */
+        if (Decltarget <= -18.0) {
+            int cpdIndex = -1;
+            minDistance = HUGE_NUMBER;
+            for (int i = 0; i < CPDstars; i++) {
+                double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
+                if (minDistance > dist) {
+                    cpdIndex = i;
+                    minDistance = dist;
+                }
+            }
+            if (cpdIndex != -1 && minDistance < DIST_CPD_TYC) {
+                /* se almacena la identificación cruzada con la CPD */
+                writeCrossEntry(crossStream, tycString, dmStringCPD[cpdIndex], minDistance);
+                TYCstarsCPD++;
+                continue;
+            }
+        }
+        
         TYCunidentified++;
     }
     printf("Stars read and identified of Tycho-2 from PPM: %d\n", TYCstarsPPM);
     printf("Stars read and identified of Tycho-2 from DM: %d\n", TYCstarsDM);
+    printf("Stars read and identified of Tycho-2 from CPD: %d\n", TYCstarsCPD);
     printf("Stars read and unidentified of Tycho-2: %d\n", TYCunidentified);
     fclose(crossStream);
     fclose(stream);

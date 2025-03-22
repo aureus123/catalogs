@@ -14,10 +14,10 @@ mag_cd: mag_cd.o read_cd.o read_ppm.o trig.o misc.o
 mag_cd.o: mag_cd.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-gen_tycho2_north: gen_tycho2.o read_bd.o read_ppm.o trig.o misc.o
+gen_tycho2_north: gen_tycho2.o read_bd.o read_ppm.o read_cpd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
-gen_tycho2_south: gen_tycho2.o read_cd.o read_ppm.o trig.o misc.o
+gen_tycho2_south: gen_tycho2.o read_cd.o read_ppm.o read_cpd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 gen_tycho2.o: gen_tycho2.cpp
