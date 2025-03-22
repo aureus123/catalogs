@@ -28,7 +28,10 @@
 #define MAX_DIST_ST_CPD 30.0
 #define MAX_DIST_USNO_PPM 20.0
 #define MAX_DIST_USNO_CPD 30.0
+#define MAX_DIST_TH_PPM 20.0
+#define MAX_DIST_TH_CPD 30.0
 #define MAX_DIST_CROSS 30.0
+#define MAX_DIST_ZC_ZC 10.0
 #define CURATED true // true if curated CD catalog should be used
 
 // Here, we save 1875.0 coordinates of OA stars in rectangular form
@@ -55,6 +58,63 @@ int countUsno = 0;
 double zcX[MAXZCSTAR], zcY[MAXZCSTAR], zcZ[MAXZCSTAR];
 int zcHour[MAXZCSTAR], zcNum[MAXZCSTAR];
 int countZC = 0;
+int countPPMZC = 0, countCDZC = 0, countCPDZC = 0;
+FILE *crossPPMZCStream;
+FILE *crossCDZCStream;
+FILE *crossCPDZCStream;
+
+void saveZC(int RAh, int numRef, double x, double y, double z,
+        bool ppmFound, int ppmIndex, double minPPMDistance,
+        bool cdFound, int cdIndex, double minCDDistance,
+        bool cpdFound, int cpdIndex, double minCPDDistance) {
+    char zcName[20], catName[20];
+
+    /* check if the star was previously registered */
+    for (int i = 0; i < countZC; i++) {
+        if (zcNum[i] != numRef || zcHour[i] != RAh) continue;
+        double dist = 3600.0 * calcAngularDistance(x, y, z, zcX[i], zcY[i], zcZ[i]);
+        if (dist > MAX_DIST_ZC_ZC) {
+            printf("**) Warning: ZC %dh %d is FAR from previous registration (dist = %.1f arcsec).\n",
+                RAh,
+                numRef,
+                dist);
+        }
+        return;
+    }
+
+    /* save cross identifications */
+    snprintf(zcName, 20, "ZC %dh %d", RAh, numRef);
+    if (ppmFound) {
+        countPPMZC++;
+        struct PPMstar_struct *PPMstar = getPPMStruct();
+        snprintf(catName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+        writeCrossEntry(crossPPMZCStream, zcName, catName, minPPMDistance);
+    }
+    if (cdFound) {
+        countCDZC++;
+        struct DMstar_struct *CDstar = getDMStruct();
+        snprintf(catName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
+        writeCrossEntry(crossCDZCStream, zcName, catName, minCDDistance);
+    }
+    if (cpdFound) {
+        countCPDZC++;
+        struct CPDstar_struct *CPDstar = getCPDStruct();
+        snprintf(catName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
+        writeCrossEntry(crossCPDZCStream, zcName, catName, minCPDDistance);
+    }
+
+    /* add the new star */
+    if (countZC >= MAXZCSTAR) {
+        printf("Error: too many ZC stars.\n");
+        exit(1);
+    }
+    zcX[countZC] = x;
+    zcY[countZC] = y;
+    zcZ[countZC] = z;
+    zcHour[countZC] = RAh;
+    zcNum[countZC] = numRef;
+    countZC++;
+}
 
 /*
  * readWeiss - lee y cruza catalogo de Weiss
@@ -218,7 +278,7 @@ void readWeiss() {
 			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
 				    float delta = fabs(vmag - cdVmag);
 				    if (delta >= MAX_MAGNITUDE) {
-					    printf("%d) Warning: W %d (vmag = %.1f) has a near CD with a different magnitude (delta = %.1f).\n",
+					    printf("%d) Warning: W %d (vmag = %.1f) has a near CD with dif. magnitude (delta = %.1f). Check dpl.\n",
                             ++errors,
                             weissRef,
                             vmag,
@@ -441,7 +501,7 @@ void readStone() {
 			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
 				    float delta = fabs(vmag - cdVmag);
 				    if (delta >= MAX_MAGNITUDE) {
-					    printf("%d) Warning: St %d (vmag = %.1f) has a near CD with a different magnitude (delta = %.1f).\n",
+					    printf("%d) Warning: St %d (vmag = %.1f) has a near CD with dif. magnitude (delta = %.1f). Check dpl.\n",
                             ++errors,
                             stoneRef,
                             vmag,
@@ -668,7 +728,7 @@ void readUSNO() {
 			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
 				    float delta = fabs(vmag - cdVmag);
 				    if (delta >= MAX_MAGNITUDE) {
-					    printf("%d) Warning: U %d (vmag = %.1f) has a near CD with a different magnitude (delta = %.1f).\n",
+					    printf("%d) Warning: U %d (vmag = %.1f) has a near CD with dif. magnitude (delta = %.1f). Check dpl.\n",
                             ++errors,
                             numRef,
                             vmag,
@@ -764,7 +824,7 @@ void readUSNO() {
  * tambien revisa referencias cruzadas a GC, OA, Yarnall, Lacaille y Stone
  * tambien genera identificaciones cruzadas para aquellas estrellas ZC
  */
-void readThome(double epoch, const char *filename, int correction, FILE *crossPPMZCStream, FILE *crossCDZCStream, FILE *crossCPDZCStream) {
+void readThome(double epoch, const char *filename, int correction) {
     char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
 
     /* usamos catalogs CD, CPD y GC */
@@ -837,7 +897,7 @@ void readThome(double epoch, const char *filename, int correction, FILE *crossPP
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
-		if (minDistance < MAX_DIST_PPM) {
+		if (minDistance < MAX_DIST_TH_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
 			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
@@ -879,7 +939,8 @@ void readThome(double epoch, const char *filename, int correction, FILE *crossPP
 			    minDistance = dist;
 		    }
         }
-		if (minDistance < MAX_DIST_CPD) {
+        double nearestCPDDistance = minDistance;
+		if (minDistance < MAX_DIST_TH_CPD) {
             countCPD++;
             cpdFound = true;
         }
@@ -895,12 +956,13 @@ void readThome(double epoch, const char *filename, int correction, FILE *crossPP
 			    minDistance = dist;
 		    }
         }
+        double nearestCDDistance = minDistance;
 		if (minDistance < MAX_DIST_CD) {
 		    float cdVmag = CDstar[cdIndex].vmag;
 		    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
 			    float delta = fabs(vmag - cdVmag);
 			    if (delta >= MAX_MAGNITUDE) {
-				    printf("%d) Warning: T %.0f %d (vmag = %.1f) has a near CD with a different magnitude (delta = %.1f).\n",
+				    printf("%d) Warning: T %.0f %d (vmag = %.1f) has a near CD with dif. magnitude (delta = %.1f). Check dpl.\n",
                         ++errors,
                         epoch,
                         numRef,
@@ -1010,7 +1072,15 @@ void readThome(double epoch, const char *filename, int correction, FILE *crossPP
                     minDistance);
             }
         }
-        // TODO: save ZC
+
+        if (!strncmp(cell, "ZC", 2)) {
+            // save Gould's Zone Catalog
+            RAh = (int) (floor(RA1875 / 15.0) + __FLT_EPSILON__);
+            saveZC(RAh, numRefCat, x, y, z,
+                ppmFound, ppmIndex, nearestPPMDistance,
+                cdFound, cdIndex, nearestCDDistance,
+                cpdFound, cpdIndex, nearestCPDDistance);
+        }
     }
 
     printf("Stars from Thome %.0f identified with PPM = %d, CD = %d and CPD = %d\n", epoch, countDist, countCD, countCPD);
@@ -1029,7 +1099,7 @@ void readThome(double epoch, const char *filename, int correction, FILE *crossPP
  * tambien revisa referencias cruzadas a GC, Stone y Lacaille
  * tambien genera identificaciones cruzadas para aquellas estrellas ZC
  */
-void readGilliss(FILE *crossPPMZCStream, FILE *crossCDZCStream, FILE *crossCPDZCStream) {
+void readGilliss() {
     char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
 
     /* usamos catalogs CD, CPD y GC */
@@ -1150,6 +1220,7 @@ void readGilliss(FILE *crossPPMZCStream, FILE *crossCDZCStream, FILE *crossCPDZC
 			    minDistance = dist;
 		    }
         }
+        double nearestCPDDistance = minDistance;
 		if (minDistance < MAX_DIST_CPD) {
             countCPD++;
             cpdFound = true;
@@ -1170,12 +1241,13 @@ void readGilliss(FILE *crossPPMZCStream, FILE *crossCDZCStream, FILE *crossCPDZC
 			    minDistance = dist;
 		    }
         }
+        double nearestCDDistance = minDistance;
 		if (minDistance < MAX_DIST_CD) {
 		    float cdVmag = CDstar[cdIndex].vmag;
 		    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
 			    float delta = fabs(vmag - cdVmag);
 			    if (delta >= MAX_MAGNITUDE) {
-				    printf("%d) Warning: G %d (vmag = %.1f) has a near CD with a different magnitude (delta = %.1f).\n",
+				    printf("%d) Warning: G %d (vmag = %.1f) has a near CD with dif. magnitude (delta = %.1f). Check dpl.\n",
                         ++errors,
                         giRef,
                         vmag,
@@ -1246,7 +1318,15 @@ void readGilliss(FILE *crossPPMZCStream, FILE *crossCDZCStream, FILE *crossCPDZC
             }
         }
 
-        // TODO: save ZC
+        if (!strncmp(cell, "GZC", 3)) {
+            // save Gould's Zone Catalog
+            readField(buffer, cell, 18, 2);
+            RAh = atoi(cell);
+            saveZC(RAh, numRefCat, x, y, z,
+                ppmFound, ppmIndex, nearestPPMDistance,
+                cdFound, cdIndex, nearestCDDistance,
+                cpdFound, cpdIndex, nearestCPDDistance);
+        }
     }
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
@@ -1292,21 +1372,23 @@ int main(int argc, char** argv)
 
     /* leemos, cruzamos y revisamos identificaciones de Thome */
     /* tambien generamos Gould's Zone Catalog */
-    FILE *crossPPMZCStream = openCrossFile("results/cross_zc_ppm.csv");
-    FILE *crossCDZCStream = openCrossFile("results/cross_zc_cd.csv");
-    FILE *crossCPDZCStream = openCrossFile("results/cross_zc_cpd.csv");
+    crossPPMZCStream = openCrossFile("results/cross_zc_ppm.csv");
+    crossCDZCStream = openCrossFile("results/cross_zc_cd.csv");
+    crossCPDZCStream = openCrossFile("results/cross_zc_cpd.csv");
 
-    readThome(1881.0, "cat/thome1881.txt", 0, crossPPMZCStream, crossCDZCStream, crossCPDZCStream); // TODO
-    readThome(1882.0, "cat/thome1882.txt", 0, crossPPMZCStream, crossCDZCStream, crossCPDZCStream); // TODO
-    readThome(1883.0, "cat/thome1883.txt", -1, crossPPMZCStream, crossCDZCStream, crossCPDZCStream); // TODO
-    readThome(1884.0, "cat/thome1884.txt", -1, crossPPMZCStream, crossCDZCStream, crossCPDZCStream); // TODO
+    readThome(1881.0, "cat/thome1881.txt", 0);
+    readThome(1882.0, "cat/thome1882.txt", 0);
+    readThome(1883.0, "cat/thome1883.txt", -1);
+    readThome(1884.0, "cat/thome1884.txt", -1);
 
     /* leemos, cruzamos y revisamos identificaciones de Gilliss */
     /* tambien generamos Gould's Zone Catalog */
-    readGilliss(crossPPMZCStream, crossCDZCStream, crossCPDZCStream);
+    readGilliss();
 
 	fclose(crossPPMZCStream);
 	fclose(crossCPDZCStream);
 	fclose(crossCDZCStream);
+    printf("\nNumber of ZC stars registered = %d\n", countZC);
+    printf("Stars from ZC identified with PPM = %d, CD = %d and CPD = %d\n", countPPMZC, countCDZC, countCPDZC);
     return 0;
 }

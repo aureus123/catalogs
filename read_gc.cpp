@@ -216,7 +216,7 @@ void logCauses(bool cumulus, bool nebula, double vmag, int RAs, double Decl, int
     if (Decls == 0) {
         printf("  Possible cause: lack of Decl (s).\n");
     }
-    if (vmag > 9.9) {
+    if (vmag > 8.9) {
         printf("  Possible cause: dim star.\n");
     }
     if (vmag < 0.1) {
