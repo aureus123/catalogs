@@ -203,7 +203,7 @@ void readGC()
 /*
  * logCauses - escribe posibles causas de falta de identificacion
  */
-void logCauses(bool cumulus, bool nebula, double vmag, int RAs, double Decl, int Decls) {
+void logCauses(bool cumulus, bool nebula, double vmag, int RAs, double Decl, int Decls, int ppmIndex, double nearestPPMDistance) {
     if (cumulus) {
         printf("  Possible cause: cumulus.\n");
     }
@@ -222,6 +222,9 @@ void logCauses(bool cumulus, bool nebula, double vmag, int RAs, double Decl, int
     if (vmag < 0.1) {
         printf("  Possible cause: no magnitude (cumulus?).\n");
     }
+	if (ppmIndex != -1) {
+		printf("  Note: Nearest PPM %d at %.1f arcsec.\n", ppmIndex, nearestPPMDistance);
+	}    
     if (Decl > -18.0) {
         printf("  Note: no CD/CPD coverage for stars below 18°.\n");
     }

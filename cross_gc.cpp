@@ -72,6 +72,7 @@ int main(int argc, char** argv)
 		double minDistance = HUGE_NUMBER;
 		/* busca la PPM mas cercana y genera el cruzamiento */
 		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+        double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
 			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__ && !GCstar[gcIndex].dpl) {
@@ -173,7 +174,7 @@ int main(int argc, char** argv)
         if (!ppmFound && !cdFound && !cpdFound) {
             printf("%d) Warning: GC is ALONE (no PPM or CD or CPD star near it).\n", ++errors);
             writeRegisterGC(gcIndex);
-            logCauses(GCstar[gcIndex].cum, GCstar[gcIndex].neb, GCstar[gcIndex].vmag, GCstar[gcIndex].RAs, GCstar[gcIndex].Decl1875, GCstar[gcIndex].Decls);
+            logCauses(GCstar[gcIndex].cum, GCstar[gcIndex].neb, GCstar[gcIndex].vmag, GCstar[gcIndex].RAs, GCstar[gcIndex].Decl1875, GCstar[gcIndex].Decls, ppmIndex, nearestPPMDistance);
         }
 	}
 	fclose(crossPPMStream);
