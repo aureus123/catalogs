@@ -26,9 +26,7 @@
 #define MAX_DIST_OA_PPM 45.0
 #define MAX_DIST_OA_CPD 45.0
 #define MAX_DIST_ST_CPD 30.0
-#define MAX_DIST_USNO_PPM 20.0
 #define MAX_DIST_USNO_CPD 30.0
-#define MAX_DIST_TH_PPM 20.0
 #define MAX_DIST_TH_CPD 30.0
 #define MAX_DIST_CROSS 30.0
 #define MAX_DIST_ZC_ZC 15.0
@@ -62,6 +60,7 @@ int countPPMZC = 0, countCDZC = 0, countCPDZC = 0;
 FILE *crossPPMZCStream;
 FILE *crossCDZCStream;
 FILE *crossCPDZCStream;
+FILE *unidentifiedZCStream;
 
 void saveZC(int RAh, int numRef, double x, double y, double z,
         bool ppmFound, int ppmIndex, double minPPMDistance,
@@ -103,6 +102,13 @@ void saveZC(int RAh, int numRef, double x, double y, double z,
         writeCrossEntry(crossCPDZCStream, zcName, catName, minCPDDistance);
     }
 
+    if (!ppmFound && !cdFound && !cpdFound) {
+        /* note: some of the parameters are fake in order to avoid log.
+         * here, we just want to save the unidentified star. */
+        logCauses(zcName, unidentifiedZCStream, x, y, z,
+            false, false, 10.0, 1, -50.0, 1, -1, 0.0);
+    }
+
     /* add the new star */
     if (countZC >= MAXZCSTAR) {
         printf("Error: too many ZC stars.\n");
@@ -133,6 +139,7 @@ void readWeiss() {
 	FILE *crossCDStream = openCrossFile("results/cross_oa_cd.csv");
 	FILE *crossCPDStream = openCrossFile("results/cross_oa_cpd.csv");
 	FILE *crossPPMStream = openCrossFile("results/cross_oa_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/oa_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -165,6 +172,8 @@ void readWeiss() {
         if (oeltzenRef == 0) continue;
 		readField(buffer, cell, 1, 5);
 		int weissRef = atoi(cell);
+
+        snprintf(catName, 20, "OA %d", oeltzenRef);
 
 		/* lee ascension recta B1850.0 */
 		readFieldSanitized(buffer, cell, 13, 2);
@@ -227,7 +236,6 @@ void readWeiss() {
             countDist++;
             ppmFound = true;
 
-			snprintf(catName, 20, "OA %d", oeltzenRef);
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 		}
@@ -248,7 +256,6 @@ void readWeiss() {
                 countCPD++;
                 cpdFound = true;
 
-			    snprintf(catName, 20, "OA %d", oeltzenRef);
 			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
 			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
             }
@@ -277,7 +284,6 @@ void readWeiss() {
                 countCD++;
                 cdFound = true;
 
-			    snprintf(catName, 20, "OA %d", oeltzenRef);
 			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
             }
@@ -288,7 +294,8 @@ void readWeiss() {
                 ++errors,
                 weissRef,
                 oeltzenRef);
-            logCauses(false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+            logCauses(catName, unidentifiedStream, x, y, z,
+                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -302,6 +309,7 @@ void readWeiss() {
         oaRef[countOA] = oeltzenRef;
         countOA++;
     }
+    fclose(unidentifiedStream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
@@ -506,7 +514,8 @@ void readStone() {
                     ++errors,
                     stoneRef);
             }
-            logCauses(false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+            logCauses(catName, nullptr, x, y, z,
+                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -565,6 +574,7 @@ void readUSNO() {
 	FILE *crossCDStream = openCrossFile("results/cross_usno_cd.csv");
 	FILE *crossCPDStream = openCrossFile("results/cross_usno_cpd.csv");
 	FILE *crossPPMStream = openCrossFile("results/cross_usno_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/usno_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -616,6 +626,8 @@ void readUSNO() {
 		readField(buffer, cell, 1, 5);
 		int numRef = atoi(cell);
 
+        snprintf(catName, 20, "U %d", numRef);
+
 		/* lee magnitud */
 		readField(buffer, cell, 37, 2);
 		float vmag = atof(cell)/10.0;
@@ -628,7 +640,7 @@ void readUSNO() {
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
-		if (minDistance < MAX_DIST_USNO_PPM) {
+		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
 			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
@@ -651,7 +663,6 @@ void readUSNO() {
             countDist++;
             ppmFound = true;
 
-			snprintf(catName, 20, "U %d", numRef);
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 		}
@@ -672,7 +683,6 @@ void readUSNO() {
                 countCPD++;
                 cpdFound = true;
 
-			    snprintf(catName, 20, "U %d", numRef);
 			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
 			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
             }
@@ -701,7 +711,6 @@ void readUSNO() {
                 countCD++;
                 cdFound = true;
 
-			    snprintf(catName, 20, "U %d", numRef);
 			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
             }
@@ -750,8 +759,9 @@ void readUSNO() {
             }               
             if (!strncmp(cell, "PLE", 3)) {
                 printf("  Possible cause: pleiades star.\n");
-            }               
-            logCauses(false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+            }
+            logCauses(catName, unidentifiedStream, x, y, z,
+                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
         }
 
         if (countUsno >= MAXUSNOSTAR) {
@@ -764,6 +774,7 @@ void readUSNO() {
         usnoRef[countUsno] = numRef;
         countUsno++;
     }
+    fclose(unidentifiedStream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
@@ -795,7 +806,7 @@ void readThome(double epoch, const char *filename, int correction) {
     int GCstars = getGCStars();
 
     printf("\n***************************************\n");
-    printf("Perform comparison between Thome and PPM/CD/CPD...\n");
+    printf("Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...\n");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -857,7 +868,7 @@ void readThome(double epoch, const char *filename, int correction) {
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
-		if (minDistance < MAX_DIST_TH_PPM) {
+		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
 			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
@@ -929,7 +940,8 @@ void readThome(double epoch, const char *filename, int correction) {
                 ++errors,
                 epoch,
                 numRef);
-            logCauses(false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+            logCauses(catName, nullptr, x, y, z,
+                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
@@ -1062,6 +1074,7 @@ void readGilliss() {
 	FILE *crossCDStream = openCrossFile("results/cross_gilliss_cd.csv");
 	FILE *crossCPDStream = openCrossFile("results/cross_gilliss_cpd.csv");
 	FILE *crossPPMStream = openCrossFile("results/cross_gilliss_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/gilliss_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1114,6 +1127,8 @@ void readGilliss() {
 		readField(buffer, cell, 29, 3);
 		float vmag = atof(cell)/10.0;
 
+        snprintf(catName, 20, "G %d", giRef);
+
         bool ppmFound = false;
 		int ppmIndex = -1;
 		double minDistance = HUGE_NUMBER;
@@ -1145,7 +1160,6 @@ void readGilliss() {
             countDist++;
             ppmFound = true;
 
-			snprintf(catName, 20, "G %d", giRef);
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 		}
@@ -1166,7 +1180,6 @@ void readGilliss() {
             countCPD++;
             cpdFound = true;
 
-		    snprintf(catName, 20, "G %d", giRef);
 		    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
 		    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
         }
@@ -1194,7 +1207,6 @@ void readGilliss() {
             countCD++;
             cdFound = true;
 
-		    snprintf(catName, 20, "G %d", giRef);
 		    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 		    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 		}
@@ -1203,7 +1215,8 @@ void readGilliss() {
             printf("%d) Warning: G %d is ALONE (no PPM or CD or CPD star near it).\n",
                 ++errors,
                 giRef);
-            logCauses(false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+            logCauses(catName, unidentifiedStream, x, y, z,
+                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
@@ -1263,6 +1276,7 @@ void readGilliss() {
                 cpdFound, cpdIndex, nearestCPDDistance);
         }
     }
+    fclose(unidentifiedStream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
@@ -1310,6 +1324,7 @@ int main(int argc, char** argv)
     crossPPMZCStream = openCrossFile("results/cross_zc_ppm.csv");
     crossCDZCStream = openCrossFile("results/cross_zc_cd.csv");
     crossCPDZCStream = openCrossFile("results/cross_zc_cpd.csv");
+    unidentifiedZCStream = openUnidentifiedFile("results/zc_unidentified.csv");
 
     readThome(1881.0, "cat/thome1881.txt", 0);
     readThome(1882.0, "cat/thome1882.txt", 0);
@@ -1320,6 +1335,7 @@ int main(int argc, char** argv)
     /* tambien generamos Gould's Zone Catalog */
     readGilliss();
 
+    fclose(unidentifiedZCStream);
 	fclose(crossPPMZCStream);
 	fclose(crossCPDZCStream);
 	fclose(crossCDZCStream);
