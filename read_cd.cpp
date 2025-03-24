@@ -280,13 +280,26 @@ void readDM(const char *filename)
 /* 
  * findDMByCoordinates - busca la estrella CD más cercana
  * Aquí (x, y, z) son las coord rectangulares en 1875.
+ * También se pasa la declinación target para acelerar la búsqueda.
+ * (nota: se asume que las estrellas vienen ordenadas por declinación)
  * minDistanceOutput debe ser una cota de la distancia a buscar.
  * El resultado se almacena en (cdIndexOutput, minDistanceOutput).
 */
-void findDMByCoordinates(double x, double y, double z, int *cdIndexOutput, double *minDistanceOutput) {
+void findDMByCoordinates(double x, double y, double z, double decl, int *cdIndexOutput, double *minDistanceOutput) {
     int cdIndex = -1;
     double minDistance = *minDistanceOutput;
-	for (int i = 0; i < CDstars; i++) {
+
+    decl = fabs(decl);
+
+    int firstDecl = (int) floor(decl - 0.2);
+    if (firstDecl < 22) firstDecl = 22;
+    int firstIndex = getDMindex(true, firstDecl, 1);
+    int secondDecl = (int) ceil(decl + 0.2);
+    if (secondDecl < 23) secondDecl = 23;
+    int secondIndex = CDstars;
+    if (secondDecl < 90) secondIndex = getDMindex(true, secondDecl, 1);
+
+	for (int i = firstIndex; i < secondIndex; i++) {
         double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
         if (minDistance > dist) {
         	cdIndex = i;

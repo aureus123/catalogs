@@ -189,7 +189,8 @@ int main(int argc, char** argv) {
     }
 
     /* leemos catalogo PPM (2000 en B1950) */
-    readPPM(false, true, !is_north, is_north, 2000.0);
+    readPPM(false, true, false, false, 2000.0);
+    sortPPM();
     struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
@@ -249,13 +250,13 @@ int main(int argc, char** argv) {
                 TYCunidentified);
 		}
 
-        /* lee declinación y descarta tempranamente (con un márgen de 2 grados) */
+        /* lee declinación y descarta tempranamente */
         readField(buffer, cell, 166, 12);
         double Decl = atof(cell);
         if (is_north) {
-            if (Decl < -2.0) continue;
+            if (Decl < 0) continue;
         } else {
-            if (Decl > +2.0) continue;
+            if (Decl > 0) continue;
         }
 
         /* lee numeración */
@@ -294,25 +295,12 @@ int main(int argc, char** argv) {
 
         // printf("TYC %d-%d-%d: RA = %f, Decl = %f, pmRA = %f, pmDecl = %f, epoch = %f\n", tyc1Ref, tyc2Ref, tyc3Ref, RA, Decl, pmRA, pmDecl, epoch);
 
-        /* convertir a J2000 y verificar si se descarta por hemisferio
-           TODO: convertir epoch a de Julian a Besselian, y usar 2000.001278 */
+        /* convertir a 2000.0 (B1950) ya que las PPM fueron también convertidas ahí */
         double RAtarget = RA;
         double Decltarget = Decl;
         double pmRAtarget = pmRA;
         double pmDecltarget = pmDecl;
-        wcsconp(WCS_J2000, WCS_J2000, 0.0, 0.0, epoch, 2000.0, &RAtarget, &Decltarget, &pmRAtarget, &pmDecltarget);
-        if (is_north) {
-            if (Decltarget < 0.0) continue;
-        } else {
-            if (Decltarget > 0.0) continue;
-        }
-
-        /* convertir a 2000 (B1950) */
-        RAtarget = RA;
-        Decltarget = Decl;
-        pmRAtarget = pmRA;
-        pmDecltarget = pmDecl;
-        wcsconp(WCS_J2000, WCS_B1950, 0.0, 2000.0, epoch, 2000.0, &RAtarget, &Decltarget, &pmRAtarget, &pmDecltarget);
+        wcsconp(WCS_J2000, WCS_B1950, 0.0, 2000.0, epoch + 0.001278, 2000.0, &RAtarget, &Decltarget, &pmRAtarget, &pmDecltarget);
         // printf("    RA = %f, Decl = %f, pmRA = %f, pmDecl = %f, epoch = %f\n", RAtarget, Decltarget, pmRAtarget, pmDecltarget, 2000.0);
 
         /* calcula coordenadas rectangulares */
@@ -322,7 +310,7 @@ int main(int argc, char** argv) {
         /* halla PPM más cercana, dentro de 15 arcsec */
         int ppmIndex = -1;
         double minDistance = HUGE_NUMBER;
-        findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+        findPPMByCoordinates(x, y, z, Decltarget, &ppmIndex, &minDistance);
         if (ppmIndex != -1 && minDistance < DIST_PPM_TYC) {
             if (PPMstar[ppmIndex].dmString[0] != 0) {
                 /* se almacena la identificación cruzada con la DM dada por PPM */
@@ -347,7 +335,7 @@ int main(int argc, char** argv) {
         if (is_north || Decltarget <= -22.0) {
             int dmIndex = -1;
             minDistance = HUGE_NUMBER;
-            findDMByCoordinates(x, y, z, &dmIndex, &minDistance);
+            findDMByCoordinates(x, y, z, Decltarget, &dmIndex, &minDistance);
             if (dmIndex != -1 && minDistance < DIST_DM_TYC) {
                 /* se almacena la identificación cruzada con la DM */
                 writeCrossEntry(crossStream, tycString, dmStringDM[dmIndex], minDistance);

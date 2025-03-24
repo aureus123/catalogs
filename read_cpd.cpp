@@ -83,6 +83,7 @@ struct CPDstar_struct *getCPDStruct()
  * (no hay suplementarias antes de la declinación -60)
  * 
  * Si "cross" es true, se lee el archivo de identificación cruzada
+ * también solo se consideran las declinaciones de -22 en adelante
  * catalog:
  * true = utiliza catálogo 4011
  * false = utiliza catálogo 4005
@@ -113,7 +114,7 @@ void readCPD(bool cross, bool catalog)
         /* lee la zona de declinacion */
         readField(buffer, cell, 3, 3);
         int declRef = atoi(cell);
-        if (declRef > -22 || declRef <= -MAX_DECL) continue;
+        if (cross && declRef > -22) continue;
 
         /* lee numeracion y caracter suplementario */
         readField(buffer, cell, 6, 5);
@@ -354,4 +355,37 @@ void readCPD(bool cross, bool catalog)
         }
     }
     fclose(stream);
+}
+
+/* 
+ * findCPDByCoordinates - busca la estrella CPD más cercana
+ * Aquí (x, y, z) son las coord rectangulares en 1875.
+ * También se pasa la declinación target para acelerar la búsqueda.
+ * (nota: se asume que las estrellas vienen ordenadas por declinación)
+ * minDistanceOutput debe ser una cota de la distancia a buscar.
+ * El resultado se almacena en (cdIndexOutput, minDistanceOutput).
+*/
+void findCPDByCoordinates(double x, double y, double z, double decl, int *cpdIndexOutput, double *minDistanceOutput) {
+    int cpdIndex = -1;
+    double minDistance = *minDistanceOutput;
+
+    decl = fabs(decl);
+
+    int firstDecl = (int) floor(decl - 0.2);
+    if (firstDecl < 18) firstDecl = 18;
+    int firstIndex = getCPDindex(firstDecl, 1);
+    int secondDecl = (int) ceil(decl + 0.2);
+    if (secondDecl < 19) secondDecl = 19;
+    int secondIndex = CPDstars;
+    if (secondDecl < 90) secondIndex = getCPDindex(secondDecl, 1);
+
+	for (int i = firstIndex; i < secondIndex; i++) {
+        double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
+        if (minDistance > dist) {
+        	cpdIndex = i;
+        	minDistance = dist;
+        }
+    }
+    *cpdIndexOutput = cpdIndex;
+    *minDistanceOutput = minDistance;
 }

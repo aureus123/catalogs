@@ -29,15 +29,14 @@ int main(int argc, char** argv)
     /* leemos catalogo CD */
     readDM(CURATED ? "cat/cd_curated.txt" : "cat/cd.txt");
     struct DMstar_struct *CDstar = getDMStruct();
-    int CDstars = getDMStars();
 
     /** leemos catalogo CPD */
     readCPD(false, false);
     struct CPDstar_struct *CPDstar = getCPDStruct();
-    int CPDstars = getCPDStars();
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
     readPPM(false, true, false, false, 1875.0);
+    sortPPM();
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
@@ -64,6 +63,7 @@ int main(int argc, char** argv)
         double x = GCstar[gcIndex].x;
         double y = GCstar[gcIndex].y;
         double z = GCstar[gcIndex].z;
+        double decl = GCstar[gcIndex].Decl1875;
         float vmag = GCstar[gcIndex].vmag;
         int gcRef = GCstar[gcIndex].gcRef;
 
@@ -71,7 +71,7 @@ int main(int argc, char** argv)
 		int ppmIndex = -1;
 		double minDistance = HUGE_NUMBER;
 		/* busca la PPM mas cercana y genera el cruzamiento */
-		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+		findPPMByCoordinates(x, y, z, decl, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
@@ -110,13 +110,7 @@ int main(int argc, char** argv)
         if (GCstar[gcIndex].Decld >= 18) {
             int cpdIndex = -1;
             minDistance = HUGE_NUMBER;
-            for (int i = 0; i < CPDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
-			    if (minDistance > dist) {
-				    cpdIndex = i;
-				    minDistance = dist;
-			    }
-            }
+            findCPDByCoordinates(x, y, z, decl, &cpdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CPD) {
                 countCPD++;
                 cpdFound = true;
@@ -137,13 +131,7 @@ int main(int argc, char** argv)
 		if (GCstar[gcIndex].Decld >= 22) {
             int cdIndex = -1;
             minDistance = HUGE_NUMBER;
-            for (int i = 0; i < CDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
-			    if (minDistance > dist) {
-				    cdIndex = i;
-				    minDistance = dist;
-			    }
-            }
+            findDMByCoordinates(x, y, z, decl, &cdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CD) {
 			    float cdVmag = CDstar[cdIndex].vmag;
 			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9 && !GCstar[gcIndex].dpl) {

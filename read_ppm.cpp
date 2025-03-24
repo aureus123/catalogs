@@ -33,6 +33,8 @@ extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, 
 static struct PPMstar_struct PPMstar[MAXPPMSTAR];
 static int PPMstars;
 
+static int polarDistByIndex[181];
+
 /*
  * getPPMstars - devuelve la cantidad de estrellas de PPM leidas
  */
@@ -326,6 +328,7 @@ void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south,
       if (PPMstars == MAXPPMSTAR) bye("Maximum amount reached!\n");
       PPMstar[PPMstars].ppmRef = ppmRef;
       PPMstar[PPMstars].discard = false;
+      PPMstar[PPMstars].polarDist = Decltarget + 90.0;
       PPMstar[PPMstars].vmag = vmag;
       PPMstar[PPMstars].problem = problem;
       PPMstar[PPMstars].dmIndex = dmIndex;
@@ -342,22 +345,66 @@ void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south,
     fclose(stream);
 }
 
+int comp(const void *a, const void *b) {
+  struct PPMstar_struct *first = (PPMstar_struct*)a;
+  struct PPMstar_struct *second = (PPMstar_struct*)b;
+
+  /* orden ascendente de las distancias polares */
+  if (first->polarDist < second->polarDist) return -1;
+  if (first->polarDist > second->polarDist) return 1;
+  return 0;
+}
+
+/*
+ * sortPPM - ordena las estrellas PPM por declinación para acceso más rápido
+ * Nota: leer PPM en ambos hemisferios (discard_north = discard_south = false).
+ */
+void sortPPM() {
+  /* ordenas las estrellas */
+  qsort(PPMstar, PPMstars, sizeof(PPMstar_struct), comp);
+
+  /* genera indices */
+  int currentPolarDist = -1;
+  for (int i = 0; i < PPMstars; i++) {
+    int polarDist = (int) floor(PPMstar[i].polarDist);
+    if (polarDist > currentPolarDist) {
+      currentPolarDist = polarDist;
+      polarDistByIndex[polarDist] = i;
+      //printf("Polar dist = %d, index = %d\n", polarDist, i);
+    }
+  }
+  polarDistByIndex[180] = PPMstars;
+}
+
 /* 
  * findPPMByCoordinates - busca la estrella PPM más cercana
  * Aquí (x, y, z) son las coord rectangulares en el año target.
+ * También se pasa la declinación target para acelerar la búsqueda.
  * minDistanceOutput debe ser una cota de la distancia a buscar.
  * El resultado se almacena en (ppmIndexOutput, minDistanceOutput).
-*/
-void findPPMByCoordinates(double x, double y, double z, int *ppmIndexOutput, double *minDistanceOutput) {
+ */
+void findPPMByCoordinates(double x, double y, double z, double decl, int *ppmIndexOutput, double *minDistanceOutput) {
   int ppmIndex = -1;
   double minDistance = *minDistanceOutput;
-	for (int i = 0; i < PPMstars; i++) {
-        double dist = 3600.0 * calcAngularDistance(x, y, z, PPMstar[i].x, PPMstar[i].y, PPMstar[i].z);
-        if (minDistance > dist) {
-        	ppmIndex = i;
-        	minDistance = dist;
-        }
+
+  decl += 90.0; // convertimos a distancia polar
+
+  int firstPolar = (int) floor(decl - 0.2);
+  if (firstPolar < 0) firstPolar = 0;
+  int firstIndex = polarDistByIndex[firstPolar];
+  int secondPolar = (int) ceil(decl + 0.2);
+  if (secondPolar > 180) secondPolar = 180;
+  int secondIndex = polarDistByIndex[secondPolar];
+
+  //printf("Polar = %.2f (decl = %.2f), firstIndex = %d, secondIndex = %d\n", decl, decl-90.0, firstIndex, secondIndex);
+
+	for (int i = firstIndex; i < secondIndex; i++) {
+    double dist = 3600.0 * calcAngularDistance(x, y, z, PPMstar[i].x, PPMstar[i].y, PPMstar[i].z);
+    if (minDistance > dist) {
+    	ppmIndex = i;
+    	minDistance = dist;
     }
-    *ppmIndexOutput = ppmIndex;
-    *minDistanceOutput = minDistance;
+  }
+  *ppmIndexOutput = ppmIndex;
+  *minDistanceOutput = minDistance;
 }

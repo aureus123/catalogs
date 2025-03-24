@@ -18,3 +18,4 @@ struct CPDstar_struct {
 int getCPDStars();
 struct CPDstar_struct *getCPDStruct();
 void readCPD(bool cross, bool catalog);
+void findCPDByCoordinates(double x, double y, double z, double decl, int *cpdIndexOutput, double *minDistanceOutput);

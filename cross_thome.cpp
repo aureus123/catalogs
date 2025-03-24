@@ -31,7 +31,7 @@
 #define MAX_DIST_TH_PPM 20.0
 #define MAX_DIST_TH_CPD 30.0
 #define MAX_DIST_CROSS 30.0
-#define MAX_DIST_ZC_ZC 10.0
+#define MAX_DIST_ZC_ZC 15.0
 #define CURATED true // true if curated CD catalog should be used
 
 // Here, we save 1875.0 coordinates of OA stars in rectangular form
@@ -125,9 +125,7 @@ void readWeiss() {
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
-    int CDstars = getDMStars();
     struct CPDstar_struct *CPDstar = getCPDStruct();
-    int CPDstars = getCPDStars();
 
     printf("\n***************************************\n");
     printf("Perform comparison between Weiss and PPM/CD/CPD...\n");
@@ -145,7 +143,8 @@ void readWeiss() {
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
-    readPPM(false, true, true, false, EPOCH_OA);
+    readPPM(false, true, false, false, EPOCH_OA);
+    sortPPM();
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
@@ -203,7 +202,7 @@ void readWeiss() {
 		/* busca la PPM mas cercana y genera el cruzamiento */
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
-		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_OA_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
@@ -244,13 +243,7 @@ void readWeiss() {
         if (Decl1875 <= -18.0) {
             int cpdIndex = -1;
             minDistance = HUGE_NUMBER;
-            for (int i = 0; i < CPDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
-			    if (minDistance > dist) {
-				    cpdIndex = i;
-				    minDistance = dist;
-			    }
-            }
+            findCPDByCoordinates(x, y, z, Decl1875, &cpdIndex, &minDistance);
 			if (minDistance < MAX_DIST_OA_CPD) {
                 countCPD++;
                 cpdFound = true;
@@ -266,13 +259,7 @@ void readWeiss() {
 		if (Decl1875 <= -22.0) {
             int cdIndex = -1;
             minDistance = HUGE_NUMBER;
-            for (int i = 0; i < CDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
-			    if (minDistance > dist) {
-				    cdIndex = i;
-				    minDistance = dist;
-			    }
-            }
+            findDMByCoordinates(x, y, z, Decl1875, &cdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CD) {
 			    float cdVmag = CDstar[cdIndex].vmag;
 			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
@@ -339,9 +326,7 @@ void readStone() {
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
-    int CDstars = getDMStars();
     struct CPDstar_struct *CPDstar = getCPDStruct();
-    int CPDstars = getCPDStars();
 
     printf("\n***************************************\n");
     printf("Perform comparison between Stone and PPM/CD/CPD...\n");
@@ -360,6 +345,7 @@ void readStone() {
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
     readPPM(false, true, false, false, EPOCH_ST);
+    sortPPM();
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
@@ -422,7 +408,7 @@ void readStone() {
 		/* busca la PPM mas cercana y genera el cruzamiento */
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
-		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
@@ -465,13 +451,7 @@ void readStone() {
         if (Decl1875 <= -18.0) {
             int cpdIndex = -1;
             minDistance = HUGE_NUMBER;
-            for (int i = 0; i < CPDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
-			    if (minDistance > dist) {
-				    cpdIndex = i;
-				    minDistance = dist;
-			    }
-            }
+            findCPDByCoordinates(x, y, z, Decl1875, &cpdIndex, &minDistance);
 			if (minDistance < MAX_DIST_ST_CPD) {
                 countCPD++;
                 cpdFound = true;
@@ -489,13 +469,7 @@ void readStone() {
 		if (Decl1875 <= -22.0) {
             int cdIndex = -1;
             minDistance = HUGE_NUMBER;
-            for (int i = 0; i < CDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
-			    if (minDistance > dist) {
-				    cdIndex = i;
-				    minDistance = dist;
-			    }
-            }
+            findDMByCoordinates(x, y, z, Decl1875, &cdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CD) {
 			    float cdVmag = CDstar[cdIndex].vmag;
 			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
@@ -583,9 +557,7 @@ void readUSNO() {
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
-    int CDstars = getDMStars();
     struct CPDstar_struct *CPDstar = getCPDStruct();
-    int CPDstars = getCPDStars();
 
     printf("\n***************************************\n");
     printf("Perform comparison between USNO and PPM/CD/CPD...\n");
@@ -604,6 +576,7 @@ void readUSNO() {
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
     readPPM(false, true, false, false, EPOCH_USNO);
+    sortPPM();
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
@@ -653,7 +626,7 @@ void readUSNO() {
 		/* busca la PPM mas cercana y genera el cruzamiento */
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
-		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_USNO_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
@@ -694,13 +667,7 @@ void readUSNO() {
         if (Decl1875 <= -18.0) {
             int cpdIndex = -1;
             minDistance = HUGE_NUMBER;
-            for (int i = 0; i < CPDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
-			    if (minDistance > dist) {
-				    cpdIndex = i;
-				    minDistance = dist;
-			    }
-            }
+            findCPDByCoordinates(x, y, z, Decl1875, &cpdIndex, &minDistance);
 			if (minDistance < MAX_DIST_USNO_CPD) {
                 countCPD++;
                 cpdFound = true;
@@ -716,13 +683,7 @@ void readUSNO() {
 		if (Decl1875 <= -22.0) {
             int cdIndex = -1;
             minDistance = HUGE_NUMBER;
-            for (int i = 0; i < CDstars; i++) {
-			    double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
-			    if (minDistance > dist) {
-				    cdIndex = i;
-				    minDistance = dist;
-			    }
-            }
+            findDMByCoordinates(x, y, z, Decl1875, &cdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CD) {
 			    float cdVmag = CDstar[cdIndex].vmag;
 			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
@@ -829,9 +790,7 @@ void readThome(double epoch, const char *filename, int correction) {
 
     /* usamos catalogs CD, CPD y GC */
     struct DMstar_struct *CDstar = getDMStruct();
-    int CDstars = getDMStars();
     struct CPDstar_struct *CPDstar = getCPDStruct();
-    int CPDstars = getCPDStars();
     struct GCstar_struct *GCstar = getGCStruct();
     int GCstars = getGCStars();
 
@@ -847,7 +806,8 @@ void readThome(double epoch, const char *filename, int correction) {
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
-    readPPM(false, true, true, false, epoch);
+    readPPM(false, true, false, false, epoch);
+    sortPPM();
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
@@ -895,7 +855,7 @@ void readThome(double epoch, const char *filename, int correction) {
 		/* busca la PPM mas cercana y genera el cruzamiento */
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
-		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_TH_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
@@ -932,13 +892,7 @@ void readThome(double epoch, const char *filename, int correction) {
         /* busca la CPD mas cercana y genera el cruzamiento */
         int cpdIndex = -1;
         minDistance = HUGE_NUMBER;
-        for (int i = 0; i < CPDstars; i++) {
-		    double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
-		    if (minDistance > dist) {
-			    cpdIndex = i;
-			    minDistance = dist;
-		    }
-        }
+        findCPDByCoordinates(x, y, z, Decl1875, &cpdIndex, &minDistance);
         double nearestCPDDistance = minDistance;
 		if (minDistance < MAX_DIST_TH_CPD) {
             countCPD++;
@@ -949,13 +903,7 @@ void readThome(double epoch, const char *filename, int correction) {
 		/* busca la CD mas cercana y genera el cruzamiento */
         int cdIndex = -1;
         minDistance = HUGE_NUMBER;
-        for (int i = 0; i < CDstars; i++) {
-		    double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
-		    if (minDistance > dist) {
-			    cdIndex = i;
-			    minDistance = dist;
-		    }
-        }
+        findDMByCoordinates(x, y, z, Decl1875, &cdIndex, &minDistance);
         double nearestCDDistance = minDistance;
 		if (minDistance < MAX_DIST_CD) {
 		    float cdVmag = CDstar[cdIndex].vmag;
@@ -1104,9 +1052,7 @@ void readGilliss() {
 
     /* usamos catalogs CD, CPD y GC */
     struct DMstar_struct *CDstar = getDMStruct();
-    int CDstars = getDMStars();
     struct CPDstar_struct *CPDstar = getCPDStruct();
-    int CPDstars = getCPDStars();
     struct GCstar_struct *GCstar = getGCStruct();
     int GCstars = getGCStars();
 
@@ -1126,7 +1072,8 @@ void readGilliss() {
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
-    readPPM(false, true, true, false, EPOCH_GILLISS);
+    readPPM(false, true, false, false, EPOCH_GILLISS);
+    sortPPM();
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
@@ -1173,7 +1120,7 @@ void readGilliss() {
 		/* busca la PPM mas cercana y genera el cruzamiento */
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
-		findPPMByCoordinates(x, y, z, &ppmIndex, &minDistance);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
@@ -1213,13 +1160,7 @@ void readGilliss() {
         /* busca la CPD mas cercana y genera el cruzamiento */
         int cpdIndex = -1;
         minDistance = HUGE_NUMBER;
-        for (int i = 0; i < CPDstars; i++) {
-		    double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
-		    if (minDistance > dist) {
-			    cpdIndex = i;
-			    minDistance = dist;
-		    }
-        }
+        findCPDByCoordinates(x, y, z, Decl1875, &cpdIndex, &minDistance);
         double nearestCPDDistance = minDistance;
 		if (minDistance < MAX_DIST_CPD) {
             countCPD++;
@@ -1234,13 +1175,7 @@ void readGilliss() {
 		/* busca la CD mas cercana y genera el cruzamiento */
         int cdIndex = -1;
         minDistance = HUGE_NUMBER;
-        for (int i = 0; i < CDstars; i++) {
-		    double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
-		    if (minDistance > dist) {
-			    cdIndex = i;
-			    minDistance = dist;
-		    }
-        }
+        findDMByCoordinates(x, y, z, Decl1875, &cdIndex, &minDistance);
         double nearestCDDistance = minDistance;
 		if (minDistance < MAX_DIST_CD) {
 		    float cdVmag = CDstar[cdIndex].vmag;
