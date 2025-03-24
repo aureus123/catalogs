@@ -51,6 +51,7 @@ int main(int argc, char** argv)
 	FILE *crossCDStream = openCrossFile("results/cross_gc_cd.csv");
 	FILE *crossCPDStream = openCrossFile("results/cross_gc_cpd.csv");
 	FILE *crossPPMStream = openCrossFile("results/cross_gc_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/gc_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -66,6 +67,7 @@ int main(int argc, char** argv)
         double decl = GCstar[gcIndex].Decl1875;
         float vmag = GCstar[gcIndex].vmag;
         int gcRef = GCstar[gcIndex].gcRef;
+        snprintf(catName, 20, "GC %d", gcRef);
 
         bool ppmFound = false;
 		int ppmIndex = -1;
@@ -95,7 +97,6 @@ int main(int argc, char** argv)
             countDist++;
             ppmFound = true;
 
-			snprintf(catName, 20, "GC %d", gcRef);
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
 		} else {
@@ -115,7 +116,6 @@ int main(int argc, char** argv)
                 countCPD++;
                 cpdFound = true;
 
-			    snprintf(catName, 20, "GC %d", gcRef);
 			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
 			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
 			} else {
@@ -148,7 +148,6 @@ int main(int argc, char** argv)
                 countCD++;
                 cdFound = true;
 
-			    snprintf(catName, 20, "GC %d", gcRef);
 			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
 			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
 			} else {
@@ -162,9 +161,13 @@ int main(int argc, char** argv)
         if (!ppmFound && !cdFound && !cpdFound) {
             printf("%d) Warning: GC is ALONE (no PPM or CD or CPD star near it).\n", ++errors);
             writeRegisterGC(gcIndex);
-            logCauses(GCstar[gcIndex].cum, GCstar[gcIndex].neb, GCstar[gcIndex].vmag, GCstar[gcIndex].RAs, GCstar[gcIndex].Decl1875, GCstar[gcIndex].Decls, ppmIndex, nearestPPMDistance);
+            logCauses(catName, unidentifiedStream, x, y, z,
+                GCstar[gcIndex].cum, GCstar[gcIndex].neb, GCstar[gcIndex].vmag,
+                GCstar[gcIndex].RAs, decl, GCstar[gcIndex].Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 	}
+    fclose(unidentifiedStream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
 	fclose(crossCDStream);

@@ -348,13 +348,7 @@ int main(int argc, char** argv) {
         if (Decltarget <= -18.0) {
             int cpdIndex = -1;
             minDistance = HUGE_NUMBER;
-            for (int i = 0; i < CPDstars; i++) {
-                double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
-                if (minDistance > dist) {
-                    cpdIndex = i;
-                    minDistance = dist;
-                }
-            }
+            findCPDByCoordinates(x, y, z, Decltarget, &cpdIndex, &minDistance);
             if (cpdIndex != -1 && minDistance < DIST_CPD_TYC) {
                 /* se almacena la identificación cruzada con la CPD */
                 writeCrossEntry(crossStream, tycString, dmStringCPD[cpdIndex], minDistance);

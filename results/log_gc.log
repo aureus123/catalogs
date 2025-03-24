@@ -21,18 +21,18 @@ Perform comparison between GC and PPM/CD/CPD...
 1) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 322: mag = 4.5, RA = 00h18m29s63, DE = 72°46'39''2 (pag 8) cum 
   Possible cause: cumulus.
-  Note: Nearest PPM 13052 at 312.3 arcsec.
+  Note: Nearest PPM 366914 at 312.3 arcsec.
   Note: poor CD coverage for stars above 61°.
 2) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 891: mag = 7.7, RA = 00h51m60s18, DE = 73°08'23''0 (pag 20) neb 
   Possible cause: nebula.
-  Note: Nearest PPM 12220 at 1063.7 arcsec.
+  Note: Nearest PPM 367088 at 1063.7 arcsec.
   Note: poor CD coverage for stars above 61°.
 3) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 934: mag = 10.0, RA = 00h54m43s44, DE = 72°51'08''8 (pag 21) neb 
   Possible cause: nebula.
   Possible cause: dim star.
-  Note: Nearest PPM 13016 at 1066.6 arcsec.
+  Note: Nearest PPM 367141 at 1066.6 arcsec.
   Note: poor CD coverage for stars above 61°.
 4) Warning: GC has a near CD with a different magnitude (delta = 2.8).
      Register GC 2110: mag = 7.2, RA = 02h01m01s76, DE = 40°08'09''0 (pag 45) 
@@ -40,7 +40,7 @@ Perform comparison between GC and PPM/CD/CPD...
 5) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 2302: mag = 9.2, RA = 02h10m30s20, DE = 03°31'02''6 (pag 49) 
   Possible cause: dim star.
-  Note: Nearest PPM 279250 at 114.6 arcsec.
+  Note: Nearest PPM 184431 at 114.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 6) Warning: GC has a near CD with a different magnitude (delta = 3.6).
      Register GC 2384: mag = 8.5, RA = 02h14m28s94, DE = 70°03'12''8 (pag 50) 
@@ -48,7 +48,7 @@ Perform comparison between GC and PPM/CD/CPD...
 7) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 3143: mag = 11.0, RA = 02h50m07s09, DE = 67°52'07''8 (pag 64) 
   Possible cause: dim star.
-  Note: Nearest PPM 22421 at 235.3 arcsec.
+  Note: Nearest PPM 353198 at 235.3 arcsec.
   Note: poor CD coverage for stars above 61°.
 8) Warning: GC has a near PPM 246774 star (vmag = 7.6) with a different magnitude (delta = 2.1).
      Register GC 4285: mag = 9.7, RA = 03h45m55s11, DE = 29°46'44''0 (pag 86) 
@@ -58,415 +58,415 @@ Perform comparison between GC and PPM/CD/CPD...
 10) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 5081: mag = 6.1, RA = 04h26m00s00, DE = 62°47'45''7 (pag 102) 
   Possible cause: lack of RA (s).
-  Note: Nearest PPM 34296 at 128.5 arcsec.
+  Note: Nearest PPM 354131 at 128.5 arcsec.
   Note: poor CD coverage for stars above 61°.
 11) Warning: GC is ALONE (no PPM or CD or CPD star near it).
-     Register GC 5162: mag = 10.0, RA = 04h29m46s55, DE = 03°52'13''0 (pag 104) dpl 
-  Possible cause: dim star.
-  Note: Nearest PPM 277606 at 16.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-12) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 6036: mag = 8.0, RA = 05h10m00s67, DE = 40°11'27''7 (pag 120) neb 
   Possible cause: nebula.
-  Note: Nearest PPM 110473 at 669.2 arcsec.
-13) Warning: GC has a near CD with a different magnitude (delta = 3.3).
+  Possible cause: dim star.
+  Note: Nearest PPM 309486 at 669.2 arcsec.
+12) Warning: GC has a near CD with a different magnitude (delta = 3.3).
      Register GC 6181: mag = 9.0, RA = 05h16m42s61, DE = 24°54'01''7 (pag 123) 
      Register CD -24°3023 (en 5h):  5.7 | 16m38.9s | 54.2'     (pag. 126)
-14) Warning: GC is ALONE (no PPM or CD or CPD star near it).
-     Register GC 6559: mag = 8.5, RA = 05h32m29s22, DE = 02°40'24''9 (pag 131) dpl 
-  Note: Nearest PPM 282530 at 15.1 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-15) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+13) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 6599: mag = 8.2, RA = 05h33m50s10, DE = 17°56'17''6 (pag 131) 
-  Note: Nearest PPM 212748 at 88.6 arcsec.
+  Possible cause: dim star.
+  Note: Nearest PPM 216077 at 88.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-16) Warning: GC has a near CD with a different magnitude (delta = 2.3).
+14) Warning: GC has a near CD with a different magnitude (delta = 2.3).
      Register GC 6662: mag = 7.7, RA = 05h36m16s46, DE = 26°24'41''3 (pag 133) 
      Register CD -26°2394 (en 5h):  10.0 | 36m18.2s | 24.9'     (pag. 241)
-17) Warning: GC has a near PPM 354885 star (vmag = 9.6) with a different magnitude (delta = 3.4).
+15) Warning: GC has a near PPM 354885 star (vmag = 9.6) with a different magnitude (delta = 3.4).
      Register GC 6744: mag = 6.2, RA = 05h39m34s72, DE = 69°09'50''6 (pag 134) 
-18) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+16) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 7015: mag = 10.0, RA = 05h51m25s76, DE = 14°56'01''6 (pag 140) 
   Possible cause: dim star.
-  Note: Nearest PPM 227573 at 811.7 arcsec.
+  Note: Nearest PPM 712104 at 811.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-19) Warning: GC has a near CD with a different magnitude (delta = 3.0).
+17) Warning: GC has a near CD with a different magnitude (delta = 3.0).
      Register GC 8742: mag = 6.6, RA = 06h53m06s42, DE = 26°59'50''2 (pag 172) 
      Register CD -26°3646 (en 6h):  9.6 | 53m6.8s | 59.6'     (pag. 246)
-20) Warning: GC has a near CD with a different magnitude (delta = 2.3).
+18) Warning: GC has a near CD with a different magnitude (delta = 2.3).
      Register GC 8775: mag = 7.7, RA = 06h54m33s13, DE = 54°52'46''5 (pag 173) 
      Register CD -54°1621 (en 6h):  10.0 | 54m32.8s | 52.7'     (pag. 74)
-21) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+19) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 8848: mag = 8.2, RA = 06h56m57s63, DE = 08°10'02''4 (pag 175) 
-  Note: Nearest PPM 259004 at 175.2 arcsec.
+  Possible cause: dim star.
+  Note: Nearest PPM 189855 at 175.2 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+20) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+     Register GC 8958: mag = 8.0, RA = 07h00m53s42, DE = 07°21'56''4 (pag 177) 
+  Possible cause: dim star.
+  Note: Nearest PPM 703350 at 412.7 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+21) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+     Register GC 9030: mag = 8.5, RA = 07h03m35s74, DE = 09°04'37''1 (pag 178) 
+  Possible cause: dim star.
+  Note: Nearest PPM 703380 at 330.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 22) Warning: GC is ALONE (no PPM or CD or CPD star near it).
-     Register GC 8958: mag = 8.0, RA = 07h00m53s42, DE = 07°21'56''4 (pag 177) 
-  Note: Nearest PPM 262828 at 412.7 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-23) Warning: GC is ALONE (no PPM or CD or CPD star near it).
-     Register GC 9030: mag = 8.5, RA = 07h03m35s74, DE = 09°04'37''1 (pag 178) 
-  Note: Nearest PPM 254536 at 330.6 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-24) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 9092: mag = 9.0, RA = 07h05m57s88, DE = 05°14'20''3 (pag 179) 
   Possible cause: dim star.
-  Note: Nearest PPM 271626 at 45.9 arcsec.
+  Note: Nearest PPM 190029 at 45.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-25) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+23) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 9100: mag = 8.2, RA = 07h06m11s69, DE = 05°13'26''7 (pag 180) 
-  Note: Nearest PPM 271626 at 168.3 arcsec.
+  Possible cause: dim star.
+  Note: Nearest PPM 190029 at 168.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-26) Warning: GC has a near CD with a different magnitude (delta = 6.3).
+24) Warning: GC has a near CD with a different magnitude (delta = 6.3).
      Register GC 9288: mag = 2.7, RA = 07h12m43s76, DE = 36°52'25''3 (pag 184) 
      Register CD -36°3487 (en 7h):  9.0 | 12m41.2s | 52.9'     (pag. 236)
-27) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+25) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 9327: mag = 7.2, RA = 07h13m53s19, DE = 03°40'07''2 (pag 185) 
-  Note: Nearest PPM 278372 at 59.1 arcsec.
+  Note: Nearest PPM 190164 at 59.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-28) Warning: GC has a near CD with a different magnitude (delta = 3.0).
+26) Warning: GC has a near CD with a different magnitude (delta = 3.0).
      Register GC 9564: mag = 6.5, RA = 07h22m03s74, DE = 33°53'26''2 (pag 189) 
      Register CD -33°3811 (en 7h):  9.5 | 22m3.0s | 54.0'     (pag. 72)
-29) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+27) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 9774: mag = 9.5, RA = 07h30m15s20, DE = 14°11'36''1 (pag 194) 
   Possible cause: dim star.
-  Note: Nearest PPM 231400 at 103.3 arcsec.
+  Note: Nearest PPM 218902 at 103.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-30) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+28) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 9781: mag = 9.5, RA = 07h30m19s82, DE = 14°12'44''7 (pag 194) dpl 
   Possible cause: dim star.
-  Note: Nearest PPM 231400 at 20.9 arcsec.
+  Note: Nearest PPM 218902 at 20.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-31) Warning: GC has a near CD with a different magnitude (delta = 3.7).
+29) Warning: GC has a near CD with a different magnitude (delta = 3.7).
      Register GC 10215: mag = 6.3, RA = 07h43m46s78, DE = 24°36'04''5 (pag 203) 
      Register CD -24°6020 (en 7h):  10.0 | 43m43.0s | 36.0'     (pag. 137)
-32) Warning: GC has a near CD with a different magnitude (delta = 2.9).
+30) Warning: GC has a near CD with a different magnitude (delta = 2.9).
      Register GC 10661: mag = 6.6, RA = 07h58m11s61, DE = 32°06'50''3 (pag 211) 
      Register CD -32°4768 (en 7h):  9.5 | 58m13.7s | 7.1'     (pag. 16)
-33) Warning: GC has a near PPM 369774 star (vmag = 10.4) with a different magnitude (delta = 2.4).
+31) Warning: GC has a near PPM 369774 star (vmag = 10.4) with a different magnitude (delta = 2.4).
      Register GC 10773: mag = 8.0, RA = 08h02m48s95, DE = 72°07'38''2 (pag 213) 
-34) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+32) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 10893: mag = 8.7, RA = 08h06m41s25, DE = 05°28'25''7 (pag 216) 
-  Note: Nearest PPM 271024 at 406.7 arcsec.
+  Possible cause: dim star.
+  Note: Nearest PPM 191091 at 406.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-35) Warning: GC has a near PPM 284915 star (vmag = 6.6) with a different magnitude (delta = 2.4).
+33) Warning: GC has a near PPM 284915 star (vmag = 6.6) with a different magnitude (delta = 2.4).
      Register GC 10912: mag = 9.0, RA = 08h07m10s19, DE = 35°23'59''6 (pag 216) 
-36) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+34) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 10914: mag = 9.0, RA = 08h07m12s95, DE = 05°22'52''4 (pag 216) 
   Possible cause: dim star.
-  Note: Nearest PPM 270788 at 190.5 arcsec.
+  Note: Nearest PPM 704159 at 190.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-37) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+35) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 10918: mag = 9.0, RA = 08h07m53s83, DE = 05°18'51''5 (pag 216) 
   Possible cause: dim star.
-  Note: Nearest PPM 271184 at 188.7 arcsec.
+  Note: Nearest PPM 704167 at 188.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-38) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+36) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 11156: mag = 11.0, RA = 08h15m16s44, DE = 66°39'06''5 (pag 221) 
   Possible cause: dim star.
-  Note: Nearest PPM 25344 at 595.2 arcsec.
+  Note: Nearest PPM 356606 at 595.2 arcsec.
   Note: poor CD coverage for stars above 61°.
-39) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+37) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 11867: mag = 7.5, RA = 08h40m30s01, DE = 08°10'06''0 (pag 235) 
-  Note: Nearest PPM 258757 at 60.3 arcsec.
+  Note: Nearest PPM 191692 at 60.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-40) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+38) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 12588: mag = 6.6, RA = 09h09m34s00, DE = 64°20'52''0 (pag 249) neb 
   Possible cause: nebula.
-  Note: Nearest PPM 30313 at 182.4 arcsec.
+  Note: Nearest PPM 357181 at 182.4 arcsec.
   Note: poor CD coverage for stars above 61°.
-41) Warning: GC has a near PPM 314200 star (vmag = 9.5) with a different magnitude (delta = 2.0).
+39) Warning: GC has a near PPM 314200 star (vmag = 9.5) with a different magnitude (delta = 2.0).
      Register GC 12702: mag = 7.5, RA = 09h14m58s40, DE = 48°27'02''5 (pag 251) 
-42) Warning: GC has a near CD with a different magnitude (delta = 2.1).
+40) Warning: GC has a near CD with a different magnitude (delta = 2.1).
      Register GC 12906: mag = 7.5, RA = 09h23m02s64, DE = 34°21'34''7 (pag 255) 
      Register CD -34°5905 (en 9h):  9.6 | 23m3.2s | 21.2'     (pag. 136)
-43) Warning: GC has a near CD with a different magnitude (delta = 2.2).
+41) Warning: GC has a near CD with a different magnitude (delta = 2.2).
      Register GC 13041: mag = 9.0, RA = 09h28m03s74, DE = 38°35'27''0 (pag 258) 
      Register CD -38°5676 (en 9h):  6.8 | 28m5.5s | 34.9'     (pag. 350)
-44) Warning: GC has a near CD with a different magnitude (delta = 2.6).
+42) Warning: GC has a near CD with a different magnitude (delta = 2.6).
      Register GC 13047: mag = 10.0, RA = 09h28m14s66, DE = 38°05'44''1 (pag 258) 
      Register CD -38°5679 (en 9h):  7.4 | 28m15.4s | 5.4'     (pag. 350)
-45) Warning: GC has a near PPM 314825 star (vmag = 9.2) with a different magnitude (delta = 2.4).
+43) Warning: GC has a near PPM 314825 star (vmag = 9.2) with a different magnitude (delta = 2.4).
      Register GC 13548: mag = 6.8, RA = 09h50m41s14, DE = 42°46'36''5 (pag 268) 
-46) Warning: GC has a near CD with a different magnitude (delta = 2.4).
+44) Warning: GC has a near CD with a different magnitude (delta = 2.4).
      Register GC 13548: mag = 6.8, RA = 09h50m41s14, DE = 42°46'36''5 (pag 268) 
      Register CD -42°5758 (en 9h):  9.2 | 50m40.6s | 46.6'     (pag. 19)
-47) Warning: GC has a near CD with a different magnitude (delta = 4.6).
+45) Warning: GC has a near CD with a different magnitude (delta = 4.6).
      Register GC 14143: mag = 9.0, RA = 10h16m15s25, DE = 55°25'27''1 (pag 280) 
      Register CD -55°3306 (en 10h):  4.4 | 16m16.1s | 25.1'     (pag. 113)
-48) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+46) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 14371: mag = 8.2, RA = 10h26m36s39, DE = 16°18'00''0 (pag 285) 
   Possible cause: lack of Decl (s).
-  Note: Nearest PPM 221077 at 46.9 arcsec.
+  Possible cause: dim star.
+  Note: Nearest PPM 223102 at 46.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-49) Warning: GC has a near CD with a different magnitude (delta = 5.0).
+47) Warning: GC has a near CD with a different magnitude (delta = 5.0).
      Register GC 14468: mag = 10.0, RA = 10h30m37s46, DE = 56°54'46''7 (pag 287) 
      Register CD -56°3445 (en 10h):  5.0 | 30m47.7s | 55.0'     (pag. 145)
-50) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+48) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 14595: mag = 7.7, RA = 10h35m00s00, DE = 47°22'21''4 (pag 289) 
   Possible cause: lack of RA (s).
-  Note: Nearest PPM 81817 at 264.0 arcsec.
-51) Warning: GC has a near CD with a different magnitude (delta = 2.3).
+  Note: Nearest PPM 315594 at 264.0 arcsec.
+49) Warning: GC has a near CD with a different magnitude (delta = 2.3).
      Register GC 14633: mag = 7.7, RA = 10h36m48s94, DE = 59°00'33''1 (pag 290) 
      Register CD -59°3225 (en 10h):  10.0 | 36m49.3s | 1.0'     (pag. 236)
-52) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+50) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 14729: mag = 9.5, RA = 10h40m28s82, DE = 04°04'16''9 (pag 292) 
   Possible cause: dim star.
-  Note: Nearest PPM 276831 at 55.1 arcsec.
+  Note: Nearest PPM 193775 at 55.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-53) Warning: GC has a near CD with a different magnitude (delta = 3.8).
+51) Warning: GC has a near CD with a different magnitude (delta = 3.8).
      Register GC 14912: mag = 7.6, RA = 10h48m27s21, DE = 58°10'20''3 (pag 296) 
      Register CD -58°3625 (en 10h):  3.8 | 48m25.1s | 10.7'     (pag. 207)
-54) Warning: GC has a near PPM 315942 star (vmag = 9.2) with a different magnitude (delta = 2.0).
+52) Warning: GC has a near PPM 315942 star (vmag = 9.2) with a different magnitude (delta = 2.0).
      Register GC 15044: mag = 7.2, RA = 10h54m21s20, DE = 39°44'45''2 (pag 298) 
-55) Warning: GC has a near CD with a different magnitude (delta = 2.2).
+53) Warning: GC has a near CD with a different magnitude (delta = 2.2).
      Register GC 15315: mag = 9.7, RA = 11h05m28s20, DE = 59°42'37''4 (pag 303) 
      Register CD -59°3588 (en 11h):  7.5 | 5m23.2s | 42.2'     (pag. 237)
-56) Warning: GC has a near CD with a different magnitude (delta = 2.3).
+54) Warning: GC has a near CD with a different magnitude (delta = 2.3).
      Register GC 15433: mag = 7.7, RA = 11h10m23s77, DE = 54°31'38''3 (pag 306) 
      Register CD -54°4049 (en 11h):  10.0 | 10m25.5s | 32.0'     (pag. 82)
-57) Warning: GC has a near PPM 358600 star (vmag = 7.2) with a different magnitude (delta = 2.0).
+55) Warning: GC has a near PPM 358600 star (vmag = 7.2) with a different magnitude (delta = 2.0).
      Register GC 15446: mag = 9.2, RA = 11h11m07s73, DE = 67°31'00''3 (pag 306) 
-58) Warning: GC has a near CD with a different magnitude (delta = 4.7).
+56) Warning: GC has a near CD with a different magnitude (delta = 4.7).
      Register GC 15651: mag = 6.3, RA = 11h20m58s46, DE = 52°28'22''7 (pag 310) 
      Register CD -52°4400 (en 11h):  11.0 | 21m1.1s | 28.7'     (pag. 15)
-59) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+57) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 15736: mag = 10.2, RA = 11h24m57s56, DE = 04°36'37''1 (pag 311) 
   Possible cause: dim star.
-  Note: Nearest PPM 274580 at 147.2 arcsec.
+  Note: Nearest PPM 194547 at 147.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-60) Warning: GC has a near CD with a different magnitude (delta = 2.0).
+58) Warning: GC has a near CD with a different magnitude (delta = 2.0).
      Register GC 15847: mag = 7.5, RA = 11h29m59s06, DE = 60°52'08''6 (pag 314) 
      Register CD -60°3622 (en 11h):  9.5 | 30m0.8s | 51.9'     (pag. 265)
-61) Warning: GC has a near CD with a different magnitude (delta = 2.4).
+59) Warning: GC has a near CD with a different magnitude (delta = 2.4).
      Register GC 15862: mag = 6.6, RA = 11h30m33s31, DE = 60°54'07''8 (pag 314) 
      Register CD -60°3633 (en 11h):  9.0 | 30m42.6s | 53.3'     (pag. 265)
-62) Warning: GC has a near PPM 289163 star (vmag = 9.7) with a different magnitude (delta = 2.2).
+60) Warning: GC has a near PPM 289163 star (vmag = 9.7) with a different magnitude (delta = 2.2).
      Register GC 15892: mag = 7.5, RA = 11h31m55s93, DE = 36°07'10''6 (pag 315) 
-63) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+61) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 16152: mag = 11.0, RA = 11h43m40s66, DE = 83°31'15''6 (pag 319) 
   Possible cause: dim star.
-  Note: Nearest PPM 1917 at 66.2 arcsec.
+  Note: Nearest PPM 788943 at 66.2 arcsec.
   Note: poor CD coverage for stars above 61°.
-64) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+62) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 16399: mag = 10.0, RA = 11h54m08s22, DE = 59°59'51''6 (pag 324) 
   Possible cause: dim star.
-  Note: Nearest PPM 41454 at 527.2 arcsec.
-65) Warning: GC has a near CD with a different magnitude (delta = 2.1).
+  Note: Nearest PPM 359104 at 527.2 arcsec.
+63) Warning: GC has a near CD with a different magnitude (delta = 2.1).
      Register GC 16565: mag = 8.5, RA = 12h01m36s97, DE = 50°04'02''3 (pag 327) 
      Register CD -50°6688 (en 12h):  6.4 | 1m37.2s | 4.1'     (pag. 431)
-66) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+64) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 16823: mag = 9.5, RA = 12h14m04s76, DE = 79°03'46''6 (pag 332) 
   Possible cause: dim star.
-  Note: Nearest PPM 4884 at 651.9 arcsec.
+  Note: Nearest PPM 371491 at 651.9 arcsec.
   Note: poor CD coverage for stars above 61°.
-67) Warning: GC has a near CD with a different magnitude (delta = 2.0).
+65) Warning: GC has a near CD with a different magnitude (delta = 2.0).
      Register GC 16864: mag = 7.7, RA = 12h15m59s74, DE = 38°28'34''7 (pag 332) 
      Register CD -38°7685 (en 12h):  9.7 | 15m57.5s | 28.1'     (pag. 357)
-68) Warning: GC has a near CD with a different magnitude (delta = 2.9).
+66) Warning: GC has a near CD with a different magnitude (delta = 2.9).
      Register GC 17062: mag = 6.4, RA = 12h24m42s35, DE = 58°43'58''0 (pag 336) 
      Register CD -58°4603 (en 12h):  9.3 | 24m42.4s | 44.3'     (pag. 211)
-69) Warning: GC has a near CD with a different magnitude (delta = 3.2).
+67) Warning: GC has a near CD with a different magnitude (delta = 3.2).
      Register GC 17390: mag = 5.4, RA = 12h39m13s06, DE = 55°48'14''7 (pag 341) 
      Register CD -55°4778 (en 12h):  8.6 | 39m14.6s | 48.3'     (pag. 118)
-70) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+68) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 17405: mag = 9.0, RA = 12h40m07s26, DE = 59°00'39''7 (pag 341) 
   Possible cause: dim star.
-  Note: Nearest PPM 44512 at 146.0 arcsec.
-71) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+  Note: Nearest PPM 341305 at 146.0 arcsec.
+69) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 17700: mag = 10.0, RA = 12h53m50s58, DE = 21°40'33''6 (pag 347) 
   Possible cause: dim star.
-  Note: Nearest PPM 195362 at 799.3 arcsec.
-72) Warning: GC has a near CD with a different magnitude (delta = 2.8).
+  Note: Nearest PPM 261096 at 799.3 arcsec.
+70) Warning: GC has a near CD with a different magnitude (delta = 2.8).
      Register GC 17746: mag = 7.7, RA = 12h56m18s37, DE = 58°17'56''0 (pag 348) 
      Register CD -58°4868 (en 12h):  10.5 | 56m15.7s | 17.6'     (pag. 212)
-73) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+71) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 18278: mag = 4.0, RA = 13h19m16s12, DE = 46°49'29''5 (pag 357) 
-  Note: Nearest PPM 84386 at 528.4 arcsec.
-74) Warning: GC has a near CD with a different magnitude (delta = 2.9).
+  Note: Nearest PPM 318491 at 528.4 arcsec.
+72) Warning: GC has a near CD with a different magnitude (delta = 2.9).
      Register GC 18647: mag = 7.0, RA = 13h36m27s15, DE = 39°32'49''7 (pag 364) 
      Register CD -39°8427 (en 13h):  9.9 | 36m20.7s | 33.1'     (pag. 412)
-75) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+73) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 20319: mag = 10.0, RA = 14h52m08s97, DE = 10°38'08''3 (pag 395) dpl 
   Possible cause: dim star.
-  Note: Nearest PPM 247977 at 21.8 arcsec.
+  Note: Nearest PPM 229579 at 21.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-76) Warning: GC has a near CD with a different magnitude (delta = 2.4).
+74) Warning: GC has a near CD with a different magnitude (delta = 2.4).
      Register GC 20728: mag = 7.2, RA = 15h10m36s14, DE = 59°05'08''3 (pag 402) 
      Register CD -59°5632 (en 15h):  9.6 | 10m42.0s | 5.0'     (pag. 244)
-77) Warning: GC has a near CD with a different magnitude (delta = 2.6).
+75) Warning: GC has a near CD with a different magnitude (delta = 2.6).
      Register GC 20921: mag = 7.2, RA = 15h19m52s65, DE = 38°12'30''9 (pag 406) 
      Register CD -38°10343 (en 15h):  9.8 | 19m54.5s | 13.0'     (pag. 366)
-78) Warning: GC has a near PPM 343856 star (vmag = 7.6) with a different magnitude (delta = 2.1).
+76) Warning: GC has a near PPM 343856 star (vmag = 7.6) with a different magnitude (delta = 2.1).
      Register GC 20971: mag = 9.7, RA = 15h21m48s98, DE = 52°12'51''3 (pag 406) 
-79) Warning: GC has a near CD with a different magnitude (delta = 2.0).
+77) Warning: GC has a near CD with a different magnitude (delta = 2.0).
      Register GC 20971: mag = 9.7, RA = 15h21m48s98, DE = 52°12'51''3 (pag 406) 
      Register CD -52°6711 (en 15h):  7.7 | 21m49.7s | 12.0'     (pag. 22)
-80) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+78) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 21341: mag = 8.5, RA = 15h37m53s53, DE = 37°23'02''5 (pag 413) neb 
   Possible cause: nebula.
-  Note: Nearest PPM 122251 at 507.6 arcsec.
-81) Warning: GC has a near CD with a different magnitude (delta = 2.6).
+  Possible cause: dim star.
+  Note: Nearest PPM 747162 at 507.6 arcsec.
+79) Warning: GC has a near CD with a different magnitude (delta = 2.6).
      Register GC 21355: mag = 6.7, RA = 15h38m36s48, DE = 27°40'02''7 (pag 413) 
      Register CD -27°10549 (en 15h):  9.3 | 38m35.0s | 40.2'     (pag. 326)
-82) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+80) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 21531: mag = 0.0, RA = 15h46m31s42, DE = 15°51'45''7 (pag 416) 
   Possible cause: no magnitude (cumulus?).
-  Note: Nearest PPM 222149 at 871.1 arcsec.
+  Note: Nearest PPM 717879 at 871.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-83) Warning: GC has a near CD with a different magnitude (delta = 2.0).
+81) Warning: GC has a near CD with a different magnitude (delta = 2.0).
      Register GC 21892: mag = 8.0, RA = 16h01m59s64, DE = 27°33'36''4 (pag 423) 
      Register CD -27°10816 (en 16h):  10.0 | 1m58.5s | 33.6'     (pag. 327)
-84) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+82) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 22201: mag = 7.2, RA = 16h15m56s06, DE = 26°13'27''3 (pag 429) 
-  Note: Nearest PPM 172686 at 230.1 arcsec.
-85) Warning: GC has a near CD with a different magnitude (delta = 3.6).
+  Note: Nearest PPM 265478 at 230.1 arcsec.
+83) Warning: GC has a near CD with a different magnitude (delta = 3.6).
      Register GC 22340: mag = 5.9, RA = 16h23m00s91, DE = 41°32'35''0 (pag 431) 
      Register CD -41°10694 (en 16h):  9.5 | 23m1.0s | 33.0'     (pag. 523)
-86) Warning: GC has a near CD with a different magnitude (delta = 2.8).
+84) Warning: GC has a near CD with a different magnitude (delta = 2.8).
      Register GC 22414: mag = 8.2, RA = 16h25m59s74, DE = 53°43'11''3 (pag 433) 
      Register CD -53°6774 (en 16h):  11.0 | 26m2.8s | 42.8'     (pag. 59)
-87) Warning: GC has a near CD with a different magnitude (delta = 3.0).
+85) Warning: GC has a near CD with a different magnitude (delta = 3.0).
      Register GC 22770: mag = 6.8, RA = 16h43m45s13, DE = 76°00'38''5 (pag 440) 
      Register CD -76°871 (en 16h):  9.8 | 43m40.0s | 0.5'     (pag. 322)
-88) Warning: GC has a near PPM 322322 star (vmag = 7.4) with a different magnitude (delta = 2.3).
+86) Warning: GC has a near PPM 322322 star (vmag = 7.4) with a different magnitude (delta = 2.3).
      Register GC 22798: mag = 9.7, RA = 16h44m41s05, DE = 41°54'34''9 (pag 440) 
-89) Warning: GC has a near CD with a different magnitude (delta = 2.5).
+87) Warning: GC has a near CD with a different magnitude (delta = 2.5).
      Register GC 22822: mag = 7.5, RA = 16h45m23s96, DE = 41°36'54''0 (pag 441) 
      Register CD -41°11030 (en 16h):  10.0 | 45m22.0s | 36.9'     (pag. 524)
-90) Warning: GC has a near CD with a different magnitude (delta = 2.5).
+88) Warning: GC has a near CD with a different magnitude (delta = 2.5).
      Register GC 22827: mag = 7.0, RA = 16h45m33s61, DE = 41°36'36''6 (pag 441) 
      Register CD -41°11042 (en 16h):  9.5 | 45m35.2s | 36.9'     (pag. 524)
-91) Warning: GC has a near CD with a different magnitude (delta = 3.0).
+89) Warning: GC has a near CD with a different magnitude (delta = 3.0).
      Register GC 23186: mag = 7.2, RA = 17h00m42s86, DE = 63°31'28''3 (pag 447) 
      Register CD -63°1259 (en 17h):  4.2 | 0m46.0s | 31.8'     (pag. 31)
-92) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+90) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 23587: mag = 11.0, RA = 17h17m31s22, DE = 78°29'48''6 (pag 454) 
   Possible cause: dim star.
-  Note: Nearest PPM 5415 at 567.2 arcsec.
+  Note: Nearest PPM 373536 at 567.2 arcsec.
   Note: poor CD coverage for stars above 61°.
-93) Warning: GC has a near CD with a different magnitude (delta = 2.2).
+91) Warning: GC has a near CD with a different magnitude (delta = 2.2).
      Register GC 23688: mag = 9.0, RA = 17h21m53s71, DE = 33°35'57''4 (pag 456) 
      Register CD -33°12117 (en 17h):  6.8 | 21m51.9s | 36.8'     (pag. 100)
-94) Warning: GC has a near CD with a different magnitude (delta = 2.0).
+92) Warning: GC has a near CD with a different magnitude (delta = 2.0).
      Register GC 24433: mag = 7.2, RA = 17h51m53s48, DE = 73°05'52''0 (pag 470) 
      Register CD -73°1343 (en 17h):  9.2 | 51m52.0s | 6.0'     (pag. 275)
-95) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+93) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 24949: mag = 9.2, RA = 18h11m37s75, DE = 13°49'36''2 (pag 479) cum 
   Possible cause: cumulus.
   Possible cause: dim star.
-  Note: Nearest PPM 233283 at 111.0 arcsec.
+  Note: Nearest PPM 234332 at 111.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-96) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+94) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 24954: mag = 10.0, RA = 18h11m40s65, DE = 13°49'35''5 (pag 480) cum 
   Possible cause: cumulus.
   Possible cause: dim star.
-  Note: Nearest PPM 233283 at 150.9 arcsec.
+  Note: Nearest PPM 234332 at 150.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-97) Warning: GC has a near CD with a different magnitude (delta = 4.0).
+95) Warning: GC has a near CD with a different magnitude (delta = 4.0).
      Register GC 25544: mag = 9.0, RA = 18h35m10s90, DE = 38°26'52''3 (pag 490) 
      Register CD -38°13036 (en 18h):  5.0 | 35m13.2s | 26.4'     (pag. 375)
-98) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+96) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 25668: mag = 8.0, RA = 18h39m49s89, DE = 62°46'00''0 (pag 492) 
   Possible cause: lack of Decl (s).
-  Note: Nearest PPM 34335 at 60.0 arcsec.
+  Possible cause: dim star.
+  Note: Nearest PPM 363627 at 60.0 arcsec.
   Note: poor CD coverage for stars above 61°.
-99) Warning: GC has a near CD with a different magnitude (delta = 2.1).
+97) Warning: GC has a near CD with a different magnitude (delta = 2.1).
      Register GC 25773: mag = 7.4, RA = 18h43m29s94, DE = 41°03'36''7 (pag 494) 
      Register CD -41°13181 (en 18h):  9.5 | 43m30.0s | 3.9'     (pag. 531)
-100) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+98) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 26079: mag = 8.0, RA = 18h56m13s08, DE = 62°18'56''7 (pag 500) 
-  Note: Nearest PPM 35562 at 172.3 arcsec.
+  Possible cause: dim star.
+  Note: Nearest PPM 363771 at 172.3 arcsec.
   Note: poor CD coverage for stars above 61°.
-101) Warning: GC has a near PPM 347434 star (vmag = 9.1) with a different magnitude (delta = 2.1).
+99) Warning: GC has a near PPM 347434 star (vmag = 9.1) with a different magnitude (delta = 2.1).
      Register GC 26095: mag = 7.0, RA = 18h56m51s49, DE = 51°36'10''0 (pag 500) 
-102) Warning: GC has a near CD with a different magnitude (delta = 3.2).
+100) Warning: GC has a near CD with a different magnitude (delta = 3.2).
      Register GC 26166: mag = 6.7, RA = 18h59m50s63, DE = 60°10'40''1 (pag 501) neb 
      Register CD -60°7124 (en 18h):  9.9 | 59m45.5s | 10.0'     (pag. 277)
-103) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+101) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 26372: mag = 10.2, RA = 19h07m55s65, DE = 17°10'28''4 (pag 505) 
   Possible cause: dim star.
-  Note: Nearest PPM 216377 at 397.7 arcsec.
+  Note: Nearest PPM 235708 at 397.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-104) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+102) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 26379: mag = 9.7, RA = 19h08m13s29, DE = 17°13'05''7 (pag 505) 
   Possible cause: dim star.
-  Note: Nearest PPM 216023 at 526.8 arcsec.
+  Note: Nearest PPM 235715 at 526.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-105) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+103) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 26790: mag = 8.5, RA = 19h26m19s34, DE = 18°52'54''8 (pag 512) dpl 
-  Note: Nearest PPM 207982 at 21.4 arcsec.
-106) Warning: GC has a near PPM 203061 star (vmag = 9.3) with a different magnitude (delta = 2.3).
+  Possible cause: dim star.
+  Note: Nearest PPM 236163 at 21.4 arcsec.
+104) Warning: GC has a near PPM 203061 star (vmag = 9.3) with a different magnitude (delta = 2.3).
      Register GC 26847: mag = 7.0, RA = 19h29m14s35, DE = 02°42'46''2 (pag 513) 
-107) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+105) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 26912: mag = 8.5, RA = 19h32m08s00, DE = 31°14'51''0 (pag 515) neb 
   Possible cause: nebula.
-  Note: Nearest PPM 149497 at 948.5 arcsec.
-108) Warning: GC has a near PPM 348334 star (vmag = 6.7) with a different magnitude (delta = 2.3).
+  Possible cause: dim star.
+  Note: Nearest PPM 299229 at 948.5 arcsec.
+106) Warning: GC has a near PPM 348334 star (vmag = 6.7) with a different magnitude (delta = 2.3).
      Register GC 27560: mag = 9.0, RA = 20h01m13s61, DE = 60°18'04''1 (pag 526) 
-109) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+107) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 27631: mag = 0.0, RA = 20h04m17s64, DE = 14°38'09''2 (pag 527) 
   Possible cause: no magnitude (cumulus?).
-  Note: Nearest PPM 229685 at 637.7 arcsec.
+  Note: Nearest PPM 721582 at 637.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-110) Warning: GC has a near CD with a different magnitude (delta = 2.5).
+108) Warning: GC has a near CD with a different magnitude (delta = 2.5).
      Register GC 28571: mag = 7.5, RA = 20h43m27s91, DE = 41°22'12''9 (pag 544) 
      Register CD -41°14265 (en 20h):  10.0 | 43m30.7s | 22.2'     (pag. 535)
-111) Warning: GC has a near PPM 774594 star (vmag = 9.6) with a different magnitude (delta = 2.0).
+109) Warning: GC has a near PPM 774594 star (vmag = 9.6) with a different magnitude (delta = 2.0).
      Register GC 28580: mag = 7.6, RA = 20h43m40s30, DE = 60°08'03''2 (pag 544) 
-112) Warning: GC has a near CD with a different magnitude (delta = 2.2).
+110) Warning: GC has a near CD with a different magnitude (delta = 2.2).
      Register GC 28580: mag = 7.6, RA = 20h43m40s30, DE = 60°08'03''2 (pag 544) 
      Register CD -60°7571 (en 20h):  9.8 | 43m37.9s | 8.6'     (pag. 279)
-113) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+111) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 29276: mag = 7.2, RA = 21h13m56s77, DE = 21°20'00''0 (pag 558) 
   Possible cause: lack of Decl (s).
-  Note: Nearest PPM 195911 at 50.0 arcsec.
-114) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+  Note: Nearest PPM 272366 at 50.0 arcsec.
+112) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 29507: mag = 10.0, RA = 21h25m58s45, DE = 83°20'38''0 (pag 562) 
   Possible cause: dim star.
-  Note: Nearest PPM 2037 at 612.8 arcsec.
+  Note: Nearest PPM 378641 at 612.8 arcsec.
   Note: poor CD coverage for stars above 61°.
-115) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+113) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 29525: mag = 6.8, RA = 21h26m59s47, DE = 01°22'29''1 (pag 562) 
-  Note: Nearest PPM 287804 at 280.3 arcsec.
+  Note: Nearest PPM 709115 at 280.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-116) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+114) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 29769: mag = 7.5, RA = 21h39m32s22, DE = 13°10'00''0 (pag 567) 
   Possible cause: lack of Decl (s).
-  Note: Nearest PPM 236323 at 23.4 arcsec.
+  Note: Nearest PPM 239323 at 23.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-117) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+115) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 30659: mag = 10.0, RA = 22h22m17s77, DE = 61°08'48''4 (pag 584) 
   Possible cause: dim star.
-  Note: Nearest PPM 38784 at 218.4 arcsec.
+  Note: Nearest PPM 365849 at 218.4 arcsec.
   Note: poor CD coverage for stars above 61°.
-118) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+116) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 30706: mag = 10.2, RA = 22h24m26s50, DE = 15°52'21''3 (pag 585) 
   Possible cause: dim star.
-  Note: Nearest PPM 223774 at 370.3 arcsec.
+  Note: Nearest PPM 240389 at 370.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-119) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+117) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 30871: mag = 8.2, RA = 22h32m47s12, DE = 04°15'00''0 (pag 588) 
   Possible cause: lack of Decl (s).
-  Note: Nearest PPM 275961 at 23.1 arcsec.
+  Possible cause: dim star.
+  Note: Nearest PPM 206611 at 23.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-120) Warning: GC is ALONE (no PPM or CD or CPD star near it).
+118) Warning: GC is ALONE (no PPM or CD or CPD star near it).
      Register GC 30933: mag = 7.2, RA = 22h36m18s42, DE = 00°34'00''0 (pag 589) 
   Possible cause: lack of Decl (s).
-  Note: Nearest PPM 290681 at 54.8 arcsec.
+  Note: Nearest PPM 173345 at 54.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-121) Warning: GC is ALONE (no PPM or CD or CPD star near it).
-     Register GC 31212: mag = 9.5, RA = 22h50m40s43, DE = 03°54'46''2 (pag 595) dpl 
-  Possible cause: dim star.
-  Note: Nearest PPM 277428 at 15.5 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-122) Warning: GC has a near CD with a different magnitude (delta = 2.6).
+119) Warning: GC has a near CD with a different magnitude (delta = 2.6).
      Register GC 31343: mag = 10.0, RA = 22h57m22s08, DE = 83°04'04''6 (pag 598) 
      Register CD -83°296 (en 22h):  7.4 | 57m22.0s | 4.1'     (pag. 390)
-123) Warning: GC has a near CD with a different magnitude (delta = 2.8).
+120) Warning: GC has a near CD with a different magnitude (delta = 2.8).
      Register GC 31347: mag = 10.2, RA = 22h57m27s34, DE = 83°04'43''5 (pag 598) 
      Register CD -83°297 (en 22h):  7.4 | 57m29.0s | 4.8'     (pag. 390)
-Stars from GC identified with PPM = 31649, CD = 28436 and CPD = 28910
-RSME of distance (arcsec) = 1.83  among a total of 31649 stars
-RSME of visual magnitude = 0.41798  among a total of 27786 stars
-Errors logged = 123
+Stars from GC identified with PPM = 31706, CD = 28436 and CPD = 28910
+RSME of distance (arcsec) = 1.96  among a total of 31706 stars
+RSME of visual magnitude = 0.41800  among a total of 27793 stars
+Errors logged = 120

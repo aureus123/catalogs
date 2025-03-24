@@ -12,3 +12,8 @@ FILE *openPositionFile(const char *name);
 void writePositionEntry(FILE *stream, int index, int decl, int num, const char *ref, double dist);
 FILE *openMagnitudeFile(const char *name);
 void writeMagnitudeEntry(FILE *stream, int index, int decl, int num, const char *ref, double delta);
+FILE *openUnidentifiedFile(const char *name);
+void logCauses(char *name, FILE *stream, double x, double y, double z,
+    bool cumulus, bool nebula, double vmag,
+    int RAs, double Decl, int Decls,
+    int ppmRef, double nearestPPMDistance);

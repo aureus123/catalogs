@@ -113,24 +113,63 @@ void writeMagnitudeEntry(FILE *stream, int index, int decl, int num, const char 
 }
 
 /*
- * copy - copia omitiendo espacios consecutivos
+ * openUnidentifiedFile - abre un archivo para estrellas no identificadas
  */
-void copy(char *dest, char *src) {
-	bool previousIsSpace = true;
-	int srcPtr = 0;
-	int destPtr = 0;
-	while (src[srcPtr] != 0) {
-		if (src[srcPtr] != ' ') {
-			dest[destPtr++] = src[srcPtr];
-			previousIsSpace = false;
-		} else {
-			if (!previousIsSpace) {
-				// omit further consecutive spaces
-				previousIsSpace = true;
-				dest[destPtr++] = src[srcPtr];
-			}
-		}
-		srcPtr++;
-	}
-	dest[destPtr] = 0;
+FILE *openUnidentifiedFile(const char *name)
+{
+    FILE *stream = fopen(name, "wt");
+    if (stream == NULL) {
+        perror("Cannot write in unidentified file");
+        exit(1);
+    }
+    fprintf(stream, "name,x,y,z\n");
+    return stream;
+}
+
+/*
+ * logCauses - escribe posibles causas de falta de identificacion
+ * También, en caso que stream != null, almacena la estrella en un archivo, junto
+ * con sus coordenadas rectangulares en 1875.0, siempre que se den ciertas causas
+ * razonables para identificarla con una estrella débil.
+ */
+void logCauses(char *name, FILE *stream, double x, double y, double z,
+        bool cumulus, bool nebula, double vmag,
+        int RAs, double Decl, int Decls,
+        int ppmRef, double nearestPPMDistance) {
+    bool store = true;
+    if (cumulus) {
+        printf("  Possible cause: cumulus.\n");
+        store = false;
+    }
+    if (nebula) {
+        printf("  Possible cause: nebula.\n");
+        store = false;
+    }
+    if (RAs == 0) {
+        printf("  Possible cause: lack of RA (s).\n");
+        store = false;
+    }
+    if (Decls == 0) {
+        printf("  Possible cause: lack of Decl (s).\n");
+        store = false;
+    }
+    if (vmag >= 8.0) {
+        printf("  Possible cause: dim star.\n");
+    } else store = false;
+    if (vmag < 0.1) {
+        printf("  Possible cause: no magnitude (cumulus?).\n");
+        store = false;
+    }
+    if (ppmRef != -1) {
+        printf("  Note: Nearest PPM %d at %.1f arcsec.\n", ppmRef, nearestPPMDistance);
+    }
+    if (Decl > -18.0) {
+        printf("  Note: no CD/CPD coverage for stars below 18°.\n");
+    }
+    if (Decl < -61.0) {
+        printf("  Note: poor CD coverage for stars above 61°.\n");
+    }
+    if (store && stream != nullptr) {
+        fprintf(stream, "%s,%.12f,%.12f,%.12f\n", name, x, y, z);
+    }
 }
