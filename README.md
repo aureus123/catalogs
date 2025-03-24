@@ -54,17 +54,18 @@ stars cross-identified between PPM and the target catalog, and 4th. column repor
 
 | Catalog | Epoch | Stars | RSME |
 | --- | --- | --- | --- |
-| Bonner Durchmusterung (BD, 1st. volume) | 1855 | 63034 | 35.99 |
+| Bonner Durchmusterung (BD, 1st. vol) | 1855 | 63034 | 35.99 |
 | Cordoba Durchmusterung (CD) | 1875 | 172068 | 20.48 |
+| Cordoba Durchmusterung (CD, 1st. vol) | 1875 | 40832 | 24.00 |
 | Catálogo General Argentino (GC) | 1875 | 31706 | 1.96 |
 | Weiss | 1850 | 18010 | 4.66 |
-| Stone | 1850 | 12397 | 1.44 |
+| Stone | 1880 | 12397 | 1.44 |
 | USNO 3rd. edition | 1860 | 10606 | 2.77 |
 | Gilliss | 1850 | 15792 | 2.87 |
-| Resultados XV | 1881 | 739 | 2.52 |
-| Resultados XV | 1882 | 1259 | 2.43 |
-| Resultados XV | 1883 | 160 | 2.62 |
-| Resultados XV | 1884 | 658 | 1.99 |
+| Resultados XV, pg. 55-74 | 1881 | 739 | 2.52 |
+| Resultados XV, pg. 140-164 | 1882 | 1259 | 2.43 |
+| Resultados XV, pg. 181-184 | 1883 | 160 | 2.62 |
+| Resultados XV, pg. 232-249 | 1884 | 658 | 1.99 |
 
 ### Wishlist
 
