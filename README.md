@@ -35,6 +35,7 @@ find typo errors during the confection of the digital version of BD or CD.
 ### Other experiments
 
 - *cross_gc*: Cross-identifies curated CD and GC (Argentine General Catalog) and compares them
+- *cross_thome*: Cross-identified lower hierarchy catalogs.
 - *compare_cd*: Logs differences between two digital versions of CD
 - *gen_tycho2_north* and *gen_tycho2_south*: See README in tycho2 folder
 
@@ -43,8 +44,31 @@ find typo errors during the confection of the digital version of BD or CD.
 🚰 Sources of WCSTools 3.9.7 from http://tdc-www.harvard.edu/wcstools should be downloaded to wcstools-3.9.7 folder, and compiled.
 The routine "wcsconp" is used for transforming coordinates.
 
+### Mean accuracy of catalogues
+
+When comparing different old catalogues with PPM, an accuracy can be computed
+by assuming that the PPM star, corrected by proper motion, has the real coordinates
+in the target epoch (19th. century). Below is a table with a row per catalog:
+2nd. column is the epoch of the target catalog, 3rd. column is the number of
+stars cross-identified between PPM and the target catalog, and 4th. column reports the accuracy in arcseconds:
+
+| Catalog | Epoch | Stars | RSME |
+| --- | --- | --- | --- |
+| Bonner Durchmusterung (BD, 1st. volume) | 1855 | 63034 | 35.99 |
+| Cordoba Durchmusterung (CD) | 1875 | 172068 | 20.48 |
+| Catálogo General Argentino (GC) | 1875 | 31706 | 1.96 |
+| Weiss | 1850 | 18010 | 4.66 |
+| Stone | 1850 | 12397 | 1.44 |
+| USNO 3rd. edition | 1860 | 10606 | 2.77 |
+| Gilliss | 1850 | 15792 | 2.87 |
+| Resultados XV | 1881 | 739 | 2.52 |
+| Resultados XV | 1882 | 1259 | 2.43 |
+| Resultados XV | 1883 | 160 | 2.62 |
+| Resultados XV | 1884 | 658 | 1.99 |
+
 ### Wishlist
 
+- Read remaining supplement Tycho-2 stars
 - Use cross-identification algorithm based on a matching that maximizes likelihood (see bibliography) instead of simple angular distance thresholds.
 - Write a list of all double stars from footnotes of Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB) (only declinations -22, -23 and -24 were transcripted at the moment) and perform a cross-identification of that CD volume with a modern catalog.
 - Correct typo error of all CD catalog.

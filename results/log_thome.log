@@ -2129,6 +2129,7 @@ Stars read from PPM: 468861
 37) Warning: T 1881 691 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 131462 at 267.0 arcsec.
+**) ZC 17h 2848 is also ALONE.
   Possible cause: dim star.
 38) Warning: T 1881 698 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
@@ -2354,6 +2355,7 @@ Stars read from PPM: 468861
 1) Warning: T 1882 125 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 139351 at 239.3 arcsec.
+**) ZC 5h 539 is also ALONE.
   Possible cause: dim star.
 2) Warning: T 1882 126 (vmag = 9.7) has a near PPM 248771 star (vmag = 4.2) with a different magnitude (delta = 5.5).
 3) Warning: T 1882 128 is ALONE (no PPM or CD or CPD star near it).
@@ -2391,6 +2393,7 @@ Stars read from PPM: 468861
 21) Warning: T 1882 566 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 136043 at 525.2 arcsec.
+**) ZC 15h 2024 is also ALONE.
   Possible cause: dim star.
 22) Warning: T 1882 584 (vmag = 7.7) has a near PPM 231150 star (vmag = 3.4) with a different magnitude (delta = 4.3).
 23) Warning: T 1882 622 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
@@ -2612,6 +2615,8 @@ Stars read from PPM: 468861
   Possible cause: lack of RA (s).
   Possible cause: dim star.
   Note: Nearest PPM 81668 at 359.0 arcsec.
+**) ZC 8h 1103 is also ALONE.
+  Possible cause: lack of RA (s).
   Possible cause: dim star.
 13) Warning: T 1884 251 (vmag = 10.0) has a near PPM 285738 star (vmag = 7.1) with a different magnitude (delta = 2.9).
 14) Warning: T 1884 251 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
@@ -3016,6 +3021,7 @@ Stars read from PPM: 468861
   Possible cause: dim star.
   Note: Nearest PPM 18210 at 245.5 arcsec.
   Note: poor CD coverage for stars above 61°.
+**) ZC 8h 211 is also ALONE.
   Possible cause: dim star.
 97) Warning: G 5371 (vmag = 6.5) has a near PPM 356519 star (vmag = 4.2) with a different magnitude (delta = 2.3).
 98) Warning: G 5371 (vmag = 6.5) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
@@ -3062,6 +3068,7 @@ Stars read from PPM: 468861
   Possible cause: dim star.
   Note: Nearest PPM 35361 at 120.1 arcsec.
   Note: poor CD coverage for stars above 61°.
+**) ZC 9h 1482 is also ALONE.
   Possible cause: dim star.
 117) Warning: G 6199 (vmag = 11.0) has a near PPM 370271 star (vmag = 8.4) with a different magnitude (delta = 2.6).
 118) Warning: G 6199 (vmag = 11.0) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
@@ -3115,6 +3122,8 @@ Stars read from PPM: 468861
   Possible cause: dim star.
   Note: Nearest PPM 32476 at 155.5 arcsec.
   Note: poor CD coverage for stars above 61°.
+**) ZC 10h 4150 is also ALONE.
+  Possible cause: lack of Decl (s).
   Possible cause: dim star.
 147) Warning: G 7596 is FAR from L 4618 (dist = 1246.1 arcsec).
 148) Warning: G 7783 (vmag = 8.5) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
@@ -3176,6 +3185,7 @@ Stars read from PPM: 468861
   Possible cause: dim star.
   Note: Nearest PPM 11831 at 236.3 arcsec.
   Note: poor CD coverage for stars above 61°.
+**) ZC 12h 2622 is also ALONE.
   Possible cause: dim star.
 174) Warning: G 8945 (vmag = 0.2) has a near PPM 779216 star (vmag = 9.1) with a different magnitude (delta = 8.9).
 175) Warning: G 8945 (vmag = 0.2) has a near CD with dif. magnitude (delta = 8.8). Check dpl.

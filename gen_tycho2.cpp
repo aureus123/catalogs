@@ -29,15 +29,26 @@ extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, 
              double *dtheta, double *dphi, double *ptheta, double *pphi);
 
 #define STRING_SIZE 14
+#define MAXUNSTAR 1000
 #define THRESHOLD_PPM 15.0
 #define THRESHOLD_CPD 30.0
 #define THRESHOLD_CD 45.0
 #define DIST_PPM_TYC 15.0
 #define DIST_CPD_TYC 30.0 
 #define DIST_DM_TYC 60.0
+#define DIST_UN_TYC 15.0
 
-static char dmStringDM[MAXDMSTAR][STRING_SIZE];
-static char dmStringCPD[MAXCPDSTAR][STRING_SIZE];
+// Nombres alternativos para BD/CD y CPD
+char dmStringDM[MAXDMSTAR][STRING_SIZE];
+char dmStringCPD[MAXCPDSTAR][STRING_SIZE];
+
+// Datos para estrellas no identificadas
+char unidentifiedName[MAXUNSTAR][STRING_SIZE];
+double unidentifiedX[MAXUNSTAR];
+double unidentifiedY[MAXUNSTAR];
+double unidentifiedZ[MAXUNSTAR];
+bool alsoUnidentifiedFromTYC[MAXUNSTAR];
+int countUnidentified = 0; 
 
 /*
  * readCrossFile - lee archivos de identificaciones cruzadas en formato CSV
@@ -150,6 +161,46 @@ void readCrossFile(
 }
 
 /*
+ * readUnidentifiedFile - lee archivos de estrellas no identificadas
+ */
+void readUnidentifiedFile(const char *file) {
+    char buffer[1024];
+    char targetRef[STRING_SIZE];
+    double x, y, z;
+
+    printf("Reading file %s... ", file);
+    FILE *stream = fopen(file, "rt");
+    if (stream == NULL) {
+        snprintf(buffer, 1024, "Cannot read %s", file);
+        perror(buffer);
+        exit(1);
+    }
+    bool first_line = true;
+    while (fgets(buffer, 1023, stream) != NULL) {
+        if (first_line) {
+            // omit first line (header)
+            first_line = false;
+            continue;
+        }
+        sscanf(buffer, "%13[^,],%lf,%lf,%lf\n", targetRef, &x, &y, &z);
+        // printf("Unidentified: %s -> (%.12f, %.12f, %.12f)\n", targetRef, x, y, z);
+
+        if (countUnidentified >= MAXUNSTAR) {
+            printf("Error: too many unidentified stars.\n");
+            exit(1);
+        }
+        strncpy(unidentifiedName[countUnidentified], targetRef, STRING_SIZE);
+        unidentifiedX[countUnidentified] = x;
+        unidentifiedY[countUnidentified] = y;
+        unidentifiedZ[countUnidentified] = z;
+        alsoUnidentifiedFromTYC[countUnidentified] = true;
+        countUnidentified++;
+    }
+    fclose(stream);
+    printf("done!\n");
+}
+
+/*
  * main - comienzo de la aplicacion
  */
 int main(int argc, char** argv) {
@@ -195,7 +246,8 @@ int main(int argc, char** argv) {
     int PPMstars = getPPMStars();
 
     if (isCD()) {
-        /* leemos identificaciones cruzadas y renombramos designaciones */
+        /* leemos identificaciones cruzadas y renombramos designaciones.
+         * Order de prioridad: GC, ZC, OA, U, G */
         readCrossFile(
             "results/cross_gilliss_ppm.csv", PPMstar, PPMstars,
             "results/cross_gilliss_cd.csv", DMstar, DMstars,
@@ -216,12 +268,19 @@ int main(int argc, char** argv) {
             "results/cross_gc_ppm.csv", PPMstar, PPMstars,
             "results/cross_gc_cd.csv", DMstar, DMstars,
             "results/cross_gc_cpd.csv", CPDstar, CPDstars);
+        /* también leemos las no identificadas */
+        readUnidentifiedFile("results/gc_unidentified.csv");
+        readUnidentifiedFile("results/zc_unidentified.csv");
+        readUnidentifiedFile("results/oa_unidentified.csv");
+        readUnidentifiedFile("results/usno_unidentified.csv");
+        readUnidentifiedFile("results/gilliss_unidentified.csv");
     } else {
         /* leemos identificaciones cruzadas y renombramos designaciones, solo para PPM-USNO */
         readCrossFile(
             "results/cross_usno_ppm.csv", PPMstar, PPMstars,
             "", nullptr, 0,
             "", nullptr, 0);
+        readUnidentifiedFile("results/usno_unidentified.csv");
     }
 
     stream = fopen("cat/tyc2.txt", "rt");
@@ -236,17 +295,19 @@ int main(int argc, char** argv) {
     int TYCstarsPPM = 0;
     int TYCstarsDM = 0;
     int TYCstarsCPD = 0;
+    int TYCstarsOther = 0;
     int TYCunidentified = 0;
     int entry = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
         // if (TYCstarsPPM > 100) break;
 		entry++;
 		if (entry % 10000 == 0) {
-			printf("Progress (%.2f%%): PPM = %d, DM = %d, CPD = %d, unidentified = %d\n",
+			printf("Progress (%.2f%%): PPM = %d, DM = %d, CPD = %d, other = %d, unidentified = %d\n",
                 (100.0 * (float) entry) / 2539913.0,
                 TYCstarsPPM,
                 TYCstarsDM,
                 TYCstarsCPD,
+                TYCstarsOther,
                 TYCunidentified);
 		}
 
@@ -356,14 +417,46 @@ int main(int argc, char** argv) {
                 continue;
             }
         }
-        
+
+        /* Escanea las estrellas que no fueron identificadas con PPM/CD/CPD.
+         * Para poder priorizar los catálogos, si se encuentra una más cerca,
+         * debe sobrepasar un threshold de 1 grado más para elegirse. */
+        int index = -1;
+        minDistance = HUGE_NUMBER;
+        for (int i = 0; i < countUnidentified; i++) {
+            double dist = 3600.0 * calcAngularDistance(x, y, z, unidentifiedX[i], unidentifiedY[i], unidentifiedZ[i]);
+            if (dist > DIST_UN_TYC) continue;
+            alsoUnidentifiedFromTYC[i] = false;
+            if (minDistance - 1.0 > dist) {
+                index = i;
+                minDistance = dist;
+            }
+        }
+        if (index != -1) {
+            /* se almacena la identificación cruzada con la estrella */
+            writeCrossEntry(crossStream, tycString, unidentifiedName[index], minDistance);
+            TYCstarsOther++;
+            continue;
+        }
+
         TYCunidentified++;
     }
-    printf("Stars read and identified of Tycho-2 from PPM: %d\n", TYCstarsPPM);
+    printf("\nStars read and identified of Tycho-2 from PPM: %d\n", TYCstarsPPM);
     printf("Stars read and identified of Tycho-2 from DM: %d\n", TYCstarsDM);
     printf("Stars read and identified of Tycho-2 from CPD: %d\n", TYCstarsCPD);
-    printf("Stars read and unidentified of Tycho-2: %d\n", TYCunidentified);
+    printf("Stars read and identified of Tycho-2 from other catalogues: %d\n", TYCstarsOther);
+    printf("Stars read and remain unidentified of Tycho-2: %d\n", TYCunidentified);
     fclose(crossStream);
     fclose(stream);
+
+    printf("\nStars from other catalogues yet not identified:\n");
+    for (int i = 0; i < countUnidentified; i++) {
+        if (!alsoUnidentifiedFromTYC[i]) continue;
+
+        double RA, Decl;
+        rec2sph(unidentifiedX[i], unidentifiedY[i], unidentifiedZ[i], &RA, &Decl);
+        printf("  %s in %s hemisphere (decl = %.2f°)\n", unidentifiedName[i],
+            Decl >= 0 ? "northern" : "southern", Decl);
+    }
     return 0;
 }

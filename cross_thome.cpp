@@ -62,7 +62,8 @@ FILE *crossCDZCStream;
 FILE *crossCPDZCStream;
 FILE *unidentifiedZCStream;
 
-void saveZC(int RAh, int numRef, double x, double y, double z,
+void saveZC(int RAh, int RAs, int Decls,
+        int numRef, double x, double y, double z,
         bool ppmFound, int ppmIndex, double minPPMDistance,
         bool cdFound, int cdIndex, double minCDDistance,
         bool cpdFound, int cpdIndex, double minCPDDistance) {
@@ -105,8 +106,9 @@ void saveZC(int RAh, int numRef, double x, double y, double z,
     if (!ppmFound && !cdFound && !cpdFound) {
         /* note: some of the parameters are fake in order to avoid log.
          * here, we just want to save the unidentified star. */
+        printf("**) %s is also ALONE.\n", zcName);
         logCauses(zcName, unidentifiedZCStream, x, y, z,
-            false, false, 10.0, 1, -50.0, 1, -1, 0.0);
+            false, false, 10.0, RAs, -50.0, Decls, -1, 0.0);
     }
 
     /* add the new star */
@@ -1036,7 +1038,7 @@ void readThome(double epoch, const char *filename, int correction) {
         if (!strncmp(cell, "ZC", 2)) {
             // save Gould's Zone Catalog
             RAh = (int) (floor(RA1875 / 15.0) + __FLT_EPSILON__);
-            saveZC(RAh, numRefCat, x, y, z,
+            saveZC(RAh, RAs, Decls, numRefCat, x, y, z,
                 ppmFound, ppmIndex, nearestPPMDistance,
                 cdFound, cdIndex, nearestCDDistance,
                 cpdFound, cpdIndex, nearestCPDDistance);
@@ -1270,7 +1272,7 @@ void readGilliss() {
             // save Gould's Zone Catalog
             readField(buffer, cell, 18, 2);
             RAh = atoi(cell);
-            saveZC(RAh, numRefCat, x, y, z,
+            saveZC(RAh, RAs, Decls, numRefCat, x, y, z,
                 ppmFound, ppmIndex, nearestPPMDistance,
                 cdFound, cdIndex, nearestCDDistance,
                 cpdFound, cpdIndex, nearestCPDDistance);
