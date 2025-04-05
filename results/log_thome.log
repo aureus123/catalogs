@@ -2126,228 +2126,222 @@ Stars read from PPM: 468861
 35) Warning: T 1881 674 (vmag = 10.2) has a near PPM 322447 star (vmag = 7.0) with a different magnitude (delta = 3.2).
 36) Warning: T 1881 674 (vmag = 10.2) has a near CD with dif. magnitude (delta = 2.7). Check dpl.
      Register CD -40°10986 (en 16h):  7.5 | 48m14.3s | 18.8'     (pag. 472)
-37) Warning: T 1881 691 is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: dim star.
-  Note: Nearest PPM 131462 at 267.0 arcsec.
-**) ZC 17h 2848 is also ALONE.
-  Possible cause: dim star.
-38) Warning: T 1881 698 is ALONE (no PPM or CD or CPD star near it).
+37) Warning: T 1881 698 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 207441 at 35.7 arcsec.
-39) Warning: T 1881 701 is FAR from OA 17643 (dist = 36229.5 arcsec).
-40) Warning: T 1881 712 is ALONE (no PPM or CD or CPD star near it).
+38) Warning: T 1881 701 is FAR from OA 17643 (dist = 36229.5 arcsec).
+39) Warning: T 1881 712 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 219478 at 418.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-41) Warning: T 1881 729 is FAR from OA 17773 (dist = 25839.2 arcsec).
-42) Warning: T 1881 731 is ALONE (no PPM or CD or CPD star near it).
+40) Warning: T 1881 731 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 211312 at 476.0 arcsec.
-43) Warning: T 1881 735 is ALONE (no PPM or CD or CPD star near it).
+41) Warning: T 1881 735 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216417 at 290.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-44) Warning: T 1881 736 is ALONE (no PPM or CD or CPD star near it).
+42) Warning: T 1881 736 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208755 at 270.8 arcsec.
-45) Warning: T 1881 738 is ALONE (no PPM or CD or CPD star near it).
+43) Warning: T 1881 738 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216417 at 195.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-46) Warning: T 1881 740 is ALONE (no PPM or CD or CPD star near it).
+44) Warning: T 1881 740 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 211312 at 173.1 arcsec.
-47) Warning: T 1881 745 is ALONE (no PPM or CD or CPD star near it).
+45) Warning: T 1881 745 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 209885 at 255.4 arcsec.
-48) Warning: T 1881 754 is ALONE (no PPM or CD or CPD star near it).
+46) Warning: T 1881 754 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 219005 at 269.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-49) Warning: T 1881 758 is ALONE (no PPM or CD or CPD star near it).
+47) Warning: T 1881 758 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208603 at 464.1 arcsec.
-50) Warning: T 1881 760 is ALONE (no PPM or CD or CPD star near it).
+48) Warning: T 1881 760 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 210139 at 395.3 arcsec.
-51) Warning: T 1881 761 is ALONE (no PPM or CD or CPD star near it).
+49) Warning: T 1881 761 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208870 at 73.9 arcsec.
-52) Warning: T 1881 763 is ALONE (no PPM or CD or CPD star near it).
+50) Warning: T 1881 763 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 210139 at 331.2 arcsec.
-53) Warning: T 1881 775 is ALONE (no PPM or CD or CPD star near it).
+51) Warning: T 1881 775 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 219632 at 323.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-54) Warning: T 1881 776 is ALONE (no PPM or CD or CPD star near it).
+52) Warning: T 1881 776 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 210312 at 302.1 arcsec.
-55) Warning: T 1881 778 is ALONE (no PPM or CD or CPD star near it).
+53) Warning: T 1881 778 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 212473 at 371.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-56) Warning: T 1881 780 is ALONE (no PPM or CD or CPD star near it).
+54) Warning: T 1881 780 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 215261 at 419.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-57) Warning: T 1881 781 is ALONE (no PPM or CD or CPD star near it).
+55) Warning: T 1881 781 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 215261 at 179.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-58) Warning: T 1881 785 is ALONE (no PPM or CD or CPD star near it).
+56) Warning: T 1881 785 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 214418 at 236.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-59) Warning: T 1881 788 is ALONE (no PPM or CD or CPD star near it).
+57) Warning: T 1881 788 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 215261 at 311.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-60) Warning: T 1881 790 is ALONE (no PPM or CD or CPD star near it).
+58) Warning: T 1881 790 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 210727 at 175.8 arcsec.
-61) Warning: T 1881 792 is ALONE (no PPM or CD or CPD star near it).
+59) Warning: T 1881 792 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208533 at 582.0 arcsec.
-62) Warning: T 1881 800 is ALONE (no PPM or CD or CPD star near it).
+60) Warning: T 1881 800 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208272 at 140.0 arcsec.
-63) Warning: T 1881 801 is ALONE (no PPM or CD or CPD star near it).
+61) Warning: T 1881 801 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208272 at 146.1 arcsec.
-64) Warning: T 1881 802 is ALONE (no PPM or CD or CPD star near it).
+62) Warning: T 1881 802 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208272 at 155.1 arcsec.
-65) Warning: T 1881 813 is ALONE (no PPM or CD or CPD star near it).
+63) Warning: T 1881 813 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 217386 at 657.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-66) Warning: T 1881 822 is ALONE (no PPM or CD or CPD star near it).
+64) Warning: T 1881 822 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 212439 at 239.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-67) Warning: T 1881 826 is ALONE (no PPM or CD or CPD star near it).
+65) Warning: T 1881 826 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216086 at 398.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-68) Warning: T 1881 827 is ALONE (no PPM or CD or CPD star near it).
+66) Warning: T 1881 827 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 207535 at 117.8 arcsec.
-69) Warning: T 1881 833 is ALONE (no PPM or CD or CPD star near it).
+67) Warning: T 1881 833 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 215525 at 270.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-70) Warning: T 1881 842 is ALONE (no PPM or CD or CPD star near it).
+68) Warning: T 1881 842 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 219993 at 706.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-71) Warning: T 1881 843 is ALONE (no PPM or CD or CPD star near it).
+69) Warning: T 1881 843 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 218309 at 59.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-72) Warning: T 1881 849 is ALONE (no PPM or CD or CPD star near it).
+70) Warning: T 1881 849 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 218479 at 22.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-73) Warning: T 1881 851 is ALONE (no PPM or CD or CPD star near it).
+71) Warning: T 1881 851 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 213098 at 181.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-74) Warning: T 1881 859 is ALONE (no PPM or CD or CPD star near it).
+72) Warning: T 1881 859 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216960 at 149.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-75) Warning: T 1881 863 is ALONE (no PPM or CD or CPD star near it).
+73) Warning: T 1881 863 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 215828 at 411.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-76) Warning: T 1881 872 is ALONE (no PPM or CD or CPD star near it).
+74) Warning: T 1881 872 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 212448 at 466.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-77) Warning: T 1881 882 is ALONE (no PPM or CD or CPD star near it).
+75) Warning: T 1881 882 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 212434 at 451.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-78) Warning: T 1881 890 is ALONE (no PPM or CD or CPD star near it).
+76) Warning: T 1881 890 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208634 at 334.0 arcsec.
-79) Warning: T 1881 892 is ALONE (no PPM or CD or CPD star near it).
+77) Warning: T 1881 892 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 206796 at 526.4 arcsec.
-80) Warning: T 1881 894 is ALONE (no PPM or CD or CPD star near it).
+78) Warning: T 1881 894 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 219249 at 381.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-81) Warning: T 1881 895 is ALONE (no PPM or CD or CPD star near it).
+79) Warning: T 1881 895 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 217792 at 438.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-82) Warning: T 1881 897 is ALONE (no PPM or CD or CPD star near it).
+80) Warning: T 1881 897 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208178 at 54.8 arcsec.
-83) Warning: T 1881 905 is ALONE (no PPM or CD or CPD star near it).
+81) Warning: T 1881 905 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 218513 at 577.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-84) Warning: T 1881 911 is ALONE (no PPM or CD or CPD star near it).
+82) Warning: T 1881 911 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 212811 at 585.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-85) Warning: T 1881 914 is ALONE (no PPM or CD or CPD star near it).
+83) Warning: T 1881 914 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216810 at 233.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-86) Warning: T 1881 917 is ALONE (no PPM or CD or CPD star near it).
+84) Warning: T 1881 917 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 214403 at 299.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-87) Warning: T 1881 918 is ALONE (no PPM or CD or CPD star near it).
+85) Warning: T 1881 918 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 211304 at 153.8 arcsec.
-88) Warning: T 1881 929 is ALONE (no PPM or CD or CPD star near it).
+86) Warning: T 1881 929 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 211083 at 193.9 arcsec.
-89) Warning: T 1881 930 is ALONE (no PPM or CD or CPD star near it).
+87) Warning: T 1881 930 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 211083 at 303.4 arcsec.
-90) Warning: T 1881 932 is ALONE (no PPM or CD or CPD star near it).
+88) Warning: T 1881 932 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 209846 at 187.4 arcsec.
-91) Warning: T 1881 934 is ALONE (no PPM or CD or CPD star near it).
+89) Warning: T 1881 934 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 209189 at 552.9 arcsec.
-92) Warning: T 1881 936 is ALONE (no PPM or CD or CPD star near it).
+90) Warning: T 1881 936 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216976 at 149.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-93) Warning: T 1881 939 is ALONE (no PPM or CD or CPD star near it).
+91) Warning: T 1881 939 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216747 at 221.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-94) Warning: T 1881 944 is ALONE (no PPM or CD or CPD star near it).
+92) Warning: T 1881 944 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 217322 at 683.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-95) Warning: T 1881 947 is ALONE (no PPM or CD or CPD star near it).
+93) Warning: T 1881 947 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216759 at 59.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-96) Warning: T 1881 953 is ALONE (no PPM or CD or CPD star near it).
+94) Warning: T 1881 953 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216534 at 117.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-97) Warning: T 1881 955 is ALONE (no PPM or CD or CPD star near it).
+95) Warning: T 1881 955 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 212592 at 177.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-98) Warning: T 1881 986 (vmag = 8.0) has a near PPM 269861 star (vmag = 4.9) with a different magnitude (delta = 3.1).
-99) Warning: T 1881 986 (vmag = 8.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+96) Warning: T 1881 986 (vmag = 8.0) has a near PPM 269861 star (vmag = 4.9) with a different magnitude (delta = 3.1).
+97) Warning: T 1881 986 (vmag = 8.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -27°14004 (en 19h):  6.0 | 22m8.3s | 14.5'     (pag. 337)
-Stars from Thome 1881 identified with PPM = 739, CD = 705 and CPD = 782
-RSME of distance (arcsec) = 2.52  among a total of 739 stars
-RSME of visual magnitude = 0.55279  among a total of 538 stars
-Errors logged = 99
+Stars from Thome 1881 identified with PPM = 740, CD = 706 and CPD = 783
+RSME of distance (arcsec) = 2.52  among a total of 740 stars
+RSME of visual magnitude = 0.55255  among a total of 539 stars
+Errors logged = 97
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
@@ -2654,7 +2648,6 @@ Stars read from PPM: 468861
 30) Warning: T 1884 598 (vmag = 8.2) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -46°11370 (en 17h):  6.0 | 9m35.4s | 30.1'     (pag. 249)
 31) Warning: T 1884 638 is FAR from GC 24131 (dist = 59.8 arcsec). Check if it is a 1/2 star in GC.
-**) Warning: ZC 17h 2848 is FAR from previous registration (dist = 3590.5 arcsec).
 32) Warning: T 1884 753 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 219480 at 416.2 arcsec.
@@ -3363,4 +3356,4 @@ RSME of visual magnitude = 0.48234  among a total of 14750 stars
 Errors logged = 253
 
 Number of ZC stars registered = 5795
-Stars from ZC identified with PPM = 5550, CD = 5752 and CPD = 5753
+Stars from ZC identified with PPM = 5551, CD = 5753 and CPD = 5754
