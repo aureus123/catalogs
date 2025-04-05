@@ -21,7 +21,7 @@ An experiment was carried out to analize the efficiency in finding errors in CD 
 The thresholds used in both experiments was 2 arcmin for the position and 1.5 for the magnitude.
 
 - *Compare files cd_vol1 and cd_vol1_curated*: Here, the first volume of the latest CD catalog is compared against the one after correcting typo errors:
-there are 78 differences in RA, 40 in declination and 8 in magnitude. See
+there are 78 differences in RA, 40 in declination and 9 in magnitude. See
 section 3 for details.
 
 ### 2. Typo errors found in Bonner Durchmusterung digital catalog
@@ -123,6 +123,7 @@ Those swaps (i.e. two or more consecutive stars in a wrong order) are given next
 | CD -24°17894 | RAs | 35.5 | 35.6 | | |
 | CD -24°17894 | DEm | 15.1 | 55.6 | | |
 | CD -30°1719  | mag | 9.5 | 7.5 | | |
+| CD -30°3694  | mag | 9.0 | 9.5 | | |
 | CD -29°4070  | DEm | 56.9 | 59.6 | 162 | 160 |
 | CD -29°4867  | DEm | 56.3 | 1.5 | | |
 | CD -29°4868  | DEm | 1.5 | 56.3 | 3288 | 3279 |
