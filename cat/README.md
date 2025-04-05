@@ -73,3 +73,4 @@ Some catalogs in this folder were sanitized but their original version was store
 - gc : 3 registers
 - corda : 3 registers
 - cordc : 7 registers
+- thome1881: 2 registers
