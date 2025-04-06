@@ -71,6 +71,8 @@ Some catalogs in this folder were sanitized but their original version was store
 - 4005 : 51 registers
 - 4011 : 76 registers
 - gc : 3 registers
+- gilliss : 6 registers
+- yarnall : 1 register
 - corda : 3 registers
 - cordc : 7 registers
-- thome1881: 2 registers
+- thome1881: 3 registers
