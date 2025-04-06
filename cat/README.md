@@ -1,7 +1,7 @@
 # Available catalogs
 
 This folder has a copy of different digital catalogs. We mark with a dagger (†)
-those files that were sanitized
+those files that were partially sanitized
 
 ### Cordoba Durchmusterung
 
@@ -33,14 +33,14 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 - weiss : Weiss, Catalog der Argelander'schen Zonen vom 15-31 grade
 suedlicher Deklination in mittleren Positionen fuer 1850.0 from
 _GAVO Data Center_
-- yarnall : Yarnall-Frisby, Catalogue of stars observed at the USNO 
+- yarnall †: Yarnall-Frisby, Catalogue of stars observed at the USNO 
 during years 1845 to 1877. 3rd. Edition. from _GAVO Data Center_
 - stone : Stone, Cape catalog of 12441 stars observed during years 1871
 to 1879 from _GAVO Data Center_
-- gilliss : Gilliss, A catalogue of 16748 southern stars deduced by the
+- gilliss †: Gilliss, A catalogue of 16748 southern stars deduced by the
 United States Naval Observatory from the zone observations made at
 Santiago de Chile, from _GAVO Data Center_
-- thome1881 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 55-74, from _GAVO Data Center_
+- thome1881 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 55-74, from _GAVO Data Center_
 - thome1882 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 140-164, from _GAVO Data Center_
 - thome1883 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 181-184, from _GAVO Data Center_
 - thome1884 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 232-249, from _GAVO Data Center_
