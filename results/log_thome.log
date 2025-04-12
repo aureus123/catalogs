@@ -3019,7 +3019,6 @@ Stars read from PPM: 468861
   Note: poor CD coverage for stars above 61°.
 100) Warning: G 5436 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
      Register CD -62°338 (en 8h):  9.5 | 14m0.0s | 28.3'     (pag. 3)
-**) Warning: ZC 8h 1155 is FAR from previous registration (dist = 18.0 arcsec).
 101) Warning: G 5474 is FAR from GC 12220 (dist = 149710.9 arcsec). Check if it is a 1/2 star in GC.
 102) Warning: G 5518 (vmag = 7.5) has a near PPM 369893 star (vmag = 5.5) with a different magnitude (delta = 2.0).
 103) Warning: G 5518 (vmag = 7.5) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
@@ -3219,134 +3218,130 @@ Stars read from PPM: 468861
      Register CD -74°1009 (en 15h):  8.8 | 21m9.0s | 28.0'     (pag. 291)
 192) Warning: G 11025 is FAR from L 6371 (dist = 432.7 arcsec).
 193) Warning: G 11352 is FAR from L 6534 (dist = 35.5 arcsec).
-194) Warning: G 11592 is FAR from GC 21922 (dist = 143622.0 arcsec). Check if it is a 1/2 star in GC.
-195) Warning: G 11986 is ALONE (no PPM or CD or CPD star near it).
+194) Warning: G 11986 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 18803 at 58.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-196) Warning: G 12119 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+195) Warning: G 12119 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -76°871 (en 16h):  9.8 | 43m40.0s | 0.5'     (pag. 322)
-197) Warning: G 12250 (vmag = 9.5) has a near PPM 373345 star (vmag = 7.3) with a different magnitude (delta = 2.2).
-198) Warning: G 12250 (vmag = 9.5) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+196) Warning: G 12250 (vmag = 9.5) has a near PPM 373345 star (vmag = 7.3) with a different magnitude (delta = 2.2).
+197) Warning: G 12250 (vmag = 9.5) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -75°950 (en 16h):  7.4 | 53m38.0s | 12.0'     (pag. 308)
-199) Warning: G 12403 is ALONE (no PPM or CD or CPD star near it).
+198) Warning: G 12403 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 8523 at 113.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-200) Warning: G 12611 is FAR from L 7361 (dist = 15758.3 arcsec).
-201) Warning: G 13457 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
+199) Warning: G 12611 is FAR from L 7361 (dist = 15758.3 arcsec).
+200) Warning: G 13457 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
      Register CD -82°313 (en 18h):  9.6 | 38m48.0s | 52.6'     (pag. 386)
-202) Warning: G 13514 is ALONE (no PPM or CD or CPD star near it).
+201) Warning: G 13514 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 26206 at 789.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-203) Warning: G 13590 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+202) Warning: G 13590 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -73°1401 (en 18h):  7.9 | 49m28.0s | 57.0'     (pag. 276)
-204) Warning: G 13744 is ALONE (no PPM or CD or CPD star near it).
+203) Warning: G 13744 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 17631 at 462.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-205) Warning: G 13756 (vmag = 11.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+204) Warning: G 13756 (vmag = 11.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -87°96 (en 19h):  9.0 | 17m55.0s | 59.7'     (pag. 398)
-206) Warning: G 13842 is FAR from L 8036 (dist = 116.8 arcsec).
-207) Warning: G 13861 (vmag = 13.0) has a near PPM 374260 star (vmag = 10.1) with a different magnitude (delta = 2.9).
-208) Warning: G 13861 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+205) Warning: G 13842 is FAR from L 8036 (dist = 116.8 arcsec).
+206) Warning: G 13861 (vmag = 13.0) has a near PPM 374260 star (vmag = 10.1) with a different magnitude (delta = 2.9).
+207) Warning: G 13861 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -76°998 (en 19h):  9.5 | 14m12.0s | 54.0'     (pag. 324)
-209) Warning: G 14154 is FAR from L 8171 (dist = 2624.0 arcsec).
-210) Warning: G 14173 is ALONE (no PPM or CD or CPD star near it).
+208) Warning: G 14154 is FAR from L 8171 (dist = 2624.0 arcsec).
+209) Warning: G 14173 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 5931 at 28.3 arcsec.
   Note: poor CD coverage for stars above 61°.
-211) Warning: G 14211 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+210) Warning: G 14211 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -79°791 (en 19h):  7.9 | 45m8.0s | 7.0'     (pag. 361)
-212) Warning: G 14296 (vmag = 11.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+211) Warning: G 14296 (vmag = 11.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -74°1375 (en 19h):  8.7 | 52m29.0s | 56.0'     (pag. 295)
-213) Warning: G 14333 (vmag = 12.0) has a near PPM 374506 star (vmag = 7.6) with a different magnitude (delta = 4.4).
-214) Warning: G 14333 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.2). Check dpl.
+212) Warning: G 14333 (vmag = 12.0) has a near PPM 374506 star (vmag = 7.6) with a different magnitude (delta = 4.4).
+213) Warning: G 14333 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.2). Check dpl.
      Register CD -71°1601 (en 19h):  7.8 | 54m33.0s | 10.0'     (pag. 237)
-**) Warning: ZC 19h 2223 is FAR from previous registration (dist = 41522.3 arcsec).
-215) Warning: G 14411 is ALONE (no PPM or CD or CPD star near it).
+214) Warning: G 14411 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 22213 at 245.2 arcsec.
   Note: poor CD coverage for stars above 61°.
-216) Warning: G 14633 is ALONE (no PPM or CD or CPD star near it).
+215) Warning: G 14633 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 1748 at 218.6 arcsec.
   Note: poor CD coverage for stars above 61°.
-217) Warning: G 14702 is FAR from L 8467 (dist = 1103.6 arcsec).
-218) Warning: G 14864 (vmag = 10.0) has a near PPM 378535 star (vmag = 7.3) with a different magnitude (delta = 2.7).
-219) Warning: G 14864 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.7). Check dpl.
+216) Warning: G 14702 is FAR from L 8467 (dist = 1103.6 arcsec).
+217) Warning: G 14864 (vmag = 10.0) has a near PPM 378535 star (vmag = 7.3) with a different magnitude (delta = 2.7).
+218) Warning: G 14864 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.7). Check dpl.
      Register CD -81°790 (en 20h):  7.3 | 47m47.0s | 10.5'     (pag. 382)
-220) Warning: G 15055 is FAR from L 8696 (dist = 1000.4 arcsec).
-221) Warning: G 15180 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+219) Warning: G 15055 is FAR from L 8696 (dist = 1000.4 arcsec).
+220) Warning: G 15180 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -71°1682 (en 21h):  10.0 | 17m15.0s | 41.0'     (pag. 238)
-222) Warning: G 15240 is FAR from GC 29447 (dist = 12814.4 arcsec). Check if it is a 1/2 star in GC.
-223) Warning: G 15291 (vmag = 9.0) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 4.0).
-224) Warning: G 15291 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.6). Check dpl.
+221) Warning: G 15291 (vmag = 9.0) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 4.0).
+222) Warning: G 15291 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.6). Check dpl.
      Register CD -83°276 (en 21h):  5.4 | 31m30.0s | 17.4'     (pag. 390)
-**) Warning: ZC 11h 1191 is FAR from previous registration (dist = 91557.2 arcsec).
-225) Warning: G 15401 (vmag = 13.0) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
+223) Warning: G 15401 (vmag = 13.0) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
      Register CD -75°1223 (en 21h):  10.2 | 40m41.0s | 29.0'     (pag. 311)
-226) Warning: G 15480 is ALONE (no PPM or CD or CPD star near it).
+224) Warning: G 15480 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 18269 at 173.2 arcsec.
   Note: poor CD coverage for stars above 61°.
-227) Warning: G 15490 (vmag = 10.5) has a near PPM 375224 star (vmag = 8.4) with a different magnitude (delta = 2.1).
-228) Warning: G 15490 (vmag = 10.5) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
+225) Warning: G 15490 (vmag = 10.5) has a near PPM 375224 star (vmag = 8.4) with a different magnitude (delta = 2.1).
+226) Warning: G 15490 (vmag = 10.5) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
      Register CD -77°1097 (en 21h):  8.1 | 49m30.0s | 54.5'     (pag. 338)
-229) Warning: G 15585 (vmag = 9.0) has a near PPM 375257 star (vmag = 7.0) with a different magnitude (delta = 2.0).
-230) Warning: G 15585 (vmag = 9.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+227) Warning: G 15585 (vmag = 9.0) has a near PPM 375257 star (vmag = 7.0) with a different magnitude (delta = 2.0).
+228) Warning: G 15585 (vmag = 9.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -71°1726 (en 21h):  6.9 | 59m1.0s | 31.0'     (pag. 238)
-231) Warning: G 15679 (vmag = 11.5) has a near PPM 375323 star (vmag = 9.0) with a different magnitude (delta = 2.5).
-232) Warning: G 15679 (vmag = 11.5) has a near CD with dif. magnitude (delta = 2.7). Check dpl.
+229) Warning: G 15679 (vmag = 11.5) has a near PPM 375323 star (vmag = 9.0) with a different magnitude (delta = 2.5).
+230) Warning: G 15679 (vmag = 11.5) has a near CD with dif. magnitude (delta = 2.7). Check dpl.
      Register CD -79°889 (en 22h):  8.8 | 9m15.0s | 0.0'     (pag. 362)
-233) Warning: G 15878 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+231) Warning: G 15878 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -84°220 (en 22h):  7.8 | 29m44.0s | 23.6'     (pag. 393)
-234) Warning: G 15889 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+232) Warning: G 15889 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -85°187 (en 22h):  9.8 | 31m37.0s | 37.2'     (pag. 395)
-235) Warning: G 15981 (vmag = 9.0) has a near PPM 375479 star (vmag = 7.0) with a different magnitude (delta = 2.0).
-236) Warning: G 16037 is ALONE (no PPM or CD or CPD star near it).
+233) Warning: G 15981 (vmag = 9.0) has a near PPM 375479 star (vmag = 7.0) with a different magnitude (delta = 2.0).
+234) Warning: G 16037 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 15890 at 256.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-237) Warning: G 16139 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
+235) Warning: G 16139 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
      Register CD -83°296 (en 22h):  7.4 | 57m22.0s | 4.1'     (pag. 390)
-238) Warning: G 16141 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
+236) Warning: G 16141 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
      Register CD -83°297 (en 22h):  7.4 | 57m29.0s | 4.8'     (pag. 390)
-239) Warning: G 16457 is ALONE (no PPM or CD or CPD star near it).
+237) Warning: G 16457 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 22243 at 162.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-240) Warning: G 16472 (vmag = 11.0) has a near PPM 375769 star (vmag = 8.9) with a different magnitude (delta = 2.1).
-241) Warning: G 16472 (vmag = 11.0) has a near CD with dif. magnitude (delta = 2.9). Check dpl.
+238) Warning: G 16472 (vmag = 11.0) has a near PPM 375769 star (vmag = 8.9) with a different magnitude (delta = 2.1).
+239) Warning: G 16472 (vmag = 11.0) has a near CD with dif. magnitude (delta = 2.9). Check dpl.
      Register CD -71°1798 (en 23h):  8.1 | 32m52.0s | 48.5'     (pag. 239)
-242) Warning: G 16497 is ALONE (no PPM or CD or CPD star near it).
+240) Warning: G 16497 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 1025 at 74.9 arcsec.
   Note: poor CD coverage for stars above 61°.
-243) Warning: G 16498 (vmag = 10.0) has a near PPM 378874 star (vmag = 8.0) with a different magnitude (delta = 2.0).
-244) Warning: G 16498 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+241) Warning: G 16498 (vmag = 10.0) has a near PPM 378874 star (vmag = 8.0) with a different magnitude (delta = 2.0).
+242) Warning: G 16498 (vmag = 10.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -83°303 (en 23h):  8.0 | 35m43.0s | 11.9'     (pag. 391)
-245) Warning: G 16535 (vmag = 9.8) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+243) Warning: G 16535 (vmag = 9.8) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -71°1804 (en 23h):  7.8 | 39m26.0s | 46.0'     (pag. 239)
-246) Warning: G 16609 is ALONE (no PPM or CD or CPD star near it).
+244) Warning: G 16609 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 20240 at 329.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-247) Warning: G 16612 is ALONE (no PPM or CD or CPD star near it).
+245) Warning: G 16612 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 2156 at 254.3 arcsec.
   Note: poor CD coverage for stars above 61°.
-248) Warning: G 16678 (vmag = 10.5) has a near PPM 351563 star (vmag = 7.4) with a different magnitude (delta = 3.1).
-249) Warning: G 16678 (vmag = 10.5) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
+246) Warning: G 16678 (vmag = 10.5) has a near PPM 351563 star (vmag = 7.4) with a different magnitude (delta = 3.1).
+247) Warning: G 16678 (vmag = 10.5) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
      Register CD -67°2623 (en 23h):  7.9 | 54m6.0s | 22.5'     (pag. 145)
-250) Warning: G 16689 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+248) Warning: G 16689 (vmag = 12.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -70°1959 (en 23h):  10.0 | 54m54.0s | 53.5'     (pag. 219)
 Stars from Gilliss identified with PPM = 15792, CD = 15966 and CPD = 16196
 RSME of distance (arcsec) = 2.87  among a total of 15792 stars
 RSME of visual magnitude = 0.48235  among a total of 14750 stars
-Errors logged = 250
+Errors logged = 248
 
-Number of ZC stars registered = 5795
-Stars from ZC identified with PPM = 5552, CD = 5754 and CPD = 5755
+Number of ZC stars registered = 5796
+Stars from ZC identified with PPM = 5552, CD = 5755 and CPD = 5756

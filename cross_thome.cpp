@@ -1272,6 +1272,14 @@ void readGilliss() {
             // save Gould's Zone Catalog
             readField(buffer, cell, 18, 2);
             RAh = atoi(cell);
+            int originalRAh = (int) floor(RA1875/15.0 + __FLT_EPSILON__);
+            if (RAh != originalRAh) {
+                printf("%d) Warning: G %d has a different RA zone (%d) than identified ZC (%d).\n",
+                    ++errors,
+                    giRef,
+                    RAh,
+                    originalRAh);
+            }
             saveZC(RAh, RAs, Decls, numRefCat, x, y, z,
                 ppmFound, ppmIndex, nearestPPMDistance,
                 cdFound, cdIndex, nearestCDDistance,
