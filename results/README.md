@@ -7,6 +7,7 @@ during that process. In particular, you can find the following files:
 - table_pos_*.csv = table with positions errors found
 - table_mag_*.csv = table with magnitude errors found
 - cross_*.csv = cross-identification between some catalog and CD/CPD or PPM
+- findings.odt = open-office document with other minor results
 
 Below some experiments are reported.
 
@@ -51,11 +52,7 @@ Below is the list of corrections:
 
 where the parameter may be "RAm" or "RAs" for the minutes or seconds of Right Ascension resp. or "DEm" for the minutes of Declination, *dist1* is the distance produced by the difference between the current position and the corrected one, and *dist2* is the angular distance computed by the algorithm between the position in the BD digital catalog and PPM catalog (after precession and correction by proper motion of the PPM star).
 
-Note that *dist1* and *dist2* are similar, thus showing that the cause of the mistake in the digital catalog is typographical.
-For instance, the star BD +19°4871 reports 19°37'.9 in declination: 
-![Alt text](VizieR.png?raw=true "Digital catalog")
-But in the printed catalog, it says 19°7'.9, thus leading to a separation of 30 arcmin. In fact, star PPM 141127 is near the printed position, as expected. Below, a portion of the BD catalog is shown:
-![Alt text](bd.png?raw=true "Printed catalog")
+Note that *dist1* and *dist2* are similar, thus showing that the cause of the mistake in the digital catalog is typographical. See an example in the first note of _findings.odt_ document.
 
 Curated version can be found in file *cat/bd_curated.txt* (but take into account
 that only errors found above were corrected, I mean, declinations up to +19 were
