@@ -204,7 +204,6 @@ void readUnidentifiedFile(const char *file) {
  * main - comienzo de la aplicacion
  */
 int main(int argc, char** argv) {
-    FILE *stream;
     char buffer[1024];
     char cell[256];
 
@@ -283,8 +282,14 @@ int main(int argc, char** argv) {
         readUnidentifiedFile("results/usno_unidentified.csv");
     }
 
-    stream = fopen("cat/tyc2.txt", "rt");
+    FILE *stream = fopen("cat/tyc2.txt", "rt");
     if (stream == NULL) {
+        perror("Cannot read tyc2.txt");
+        exit(1);
+    }
+
+    FILE *stream2 = fopen("cat/tyc2_suppl.txt", "rt");
+    if (stream2 == NULL) {
         perror("Cannot read tyc2.txt");
         exit(1);
     }
@@ -298,7 +303,19 @@ int main(int argc, char** argv) {
     int TYCstarsOther = 0;
     int TYCunidentified = 0;
     int entry = 0;
-    while (fgets(buffer, 1023, stream) != NULL) {
+
+    bool readSupplement = true;
+    for (;;) {
+        if (readSupplement) {
+            /* lee del catálogo suplemento hasta consumirlo */
+            if (fgets(buffer, 1023, stream2) == NULL) {
+                readSupplement = false;
+                continue;
+            }
+        } else {
+            /* lee del catálogo principal */
+            if (fgets(buffer, 1023, stream) == NULL) break;
+        }
         // if (TYCstarsPPM > 100) break;
 		entry++;
 		if (entry % 10000 == 0) {
@@ -312,7 +329,7 @@ int main(int argc, char** argv) {
 		}
 
         /* lee declinación y descarta tempranamente */
-        readField(buffer, cell, 166, 12);
+        readField(buffer, cell, readSupplement ? 29 : 166, 12);
         double Decl = atof(cell);
         if (is_north) {
             if (Decl < 0) continue;
@@ -332,19 +349,26 @@ int main(int argc, char** argv) {
         snprintf(tycString, 20, "TYC %d-%d-%d", tyc1Ref, tyc2Ref, tyc3Ref);
 
         /* lee RA y Decl (epoch) */
-        readField(buffer, cell, 153, 12);
+        readField(buffer, cell, readSupplement ? 16 : 153, 12);
         double RA = atof(cell);
-        readField(buffer, cell, 179, 4);
-        double epRA = atof(cell);
-        readField(buffer, cell, 184, 4);
-        double epDecl = atof(cell);
-        double epoch = 1990.0 + (epRA + epDecl) / 2.0;
-
+        double epRA, epDecl, epoch;
+        if (readSupplement) {
+            epoch = 1991.25;
+            epRA = epoch;
+            epDecl = epoch;
+        } else {
+            readField(buffer, cell, 179, 4);
+            epRA = atof(cell);
+            readField(buffer, cell, 184, 4);
+            epDecl = atof(cell);
+            /* la época es un promedio de las de RA y Decl */
+            epoch = 1990.0 + (epRA + epDecl) / 2.0;
+        }
         /* lee mov. propios, si los tiene */
         double pmRA = 0.0;
         double pmDecl = 0.0;
         readField(buffer, cell, 14, 1);
-        if (cell[0] != 'X') {
+        if (cell[0] != readSupplement ? 'T' : 'X') {
             readField(buffer, cell, 42, 7);
             pmRA = atof(cell);
             readField(buffer, cell, 50, 7);
@@ -420,7 +444,7 @@ int main(int argc, char** argv) {
 
         /* Escanea las estrellas que no fueron identificadas con PPM/CD/CPD.
          * Para poder priorizar los catálogos, si se encuentra una más cerca,
-         * debe sobrepasar un threshold de 1 grado más para elegirse. */
+         * debe sobrepasar un threshold de 1 arco de segundo más para elegirse. */
         int index = -1;
         minDistance = HUGE_NUMBER;
         for (int i = 0; i < countUnidentified; i++) {
@@ -447,6 +471,7 @@ int main(int argc, char** argv) {
     printf("Stars read and identified of Tycho-2 from other catalogues: %d\n", TYCstarsOther);
     printf("Stars read and remain unidentified of Tycho-2: %d\n", TYCunidentified);
     fclose(crossStream);
+    fclose(stream2);
     fclose(stream);
 
     printf("\nStars from other catalogues yet not identified:\n");

@@ -14,11 +14,11 @@ cross-identifications between PPM/CD/CPD and GC/OA/U/ZC/G.
 Other further improvements (not done yet) might be to use a better
 cross-identification algorithm, e.g. that maximizes likelihood between positions
 and magnitudes when comparing Tycho-2 and a target catalogue, with Hungarian
-algorithm, see this [paper](https://doi.org/10.1016/j.endm.2018.07.005). Finally, Tycho-2 supplementary stars are not considered.
+algorithm, see this [paper](https://doi.org/10.1016/j.endm.2018.07.005).
 
 ### Instructions
 
-Before executing *gen_tycho2*, download Tycho-2 catalog from VizieR (I/259) and concatenate data files into a single *cat/tyc2.txt* file.
+Before executing *gen_tycho2*, download Tycho-2 catalog from VizieR (I/259) and concatenate data files into a single *cat/tyc2.txt* file. Do the same for both supplemental catalogs, into a single *cat/tyc2_suppl.txt* file.
 
 Files in this folder:
 - cross_tyc2_north.csv = Cross identifications of Tycho-2 stars (northern hemisfere)
