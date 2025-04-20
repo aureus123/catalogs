@@ -246,7 +246,11 @@ int main(int argc, char** argv) {
 
     if (isCD()) {
         /* leemos identificaciones cruzadas y renombramos designaciones.
-         * Order de prioridad: GC, ZC, OA, U, G */
+         * Order de prioridad: GC, ZC, OA, U, G, G2 */
+        readCrossFile(
+            "results/cross_gc2_ppm.csv", PPMstar, PPMstars,
+            "results/cross_gc2_cd.csv", DMstar, DMstars,
+            "results/cross_gc2_cpd.csv", CPDstar, CPDstars);
         readCrossFile(
             "results/cross_gilliss_ppm.csv", PPMstar, PPMstars,
             "results/cross_gilliss_cd.csv", DMstar, DMstars,
@@ -273,6 +277,7 @@ int main(int argc, char** argv) {
         readUnidentifiedFile("results/oa_unidentified.csv");
         readUnidentifiedFile("results/usno_unidentified.csv");
         readUnidentifiedFile("results/gilliss_unidentified.csv");
+        readUnidentifiedFile("results/gc2_unidentified.csv");
     } else {
         /* leemos identificaciones cruzadas y renombramos designaciones, solo para PPM-USNO */
         readCrossFile(

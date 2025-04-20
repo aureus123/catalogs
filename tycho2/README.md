@@ -1,15 +1,15 @@
 # Cross identifications with Tycho-2 catalogue
 
 Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues. Designation are for DM (BD/SD/CD) and other old catalogues. In the case of PPM stars, DM designation are taken from their DM column. In north hemisphere, also BD stars (from -1 to +19) are used. In south hemisphere, also CD and CPD stars are used. In the case designations for GC (Catálogo General Argentino), OA (Oeltzen-Argelander catalogue), U (Yarnall-Frisby USNO),
-ZC (Gould's Zone catalogue) or G (Gilliss catalogue) are present, they are used instead of CD/CPD.
+ZC (Gould's Zone catalogue), G (Gilliss catalogue) or G2 (2do. Catálogo General Argentino) are present, they are used instead of CD/CPD.
 
 ### Shortcomings of the current approach
 
 Since all identifications are performed just by angular distance thresholds, misidentifications might happen. On the other hand, some BD/SD stars are
 missing in the south hemisphere; the same happens for the other old
-catalogues GC/OA/U/ZC/G, they are reported only if a PPM/CD star is
+catalogues GC/OA/U/ZC/G/G2, they are reported only if a PPM/CD star is
 cross-matched with them. Files *cross_gc.cpp* and *cross_thome.cpp* do the
-cross-identifications between PPM/CD/CPD and GC/OA/U/ZC/G.
+cross-identifications between PPM/CD/CPD and GC/OA/U/ZC/G/G2.
 
 Other further improvements (not done yet) might be to use a better
 cross-identification algorithm, e.g. that maximizes likelihood between positions
