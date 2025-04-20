@@ -59,8 +59,9 @@ instead of direct cross-identification from PPM source:
 | Cordoba Durchmusterung (CD) | 1875 | 172068 | 20.48 |
 | Cordoba Durchmusterung (CD, 1st. vol) | 1875 | 40832 | 24.00 |
 | Catálogo General Argentino (GC) † | 1875 | 31706 | 1.96 |
+| Segundo Cat. General Argentino † | 1900 | 5357 | 2.84 |
 | Weiss † | 1850 | 18010 | 4.66 |
-| Stone † | 1880 | 12397 | 1.44 |
+| Stone † | 1880 | 12414 | 1.48 |
 | USNO 3rd. edition † | 1860 | 10606 | 2.77 |
 | Gilliss † | 1850 | 15792 | 2.87 |
 | Resultados XV, pg. 55-74 † | 1881 | 739 | 2.52 |

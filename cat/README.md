@@ -30,6 +30,7 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 - sd : Bonner (southern) durchmusterung from _VizieR_ (code I/119)
 - cpd : Cape Photographic Durchmusterung from _VizieR_ (code I/108)
 - gc †: Argentine General Catalog from _GAVO Data Center_
+- gc2 : Catálogo de 5791 estrellas (época 1900.0), segundo Catálogo General Argentino from _GAVO Data Center_
 - weiss : Weiss, Catalog der Argelander'schen Zonen vom 15-31 grade
 suedlicher Deklination in mittleren Positionen fuer 1850.0 from
 _GAVO Data Center_
@@ -53,7 +54,6 @@ _Note_: a buggy line from catalog 4019 was deleted.
 In the "other" subfolder there are catalogs from _GAVO Data Center_ not used yet
 by the current code:
 
-- gc2 : Catálogo de 5791 estrellas (época 1900.0), segundo Catálogo General Argentino
 - cordd : Cordoba D, epoch 1950.0, declinations -37 to -47
 - corde : Cordoba E, epoch 1950.0, declinations -82 to south pole
 - laplataa : La Plata A, epoch 1925.0, declinations -52 to -57

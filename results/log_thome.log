@@ -14,6 +14,197 @@ Ommitting star CPD -78°848b
 Stars read from Cape Photographic Durchmusterung: 454803
 
 ***************************************
+Perform comparison between GC2 and PPM/CD/CPD...
+Stars read from PPM: 468861
+1) Warning: G2 542 (vmag = 9.5) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+     Register CD -26°996 (en 2h):  7.2 | 38m41.6s | 1.8'     (pag. 237)
+2) Warning: G2 587 is ALONE (no PPM or CD or CPD star near it).
+  Note: Nearest PPM 32912 at 61.5 arcsec.
+  Note: poor CD coverage for stars above 61°.
+3) Warning: G2 609 (vmag = 5.2) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
+     Register CD -40°771 (en 2h):  2.6 | 53m31.7s | 48.2'     (pag. 438)
+4) Warning: G2 840 (vmag = 6.5) has a near PPM 246826 star (vmag = 4.1) with a different magnitude (delta = 2.4).
+5) Warning: G2 840 (vmag = 6.5) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+     Register CD -24°1945 (en 3h):  4.4 | 48m23.4s | 58.6'     (pag. 123)
+6) Warning: G2 881 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 184597 at 60.0 arcsec.
+7) Warning: G2 1183 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 177571 at 105.5 arcsec.
+8) Warning: G2 1459 (vmag = 9.0) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
+     Register CD -22°3403 (en 6h):  6.6 | 37m30.5s | 19.7'     (pag. 11)
+9) Warning: G2 1469 is ALONE (no PPM or CD or CPD star near it).
+  Note: Nearest PPM 219766 at 21.5 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+10) Warning: G2 1474 (vmag = 8.5) has a near PPM 283089 star (vmag = 5.6) with a different magnitude (delta = 2.9).
+11) Warning: G2 1474 (vmag = 8.5) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+     Register CD -30°3505 (en 6h):  6.3 | 40m45.9s | 49.1'     (pag. 484)
+12) Warning: G2 1589 (vmag = 3.5) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
+     Register CD -36°3487 (en 7h):  9.0 | 12m41.2s | 52.9'     (pag. 236)
+13) Warning: G2 2622 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 186042 at 56.9 arcsec.
+14) Warning: G2 2834 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 172796 at 248.8 arcsec.
+15) Warning: G2 3037 (vmag = 6.8) has a near PPM 317217 star (vmag = 4.6) with a different magnitude (delta = 2.2).
+16) Warning: G2 3191 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 44164 at 145.4 arcsec.
+17) Warning: G2 3333 is ALONE (no PPM or CD or CPD star near it).
+  Note: Nearest PPM 213687 at 22.9 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+18) Warning: G2 3539 (vmag = 6.3) has a near PPM 228402 star (vmag = 4.2) with a different magnitude (delta = 2.1).
+19) Warning: G2 3642 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 171308 at 632.3 arcsec.
+20) Warning: G2 3710 is ALONE (no PPM or CD or CPD star near it).
+  Note: Nearest PPM 197865 at 27.5 arcsec.
+21) Warning: G2 3876 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 35917 at 369.4 arcsec.
+  Note: poor CD coverage for stars above 61°.
+22) Warning: G2 3887 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 180366 at 371.5 arcsec.
+23) Warning: G2 4090 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 153391 at 538.7 arcsec.
+24) Warning: G2 4222 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 256053 at 360.1 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+25) Warning: G2 4810 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 266638 at 61.3 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+26) Warning: G2 4817 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 268777 at 597.0 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+27) Warning: G2 4818 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 270704 at 582.6 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+28) Warning: G2 4819 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 270704 at 335.8 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+29) Warning: G2 4820 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 268777 at 506.5 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+30) Warning: G2 4824 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 266746 at 616.9 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+31) Warning: G2 4825 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 266746 at 502.3 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+32) Warning: G2 4828 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 266746 at 640.7 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+33) Warning: G2 4839 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 272916 at 653.5 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+34) Warning: G2 4843 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 273817 at 51.0 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+35) Warning: G2 4848 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 273719 at 183.3 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+36) Warning: G2 4856 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 273696 at 267.5 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+37) Warning: G2 4860 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 274369 at 304.6 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+38) Warning: G2 4865 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 274522 at 297.0 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+39) Warning: G2 4886 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 274798 at 427.0 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+40) Warning: G2 4902 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 274606 at 232.6 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+41) Warning: G2 4915 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 274139 at 458.7 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+42) Warning: G2 4918 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 274139 at 305.9 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+43) Warning: G2 4925 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 274344 at 531.3 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+44) Warning: G2 4930 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 273856 at 183.5 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+45) Warning: G2 4932 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 273695 at 76.3 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+46) Warning: G2 4935 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 273763 at 307.7 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+47) Warning: G2 4945 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 273213 at 666.2 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+48) Warning: G2 4971 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 270810 at 360.5 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+49) Warning: G2 4975 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 269508 at 413.5 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+50) Warning: G2 4978 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: lack of Decl (s).
+  Possible cause: dim star.
+  Note: Nearest PPM 108346 at 46.8 arcsec.
+51) Warning: G2 4980 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 269566 at 46.2 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+52) Warning: G2 4988 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 269605 at 538.8 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+53) Warning: G2 5021 (vmag = 7.7) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+     Register CD -32°15768 (en 20h):  10.0 | 2m57.1s | 39.8'     (pag. 52)
+54) Warning: G2 5453 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 161820 at 59.5 arcsec.
+55) Warning: G2 5484 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 192148 at 121.5 arcsec.
+56) Warning: G2 5692 is ALONE (no PPM or CD or CPD star near it).
+  Possible cause: dim star.
+  Note: Nearest PPM 193418 at 58.7 arcsec.
+Available G2 stars = 5723
+Stars from G2 identified with PPM = 5357, CD = 5451 and CPD = 5252
+RSME of distance (arcsec) = 2.84  among a total of 5357 stars
+RSME of visual magnitude = 0.48389  among a total of 4523 stars
+Errors logged = 56
+
+***************************************
 Perform comparison between Weiss and PPM/CD/CPD...
 Stars read from PPM: 468861
 1) Warning: W 114 (vmag = 7.0) has a near PPM 242755 star (vmag = 4.9) with a different magnitude (delta = 2.1).
@@ -331,292 +522,249 @@ Stars read from PPM: 468861
      Register CD -72°323 (en 6h):  10.1 | 19m27.0s | 36.0'     (pag. 243)
 47) Warning: St 3147 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -43°2603 (en 6h):  9.0 | 36m28.0s | 46.1'     (pag. 64)
-48) Warning: St 3274 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 416370 at 538.7 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-49) Warning: St 3289 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+48) Warning: St 3289 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -56°1670 (en 6h):  9.0 | 49m54.4s | 20.9'     (pag. 139)
-50) Warning: St 3321 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.9). Check dpl.
+49) Warning: St 3321 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.9). Check dpl.
      Register CD -26°3646 (en 6h):  9.6 | 53m6.8s | 59.6'     (pag. 246)
-51) Warning: St 3491 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+50) Warning: St 3491 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -36°3425 (en 7h):  9.0 | 8m6.8s | 1.7'     (pag. 236)
-52) Warning: St 3550 (vmag = 3.0) has a near CD with dif. magnitude (delta = 6.0). Check dpl.
+51) Warning: St 3550 (vmag = 3.0) has a near CD with dif. magnitude (delta = 6.0). Check dpl.
      Register CD -36°3487 (en 7h):  9.0 | 12m41.2s | 52.9'     (pag. 236)
-53) Warning: St 3655 (vmag = 6.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+52) Warning: St 3655 (vmag = 6.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -33°3811 (en 7h):  9.5 | 22m3.0s | 54.0'     (pag. 72)
-54) Warning: St 3672 (vmag = 7.6) has a near PPM 284007 star (vmag = 5.4) with a different magnitude (delta = 2.2).
-55) Warning: St 3673 (vmag = 7.8) has a near PPM 284007 star (vmag = 5.4) with a different magnitude (delta = 2.4).
-56) Warning: St 3720 (vmag = 6.0) has a near PPM 252684 star (vmag = 3.0) with a different magnitude (delta = 3.0).
-57) Warning: St 3785 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 428094 at 550.1 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-58) Warning: St 3893 (vmag = 5.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+53) Warning: St 3672 (vmag = 7.6) has a near PPM 284007 star (vmag = 5.4) with a different magnitude (delta = 2.2).
+54) Warning: St 3673 (vmag = 7.8) has a near PPM 284007 star (vmag = 5.4) with a different magnitude (delta = 2.4).
+55) Warning: St 3720 (vmag = 6.0) has a near PPM 252684 star (vmag = 3.0) with a different magnitude (delta = 3.0).
+56) Warning: St 3893 (vmag = 5.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -56°1983 (en 7h):  7.0 | 42m59.2s | 25.2'     (pag. 140)
-59) Warning: St 3901 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
+57) Warning: St 3901 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
      Register CD -72°417 (en 7h):  4.3 | 43m23.0s | 18.0'     (pag. 244)
-60) Warning: St 3911 (vmag = 6.7) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+58) Warning: St 3911 (vmag = 6.7) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -24°6020 (en 7h):  10.0 | 43m43.0s | 36.0'     (pag. 137)
-61) Warning: St 4042 (L 3109) is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 79763 at 256.1 arcsec.
-62) Warning: St 4058 (vmag = 7.0) has a near PPM 336543 star (vmag = 9.6) with a different magnitude (delta = 2.6).
-63) Warning: St 4082 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
+59) Warning: St 4058 (vmag = 7.0) has a near PPM 336543 star (vmag = 9.6) with a different magnitude (delta = 2.6).
+60) Warning: St 4082 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
      Register CD -32°4768 (en 7h):  9.5 | 58m13.7s | 7.1'     (pag. 16)
-64) Warning: St 4084 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+61) Warning: St 4084 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -80°268 (en 7h):  9.0 | 58m53.0s | 52.5'     (pag. 366)
-65) Warning: St 4164 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+62) Warning: St 4164 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -46°3848 (en 8h):  9.0 | 5m44.0s | 59.2'     (pag. 224)
-66) Warning: St 4222 (vmag = 6.5) has a near PPM 312790 star (vmag = 4.3) with a different magnitude (delta = 2.2).
-67) Warning: St 4387 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+63) Warning: St 4222 (vmag = 6.5) has a near PPM 312790 star (vmag = 4.3) with a different magnitude (delta = 2.2).
+64) Warning: St 4387 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -43°4313 (en 8h):  9.1 | 23m58.4s | 48.5'     (pag. 70)
-68) Warning: St 4407 (vmag = 6.7) has a near PPM 313144 star (vmag = 4.4) with a different magnitude (delta = 2.3).
-69) Warning: St 4634 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+65) Warning: St 4407 (vmag = 6.7) has a near PPM 313144 star (vmag = 4.4) with a different magnitude (delta = 2.3).
+66) Warning: St 4634 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -42°4605 (en 8h):  9.2 | 41m49.0s | 18.0'     (pag. 15)
-70) Warning: St 4641 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+67) Warning: St 4641 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -42°4611 (en 8h):  9.3 | 42m6.2s | 20.0'     (pag. 15)
-71) Warning: St 4653 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+68) Warning: St 4653 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -41°4504 (en 8h):  9.0 | 42m57.1s | 59.8'     (pag. 502)
-72) Warning: St 4807 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+69) Warning: St 4807 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -50°3761 (en 8h):  9.0 | 57m2.3s | 1.5'     (pag. 421)
-73) Warning: St 4826 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
+70) Warning: St 4826 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
      Register CD -49°4080 (en 8h):  8.5 | 59m23.0s | 15.0'     (pag. 374)
-74) Warning: St 4887 (vmag = 7.0) has a near PPM 357145 star (vmag = 9.0) with a different magnitude (delta = 2.0).
-75) Warning: St 4928 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.7). Check dpl.
+71) Warning: St 4887 (vmag = 7.0) has a near PPM 357145 star (vmag = 9.0) with a different magnitude (delta = 2.0).
+72) Warning: St 4928 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.7). Check dpl.
      Register CD -67°708 (en 9h):  9.7 | 10m2.0s | 12.5'     (pag. 123)
-76) Warning: St 4985 (L 3806) is ALONE (no PPM or CD or CPD star near it).
+73) Warning: St 4985 (L 3806) is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 22741 at 585.0 arcsec.
   Note: poor CD coverage for stars above 61°.
-77) Warning: St 5003 (vmag = 7.0) has a near PPM 370246 star (vmag = 9.3) with a different magnitude (delta = 2.3).
-78) Warning: St 5003 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
+74) Warning: St 5003 (vmag = 7.0) has a near PPM 370246 star (vmag = 9.3) with a different magnitude (delta = 2.3).
+75) Warning: St 5003 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
      Register CD -78°362 (en 9h):  9.8 | 17m25.0s | 17.0'     (pag. 344)
-79) Warning: St 5041 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 418360 at 490.4 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-80) Warning: St 5079 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
+76) Warning: St 5079 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
      Register CD -34°5905 (en 9h):  9.6 | 23m3.2s | 21.2'     (pag. 136)
-81) Warning: St 5115 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
-     Register CD -31°7340 (en 9h):  10.0 | 24m42.3s | 20.5'     (pag. 563)
-82) Warning: St 5223 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+77) Warning: St 5115 (vmag = 7.8) has a near PPM 286548 star (vmag = 5.1) with a different magnitude (delta = 2.7).
+78) Warning: St 5115 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+     Register CD -31°7355 (en 9h):  5.6 | 25m25.5s | 20.5'     (pag. 563)
+79) Warning: St 5223 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -42°5478 (en 9h):  9.3 | 34m9.3s | 18.0'     (pag. 18)
-83) Warning: St 5353 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 427490 at 497.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-84) Warning: St 5471 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 68848 at 543.2 arcsec.
-85) Warning: St 5531 (vmag = 8.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+80) Warning: St 5531 (vmag = 8.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -57°3047 (en 10h):  10.0 | 5m59.8s | 26.4'     (pag. 175)
-86) Warning: St 5730 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+81) Warning: St 5730 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -62°455 (en 10h):  9.0 | 23m20.0s | 53.5'     (pag. 5)
-87) Warning: St 5746 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+82) Warning: St 5746 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -61°2664 (en 10h):  9.3 | 24m31.5s | 57.0'     (pag. 290)
-88) Warning: St 5768 is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: dim star.
-  Note: Nearest PPM 62575 at 375.8 arcsec.
-89) Warning: St 5804 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+83) Warning: St 5804 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -83°159 (en 10h):  9.0 | 30m13.0s | 42.5'     (pag. 389)
-90) Warning: St 5938 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+84) Warning: St 5938 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -59°3306 (en 10h):  8.2 | 40m13.3s | 2.0'     (pag. 236)
-91) Warning: St 6119 (vmag = 7.0) has a near PPM 358433 star (vmag = 9.0) with a different magnitude (delta = 2.0).
-92) Warning: St 6119 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+85) Warning: St 6119 (vmag = 7.0) has a near PPM 358433 star (vmag = 9.0) with a different magnitude (delta = 2.0).
+86) Warning: St 6119 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -61°2917 (en 10h):  9.3 | 58m0.7s | 12.6'     (pag. 291)
-93) Warning: St 6248 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+87) Warning: St 6248 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -58°3937 (en 11h):  9.0 | 9m27.0s | 29.0'     (pag. 208)
-94) Warning: St 6254 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+88) Warning: St 6254 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -58°3940 (en 11h):  9.0 | 9m45.4s | 43.5'     (pag. 208)
-95) Warning: St 6266 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+89) Warning: St 6266 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -54°4049 (en 11h):  10.0 | 10m25.5s | 32.0'     (pag. 82)
-96) Warning: St 6275 (vmag = 7.0) has a near PPM 358604 star (vmag = 9.6) with a different magnitude (delta = 2.6).
-97) Warning: St 6275 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
+90) Warning: St 6275 (vmag = 7.0) has a near PPM 358604 star (vmag = 9.6) with a different magnitude (delta = 2.6).
+91) Warning: St 6275 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
      Register CD -60°3465 (en 11h):  9.5 | 11m15.7s | 8.7'     (pag. 265)
-98) Warning: St 6284 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+92) Warning: St 6284 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -59°3654 (en 11h):  9.3 | 11m46.9s | 5.5'     (pag. 237)
-99) Warning: St 6292 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 401209 at 407.4 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-100) Warning: St 6339 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+93) Warning: St 6339 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -61°3024 (en 11h):  9.1 | 17m43.2s | 36.5'     (pag. 291)
-101) Warning: St 6361 (vmag = 6.5) has a near CD with dif. magnitude (delta = 4.5). Check dpl.
+94) Warning: St 6361 (vmag = 6.5) has a near CD with dif. magnitude (delta = 4.5). Check dpl.
      Register CD -52°4400 (en 11h):  11.0 | 21m1.1s | 28.7'     (pag. 15)
-102) Warning: St 6563 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 423161 at 395.0 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-103) Warning: St 6566 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+95) Warning: St 6566 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -51°6014 (en 11h):  10.0 | 39m46.3s | 59.3'     (pag. 476)
-104) Warning: St 6644 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+96) Warning: St 6644 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -61°3256 (en 11h):  9.0 | 48m48.0s | 52.2'     (pag. 292)
-105) Warning: St 6685 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+97) Warning: St 6685 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -62°595 (en 11h):  9.0 | 53m30.0s | 9.0'     (pag. 6)
-106) Warning: St 6686 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 306829 at 711.9 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-107) Warning: St 6822 (vmag = 7.0) has a near PPM 260046 star (vmag = 9.6) with a different magnitude (delta = 2.6).
-108) Warning: St 6907 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+98) Warning: St 6822 (vmag = 7.0) has a near PPM 260046 star (vmag = 9.6) with a different magnitude (delta = 2.6).
+99) Warning: St 6907 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -62°651 (en 12h):  8.0 | 19m36.0s | 26.2'     (pag. 7)
-109) Warning: St 6946 (vmag = 7.0) has a near PPM 341055 star (vmag = 9.0) with a different magnitude (delta = 2.0).
-110) Warning: St 6946 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+100) Warning: St 6946 (vmag = 7.0) has a near PPM 341055 star (vmag = 9.0) with a different magnitude (delta = 2.0).
+101) Warning: St 6946 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -55°4654 (en 12h):  9.2 | 24m9.3s | 22.3'     (pag. 117)
-111) Warning: St 6954 (vmag = 5.6) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
+102) Warning: St 6954 (vmag = 5.6) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
      Register CD -58°4603 (en 12h):  9.3 | 24m42.4s | 44.3'     (pag. 211)
-112) Warning: St 7047 (vmag = 7.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+103) Warning: St 7047 (vmag = 7.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -52°5225 (en 12h):  10.5 | 37m46.6s | 4.4'     (pag. 17)
-113) Warning: St 7055 (vmag = 4.5) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
+104) Warning: St 7055 (vmag = 4.5) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
      Register CD -55°4778 (en 12h):  8.6 | 39m14.6s | 48.3'     (pag. 118)
-114) Warning: St 7112 (vmag = 6.5) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+105) Warning: St 7112 (vmag = 6.5) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -56°4688 (en 12h):  4.2 | 47m15.8s | 30.0'     (pag. 150)
-115) Warning: St 7113 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
+106) Warning: St 7113 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
      Register CD -56°4688 (en 12h):  4.2 | 47m15.8s | 30.0'     (pag. 150)
-116) Warning: St 7156 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+107) Warning: St 7156 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -62°689 (en 12h):  9.0 | 53m25.0s | 21.0'     (pag. 7)
-117) Warning: St 7157 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+108) Warning: St 7157 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -62°690 (en 12h):  9.2 | 53m40.0s | 16.2'     (pag. 7)
-118) Warning: St 7360 (L 5533) is ALONE (no PPM or CD or CPD star near it).
+109) Warning: St 7360 (L 5533) is ALONE (no PPM or CD or CPD star near it).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 84301 at 567.7 arcsec.
-119) Warning: St 7425 is ALONE (no PPM or CD or CPD star near it).
+110) Warning: St 7425 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 16860 at 512.4 arcsec.
   Note: poor CD coverage for stars above 61°.
-120) Warning: St 7485 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 429276 at 504.4 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-121) Warning: St 7524 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.9). Check dpl.
+111) Warning: St 7524 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.9). Check dpl.
      Register CD -39°8427 (en 13h):  9.9 | 36m20.7s | 33.1'     (pag. 412)
-122) Warning: St 7579 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
+112) Warning: St 7579 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
      Register CD -52°5831 (en 13h):  8.5 | 44m1.1s | 11.0'     (pag. 19)
-123) Warning: St 7614 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
+113) Warning: St 7614 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
      Register CD -61°4103 (en 13h):  9.5 | 46m58.1s | 44.8'     (pag. 295)
-124) Warning: St 7773 (vmag = 5.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+114) Warning: St 7773 (vmag = 5.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -82°255 (en 14h):  8.0 | 6m5.0s | 16.1'     (pag. 386)
-125) Warning: St 7828 (vmag = 7.8) has a near PPM 342793 star (vmag = 4.3) with a different magnitude (delta = 3.5).
-126) Warning: St 7965 (vmag = 3.0) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
+115) Warning: St 7828 (vmag = 7.8) has a near PPM 342793 star (vmag = 4.3) with a different magnitude (delta = 3.5).
+116) Warning: St 7965 (vmag = 3.0) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
      Register CD -60°5293 (en 14h):  0.2 | 31m5.0s | 19.0'     (pag. 271)
-127) Warning: St 7974 (vmag = 8.0) has a near CD with dif. magnitude (delta = 4.5). Check dpl.
+117) Warning: St 7974 (vmag = 8.0) has a near CD with dif. magnitude (delta = 4.5). Check dpl.
      Register CD -64°867 (en 14h):  3.5 | 32m26.0s | 25.5'     (pag. 45)
-128) Warning: St 8089 is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: no magnitude (cumulus?).
-  Note: Nearest PPM 419447 at 20.1 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-129) Warning: St 8315 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
+118) Warning: St 8315 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.6). Check dpl.
      Register CD -59°5632 (en 15h):  9.6 | 10m42.0s | 5.0'     (pag. 244)
-130) Warning: St 8402 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 398683 at 673.4 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-131) Warning: St 8481 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
+119) Warning: St 8481 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
      Register CD -40°9794 (en 15h):  9.5 | 28m51.9s | 36.5'     (pag. 468)
-132) Warning: St 8487 (vmag = 5.6) has a near PPM 320817 star (vmag = 3.6) with a different magnitude (delta = 2.0).
-133) Warning: St 8527 (vmag = 6.7) has a near PPM 344126 star (vmag = 10.2) with a different magnitude (delta = 3.5).
-134) Warning: St 8661 (L 6599) is ALONE (no PPM or CD or CPD star near it).
+120) Warning: St 8487 (vmag = 5.6) has a near PPM 320817 star (vmag = 3.6) with a different magnitude (delta = 2.0).
+121) Warning: St 8527 (vmag = 6.7) has a near PPM 344126 star (vmag = 10.2) with a different magnitude (delta = 3.5).
+122) Warning: St 8661 (L 6599) is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 129150 at 299.5 arcsec.
-135) Warning: St 8699 (vmag = 8.7) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+123) Warning: St 8699 (vmag = 8.7) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -57°6235 (en 15h):  5.2 | 53m22.5s | 25.1'     (pag. 186)
-136) Warning: St 8750 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 418924 at 37.7 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-137) Warning: St 8881 (vmag = 6.5) has a near PPM 265428 star (vmag = 4.0) with a different magnitude (delta = 2.5).
-138) Warning: St 8911 (L 6820) is ALONE (no PPM or CD or CPD star near it).
+124) Warning: St 8881 (vmag = 6.5) has a near PPM 265428 star (vmag = 4.0) with a different magnitude (delta = 2.5).
+125) Warning: St 8911 (L 6820) is ALONE (no PPM or CD or CPD star near it).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 172635 at 198.9 arcsec.
-139) Warning: St 8922 (vmag = 7.6) has a near PPM 265498 star (vmag = 5.2) with a different magnitude (delta = 2.4).
-140) Warning: St 8959 (vmag = 6.5) has a near PPM 265598 star (vmag = 4.5) with a different magnitude (delta = 2.0).
-141) Warning: St 8960 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
+126) Warning: St 8922 (vmag = 7.6) has a near PPM 265498 star (vmag = 5.2) with a different magnitude (delta = 2.4).
+127) Warning: St 8959 (vmag = 6.5) has a near PPM 265598 star (vmag = 4.5) with a different magnitude (delta = 2.0).
+128) Warning: St 8960 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
      Register CD -41°10694 (en 16h):  9.5 | 23m1.0s | 33.0'     (pag. 523)
-142) Warning: St 9045 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+129) Warning: St 9045 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -25°11600 (en 16h):  9.3 | 32m25.9s | 47.9'     (pag. 216)
-143) Warning: St 9074 is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 384318 at 43.7 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-144) Warning: St 9108 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+130) Warning: St 9108 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -36°10973 (en 16h):  9.0 | 39m50.3s | 39.8'     (pag. 262)
-145) Warning: St 9123 (vmag = 4.3) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+131) Warning: St 9123 (vmag = 4.3) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -34°11285 (en 16h):  2.3 | 42m3.4s | 3.3'     (pag. 154)
-146) Warning: St 9165 (vmag = 7.6) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
+132) Warning: St 9165 (vmag = 7.6) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
      Register CD -41°11030 (en 16h):  10.0 | 45m22.0s | 36.9'     (pag. 524)
-147) Warning: St 9215 (vmag = 7.6) has a near PPM 266171 star (vmag = 5.5) with a different magnitude (delta = 2.1).
-148) Warning: St 9269 is ALONE (no PPM or CD or CPD star near it).
+133) Warning: St 9215 (vmag = 7.6) has a near PPM 266171 star (vmag = 5.5) with a different magnitude (delta = 2.1).
+134) Warning: St 9269 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Note: Nearest PPM 468860 at 303.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-149) Warning: St 9324 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
+135) Warning: St 9324 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.8). Check dpl.
      Register CD -63°1259 (en 17h):  4.2 | 0m46.0s | 31.8'     (pag. 31)
-150) Warning: St 9376 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+136) Warning: St 9376 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -62°1135 (en 17h):  8.0 | 7m10.0s | 44.3'     (pag. 12)
-151) Warning: St 9418 (vmag = 7.6) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+137) Warning: St 9418 (vmag = 7.6) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -24°13255 (en 17h):  5.5 | 10m23.9s | 8.4'     (pag. 161)
-152) Warning: St 9423 (vmag = 7.6) has a near PPM 296186 star (vmag = 5.6) with a different magnitude (delta = 2.0).
-153) Warning: St 9724 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+138) Warning: St 9423 (vmag = 7.6) has a near PPM 296186 star (vmag = 5.6) with a different magnitude (delta = 2.0).
+139) Warning: St 9724 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -46°11912 (en 17h):  9.1 | 43m30.1s | 5.1'     (pag. 251)
-154) Warning: St 9728 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
+140) Warning: St 9728 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.3). Check dpl.
      Register CD -34°12168 (en 17h):  9.3 | 43m59.6s | 56.2'     (pag. 157)
-155) Warning: St 9781 is ALONE (no PPM or CD or CPD star near it).
+141) Warning: St 9781 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Note: Nearest PPM 468860 at 303.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-156) Warning: St 9828 (vmag = 6.5) has a near PPM 201336 star (vmag = 4.4) with a different magnitude (delta = 2.1).
-157) Warning: St 10253 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
+142) Warning: St 9828 (vmag = 6.5) has a near PPM 201336 star (vmag = 4.4) with a different magnitude (delta = 2.1).
+143) Warning: St 10253 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.5). Check dpl.
      Register CD -41°13181 (en 18h):  9.5 | 43m30.0s | 3.9'     (pag. 531)
-158) Warning: St 10363 (vmag = 7.0) has a near PPM 347434 star (vmag = 9.1) with a different magnitude (delta = 2.1).
-159) Warning: St 10374 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.7). Check dpl.
+144) Warning: St 10363 (vmag = 7.0) has a near PPM 347434 star (vmag = 9.1) with a different magnitude (delta = 2.1).
+145) Warning: St 10374 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.7). Check dpl.
      Register CD -41°13323 (en 18h):  9.7 | 57m58.1s | 43.6'     (pag. 532)
-160) Warning: St 10603 (L 8178) is ALONE (no PPM or CD or CPD star near it).
+146) Warning: St 10603 (L 8178) is ALONE (no PPM or CD or CPD star near it).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 149572 at 910.4 arcsec.
-161) Warning: St 10628 (vmag = 7.0) has a near PPM 374387 star (vmag = 10.0) with a different magnitude (delta = 3.0).
-162) Warning: St 10661 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+147) Warning: St 10628 (vmag = 7.0) has a near PPM 374387 star (vmag = 10.0) with a different magnitude (delta = 3.0).
+148) Warning: St 10661 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -71°1578 (en 19h):  9.2 | 41m30.0s | 52.0'     (pag. 237)
-163) Warning: St 10707 (vmag = 6.5) has a near PPM 270451 star (vmag = 4.1) with a different magnitude (delta = 2.4).
-164) Warning: St 10765 (vmag = 6.0) has a near PPM 299717 star (vmag = 3.9) with a different magnitude (delta = 2.1).
-165) Warning: St 10786 is ALONE (no PPM or CD or CPD star near it).
+149) Warning: St 10707 (vmag = 6.5) has a near PPM 270451 star (vmag = 4.1) with a different magnitude (delta = 2.4).
+150) Warning: St 10765 (vmag = 6.0) has a near PPM 299717 star (vmag = 3.9) with a different magnitude (delta = 2.1).
+151) Warning: St 10786 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Note: Nearest PPM 468860 at 303.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-166) Warning: St 10811 (vmag = 6.0) has a near PPM 374603 star (vmag = 8.0) with a different magnitude (delta = 2.0).
-167) Warning: St 10968 (vmag = 5.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+152) Warning: St 10811 (vmag = 6.0) has a near PPM 374603 star (vmag = 8.0) with a different magnitude (delta = 2.0).
+153) Warning: St 10968 (vmag = 5.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -75°1173 (en 20h):  7.0 | 26m50.0s | 47.0'     (pag. 311)
-168) Warning: St 10997 (vmag = 8.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+154) Warning: St 10997 (vmag = 8.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -70°1788 (en 20h):  10.1 | 30m48.0s | 23.0'     (pag. 217)
-169) Warning: St 11081 (vmag = 7.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+155) Warning: St 11081 (vmag = 7.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -41°14265 (en 20h):  10.0 | 43m30.7s | 22.2'     (pag. 535)
-170) Warning: St 11123 is ALONE (no PPM or CD or CPD star near it).
+156) Warning: St 11123 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 90636 at 318.7 arcsec.
-171) Warning: St 11263 (vmag = 7.0) has a near PPM 374959 star (vmag = 9.0) with a different magnitude (delta = 2.0).
-172) Warning: St 11276 is ALONE (no PPM or CD or CPD star near it).
+157) Warning: St 11263 (vmag = 7.0) has a near PPM 374959 star (vmag = 9.0) with a different magnitude (delta = 2.0).
+158) Warning: St 11276 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 224301 at 61.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-173) Warning: St 11306 (vmag = 7.0) has a near PPM 349324 star (vmag = 9.1) with a different magnitude (delta = 2.1).
-174) Warning: St 11354 (vmag = 7.8) has a near PPM 375036 star (vmag = 10.3) with a different magnitude (delta = 2.5).
-175) Warning: St 11376 (L 8827) is ALONE (no PPM or CD or CPD star near it).
+159) Warning: St 11306 (vmag = 7.0) has a near PPM 349324 star (vmag = 9.1) with a different magnitude (delta = 2.1).
+160) Warning: St 11354 (vmag = 7.8) has a near PPM 375036 star (vmag = 10.3) with a different magnitude (delta = 2.5).
+161) Warning: St 11376 (L 8827) is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 78144 at 1312.2 arcsec.
-176) Warning: St 11378 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+162) Warning: St 11378 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -86°134 (en 21h):  9.0 | 21m46.0s | 24.1'     (pag. 397)
-177) Warning: St 11435 (vmag = 7.0) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 2.0).
-178) Warning: St 11436 (vmag = 7.8) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 2.8).
-179) Warning: St 11436 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
+163) Warning: St 11435 (vmag = 7.0) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 2.0).
+164) Warning: St 11436 (vmag = 7.8) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 2.8).
+165) Warning: St 11436 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
      Register CD -83°276 (en 21h):  5.4 | 31m30.0s | 17.4'     (pag. 390)
-180) Warning: St 11521 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+166) Warning: St 11521 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -71°1712 (en 21h):  9.1 | 45m11.0s | 7.5'     (pag. 238)
-181) Warning: St 11558 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+167) Warning: St 11558 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -62°1374 (en 21h):  9.0 | 50m58.0s | 42.4'     (pag. 15)
-182) Warning: St 11625 is ALONE (no PPM or CD or CPD star near it).
+168) Warning: St 11625 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Note: Nearest PPM 364842 at 25.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-183) Warning: St 11675 (vmag = 7.8) has a near PPM 328093 star (vmag = 10.0) with a different magnitude (delta = 2.2).
-184) Warning: St 11675 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
+169) Warning: St 11675 (vmag = 7.8) has a near PPM 328093 star (vmag = 10.0) with a different magnitude (delta = 2.2).
+170) Warning: St 11675 (vmag = 7.8) has a near CD with dif. magnitude (delta = 2.1). Check dpl.
      Register CD -50°13632 (en 22h):  9.9 | 9m31.7s | 31.6'     (pag. 455)
-185) Warning: St 11774 (vmag = 4.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+171) Warning: St 11774 (vmag = 4.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -62°1402 (en 22h):  6.0 | 24m32.0s | 37.0'     (pag. 15)
-186) Warning: St 11868 (vmag = 7.0) has a near PPM 350528 star (vmag = 9.1) with a different magnitude (delta = 2.1).
-187) Warning: St 11868 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+172) Warning: St 11868 (vmag = 7.0) has a near PPM 350528 star (vmag = 9.1) with a different magnitude (delta = 2.1).
+173) Warning: St 11868 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -55°9164 (en 22h):  9.0 | 39m36.5s | 4.4'     (pag. 133)
-188) Warning: St 12018 (vmag = 7.6) has a near PPM 350797 star (vmag = 5.4) with a different magnitude (delta = 2.2).
-189) Warning: St 12019 (vmag = 7.6) has a near PPM 350797 star (vmag = 5.4) with a different magnitude (delta = 2.2).
-190) Warning: St 12104 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+174) Warning: St 12018 (vmag = 7.6) has a near PPM 350797 star (vmag = 5.4) with a different magnitude (delta = 2.2).
+175) Warning: St 12019 (vmag = 7.6) has a near PPM 350797 star (vmag = 5.4) with a different magnitude (delta = 2.2).
+176) Warning: St 12104 (vmag = 7.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -55°9284 (en 23h):  9.0 | 12m40.7s | 24.0'     (pag. 133)
-191) Warning: St 12276 (vmag = 7.0) has a near PPM 329618 star (vmag = 9.0) with a different magnitude (delta = 2.0).
+177) Warning: St 12276 (vmag = 7.0) has a near PPM 329618 star (vmag = 9.0) with a different magnitude (delta = 2.0).
 Available Stone stars = 12440, and Lacaille = 9632
-Stars from Stone identified with PPM = 12397, CD = 11602 and CPD = 11649
-RSME of distance (arcsec) = 1.44  among a total of 12397 stars
-RSME of visual magnitude = 0.73517  among a total of 10647 stars
-Errors logged = 191
+Stars from Stone identified with PPM = 12414, CD = 11605 and CPD = 11654
+RSME of distance (arcsec) = 1.48  among a total of 12414 stars
+RSME of visual magnitude = 0.73513  among a total of 10651 stars
+Errors logged = 177
 
 ***************************************
 Perform comparison between USNO and PPM/CD/CPD...
@@ -1877,160 +2025,159 @@ Stars read from PPM: 468861
   Possible cause: lack of Decl (s).
   Note: Nearest PPM 391865 at 32.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-333) Warning: U 8888 is FAR from OA 20215 (dist = 710.4 arcsec).
-334) Warning: U 8929 is ALONE (no PPM or CD or CPD star near it).
+333) Warning: U 8929 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 268093 at 871.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-335) Warning: U 8958 is ALONE (no PPM or CD or CPD star near it).
+334) Warning: U 8958 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 232946 at 546.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-336) Warning: U 8959 is ALONE (no PPM or CD or CPD star near it).
+335) Warning: U 8959 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 230954 at 43.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-337) Warning: U 8982 is ALONE (no PPM or CD or CPD star near it).
+336) Warning: U 8982 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Note: Nearest PPM 400027 at 200.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-338) Warning: U 9002 is ALONE (no PPM or CD or CPD star near it).
+337) Warning: U 9002 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 343422 at 28.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-339) Warning: U 9006 is ALONE (no PPM or CD or CPD star near it).
+338) Warning: U 9006 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 396110 at 65.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-340) Warning: U 9013 is ALONE (no PPM or CD or CPD star near it).
+339) Warning: U 9013 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 396080 at 26.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-341) Warning: U 9020 is ALONE (no PPM or CD or CPD star near it).
+340) Warning: U 9020 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 396176 at 36.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-342) Warning: U 9105 is ALONE (no PPM or CD or CPD star near it).
+341) Warning: U 9105 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 450400 at 25.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-343) Warning: U 9247 (vmag = 5.5) has a near PPM 271553 star (vmag = 7.6) with a different magnitude (delta = 2.1).
-344) Warning: U 9266 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
+342) Warning: U 9247 (vmag = 5.5) has a near PPM 271553 star (vmag = 7.6) with a different magnitude (delta = 2.1).
+343) Warning: U 9266 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
      Register CD -25°15018 (en 20h):  4.3 | 38m41.5s | 42.5'     (pag. 227)
-345) Warning: U 9320 (vmag = 6.6) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+344) Warning: U 9320 (vmag = 6.6) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -41°14265 (en 20h):  10.0 | 43m30.7s | 22.2'     (pag. 535)
-346) Warning: U 9383 is ALONE (no PPM or CD or CPD star near it).
+345) Warning: U 9383 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 395720 at 576.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-347) Warning: U 9408 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+346) Warning: U 9408 (vmag = 6.0) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -39°14067 (en 20h):  8.0 | 53m4.7s | 13.8'     (pag. 431)
-348) Warning: U 9420 is FAR from L 8638 (dist = 56.3 arcsec).
-349) Warning: U 9464 is FAR from L 8690 (dist = 287.2 arcsec).
-350) Warning: U 9469 is FAR from L 8693 (dist = 618.0 arcsec).
-351) Warning: U 9474 is ALONE (no PPM or CD or CPD star near it).
+347) Warning: U 9420 is FAR from L 8638 (dist = 56.3 arcsec).
+348) Warning: U 9464 is FAR from L 8690 (dist = 287.2 arcsec).
+349) Warning: U 9469 is FAR from L 8693 (dist = 618.0 arcsec).
+350) Warning: U 9474 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 399338 at 50.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-352) Warning: U 9477 is ALONE (no PPM or CD or CPD star near it).
+351) Warning: U 9477 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 399333 at 22.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-353) Warning: U 9536 is ALONE (no PPM or CD or CPD star near it).
+352) Warning: U 9536 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 405226 at 561.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-354) Warning: U 9588 is ALONE (no PPM or CD or CPD star near it).
+353) Warning: U 9588 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 424100 at 250.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-355) Warning: U 9622 is ALONE (no PPM or CD or CPD star near it).
+354) Warning: U 9622 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 399165 at 57.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-356) Warning: U 9634 is FAR from L 8827 (dist = 35999.8 arcsec).
-357) Warning: U 9691 is ALONE (no PPM or CD or CPD star near it).
+355) Warning: U 9634 is FAR from L 8827 (dist = 35999.8 arcsec).
+356) Warning: U 9691 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 401354 at 320.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-358) Warning: U 9705 is ALONE (no PPM or CD or CPD star near it).
+357) Warning: U 9705 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 243985 at 29.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-359) Warning: U 9729 is FAR from L 8889 (dist = 435.8 arcsec).
-360) Warning: U 9765 is ALONE (no PPM or CD or CPD star near it).
+358) Warning: U 9729 is FAR from L 8889 (dist = 435.8 arcsec).
+359) Warning: U 9765 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 398019 at 444.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-361) Warning: U 9775 (vmag = 8.2) has a near PPM 205582 star (vmag = 6.0) with a different magnitude (delta = 2.2).
-362) Warning: U 9826 is ALONE (no PPM or CD or CPD star near it).
+360) Warning: U 9775 (vmag = 8.2) has a near PPM 205582 star (vmag = 6.0) with a different magnitude (delta = 2.2).
+361) Warning: U 9826 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 401666 at 168.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-363) Warning: U 9831 is ALONE (no PPM or CD or CPD star near it).
+362) Warning: U 9831 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Note: Nearest PPM 401130 at 23.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-364) Warning: U 9849 is ALONE (no PPM or CD or CPD star near it).
+363) Warning: U 9849 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 399901 at 170.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-365) Warning: U 9977 is ALONE (no PPM or CD or CPD star near it).
+364) Warning: U 9977 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 432392 at 77.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-366) Warning: U 10051 is ALONE (no PPM or CD or CPD star near it).
+365) Warning: U 10051 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 398409 at 74.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-367) Warning: U 10127 (vmag = 6.8) has a near PPM 240280 star (vmag = 4.4) with a different magnitude (delta = 2.4).
-368) Warning: U 10128 (vmag = 6.7) has a near PPM 240280 star (vmag = 4.4) with a different magnitude (delta = 2.3).
-369) Warning: U 10130 is ALONE (no PPM or CD or CPD star near it).
+366) Warning: U 10127 (vmag = 6.8) has a near PPM 240280 star (vmag = 4.4) with a different magnitude (delta = 2.4).
+367) Warning: U 10128 (vmag = 6.7) has a near PPM 240280 star (vmag = 4.4) with a different magnitude (delta = 2.3).
+368) Warning: U 10130 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 400414 at 37.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-370) Warning: U 10277 is ALONE (no PPM or CD or CPD star near it).
+369) Warning: U 10277 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 230898 at 56.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-371) Warning: U 10279 is ALONE (no PPM or CD or CPD star near it).
+370) Warning: U 10279 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 230828 at 24.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-372) Warning: U 10436 is FAR from L 9352 (dist = 69.2 arcsec).
-373) Warning: U 10436 is ALONE (no PPM or CD or CPD star near it).
+371) Warning: U 10436 is FAR from L 9352 (dist = 69.2 arcsec).
+372) Warning: U 10436 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 125364 at 54.6 arcsec.
-374) Warning: U 10580 is ALONE (no PPM or CD or CPD star near it).
+373) Warning: U 10580 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 205804 at 211.5 arcsec.
-375) Warning: U 10623 is ALONE (no PPM or CD or CPD star near it).
+374) Warning: U 10623 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Note: Nearest PPM 435159 at 37.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-376) Warning: U 10664 is ALONE (no PPM or CD or CPD star near it).
+375) Warning: U 10664 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 315936 at 119.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-377) Warning: U 10678 is ALONE (no PPM or CD or CPD star near it).
+376) Warning: U 10678 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 340259 at 38.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-378) Warning: U 10789 is ALONE (no PPM or CD or CPD star near it).
+377) Warning: U 10789 is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 317394 at 230.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-379) Warning: U 10843 is ALONE (no PPM or CD or CPD star near it).
+378) Warning: U 10843 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 328599 at 325.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-380) Warning: U 10948 is ALONE (no PPM or CD or CPD star near it).
+379) Warning: U 10948 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 440220 at 152.5 arcsec.
@@ -2039,7 +2186,7 @@ Available USNO stars = 10968
 Stars from USNO identified with PPM = 10606, CD = 4299 and CPD = 4662
 RSME of distance (arcsec) = 2.77  among a total of 10606 stars
 RSME of visual magnitude = 0.62365  among a total of 5352 stars
-Errors logged = 380
+Errors logged = 379
 Stars read from Catalogo General Argentino: 32379
    Doubles: 1633, Cumulus: 10, Nebulae: 17, Variables: 67
 
@@ -2535,12 +2682,11 @@ Stars read from PPM: 468861
   Possible cause: dim star.
   Note: Nearest PPM 216764 at 59.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-66) Warning: T 1882 1195 is FAR from OA 20291 (dist = 47873.7 arcsec).
-67) Warning: T 1882 1328 is FAR from L 9352 (dist = 35.0 arcsec).
+66) Warning: T 1882 1328 is FAR from L 9352 (dist = 35.0 arcsec).
 Stars from Thome 1882 identified with PPM = 1259, CD = 1118 and CPD = 1163
 RSME of distance (arcsec) = 2.43  among a total of 1259 stars
 RSME of visual magnitude = 0.48243  among a total of 1025 stars
-Errors logged = 67
+Errors logged = 66
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
@@ -2567,163 +2713,161 @@ Errors logged = 7
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
-1) Warning: T 1884 35 is FAR from OA 1098 (dist = 421.3 arcsec).
-2) Warning: T 1884 75 (vmag = 9.2) has a near PPM 281315 star (vmag = 7.1) with a different magnitude (delta = 2.1).
-3) Warning: T 1884 92 is ALONE (no PPM or CD or CPD star near it).
+1) Warning: T 1884 75 (vmag = 9.2) has a near PPM 281315 star (vmag = 7.1) with a different magnitude (delta = 2.1).
+2) Warning: T 1884 92 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 227580 at 814.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-4) Warning: T 1884 120 is ALONE (no PPM or CD or CPD star near it).
+3) Warning: T 1884 120 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of RA (s).
   Possible cause: dim star.
   Note: Nearest PPM 275298 at 227.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-5) Warning: T 1884 120 is FAR from GC 7778 (dist = 314.4 arcsec). Check if it is a 1/2 star in GC.
-6) Warning: T 1884 191 is ALONE (no PPM or CD or CPD star near it).
+4) Warning: T 1884 120 is FAR from GC 7778 (dist = 314.4 arcsec). Check if it is a 1/2 star in GC.
+5) Warning: T 1884 191 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 271803 at 385.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-7) Warning: T 1884 194 is ALONE (no PPM or CD or CPD star near it).
+6) Warning: T 1884 194 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 270550 at 374.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-8) Warning: T 1884 198 is ALONE (no PPM or CD or CPD star near it).
+7) Warning: T 1884 198 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 271405 at 299.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-9) Warning: T 1884 199 is ALONE (no PPM or CD or CPD star near it).
+8) Warning: T 1884 199 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 270820 at 50.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-10) Warning: T 1884 201 is ALONE (no PPM or CD or CPD star near it).
+9) Warning: T 1884 201 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 271087 at 156.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-11) Warning: T 1884 209 is ALONE (no PPM or CD or CPD star near it).
+10) Warning: T 1884 209 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 271122 at 60.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-12) Warning: T 1884 213 is ALONE (no PPM or CD or CPD star near it).
+11) Warning: T 1884 213 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: lack of RA (s).
   Possible cause: dim star.
   Note: Nearest PPM 81668 at 359.0 arcsec.
 **) ZC 8h 1103 is also ALONE.
   Possible cause: lack of RA (s).
   Possible cause: dim star.
-13) Warning: T 1884 251 (vmag = 10.0) has a near PPM 285738 star (vmag = 7.1) with a different magnitude (delta = 2.9).
-14) Warning: T 1884 251 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+12) Warning: T 1884 251 (vmag = 10.0) has a near PPM 285738 star (vmag = 7.1) with a different magnitude (delta = 2.9).
+13) Warning: T 1884 251 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -35°5098 (en 8h):  7.0 | 45m29.5s | 28.0'     (pag. 188)
-15) Warning: T 1884 292 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+14) Warning: T 1884 292 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -59°2753 (en 9h):  12.0 | 57m49.5s | 27.4'     (pag. 234)
-16) Warning: T 1884 319 is FAR from L 4223 (dist = 1008.5 arcsec).
-17) Warning: T 1884 336 is ALONE (no PPM or CD or CPD star near it).
+15) Warning: T 1884 319 is FAR from L 4223 (dist = 1008.5 arcsec).
+16) Warning: T 1884 336 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 44686 at 233.9 arcsec.
-18) Warning: T 1884 338 is ALONE (no PPM or CD or CPD star near it).
+17) Warning: T 1884 338 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 45711 at 602.6 arcsec.
-19) Warning: T 1884 340 is FAR from GC 1325 (dist = 377846.5 arcsec). Check if it is a 1/2 star in GC.
-20) Warning: T 1884 382 is ALONE (no PPM or CD or CPD star near it).
+18) Warning: T 1884 382 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 51744 at 185.8 arcsec.
-21) Warning: T 1884 485 (vmag = 7.5) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
+19) Warning: T 1884 485 (vmag = 7.5) has a near CD with dif. magnitude (delta = 2.0). Check dpl.
      Register CD -57°3733 (en 11h):  9.5 | 3m50.1s | 51.4'     (pag. 177)
-22) Warning: T 1884 518 is FAR from L 5306 (dist = 40.0 arcsec).
-23) Warning: T 1884 523 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+20) Warning: T 1884 518 is FAR from L 5306 (dist = 40.0 arcsec).
+21) Warning: T 1884 523 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-24) Warning: T 1884 526 (vmag = 9.0) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
+22) Warning: T 1884 526 (vmag = 9.0) has a near CD with dif. magnitude (delta = 2.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-25) Warning: T 1884 528 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
+23) Warning: T 1884 528 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-26) Warning: T 1884 529 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+24) Warning: T 1884 529 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-27) Warning: T 1884 530 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+25) Warning: T 1884 530 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-28) Warning: T 1884 531 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+26) Warning: T 1884 531 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-29) Warning: T 1884 587 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+27) Warning: T 1884 587 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -76°871 (en 16h):  9.8 | 43m40.0s | 0.5'     (pag. 322)
-30) Warning: T 1884 598 (vmag = 8.2) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
+28) Warning: T 1884 598 (vmag = 8.2) has a near CD with dif. magnitude (delta = 2.2). Check dpl.
      Register CD -46°11370 (en 17h):  6.0 | 9m35.4s | 30.1'     (pag. 249)
-31) Warning: T 1884 638 is FAR from GC 24131 (dist = 59.8 arcsec). Check if it is a 1/2 star in GC.
-32) Warning: T 1884 753 is ALONE (no PPM or CD or CPD star near it).
+29) Warning: T 1884 638 is FAR from GC 24131 (dist = 59.8 arcsec). Check if it is a 1/2 star in GC.
+30) Warning: T 1884 753 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 219480 at 416.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-33) Warning: T 1884 763 is ALONE (no PPM or CD or CPD star near it).
+31) Warning: T 1884 763 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208757 at 269.7 arcsec.
-34) Warning: T 1884 765 is ALONE (no PPM or CD or CPD star near it).
+32) Warning: T 1884 765 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216414 at 198.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-35) Warning: T 1884 766 is ALONE (no PPM or CD or CPD star near it).
+33) Warning: T 1884 766 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 218800 at 212.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-36) Warning: T 1884 767 is ALONE (no PPM or CD or CPD star near it).
+34) Warning: T 1884 767 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 211318 at 173.5 arcsec.
-37) Warning: T 1884 769 is ALONE (no PPM or CD or CPD star near it).
+35) Warning: T 1884 769 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 209890 at 258.3 arcsec.
-38) Warning: T 1884 777 is ALONE (no PPM or CD or CPD star near it).
+36) Warning: T 1884 777 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208612 at 461.7 arcsec.
-39) Warning: T 1884 780 is ALONE (no PPM or CD or CPD star near it).
+37) Warning: T 1884 780 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 210140 at 330.3 arcsec.
-40) Warning: T 1884 790 is ALONE (no PPM or CD or CPD star near it).
+38) Warning: T 1884 790 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 215275 at 416.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-41) Warning: T 1884 791 is ALONE (no PPM or CD or CPD star near it).
+39) Warning: T 1884 791 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 215275 at 180.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-42) Warning: T 1884 792 is ALONE (no PPM or CD or CPD star near it).
+40) Warning: T 1884 792 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 215275 at 441.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-43) Warning: T 1884 796 is ALONE (no PPM or CD or CPD star near it).
+41) Warning: T 1884 796 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208530 at 585.3 arcsec.
-44) Warning: T 1884 809 is ALONE (no PPM or CD or CPD star near it).
+42) Warning: T 1884 809 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 215528 at 275.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-45) Warning: T 1884 813 is ALONE (no PPM or CD or CPD star near it).
+43) Warning: T 1884 813 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 218484 at 22.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-46) Warning: T 1884 819 is ALONE (no PPM or CD or CPD star near it).
+44) Warning: T 1884 819 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 214239 at 176.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-47) Warning: T 1884 824 is ALONE (no PPM or CD or CPD star near it).
+45) Warning: T 1884 824 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 212468 at 465.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-48) Warning: T 1884 833 is ALONE (no PPM or CD or CPD star near it).
+46) Warning: T 1884 833 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 208197 at 52.7 arcsec.
-49) Warning: T 1884 835 is ALONE (no PPM or CD or CPD star near it).
+47) Warning: T 1884 835 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 218518 at 577.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-50) Warning: T 1884 841 is ALONE (no PPM or CD or CPD star near it).
+48) Warning: T 1884 841 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216818 at 43.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-51) Warning: T 1884 846 is ALONE (no PPM or CD or CPD star near it).
+49) Warning: T 1884 846 is ALONE (no PPM or CD or CPD star near it).
   Possible cause: dim star.
   Note: Nearest PPM 216982 at 149.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-52) Warning: T 1884 920 is FAR from L 9352 (dist = 48.4 arcsec).
+50) Warning: T 1884 920 is FAR from L 9352 (dist = 48.4 arcsec).
 Stars from Thome 1884 identified with PPM = 658, CD = 701 and CPD = 749
 RSME of distance (arcsec) = 1.99  among a total of 658 stars
 RSME of visual magnitude = 0.43743  among a total of 541 stars
-Errors logged = 52
+Errors logged = 50
 
 ***************************************
 Perform comparison between Gilliss and PPM/CD/CPD...
