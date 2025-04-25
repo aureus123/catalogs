@@ -1,13 +1,16 @@
 # Cross identifications with Tycho-2 catalogue
 
-Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues. Designation are for DM (BD/SD/CD) and other old catalogues. In the case of PPM stars, DM designation are taken from their DM column. In north hemisphere, also BD stars (from -1 to +19) are used. In south hemisphere, also CD and CPD stars are used. In the case designations for GC (Catálogo General Argentino), OA (Oeltzen-Argelander catalogue), U (Yarnall-Frisby USNO),
+Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues. Designation are for DM (BD/SD/CD) and other old catalogues. In the case of PPM stars, DM designation are taken from their DM column. In north hemisphere, also BD stars (up to +19) are used. In south hemisphere, also CD and CPD stars are used. In the case designations for GC (Catálogo General Argentino), OA (Oeltzen-Argelander catalogue), U (Yarnall-Frisby USNO),
 ZC (Gould's Zone catalogue), G (Gilliss catalogue) or G2 (2do. Catálogo General Argentino) are present, they are used instead of CD/CPD.
+
+For north hemisphere, there are 212485 BD and 4456 U stars summarizing 216941 identifications.
+For south hemisphere, there are 34339 GC, 5213 ZC, 13352 OA, 1368 U, 9087 G, 2593 G2, 495904 CD, 6368 BD, 77214 SD and 79701 CPD stars summarizing 725139 identifications.
 
 ### Shortcomings of the current approach
 
 Since all identifications are performed just by angular distance thresholds, misidentifications might happen. On the other hand, some BD/SD stars are
 missing in the south hemisphere; the same happens for the other old
-catalogues GC/OA/U/ZC/G/G2, they are reported only if a PPM/CD star is
+catalogues GC/OA/U/ZC/G/G2, since they are reported only if a PPM/CD star is
 cross-matched with them. Files *cross_gc.cpp* and *cross_thome.cpp* do the
 cross-identifications between PPM/CD/CPD and GC/OA/U/ZC/G/G2.
 
@@ -48,6 +51,7 @@ Stars that you can see here:
 | Star (SIMBAD) | Old designation | Tycho-2 | Where to find it |
 | --- | --- | --- | --- |
 | k Hya | GC 19455 | 6740-785-1 | Resultados del Observatorio Nacional Argentino, [Vol XIV](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0014&type=SCREEN_THMB), pag. 377 |
+| HD 126088 | G2 3591 | 6740-8-1 | Resultados del Observatorio Nacional Argentino, [Vol XX](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0020&type=SCREEN_THMB), pag. 66 |
 | HD 125995 | U 6039 | 6740-263-1 | Catalogue of stars observed at the [United States Naval Observatory](https://archive.org/details/cataloguestarsus00unitrich/cataloguestarsus00unitrich/) during the years 1845 to 1877, pag. 153 |
 | HD 126349 | OA 13607 | 6740-108-1 | [Argelander's Zonen-Beobachtungen vom 15. bis 31.](https://babel.hathitrust.org/cgi/pt?id=uc1.$b524535&seq=278) Grade südlicher Declination, in mittleren Positionen für 1850.0, pag. 206 |
 | CD -27 9807 | CD -27°9807 | 6740-336-1 | Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB), pag. 323 |
