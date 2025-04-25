@@ -1,15 +1,15 @@
 # Cross identifications with Tycho-2 catalogue
 
-Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues. Designation are for DM (BD/SD/CD) and other old catalogues. In the case of PPM stars, DM designation are taken from their DM column. In north hemisphere, also BD stars (up to +19) are used. In south hemisphere, also CD and CPD stars are used. In the case designations for GC (Catálogo General Argentino), OA (Oeltzen-Argelander catalogue), U (Yarnall-Frisby USNO),
+Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues. Designation are for DM (BD/SD/CD) and other old catalogues. In the case of PPM stars, DM designation are taken from their DM column. In northern  hemisphere, also BD stars (up to +19) are used. In southern hemisphere, also CD and CPD stars are used. In the case designations for GC (Catálogo General Argentino), OA (Oeltzen-Argelander catalogue), U (Yarnall-Frisby USNO),
 ZC (Gould's Zone catalogue), G (Gilliss catalogue) or G2 (2do. Catálogo General Argentino) are present, they are used instead of CD/CPD.
 
-For north hemisphere, there are 212485 BD and 4456 U stars summarizing 216941 identifications.
-For south hemisphere, there are 34339 GC, 5213 ZC, 13352 OA, 1368 U, 9087 G, 2593 G2, 495904 CD, 6368 BD, 77214 SD and 79701 CPD stars summarizing 725139 identifications.
+For the northern hemisphere, there are 212485 BD and 4456 U stars summarizing 216941 identifications.
+For the southern hemisphere, there are 34339 GC, 5213 ZC, 13352 OA, 1368 U, 9087 G, 2593 G2, 495904 CD, 6368 BD, 77214 SD and 79701 CPD stars summarizing 725139 identifications.
 
 ### Shortcomings of the current approach
 
 Since all identifications are performed just by angular distance thresholds, misidentifications might happen. On the other hand, some BD/SD stars are
-missing in the south hemisphere; the same happens for the other old
+missing in the southern hemisphere; the same happens for the other old
 catalogues GC/OA/U/ZC/G/G2, since they are reported only if a PPM/CD star is
 cross-matched with them. Files *cross_gc.cpp* and *cross_thome.cpp* do the
 cross-identifications between PPM/CD/CPD and GC/OA/U/ZC/G/G2.
@@ -24,8 +24,8 @@ algorithm, see this [paper](https://doi.org/10.1016/j.endm.2018.07.005).
 Before executing *gen_tycho2*, download Tycho-2 catalog from VizieR (I/259) and concatenate data files into a single *cat/tyc2.txt* file. Do the same for both supplemental catalogs, into a single *cat/tyc2_suppl.txt* file.
 
 Files in this folder:
-- cross_tyc2_north.csv = Cross identifications of Tycho-2 stars (northern hemisfere)
-- cross_tyc2_south.csv = Cross identifications of Tycho-2 stars (southern hemisfere)
+- cross_tyc2_north.csv = Cross identifications of Tycho-2 stars (northern hemisphere)
+- cross_tyc2_south.csv = Cross identifications of Tycho-2 stars (southern hemisphere)
 - plotann.py = Modified Python script (part of Astrometry.net software) that replaces Tycho-2 stars by those generated in the CSV files
 
 In order to use plotann.py, replace it. Then, copy the CSV files here to the target folder where plotann.py will be used. Finally, use plotann with Tycho2 catalogue, e.g.
