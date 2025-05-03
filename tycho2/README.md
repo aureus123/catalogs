@@ -26,6 +26,8 @@ Before executing *gen_tycho2*, download Tycho-2 catalog from VizieR (I/259) and 
 Files in this folder:
 - cross_tyc2_north.csv = Cross identifications of Tycho-2 stars (northern hemisphere)
 - cross_tyc2_south.csv = Cross identifications of Tycho-2 stars (southern hemisphere)
+- cross_tyc2_south_*.csv = See next section
+- colored.sh = See next section
 - plotann.py = Modified Python script (part of Astrometry.net software) that replaces Tycho-2 stars by those generated in the CSV files
 
 In order to use plotann.py, replace it. Then, copy the CSV files here to the target folder where plotann.py will be used. Finally, use plotann with Tycho2 catalogue, e.g.
@@ -55,3 +57,18 @@ Stars that you can see here:
 | HD 125995 | U 6039 | 6740-263-1 | Catalogue of stars observed at the [United States Naval Observatory](https://archive.org/details/cataloguestarsus00unitrich/cataloguestarsus00unitrich/) during the years 1845 to 1877, pag. 153 |
 | HD 126349 | OA 13607 | 6740-108-1 | [Argelander's Zonen-Beobachtungen vom 15. bis 31.](https://babel.hathitrust.org/cgi/pt?id=uc1.$b524535&seq=278) Grade südlicher Declination, in mittleren Positionen für 1850.0, pag. 206 |
 | CD -27 9807 | CD -27°9807 | 6740-336-1 | Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB), pag. 323 |
+
+### Colored and double CD stars
+
+Based on extra data entered by hand (see folder *cd*), it is possible to flag those CD stars marked as color or double. Three additional identifications were performed:
+- cross_tyc2_south_plain.csv = Cross identifications between Tycho-2 and unflagged CD stars
+- cross_tyc2_south_color.csv = Cross identifications between Tycho-2 and single colored CD stars
+- cross_tyc2_south_dpl.csv = Cross identifications between Tycho-2 and double CD stars (regardless if they are colored or not)
+
+The script *colored.sh* uses *plotann.py* in a way these stars are highlighted with different colors according to their flags: green (unflagged), magenta (double) and red (color).
+Currently, only stars of the first volume of CD are considered (declinations -22 to -31) and flags are available only for declinations -22 to -24. The lists are in the folder *cd*.
+
+Example:
+![Alt text](NGC4993.png?raw=true "NGC4993")
+
+Here, it is shown that the star CD -22°9774 is colored (psi Hydrae). Also the star CD -22°9808 is double.

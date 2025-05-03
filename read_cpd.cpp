@@ -17,7 +17,7 @@
 #define MAX_NUM 12500
 
 static struct CPDstar_struct CPDstar[MAXCPDSTAR];
-static int CPDstars;
+static int CPDstars = 0;
 
 /* Mapa para acceder rápido según declinación y num:
    el índice devuelto es la estrella DM decl num, pero de haber
@@ -368,22 +368,27 @@ void readCPD(bool cross, bool catalog)
 void findCPDByCoordinates(double x, double y, double z, double decl, int *cpdIndexOutput, double *minDistanceOutput) {
     int cpdIndex = -1;
     double minDistance = *minDistanceOutput;
+    
+    if (CPDstars > 0) {
+        decl = fabs(decl);
 
-    decl = fabs(decl);
+        int firstDecl = (int) floor(decl - 0.2);
+        if (firstDecl < 18) firstDecl = 18;
+        int firstIndex = getCPDindex(firstDecl, 1);
+        int secondDecl = (int) ceil(decl + 0.2);
+        if (secondDecl < 19) secondDecl = 19;
+        int secondIndex = CPDstars;
+        if (secondDecl < 90) {
+            int lastIndex = getCPDindex(secondDecl, 1);
+            if (lastIndex != -1) secondIndex = lastIndex;
+        }
 
-    int firstDecl = (int) floor(decl - 0.2);
-    if (firstDecl < 18) firstDecl = 18;
-    int firstIndex = getCPDindex(firstDecl, 1);
-    int secondDecl = (int) ceil(decl + 0.2);
-    if (secondDecl < 19) secondDecl = 19;
-    int secondIndex = CPDstars;
-    if (secondDecl < 90) secondIndex = getCPDindex(secondDecl, 1);
-
-	for (int i = firstIndex; i < secondIndex; i++) {
-        double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
-        if (minDistance > dist) {
-        	cpdIndex = i;
-        	minDistance = dist;
+        for (int i = firstIndex; i < secondIndex; i++) {
+            double dist = 3600.0 * calcAngularDistance(x, y, z, CPDstar[i].x, CPDstar[i].y, CPDstar[i].z);
+            if (minDistance > dist) {
+                cpdIndex = i;
+                minDistance = dist;
+            }
         }
     }
     *cpdIndexOutput = cpdIndex;

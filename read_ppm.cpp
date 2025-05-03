@@ -31,7 +31,7 @@ extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, 
 //  double  *pphi;  /* Declination proper motion in Dec degrees/year: Input in sys1, returned in sys2 */
 
 static struct PPMstar_struct PPMstar[MAXPPMSTAR];
-static int PPMstars;
+static int PPMstars = 0;
 
 static int polarDistByIndex[181];
 
@@ -386,23 +386,25 @@ void sortPPM() {
 void findPPMByCoordinates(double x, double y, double z, double decl, int *ppmIndexOutput, double *minDistanceOutput) {
   int ppmIndex = -1;
   double minDistance = *minDistanceOutput;
+  
+  if (PPMstars > 0) {
+    decl += 90.0; // convertimos a distancia polar
 
-  decl += 90.0; // convertimos a distancia polar
+    int firstPolar = (int) floor(decl - 0.2);
+    if (firstPolar < 0) firstPolar = 0;
+    int firstIndex = polarDistByIndex[firstPolar];
+    int secondPolar = (int) ceil(decl + 0.2);
+    if (secondPolar > 180) secondPolar = 180;
+    int secondIndex = polarDistByIndex[secondPolar];
 
-  int firstPolar = (int) floor(decl - 0.2);
-  if (firstPolar < 0) firstPolar = 0;
-  int firstIndex = polarDistByIndex[firstPolar];
-  int secondPolar = (int) ceil(decl + 0.2);
-  if (secondPolar > 180) secondPolar = 180;
-  int secondIndex = polarDistByIndex[secondPolar];
+    //printf("Polar = %.2f (decl = %.2f), firstIndex = %d, secondIndex = %d\n", decl, decl-90.0, firstIndex, secondIndex);
 
-  //printf("Polar = %.2f (decl = %.2f), firstIndex = %d, secondIndex = %d\n", decl, decl-90.0, firstIndex, secondIndex);
-
-	for (int i = firstIndex; i < secondIndex; i++) {
-    double dist = 3600.0 * calcAngularDistance(x, y, z, PPMstar[i].x, PPMstar[i].y, PPMstar[i].z);
-    if (minDistance > dist) {
-    	ppmIndex = i;
-    	minDistance = dist;
+    for (int i = firstIndex; i < secondIndex; i++) {
+      double dist = 3600.0 * calcAngularDistance(x, y, z, PPMstar[i].x, PPMstar[i].y, PPMstar[i].z);
+      if (minDistance > dist) {
+        ppmIndex = i;
+        minDistance = dist;
+      }
     }
   }
   *ppmIndexOutput = ppmIndex;

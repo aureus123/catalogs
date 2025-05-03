@@ -14,7 +14,7 @@
 #define MAX_NUM 20000
 
 static struct DMstar_struct CDstar[MAXDMSTAR];
-static int CDstars;
+static int CDstars = 0;
 static int CDstarsTomo16, firstIndexTomo16;
 static int CDstarsTomo17, firstIndexTomo17;
 static int CDstarsTomo18, firstIndexTomo18;
@@ -288,22 +288,27 @@ void readDM(const char *filename)
 void findDMByCoordinates(double x, double y, double z, double decl, int *cdIndexOutput, double *minDistanceOutput) {
     int cdIndex = -1;
     double minDistance = *minDistanceOutput;
+    
+    if (CDstars > 0) {
+        decl = fabs(decl);
 
-    decl = fabs(decl);
+        int firstDecl = (int) floor(decl - 0.2);
+        if (firstDecl < 22) firstDecl = 22;
+        int firstIndex = getDMindex(true, firstDecl, 1);
+        int secondDecl = (int) ceil(decl + 0.2);
+        if (secondDecl < 23) secondDecl = 23;
+        int secondIndex = CDstars;
+        if (secondDecl < 90) {
+            int lastIndex = getDMindex(true, secondDecl, 1);
+            if (lastIndex != -1) secondIndex = lastIndex;
+        }
 
-    int firstDecl = (int) floor(decl - 0.2);
-    if (firstDecl < 22) firstDecl = 22;
-    int firstIndex = getDMindex(true, firstDecl, 1);
-    int secondDecl = (int) ceil(decl + 0.2);
-    if (secondDecl < 23) secondDecl = 23;
-    int secondIndex = CDstars;
-    if (secondDecl < 90) secondIndex = getDMindex(true, secondDecl, 1);
-
-	for (int i = firstIndex; i < secondIndex; i++) {
-        double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
-        if (minDistance > dist) {
-        	cdIndex = i;
-        	minDistance = dist;
+        for (int i = firstIndex; i < secondIndex; i++) {
+            double dist = 3600.0 * calcAngularDistance(x, y, z, CDstar[i].x, CDstar[i].y, CDstar[i].z);
+            if (minDistance > dist) {
+                cdIndex = i;
+                minDistance = dist;
+            }
         }
     }
     *cdIndexOutput = cdIndex;

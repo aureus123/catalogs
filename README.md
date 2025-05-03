@@ -74,6 +74,7 @@ instead of direct cross-identification from PPM source:
 - Use cross-identification algorithm based on a matching that maximizes likelihood (see bibliography) instead of simple angular distance thresholds.
 - Write a list of all double stars from footnotes of Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB) (only declinations -22, -23 and -24 were transcripted at the moment) and perform a cross-identification of that CD volume with a modern catalog.
 - Correct typo error of all CD catalog.
+- Usually, the supplementary letter of BD/SD/CD designations is ignored. Revise it.
 - Refactor code! Consider Jupyter Lab and AstroPy instead of C++ code.
 
 ### Bibliography

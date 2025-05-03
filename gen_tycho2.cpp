@@ -9,6 +9,11 @@
  * no están BD/SD por lo que sólo se mencionan estos catálogos a través de la
  * identificación cruzada con PPM). Por otra parte, se utilizan las identificaciones
  * del Catálogo General Argentino (GC), Oeltzen-Argelander (OA) y las de Gilliss (G).
+ * 
+ * También hay una versión alternativa para el hemisferio Sur (sólo declinaciones -22
+ * a -31) donde se generan tres archivos CSV, el primero con las estrellas de CD simples,
+ * el segundo con las CD dobles y el tercero con las de color. 
+ * 
  * Made in 2024 by Daniel E. Severin
  */
 
@@ -38,8 +43,10 @@ extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, 
 #define DIST_DM_TYC 60.0
 #define DIST_UN_TYC 15.0
 
-// Nombres alternativos para BD/CD y CPD
+// Nombres alternativos para BD/CD y CPD, también atributos de CD
 char dmStringDM[MAXDMSTAR][STRING_SIZE];
+bool dmIsColor[MAXDMSTAR];
+bool dmIsDouble[MAXDMSTAR];
 char dmStringCPD[MAXCPDSTAR][STRING_SIZE];
 
 // Datos para estrellas no identificadas
@@ -208,23 +215,72 @@ int main(int argc, char** argv) {
     char cell[256];
 
     /* leemos catalogo BD/CD */
+#ifdef ALTERNATIVE
+    readDM("cat/cd_vol1_curated.txt");
+#else    
     readDM(isCD() ? "cat/cd_curated.txt" : "cat/bd_curated.txt");
+#endif
     struct DMstar_struct *DMstar = getDMStruct();
     int DMstars = getDMStars();
     bool is_north = !isCD();
 
     /* generamos identificadores de DM */
     for (int i = 0; i < DMstars; i++) {
-        snprintf(dmStringDM[i], STRING_SIZE, "%cD %c%d°%d",
-                isCD() ? 'C' : 'B',
+#ifdef ALTERNATIVE
+        const char *dmCat = "";
+#else       
+        const char *dmCat = isCD() ? "CD " : "BD ";
+#endif
+        snprintf(dmStringDM[i], STRING_SIZE, "%s%c%d°%d",
+                dmCat,
                 DMstar[i].signRef ? '-' : '+',
                 abs(DMstar[i].declRef),
                 DMstar[i].numRef);
+        dmIsColor[i] = false;
+        dmIsDouble[i] = false;
     }
 
-    /* leemos catalogo CPD (en caso de ubicarnos en el Sur) */
     struct CPDstar_struct *CPDstar = nullptr;
     int CPDstars = 0;
+    struct PPMstar_struct *PPMstar = nullptr;
+    int PPMstars = 0;
+#ifdef ALTERNATIVE
+    /* leemos atributos de color y dobles */
+    for (int decl = 22; decl <= 24; decl++) {
+        int cdRef;
+        // Color
+        snprintf(buffer, 1024, "cd/color_%d.txt", decl);
+        FILE *stream = fopen(buffer, "rt");
+        if (stream == NULL) {
+            snprintf(buffer, 1024, "Cannot read %s", buffer);
+            perror(buffer);
+            exit(1);
+        }
+        while (fgets(buffer, 1023, stream) != NULL) {
+            sscanf(buffer, "%d\n", &cdRef);
+            if (cdRef == 0) continue;
+            int index = getDMindex(true, decl, cdRef);
+            dmIsColor[index] = true;
+        }
+        fclose(stream);
+        // Dobles
+        snprintf(buffer, 1024, "cd/dpl_%d.txt", decl);
+        stream = fopen(buffer, "rt");
+        if (stream == NULL) {
+            snprintf(buffer, 1024, "Cannot read %s", buffer);
+            perror(buffer);
+            exit(1);
+        }
+        while (fgets(buffer, 1023, stream) != NULL) {
+            sscanf(buffer, "%d\n", &cdRef);
+            if (cdRef == 0) continue;
+            int index = getDMindex(true, decl, cdRef);
+            dmIsDouble[index] = true;
+        }
+        fclose(stream);
+    }
+#else
+    /* leemos catalogo CPD (en caso de ubicarnos en el Sur) */
     if (!is_north) {
         readCPD(false, false);
         CPDstar = getCPDStruct();
@@ -241,8 +297,8 @@ int main(int argc, char** argv) {
     /* leemos catalogo PPM (2000 en B1950) */
     readPPM(false, true, false, false, 2000.0);
     sortPPM();
-    struct PPMstar_struct *PPMstar = getPPMStruct();
-    int PPMstars = getPPMStars();
+    PPMstar = getPPMStruct();
+    PPMstars = getPPMStars();
 
     if (isCD()) {
         /* leemos identificaciones cruzadas y renombramos designaciones.
@@ -286,6 +342,8 @@ int main(int argc, char** argv) {
             "", nullptr, 0);
         readUnidentifiedFile("results/usno_unidentified.csv");
     }
+#endif
+
 
     FILE *stream = fopen("cat/tyc2.txt", "rt");
     if (stream == NULL) {
@@ -299,8 +357,14 @@ int main(int argc, char** argv) {
         exit(1);
     }
 
+#ifdef ALTERNATIVE
+    FILE *crossStream = openCrossFile("tycho2/cross_tyc2_south_plain.csv");
+    FILE *crossStreamColor = openCrossFile("tycho2/cross_tyc2_south_color.csv");
+    FILE *crossStreamDpl = openCrossFile("tycho2/cross_tyc2_south_dpl.csv");
+#else
     snprintf(buffer, 1024, "tycho2/cross_tyc2_%s.csv", is_north ? "north" : "south");
     FILE *crossStream = openCrossFile(buffer);
+#endif
 
     int TYCstarsPPM = 0;
     int TYCstarsDM = 0;
@@ -309,11 +373,13 @@ int main(int argc, char** argv) {
     int TYCunidentified = 0;
     int entry = 0;
 
+    printf("Starting with TYC supplementary catalog...\n");
     bool readSupplement = true;
     for (;;) {
         if (readSupplement) {
             /* lee del catálogo suplemento hasta consumirlo */
             if (fgets(buffer, 1023, stream2) == NULL) {
+                printf("Now reading main TYC catalog...\n");
                 readSupplement = false;
                 continue;
             }
@@ -422,13 +488,25 @@ int main(int argc, char** argv) {
         sph2rec(RAtarget, Decltarget, &x, &y, &z);
 
         /* halla la DM más cercana, dentro de 60 arcsec */
-        if (is_north || Decltarget <= -22.0) {
+        if (is_north || (Decltarget <= -22.0
+#ifdef ALTERNATIVE
+            && Decltarget > -32.0
+#endif
+        )) {
             int dmIndex = -1;
             minDistance = HUGE_NUMBER;
             findDMByCoordinates(x, y, z, Decltarget, &dmIndex, &minDistance);
             if (dmIndex != -1 && minDistance < DIST_DM_TYC) {
                 /* se almacena la identificación cruzada con la DM */
-                writeCrossEntry(crossStream, tycString, dmStringDM[dmIndex], minDistance);
+                FILE *chosenStream = crossStream;
+#ifdef ALTERNATIVE
+                if (dmIsDouble[dmIndex]) {
+                    chosenStream = crossStreamDpl;
+                } else if (dmIsColor[dmIndex]) {
+                    chosenStream = crossStreamColor;
+                }
+#endif
+                writeCrossEntry(chosenStream, tycString, dmStringDM[dmIndex], minDistance);
                 TYCstarsDM++;
                 continue;
             }
@@ -476,6 +554,10 @@ int main(int argc, char** argv) {
     printf("Stars read and identified of Tycho-2 from other catalogues: %d\n", TYCstarsOther);
     printf("Stars read and remain unidentified of Tycho-2: %d\n", TYCunidentified);
     fclose(crossStream);
+#ifdef ALTERNATIVE
+    fclose(crossStreamColor);
+    fclose(crossStreamDpl);
+#endif
     fclose(stream2);
     fclose(stream);
 

@@ -6,7 +6,7 @@ CC = g++
 CCOPT = -Wall
 CCLNFLAGS = -L wcstools-3.9.7/libwcs/ -lwcs
 
-all: compare_ppm compare_agk compare_cpd compare_ppm_bd cross_thome cross_gc compare_sd compare_cd gen_tycho2_north gen_tycho2_south mag_cd mag_bd transform
+all: compare_ppm compare_agk compare_cpd compare_ppm_bd cross_thome cross_gc compare_sd compare_cd gen_tycho2_north gen_tycho2_south gen_tycho2_south_alt mag_cd mag_bd transform
 
 transform: transform.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
@@ -26,8 +26,14 @@ gen_tycho2_north: gen_tycho2.o read_bd.o read_ppm.o read_cpd.o trig.o misc.o
 gen_tycho2_south: gen_tycho2.o read_cd.o read_ppm.o read_cpd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
+gen_tycho2_south_alt: gen_tycho2_alt.o read_cd.o read_ppm.o read_cpd.o trig.o misc.o
+	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
+
 gen_tycho2.o: gen_tycho2.cpp
 	$(CC) $(CCFLAGS) -c $<
+
+gen_tycho2_alt.o: gen_tycho2.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@ -D ALTERNATIVE
 
 compare_agk: compare_agk.o read_cd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
@@ -76,18 +82,6 @@ compare_ppm_bd: compare_ppm_bd.o read_bd.o read_ppm.o trig.o misc.o
 
 compare_ppm_bd.o: compare_ppm_bd.cpp
 	$(CC) $(CCFLAGS) -c $<
-
-# find_coord: find_coord.o read_cd.o read_ppm.o read_old.o trig.o misc.o
-#	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
-
-# find_coord.o: find_coord.cpp
-#	$(CC) $(CCFLAGS) -c $< -D TRANSFORM=false
-
-# find_coord2000: find_coord2000.o read_cd.o read_ppm.o read_old.o trig.o misc.o
-#	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
-
-# find_coord2000.o: find_coord.cpp
-#	$(CC) $(CCFLAGS) -c $< -o $@ -D TRANSFORM=true
 
 read_cd.o: read_cd.cpp
 	$(CC) $(CCFLAGS) -c $<

@@ -14,7 +14,7 @@
 #define MAX_NUM 7000
 
 static struct DMstar_struct BDstar[MAXDMSTAR];
-static int BDstars;
+static int BDstars = 0;
 static int reindexByIndex[MAXDMSTAR];
 
 /* Mapa para acceder rápido según signo, declinación y num:
