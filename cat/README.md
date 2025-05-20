@@ -25,6 +25,7 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 ### Other catalogs
 
 - ppm : Positions and Proper Motions from _VizieR_ (merge of I/146, I/193, I/206 and I/208)
+- ua : Uranometría Argentina from _VizieR_ (code V/135A)
 - bd : Bonner Durchmusterung from _VizieR_ (code I/122)
 - bd_curated †: Same as "bd" but after correcting typo error
 - sd : Bonner (southern) durchmusterung from _VizieR_ (code I/119)
@@ -70,6 +71,7 @@ Some catalogs in this folder were sanitized but their original version was store
 
 - 4005 : 51 registers
 - 4011 : 76 registers
+- ua : 5 registers
 - gc : 3 registers
 - gilliss : 14 registers
 - yarnall : 2 registers

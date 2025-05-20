@@ -173,3 +173,27 @@ void logCauses(char *name, FILE *stream, double x, double y, double z,
         fprintf(stream, "%s,%.12f,%.12f,%.12f\n", name, x, y, z);
     }
 }
+
+/*
+ * copy - Copia sin espacios
+ */
+void copyWithoutSpaces(char *dest, char *src) {
+	bool previousIsSpace = true;
+	int srcPtr = 0;
+	int destPtr = 0;
+	while (src[srcPtr] != 0) {
+		if (src[srcPtr] != ' ') {
+			dest[destPtr++] = src[srcPtr];
+			previousIsSpace = false;
+		} else {
+			if (!previousIsSpace) {
+				// omit further consecutive spaces
+				previousIsSpace = true;
+				dest[destPtr++] = src[srcPtr];
+			}
+		}
+		srcPtr++;
+	}
+	dest[destPtr] = 0;
+}
+

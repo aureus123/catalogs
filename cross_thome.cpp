@@ -23,6 +23,7 @@
 #define EPOCH_OA 1850.0
 #define EPOCH_ST 1880.0
 #define EPOCH_USNO 1860.0
+#define EPOCH_UA 1875.0
 #define EPOCH_GILLISS 1850.0
 #define MAX_DIST_OA_PPM 45.0
 #define MAX_DIST_OA_CPD 45.0
@@ -991,6 +992,240 @@ void readUSNO() {
 }
 
 /*
+ * readUA - lee y cruza Uranometria Argentina
+ * (ya se deben haber leidos los catalogs CD, CPD, Weiss, Stone y Yarnall)
+ * tambien revisa referencias cruzadas; no tiene en cuenta magnitudes
+ */
+void readUA() {
+    char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+
+    /* usamos catalogs CD y CPD */
+    struct DMstar_struct *CDstar = getDMStruct();
+    struct CPDstar_struct *CPDstar = getCPDStruct();
+
+    printf("\n***************************************\n");
+    printf("Perform comparison between UA and PPM/CD/CPD...\n");
+
+	FILE *crossCDStream = openCrossFile("results/cross_ua_cd.csv");
+	FILE *crossCPDStream = openCrossFile("results/cross_ua_cpd.csv");
+	FILE *crossPPMStream = openCrossFile("results/cross_ua_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/ua_unidentified.csv");
+
+    int countDist = 0;
+    double akkuDistError = 0.0;
+    int countCD = 0;
+    int countCPD = 0;
+    int errors = 0;
+    int countUA = 0;
+
+    /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
+    readPPM(false, true, false, false, EPOCH_UA);
+    sortPPM();
+	struct PPMstar_struct *PPMstar = getPPMStruct();
+    int PPMstars = getPPMStars();
+
+    /* leemos catalogo UA */
+    FILE *stream = fopen("cat/ua.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read ua.txt");
+		exit(1);
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+		readFieldSanitized(buffer, cell, 1, 1);
+        if (cell[0] != 'G') continue;
+
+		/* lee ascension recta B1875.0 */
+		readFieldSanitized(buffer, cell, 100, 2);
+		int RAh = atoi(cell);
+        double RA = (double) RAh;
+		readFieldSanitized(buffer, cell, 103, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readFieldSanitized(buffer, cell, 106, 2);
+		int RAs = atoi(cell);
+        RA += ((double) RAs)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1875.0 */
+		readFieldSanitized(buffer, cell, 111, 2);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readFieldSanitized(buffer, cell, 114, 4);
+		double Declm = atof(cell);
+        Decl += Declm/60.0;
+		readField(buffer, cell, 110, 1);
+		if (cell[0] == '-') Decl = -Decl;
+
+		/* lee numeración de Gould y constelación */
+		readField(buffer, cell, 3, 3);
+		int gouldRef = atoi(cell);
+        char cstRef[4];
+		readField(buffer, cell, 7, 3);
+        copyWithoutSpaces(cstRef, cell);
+
+        /* si está disponible Bayer, usa esa designacion */
+        readField(buffer, cell, 15, 8);
+        if (cell[0] != ' ') {
+            char bayerRef[9];
+            copyWithoutSpaces(bayerRef, cell);
+            snprintf(catName, 20, "%s%s", bayerRef, cstRef);
+        } else {
+            /* si está disponible Flamsteed, la usa */
+            readField(buffer, cell, 11, 3);
+            if (cell[2] != ' ') {
+                int fRef = atoi(cell);
+                snprintf(catName, 20, "%d %s", fRef, cstRef);
+            } else {
+                /* caso contrario, usa la denominación de Gould */
+                snprintf(catName, 20, "%dG %s", gouldRef, cstRef);
+            }
+        }
+
+        bool ppmFound = false;
+		int ppmIndex = -1;
+		double minDistance = HUGE_NUMBER;
+		/* busca la PPM mas cercana y genera el cruzamiento */
+		double x, y, z;
+		sph2rec(RA, Decl, &x, &y, &z);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
+        double nearestPPMDistance = minDistance;
+		if (minDistance < MAX_DIST_PPM) {
+            akkuDistError += minDistance * minDistance;
+            countDist++;
+            ppmFound = true;
+
+			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+		}
+
+        bool cpdFound = false;
+        /* busca la CPD mas cercana y genera el cruzamiento */
+        if (Decl <= -18.0) {
+            int cpdIndex = -1;
+            minDistance = HUGE_NUMBER;
+            findCPDByCoordinates(x, y, z, Decl, &cpdIndex, &minDistance);
+			if (minDistance < MAX_DIST_USNO_CPD) {
+                countCPD++;
+                cpdFound = true;
+
+			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
+			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+            }
+        }
+		
+        bool cdFound = false;
+		/* busca la CD mas cercana y genera el cruzamiento */
+		if (Decl <= -22.0) {
+            int cdIndex = -1;
+            minDistance = HUGE_NUMBER;
+            findDMByCoordinates(x, y, z, Decl, &cdIndex, &minDistance);
+			if (minDistance < MAX_DIST_CD) {
+                countCD++;
+                cdFound = true;
+
+			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
+			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+            }
+		}
+
+        /* lee referencia a catalogo */
+        char desigRefCat[4];
+		readField(buffer, desigRefCat, 82, 3);
+
+        if (!strncmp(desigRefCat, "L.", 2) && desigRefCat[2] != '(') {
+            readField(buffer, cell, 84, 4);
+            char numStr[5];
+            sscanf(cell, "%4[^, ]", numStr);
+            int numRefCat = atoi(numStr);
+            for (int i = 0; i < countLac; i++) {
+                if (lacRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: %dG %s is FAR from L %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        gouldRef,
+                        cstRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
+        if (!strncmp(desigRefCat, "OA.", 3)) {
+            readField(buffer, cell, 85, 5);
+            char numStr[6];
+            sscanf(cell, "%5[^, ]", numStr);
+            int numRefCat = atoi(numStr);
+            for (int i = 0; i < countOA; i++) {
+                if (oaRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: %dG %s is FAR from OA %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        gouldRef,
+                        cstRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
+        if (!strncmp(desigRefCat, "Y.", 2)) {
+            readField(buffer, cell, 84, 5);
+            char numStr[6];
+            sscanf(cell, "%5[^, ]", numStr);
+            int numRefCat = atoi(numStr);
+            /* Here, it is different from other cross-identifications.
+             * Difference between catalogs Yarnall (USNO 2nd Edition) and Yarnall-Frisby
+             * (USNO 3rd Edition) are in enumeration, which is similar but not equal. */
+            minDistance = HUGE_NUMBER;
+            int usnoIndex = -1;
+            for (int i = 0; i < countUsno; i++) {
+                double dist = 3600.0 * calcAngularDistance(x, y, z, usnoX[i], usnoY[i], usnoZ[i]);
+                if (minDistance > dist) {
+                    usnoIndex = i;
+                    minDistance = dist;
+                }
+            }
+            if (minDistance > MAX_DIST_CROSS) {
+                printf("%d) Warning: %dG %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
+                    ++errors,
+                    gouldRef,
+                    cstRef,
+                    numRefCat,
+                    usnoRef[usnoIndex],
+                    minDistance);
+            }
+        }
+        
+
+        if (!ppmFound && !cdFound && !cpdFound) {
+            printf("%d) Warning: %dG %s is ALONE (no PPM or CD or CPD star near it).\n",
+                ++errors,
+                gouldRef,
+                cstRef);
+            readField(buffer, cell, 132, 3);
+            bool cumulus = !strncmp(cell, "cum", 3);
+            bool nebula = !strncmp(cell, "neb", 3);
+            logCauses(catName, unidentifiedStream, x, y, z,
+                cumulus, nebula, 1.0, RAs, Decl, 1, ppmIndex, nearestPPMDistance);
+        }
+        countUA++;
+    }
+    fclose(unidentifiedStream);
+	fclose(crossPPMStream);
+	fclose(crossCPDStream);
+	fclose(crossCDStream);
+
+    printf("Available UA stars = %d\n", countUA);
+    printf("Stars from UA identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
+    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
+        sqrt(akkuDistError / (double)countDist),
+        countDist);
+    printf("Errors logged = %d\n", errors);
+}
+
+/*
  * readThome - lee y cruza catalogo de los Resultados 15
  * (ya se deben haber leidos los catalogs CD, CPD, GC, Yarnall y Stone)
  * tambien revisa referencias cruzadas a GC, OA, Yarnall, Lacaille y Stone
@@ -1223,7 +1458,7 @@ void readThome(double epoch, const char *filename, int correction) {
                 }
             }
             if (minDistance > MAX_DIST_CROSS) {
-                printf("%d) Warning: T %.0f %d is FAR from U %d / Y %d (dist = %.1f arcsec).\n",
+                printf("%d) Warning: T %.0f %d is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
                     ++errors,
                     epoch,
                     numRef,
@@ -1524,6 +1759,9 @@ int main(int argc, char** argv)
 
     /* leemos, cruzamos y revisamos identificaciones de Yarnall */
     readUSNO();
+
+    /* leemos, cruzamos y revisamos Uranometria Argentina */
+    readUA();
 
     /* leemos catalogo GC */
 	readGC();

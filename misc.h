@@ -17,3 +17,4 @@ void logCauses(char *name, FILE *stream, double x, double y, double z,
     bool cumulus, bool nebula, double vmag,
     int RAs, double Decl, int Decls,
     int ppmRef, double nearestPPMDistance);
+void copyWithoutSpaces(char *dest, char *src);
