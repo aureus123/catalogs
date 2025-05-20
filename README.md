@@ -51,13 +51,14 @@ by assuming that the PPM star, corrected by proper motion, has the real coordina
 in the target epoch (19th. century). Below is a table with a row per catalog:
 2nd. column is the epoch of the target catalog, 3rd. column is the number of
 stars cross-identified between PPM and the target catalog, and 4th. column reports the accuracy in arcseconds. A dagger (†) is used when the identifications arise from small angular distances
-instead of direct cross-identification from PPM source:
+(below a given threshold) instead of direct cross-identification from PPM source:
 
 | Catalog | Epoch | Stars | RSME |
 | --- | --- | --- | --- |
 | Bonner Durchmusterung (BD, 1st. vol) | 1855 | 63034 | 35.99 |
 | Cordoba Durchmusterung (CD) | 1875 | 172068 | 20.48 |
 | Cordoba Durchmusterung (CD, 1st. vol) | 1875 | 40832 | 24.00 |
+| Uranometría Argentina † | 1875 | 7605 | 5.45 |
 | Catálogo General Argentino (GC) † | 1875 | 31706 | 1.96 |
 | Segundo Cat. General Argentino † | 1900 | 5357 | 2.84 |
 | Weiss † | 1850 | 18010 | 4.66 |
