@@ -2191,467 +2191,320 @@ Errors logged = 379
 ***************************************
 Perform comparison between UA and PPM/CD/CPD...
 Stars read from PPM: 468861
-1) Warning: 9G Ant is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-2) Warning: 76G Aqr is ALONE (no PPM or CD or CPD star near it).
+1) Warning: 76G Aqr is ALONE (no PPM or CD or CPD star near it).
   Possible cause: nebula.
   Note: Nearest PPM 287804 at 271.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-3) Warning: 109G Aqr is ALONE (no PPM or CD or CPD star near it).
+2) Warning: 109G Aqr is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 299337 at 22.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-4) Warning: 146G Aqr is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-5) Warning: 151G Aqr is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-6) Warning: 158G Aqr is ALONE (no PPM or CD or CPD star near it).
+3) Warning: 158G Aqr is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 263447 at 26.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-7) Warning: 177G Aqr is ALONE (no PPM or CD or CPD star near it).
+4) Warning: 177G Aqr is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 242618 at 483.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-8) Warning: 263G Aqr is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-9) Warning: 15G Aql is ALONE (no PPM or CD or CPD star near it).
+5) Warning: 15G Aql is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 276142 at 20.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-10) Warning: 17G Aql is ALONE (no PPM or CD or CPD star near it).
+6) Warning: 17G Aql is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 253466 at 488.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-11) Warning: 70G Ara is FAR from L 7356 (dist = 62.2 arcsec).
-12) Warning: 7G Cnc is ALONE (no PPM or CD or CPD star near it).
+7) Warning: 70G Ara is FAR from L 7356 (dist = 62.2 arcsec).
+8) Warning: 7G Cnc is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 320638 at 113.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-13) Warning: 15G Cnc is ALONE (no PPM or CD or CPD star near it).
+9) Warning: 15G Cnc is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 320674 at 24.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-14) Warning: 73G CMa is ALONE (no PPM or CD or CPD star near it).
+10) Warning: 73G CMa is ALONE (no PPM or CD or CPD star near it).
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: Nearest PPM 199624 at 235.3 arcsec.
-15) Warning: 118G CMa is ALONE (no PPM or CD or CPD star near it).
+11) Warning: 118G CMa is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 240185 at 119.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-16) Warning: 72G Cap is FAR from L 8690 (dist = 285.5 arcsec).
-17) Warning: 44G Car is FAR from L 2829 (dist = 58.8 arcsec).
-18) Warning: 120G Car is ALONE (no PPM or CD or CPD star near it).
+12) Warning: 72G Cap is FAR from L 8690 (dist = 285.5 arcsec).
+13) Warning: 44G Car is FAR from L 2829 (dist = 58.8 arcsec).
+14) Warning: 120G Car is ALONE (no PPM or CD or CPD star near it).
   Possible cause: nebula.
   Note: Nearest PPM 30313 at 189.2 arcsec.
   Note: poor CD coverage for stars above 61°.
-19) Warning: 140G Car is FAR from L 3907 (dist = 3601.1 arcsec).
-20) Warning: 140G Car is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 34034 at 318.6 arcsec.
-  Note: poor CD coverage for stars above 61°.
-21) Warning: 150G Car is FAR from L 3986 (dist = 11062.4 arcsec).
-22) Warning: 155G Car is FAR from L 4040 (dist = 57.9 arcsec).
-23) Warning: 21G Cen is FAR from L 4685 (dist = 1022.6 arcsec).
-24) Warning: 21G Cen is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 109253 at 351.5 arcsec.
-25) Warning: 47G Cen is FAR from L 4809 (dist = 109.7 arcsec).
-26) Warning: 69G Cen is FAR from L 4903 (dist = 60.7 arcsec).
-27) Warning: 89G Cen is FAR from L 4993 (dist = 791.8 arcsec).
-28) Warning: 125G Cen is FAR from L 5200 (dist = 540.5 arcsec).
-29) Warning: 125G Cen is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 108983 at 309.3 arcsec.
-30) Warning: 176G Cen is FAR from L 5400 (dist = 123.7 arcsec).
-31) Warning: 219G Cen is FAR from L 5533 (dist = 129.7 arcsec).
-32) Warning: 219G Cen is ALONE (no PPM or CD or CPD star near it).
+15) Warning: 155G Car is FAR from L 4040 (dist = 57.9 arcsec).
+16) Warning: 47G Cen is FAR from L 4809 (dist = 109.7 arcsec).
+17) Warning: 69G Cen is FAR from L 4903 (dist = 60.7 arcsec).
+18) Warning: 89G Cen is FAR from L 4993 (dist = 791.8 arcsec).
+19) Warning: 176G Cen is FAR from L 5400 (dist = 123.7 arcsec).
+20) Warning: 219G Cen is FAR from L 5533 (dist = 129.7 arcsec).
+21) Warning: 219G Cen is ALONE (no PPM or CD or CPD star near it).
   Possible cause: cumulus.
   Note: Nearest PPM 84386 at 529.0 arcsec.
-33) Warning: 281G Cen is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-34) Warning: 338G Cen is FAR from L 5895 (dist = 55.6 arcsec).
-35) Warning: 364G Cen is FAR from L 6017 (dist = 406957.5 arcsec).
-36) Warning: 364G Cen is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-37) Warning: 24G Cet is ALONE (no PPM or CD or CPD star near it).
+22) Warning: 338G Cen is FAR from L 5895 (dist = 55.6 arcsec).
+23) Warning: 24G Cet is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 225159 at 21.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-38) Warning: 30G Cet is ALONE (no PPM or CD or CPD star near it).
+24) Warning: 30G Cet is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 231720 at 26.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-39) Warning: 32G Cet is ALONE (no PPM or CD or CPD star near it).
+25) Warning: 32G Cet is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 256170 at 27.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-40) Warning: 85G Cet is ALONE (no PPM or CD or CPD star near it).
+26) Warning: 85G Cet is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 269545 at 26.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-41) Warning: 142G Cet is ALONE (no PPM or CD or CPD star near it).
+27) Warning: 142G Cet is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 274560 at 116.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-42) Warning: 189G Cet is ALONE (no PPM or CD or CPD star near it).
+28) Warning: 189G Cet is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 297676 at 23.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-43) Warning: 249G Cet is ALONE (no PPM or CD or CPD star near it).
+29) Warning: 249G Cet is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 324570 at 24.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-44) Warning: 284G Cet is ALONE (no PPM or CD or CPD star near it).
+30) Warning: 284G Cet is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 239882 at 20.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-45) Warning: 292G Cet is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-46) Warning: 2G Cha is FAR from L 3107 (dist = 926.3 arcsec).
-47) Warning: 2G Cha is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 5935 at 417.2 arcsec.
-  Note: poor CD coverage for stars above 61°.
-48) Warning: 9G Cha is FAR from L 3644 (dist = 59.2 arcsec).
-49) Warning: 26G Cir is FAR from L 6095 (dist = 66.2 arcsec).
-50) Warning: 17G CrA is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-51) Warning: 32G CrA is FAR from L 7914 (dist = 3233.9 arcsec).
-52) Warning: 32G CrA is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 93913 at 543.0 arcsec.
-53) Warning: 37G CrA is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-54) Warning: 42G CrA is FAR from L 7990 (dist = 1214.2 arcsec).
-55) Warning: 10G Crv is ALONE (no PPM or CD or CPD star near it).
+31) Warning: 9G Cha is FAR from L 3644 (dist = 59.2 arcsec).
+32) Warning: 26G Cir is FAR from L 6095 (dist = 66.2 arcsec).
+33) Warning: 42G CrA is FAR from L 7990 (dist = 1214.2 arcsec).
+34) Warning: 10G Crv is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 245677 at 26.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-56) Warning: 31G Crv is ALONE (no PPM or CD or CPD star near it).
+35) Warning: 31G Crv is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 225139 at 32.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-57) Warning: 39G Crv is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 244641 at 76.4 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-58) Warning: 44G Crv is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-59) Warning: 27G Cru is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-60) Warning: 39G Cru is FAR from L 5241 (dist = 57.6 arcsec).
-61) Warning: 49G Cru is FAR from L 5306 (dist = 37.1 arcsec).
-62) Warning: 54G Cru is FAR from L 5321 (dist = 10796.2 arcsec).
-63) Warning: 54G Cru is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 44322 at 534.6 arcsec.
-64) Warning: 17G Dor is FAR from L 1687 (dist = 119.0 arcsec).
-65) Warning: 17G Dor is ALONE (no PPM or CD or CPD star near it).
+36) Warning: 39G Cru is FAR from L 5241 (dist = 57.6 arcsec).
+37) Warning: 49G Cru is FAR from L 5306 (dist = 37.1 arcsec).
+38) Warning: 17G Dor is FAR from L 1687 (dist = 119.0 arcsec).
+39) Warning: 17G Dor is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 21398 at 91.0 arcsec.
   Note: poor CD coverage for stars above 61°.
-66) Warning: 22G Equ is ALONE (no PPM or CD or CPD star near it).
+40) Warning: 22G Equ is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 320572 at 25.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-67) Warning: 32G Eri is ALONE (no PPM or CD or CPD star near it).
+41) Warning: 32G Eri is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 235828 at 66.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-68) Warning: 49G Eri is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-69) Warning: 92G Eri is FAR from L 1117 (dist = 33.7 arcsec).
-70) Warning: 136G Eri is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-71) Warning: 189G Eri is ALONE (no PPM or CD or CPD star near it).
+42) Warning: 92G Eri is FAR from L 1117 (dist = 33.7 arcsec).
+43) Warning: 189G Eri is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 214446 at 23.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-72) Warning: 246G Eri is FAR from L 1517 (dist = 36.8 arcsec).
-73) Warning: 16G For is FAR from L 638 (dist = 56.8 arcsec).
-74) Warning: 71G Gru is FAR from L 9295 (dist = 91.4 arcsec).
-75) Warning: 24G Hor is FAR from L 930 (dist = 96.6 arcsec).
-76) Warning: 38G Hya is ALONE (no PPM or CD or CPD star near it).
+44) Warning: 246G Eri is FAR from L 1517 (dist = 36.8 arcsec).
+45) Warning: 16G For is FAR from L 638 (dist = 56.8 arcsec).
+46) Warning: 71G Gru is FAR from L 9295 (dist = 91.4 arcsec).
+47) Warning: 24G Hor is FAR from L 930 (dist = 96.6 arcsec).
+48) Warning: 38G Hya is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 266686 at 20.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-77) Warning: 152G Hya is ALONE (no PPM or CD or CPD star near it).
+49) Warning: 152G Hya is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 290493 at 143.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-78) Warning: 159G Hya is ALONE (no PPM or CD or CPD star near it).
+50) Warning: 159G Hya is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 265527 at 21.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-79) Warning: 285G Hya is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-80) Warning: 312G Hya is FAR from L 5015 (dist = 1103.6 arcsec).
-81) Warning: 383G Hya is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-82) Warning: 20G Hyi is FAR from L 584 (dist = 7900.3 arcsec).
-83) Warning: 59G Hyi is FAR from L 1139 (dist = 178.2 arcsec).
-84) Warning: 59G Hyi is ALONE (no PPM or CD or CPD star near it).
-  Note: Nearest PPM 18550 at 178.7 arcsec.
-  Note: poor CD coverage for stars above 61°.
-85) Warning: 5G Ind is FAR from L 8567 (dist = 275.3 arcsec).
-86) Warning: 6G Ind is FAR from L 8548 (dist = 112502.1 arcsec).
-87) Warning: 34G Leo is ALONE (no PPM or CD or CPD star near it).
+51) Warning: 312G Hya is FAR from L 5015 (dist = 1103.6 arcsec).
+52) Warning: 20G Hyi is FAR from L 584 (dist = 7900.3 arcsec).
+53) Warning: 6G Ind is FAR from L 8548 (dist = 112502.1 arcsec).
+54) Warning: 34G Leo is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 301721 at 21.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-88) Warning: 47G Leo is ALONE (no PPM or CD or CPD star near it).
+55) Warning: 47G Leo is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 316887 at 24.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-89) Warning: 1G Lep is FAR from L 1684 (dist = 89464.4 arcsec).
-90) Warning: 42G Lep is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-91) Warning: 71G Lep is ALONE (no PPM or CD or CPD star near it).
+56) Warning: 1G Lep is FAR from L 1684 (dist = 89464.4 arcsec).
+57) Warning: 71G Lep is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 198160 at 150.6 arcsec.
-92) Warning: 91G Lep is ALONE (no PPM or CD or CPD star near it).
+58) Warning: 91G Lep is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 193791 at 57.3 arcsec.
-93) Warning: 10G Lib is ALONE (no PPM or CD or CPD star near it).
+59) Warning: 10G Lib is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 242830 at 34.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-94) Warning: 78G Lib is ALONE (no PPM or CD or CPD star near it).
+60) Warning: 78G Lib is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 255475 at 25.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-95) Warning: 103G Lib is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-96) Warning: 58G Lup is FAR from L 2633 (dist = 329473.2 arcsec).
-97) Warning: 141G Lup is FAR from L 6599 (dist = 296.4 arcsec).
-98) Warning: 42G Mic is FAR from L 8638 (dist = 60.5 arcsec).
-99) Warning: 50G Mic is FAR from L 8693 (dist = 617.7 arcsec).
-100) Warning: 48G Mon is ALONE (no PPM or CD or CPD star near it).
+61) Warning: 58G Lup is FAR from L 2633 (dist = 329473.2 arcsec).
+62) Warning: 141G Lup is FAR from L 6599 (dist = 296.4 arcsec).
+63) Warning: 42G Mic is FAR from L 8638 (dist = 60.5 arcsec).
+64) Warning: 50G Mic is FAR from L 8693 (dist = 617.7 arcsec).
+65) Warning: 48G Mon is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 263446 at 952.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-101) Warning: 49G Mon is ALONE (no PPM or CD or CPD star near it).
+66) Warning: 49G Mon is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 322847 at 148.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-102) Warning: 51G Mon is ALONE (no PPM or CD or CPD star near it).
+67) Warning: 51G Mon is ALONE (no PPM or CD or CPD star near it).
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: Nearest PPM 272901 at 308.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-103) Warning: 84G Mon is ALONE (no PPM or CD or CPD star near it).
+68) Warning: 84G Mon is ALONE (no PPM or CD or CPD star near it).
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: Nearest PPM 295202 at 240.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-104) Warning: 116G Mon is ALONE (no PPM or CD or CPD star near it).
+69) Warning: 116G Mon is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 281061 at 212.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-105) Warning: 31G Mus is FAR from L 5072 (dist = 101.6 arcsec).
-106) Warning: 47G Mus is FAR from L 5224 (dist = 7200.4 arcsec).
-107) Warning: 47G Mus is ALONE (no PPM or CD or CPD star near it).
+70) Warning: 31G Mus is FAR from L 5072 (dist = 101.6 arcsec).
+71) Warning: 47G Mus is FAR from L 5224 (dist = 7200.4 arcsec).
+72) Warning: 47G Mus is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 21072 at 541.3 arcsec.
   Note: poor CD coverage for stars above 61°.
-108) Warning: 21G Nor is FAR from L 6567 (dist = 214.5 arcsec).
-109) Warning: 22G Nor is FAR from L 6571 (dist = 218.3 arcsec).
-110) Warning: 57G Oct is FAR from L 8672 (dist = 385.3 arcsec).
-111) Warning: 57G Oct is ALONE (no PPM or CD or CPD star near it).
+73) Warning: 21G Nor is FAR from L 6567 (dist = 214.5 arcsec).
+74) Warning: 22G Nor is FAR from L 6571 (dist = 218.3 arcsec).
+75) Warning: 57G Oct is FAR from L 8672 (dist = 385.3 arcsec).
+76) Warning: 57G Oct is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 2070 at 384.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-112) Warning: 13G Oph is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-113) Warning: 104G Oph is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-114) Warning: 113G Oph is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-115) Warning: 130G Oph is ALONE (no PPM or CD or CPD star near it).
+77) Warning: 130G Oph is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 264017 at 64.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-116) Warning: 145G Oph is ALONE (no PPM or CD or CPD star near it).
+78) Warning: 145G Oph is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 321319 at 201.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-117) Warning: 160G Oph is ALONE (no PPM or CD or CPD star near it).
+79) Warning: 160G Oph is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 304724 at 21.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-118) Warning: 166G Oph is ALONE (no PPM or CD or CPD star near it).
+80) Warning: 166G Oph is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 274020 at 419.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-119) Warning: 185G Oph is ALONE (no PPM or CD or CPD star near it).
+81) Warning: 185G Oph is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 314133 at 24.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-120) Warning: 10G Ori is ALONE (no PPM or CD or CPD star near it).
+82) Warning: 10G Ori is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 324951 at 21.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-121) Warning: 23G Ori is ALONE (no PPM or CD or CPD star near it).
+83) Warning: 23G Ori is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 304107 at 22.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-122) Warning: 23G Ori is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-123) Warning: 59G Ori is ALONE (no PPM or CD or CPD star near it).
+84) Warning: 59G Ori is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 320188 at 34.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-124) Warning: 113G Ori is ALONE (no PPM or CD or CPD star near it).
+85) Warning: 113G Ori is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 323182 at 21.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-125) Warning: 178G Ori is ALONE (no PPM or CD or CPD star near it).
+86) Warning: 178G Ori is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 291174 at 21.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-126) Warning: 115G Pav is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-127) Warning: 16G Peg is ALONE (no PPM or CD or CPD star near it).
+87) Warning: 16G Peg is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 303414 at 23.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-128) Warning: 32G Peg is ALONE (no PPM or CD or CPD star near it).
+88) Warning: 32G Peg is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 305099 at 23.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-129) Warning: 33G Peg is ALONE (no PPM or CD or CPD star near it).
+89) Warning: 33G Peg is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 306047 at 23.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-130) Warning: 41G Peg is ALONE (no PPM or CD or CPD star near it).
+90) Warning: 41G Peg is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 321398 at 29.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-131) Warning: 21G Phe is FAR from L 9598 (dist = 7195.8 arcsec).
-132) Warning: 21G Phe is ALONE (no PPM or CD or CPD star near it).
+91) Warning: 21G Phe is FAR from L 9598 (dist = 7195.8 arcsec).
+92) Warning: 21G Phe is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 60923 at 316.8 arcsec.
-133) Warning: 19G Pic is FAR from L 1863 (dist = 36.4 arcsec).
-134) Warning: 59G Psc is ALONE (no PPM or CD or CPD star near it).
+93) Warning: 19G Pic is FAR from L 1863 (dist = 36.4 arcsec).
+94) Warning: 59G Psc is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 265530 at 284.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-135) Warning: 139G Psc is ALONE (no PPM or CD or CPD star near it).
+95) Warning: 139G Psc is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 313890 at 24.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-136) Warning: 43G PsA is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-137) Warning: 112G Pup is FAR from L 2849 (dist = 397340.7 arcsec).
-138) Warning: 112G Pup is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-139) Warning: 205G Pup is ALONE (no PPM or CD or CPD star near it).
+96) Warning: 205G Pup is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 234498 at 25.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-140) Warning: 237G Pup is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-141) Warning: 308G Pup is ALONE (no PPM or CD or CPD star near it).
+97) Warning: 308G Pup is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 241202 at 108.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-142) Warning: 81G Sgr is FAR from L 7786 (dist = 79.2 arcsec).
-143) Warning: 169G Sgr is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-144) Warning: 216G Sgr is ALONE (no PPM or CD or CPD star near it).
+98) Warning: 81G Sgr is FAR from L 7786 (dist = 79.2 arcsec).
+99) Warning: 216G Sgr is ALONE (no PPM or CD or CPD star near it).
   Possible cause: nebula.
   Note: Nearest PPM 149497 at 935.4 arcsec.
-145) Warning: 246G Sgr is FAR from L 8263 (dist = 350.4 arcsec).
-146) Warning: 246G Sgr is ALONE (no PPM or CD or CPD star near it).
+100) Warning: 246G Sgr is FAR from L 8263 (dist = 350.4 arcsec).
+101) Warning: 246G Sgr is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 116740 at 350.2 arcsec.
-147) Warning: 10G Sco is ALONE (no PPM or CD or CPD star near it).
+102) Warning: 10G Sco is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 286609 at 842.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-148) Warning: 23G Sco is FAR from L 6695 (dist = 46.3 arcsec).
-149) Warning: 49G Sco is ALONE (no PPM or CD or CPD star near it).
+103) Warning: 23G Sco is FAR from L 6695 (dist = 46.3 arcsec).
+104) Warning: 49G Sco is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 259453 at 24.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-150) Warning: 65G Sco is ALONE (no PPM or CD or CPD star near it).
+105) Warning: 65G Sco is ALONE (no PPM or CD or CPD star near it).
   Possible cause: nebula.
   Note: Nearest PPM 172686 at 227.7 arcsec.
-151) Warning: 115G Sco is ALONE (no PPM or CD or CPD star near it).
+106) Warning: 115G Sco is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 107824 at 617.4 arcsec.
-152) Warning: 138G Sco is FAR from L 7189 (dist = 120.0 arcsec).
-153) Warning: 138G Sco is ALONE (no PPM or CD or CPD star near it).
+107) Warning: 138G Sco is FAR from L 7189 (dist = 120.0 arcsec).
+108) Warning: 138G Sco is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 130190 at 119.9 arcsec.
-154) Warning: 80G Scl is FAR from L 169 (dist = 1564.2 arcsec).
-155) Warning: 80G Scl is ALONE (no PPM or CD or CPD star near it).
+109) Warning: 80G Scl is FAR from L 169 (dist = 1564.2 arcsec).
+110) Warning: 80G Scl is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 154281 at 528.4 arcsec.
-156) Warning: 7G Ser is ALONE (no PPM or CD or CPD star near it).
+111) Warning: 7G Ser is ALONE (no PPM or CD or CPD star near it).
   Possible cause: nebula.
   Note: Nearest PPM 300463 at 1140.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-157) Warning: 31G Ser is ALONE (no PPM or CD or CPD star near it).
+112) Warning: 31G Ser is ALONE (no PPM or CD or CPD star near it).
   Possible cause: nebula.
   Possible cause: lack of RA (s).
   Note: Nearest PPM 233210 at 71.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-158) Warning: 49G Ser is ALONE (no PPM or CD or CPD star near it).
+113) Warning: 49G Ser is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 304646 at 273.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-159) Warning: 54G Ser is ALONE (no PPM or CD or CPD star near it).
+114) Warning: 54G Ser is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 304888 at 57.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-160) Warning: 59G Ser is ALONE (no PPM or CD or CPD star near it).
+115) Warning: 59G Ser is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 311648 at 49.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-161) Warning: 70G Ser is ALONE (no PPM or CD or CPD star near it).
+116) Warning: 70G Ser is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 315828 at 59.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-162) Warning: 17G Sex is ALONE (no PPM or CD or CPD star near it).
+117) Warning: 17G Sex is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 258456 at 310.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-163) Warning: 20G Sex is ALONE (no PPM or CD or CPD star near it).
+118) Warning: 20G Sex is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 288484 at 988.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-164) Warning: 11G Tau is ALONE (no PPM or CD or CPD star near it).
+119) Warning: 11G Tau is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 293060 at 23.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-165) Warning: 26G Tau is ALONE (no PPM or CD or CPD star near it).
+120) Warning: 26G Tau is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 324578 at 147.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-166) Warning: 28G Tau is ALONE (no PPM or CD or CPD star near it).
+121) Warning: 28G Tau is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 321981 at 25.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-167) Warning: 55G Tau is ALONE (no PPM or CD or CPD star near it).
+122) Warning: 55G Tau is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 325734 at 55.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-168) Warning: 62G Tel is FAR from L 8115 (dist = 4822.5 arcsec).
-169) Warning: 62G Tel is ALONE (no PPM or CD or CPD star near it).
+123) Warning: 62G Tel is FAR from L 8115 (dist = 4822.5 arcsec).
+124) Warning: 62G Tel is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 61220 at 326.3 arcsec.
-170) Warning: 16G TrA is FAR from L 6518 (dist = 30.8 arcsec).
-171) Warning: 22G Tuc is FAR from L 9377 (dist = 25921.9 arcsec).
-172) Warning: 22G Tuc is ALONE (no PPM or CD or CPD star near it).
+125) Warning: 16G TrA is FAR from L 6518 (dist = 30.8 arcsec).
+126) Warning: 22G Tuc is FAR from L 9377 (dist = 25921.9 arcsec).
+127) Warning: 22G Tuc is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 38304 at 162.6 arcsec.
   Note: poor CD coverage for stars above 61°.
-173) Warning: 51G Tuc is ALONE (no PPM or CD or CPD star near it).
+128) Warning: 51G Tuc is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 13052 at 320.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-174) Warning: 217G Vel is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-175) Warning: 76G Vir is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-176) Warning: 108G Vir is ALONE (no PPM or CD or CPD star near it).
+129) Warning: 108G Vir is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 297552 at 1143.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-177) Warning: 119G Vir is ALONE (no PPM or CD or CPD star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 293026 at 810.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-178) Warning: 142G Vir is ALONE (no PPM or CD or CPD star near it).
+130) Warning: 142G Vir is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 303939 at 20.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-179) Warning: 174G Vir is ALONE (no PPM or CD or CPD star near it).
+131) Warning: 174G Vir is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 322544 at 23.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-180) Warning: 175G Vir is ALONE (no PPM or CD or CPD star near it).
+132) Warning: 175G Vir is ALONE (no PPM or CD or CPD star near it).
   Note: Nearest PPM 306362 at 20.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-Available UA stars = 7756
-Stars from UA identified with PPM = 7605, CD = 4511 and CPD = 4780
-RSME of distance (arcsec) = 5.45  among a total of 7605 stars
-Errors logged = 180
+Available UA stars = 7727
+Stars from UA identified with PPM = 7614, CD = 4518 and CPD = 4788
+RSME of distance (arcsec) = 5.45  among a total of 7614 stars
+Errors logged = 132
 Stars read from Catalogo General Argentino: 32379
    Doubles: 1633, Cumulus: 10, Nebulae: 17, Variables: 67
 

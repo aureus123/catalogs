@@ -1031,8 +1031,11 @@ void readUA() {
 		exit(1);
     }
     while (fgets(buffer, 1023, stream) != NULL) {
+        /* no leemos estrellas sin designación Gould ni sin coordenadas */
 		readFieldSanitized(buffer, cell, 1, 1);
         if (cell[0] != 'G') continue;
+		readField(buffer, cell, 101, 1);
+        if (cell[0] == ' ') continue;
 
 		/* lee ascension recta B1875.0 */
 		readFieldSanitized(buffer, cell, 100, 2);
