@@ -25,7 +25,7 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 ### Other catalogs
 
 - ppm : Positions and Proper Motions from _VizieR_ (merge of I/146, I/193, I/206 and I/208)
-- ua : Uranometría Argentina from _VizieR_ (code V/135A)
+- ua †: Uranometría Argentina from _VizieR_ (code V/135A)
 - bd : Bonner Durchmusterung from _VizieR_ (code I/122)
 - bd_curated †: Same as "bd" but after correcting typo error
 - sd : Bonner (southern) durchmusterung from _VizieR_ (code I/119)
@@ -43,9 +43,9 @@ to 1879 from _GAVO Data Center_
 United States Naval Observatory from the zone observations made at
 Santiago de Chile, from _GAVO Data Center_
 - thome1881 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 55-74, from _GAVO Data Center_
-- thome1882 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 140-164, from _GAVO Data Center_
+- thome1882 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 140-164, from _GAVO Data Center_
 - thome1883 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 181-184, from _GAVO Data Center_
-- thome1884 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 232-249, from _GAVO Data Center_
+- thome1884 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 232-249, from _GAVO Data Center_
 - 4005 †: Table of Correspondences BD/CD/CPD (Jung, Bischoffl 1971) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/5)
 - 4011 †: Correspondences CD/CPD, Zones -18 to -39 (Bonnet) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/11)
 - 4019 †: CD/CPD Cross Index (Rappaport, Warren 1987), from _NASA-ADC CD-ROMs_
