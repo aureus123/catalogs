@@ -30,7 +30,7 @@
 #define MAX_DIST_ST_CPD 30.0
 #define MAX_DIST_USNO_CPD 30.0
 #define MAX_DIST_TH_CPD 30.0
-#define MAX_DIST_CROSS 30.0
+#define MAX_DIST_CROSS 60.0
 #define MAX_DIST_ZC_ZC 15.0
 #define CURATED true // true if curated CD catalog should be used
 
@@ -1107,7 +1107,7 @@ void readUA() {
             int cpdIndex = -1;
             minDistance = HUGE_NUMBER;
             findCPDByCoordinates(x, y, z, Decl, &cpdIndex, &minDistance);
-			if (minDistance < MAX_DIST_USNO_CPD) {
+			if (minDistance < MAX_DIST_CPD) {
                 countCPD++;
                 cpdFound = true;
 
