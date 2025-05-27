@@ -5,6 +5,7 @@ Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM cat
 - Yarnall-Frisby USNO catalog (*U*)
 - *BD* designation coming from PPM stars
 - All Bonner Durchmusterung stars up to +19 declination (first volume)
+
 In southern hemisphere, we have stars from:
 - Uranometría Argentina (*UA*)
 - Catálogo General Argentino (*GC*)
