@@ -304,52 +304,52 @@ int main(int argc, char** argv) {
         /* leemos identificaciones cruzadas y renombramos designaciones.
          * Order de prioridad: UA (solo PPM), GC, ZC, OA, U, G, G2 */
         readCrossFile(
-            "results/cross_gc2_ppm.csv", PPMstar, PPMstars,
-            "results/cross_gc2_cd.csv", DMstar, DMstars,
-            "results/cross_gc2_cpd.csv", CPDstar, CPDstars);
+            "results/cross/cross_gc2_ppm.csv", PPMstar, PPMstars,
+            "results/cross/cross_gc2_cd.csv", DMstar, DMstars,
+            "results/cross/cross_gc2_cpd.csv", CPDstar, CPDstars);
         readCrossFile(
-            "results/cross_gilliss_ppm.csv", PPMstar, PPMstars,
-            "results/cross_gilliss_cd.csv", DMstar, DMstars,
-            "results/cross_gilliss_cpd.csv", CPDstar, CPDstars);
+            "results/cross/cross_gilliss_ppm.csv", PPMstar, PPMstars,
+            "results/cross/cross_gilliss_cd.csv", DMstar, DMstars,
+            "results/cross/cross_gilliss_cpd.csv", CPDstar, CPDstars);
         readCrossFile(
-            "results/cross_usno_ppm.csv", PPMstar, PPMstars,
-            "results/cross_usno_cd.csv", DMstar, DMstars,
-            "results/cross_usno_cpd.csv", CPDstar, CPDstars);
+            "results/cross/cross_usno_ppm.csv", PPMstar, PPMstars,
+            "results/cross/cross_usno_cd.csv", DMstar, DMstars,
+            "results/cross/cross_usno_cpd.csv", CPDstar, CPDstars);
         readCrossFile(
-            "results/cross_oa_ppm.csv", PPMstar, PPMstars,
-            "results/cross_oa_cd.csv", DMstar, DMstars,
-            "results/cross_oa_cpd.csv", CPDstar, CPDstars);
+            "results/cross/cross_oa_ppm.csv", PPMstar, PPMstars,
+            "results/cross/cross_oa_cd.csv", DMstar, DMstars,
+            "results/cross/cross_oa_cpd.csv", CPDstar, CPDstars);
         readCrossFile(
-            "results/cross_zc_ppm.csv", PPMstar, PPMstars,
-            "results/cross_zc_cd.csv", DMstar, DMstars,
-            "results/cross_zc_cpd.csv", CPDstar, CPDstars);
+            "results/cross/cross_zc_ppm.csv", PPMstar, PPMstars,
+            "results/cross/cross_zc_cd.csv", DMstar, DMstars,
+            "results/cross/cross_zc_cpd.csv", CPDstar, CPDstars);
         readCrossFile(
-            "results/cross_gc_ppm.csv", PPMstar, PPMstars,
-            "results/cross_gc_cd.csv", DMstar, DMstars,
-            "results/cross_gc_cpd.csv", CPDstar, CPDstars);
+            "results/cross/cross_gc_ppm.csv", PPMstar, PPMstars,
+            "results/cross/cross_gc_cd.csv", DMstar, DMstars,
+            "results/cross/cross_gc_cpd.csv", CPDstar, CPDstars);
         readCrossFile(
-            "results/cross_ua_ppm.csv", PPMstar, PPMstars,
+            "results/cross/cross_ua_ppm.csv", PPMstar, PPMstars,
             "", nullptr, 0,
             "", nullptr, 0);
         /* también leemos las no identificadas */
-        readUnidentifiedFile("results/gc_unidentified.csv");
-        readUnidentifiedFile("results/zc_unidentified.csv");
-        readUnidentifiedFile("results/oa_unidentified.csv");
-        readUnidentifiedFile("results/usno_unidentified.csv");
-        readUnidentifiedFile("results/gilliss_unidentified.csv");
-        readUnidentifiedFile("results/gc2_unidentified.csv");
+        readUnidentifiedFile("results/cross/gc_unidentified.csv");
+        readUnidentifiedFile("results/cross/zc_unidentified.csv");
+        readUnidentifiedFile("results/cross/oa_unidentified.csv");
+        readUnidentifiedFile("results/cross/usno_unidentified.csv");
+        readUnidentifiedFile("results/cross/gilliss_unidentified.csv");
+        readUnidentifiedFile("results/cross/gc2_unidentified.csv");
     } else {
         /* leemos identificaciones cruzadas y renombramos designaciones,
          * Solo UA y USNO contra PPM. */
         readCrossFile(
-            "results/cross_usno_ppm.csv", PPMstar, PPMstars,
+            "results/cross/cross_usno_ppm.csv", PPMstar, PPMstars,
             "", nullptr, 0,
             "", nullptr, 0);
         readCrossFile(
-            "results/cross_ua_ppm.csv", PPMstar, PPMstars,
+            "results/cross/cross_ua_ppm.csv", PPMstar, PPMstars,
             "", nullptr, 0,
             "", nullptr, 0);
-        readUnidentifiedFile("results/usno_unidentified.csv");
+        readUnidentifiedFile("results/cross/usno_unidentified.csv");
     }
 #endif
 

@@ -140,10 +140,10 @@ void readGC2() {
     printf("\n***************************************\n");
     printf("Perform comparison between GC2 and PPM/CD/CPD...\n");
 
-	FILE *crossCDStream = openCrossFile("results/cross_gc2_cd.csv");
-	FILE *crossCPDStream = openCrossFile("results/cross_gc2_cpd.csv");
-	FILE *crossPPMStream = openCrossFile("results/cross_gc2_ppm.csv");
-	FILE *unidentifiedStream = openUnidentifiedFile("results/gc2_unidentified.csv");
+	FILE *crossCDStream = openCrossFile("results/cross/cross_gc2_cd.csv");
+	FILE *crossCPDStream = openCrossFile("results/cross/cross_gc2_cpd.csv");
+	FILE *crossPPMStream = openCrossFile("results/cross/cross_gc2_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gc2_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -337,10 +337,10 @@ void readWeiss() {
     printf("\n***************************************\n");
     printf("Perform comparison between Weiss and PPM/CD/CPD...\n");
 
-	FILE *crossCDStream = openCrossFile("results/cross_oa_cd.csv");
-	FILE *crossCPDStream = openCrossFile("results/cross_oa_cpd.csv");
-	FILE *crossPPMStream = openCrossFile("results/cross_oa_ppm.csv");
-	FILE *unidentifiedStream = openUnidentifiedFile("results/oa_unidentified.csv");
+	FILE *crossCDStream = openCrossFile("results/cross/cross_oa_cd.csv");
+	FILE *crossCPDStream = openCrossFile("results/cross/cross_oa_cpd.csv");
+	FILE *crossPPMStream = openCrossFile("results/cross/cross_oa_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/oa_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -540,9 +540,9 @@ void readStone() {
     printf("\n***************************************\n");
     printf("Perform comparison between Stone and PPM/CD/CPD...\n");
 
-	FILE *crossCDStream = openCrossFile("results/cross_lacaille_cd.csv");
-	FILE *crossCPDStream = openCrossFile("results/cross_lacaille_cpd.csv");
-	FILE *crossPPMStream = openCrossFile("results/cross_lacaille_ppm.csv");
+	FILE *crossCDStream = openCrossFile("results/cross/cross_lacaille_cd.csv");
+	FILE *crossCPDStream = openCrossFile("results/cross/cross_lacaille_cpd.csv");
+	FILE *crossPPMStream = openCrossFile("results/cross/cross_lacaille_ppm.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -772,10 +772,10 @@ void readUSNO() {
     printf("\n***************************************\n");
     printf("Perform comparison between USNO and PPM/CD/CPD...\n");
 
-	FILE *crossCDStream = openCrossFile("results/cross_usno_cd.csv");
-	FILE *crossCPDStream = openCrossFile("results/cross_usno_cpd.csv");
-	FILE *crossPPMStream = openCrossFile("results/cross_usno_ppm.csv");
-	FILE *unidentifiedStream = openUnidentifiedFile("results/usno_unidentified.csv");
+	FILE *crossCDStream = openCrossFile("results/cross/cross_usno_cd.csv");
+	FILE *crossCPDStream = openCrossFile("results/cross/cross_usno_cpd.csv");
+	FILE *crossPPMStream = openCrossFile("results/cross/cross_usno_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/usno_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1006,10 +1006,10 @@ void readUA() {
     printf("\n***************************************\n");
     printf("Perform comparison between UA and PPM/CD/CPD...\n");
 
-	FILE *crossCDStream = openCrossFile("results/cross_ua_cd.csv");
-	FILE *crossCPDStream = openCrossFile("results/cross_ua_cpd.csv");
-	FILE *crossPPMStream = openCrossFile("results/cross_ua_ppm.csv");
-	FILE *unidentifiedStream = openUnidentifiedFile("results/ua_unidentified.csv");
+	FILE *crossCDStream = openCrossFile("results/cross/cross_ua_cd.csv");
+	FILE *crossCPDStream = openCrossFile("results/cross/cross_ua_cpd.csv");
+	FILE *crossPPMStream = openCrossFile("results/cross/cross_ua_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/ua_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1509,10 +1509,10 @@ void readGilliss() {
     printf("\n***************************************\n");
     printf("Perform comparison between Gilliss and PPM/CD/CPD...\n");
 
-	FILE *crossCDStream = openCrossFile("results/cross_gilliss_cd.csv");
-	FILE *crossCPDStream = openCrossFile("results/cross_gilliss_cpd.csv");
-	FILE *crossPPMStream = openCrossFile("results/cross_gilliss_ppm.csv");
-	FILE *unidentifiedStream = openUnidentifiedFile("results/gilliss_unidentified.csv");
+	FILE *crossCDStream = openCrossFile("results/cross/cross_gilliss_cd.csv");
+	FILE *crossCPDStream = openCrossFile("results/cross/cross_gilliss_cpd.csv");
+	FILE *crossPPMStream = openCrossFile("results/cross/cross_gilliss_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gilliss_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1773,10 +1773,10 @@ int main(int argc, char** argv)
 
     /* leemos, cruzamos y revisamos identificaciones de Thome */
     /* tambien generamos Gould's Zone Catalog */
-    crossPPMZCStream = openCrossFile("results/cross_zc_ppm.csv");
-    crossCDZCStream = openCrossFile("results/cross_zc_cd.csv");
-    crossCPDZCStream = openCrossFile("results/cross_zc_cpd.csv");
-    unidentifiedZCStream = openUnidentifiedFile("results/zc_unidentified.csv");
+    crossPPMZCStream = openCrossFile("results/cross/cross_zc_ppm.csv");
+    crossCDZCStream = openCrossFile("results/cross/cross_zc_cd.csv");
+    crossCPDZCStream = openCrossFile("results/cross/cross_zc_cpd.csv");
+    unidentifiedZCStream = openUnidentifiedFile("results/cross/zc_unidentified.csv");
 
     readThome(1881.0, "cat/thome1881.txt", 0);
     readThome(1882.0, "cat/thome1882.txt", 0);
