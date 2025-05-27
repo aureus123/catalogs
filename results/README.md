@@ -8,7 +8,7 @@ during that process. In particular, you can find the following files:
 - table_mag_*.csv = table with magnitude errors found
 - findings.odt = open-office document with other minor results
 
-There is also a folder _cross_ with results of the experiment _cross-thome_ with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander, Lacaille, USNO) and PPM/CD/CPD.
+There is also a folder _cross_ with results of the experiment *cross_gc* and *cross_thome* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander, Lacaille, USNO) and PPM/CD/CPD.
 
 Below some experiments are reported.
 
