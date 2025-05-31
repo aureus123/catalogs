@@ -15,17 +15,20 @@
 #include "misc.h"
 
 #define MAXOASTAR 19000
+#define MAXLALSTAR 47400
 #define MAXLACSTAR 10000
 #define MAXSTSTAR 12500
 #define MAXUSNOSTAR 11000
 #define MAXZCSTAR 15000
 #define EPOCH_GC2 1900.0
 #define EPOCH_OA 1850.0
+#define EPOCH_LAL 1800.0
 #define EPOCH_ST 1880.0
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
 #define EPOCH_GILLISS 1850.0
 #define MAX_DIST_OA_PPM 45.0
+#define MAX_DIST_LAL_PPM 45.0
 #define MAX_DIST_OA_CPD 45.0
 #define MAX_DIST_ST_CPD 30.0
 #define MAX_DIST_USNO_CPD 30.0
@@ -38,6 +41,11 @@
 double oaX[MAXOASTAR], oaY[MAXOASTAR], oaZ[MAXOASTAR];
 int oaRef[MAXOASTAR];
 int countOA = 0;
+
+// Here, we save 1875.0 coordinates of Lalande stars in rectangular form
+double lalX[MAXLALSTAR], lalY[MAXLALSTAR], lalZ[MAXLALSTAR];
+int lalRef[MAXLALSTAR];
+int countLal = 0;
 
 // Here, we save 1875.0 coordinates of Lacaille stars in rectangular form
 double lacX[MAXLACSTAR], lacY[MAXLACSTAR], lacZ[MAXLACSTAR];
@@ -527,6 +535,128 @@ void readWeiss() {
 }
 
 /*
+ * readLalande - lee catalogo de Lalande
+ */
+void readLalande() {
+    char buffer[1024], cell[256], catName[20], ppmName[20];
+
+    printf("\n***************************************\n");
+    printf("Perform comparison between Lalande and PPM...\n");
+
+    FILE *crossPPMStream = openCrossFile("results/cross/cross_lalande_ppm.csv");
+
+    int countDist = 0;
+    double akkuDistError = 0.0;
+    int errors = 0;
+
+    /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
+    readPPM(false, true, false, false, EPOCH_LAL);
+    sortPPM();
+	struct PPMstar_struct *PPMstar = getPPMStruct();
+    int PPMstars = getPPMStars();
+
+    /* leemos catalogo Lalande */
+    FILE *stream = fopen("cat/lalande.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read lalande.txt");
+		exit(1);
+    }
+
+    double RA = 0.0;
+    double Decl = 0.0;
+    while (fgets(buffer, 1023, stream) != NULL) {
+        /* descarta la estrella si no hay RA o declinación */
+        readField(buffer, cell, 19, 1);
+        if (cell[0] == ' ') continue;
+        readField(buffer, cell, 32, 1);
+        if (cell[0] == ' ') continue;
+
+		/* lee numeración */
+		readField(buffer, cell, 1, 5);
+		int catRef = atoi(cell);
+
+		/* lee ascension recta B1800.0 (si existiese) */
+        readField(buffer, cell, 19, 1);
+		readFieldSanitized(buffer, cell, 19, 2);
+		int RAh = atoi(cell);
+        double RA = (double) RAh;
+		readFieldSanitized(buffer, cell, 21, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readFieldSanitized(buffer, cell, 23, 4);
+		int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1800.0 (en realidad NPD) */
+		readFieldSanitized(buffer, cell, 32, 3);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readFieldSanitized(buffer, cell, 35, 2);
+		int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+		readFieldSanitized(buffer, cell, 37, 3);
+		int Decls = atoi(cell);
+        Decl += (((double) Decls)/10.0)/3600.0;
+		Decl = 90.0 - Decl; /* convertimos NPD a declinación */
+
+        bool ppmFound = false;
+		int ppmIndex = -1;
+		double minDistance = HUGE_NUMBER;
+		/* busca la PPM mas cercana y genera el cruzamiento */
+		double x, y, z;
+		sph2rec(RA, Decl, &x, &y, &z);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
+        double nearestPPMDistance = minDistance;
+		if (minDistance < MAX_DIST_LAL_PPM) {
+            akkuDistError += minDistance * minDistance;
+            countDist++;
+            ppmFound = true;
+
+            if (catRef > 0) {
+			    snprintf(catName, 20, "Lal %d", catRef);
+			    snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+			    writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+            }
+		}
+
+	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        transform(EPOCH_LAL, 1875.0, &RA1875, &Decl1875);
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+        if (!ppmFound) {
+            printf("%d) Warning: Lal %d is ALONE (no PPM star near it).\n",
+                ++errors,
+                catRef);
+            logCauses(catName, nullptr, x, y, z,
+                false, false, 1.0, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+        }
+
+        /* la almacenamos para futuras identificaciones */
+        if (countLal >= MAXLALSTAR) {
+            printf("Error: too many Lalande stars.\n");
+            exit(1);
+        }
+        lalX[countLal] = x;
+        lalY[countLal] = y;
+        lalZ[countLal] = z;
+        lalRef[countLal] = catRef;
+        countLal++;
+    }
+	fclose(crossPPMStream);
+    fclose(stream);
+
+    printf("Available Lalande stars = %d\n", countLal);
+    printf("Stars from Lalande identified with PPM = %d\n", countDist);
+    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
+        sqrt(akkuDistError / (double)countDist),
+        countDist);
+    printf("Errors logged = %d\n", errors);
+}
+
+/*
  * readStone - lee y cruza catalogo de Stone
  * (ya se deben haber leidos los catalogs CD y CPD)
  */
@@ -745,6 +875,8 @@ void readStone() {
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
+    fclose(stream);
+    fclose(stream2);
 
     printf("Available Stone stars = %d, and Lacaille = %d\n", countSt, countLac);
     printf("Stars from Stone identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
@@ -928,6 +1060,20 @@ void readUSNO() {
                 double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
                 if (dist > MAX_DIST_CROSS) {
                     printf("%d) Warning: U %d is FAR from L %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        numRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
+        if (!strncmp(cell, "LAL ", 4)) {
+            for (int i = 0; i < countLal; i++) {
+                if (lalRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: U %d is FAR from Lal %d (dist = %.1f arcsec).\n",
                         ++errors,
                         numRef,
                         numRefCat,
@@ -1145,6 +1291,26 @@ void readUA() {
                 double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
                 if (dist > MAX_DIST_CROSS) {
                     printf("%d) Warning: %dG %s is FAR from L %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        gouldRef,
+                        cstRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
+        
+        if (!strncmp(desigRefCat, "Ll.", 3)) {
+            readField(buffer, cell, 85, 5);
+            char numStr[6];
+            sscanf(cell, "%5[^, ]", numStr);
+            int numRefCat = atoi(numStr);
+            for (int i = 0; i < countLal; i++) {
+                if (lalRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: %dG %s is FAR from Lal %d (dist = %.1f arcsec).\n",
                         ++errors,
                         gouldRef,
                         cstRef,
@@ -1393,6 +1559,21 @@ void readThome(double epoch, const char *filename, int correction) {
                 double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
                 if (dist > MAX_DIST_CROSS) {
                     printf("%d) Warning: T %.0f %d is FAR from L %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        epoch,
+                        numRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
+        if (!strncmp(cell, "LL", 2)) {
+            for (int i = 0; i < countLal; i++) {
+                if (lalRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: T %.0f %d is FAR from Lal %d (dist = %.1f arcsec).\n",
                         ++errors,
                         epoch,
                         numRef,
@@ -1756,6 +1937,9 @@ int main(int argc, char** argv)
 
     /* leemos y cruzamos Weiss / OA */
     readWeiss();
+
+    /* leemos y cruzamos Lalande (solo contra PPM) */
+    readLalande();
 
     /* leemos y cruzamos Stone / Lacaille */
     readStone();
