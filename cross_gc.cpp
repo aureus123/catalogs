@@ -48,10 +48,10 @@ int main(int argc, char** argv)
 	printf("\n***************************************\n");
     printf("Perform comparison between GC and PPM/CD/CPD...\n");
 
-	FILE *crossCDStream = openCrossFile("results/cross_gc_cd.csv");
-	FILE *crossCPDStream = openCrossFile("results/cross_gc_cpd.csv");
-	FILE *crossPPMStream = openCrossFile("results/cross_gc_ppm.csv");
-	FILE *unidentifiedStream = openUnidentifiedFile("results/gc_unidentified.csv");
+	FILE *crossCDStream = openCrossFile("results/cross/cross_gc_cd.csv");
+	FILE *crossCPDStream = openCrossFile("results/cross/cross_gc_cpd.csv");
+	FILE *crossPPMStream = openCrossFile("results/cross/cross_gc_ppm.csv");
+	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gc_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
