@@ -18,17 +18,21 @@
 #define MAXLALSTAR 47400
 #define MAXLACSTAR 10000
 #define MAXSTSTAR 12500
+#define MAXTAYLORSTAR 11100
 #define MAXUSNOSTAR 11000
 #define MAXZCSTAR 15000
 #define EPOCH_GC2 1900.0
 #define EPOCH_OA 1850.0
 #define EPOCH_LAL 1800.0
 #define EPOCH_ST 1880.0
+#define EPOCH_TAYLOR 1835.0
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
 #define EPOCH_GILLISS 1850.0
+#define MAX_DIST_PPM_FAR 90.0
 #define MAX_DIST_OA_PPM 45.0
 #define MAX_DIST_LAL_PPM 45.0
+#define MAX_DIST_TAY_PPM 40.0
 #define MAX_DIST_OA_CPD 45.0
 #define MAX_DIST_ST_CPD 30.0
 #define MAX_DIST_USNO_CPD 30.0
@@ -51,6 +55,11 @@ int countLal = 0;
 double lacX[MAXLACSTAR], lacY[MAXLACSTAR], lacZ[MAXLACSTAR];
 int lacRef[MAXLACSTAR];
 int countLac = 0;
+
+// Here, we save 1875.0 coordinates of Taylor stars in rectangular form
+double tayX[MAXLALSTAR], tayY[MAXLALSTAR], tayZ[MAXLALSTAR];
+int tayRef[MAXLALSTAR];
+int countTaylor = 0;
 
 // Here, we save 1875.0 coordinates of Stone stars in rectangular form
 double stX[MAXSTSTAR], stY[MAXSTSTAR], stZ[MAXSTSTAR];
@@ -626,7 +635,7 @@ void readLalande() {
         transform(EPOCH_LAL, 1875.0, &RA1875, &Decl1875);
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
-        if (!ppmFound) {
+        if (!ppmFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
             printf("%d) Warning: Lal %d is ALONE (no PPM star near it).\n",
                 ++errors,
                 catRef);
@@ -886,6 +895,164 @@ void readStone() {
     printf("RSME of visual magnitude = %.5f  among a total of %d stars\n",
         sqrt(akkuDeltaError / (double)countDelta),
         countDelta);
+    printf("Errors logged = %d\n", errors);
+}
+
+/*
+ * readTaylor - lee y cruza catalogo de Taylor
+ * (ya se deben haber leidos catalogos Stone y GC)
+ */
+void readTaylor() {
+    char buffer[1024], cell[256], catName[20], ppmName[20];
+
+    /* usamos catalogo GC */
+    struct GCstar_struct *GCstar = getGCStruct();
+    int GCstars = getGCStars();
+
+    printf("\n***************************************\n");
+    printf("Perform comparison between Taylor and PPM...\n");
+
+	FILE *crossPPMStream = openCrossFile("results/cross/cross_taylor_ppm.csv");
+
+    int countDist = 0;
+    double akkuDistError = 0.0;
+    int errors = 0;
+
+    /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
+    readPPM(false, true, false, false, EPOCH_TAYLOR);
+    sortPPM();
+	struct PPMstar_struct *PPMstar = getPPMStruct();
+    int PPMstars = getPPMStars();
+
+    /* leemos catalogo Taylor */
+    FILE *stream = fopen("cat/taylor1.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read taylor1.txt");
+		exit(1);
+    }
+	FILE *stream2 = fopen("cat/taylor2.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read taylor2.txt");
+		exit(1);
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+		char buffer2[1024];
+		fgets(buffer2, 1023, stream2);
+
+		/* lee numeración */
+		readField(buffer, cell, 7, 5);
+		int taylorRef = atoi(cell);
+
+		/* lee ascension recta B1835.0 */
+		readFieldSanitized(buffer, cell, 46, 2);
+		int RAh = atoi(cell);
+        double RA = (double) RAh;
+		readFieldSanitized(buffer, cell, 48, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readFieldSanitized(buffer, cell, 50, 4);
+		int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1835.0 */
+		readFieldSanitized(buffer2, cell, 8, 2);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readFieldSanitized(buffer2, cell, 10, 2);
+		int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+		readFieldSanitized(buffer2, cell, 12, 4);
+		int Decls = atoi(cell);
+        Decl += (((double) Decls)/100.0)/3600.0;
+		readField(buffer2, cell, 7, 1);
+		if (cell[0] == '-') Decl = -Decl;
+
+        bool ppmFound = false;
+		int ppmIndex = -1;
+		double minDistance = HUGE_NUMBER;
+		/* busca la PPM mas cercana y genera el cruzamiento */
+		double x, y, z;
+		sph2rec(RA, Decl, &x, &y, &z);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
+        double nearestPPMDistance = minDistance;
+		if (minDistance < MAX_DIST_TAY_PPM) {
+            akkuDistError += minDistance * minDistance;
+            countDist++;
+            ppmFound = true;
+
+			snprintf(catName, 20, "T %d", taylorRef);
+			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+		}
+
+	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        transform(EPOCH_TAYLOR, 1875.0, &RA1875, &Decl1875);
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+        if (!ppmFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
+            printf("%d) Warning: T %d is ALONE (no PPM star near it).\n",
+                ++errors,
+                taylorRef);
+            logCauses(catName, nullptr, x, y, z,
+                false, false, 1.0, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+        }
+
+        /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
+		readField(buffer, cell, 37, 5);
+        int numRefCat = atoi(cell);
+		readField(buffer, cell, 31, 3);
+
+        if (!strncmp(cell, "LAC", 3)) {
+            for (int i = 0; i < countLac; i++) {
+                if (lacRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: T %d is FAR from L %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        taylorRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
+        if (!strncmp(cell, "GOU", 3)) {
+            for (int i = 0; i < GCstars; i++) {
+                if (GCstar[i].gcRef != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, GCstar[i].x, GCstar[i].y, GCstar[i].z);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: T %d is FAR from GC %d (dist = %.1f arcsec). Check if it is a 1/2 star in GC.\n",
+                        ++errors,
+                        taylorRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
+        /* la almacenamos para futuras identificaciones */
+        if (countTaylor >= MAXTAYLORSTAR) {
+            printf("Error: too many Taylor stars.\n");
+            exit(1);
+        }
+        tayX[countTaylor] = x;
+        tayY[countTaylor] = y;
+        tayZ[countTaylor] = z;
+        tayRef[countTaylor] = taylorRef;
+        countTaylor++;
+    }
+	fclose(crossPPMStream);
+    fclose(stream);
+    fclose(stream2);
+
+    printf("Available Taylor stars = %d\n", countTaylor);
+    printf("Stars from Taylor identified with PPM = %d\n", countDist);
+    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
+        sqrt(akkuDistError / (double)countDist),
+        countDist);
     printf("Errors logged = %d\n", errors);
 }
 
@@ -1300,7 +1467,25 @@ void readUA() {
             }
         }
 
-        
+        if (!strncmp(desigRefCat, "T.", 2)) {
+            readField(buffer, cell, 84, 5);
+            char numStr[6];
+            sscanf(cell, "%5[^, ]", numStr);
+            int numRefCat = atoi(numStr);
+            for (int i = 0; i < countTaylor; i++) {
+                if (tayRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, tayX[i], tayY[i], tayZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: %dG %s is FAR from T %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        gouldRef,
+                        cstRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
         if (!strncmp(desigRefCat, "Ll.", 3)) {
             readField(buffer, cell, 85, 5);
             char numStr[6];
@@ -1559,6 +1744,21 @@ void readThome(double epoch, const char *filename, int correction) {
                 double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
                 if (dist > MAX_DIST_CROSS) {
                     printf("%d) Warning: T %.0f %d is FAR from L %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        epoch,
+                        numRef,
+                        numRefCat,
+                        dist);
+                }
+            }
+        }
+
+        if (!strncmp(cell, "T ", 2)) {
+            for (int i = 0; i < countTaylor; i++) {
+                if (tayRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, tayX[i], tayY[i], tayZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: T %.0f %d is FAR from T %d (dist = %.1f arcsec).\n",
                         ++errors,
                         epoch,
                         numRef,
@@ -1947,13 +2147,16 @@ int main(int argc, char** argv)
     /* leemos, cruzamos y revisamos identificaciones de Yarnall */
     readUSNO();
 
-    /* leemos, cruzamos y revisamos Uranometria Argentina */
-    readUA();
-
     /* leemos catalogo GC */
 	readGC();
 	struct GCstar_struct *GCstar = getGCStruct();
 	int GCstars = getGCStars();
+
+    /* leemos y cruzamos Taylor */
+    readTaylor();
+
+    /* leemos, cruzamos y revisamos Uranometria Argentina */
+    readUA();
 
     /* leemos, cruzamos y revisamos identificaciones de Thome */
     /* tambien generamos Gould's Zone Catalog */

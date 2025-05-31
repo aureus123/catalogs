@@ -61,6 +61,8 @@ stars cross-identified between PPM and the target catalog, and 4th. column repor
 | Uranometría Argentina † | 1875 | 7605 | 5.45 |
 | Catálogo General Argentino (GC) † | 1875 | 31706 | 1.96 |
 | Segundo Cat. General Argentino † | 1900 | 5357 | 2.84 |
+| Lalande † | 1800 | 46914 | 6.88 |
+| Taylor † | 1835 | 10944 | 4.19 |
 | Weiss † | 1850 | 18010 | 4.66 |
 | Stone † | 1880 | 12414 | 1.48 |
 | USNO 3rd. edition † | 1860 | 10606 | 2.77 |

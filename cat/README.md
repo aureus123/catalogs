@@ -36,6 +36,7 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 suedlicher Deklination in mittleren Positionen fuer 1850.0 from
 _GAVO Data Center_
 - lalande : F. Baily, J. Lalande, Catalogue of those stars in the Histoire Celeste Francaise of Jerome Delalande from _GAVO Data Center_
+- taylor : Taylor's general catalogue of stars for the equinox 1835.0 from observations made at the Madras Observatory during the years 1831 to 1842
 - yarnall †: Yarnall-Frisby, Catalogue of stars observed at the USNO 
 during years 1845 to 1877. 3rd. Edition. from _GAVO Data Center_
 - stone : Stone, Cape catalog of 12441 stars observed during years 1871
@@ -63,7 +64,6 @@ by the current code:
 - laplatac : La Plata C, epoch 1925.0, declinations -62 to -66
 - oargn : Oeltzen-Argelander's Zonen-Beobachtungen vom 45. bis 80. Grade noerdlicher Declination in mittleren Positionen fuer 1842.0
 - lacaille : N. L. de Lacaille, T. Henderson, A catalogue of 9766 stars in the southern hemisphere
-- taylor : Taylor's general catalogue of stars for the equinox 1835.0 from observations made at the Madras Observatory during the years 1831 to 1842
 
 ### Original catalogs
 
