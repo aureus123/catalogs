@@ -4,7 +4,7 @@
  */
 
 #define MAXGCSTAR 33000
-#define MAX_MAGNITUDE 2.5
+#define MAX_MAGNITUDE 2.9
 #define MAX_DIST_CD 90.0     // 1.5 minutos de arco
 #define MAX_DIST_CPD 20.0    // 20 segundos de arco
 #define MAX_DIST_PPM 20.0    // 20 segundos de arco

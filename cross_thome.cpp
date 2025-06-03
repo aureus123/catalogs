@@ -346,6 +346,7 @@ void readGC2() {
  */
 void readWeiss() {
     char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+    char catLine[64];
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -416,6 +417,9 @@ void readWeiss() {
 		int Decls = atoi(cell);
         Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
+        
+        snprintf(catLine, 64, "%02dh %02dm %02ds%02d -%02d°%02d'%02d\"%01d",
+            RAh, RAm, RAs / 100, RAs % 100, Decld, Declm, Decls / 10, Decls % 10);
 
 		/* lee magnitud */
 		readField(buffer, cell, 9, 1);
@@ -512,6 +516,7 @@ void readWeiss() {
                 ++errors,
                 weissRef,
                 oeltzenRef);
+            printf("     Register W %d: %s\n", weissRef, catLine);    
             logCauses(catName, unidentifiedStream, x, y, z,
                 false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
         }
@@ -1063,6 +1068,7 @@ void readTaylor() {
  */
 void readUSNO() {
     char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+    char catLine[64];
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -1097,6 +1103,10 @@ void readUSNO() {
 		exit(1);
     }
     while (fgets(buffer, 1023, stream) != NULL) {
+        /* omite la estrella si es una doble */
+        readField(buffer, cell, 6, 1);
+        if (cell[0] != ' ') continue;
+
 		/* lee ascension recta B1860.0 */
 		readFieldSanitized(buffer, cell, 40, 2);
 		int RAh = atoi(cell);
@@ -1121,6 +1131,9 @@ void readUSNO() {
         Decl += (((double) Decls)/10.0)/3600.0;
 		readField(buffer, cell, 60, 1);
 		if (cell[0] == '-') Decl = -Decl;
+
+        snprintf(catLine, 64, "%02dh %02dm %02ds%02d %c%02d°%02d'%02d\"%01d",
+            RAh, RAm, RAs / 100, RAs % 100, cell[0], Decld, Declm, Decls / 10, Decls % 10);
 
 		/* lee numeracion */
 		readField(buffer, cell, 1, 5);
@@ -1231,6 +1244,7 @@ void readUSNO() {
                         numRef,
                         numRefCat,
                         dist);
+                    printf("     Register U %d: %s\n", numRef, catLine);    
                 }
             }
         }
@@ -1245,6 +1259,7 @@ void readUSNO() {
                         numRef,
                         numRefCat,
                         dist);
+                    printf("     Register U %d: %s\n", numRef, catLine);    
                 }
             }
         }
@@ -1259,6 +1274,7 @@ void readUSNO() {
                         numRef,
                         numRefCat,
                         dist);
+                    printf("     Register U %d: %s\n", numRef, catLine);    
                 }
             }
         }
@@ -1267,6 +1283,7 @@ void readUSNO() {
             printf("%d) Warning: U %d is ALONE (no PPM or CD or CPD star near it).\n",
                 ++errors,
                 numRef);
+            printf("     Register U %d: %s\n", numRef, catLine);    
             readField(buffer, cell, 15, 3);
             if (!strncmp(cell, "PRA", 3)) {
                 printf("  Possible cause: praesepe star.\n");
@@ -1311,6 +1328,7 @@ void readUSNO() {
  */
 void readUA() {
     char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+    char catLine[64];
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -1371,6 +1389,9 @@ void readUA() {
         Decl += Declm/60.0;
 		readField(buffer, cell, 110, 1);
 		if (cell[0] == '-') Decl = -Decl;
+
+        snprintf(catLine, 64, "%02dh %02dm %02ds %c%02d°%02.1f'",
+            RAh, RAm, RAs, cell[0], Decld, Declm);
 
 		/* lee numeración de Gould y constelación */
 		readField(buffer, cell, 3, 3);
@@ -1463,6 +1484,7 @@ void readUA() {
                         cstRef,
                         numRefCat,
                         dist);
+                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
                 }
             }
         }
@@ -1482,6 +1504,7 @@ void readUA() {
                         cstRef,
                         numRefCat,
                         dist);
+                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
                 }
             }
         }
@@ -1501,6 +1524,7 @@ void readUA() {
                         cstRef,
                         numRefCat,
                         dist);
+                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
                 }
             }
         }
@@ -1520,6 +1544,7 @@ void readUA() {
                         cstRef,
                         numRefCat,
                         dist);
+                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
                 }
             }
         }
@@ -1549,15 +1574,16 @@ void readUA() {
                     numRefCat,
                     usnoRef[usnoIndex],
                     minDistance);
+                printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
             }
         }
         
-
         if (!ppmFound && !cdFound && !cpdFound) {
             printf("%d) Warning: %dG %s is ALONE (no PPM or CD or CPD star near it).\n",
                 ++errors,
                 gouldRef,
                 cstRef);
+            printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
             readField(buffer, cell, 132, 3);
             bool cumulus = !strncmp(cell, "cum", 3);
             bool nebula = !strncmp(cell, "neb", 3);
@@ -1587,6 +1613,7 @@ void readUA() {
  */
 void readThome(double epoch, const char *filename, int correction) {
     char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+    char catLine[64];
 
     /* usamos catalogs CD, CPD y GC */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -1641,7 +1668,10 @@ void readThome(double epoch, const char *filename, int correction) {
 		int Decls = atoi(cell);
         Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
-    
+
+        snprintf(catLine, 64, "%02dh %02dm %02ds%02d -%02d°%02d'%02d\"%01d",
+            RAh, RAm, RAs / 100, RAs % 100, Decld, Declm, Decls / 10, Decls % 10);
+
 		/* lee numeración catálogo y magnitud */
 		readField(buffer, cell, 1, 4+correction);
 		int numRef = atoi(cell);
@@ -1729,6 +1759,7 @@ void readThome(double epoch, const char *filename, int correction) {
                 ++errors,
                 epoch,
                 numRef);
+            printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
             logCauses(catName, nullptr, x, y, z,
                 false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
         }
@@ -1749,6 +1780,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRef,
                         numRefCat,
                         dist);
+                    printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
                 }
             }
         }
@@ -1764,6 +1796,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRef,
                         numRefCat,
                         dist);
+                    printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
                 }
             }
         }
@@ -1779,6 +1812,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRef,
                         numRefCat,
                         dist);
+                    printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
                 }
             }
         }
@@ -1794,6 +1828,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRef,
                         numRefCat,
                         dist);
+                    printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
                 }
             }
         }
@@ -1809,6 +1844,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRef,
                         numRefCat,
                         dist);
+                    printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
                 }
             }
         }
@@ -1824,6 +1860,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRef,
                         numRefCat,
                         dist);
+                    printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
                 }
             }
         }
@@ -1849,6 +1886,7 @@ void readThome(double epoch, const char *filename, int correction) {
                     numRefCat,
                     usnoRef[usnoIndex],
                     minDistance);
+                printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
             }
         }
 
@@ -1880,6 +1918,7 @@ void readThome(double epoch, const char *filename, int correction) {
  */
 void readGilliss() {
     char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+    char catLine[64];
 
     /* usamos catalogs CD, CPD y GC */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -1939,7 +1978,10 @@ void readGilliss() {
 		int Decls = atoi(cell);
         Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
-    
+        
+        snprintf(catLine, 64, "%02dh %02dm %02ds%02d -%02d°%02d'%02d\"%01d",
+            RAh, RAm, RAs / 100, RAs % 100, Decld, Declm, Decls / 10, Decls % 10);
+
 		/* lee numeración catálogo Gilliss y magnitud */
 		readField(buffer, cell, 1, 5);
 		int giRef = atoi(cell);
@@ -2034,6 +2076,7 @@ void readGilliss() {
             printf("%d) Warning: G %d is ALONE (no PPM or CD or CPD star near it).\n",
                 ++errors,
                 giRef);
+            printf("     Register G %d: %s\n", giRef, catLine);
             logCauses(catName, unidentifiedStream, x, y, z,
                 false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
         }
@@ -2053,6 +2096,7 @@ void readGilliss() {
                         giRef,
                         numRefCat,
                         dist);
+                    printf("     Register G %d: %s\n", giRef, catLine);
                 }
             }
         }
@@ -2067,6 +2111,7 @@ void readGilliss() {
                         giRef,
                         numRefCat,
                         dist);
+                    printf("     Register G %d: %s\n", giRef, catLine);
                 }
             }
         }
@@ -2081,6 +2126,7 @@ void readGilliss() {
                         giRef,
                         numRefCat,
                         dist);
+                    printf("     Register G %d: %s\n", giRef, catLine);
                 }
             }
         }
