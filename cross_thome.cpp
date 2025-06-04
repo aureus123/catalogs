@@ -320,7 +320,8 @@ void readGC2() {
                 ++errors,
                 gcRef);
             logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+                false, false, vmag, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
         countGC++;
     }
@@ -518,7 +519,8 @@ void readWeiss() {
                 oeltzenRef);
             printf("     Register W %d: %s\n", weissRef, catLine);    
             logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+                false, false, vmag, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -645,7 +647,8 @@ void readLalande() {
                 ++errors,
                 catRef);
             logCauses(catName, nullptr, x, y, z,
-                false, false, 1.0, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+                false, false, 1.0, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -860,7 +863,8 @@ void readStone() {
                     stoneRef);
             }
             logCauses(catName, nullptr, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+                false, false, vmag, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -1002,7 +1006,8 @@ void readTaylor() {
                 ++errors,
                 taylorRef);
             logCauses(catName, nullptr, x, y, z,
-                false, false, 1.0, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+                false, false, 1.0, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
@@ -1292,7 +1297,8 @@ void readUSNO() {
                 printf("  Possible cause: pleiades star.\n");
             }
             logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+                false, false, vmag, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         if (countUsno >= MAXUSNOSTAR) {
@@ -1588,7 +1594,8 @@ void readUA() {
             bool cumulus = !strncmp(cell, "cum", 3);
             bool nebula = !strncmp(cell, "neb", 3);
             logCauses(catName, unidentifiedStream, x, y, z,
-                cumulus, nebula, 1.0, RAs, Decl, 1, ppmIndex, nearestPPMDistance);
+                cumulus, nebula, 1.0, RAs, Decl, 1,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
         countUA++;
     }
@@ -1761,7 +1768,8 @@ void readThome(double epoch, const char *filename, int correction) {
                 numRef);
             printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
             logCauses(catName, nullptr, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+                false, false, vmag, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
@@ -2078,7 +2086,8 @@ void readGilliss() {
                 giRef);
             printf("     Register G %d: %s\n", giRef, catLine);
             logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls, ppmIndex, nearestPPMDistance);
+                false, false, vmag, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
