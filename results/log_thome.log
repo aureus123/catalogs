@@ -3550,74 +3550,50 @@ Stars read from PPM: 468861
      Register 70G Serb: 18h 49m 41s +07°0.1'
   Note: Nearest PPM 166816 at 59.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-105) Warning: 17G Sex is FAR from Lal 19445 (dist = 310.8 arcsec).
-     Register 17G Sex: 09h 49m 55s -08°14.6'
-106) Warning: 17G Sex is ALONE (no PPM or CD or CPD star near it).
-     Register 17G Sex: 09h 49m 55s -08°14.6'
-  Note: Nearest PPM 192895 at 310.0 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-107) Warning: 20G Sex is FAR from Lal 19512 (dist = 53985.7 arcsec).
-     Register 20G Sex: 08h 51m 22s -01°20.8'
-108) Warning: 20G Sex is ALONE (no PPM or CD or CPD star near it).
-     Register 20G Sex: 08h 51m 22s -01°20.8'
-  Note: Nearest PPM 177671 at 988.0 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-109) Warning: 11G Tau is ALONE (no PPM or CD or CPD star near it).
+105) Warning: 11G Tau is ALONE (no PPM or CD or CPD star near it).
      Register 11G Tau: 03h 30m 30s +00°0.6'
   Note: Nearest PPM 146728 at 23.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-110) Warning: 26G Tau is FAR from Lal 7444 (dist = 144.3 arcsec).
-     Register 26G Tau: 03h 54m 47s +09°38.7'
-111) Warning: 26G Tau is ALONE (no PPM or CD or CPD star near it).
-     Register 26G Tau: 03h 54m 47s +09°38.7'
-  Note: Nearest PPM 147134 at 147.4 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-112) Warning: 28G Tau is ALONE (no PPM or CD or CPD star near it).
+106) Warning: 28G Tau is ALONE (no PPM or CD or CPD star near it).
      Register 28G Tau: 03h 56m 10s +08°52.1'
   Note: Nearest PPM 147153 at 25.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-113) Warning: 55G Tau is FAR from Lal 8465 (dist = 60.5 arcsec).
+107) Warning: 55G Tau is FAR from Lal 8465 (dist = 60.5 arcsec).
      Register 55G Tau: 04h 23m 11s +09°58.4'
-114) Warning: 55G Tau is ALONE (no PPM or CD or CPD star near it).
+108) Warning: 55G Tau is ALONE (no PPM or CD or CPD star near it).
      Register 55G Tau: 04h 23m 11s +09°58.4'
   Note: Nearest PPM 119958 at 55.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-115) Warning: 51G Tuc is ALONE (no PPM or CD or CPD star near it).
+109) Warning: 51G Tuc is ALONE (no PPM or CD or CPD star near it).
      Register 51G Tuc: 00h 18m 28s -72°46.6'
   Note: Nearest PPM 366914 at 320.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-116) Warning: 11G Vir is FAR from Lal 22343 (dist = 71.3 arcsec).
+110) Warning: 11G Vir is FAR from Lal 22343 (dist = 71.3 arcsec).
      Register 11G Vir: 11h 44m 11s +02°28.1'
-117) Warning: 41G Vir is FAR from Lal 22954 (dist = 75.9 arcsec).
+111) Warning: 41G Vir is FAR from Lal 22954 (dist = 75.9 arcsec).
      Register 41G Vir: 12h 08m 44s -09°34.9'
-118) Warning: 108G Vir is FAR from Lal 24309 (dist = 53991.3 arcsec).
-     Register 108G Vir: 13h 58m 22s +00°58.2'
-119) Warning: 108G Vir is ALONE (no PPM or CD or CPD star near it).
-     Register 108G Vir: 13h 58m 22s +00°58.2'
-  Note: Nearest PPM 160303 at 1143.4 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-120) Warning: 111G Vir is FAR from Lal 24414 (dist = 64.9 arcsec).
+112) Warning: 111G Vir is FAR from Lal 24414 (dist = 64.9 arcsec).
      Register 111G Vir: 13h 02m 31s +05°53.8'
-121) Warning: 142G Vir is ALONE (no PPM or CD or CPD star near it).
+113) Warning: 142G Vir is ALONE (no PPM or CD or CPD star near it).
      Register 142G Vir: 13h 17m 19s +03°22.0'
   Note: Nearest PPM 159721 at 20.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-122) Warning: 174G Vir is ALONE (no PPM or CD or CPD star near it).
+114) Warning: 174G Vir is ALONE (no PPM or CD or CPD star near it).
      Register 174G Vir: 13h 36m 04s +09°1.5'
   Note: Nearest PPM 159981 at 23.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-123) Warning: 175G Vir is ALONE (no PPM or CD or CPD star near it).
+115) Warning: 175G Vir is ALONE (no PPM or CD or CPD star near it).
      Register 175G Vir: 13h 36m 48s +04°10.3'
   Note: Nearest PPM 159997 at 20.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-124) Warning: 190G Vir is FAR from Lal 25445 (dist = 53845.5 arcsec).
+116) Warning: 190G Vir is FAR from Lal 25445 (dist = 53845.5 arcsec).
      Register 190G Vir: 13h 43m 05s -17°30.6'
-125) Warning: 248G Vir is FAR from Lal 26427 (dist = 7192.5 arcsec).
+117) Warning: 248G Vir is FAR from Lal 26427 (dist = 7192.5 arcsec).
      Register 248G Vir: 14h 22m 15s +03°20.8'
 Available UA stars = 7727
-Stars from UA identified with PPM = 7635, CD = 4523 and CPD = 4758
-RSME of distance (arcsec) = 5.45  among a total of 7635 stars
-Errors logged = 125
+Stars from UA identified with PPM = 7639, CD = 4523 and CPD = 4758
+RSME of distance (arcsec) = 5.45  among a total of 7639 stars
+Errors logged = 117
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
