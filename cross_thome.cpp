@@ -1367,6 +1367,7 @@ void readUA() {
         perror("Cannot read ua.txt");
 		exit(1);
     }
+    char serpens = 'a';
     while (fgets(buffer, 1023, stream) != NULL) {
         /* no leemos estrellas sin designación Gould ni sin coordenadas */
 		readFieldSanitized(buffer, cell, 1, 1);
@@ -1402,9 +1403,18 @@ void readUA() {
 		/* lee numeración de Gould y constelación */
 		readField(buffer, cell, 3, 3);
 		int gouldRef = atoi(cell);
-        char cstRef[4];
+        char cstRef[5];
 		readField(buffer, cell, 7, 3);
         copyWithoutSpaces(cstRef, cell);
+        if (cstRef[0] == 'S' && cstRef[1] == 'e' && cstRef[2] == 'r') {
+            /* Serpens tiene parte (a) y (b) */
+            cstRef[3] = serpens;
+            cstRef[4] = 0;
+            /* si es la ultima estrella de (a), actualiza a (b) */
+            if (gouldRef == 49) {
+                serpens = 'b';
+            }
+        }
 
         /* si está disponible Bayer, usa esa designacion */
         readField(buffer, cell, 15, 8);

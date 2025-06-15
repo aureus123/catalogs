@@ -71,7 +71,7 @@ Some catalogs in this folder were sanitized but their original version was store
 
 - 4005 : 51 registers
 - 4011 : 76 registers
-- ua : 25 registers
+- ua : 44 registers
 - gc : 3 registers
 - gilliss : 14 registers
 - yarnall : 2 registers
