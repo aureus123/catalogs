@@ -73,10 +73,11 @@ Some catalogs in this folder were sanitized but their original version was store
 - 4011 : 76 registers
 - ua : 48 registers
 - gc : 3 registers
+- weiss : 3 registers
 - gilliss : 14 registers
 - yarnall : 2 registers
 - corda : 3 registers
 - cordc : 7 registers
-- thome1881: 3 registers
+- thome1881: 4 registers
 - thome1882: 1 register
 - thome1884: 2 registers
