@@ -1284,17 +1284,20 @@ void readUSNO() {
             }
         }
 
+        /* Alone stars that are from Praesepe or Pleiades are ignored but recognized as unidentified. */
         if (!ppmFound && !cdFound && !cpdFound) {
-            printf("%d) Warning: U %d is ALONE (no PPM or CD or CPD star near it).\n",
-                ++errors,
-                numRef);
-            printf("     Register U %d: %s\n", numRef, catLine);    
             readField(buffer, cell, 15, 3);
-            if (!strncmp(cell, "PRA", 3)) {
-                printf("  Possible cause: praesepe star.\n");
-            }               
-            if (!strncmp(cell, "PLE", 3)) {
-                printf("  Possible cause: pleiades star.\n");
+            bool praesepe = !strncmp(cell, "PRA", 3);
+            bool pleiades = !strncmp(cell, "PLE", 3);
+            if (praesepe) {
+                printf("**) U %s is from Praesepe and is ALONE.\n", catName);
+            } else if (pleiades) {
+                printf("**) U %s is from Pleiades and is ALONE.\n", catName);
+            } else {
+                printf("%d) Warning: U %d is ALONE (no PPM or CD or CPD star near it).\n",
+                    ++errors,
+                    numRef);
+                printf("     Register U %d: %s\n", numRef, catLine);    
             }
             logCauses(catName, unidentifiedStream, x, y, z,
                 false, false, vmag, RAs, Decl1875, Decls,
