@@ -1976,6 +1976,12 @@ void readGilliss() {
 		exit(1);
     }
     while (fgets(buffer, 1023, stream) != NULL) {
+        /* descarta dobles */
+        readField(buffer, cell, 6, 1);
+        if (cell[0] != ' ') {
+            continue;
+        }
+
 		/* lee ascension recta B1850.0 */
 		readFieldSanitized(buffer, cell, 33, 2);
 		int RAh = atoi(cell);
