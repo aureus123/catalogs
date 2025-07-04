@@ -642,84 +642,76 @@ Errors logged = 573
 
 ***************************************
 Check references between USNO and BD/OA...
-1) Warning: U 111 is FAR from BD star (dist = 3076.7 arcsec).
-     Register U 111: 00h 09m 39s33 -00°00'21"4
-     Register BD +0°30 (en 0h):  9.4 | 11m7.1s | 42.3'     (pag. 32)
-2) Warning: U 205 is FAR from BD star (dist = 118.5 arcsec).
+1) Warning: U 205 is FAR from BD star (dist = 118.5 arcsec).
      Register U 205: 00h 20m 17s59 +01°07'30"9
      Register BD +1°66 (en 0h):  9.3 | 20m1.0s | 3.9'     (pag. 49)
-3) Warning: U 344 is FAR from BD star (dist = 81.7 arcsec).
+2) Warning: U 344 is FAR from BD star (dist = 81.7 arcsec).
      Register U 344: 00h 34m 42s90 +01°01'46"7
      Register BD +0°104 (en 0h):  8.8 | 34m26.3s | 58.8'     (pag. 32)
-4) Warning: U 346 is FAR from BD star (dist = 92.0 arcsec).
+3) Warning: U 346 is FAR from BD star (dist = 92.0 arcsec).
      Register U 346: 00h 34m 47s12 +01°57'40"6
      Register BD +1°119 (en 0h):  8.7 | 34m34.0s | 54.6'     (pag. 49)
-5) Warning: U 350 is FAR from BD star (dist = 79.0 arcsec).
+4) Warning: U 350 is FAR from BD star (dist = 79.0 arcsec).
      Register U 350: 00h 34m 55s34 +10°03'03"6
      Register BD +10°74 (en 0h):  8.8 | 34m40.4s | 0.1'     (pag. 205)
-6) Warning: U 443 is FAR from BD star (dist = 65.3 arcsec).
+5) Warning: U 443 is FAR from BD star (dist = 65.3 arcsec).
      Register U 443: 00h 44m 16s49 +01°37'49"1
      Register BD +1°151 (en 0h):  8.8 | 44m0.5s | 35.1'     (pag. 50)
-7) Warning: U 489 is FAR from BD star (dist = 158.5 arcsec).
+6) Warning: U 489 is FAR from BD star (dist = 158.5 arcsec).
      Register U 489: 00h 48m 23s96 -01°33'12"2
      Register BD -1°117 (en 0h):  9.5 | 48m8.0s | 32.2'     (pag. 1)
-8) Warning: U 508 is FAR from BD star (dist = 73.7 arcsec).
+7) Warning: U 508 is FAR from BD star (dist = 73.7 arcsec).
      Register U 508: 00h 50m 46s96 +01°43'45"3
      Register BD +1°177 (en 0h):  7.8 | 50m31.2s | 40.9'     (pag. 50)
-9) Warning: U 605 is FAR from BD star (dist = 64.7 arcsec).
+8) Warning: U 605 is FAR from BD star (dist = 64.7 arcsec).
      Register U 605: 01h 01m 49s39 +11°56'40"6
      Register BD +11°151 (en 1h):  8.3 | 1m33.0s | 54.0'     (pag. 222)
-10) Warning: U 682 is FAR from BD star (dist = 85.6 arcsec).
+9) Warning: U 682 is FAR from BD star (dist = 85.6 arcsec).
      Register U 682: 01h 14m 39s88 -01°05'00"0
      Register BD -1°178 (en 1h):  9.0 | 14m23.9s | 8.0'     (pag. 1)
-11) Warning: U 714 is FAR from BD star (dist = 82.4 arcsec).
+10) Warning: U 714 is FAR from BD star (dist = 82.4 arcsec).
      Register U 714: 01h 20m 35s91 +08°18'13"9
      Register BD +8°236 (en 1h):  9.2 | 20m20.9s | 15.3'     (pag. 170)
-12) Warning: U 1287 is FAR from BD star (dist = 68.9 arcsec).
+11) Warning: U 1287 is FAR from BD star (dist = 68.9 arcsec).
      Register U 1287: 02h 47m 12s61 +08°12'05"7
      Register BD +8°445 (en 2h):  8.5 | 46m56.7s | 9.7'     (pag. 171)
-13) Warning: U 1357 is FAR from OA 3458 (dist = 1199.7 arcsec).
+12) Warning: U 1357 is FAR from OA 3458 (dist = 1199.7 arcsec).
      Register U 1357: 02h 58m 31s34 +50°37'28"1
-14) Warning: U 1485 is FAR from BD star (dist = 86.5 arcsec).
+13) Warning: U 1485 is FAR from BD star (dist = 86.5 arcsec).
      Register U 1485: 03h 21m 50s96 +09°28'16"7
      Register BD +9°442 (en 3h):  9.2 | 21m35.9s | 25.8'     (pag. 188)
-15) Warning: U 2499 is FAR from BD star (dist = 62.1 arcsec).
+14) Warning: U 2499 is FAR from BD star (dist = 62.1 arcsec).
      Register U 2499: 05h 48m 23s18 +07°22'17"9
      Register BD +7°1058 (en 5h):  9.5 | 48m5.7s | 23.2'     (pag. 155)
-16) Warning: U 4947 is FAR from BD star (dist = 69.4 arcsec).
+15) Warning: U 4947 is FAR from BD star (dist = 69.4 arcsec).
      Register U 4947: 11h 29m 37s39 +01°28'00"0
      Register BD +1°2591 (en 11h):  9.0 | 29m22.2s | 28.5'     (pag. 58)
-17) Warning: U 5072 is FAR from BD star (dist = 128.0 arcsec).
+16) Warning: U 5072 is FAR from BD star (dist = 128.0 arcsec).
      Register U 5072: 11h 46m 54s60 +01°07'15"6
      Register BD +1°2625 (en 11h):  9.3 | 46m38.6s | 6.8'     (pag. 58)
-18) Warning: U 5317 is FAR from BD star (dist = 90.5 arcsec).
+17) Warning: U 5317 is FAR from BD star (dist = 90.5 arcsec).
      Register U 5317: 12h 24m 07s23 +05°26'32"7
      Register BD +5°2636 (en 12h):  9.0 | 23m51.7s | 26.7'     (pag. 125)
-19) Warning: U 5377 is FAR from BD star (dist = 92.9 arcsec).
+18) Warning: U 5377 is FAR from BD star (dist = 92.9 arcsec).
      Register U 5377: 12h 31m 45s65 +13°37'46"9
      Register BD +13°2563 (en 12h):  9.0 | 31m27.3s | 38.1'     (pag. 265)
-20) Warning: U 5565 is FAR from BD star (dist = 117.5 arcsec).
+19) Warning: U 5565 is FAR from BD star (dist = 117.5 arcsec).
      Register U 5565: 13h 00m 42s13 +12°50'01"7
      Register BD +12°2557 (en 13h):  9.3 | 0m27.2s | 53.6'     (pag. 248)
-21) Warning: U 7524 is FAR from OA 17415 (dist = 83.3 arcsec).
+20) Warning: U 7524 is FAR from OA 17415 (dist = 83.3 arcsec).
      Register U 7524: 17h 37m 13s63 +68°27'00"0
-22) Warning: U 8089 is FAR from BD star (dist = 77.4 arcsec).
+21) Warning: U 8089 is FAR from BD star (dist = 77.4 arcsec).
      Register U 8089: 18h 36m 07s38 -01°07'01"7
      Register BD -1°3550 (en 18h):  9.5 | 35m51.8s | 6.0'     (pag. 13)
-23) Warning: U 8583 is FAR from BD star (dist = 12731.4 arcsec).
-     Register U 8583: 19h 28m 55s00 +19°29'15"9
-     Register BD +19°4170 (en 19h):  9.5 | 43m41.4s | 39.8'     (pag. 375)
-24) Warning: U 9862 is FAR from BD star (dist = 141.8 arcsec).
+22) Warning: U 9862 is FAR from BD star (dist = 141.8 arcsec).
      Register U 9862: 21h 47m 28s38 +03°05'33"1
      Register BD +3°4631 (en 21h):  9.5 | 47m14.1s | 1.8'     (pag. 98)
-25) Warning: U 9903 is FAR from OA 21803 (dist = 315069.3 arcsec).
-     Register U 9903: 21h 53m 09s00 -28°59'42"8
-26) Warning: U 10662 is FAR from OA 25634 (dist = 524.7 arcsec).
+23) Warning: U 10662 is FAR from OA 25634 (dist = 524.7 arcsec).
      Register U 10662: 23h 22m 41s34 +54°21'57"0
-27) Warning: U 10678 is FAR from BD star (dist = 67.5 arcsec).
+24) Warning: U 10678 is FAR from BD star (dist = 67.5 arcsec).
      Register U 10678: 23h 24m 22s05 +15°07'00"0
      Register BD +15°4836 (en 23h):  9.5 | 24m5.3s | 6.4'     (pag. 308)
-Errors logged = 27
+Errors logged = 24
 
 ***************************************
 Check references between UA and BD...

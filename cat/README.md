@@ -75,7 +75,7 @@ Some catalogs in this folder were sanitized but their original version was store
 - gc : 3 registers
 - weiss : 3 registers
 - gilliss : 21 registers
-- yarnall : 2 registers
+- yarnall : 5 registers
 - corda : 3 registers
 - cordc : 7 registers
 - thome1881: 4 registers
