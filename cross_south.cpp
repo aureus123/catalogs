@@ -1,6 +1,6 @@
 
 /*
- * CROSS_THOME - Compara registros de varios catalogos
+ * CROSS_SOUTH - Compara registros de varios catalogos
  * Made in 2025 by Daniel E. Severin
  */
 
@@ -325,6 +325,7 @@ void readGC2() {
         }
         countGC++;
     }
+    fclose(stream);
     fclose(unidentifiedStream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
@@ -534,6 +535,7 @@ void readWeiss() {
         oaRef[countOA] = oeltzenRef;
         countOA++;
     }
+    fclose(stream);
     fclose(unidentifiedStream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
@@ -662,8 +664,8 @@ void readLalande() {
         lalRef[countLal] = catRef;
         countLal++;
     }
-	fclose(crossPPMStream);
     fclose(stream);
+	fclose(crossPPMStream);
 
     printf("Available Lalande stars = %d\n", countLal);
     printf("Stars from Lalande identified with PPM = %d\n", countDist);
@@ -890,11 +892,11 @@ void readStone() {
         stRef[countSt] = stoneRef;
         countSt++; 
     }
+    fclose(stream2);
+    fclose(stream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
-    fclose(stream);
-    fclose(stream2);
 
     printf("Available Stone stars = %d, and Lacaille = %d\n", countSt, countLac);
     printf("Stars from Stone identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
@@ -1054,9 +1056,9 @@ void readTaylor() {
         tayRef[countTaylor] = taylorRef;
         countTaylor++;
     }
-	fclose(crossPPMStream);
-    fclose(stream);
     fclose(stream2);
+    fclose(stream);
+	fclose(crossPPMStream);
 
     printf("Available Taylor stars = %d\n", countTaylor);
     printf("Stars from Taylor identified with PPM = %d\n", countDist);
@@ -1314,6 +1316,7 @@ void readUSNO() {
         usnoRef[countUsno] = numRef;
         countUsno++;
     }
+    fclose(stream);
     fclose(unidentifiedStream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
@@ -1612,6 +1615,7 @@ void readUA() {
         }
         countUA++;
     }
+    fclose(stream);
     fclose(unidentifiedStream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
@@ -1920,6 +1924,7 @@ void readThome(double epoch, const char *filename, int correction) {
                 cpdFound, cpdIndex, nearestCPDDistance);
         }
     }
+    fclose(stream);
 
     printf("Stars from Thome %.0f identified with PPM = %d, CD = %d and CPD = %d\n", epoch, countDist, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
@@ -2177,6 +2182,7 @@ void readGilliss() {
                 cpdFound, cpdIndex, nearestCPDDistance);
         }
     }
+    fclose(stream);
     fclose(unidentifiedStream);
 	fclose(crossPPMStream);
 	fclose(crossCPDStream);
@@ -2197,7 +2203,7 @@ void readGilliss() {
  */
 int main(int argc, char** argv)
 {
-    printf("CROSS_THOME - Compare several catalogs.\n");
+    printf("CROSS_SOUTH - Compare several catalogs.\n");
     printf("Made in 2025 by Daniel Severin.\n");
 
     /* leemos catalogo CD */

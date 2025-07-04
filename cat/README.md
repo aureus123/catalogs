@@ -32,7 +32,7 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 - cpd : Cape Photographic Durchmusterung from _VizieR_ (code I/108)
 - gc †: Argentine General Catalog from _GAVO Data Center_
 - gc2 : Catálogo de 5791 estrellas (época 1900.0), segundo Catálogo General Argentino from _GAVO Data Center_
-- weiss : Weiss, Catalog der Argelander'schen Zonen vom 15-31 grade
+- weiss †: Weiss, Catalog der Argelander'schen Zonen vom 15-31 grade
 suedlicher Deklination in mittleren Positionen fuer 1850.0 from
 _GAVO Data Center_
 - lalande : F. Baily, J. Lalande, Catalogue of those stars in the Histoire Celeste Francaise of Jerome Delalande from _GAVO Data Center_
@@ -44,6 +44,7 @@ to 1879 from _GAVO Data Center_
 - gilliss †: Gilliss, A catalogue of 16748 southern stars deduced by the
 United States Naval Observatory from the zone observations made at
 Santiago de Chile, from _GAVO Data Center_
+- oarn : Oeltzen-Argelander's Zonen-Beobachtungen vom 45. bis 80. Grade noerdlicher Declination in mittleren Positionen fuer 1842.0
 - thome1881 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 55-74, from _GAVO Data Center_
 - thome1882 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 140-164, from _GAVO Data Center_
 - thome1883 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 181-184, from _GAVO Data Center_
@@ -62,7 +63,6 @@ by the current code:
 - laplataa : La Plata A, epoch 1925.0, declinations -52 to -57
 - laplatab : La Plata B, epoch 1925.0, declinations -57 to -62
 - laplatac : La Plata C, epoch 1925.0, declinations -62 to -66
-- oargn : Oeltzen-Argelander's Zonen-Beobachtungen vom 45. bis 80. Grade noerdlicher Declination in mittleren Positionen fuer 1842.0
 - lacaille : N. L. de Lacaille, T. Henderson, A catalogue of 9766 stars in the southern hemisphere
 
 ### Original catalogs

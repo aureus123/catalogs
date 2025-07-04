@@ -35,7 +35,8 @@ find typo errors during the confection of the digital version of BD or CD.
 ### Other experiments
 
 - *cross_gc*: Cross-identifies curated CD and GC (Argentine General Catalog) and compares them
-- *cross_thome*: Cross-identified lower hierarchy catalogs.
+- *cross_north*: Cross-identified lower hierarchy catalogs, mostly north.
+- *cross_south*: Cross-identified lower hierarchy catalogs, mostly south.
 - *compare_cd*: Logs differences between two digital versions of CD
 - *gen_tycho2_north* and *gen_tycho2_south*: See README in tycho2 folder
 
@@ -63,6 +64,7 @@ stars cross-identified between PPM and the target catalog, and 4th. column repor
 | Segundo Cat. General Argentino † | 1900 | 5357 | 2.84 |
 | Lalande † | 1800 | 46914 | 6.88 |
 | Taylor † | 1835 | 10944 | 4.19 |
+| Oeltzen-Argelander (North) † | 1842 | 25852 | 3.73 |
 | Weiss † | 1850 | 18010 | 4.66 |
 | Stone † | 1880 | 12414 | 1.48 |
 | USNO 3rd. edition † | 1860 | 10606 | 2.77 |
