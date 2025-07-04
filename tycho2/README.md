@@ -26,7 +26,7 @@ For the southern hemisphere, there are 7043 UA, 27340 GC, 5213 ZC, 13347 OA, 136
 
 Since all identifications are performed just by angular distance thresholds, misidentifications might happen. On the other hand, some BD/SD stars are
 missing since they are only obtained from PPM (in northern hemisphere, it happens from declination +20 and above; in southern hemisphere, it happens from declination -22 and above).
-Files *cross_gc.cpp* and *cross_thome.cpp* do the cross-identifications between PPM/CD/CPD and UA/GC/ZC/OA/U/G/G2.
+Files *cross_gc.cpp* and *cross_south.cpp* do the cross-identifications between PPM/CD/CPD and UA/GC/ZC/OA/U/G/G2.
 
 Other further improvements (not done yet) might be to use a better
 cross-identification algorithm, e.g. that maximizes likelihood between positions
