@@ -813,105 +813,103 @@ Check references between USNO and BD/BAC/OA...
      Register BD +9°442 (en 3h):  9.2 | 21m35.9s | 25.8'     (pag. 188)
 17) Warning: U 1885 is FAR from BAC 1307 (dist = 61.8 arcsec).
      Register U 1885: 04h 08m 43s71 +49°41'11"7
-18) Warning: U 2142 is FAR from BAC 1518 (dist = 10794.0 arcsec).
-     Register U 2142: 04h 47m 44s06 +21°21'53"3
-19) Warning: U 2499 is FAR from BD star (dist = 62.1 arcsec).
+18) Warning: U 2499 is FAR from BD star (dist = 62.1 arcsec).
      Register U 2499: 05h 48m 23s18 +07°22'17"9
      Register BD +7°1058 (en 5h):  9.5 | 48m5.7s | 23.2'     (pag. 155)
-20) Warning: U 3104 is FAR from BAC 2472 (dist = 18002.8 arcsec).
+19) Warning: U 3104 is FAR from BAC 2472 (dist = 18002.8 arcsec).
      Register U 3104: 07h 21m 57s09 +23°12'05"5
-21) Warning: U 4947 is FAR from BD star (dist = 69.4 arcsec).
+20) Warning: U 4947 is FAR from BD star (dist = 69.4 arcsec).
      Register U 4947: 11h 29m 37s39 +01°28'00"0
      Register BD +1°2591 (en 11h):  9.0 | 29m22.2s | 28.5'     (pag. 58)
-22) Warning: U 5072 is FAR from BD star (dist = 128.0 arcsec).
+21) Warning: U 5072 is FAR from BD star (dist = 128.0 arcsec).
      Register U 5072: 11h 46m 54s60 +01°07'15"6
      Register BD +1°2625 (en 11h):  9.3 | 46m38.6s | 6.8'     (pag. 58)
-23) Warning: U 5317 is FAR from BD star (dist = 90.5 arcsec).
+22) Warning: U 5317 is FAR from BD star (dist = 90.5 arcsec).
      Register U 5317: 12h 24m 07s23 +05°26'32"7
      Register BD +5°2636 (en 12h):  9.0 | 23m51.7s | 26.7'     (pag. 125)
-24) Warning: U 5377 is FAR from BD star (dist = 92.9 arcsec).
+23) Warning: U 5377 is FAR from BD star (dist = 92.9 arcsec).
      Register U 5377: 12h 31m 45s65 +13°37'46"9
      Register BD +13°2563 (en 12h):  9.0 | 31m27.3s | 38.1'     (pag. 265)
-25) Warning: U 5565 is FAR from BD star (dist = 117.5 arcsec).
+24) Warning: U 5565 is FAR from BD star (dist = 117.5 arcsec).
      Register U 5565: 13h 00m 42s13 +12°50'01"7
      Register BD +12°2557 (en 13h):  9.3 | 0m27.2s | 53.6'     (pag. 248)
-26) Warning: U 6171 is FAR from BAC 4838 (dist = 30761.2 arcsec).
+25) Warning: U 6171 is FAR from BAC 4838 (dist = 30761.2 arcsec).
      Register U 6171: 14h 36m 24s59 -34°35'46"3
-27) Warning: U 6231 is FAR from BAC 4912 (dist = 63.6 arcsec).
+26) Warning: U 6231 is FAR from BAC 4912 (dist = 63.6 arcsec).
      Register U 6231: 14h 46m 05s40 -32°43'36"7
-28) Warning: U 6503 is FAR from BAC 5117 (dist = 307.8 arcsec).
+27) Warning: U 6503 is FAR from BAC 5117 (dist = 307.8 arcsec).
      Register U 6503: 15h 25m 36s28 -24°38'04"6
-29) Warning: U 6632 is FAR from BAC 5228 (dist = 72.0 arcsec).
+28) Warning: U 6632 is FAR from BAC 5228 (dist = 72.0 arcsec).
      Register U 6632: 15h 42m 08s99 -25°51'33"5
-30) Warning: U 6691 is FAR from BAC 5281 (dist = 270.3 arcsec).
+29) Warning: U 6691 is FAR from BAC 5281 (dist = 270.3 arcsec).
      Register U 6691: 15h 49m 29s82 -20°34'25"8
-31) Warning: U 6814 is FAR from BAC 5389 (dist = 372.5 arcsec).
+30) Warning: U 6814 is FAR from BAC 5389 (dist = 372.5 arcsec).
      Register U 6814: 16h 04m 57s23 -28°41'38"2
-32) Warning: U 6986 is FAR from BAC 5564 (dist = 105.9 arcsec).
+31) Warning: U 6986 is FAR from BAC 5564 (dist = 105.9 arcsec).
      Register U 6986: 16h 31m 30s82 -25°46'48"9
-33) Warning: U 7001 is FAR from BAC 5576 (dist = 96.6 arcsec).
+32) Warning: U 7001 is FAR from BAC 5576 (dist = 96.6 arcsec).
      Register U 7001: 16h 33m 19s60 -28°50'50"8
-34) Warning: U 7039 is FAR from BAC 5612 (dist = 135.5 arcsec).
+33) Warning: U 7039 is FAR from BAC 5612 (dist = 135.5 arcsec).
      Register U 7039: 16h 37m 55s19 -31°11'37"9
-35) Warning: U 7103 is FAR from BAC 5665 (dist = 73.1 arcsec).
+34) Warning: U 7103 is FAR from BAC 5665 (dist = 73.1 arcsec).
      Register U 7103: 16h 45m 10s58 -30°31'02"0
-36) Warning: U 7112 is FAR from BAC 5673 (dist = 152.4 arcsec).
+35) Warning: U 7112 is FAR from BAC 5673 (dist = 152.4 arcsec).
      Register U 7112: 16h 45m 45s12 -25°35'38"7
-37) Warning: U 7131 is FAR from BAC 5690 (dist = 147.1 arcsec).
+36) Warning: U 7131 is FAR from BAC 5690 (dist = 147.1 arcsec).
      Register U 7131: 16h 47m 18s72 -31°04'39"7
-38) Warning: U 7213 is FAR from BAC 5750 (dist = 146.4 arcsec).
+37) Warning: U 7213 is FAR from BAC 5750 (dist = 146.4 arcsec).
      Register U 7213: 16h 57m 06s93 -28°40'34"9
-39) Warning: U 7387 is FAR from BAC 5897 (dist = 83.9 arcsec).
+38) Warning: U 7387 is FAR from BAC 5897 (dist = 83.9 arcsec).
      Register U 7387: 17h 20m 09s49 -31°24'51"8
-40) Warning: U 7492 is FAR from BAC 5977 (dist = 97.1 arcsec).
+39) Warning: U 7492 is FAR from BAC 5977 (dist = 97.1 arcsec).
      Register U 7492: 17h 33m 55s53 -32°58'42"1
-41) Warning: U 7502 is FAR from BAC 5983 (dist = 152.0 arcsec).
+40) Warning: U 7502 is FAR from BAC 5983 (dist = 152.0 arcsec).
      Register U 7502: 17h 34m 31s59 -30°06'17"7
-42) Warning: U 7524 is FAR from OA 17415 (dist = 83.3 arcsec).
+41) Warning: U 7524 is FAR from OA 17415 (dist = 83.3 arcsec).
      Register U 7524: 17h 37m 13s63 +68°27'00"0
-43) Warning: U 7580 is FAR from BAC 6028 (dist = 25884.3 arcsec).
+42) Warning: U 7580 is FAR from BAC 6028 (dist = 25884.3 arcsec).
      Register U 7580: 17h 42m 53s40 -34°45'24"0
-44) Warning: U 7752 is FAR from BAC 6108 (dist = 75.8 arcsec).
+43) Warning: U 7752 is FAR from BAC 6108 (dist = 75.8 arcsec).
      Register U 7752: 17h 56m 08s47 -25°36'25"6
-45) Warning: U 7785 is FAR from BAC 6131 (dist = 71.8 arcsec).
+44) Warning: U 7785 is FAR from BAC 6131 (dist = 71.8 arcsec).
      Register U 7785: 17h 59m 55s64 -31°10'28"7
-46) Warning: U 7909 is FAR from BAC 6212 (dist = 125.8 arcsec).
+45) Warning: U 7909 is FAR from BAC 6212 (dist = 125.8 arcsec).
      Register U 7909: 18h 12m 11s88 -32°14'18"3
-47) Warning: U 7956 is FAR from BAC 6256 (dist = 60.6 arcsec).
+46) Warning: U 7956 is FAR from BAC 6256 (dist = 60.6 arcsec).
      Register U 7956: 18h 18m 30s98 -31°36'32"3
-48) Warning: U 8089 is FAR from BD star (dist = 77.4 arcsec).
+47) Warning: U 8089 is FAR from BD star (dist = 77.4 arcsec).
      Register U 8089: 18h 36m 07s38 -01°07'01"7
      Register BD -1°3550 (en 18h):  9.5 | 35m51.8s | 6.0'     (pag. 13)
-49) Warning: U 8355 is FAR from BAC 6568 (dist = 72.2 arcsec).
+48) Warning: U 8355 is FAR from BAC 6568 (dist = 72.2 arcsec).
      Register U 8355: 19h 05m 43s07 -30°03'58"1
-50) Warning: U 8753 is FAR from BAC 6814 (dist = 68.5 arcsec).
+49) Warning: U 8753 is FAR from BAC 6814 (dist = 68.5 arcsec).
      Register U 8753: 19h 45m 54s40 -24°17'11"3
-51) Warning: U 9024 is FAR from BAC 6984 (dist = 112.3 arcsec).
+50) Warning: U 9024 is FAR from BAC 6984 (dist = 112.3 arcsec).
      Register U 9024: 20h 11m 50s06 -29°38'01"5
-52) Warning: U 9203 is FAR from BAC 7128 (dist = 63.8 arcsec).
+51) Warning: U 9203 is FAR from BAC 7128 (dist = 63.8 arcsec).
      Register U 9203: 20h 31m 51s54 -24°16'57"0
-53) Warning: U 9221 is FAR from BAC 7148 (dist = 60.1 arcsec).
+52) Warning: U 9221 is FAR from BAC 7148 (dist = 60.1 arcsec).
      Register U 9221: 20h 33m 05s04 -28°29'18"9
-54) Warning: U 9488 is FAR from BAC 7347 (dist = 312.5 arcsec).
+53) Warning: U 9488 is FAR from BAC 7347 (dist = 312.5 arcsec).
      Register U 9488: 21h 02m 26s19 -23°02'41"1
-55) Warning: U 9546 is FAR from BAC 7393 (dist = 60.8 arcsec).
+54) Warning: U 9546 is FAR from BAC 7393 (dist = 60.8 arcsec).
      Register U 9546: 21h 10m 15s69 +74°39'11"6
-56) Warning: U 9707 is FAR from BAC 7523 (dist = 824.2 arcsec).
+55) Warning: U 9707 is FAR from BAC 7523 (dist = 824.2 arcsec).
      Register U 9707: 21h 30m 56s40 -25°04'37"9
-57) Warning: U 9862 is FAR from BD star (dist = 141.8 arcsec).
+56) Warning: U 9862 is FAR from BD star (dist = 141.8 arcsec).
      Register U 9862: 21h 47m 28s38 +03°05'33"1
      Register BD +3°4631 (en 21h):  9.5 | 47m14.1s | 1.8'     (pag. 98)
-58) Warning: U 9961 is FAR from BAC 7702 (dist = 93.5 arcsec).
+57) Warning: U 9961 is FAR from BAC 7702 (dist = 93.5 arcsec).
      Register U 9961: 22h 00m 13s66 -34°43'27"9
-59) Warning: U 10662 is FAR from OA 25634 (dist = 524.7 arcsec).
+58) Warning: U 10662 is FAR from OA 25634 (dist = 524.7 arcsec).
      Register U 10662: 23h 22m 41s34 +54°21'57"0
-60) Warning: U 10678 is FAR from BD star (dist = 67.5 arcsec).
+59) Warning: U 10678 is FAR from BD star (dist = 67.5 arcsec).
      Register U 10678: 23h 24m 22s05 +15°07'00"0
      Register BD +15°4836 (en 23h):  9.5 | 24m5.3s | 6.4'     (pag. 308)
 USNO properly identified with BD = 143
-USNO properly identified with BAC = 1369
+USNO properly identified with BAC = 1370
 USNO properly identified with OA = 166
-Errors logged = 60
+Errors logged = 59
 
 ***************************************
 Check references between UA and BD...

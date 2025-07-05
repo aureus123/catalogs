@@ -37,7 +37,7 @@ suedlicher Deklination in mittleren Positionen fuer 1850.0 from
 _GAVO Data Center_
 - lalande : F. Baily, J. Lalande, Catalogue of those stars in the Histoire Celeste Francaise of Jerome Delalande from _GAVO Data Center_
 - taylor : Taylor's general catalogue of stars for the equinox 1835.0 from observations made at the Madras Observatory during the years 1831 to 1842
-- yarnall †: Yarnall-Frisby, Catalogue of stars observed at the USNO 
+- usno †: Yarnall-Frisby, Catalogue of stars observed at the USNO 
 during years 1845 to 1877. 3rd. Edition. from _GAVO Data Center_
 - stone : Stone, Cape catalog of 12441 stars observed during years 1871
 to 1879 from _GAVO Data Center_
@@ -77,7 +77,7 @@ Some catalogs in this folder were sanitized but their original version was store
 - gc : 3 registers
 - weiss : 3 registers
 - gilliss : 21 registers
-- yarnall : 5 registers
+- usno : 6 registers
 - corda : 3 registers
 - cordc : 7 registers
 - thome1881: 4 registers

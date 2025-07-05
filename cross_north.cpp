@@ -240,9 +240,9 @@ void readUSNO() {
     int errors = 0;
 
     /* leemos catalogo USNO */
-    FILE *stream = fopen("cat/yarnall.txt", "rt");
+    FILE *stream = fopen("cat/usno.txt", "rt");
     if (stream == NULL) {
-        perror("Cannot read yarnall.txt");
+        perror("Cannot read usno.txt");
 		exit(1);
     }
     while (fgets(buffer, 1023, stream) != NULL) {
