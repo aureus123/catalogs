@@ -44,7 +44,9 @@ to 1879 from _GAVO Data Center_
 - gilliss †: Gilliss, A catalogue of 16748 southern stars deduced by the
 United States Naval Observatory from the zone observations made at
 Santiago de Chile, from _GAVO Data Center_
-- oarn : Oeltzen-Argelander's Zonen-Beobachtungen vom 45. bis 80. Grade noerdlicher Declination in mittleren Positionen fuer 1842.0
+- oarn : Oeltzen-Argelander's Zonen-Beobachtungen vom 45. bis 80. Grade noerdlicher Declination in mittleren Positionen fuer 1842.0, from _GAVO Data Center_
+- bac : F. Baily, Catalogue of stars of the British Association for the advancement of science, containing 8377 fixed stars reduced to
+January 1, 1850, from _GAVO Data Center_
 - thome1881 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 55-74, from _GAVO Data Center_
 - thome1882 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 140-164, from _GAVO Data Center_
 - thome1883 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 181-184, from _GAVO Data Center_

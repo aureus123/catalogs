@@ -13,10 +13,11 @@
 #include "misc.h"
 
 #define MAXOASTAR 26500
+#define MAXBACSTAR 8400
 #define EPOCH_OA 1842.0
+#define EPOCH_BAC 1850.0
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
-#define MAX_DIST_OA_PPM 45.0
 #define MAX_DIST_CROSS 60.0
 #define CURATED true // true if curated BD catalog should be used
 
@@ -24,6 +25,11 @@
 double oaX[MAXOASTAR], oaY[MAXOASTAR], oaZ[MAXOASTAR];
 int oaRef[MAXOASTAR];
 int countOA = 0;
+
+// Here, we save 1850.0 coordinates of BAC stars in rectangular form
+double bacX[MAXBACSTAR], bacY[MAXBACSTAR], bacZ[MAXBACSTAR];
+int bacRef[MAXBACSTAR];
+int countBAC = 0;
 
 /*
  * readOARN - lee y cruza catalogo de Oeltzen-Argelander (North)
@@ -85,7 +91,7 @@ void readOARN() {
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_OA_PPM) {
+		if (minDistance < MAX_DIST_CROSS) {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
@@ -113,6 +119,101 @@ void readOARN() {
 
     printf("Available OA stars = %d\n", countOA);
     printf("Stars from OA identified with PPM = %d\n", countDist);
+    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
+        sqrt(akkuDistError / (double)countDist),
+        countDist);
+    printf("Errors logged = %d\n", errors);
+}
+
+/*
+ * readBAC - lee y cruza catalogo de la British Association
+ */
+void readBAC() {
+    char buffer[1024], cell[256];
+
+    printf("\n***************************************\n");
+    printf("Perform comparison between BAC catalog and PPM...\n");
+
+    int countDist = 0;
+    double akkuDistError = 0.0;
+    int errors = 0;
+
+    /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
+    readPPM(false, true, false, false, EPOCH_BAC);
+    sortPPM();
+	struct PPMstar_struct *PPMstar = getPPMStruct();
+    int PPMstars = getPPMStars();
+
+    /* leemos catalogo BAC */
+    FILE *stream = fopen("cat/bac.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read bac.txt");
+		exit(1);
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+		/* lee numeración */
+		readField(buffer, cell, 1, 4);
+		int numRef = atoi(cell);
+
+		/* lee ascension recta B1850.0 */
+		readFieldSanitized(buffer, cell, 20, 2);
+		int RAh = atoi(cell);
+        double RA = (double) RAh;
+		readFieldSanitized(buffer, cell, 22, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readFieldSanitized(buffer, cell, 24, 4);
+		int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1850.0 (en realidad NPD) */
+		readFieldSanitized(buffer, cell, 48, 3);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readFieldSanitized(buffer, cell, 51, 2);
+		int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+		readFieldSanitized(buffer, cell, 53, 3);
+		int Decls = atoi(cell);
+        Decl += (((double) Decls)/10.0)/3600.0;
+		Decl = 90.0 - Decl; /* convertimos NPD a declinación */
+
+        bool ppmFound = false;
+		int ppmIndex = -1;
+		double minDistance = HUGE_NUMBER;
+		/* busca la PPM mas cercana y genera el cruzamiento */
+		double x, y, z;
+		sph2rec(RA, Decl, &x, &y, &z);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
+		if (minDistance < MAX_DIST_CROSS) {
+            akkuDistError += minDistance * minDistance;
+            countDist++;
+            ppmFound = true;
+		}
+
+        if (!ppmFound) {
+            printf("%d) Warning: BAC %d is ALONE (nearest PPM star at %.1f arcsec).\n",
+                ++errors,
+                numRef,
+                minDistance);
+        }
+
+        /* la almacenamos para futuras identificaciones */
+        if (countBAC >= MAXBACSTAR) {
+            printf("Error: too many BAC stars.\n");
+            exit(1);
+        }
+        bacX[countBAC] = x;
+        bacY[countBAC] = y;
+        bacZ[countBAC] = z;
+        bacRef[countBAC] = numRef;
+        countBAC++;
+    }
+	fclose(stream);
+
+    printf("Available BAC stars = %d\n", countBAC);
+    printf("Stars from BAC identified with PPM = %d\n", countDist);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -195,6 +296,31 @@ void readUSNO() {
                 double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
                 if (dist > MAX_DIST_CROSS) {
                     printf("%d) Warning: U %d is FAR from OA %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        numRef,
+                        numRefCat,
+                        dist);
+                    printf("     Register U %d: %s\n", numRef, catLine);    
+                }
+            }
+        }
+
+	    /* convierte coordenadas a la de BAC y calcula rectangulares */
+        newRA = RA;
+        newDecl = Decl;
+        transform(EPOCH_USNO, EPOCH_BAC, &newRA, &newDecl);
+        sph2rec(newRA, newDecl, &x, &y, &z);
+
+        /* lee referencia a catalogo BAC */
+		readField(buffer, cell, 19, 4);
+        if (!strncmp(cell, "BAC ", 4)) {
+    		readField(buffer, cell, 30, 5);
+            int numRefCat = atoi(cell);
+            for (int i = 0; i < countBAC; i++) {
+                if (bacRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, bacX[i], bacY[i], bacZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: U %d is FAR from BAC %d (dist = %.1f arcsec).\n",
                         ++errors,
                         numRef,
                         numRefCat,
@@ -407,6 +533,9 @@ int main(int argc, char** argv)
 
     /* leemos y cruzamos OA */
     readOARN();
+
+    /* leemos y cruzamos BAC */
+    readBAC();
 
     /* leemos y revisamos identificaciones de Yarnall */
     readUSNO();

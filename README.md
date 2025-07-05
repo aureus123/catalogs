@@ -64,11 +64,12 @@ stars cross-identified between PPM and the target catalog, and 4th. column repor
 | Segundo Cat. General Argentino † | 1900 | 5357 | 2.84 |
 | Lalande † | 1800 | 46914 | 6.88 |
 | Taylor † | 1835 | 10944 | 4.19 |
-| Oeltzen-Argelander (North) † | 1842 | 25852 | 3.73 |
+| Oeltzen-Argelander (North) † | 1842 | 25947 | 4.77 |
 | Weiss † | 1850 | 18010 | 4.66 |
 | Stone † | 1880 | 12414 | 1.48 |
 | USNO 3rd. edition † | 1860 | 10606 | 2.77 |
 | Gilliss † | 1850 | 15792 | 2.87 |
+| British Association Catalogue † | 1850 | 8165 | 9.41 |
 | Resultados XV, pg. 55-74 † | 1881 | 739 | 2.52 |
 | Resultados XV, pg. 140-164 † | 1882 | 1259 | 2.43 |
 | Resultados XV, pg. 181-184 † | 1883 | 160 | 2.62 |
