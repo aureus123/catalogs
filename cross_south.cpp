@@ -927,6 +927,8 @@ void readTaylor() {
 
     int countDist = 0;
     double akkuDistError = 0.0;
+    int checkLac = 0;
+    int checkGC = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -1027,7 +1029,7 @@ void readTaylor() {
                         taylorRef,
                         numRefCat,
                         dist);
-                }
+                } else checkLac++;
             }
         }
 
@@ -1041,7 +1043,7 @@ void readTaylor() {
                         taylorRef,
                         numRefCat,
                         dist);
-                }
+                } else checkGC++;
             }
         }
 
@@ -1061,6 +1063,8 @@ void readTaylor() {
 	fclose(crossPPMStream);
 
     printf("Available Taylor stars = %d\n", countTaylor);
+    printf("Taylor stars properly identified with Lacaille = %d\n", checkLac);
+    printf("Taylor stars properly identified with GC = %d\n", checkGC);
     printf("Stars from Taylor identified with PPM = %d\n", countDist);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
@@ -1095,6 +1099,9 @@ void readUSNO() {
     double akkuDeltaError = 0.0;
     int countCD = 0;
     int countCPD = 0;
+    int checkLac = 0;
+    int checkLal = 0;
+    int checkOA = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -1252,7 +1259,7 @@ void readUSNO() {
                         numRefCat,
                         dist);
                     printf("     Register U %d: %s\n", numRef, catLine);    
-                }
+                } else checkLac++;
             }
         }
 
@@ -1267,7 +1274,7 @@ void readUSNO() {
                         numRefCat,
                         dist);
                     printf("     Register U %d: %s\n", numRef, catLine);    
-                }
+                } else checkLal++;
             }
         }
 
@@ -1282,7 +1289,7 @@ void readUSNO() {
                         numRefCat,
                         dist);
                     printf("     Register U %d: %s\n", numRef, catLine);    
-                }
+                } else checkOA++;
             }
         }
 
@@ -1323,6 +1330,8 @@ void readUSNO() {
 	fclose(crossCDStream);
 
     printf("Available USNO stars = %d\n", countUsno);
+    printf("Stars from USNO with Lacaille = %d, Lalande = %d and OA = %d\n",
+        checkLac, checkLal, checkOA);
     printf("Stars from USNO identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
@@ -1359,6 +1368,11 @@ void readUA() {
     int countCD = 0;
     int countCPD = 0;
     int errors = 0;
+    int checkLac = 0;
+    int checkLal = 0;
+    int checkOA = 0;
+    int checkTaylor = 0;
+    int checkUSNO = 0;
     int countUA = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -1507,7 +1521,7 @@ void readUA() {
                         numRefCat,
                         dist);
                     printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-                }
+                } else checkLac++;
             }
         }
 
@@ -1527,7 +1541,7 @@ void readUA() {
                         numRefCat,
                         dist);
                     printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-                }
+                } else checkTaylor++;
             }
         }
 
@@ -1547,7 +1561,7 @@ void readUA() {
                         numRefCat,
                         dist);
                     printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-                }
+                } else checkLal++;
             }
         }
 
@@ -1567,7 +1581,7 @@ void readUA() {
                         numRefCat,
                         dist);
                     printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-                }
+                } else checkOA++;
             }
         }
 
@@ -1597,7 +1611,7 @@ void readUA() {
                     usnoRef[usnoIndex],
                     minDistance);
                 printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-            }
+            } else checkUSNO++;
         }
         
         if (!ppmFound && !cdFound && !cpdFound) {
@@ -1622,6 +1636,8 @@ void readUA() {
 	fclose(crossCDStream);
 
     printf("Available UA stars = %d\n", countUA);
+    printf("Stars from UA with Lacaille = %d, Lalande = %d, Taylor = %d, OA = %d and USNO = %d\n",
+        checkLac, checkLal, checkTaylor, checkOA, checkUSNO);
     printf("Stars from UA identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
@@ -1654,6 +1670,13 @@ void readThome(double epoch, const char *filename, int correction) {
     double akkuDeltaError = 0.0;
     int countCD = 0;
     int countCPD = 0;
+    int checkLac = 0;
+    int checkLal = 0;
+    int checkTaylor = 0;
+    int checkOA = 0;
+    int checkStone = 0;
+    int checkGC = 0;
+    int checkUSNO = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -1806,7 +1829,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRefCat,
                         dist);
                     printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-                }
+                } else checkLac++;
             }
         }
 
@@ -1822,7 +1845,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRefCat,
                         dist);
                     printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-                }
+                } else checkTaylor++;
             }
         }
 
@@ -1838,7 +1861,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRefCat,
                         dist);
                     printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-                }
+                } else checkLal++;
             }
         }
 
@@ -1854,7 +1877,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRefCat,
                         dist);
                     printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-                }
+                } else checkStone++;
             }
         }
 
@@ -1870,7 +1893,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRefCat,
                         dist);
                     printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-                }
+                } else checkOA++;
             }
         }
 
@@ -1886,7 +1909,7 @@ void readThome(double epoch, const char *filename, int correction) {
                         numRefCat,
                         dist);
                     printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-                }
+                } else checkGC++;
             }
         }
 
@@ -1912,7 +1935,7 @@ void readThome(double epoch, const char *filename, int correction) {
                     usnoRef[usnoIndex],
                     minDistance);
                 printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-            }
+            } else checkUSNO++;
         }
 
         if (!strncmp(cell, "ZC", 2)) {
@@ -1927,6 +1950,8 @@ void readThome(double epoch, const char *filename, int correction) {
     fclose(stream);
 
     printf("Stars from Thome %.0f identified with PPM = %d, CD = %d and CPD = %d\n", epoch, countDist, countCD, countCPD);
+    printf("Stars from Thome %.0f with Lacaille = %d, Lalande = %d, OA = %d, Taylor = %d, Stone = %d, GC = %d and USNO = %d\n",
+        epoch, checkLac, checkLal, checkOA, checkTaylor, checkStone, checkGC, checkUSNO);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -1966,6 +1991,9 @@ void readGilliss() {
     double akkuDeltaError = 0.0;
     int countCD = 0;
     int countCPD = 0;
+    int checkLac = 0;
+    int checkGC = 0;
+    int checkStone = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -2130,7 +2158,7 @@ void readGilliss() {
                         numRefCat,
                         dist);
                     printf("     Register G %d: %s\n", giRef, catLine);
-                }
+                } else checkLac++;
             }
         }
 
@@ -2145,7 +2173,7 @@ void readGilliss() {
                         numRefCat,
                         dist);
                     printf("     Register G %d: %s\n", giRef, catLine);
-                }
+                } else checkStone++;
             }
         }
 
@@ -2160,7 +2188,7 @@ void readGilliss() {
                         numRefCat,
                         dist);
                     printf("     Register G %d: %s\n", giRef, catLine);
-                }
+                } else checkGC++;
             }
         }
 
@@ -2189,6 +2217,8 @@ void readGilliss() {
 	fclose(crossCDStream);
 
     printf("Stars from Gilliss identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
+    printf("Stars from Gilliss with Lacaille = %d, Stone = %d and GC = %d\n",
+        checkLac, checkStone, checkGC);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);

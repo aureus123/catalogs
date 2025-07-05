@@ -222,18 +222,21 @@ void readBAC() {
 
 /*
  * readUSNO - lee catalogo de Yarnall-Frisby
- * tambien revisa referencias cruzadas a OARN y BD
+ * tambien revisa referencias cruzadas a OARN, BAC y BD
  */
 void readUSNO() {
-    char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+    char buffer[1024], cell[256], catName[20];
     char catLine[64];
 
     /* usamos catalogo BD */
     struct DMstar_struct *BDstar = getDMStruct();
 
     printf("\n***************************************\n");
-    printf("Check references between USNO and BD/OA...\n");
+    printf("Check references between USNO and BD/BAC/OA...\n");
 
+    int checkDM = 0;
+    int checkBAC = 0;
+    int checkOA = 0;
     int errors = 0;
 
     /* leemos catalogo USNO */
@@ -301,7 +304,7 @@ void readUSNO() {
                         numRefCat,
                         dist);
                     printf("     Register U %d: %s\n", numRef, catLine);    
-                }
+                } else checkOA++;
             }
         }
 
@@ -326,7 +329,7 @@ void readUSNO() {
                         numRefCat,
                         dist);
                     printf("     Register U %d: %s\n", numRef, catLine);    
-                }
+                } else checkBAC++;
             }
         }
 
@@ -372,11 +375,14 @@ void readUSNO() {
                         dist);
                     printf("     Register U %d: %s\n", numRef, catLine);
                     writeRegister(index, false);
-                }
+                } else checkDM++;
             }
         }
     }
 	fclose(stream);
+    printf("USNO properly identified with BD = %d\n", checkDM);
+    printf("USNO properly identified with BAC = %d\n", checkBAC);
+    printf("USNO properly identified with OA = %d\n", checkOA);
     printf("Errors logged = %d\n", errors);
 }
 
@@ -385,7 +391,7 @@ void readUSNO() {
  * tambien revisa referencias cruzadas a BD
  */
 void readUA() {
-    char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+    char buffer[1024], cell[256], catName[20];
     char catLine[64];
 
     /* usamos catalogo BD */
@@ -394,6 +400,7 @@ void readUA() {
     printf("\n***************************************\n");
     printf("Check references between UA and BD...\n");
 
+    int checkDM = 0;
     int errors = 0;
 
     /* leemos catalogo UA */
@@ -513,10 +520,11 @@ void readUA() {
                     dist);
                 printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);
                 writeRegister(index, false);
-            }
+            } else checkDM++;
         }
     }
 	fclose(stream);
+    printf("UA stars properly identified with BD = %d\n", checkDM);
     printf("Errors logged = %d\n", errors);
 }
 

@@ -2833,6 +2833,7 @@ Stars read from PPM: 468861
   Note: Nearest PPM 24994 at 152.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 Available USNO stars = 10965
+Stars from USNO with Lacaille = 1401, Lalande = 570 and OA = 1213
 Stars from USNO identified with PPM = 10600, CD = 4295 and CPD = 4658
 RSME of distance (arcsec) = 2.75  among a total of 10600 stars
 RSME of visual magnitude = 0.63757  among a total of 5373 stars
@@ -2943,6 +2944,8 @@ Stars read from PPM: 468861
   Note: Nearest PPM 63350 at 368.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 Available Taylor stars = 10990
+Taylor stars properly identified with Lacaille = 2810
+Taylor stars properly identified with GC = 21
 Stars from Taylor identified with PPM = 10944
 RSME of distance (arcsec) = 4.19  among a total of 10944 stars
 Errors logged = 45
@@ -3321,6 +3324,7 @@ Stars read from PPM: 468861
 117) Warning: 248G Vir is FAR from Lal 26427 (dist = 7192.5 arcsec).
      Register 248G Vir: 14h 22m 15s +03°20.8'
 Available UA stars = 7727
+Stars from UA with Lacaille = 4151, Lalande = 2632, Taylor = 104, OA = 41 and USNO = 10
 Stars from UA identified with PPM = 7639, CD = 4523 and CPD = 4758
 RSME of distance (arcsec) = 5.45  among a total of 7639 stars
 Errors logged = 117
@@ -3673,6 +3677,7 @@ Stars read from PPM: 468861
   Note: no CD/CPD coverage for stars below 18°.
 87) Warning: T 1881 986 (vmag = 8.0) has a near PPM 269861 star (vmag = 4.9) with a different magnitude (delta = 3.1).
 Stars from Thome 1881 identified with PPM = 741, CD = 707 and CPD = 784
+Stars from Thome 1881 with Lacaille = 35, Lalande = 17, OA = 56, Taylor = 0, Stone = 1, GC = 0 and USNO = 7
 RSME of distance (arcsec) = 2.52  among a total of 741 stars
 RSME of visual magnitude = 0.56544  among a total of 541 stars
 Errors logged = 87
@@ -3910,6 +3915,7 @@ Stars read from PPM: 468861
   Note: Nearest PPM 234395 at 59.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 Stars from Thome 1882 identified with PPM = 1259, CD = 1118 and CPD = 1163
+Stars from Thome 1882 with Lacaille = 48, Lalande = 24, OA = 149, Taylor = 2, Stone = 0, GC = 0 and USNO = 12
 RSME of distance (arcsec) = 2.43  among a total of 1259 stars
 RSME of visual magnitude = 0.49304  among a total of 1027 stars
 Errors logged = 59
@@ -3939,6 +3945,7 @@ Stars read from PPM: 468861
 7) Warning: T 1883 156 is FAR from L 8467 (dist = 1155.8 arcsec).
      Register T 1883 156: 20h 29m 00s60 -70°21'33"6
 Stars from Thome 1883 identified with PPM = 160, CD = 127 and CPD = 133
+Stars from Thome 1883 with Lacaille = 13, Lalande = 7, OA = 15, Taylor = 0, Stone = 0, GC = 0 and USNO = 0
 RSME of distance (arcsec) = 2.62  among a total of 160 stars
 RSME of visual magnitude = 0.58106  among a total of 80 stars
 Errors logged = 7
@@ -4128,6 +4135,7 @@ Stars read from PPM: 468861
 46) Warning: T 1884 943 is FAR from Lal 4692 (dist = 135544.1 arcsec).
      Register T 1884 943: 23h 51m 08s41 -13°36'25"8
 Stars from Thome 1884 identified with PPM = 658, CD = 701 and CPD = 749
+Stars from Thome 1884 with Lacaille = 53, Lalande = 14, OA = 36, Taylor = 1, Stone = 1, GC = 120 and USNO = 17
 RSME of distance (arcsec) = 1.99  among a total of 658 stars
 RSME of visual magnitude = 0.44624  among a total of 542 stars
 Errors logged = 46
@@ -4688,6 +4696,7 @@ Stars read from PPM: 468861
   Note: poor CD coverage for stars above 61°.
 156) Warning: G 16678 (vmag = 10.5) has a near PPM 351563 star (vmag = 7.4) with a different magnitude (delta = 3.1).
 Stars from Gilliss identified with PPM = 15773, CD = 15941 and CPD = 16176
+Stars from Gilliss with Lacaille = 1557, Stone = 68 and GC = 955
 RSME of distance (arcsec) = 2.87  among a total of 15773 stars
 RSME of visual magnitude = 0.49149  among a total of 14761 stars
 Errors logged = 156

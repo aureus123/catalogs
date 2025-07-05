@@ -766,7 +766,7 @@ RSME of distance (arcsec) = 9.41  among a total of 8165 stars
 Errors logged = 212
 
 ***************************************
-Check references between USNO and BD/OA...
+Check references between USNO and BD/BAC/OA...
 1) Warning: U 205 is FAR from BD star (dist = 118.5 arcsec).
      Register U 205: 00h 20m 17s59 +01°07'30"9
      Register BD +1°66 (en 0h):  9.3 | 20m1.0s | 3.9'     (pag. 49)
@@ -908,6 +908,9 @@ Check references between USNO and BD/OA...
 60) Warning: U 10678 is FAR from BD star (dist = 67.5 arcsec).
      Register U 10678: 23h 24m 22s05 +15°07'00"0
      Register BD +15°4836 (en 23h):  9.5 | 24m5.3s | 6.4'     (pag. 308)
+USNO properly identified with BD = 143
+USNO properly identified with BAC = 1369
+USNO properly identified with OA = 166
 Errors logged = 60
 
 ***************************************
@@ -921,4 +924,5 @@ Check references between UA and BD...
 3) Warning: 54G Serb is FAR from BD star (dist = 85.4 arcsec).
      Register 54G Serb: 18h 30m 40s +03°40.3'
      Register BD +3°3755 (en 18h):  7.6 | 29m41.7s | 40.8'     (pag. 95)
+UA stars properly identified with BD = 12
 Errors logged = 3
