@@ -77,7 +77,7 @@ Some catalogs in this folder were sanitized but their original version was store
 - gc : 3 registers
 - weiss : 3 registers
 - gilliss : 21 registers
-- usno : 6 registers
+- usno : 8 registers
 - corda : 3 registers
 - cordc : 7 registers
 - thome1881: 4 registers

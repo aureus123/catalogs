@@ -2,12 +2,15 @@
 
 Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues, however the DM designation is used instead of PPM. In the case designations of other old catalogues were available, the latter are reported. In the case of PPM stars, DM designation are taken from their DM column. In northern hemisphere, stars are reported in the following order of priority:
 - Stars from Uranometría Argentina (*UA*)
+- Lalande's catalog (*Lal*)
 - Yarnall-Frisby USNO catalog (*U*)
 - *BD* designation coming from PPM stars
 - All Bonner Durchmusterung stars up to +19 declination (first volume)
 
 In southern hemisphere, we have stars from:
 - Uranometría Argentina (*UA*)
+- Lacaille's catalog (*L*)
+- Lalande's catalog (*Lal*)
 - Catálogo General Argentino (*GC*)
 - Gould's Zone Catalog designiations coming from other catalogs (*ZC*)
 - Oeltzen-Argelander designations coming from Weiss catalog (*OA*)
@@ -18,9 +21,8 @@ In southern hemisphere, we have stars from:
 - All Cordoba Durchmusterung stars
 - All Cape Photographic Durchmusterung stars (*CPD*)
 
-For the northern hemisphere, there are 987 UA, 4194 U and 211760 BD stars summarizing 216941 identifications.
-For the southern hemisphere, there are 7043 UA, 27340 GC, 5213 ZC, 13347 OA, 1360 U, 9091 G, 2593 G2, 6353 BD, 77202 SD, 495897 CD and 79701 CPD stars summarizing  725140 identifications.
-
+For the northern hemisphere, there are 994 UA, 27074 Lal, 1950 U and 187118 BD stars summarizing 217136 identifications.
+For the southern hemisphere, there are 7058 UA, 10016 Lal, 5708 Lac, 19775 GC, 5213 ZC, 11497 OA, 996 U, 9081 G, 2549 G2, 5619 BD, 72115 SD, 495826 CD and 79701 CPD stars summarizing 725154 identifications.
 
 ### Shortcomings of the current approach
 
@@ -56,6 +58,7 @@ Some stars that you can see in the example:
 | Star (SIMBAD) | Old designation | Tycho-2 | Where to find it |
 | --- | --- | --- | --- |
 | HD 93540 | 236G Car | 8965-1767-1 | Resultados del Observatorio Nacional Argentino, [Vol I](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0001&type=SCREEN_THMB), pag. 143 |
+| HD 93738 | L 4487 | 8965-1383-1 | A catalogue of 9766 stars in the southern hemisphere (Lacaille) |
 | HD 308015 | GC 14766 | 8965-137-1 | Resultados del Observatorio Nacional Argentino, [Vol XIV](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0014&type=SCREEN_THMB), pag. 291 |
 | HD 93269 | ZC 10h 2923 | 8965-288-1 | Resultados del Observatorio Nacional  Argentino, [Vol VII](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0007&type=SCREEN_THMB), pag. 337 |
 | HD 93600 | G 7322 | 8965-547-1 | [A catalogue of 16748 southern stars](https://archive.org/details/catalogueof1674800unitrich/catalogueof1674800unitrich/) deduced by the United States Naval Observatory from the zone observations made at Santiago de Chile, pag. 184 |
@@ -71,7 +74,7 @@ Stars that you can see here:
 | HD 126088 | G2 3591 | 6740-8-1 | Resultados del Observatorio Nacional Argentino, [Vol XX](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0020&type=SCREEN_THMB), pag. 66 |
 | HD 125995 | U 6039 | 6740-263-1 | Catalogue of stars observed at the [United States Naval Observatory](https://archive.org/details/cataloguestarsus00unitrich/cataloguestarsus00unitrich/) during the years 1845 to 1877, pag. 153 |
 | HD 126349 | OA 13607 | 6740-108-1 | [Argelander's Zonen-Beobachtungen vom 15. bis 31.](https://babel.hathitrust.org/cgi/pt?id=uc1.$b524535&seq=278) Grade südlicher Declination, in mittleren Positionen für 1850.0, pag. 206 |
-| CD -27 9807 | CD -27°9807 | 6740-336-1 | Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB), pag. 323 |
+| CD -27°9804 | CD -27°9804 | 6740-808-1 | Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB), pag. 323 |
 
 ### Colored and double CD stars
 

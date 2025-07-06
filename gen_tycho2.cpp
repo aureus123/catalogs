@@ -302,7 +302,7 @@ int main(int argc, char** argv) {
 
     if (isCD()) {
         /* leemos identificaciones cruzadas y renombramos designaciones.
-         * Order de prioridad: UA (solo PPM), GC, ZC, OA, U, G, G2 */
+         * Order de prioridad: UA, Lal y Lac (solo PPM), GC, ZC, OA, U, G, G2 */
         readCrossFile(
             "results/cross/cross_gc2_ppm.csv", PPMstar, PPMstars,
             "results/cross/cross_gc2_cd.csv", DMstar, DMstars,
@@ -328,6 +328,14 @@ int main(int argc, char** argv) {
             "results/cross/cross_gc_cd.csv", DMstar, DMstars,
             "results/cross/cross_gc_cpd.csv", CPDstar, CPDstars);
         readCrossFile(
+            "results/cross/cross_lalande_ppm.csv", PPMstar, PPMstars,
+            "", nullptr, 0,
+            "", nullptr, 0);
+        readCrossFile(
+            "results/cross/cross_lacaille_ppm.csv", PPMstar, PPMstars,
+            "", nullptr, 0,
+            "", nullptr, 0);
+        readCrossFile(
             "results/cross/cross_ua_ppm.csv", PPMstar, PPMstars,
             "", nullptr, 0,
             "", nullptr, 0);
@@ -340,9 +348,13 @@ int main(int argc, char** argv) {
         readUnidentifiedFile("results/cross/gc2_unidentified.csv");
     } else {
         /* leemos identificaciones cruzadas y renombramos designaciones,
-         * Solo UA y USNO contra PPM. */
+         * Order: UA, Lalande y USNO contra PPM. */
         readCrossFile(
             "results/cross/cross_usno_ppm.csv", PPMstar, PPMstars,
+            "", nullptr, 0,
+            "", nullptr, 0);
+        readCrossFile(
+            "results/cross/cross_lalande_ppm.csv", PPMstar, PPMstars,
             "", nullptr, 0,
             "", nullptr, 0);
         readCrossFile(
