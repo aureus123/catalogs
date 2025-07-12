@@ -61,13 +61,46 @@ int main(int argc, char** argv)
     int countCPD = 0;
     int errors = 0;
     for (int gcIndex = 0; gcIndex < GCstars; gcIndex++) {
+        double ra = GCstar[gcIndex].RA1875;
+        double decl = GCstar[gcIndex].Decl1875;
+        int gcRef = GCstar[gcIndex].gcRef;
+        snprintf(catName, 20, "GC %d", gcRef);
+
+        /* revisa precesion en RA y Decl (usamos constantes de Struve) */
+        double preRA = GCstar[gcIndex].preRA;
+        if (fabs(preRA) > EPS) {
+            double realPreRA = 3.072245 + 1.33695 * dsin(ra) * dtan(decl);
+            double diff = fabs(preRA - realPreRA);
+            if (diff > 0.0099) {
+                printf("%d) Warning: GC %d reports %.3f on precession RA but it should be %.3f (diff=%.3f).\n",
+                    ++errors,
+                    gcRef,
+                    preRA,
+                    realPreRA,
+                    diff);
+                writeRegisterGC(gcIndex);
+            }
+        }
+
+        double preDecl = GCstar[gcIndex].preDecl;
+        if (fabs(preDecl) > EPS) {
+            double realPreDecl = 20.05425 * dcos(ra);
+            double diff = fabs(preDecl - realPreDecl);
+            if (diff > 0.099) {
+                printf("%d) Warning: GC %d reports %.3f on precession DECL but it should be %.3f (diff=%.3f).\n",
+                    ++errors,
+                    gcRef,
+                    preDecl,
+                    realPreDecl,
+                    diff);
+                writeRegisterGC(gcIndex);
+            }
+        }
+
         double x = GCstar[gcIndex].x;
         double y = GCstar[gcIndex].y;
         double z = GCstar[gcIndex].z;
-        double decl = GCstar[gcIndex].Decl1875;
         float vmag = GCstar[gcIndex].vmag;
-        int gcRef = GCstar[gcIndex].gcRef;
-        snprintf(catName, 20, "GC %d", gcRef);
 
         bool ppmFound = false;
 		int ppmIndex = -1;

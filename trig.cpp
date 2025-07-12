@@ -41,6 +41,11 @@ double dsin(double angle)
     return sin(angle * PI / 180.0);
 }
 
+double dtan(double angle)
+{
+    return tan(angle * PI / 180.0);
+}
+
 double datan2(double y, double x)
 {
     if (x < 0.000001 && x > -0.000001) {

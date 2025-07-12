@@ -282,6 +282,39 @@ void readUSNO() {
 		readField(buffer, cell, 1, 5);
 		int numRef = atoi(cell);
 
+        /* si esta disponible, tambien lee precesiones y chequea (usamos constantes de Struve) */
+        readFieldSanitized(buffer, cell, 54, 6);
+        double preRA = atof(cell) / 1000.0;
+        if (fabs(preRA) > EPS) {
+            double realPreRA = 3.07196 + 1.33704 * dsin(RA) * dtan(Decl);
+            double diff = fabs(preRA - realPreRA);
+            if (diff > 0.0099) {
+                printf("%d) Warning: U %d reports %.3f on precession RA but it should be %.3f (diff=%.3f).\n",
+                    ++errors,
+                    numRef,
+                    preRA,
+                    realPreRA,
+                    diff);
+                printf("     Register U %d: %s\n", numRef, catLine);    
+            }
+        }
+
+        readFieldSanitized(buffer, cell, 74, 5);
+        double preDecl = atof(cell) / 100.0;
+        if (fabs(preDecl) > EPS) {
+            double realPreDecl = 20.05554 * dcos(RA);
+            double diff = fabs(preDecl - realPreDecl);
+            if (diff > 0.099) {
+                printf("%d) Warning: U %d reports %.2f on precession DECL but it should be %.2f (diff=%.2f).\n",
+                    ++errors,
+                    numRef,
+                    preDecl,
+                    realPreDecl,
+                    diff);
+                printf("     Register U %d: %s\n", numRef, catLine);    
+            }
+        }
+
 	    /* convierte coordenadas a la de OARN y calcula rectangulares */
         double newRA = RA;
         double newDecl = Decl;

@@ -12,6 +12,7 @@
 void transform(double eq1, double eq2, double *RA, double *Decl);
 double dcos(double angle);
 double dsin(double angle);
+double dtan(double angle);
 double datan2(double y, double x);
 void sph2rec(double ra, double decl, double *x, double *y, double *z);
 void rec2sph(double x, double y, double z, double *ra, double *decl);

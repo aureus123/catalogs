@@ -2042,9 +2042,44 @@ void readGilliss() {
         snprintf(catLine, 64, "%02dh %02dm %02ds%02d -%02d°%02d'%02d\"%01d",
             RAh, RAm, RAs / 100, RAs % 100, Decld, Declm, Decls / 10, Decls % 10);
 
-		/* lee numeración catálogo Gilliss y magnitud */
+		/* lee numeración catálogo Gilliss */
 		readField(buffer, cell, 1, 5);
 		int giRef = atoi(cell);
+
+        /* si esta disponible, tambien lee precesiones y chequea (usamos constantes de Struve) */
+        readFieldSanitized(buffer, cell, 41, 7);
+        double preRA = atof(cell) / 1000.0;
+        if (fabs(preRA) > EPS) {
+            double realPreRA = 3.07177 + 1.3371 * dsin(RA) * dtan(Decl);
+            double diff = fabs(preRA - realPreRA);
+            if (diff > 0.0299) {
+                printf("%d) Warning: G %d reports %.3f on precession RA but it should be %.3f (diff=%.3f).\n",
+                    ++errors,
+                    giRef,
+                    preRA,
+                    realPreRA,
+                    diff);
+                printf("     Register G %d: %s\n", giRef, catLine);    
+            }
+        }
+
+        readFieldSanitized(buffer, cell, 56, 5);
+        double preDecl = atof(cell) / 100.0;
+        if (fabs(preDecl) > EPS) {
+            double realPreDecl = 20.0564 * dcos(RA);
+            double diff = fabs(preDecl - realPreDecl);
+            if (diff > 0.099) {
+                printf("%d) Warning: G %d reports %.2f on precession DECL but it should be %.2f (diff=%.2f).\n",
+                    ++errors,
+                    giRef,
+                    preDecl,
+                    realPreDecl,
+                    diff);
+                printf("     Register G %d: %s\n", giRef, catLine);    
+            }
+        }
+
+        /* lee magnitud */
 		readField(buffer, cell, 29, 3);
 		float vmag = atof(cell)/10.0;
 

@@ -145,6 +145,12 @@ void readGC()
 		Decl += (((double) Decls)/10.0)/3600.0;
 		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
 
+		/* lee precesiones y chequea, si es requerido */
+        readFieldSanitized(buffer, cell, 24, 7);
+        double preRA = atof(cell) / 1000.0;
+        readFieldSanitized(buffer, cell, 46, 6);
+        double preDecl = atof(cell) / 1000.0;
+
 		/* calcula coordenadas rectangulares) */
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
@@ -164,6 +170,8 @@ void readGC()
 		GCstar[GCstars].Decls = Decls;
 		GCstar[GCstars].RA1875 = RA;
 		GCstar[GCstars].Decl1875 = Decl;
+		GCstar[GCstars].preRA = preRA;
+		GCstar[GCstars].preDecl = preDecl;
 		GCstar[GCstars].x = x;
 		GCstar[GCstars].y = y;
 		GCstar[GCstars].z = z;
