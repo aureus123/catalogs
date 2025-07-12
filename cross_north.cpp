@@ -12,14 +12,21 @@
 #include "trig.h"
 #include "misc.h"
 
+#define MAXWBSTAR 31900
 #define MAXOASTAR 26500
 #define MAXBACSTAR 8400
+#define EPOCH_WB 1825.0
 #define EPOCH_OA 1842.0
 #define EPOCH_BAC 1850.0
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
 #define MAX_DIST_CROSS 60.0
 #define CURATED true // true if curated BD catalog should be used
+
+// Here, we save 1825.0 coordinates of WB stars in rectangular form
+double wbX[MAXWBSTAR], wbY[MAXWBSTAR], wbZ[MAXWBSTAR];
+int wbRARef[MAXWBSTAR], wbNumRef[MAXWBSTAR];
+int countWB = 0;
 
 // Here, we save 1842.0 coordinates of OA stars in rectangular form
 double oaX[MAXOASTAR], oaY[MAXOASTAR], oaZ[MAXOASTAR];
@@ -30,6 +37,104 @@ int countOA = 0;
 double bacX[MAXBACSTAR], bacY[MAXBACSTAR], bacZ[MAXBACSTAR];
 int bacRef[MAXBACSTAR];
 int countBAC = 0;
+
+/*
+ * readWB - lee y cruza catalogo de Weisse
+ */
+void readWB() {
+    char buffer[1024], cell[256];
+
+    printf("\n***************************************\n");
+    printf("Perform comparison between Weisse catalog and PPM...\n");
+
+    int countDist = 0;
+    double akkuDistError = 0.0;
+    int errors = 0;
+
+    /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
+    readPPM(false, true, false, false, EPOCH_WB);
+    sortPPM();
+	struct PPMstar_struct *PPMstar = getPPMStruct();
+    int PPMstars = getPPMStars();
+
+    /* leemos catalogo WB */
+    FILE *stream = fopen("cat/wb.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read wb.txt");
+		exit(1);
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+		/* lee numeración */
+		readField(buffer, cell, 14, 2);
+		int RARef = atoi(cell);
+		readField(buffer, cell, 6, 4);
+		int numRef = atoi(cell);
+
+		/* lee ascension recta B1825.0 */
+        double RA = (double) RARef; // same as RAh
+		readFieldSanitized(buffer, cell, 16, 2);
+		int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+		readFieldSanitized(buffer, cell, 18, 4);
+		int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1825.0 */
+		readFieldSanitized(buffer, cell, 31, 2);
+		int Decld = atoi(cell);
+        double Decl = (double) Decld;
+		readFieldSanitized(buffer, cell, 33, 2);
+		int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+		readFieldSanitized(buffer, cell, 35, 3);
+		int Decls = atoi(cell);
+        Decl += (((double) Decls)/10.0)/3600.0;
+        readField(buffer, cell, 30, 1);
+		if (cell[0] == '-') Decl = -Decl;
+
+        bool ppmFound = false;
+		int ppmIndex = -1;
+		double minDistance = HUGE_NUMBER;
+		/* busca la PPM mas cercana y genera el cruzamiento */
+		double x, y, z;
+		sph2rec(RA, Decl, &x, &y, &z);
+		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
+		if (minDistance < MAX_DIST_CROSS) {
+            akkuDistError += minDistance * minDistance;
+            countDist++;
+            ppmFound = true;
+		}
+
+        if (!ppmFound) {
+            printf("%d) Warning: WB %dh %d is ALONE (nearest PPM star at %.1f arcsec).\n",
+                ++errors,
+                RARef,
+                numRef,
+                minDistance);
+        }
+
+        /* la almacenamos para futuras identificaciones */
+        if (countWB >= MAXWBSTAR) {
+            printf("Error: too many WB stars.\n");
+            exit(1);
+        }
+        wbX[countWB] = x;
+        wbY[countWB] = y;
+        wbZ[countWB] = z;
+        wbRARef[countWB] = RARef;
+        wbNumRef[countWB] = numRef;
+        countWB++;
+    }
+	fclose(stream);
+
+    printf("Available WB stars = %d\n", countWB);
+    printf("Stars from WB identified with PPM = %d\n", countDist);
+    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
+        sqrt(akkuDistError / (double)countDist),
+        countDist);
+    printf("Errors logged = %d\n", errors);
+}
 
 /*
  * readOARN - lee y cruza catalogo de Oeltzen-Argelander (North)
@@ -236,6 +341,7 @@ void readUSNO() {
 
     int checkDM = 0;
     int checkBAC = 0;
+    int checkWB = 0;
     int checkOA = 0;
     int errors = 0;
 
@@ -341,6 +447,35 @@ void readUSNO() {
             }
         }
 
+	    /* convierte coordenadas a la de WB y calcula rectangulares */
+        newRA = RA;
+        newDecl = Decl;
+        transform(EPOCH_USNO, EPOCH_WB, &newRA, &newDecl);
+        sph2rec(newRA, newDecl, &x, &y, &z);
+
+        /* lee referencia a catalogo WB */
+		readField(buffer, cell, 19, 4);
+        if (!strncmp(cell, "WEI ", 4)) {
+    		readField(buffer, cell, 28, 2);
+            int RARef = atoi(cell);
+    		readField(buffer, cell, 30, 5);
+            int numRefCat = atoi(cell);
+            for (int i = 0; i < countWB; i++) {
+                if (wbRARef[i] != RARef) continue;
+                if (wbNumRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: U %d is FAR from WB %dh %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        numRef,
+                        RARef,
+                        numRefCat,
+                        dist);
+                    printf("     Register U %d: %s\n", numRef, catLine);    
+                } else checkWB++;
+            }
+        }
+
 	    /* convierte coordenadas a la de BAC y calcula rectangulares */
         newRA = RA;
         newDecl = Decl;
@@ -414,6 +549,7 @@ void readUSNO() {
     }
 	fclose(stream);
     printf("USNO properly identified with BD = %d\n", checkDM);
+    printf("USNO properly identified with WB = %d\n", checkWB);
     printf("USNO properly identified with BAC = %d\n", checkBAC);
     printf("USNO properly identified with OA = %d\n", checkOA);
     printf("Errors logged = %d\n", errors);
@@ -434,6 +570,7 @@ void readUA() {
     printf("Check references between UA and BD...\n");
 
     int checkDM = 0;
+    int checkWB = 0;
     int errors = 0;
 
     /* leemos catalogo UA */
@@ -522,7 +659,9 @@ void readUA() {
             bool signRef = newDecl < 0.0;
             int declRef = (int) fabs(newDecl);
             readField(buffer, cell, 85, 4);
-            int numRefCat = atoi(cell);
+            char numStr[5];
+            sscanf(cell, "%4[^, ]", numStr);
+            int numRefCat = atoi(numStr);
 
             bool isFirstVolume = false;
             if (signRef) {
@@ -555,9 +694,41 @@ void readUA() {
                 writeRegister(index, false);
             } else checkDM++;
         }
+
+	    /* convierte coordenadas a la de WB y calcula rectangulares */
+        newRA = RA;
+        newDecl = Decl;
+        transform(EPOCH_UA, EPOCH_WB, &newRA, &newDecl);
+        sph2rec(newRA, newDecl, &x, &y, &z);
+
+        /* lee referencia a catalogo Weisse */
+		readField(buffer, cell, 82, 4);
+        if (!strncmp(cell, "WB.", 3) && cell[3] != '(') {
+            int RARef = (int) floor(newRA / 15.0);
+            readField(buffer, cell, 85, 4);
+            char numStr[5];
+            sscanf(cell, "%4[^, ]", numStr);
+            int numRefCat = atoi(numStr);
+            for (int i = 0; i < countWB; i++) {
+                if (wbRARef[i] != RARef) continue;
+                if (wbNumRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: %dG %s is FAR from WB %dh %d star (dist = %.1f arcsec).\n",
+                        ++errors,
+                        gouldRef,
+                        cstRef,
+                        RARef,
+                        numRefCat,
+                        dist);
+                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);
+                } else checkWB++;
+            }
+        }
     }
 	fclose(stream);
     printf("UA stars properly identified with BD = %d\n", checkDM);
+    printf("UA stars properly identified with WB = %d\n", checkWB);
     printf("Errors logged = %d\n", errors);
 }
 
@@ -571,6 +742,9 @@ int main(int argc, char** argv)
 
     /* leemos catalogo CD */
     readDM(CURATED ? "cat/bd_curated.txt" : "cat/bd.txt");
+
+    /* leemos y cruzamos WB */
+    readWB();
 
     /* leemos y cruzamos OA */
     readOARN();

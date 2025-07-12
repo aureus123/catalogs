@@ -49,31 +49,37 @@ The routine "wcsconp" is used for transforming coordinates.
 
 When comparing different old catalogues with PPM, an accuracy can be computed
 by assuming that the PPM star, corrected by proper motion, has the real coordinates
-in the target epoch (19th. century). Below is a table with a row per catalog:
-2nd. column is the epoch of the target catalog, 3rd. column is the number of
-stars cross-identified between PPM and the target catalog, and 4th. column reports the accuracy in arcseconds. A dagger (†) is used when the identifications arise from small angular distances
-(below a given threshold) instead of direct cross-identification from PPM source:
+in the target epoch (19th. century). Below there are two tables with a row
+per catalog: 2nd. column is the epoch of the target catalog, 3rd. column
+is the number of stars cross-identified between PPM and the target catalog, and 4th. column reports the accuracy in arcseconds.
 
+In this table, identifications are direct from PPM source:
 | Catalog | Epoch | Stars | RSME |
 | --- | --- | --- | --- |
 | Bonner Durchmusterung (BD, 1st. vol) | 1855 | 63034 | 35.99 |
 | Cordoba Durchmusterung (CD) | 1875 | 172068 | 20.48 |
 | Cordoba Durchmusterung (CD, 1st. vol) | 1875 | 40832 | 24.00 |
-| Uranometría Argentina † | 1875 | 7605 | 5.45 |
-| Catálogo General Argentino (GC) † | 1875 | 31706 | 1.96 |
-| Segundo Cat. General Argentino † | 1900 | 5357 | 2.84 |
-| Lalande † | 1800 | 46914 | 6.88 |
-| Taylor † | 1835 | 10944 | 4.19 |
-| Oeltzen-Argelander (North) † | 1842 | 25947 | 4.77 |
-| Weiss † | 1850 | 18010 | 4.66 |
-| Stone † | 1880 | 12414 | 1.48 |
-| USNO 3rd. edition † | 1860 | 10606 | 2.77 |
-| Gilliss † | 1850 | 15792 | 2.87 |
-| British Association Catalogue † | 1850 | 8165 | 9.41 |
-| Resultados XV, pg. 55-74 † | 1881 | 739 | 2.52 |
-| Resultados XV, pg. 140-164 † | 1882 | 1259 | 2.43 |
-| Resultados XV, pg. 181-184 † | 1883 | 160 | 2.62 |
-| Resultados XV, pg. 232-249 † | 1884 | 658 | 1.99 |
+
+In this table, identifications arise from small angular distances
+(below a given threshold) between PPM stars and the target catalog:
+| Catalog | Epoch | Stars | RSME |
+| --- | --- | --- | --- |
+| Uranometría Argentina | 1875 | 7605 | 5.45 |
+| Catálogo General Argentino (GC) | 1875 | 31706 | 1.96 |
+| Segundo Cat. General Argentino | 1900 | 5357 | 2.84 |
+| Resultados XV, pg. 55-74 | 1881 | 739 | 2.52 |
+| Resultados XV, pg. 140-164 | 1882 | 1259 | 2.43 |
+| Resultados XV, pg. 181-184 | 1883 | 160 | 2.62 |
+| Resultados XV, pg. 232-249 | 1884 | 658 | 1.99 |
+| Lalande | 1800 | 46914 | 6.88 |
+| Taylor | 1835 | 10944 | 4.19 |
+| Oeltzen-Argelander (North) | 1842 | 25947 | 4.77 |
+| Weiss | 1850 | 18010 | 4.66 |
+| Weisse | 1825 | 30933 | 6.50 |
+| Stone | 1880 | 12414 | 1.48 |
+| USNO 3rd. edition | 1860 | 10606 | 2.77 |
+| Gilliss | 1850 | 15792 | 2.87 |
+| British Association Catalogue | 1850 | 8165 | 9.41 |
 
 ### Wishlist
 

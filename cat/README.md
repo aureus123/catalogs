@@ -47,6 +47,7 @@ Santiago de Chile, from _GAVO Data Center_
 - oarn : Oeltzen-Argelander's Zonen-Beobachtungen vom 45. bis 80. Grade noerdlicher Declination in mittleren Positionen fuer 1842.0, from _GAVO Data Center_
 - bac : F. Baily, Catalogue of stars of the British Association for the advancement of science, containing 8377 fixed stars reduced to
 January 1, 1850, from _GAVO Data Center_
+- wb : M. Weisse, Positiones Mediae Stellarum Fixarum, in Zonis Regiomontanis a Besselio inter -15° et +15° declinationis observatarum, ad 1825 reductae, from _GAVO Data Center_
 - thome1881 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 55-74, from _GAVO Data Center_
 - thome1882 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 140-164, from _GAVO Data Center_
 - thome1883 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 181-184, from _GAVO Data Center_
@@ -77,7 +78,7 @@ Some catalogs in this folder were sanitized but their original version was store
 - gc : 3 registers
 - weiss : 3 registers
 - gilliss : 21 registers
-- usno : 11 registers
+- usno : 12 registers
 - corda : 3 registers
 - cordc : 7 registers
 - thome1881: 4 registers

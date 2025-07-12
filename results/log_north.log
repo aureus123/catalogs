@@ -60,6 +60,976 @@ Star already corrected (BD -1°4186)
 Stars read from Bonner Durchmusterung: 111179
 
 ***************************************
+Perform comparison between Weisse catalog and PPM...
+Stars read from PPM: 468861
+1) Warning: WB 0h 31 is ALONE (nearest PPM star at 176.7 arcsec).
+2) Warning: WB 0h 53 is ALONE (nearest PPM star at 554.9 arcsec).
+3) Warning: WB 0h 125 is ALONE (nearest PPM star at 224.9 arcsec).
+4) Warning: WB 0h 130 is ALONE (nearest PPM star at 379.0 arcsec).
+5) Warning: WB 0h 136 is ALONE (nearest PPM star at 341.8 arcsec).
+6) Warning: WB 0h 145 is ALONE (nearest PPM star at 101.2 arcsec).
+7) Warning: WB 0h 161 is ALONE (nearest PPM star at 147.3 arcsec).
+8) Warning: WB 0h 166 is ALONE (nearest PPM star at 145.8 arcsec).
+9) Warning: WB 0h 200 is ALONE (nearest PPM star at 380.1 arcsec).
+10) Warning: WB 0h 208 is ALONE (nearest PPM star at 436.1 arcsec).
+11) Warning: WB 0h 232 is ALONE (nearest PPM star at 173.3 arcsec).
+12) Warning: WB 0h 236 is ALONE (nearest PPM star at 551.2 arcsec).
+13) Warning: WB 0h 244 is ALONE (nearest PPM star at 661.5 arcsec).
+14) Warning: WB 0h 401 is ALONE (nearest PPM star at 600.6 arcsec).
+15) Warning: WB 0h 413 is ALONE (nearest PPM star at 465.3 arcsec).
+16) Warning: WB 0h 429 is ALONE (nearest PPM star at 143.8 arcsec).
+17) Warning: WB 0h 444 is ALONE (nearest PPM star at 130.7 arcsec).
+18) Warning: WB 0h 445 is ALONE (nearest PPM star at 237.4 arcsec).
+19) Warning: WB 0h 455 is ALONE (nearest PPM star at 145.8 arcsec).
+20) Warning: WB 0h 463 is ALONE (nearest PPM star at 83.7 arcsec).
+21) Warning: WB 0h 464 is ALONE (nearest PPM star at 312.3 arcsec).
+22) Warning: WB 0h 478 is ALONE (nearest PPM star at 607.4 arcsec).
+23) Warning: WB 0h 494 is ALONE (nearest PPM star at 873.9 arcsec).
+24) Warning: WB 0h 546 is ALONE (nearest PPM star at 139.4 arcsec).
+25) Warning: WB 0h 579 is ALONE (nearest PPM star at 69.9 arcsec).
+26) Warning: WB 0h 651 is ALONE (nearest PPM star at 137.4 arcsec).
+27) Warning: WB 0h 822 is ALONE (nearest PPM star at 377.5 arcsec).
+28) Warning: WB 0h 823 is ALONE (nearest PPM star at 875.1 arcsec).
+29) Warning: WB 0h 824 is ALONE (nearest PPM star at 178.4 arcsec).
+30) Warning: WB 0h 826 is ALONE (nearest PPM star at 143.8 arcsec).
+31) Warning: WB 0h 830 is ALONE (nearest PPM star at 484.2 arcsec).
+32) Warning: WB 0h 869 is ALONE (nearest PPM star at 723.2 arcsec).
+33) Warning: WB 0h 879 is ALONE (nearest PPM star at 859.4 arcsec).
+34) Warning: WB 0h 882 is ALONE (nearest PPM star at 443.2 arcsec).
+35) Warning: WB 0h 887 is ALONE (nearest PPM star at 114.0 arcsec).
+36) Warning: WB 0h 924 is ALONE (nearest PPM star at 359.8 arcsec).
+37) Warning: WB 0h 949 is ALONE (nearest PPM star at 155.8 arcsec).
+38) Warning: WB 0h 1014 is ALONE (nearest PPM star at 236.1 arcsec).
+39) Warning: WB 1h 9 is ALONE (nearest PPM star at 141.6 arcsec).
+40) Warning: WB 1h 19 is ALONE (nearest PPM star at 144.0 arcsec).
+41) Warning: WB 1h 47 is ALONE (nearest PPM star at 891.6 arcsec).
+42) Warning: WB 1h 141 is ALONE (nearest PPM star at 1098.4 arcsec).
+43) Warning: WB 1h 164 is ALONE (nearest PPM star at 405.1 arcsec).
+44) Warning: WB 1h 199 is ALONE (nearest PPM star at 427.2 arcsec).
+45) Warning: WB 1h 239 is ALONE (nearest PPM star at 360.5 arcsec).
+46) Warning: WB 1h 270 is ALONE (nearest PPM star at 108.1 arcsec).
+47) Warning: WB 1h 272 is ALONE (nearest PPM star at 298.6 arcsec).
+48) Warning: WB 1h 289 is ALONE (nearest PPM star at 369.3 arcsec).
+49) Warning: WB 1h 392 is ALONE (nearest PPM star at 144.1 arcsec).
+50) Warning: WB 1h 450 is ALONE (nearest PPM star at 61.9 arcsec).
+51) Warning: WB 1h 471 is ALONE (nearest PPM star at 202.5 arcsec).
+52) Warning: WB 1h 512 is ALONE (nearest PPM star at 717.5 arcsec).
+53) Warning: WB 1h 541 is ALONE (nearest PPM star at 600.9 arcsec).
+54) Warning: WB 1h 664 is ALONE (nearest PPM star at 739.7 arcsec).
+55) Warning: WB 1h 722 is ALONE (nearest PPM star at 787.0 arcsec).
+56) Warning: WB 1h 745 is ALONE (nearest PPM star at 65.3 arcsec).
+57) Warning: WB 1h 749 is ALONE (nearest PPM star at 622.6 arcsec).
+58) Warning: WB 1h 752 is ALONE (nearest PPM star at 1311.2 arcsec).
+59) Warning: WB 1h 764 is ALONE (nearest PPM star at 153.2 arcsec).
+60) Warning: WB 1h 772 is ALONE (nearest PPM star at 149.7 arcsec).
+61) Warning: WB 1h 815 is ALONE (nearest PPM star at 208.3 arcsec).
+62) Warning: WB 1h 954 is ALONE (nearest PPM star at 567.6 arcsec).
+63) Warning: WB 1h 977 is ALONE (nearest PPM star at 110.8 arcsec).
+64) Warning: WB 1h 989 is ALONE (nearest PPM star at 842.4 arcsec).
+65) Warning: WB 1h 995 is ALONE (nearest PPM star at 371.4 arcsec).
+66) Warning: WB 1h 1000 is ALONE (nearest PPM star at 360.5 arcsec).
+67) Warning: WB 1h 1049 is ALONE (nearest PPM star at 538.0 arcsec).
+68) Warning: WB 1h 1089 is ALONE (nearest PPM star at 595.0 arcsec).
+69) Warning: WB 2h 6 is ALONE (nearest PPM star at 142.4 arcsec).
+70) Warning: WB 2h 22 is ALONE (nearest PPM star at 145.8 arcsec).
+71) Warning: WB 2h 132 is ALONE (nearest PPM star at 216.9 arcsec).
+72) Warning: WB 2h 142 is ALONE (nearest PPM star at 119.5 arcsec).
+73) Warning: WB 2h 148 is ALONE (nearest PPM star at 180.8 arcsec).
+74) Warning: WB 2h 189 is ALONE (nearest PPM star at 151.4 arcsec).
+75) Warning: WB 2h 224 is ALONE (nearest PPM star at 89.7 arcsec).
+76) Warning: WB 2h 258 is ALONE (nearest PPM star at 609.1 arcsec).
+77) Warning: WB 2h 309 is ALONE (nearest PPM star at 667.1 arcsec).
+78) Warning: WB 2h 554 is ALONE (nearest PPM star at 452.4 arcsec).
+79) Warning: WB 2h 664 is ALONE (nearest PPM star at 377.9 arcsec).
+80) Warning: WB 2h 690 is ALONE (nearest PPM star at 177.7 arcsec).
+81) Warning: WB 2h 808 is ALONE (nearest PPM star at 723.0 arcsec).
+82) Warning: WB 2h 826 is ALONE (nearest PPM star at 175.8 arcsec).
+83) Warning: WB 2h 874 is ALONE (nearest PPM star at 244.4 arcsec).
+84) Warning: WB 2h 899 is ALONE (nearest PPM star at 900.3 arcsec).
+85) Warning: WB 2h 912 is ALONE (nearest PPM star at 736.1 arcsec).
+86) Warning: WB 2h 927 is ALONE (nearest PPM star at 718.9 arcsec).
+87) Warning: WB 3h 8 is ALONE (nearest PPM star at 146.1 arcsec).
+88) Warning: WB 3h 34 is ALONE (nearest PPM star at 458.8 arcsec).
+89) Warning: WB 3h 79 is ALONE (nearest PPM star at 89.9 arcsec).
+90) Warning: WB 3h 80 is ALONE (nearest PPM star at 179.3 arcsec).
+91) Warning: WB 3h 128 is ALONE (nearest PPM star at 409.9 arcsec).
+92) Warning: WB 3h 185 is ALONE (nearest PPM star at 324.8 arcsec).
+93) Warning: WB 3h 202 is ALONE (nearest PPM star at 1148.4 arcsec).
+94) Warning: WB 3h 281 is ALONE (nearest PPM star at 219.1 arcsec).
+95) Warning: WB 3h 305 is ALONE (nearest PPM star at 151.8 arcsec).
+96) Warning: WB 3h 326 is ALONE (nearest PPM star at 1180.8 arcsec).
+97) Warning: WB 3h 357 is ALONE (nearest PPM star at 422.7 arcsec).
+98) Warning: WB 3h 388 is ALONE (nearest PPM star at 138.6 arcsec).
+99) Warning: WB 3h 395 is ALONE (nearest PPM star at 315.2 arcsec).
+100) Warning: WB 3h 490 is ALONE (nearest PPM star at 180.5 arcsec).
+101) Warning: WB 3h 547 is ALONE (nearest PPM star at 903.5 arcsec).
+102) Warning: WB 0h 582 is ALONE (nearest PPM star at 771.4 arcsec).
+103) Warning: WB 3h 636 is ALONE (nearest PPM star at 846.7 arcsec).
+104) Warning: WB 3h 691 is ALONE (nearest PPM star at 305.6 arcsec).
+105) Warning: WB 3h 692 is ALONE (nearest PPM star at 181.3 arcsec).
+106) Warning: WB 3h 710 is ALONE (nearest PPM star at 82.8 arcsec).
+107) Warning: WB 3h 742 is ALONE (nearest PPM star at 823.8 arcsec).
+108) Warning: WB 3h 754 is ALONE (nearest PPM star at 834.9 arcsec).
+109) Warning: WB 3h 813 is ALONE (nearest PPM star at 324.9 arcsec).
+110) Warning: WB 3h 827 is ALONE (nearest PPM star at 302.5 arcsec).
+111) Warning: WB 3h 831 is ALONE (nearest PPM star at 271.2 arcsec).
+112) Warning: WB 3h 859 is ALONE (nearest PPM star at 236.0 arcsec).
+113) Warning: WB 3h 876 is ALONE (nearest PPM star at 161.1 arcsec).
+114) Warning: WB 3h 886 is ALONE (nearest PPM star at 527.6 arcsec).
+115) Warning: WB 3h 936 is ALONE (nearest PPM star at 122.1 arcsec).
+116) Warning: WB 3h 947 is ALONE (nearest PPM star at 356.4 arcsec).
+117) Warning: WB 3h 1061 is ALONE (nearest PPM star at 186.5 arcsec).
+118) Warning: WB 3h 1067 is ALONE (nearest PPM star at 152.2 arcsec).
+119) Warning: WB 3h 1107 is ALONE (nearest PPM star at 707.1 arcsec).
+120) Warning: WB 3h 1155 is ALONE (nearest PPM star at 331.5 arcsec).
+121) Warning: WB 3h 1163 is ALONE (nearest PPM star at 483.1 arcsec).
+122) Warning: WB 4h 43 is ALONE (nearest PPM star at 681.5 arcsec).
+123) Warning: WB 4h 81 is ALONE (nearest PPM star at 301.9 arcsec).
+124) Warning: WB 4h 145 is ALONE (nearest PPM star at 404.6 arcsec).
+125) Warning: WB 4h 166 is ALONE (nearest PPM star at 88.6 arcsec).
+126) Warning: WB 4h 217 is ALONE (nearest PPM star at 145.7 arcsec).
+127) Warning: WB 4h 255 is ALONE (nearest PPM star at 857.0 arcsec).
+128) Warning: WB 4h 303 is ALONE (nearest PPM star at 302.2 arcsec).
+129) Warning: WB 4h 344 is ALONE (nearest PPM star at 181.6 arcsec).
+130) Warning: WB 4h 362 is ALONE (nearest PPM star at 125.9 arcsec).
+131) Warning: WB 4h 403 is ALONE (nearest PPM star at 796.7 arcsec).
+132) Warning: WB 4h 464 is ALONE (nearest PPM star at 219.6 arcsec).
+133) Warning: WB 4h 473 is ALONE (nearest PPM star at 300.1 arcsec).
+134) Warning: WB 4h 527 is ALONE (nearest PPM star at 387.0 arcsec).
+135) Warning: WB 4h 584 is ALONE (nearest PPM star at 143.2 arcsec).
+136) Warning: WB 4h 585 is ALONE (nearest PPM star at 78.8 arcsec).
+137) Warning: WB 4h 613 is ALONE (nearest PPM star at 120.4 arcsec).
+138) Warning: WB 4h 616 is ALONE (nearest PPM star at 567.5 arcsec).
+139) Warning: WB 4h 635 is ALONE (nearest PPM star at 129.2 arcsec).
+140) Warning: WB 4h 668 is ALONE (nearest PPM star at 154.9 arcsec).
+141) Warning: WB 4h 733 is ALONE (nearest PPM star at 738.2 arcsec).
+142) Warning: WB 4h 742 is ALONE (nearest PPM star at 303.5 arcsec).
+143) Warning: WB 4h 769 is ALONE (nearest PPM star at 305.1 arcsec).
+144) Warning: WB 4h 789 is ALONE (nearest PPM star at 301.3 arcsec).
+145) Warning: WB 4h 844 is ALONE (nearest PPM star at 750.8 arcsec).
+146) Warning: WB 4h 911 is ALONE (nearest PPM star at 70.7 arcsec).
+147) Warning: WB 4h 980 is ALONE (nearest PPM star at 187.2 arcsec).
+148) Warning: WB 4h 1095 is ALONE (nearest PPM star at 140.1 arcsec).
+149) Warning: WB 4h 1135 is ALONE (nearest PPM star at 238.1 arcsec).
+150) Warning: WB 4h 1264 is ALONE (nearest PPM star at 527.7 arcsec).
+151) Warning: WB 4h 1265 is ALONE (nearest PPM star at 537.9 arcsec).
+152) Warning: WB 5h 22 is ALONE (nearest PPM star at 96.1 arcsec).
+153) Warning: WB 5h 32 is ALONE (nearest PPM star at 387.8 arcsec).
+154) Warning: WB 5h 39 is ALONE (nearest PPM star at 64.0 arcsec).
+155) Warning: WB 5h 83 is ALONE (nearest PPM star at 192.7 arcsec).
+156) Warning: WB 5h 94 is ALONE (nearest PPM star at 531.2 arcsec).
+157) Warning: WB 5h 183 is ALONE (nearest PPM star at 412.7 arcsec).
+158) Warning: WB 5h 212 is ALONE (nearest PPM star at 150.2 arcsec).
+159) Warning: WB 5h 241 is ALONE (nearest PPM star at 235.0 arcsec).
+160) Warning: WB 5h 242 is ALONE (nearest PPM star at 616.6 arcsec).
+161) Warning: WB 5h 277 is ALONE (nearest PPM star at 350.4 arcsec).
+162) Warning: WB 5h 280 is ALONE (nearest PPM star at 368.9 arcsec).
+163) Warning: WB 5h 358 is ALONE (nearest PPM star at 70.9 arcsec).
+164) Warning: WB 5h 362 is ALONE (nearest PPM star at 391.5 arcsec).
+165) Warning: WB 5h 368 is ALONE (nearest PPM star at 411.9 arcsec).
+166) Warning: WB 5h 372 is ALONE (nearest PPM star at 146.7 arcsec).
+167) Warning: WB 5h 445 is ALONE (nearest PPM star at 418.1 arcsec).
+168) Warning: WB 5h 456 is ALONE (nearest PPM star at 544.3 arcsec).
+169) Warning: WB 5h 500 is ALONE (nearest PPM star at 148.0 arcsec).
+170) Warning: WB 5h 576 is ALONE (nearest PPM star at 717.6 arcsec).
+171) Warning: WB 5h 591 is ALONE (nearest PPM star at 147.8 arcsec).
+172) Warning: WB 5h 597 is ALONE (nearest PPM star at 70.5 arcsec).
+173) Warning: WB 5h 609 is ALONE (nearest PPM star at 222.0 arcsec).
+174) Warning: WB 5h 655 is ALONE (nearest PPM star at 386.0 arcsec).
+175) Warning: WB 5h 660 is ALONE (nearest PPM star at 208.6 arcsec).
+176) Warning: WB 5h 664 is ALONE (nearest PPM star at 133.2 arcsec).
+177) Warning: WB 5h 674 is ALONE (nearest PPM star at 705.8 arcsec).
+178) Warning: WB 5h 687 is ALONE (nearest PPM star at 883.7 arcsec).
+179) Warning: WB 5h 716 is ALONE (nearest PPM star at 161.6 arcsec).
+180) Warning: WB 5h 719 is ALONE (nearest PPM star at 206.0 arcsec).
+181) Warning: WB 5h 744 is ALONE (nearest PPM star at 713.4 arcsec).
+182) Warning: WB 5h 847 is ALONE (nearest PPM star at 689.7 arcsec).
+183) Warning: WB 5h 897 is ALONE (nearest PPM star at 101.6 arcsec).
+184) Warning: WB 5h 907 is ALONE (nearest PPM star at 270.9 arcsec).
+185) Warning: WB 5h 1021 is ALONE (nearest PPM star at 399.9 arcsec).
+186) Warning: WB 5h 1065 is ALONE (nearest PPM star at 186.1 arcsec).
+187) Warning: WB 5h 1071 is ALONE (nearest PPM star at 63.9 arcsec).
+188) Warning: WB 5h 1079 is ALONE (nearest PPM star at 121.4 arcsec).
+189) Warning: WB 5h 1108 is ALONE (nearest PPM star at 352.8 arcsec).
+190) Warning: WB 5h 1113 is ALONE (nearest PPM star at 263.2 arcsec).
+191) Warning: WB 5h 1116 is ALONE (nearest PPM star at 362.5 arcsec).
+192) Warning: WB 5h 1117 is ALONE (nearest PPM star at 198.2 arcsec).
+193) Warning: WB 5h 1165 is ALONE (nearest PPM star at 157.9 arcsec).
+194) Warning: WB 5h 1293 is ALONE (nearest PPM star at 1033.1 arcsec).
+195) Warning: WB 5h 1294 is ALONE (nearest PPM star at 1036.3 arcsec).
+196) Warning: WB 5h 1302 is ALONE (nearest PPM star at 238.9 arcsec).
+197) Warning: WB 5h 1322 is ALONE (nearest PPM star at 200.0 arcsec).
+198) Warning: WB 5h 1360 is ALONE (nearest PPM star at 142.8 arcsec).
+199) Warning: WB 5h 1431 is ALONE (nearest PPM star at 61.1 arcsec).
+200) Warning: WB 5h 1523 is ALONE (nearest PPM star at 289.6 arcsec).
+201) Warning: WB 5h 1534 is ALONE (nearest PPM star at 60.6 arcsec).
+202) Warning: WB 5h 1560 is ALONE (nearest PPM star at 149.9 arcsec).
+203) Warning: WB 5h 1587 is ALONE (nearest PPM star at 117.7 arcsec).
+204) Warning: WB 6h 139 is ALONE (nearest PPM star at 96.1 arcsec).
+205) Warning: WB 6h 142 is ALONE (nearest PPM star at 388.5 arcsec).
+206) Warning: WB 6h 184 is ALONE (nearest PPM star at 114.9 arcsec).
+207) Warning: WB 6h 275 is ALONE (nearest PPM star at 660.1 arcsec).
+208) Warning: WB 6h 314 is ALONE (nearest PPM star at 153.9 arcsec).
+209) Warning: WB 6h 325 is ALONE (nearest PPM star at 211.5 arcsec).
+210) Warning: WB 6h 353 is ALONE (nearest PPM star at 64.2 arcsec).
+211) Warning: WB 6h 362 is ALONE (nearest PPM star at 289.3 arcsec).
+212) Warning: WB 6h 370 is ALONE (nearest PPM star at 216.2 arcsec).
+213) Warning: WB 6h 377 is ALONE (nearest PPM star at 633.4 arcsec).
+214) Warning: WB 6h 382 is ALONE (nearest PPM star at 222.3 arcsec).
+215) Warning: WB 6h 436 is ALONE (nearest PPM star at 62.4 arcsec).
+216) Warning: WB 6h 437 is ALONE (nearest PPM star at 457.9 arcsec).
+217) Warning: WB 6h 531 is ALONE (nearest PPM star at 152.5 arcsec).
+218) Warning: WB 6h 535 is ALONE (nearest PPM star at 138.9 arcsec).
+219) Warning: WB 6h 780 is ALONE (nearest PPM star at 298.4 arcsec).
+220) Warning: WB 6h 827 is ALONE (nearest PPM star at 403.4 arcsec).
+221) Warning: WB 6h 1014 is ALONE (nearest PPM star at 680.5 arcsec).
+222) Warning: WB 6h 1103 is ALONE (nearest PPM star at 146.8 arcsec).
+223) Warning: WB 6h 1146 is ALONE (nearest PPM star at 187.4 arcsec).
+224) Warning: WB 6h 1236 is ALONE (nearest PPM star at 219.8 arcsec).
+225) Warning: WB 6h 1254 is ALONE (nearest PPM star at 370.0 arcsec).
+226) Warning: WB 6h 1255 is ALONE (nearest PPM star at 379.9 arcsec).
+227) Warning: WB 6h 1263 is ALONE (nearest PPM star at 122.1 arcsec).
+228) Warning: WB 6h 1329 is ALONE (nearest PPM star at 289.1 arcsec).
+229) Warning: WB 6h 1444 is ALONE (nearest PPM star at 118.5 arcsec).
+230) Warning: WB 6h 1448 is ALONE (nearest PPM star at 151.3 arcsec).
+231) Warning: WB 6h 1567 is ALONE (nearest PPM star at 323.8 arcsec).
+232) Warning: WB 6h 1715 is ALONE (nearest PPM star at 218.2 arcsec).
+233) Warning: WB 6h 1737 is ALONE (nearest PPM star at 178.1 arcsec).
+234) Warning: WB 6h 1881 is ALONE (nearest PPM star at 418.9 arcsec).
+235) Warning: WB 6h 1909 is ALONE (nearest PPM star at 149.7 arcsec).
+236) Warning: WB 6h 1911 is ALONE (nearest PPM star at 218.9 arcsec).
+237) Warning: WB 7h 22 is ALONE (nearest PPM star at 403.8 arcsec).
+238) Warning: WB 7h 37 is ALONE (nearest PPM star at 114.4 arcsec).
+239) Warning: WB 7h 62 is ALONE (nearest PPM star at 202.2 arcsec).
+240) Warning: WB 7h 66 is ALONE (nearest PPM star at 184.8 arcsec).
+241) Warning: WB 7h 67 is ALONE (nearest PPM star at 1495.0 arcsec).
+242) Warning: WB 7h 101 is ALONE (nearest PPM star at 249.9 arcsec).
+243) Warning: WB 7h 142 is ALONE (nearest PPM star at 174.0 arcsec).
+244) Warning: WB 7h 145 is ALONE (nearest PPM star at 359.3 arcsec).
+245) Warning: WB 7h 161 is ALONE (nearest PPM star at 865.3 arcsec).
+246) Warning: WB 7h 176 is ALONE (nearest PPM star at 745.1 arcsec).
+247) Warning: WB 7h 187 is ALONE (nearest PPM star at 130.7 arcsec).
+248) Warning: WB 7h 284 is ALONE (nearest PPM star at 215.1 arcsec).
+249) Warning: WB 7h 291 is ALONE (nearest PPM star at 183.5 arcsec).
+250) Warning: WB 7h 328 is ALONE (nearest PPM star at 60.7 arcsec).
+251) Warning: WB 7h 454 is ALONE (nearest PPM star at 187.7 arcsec).
+252) Warning: WB 7h 483 is ALONE (nearest PPM star at 588.6 arcsec).
+253) Warning: WB 7h 503 is ALONE (nearest PPM star at 163.7 arcsec).
+254) Warning: WB 7h 507 is ALONE (nearest PPM star at 181.8 arcsec).
+255) Warning: WB 7h 528 is ALONE (nearest PPM star at 91.3 arcsec).
+256) Warning: WB 7h 556 is ALONE (nearest PPM star at 151.7 arcsec).
+257) Warning: WB 7h 676 is ALONE (nearest PPM star at 380.2 arcsec).
+258) Warning: WB 7h 677 is ALONE (nearest PPM star at 373.6 arcsec).
+259) Warning: WB 7h 749 is ALONE (nearest PPM star at 437.4 arcsec).
+260) Warning: WB 7h 762 is ALONE (nearest PPM star at 147.1 arcsec).
+261) Warning: WB 7h 782 is ALONE (nearest PPM star at 219.1 arcsec).
+262) Warning: WB 7h 848 is ALONE (nearest PPM star at 60.4 arcsec).
+263) Warning: WB 7h 983 is ALONE (nearest PPM star at 828.2 arcsec).
+264) Warning: WB 7h 985 is ALONE (nearest PPM star at 202.1 arcsec).
+265) Warning: WB 7h 1048 is ALONE (nearest PPM star at 584.2 arcsec).
+266) Warning: WB 7h 1120 is ALONE (nearest PPM star at 97.2 arcsec).
+267) Warning: WB 7h 1191 is ALONE (nearest PPM star at 762.9 arcsec).
+268) Warning: WB 7h 1198 is ALONE (nearest PPM star at 67.6 arcsec).
+269) Warning: WB 7h 1235 is ALONE (nearest PPM star at 149.9 arcsec).
+270) Warning: WB 7h 1262 is ALONE (nearest PPM star at 82.2 arcsec).
+271) Warning: WB 7h 1330 is ALONE (nearest PPM star at 96.8 arcsec).
+272) Warning: WB 7h 1363 is ALONE (nearest PPM star at 150.5 arcsec).
+273) Warning: WB 7h 1370 is ALONE (nearest PPM star at 153.2 arcsec).
+274) Warning: WB 7h 1379 is ALONE (nearest PPM star at 149.3 arcsec).
+275) Warning: WB 7h 1389 is ALONE (nearest PPM star at 240.0 arcsec).
+276) Warning: WB 7h 1416 is ALONE (nearest PPM star at 152.4 arcsec).
+277) Warning: WB 7h 1437 is ALONE (nearest PPM star at 198.4 arcsec).
+278) Warning: WB 7h 1473 is ALONE (nearest PPM star at 153.3 arcsec).
+279) Warning: WB 7h 1532 is ALONE (nearest PPM star at 180.5 arcsec).
+280) Warning: WB 7h 1613 is ALONE (nearest PPM star at 252.6 arcsec).
+281) Warning: WB 7h 1644 is ALONE (nearest PPM star at 147.3 arcsec).
+282) Warning: WB 7h 1685 is ALONE (nearest PPM star at 85.0 arcsec).
+283) Warning: WB 7h 1712 is ALONE (nearest PPM star at 140.5 arcsec).
+284) Warning: WB 7h 1784 is ALONE (nearest PPM star at 150.3 arcsec).
+285) Warning: WB 7h 1800 is ALONE (nearest PPM star at 139.5 arcsec).
+286) Warning: WB 8h 18 is ALONE (nearest PPM star at 346.6 arcsec).
+287) Warning: WB 8h 105 is ALONE (nearest PPM star at 199.3 arcsec).
+288) Warning: WB 8h 134 is ALONE (nearest PPM star at 296.9 arcsec).
+289) Warning: WB 8h 215 is ALONE (nearest PPM star at 109.0 arcsec).
+290) Warning: WB 8h 218 is ALONE (nearest PPM star at 152.5 arcsec).
+291) Warning: WB 8h 224 is ALONE (nearest PPM star at 212.3 arcsec).
+292) Warning: WB 8h 257 is ALONE (nearest PPM star at 118.4 arcsec).
+293) Warning: WB 8h 283 is ALONE (nearest PPM star at 142.3 arcsec).
+294) Warning: WB 8h 290 is ALONE (nearest PPM star at 92.9 arcsec).
+295) Warning: WB 8h 302 is ALONE (nearest PPM star at 417.7 arcsec).
+296) Warning: WB 8h 308 is ALONE (nearest PPM star at 68.3 arcsec).
+297) Warning: WB 8h 360 is ALONE (nearest PPM star at 410.6 arcsec).
+298) Warning: WB 8h 450 is ALONE (nearest PPM star at 112.3 arcsec).
+299) Warning: WB 8h 461 is ALONE (nearest PPM star at 113.3 arcsec).
+300) Warning: WB 8h 464 is ALONE (nearest PPM star at 266.4 arcsec).
+301) Warning: WB 8h 529 is ALONE (nearest PPM star at 121.2 arcsec).
+302) Warning: WB 8h 534 is ALONE (nearest PPM star at 150.9 arcsec).
+303) Warning: WB 8h 539 is ALONE (nearest PPM star at 145.2 arcsec).
+304) Warning: WB 8h 569 is ALONE (nearest PPM star at 145.3 arcsec).
+305) Warning: WB 8h 641 is ALONE (nearest PPM star at 480.3 arcsec).
+306) Warning: WB 8h 652 is ALONE (nearest PPM star at 148.1 arcsec).
+307) Warning: WB 8h 655 is ALONE (nearest PPM star at 60.3 arcsec).
+308) Warning: WB 8h 682 is ALONE (nearest PPM star at 396.5 arcsec).
+309) Warning: WB 8h 694 is ALONE (nearest PPM star at 64.1 arcsec).
+310) Warning: WB 8h 746 is ALONE (nearest PPM star at 549.9 arcsec).
+311) Warning: WB 8h 794 is ALONE (nearest PPM star at 848.9 arcsec).
+312) Warning: WB 8h 804 is ALONE (nearest PPM star at 144.6 arcsec).
+313) Warning: WB 8h 811 is ALONE (nearest PPM star at 180.3 arcsec).
+314) Warning: WB 8h 946 is ALONE (nearest PPM star at 1071.8 arcsec).
+315) Warning: WB 8h 952 is ALONE (nearest PPM star at 1263.5 arcsec).
+316) Warning: WB 8h 958 is ALONE (nearest PPM star at 64.2 arcsec).
+317) Warning: WB 8h 972 is ALONE (nearest PPM star at 138.4 arcsec).
+318) Warning: WB 8h 1076 is ALONE (nearest PPM star at 154.5 arcsec).
+319) Warning: WB 8h 1088 is ALONE (nearest PPM star at 117.8 arcsec).
+320) Warning: WB 8h 1167 is ALONE (nearest PPM star at 72.7 arcsec).
+321) Warning: WB 8h 1198 is ALONE (nearest PPM star at 121.4 arcsec).
+322) Warning: WB 8h 1208 is ALONE (nearest PPM star at 120.2 arcsec).
+323) Warning: WB 8h 1260 is ALONE (nearest PPM star at 1368.2 arcsec).
+324) Warning: WB 8h 1299 is ALONE (nearest PPM star at 61.1 arcsec).
+325) Warning: WB 8h 1317 is ALONE (nearest PPM star at 150.8 arcsec).
+326) Warning: WB 8h 1367 is ALONE (nearest PPM star at 149.0 arcsec).
+327) Warning: WB 8h 1368 is ALONE (nearest PPM star at 178.2 arcsec).
+328) Warning: WB 8h 1376 is ALONE (nearest PPM star at 412.2 arcsec).
+329) Warning: WB 8h 1381 is ALONE (nearest PPM star at 734.6 arcsec).
+330) Warning: WB 8h 1385 is ALONE (nearest PPM star at 182.3 arcsec).
+331) Warning: WB 8h 1506 is ALONE (nearest PPM star at 214.2 arcsec).
+332) Warning: WB 8h 1532 is ALONE (nearest PPM star at 150.0 arcsec).
+333) Warning: WB 9h 65 is ALONE (nearest PPM star at 825.1 arcsec).
+334) Warning: WB 9h 109 is ALONE (nearest PPM star at 167.4 arcsec).
+335) Warning: WB 9h 134 is ALONE (nearest PPM star at 600.3 arcsec).
+336) Warning: WB 9h 138 is ALONE (nearest PPM star at 437.0 arcsec).
+337) Warning: WB 9h 165 is ALONE (nearest PPM star at 157.4 arcsec).
+338) Warning: WB 9h 203 is ALONE (nearest PPM star at 490.9 arcsec).
+339) Warning: WB 9h 242 is ALONE (nearest PPM star at 140.1 arcsec).
+340) Warning: WB 9h 273 is ALONE (nearest PPM star at 220.4 arcsec).
+341) Warning: WB 9h 290 is ALONE (nearest PPM star at 65.7 arcsec).
+342) Warning: WB 9h 305 is ALONE (nearest PPM star at 180.9 arcsec).
+343) Warning: WB 9h 367 is ALONE (nearest PPM star at 97.9 arcsec).
+344) Warning: WB 9h 374 is ALONE (nearest PPM star at 212.2 arcsec).
+345) Warning: WB 9h 376 is ALONE (nearest PPM star at 470.4 arcsec).
+346) Warning: WB 9h 408 is ALONE (nearest PPM star at 312.7 arcsec).
+347) Warning: WB 9h 430 is ALONE (nearest PPM star at 589.9 arcsec).
+348) Warning: WB 9h 482 is ALONE (nearest PPM star at 146.8 arcsec).
+349) Warning: WB 9h 537 is ALONE (nearest PPM star at 143.7 arcsec).
+350) Warning: WB 9h 566 is ALONE (nearest PPM star at 159.3 arcsec).
+351) Warning: WB 9h 725 is ALONE (nearest PPM star at 450.6 arcsec).
+352) Warning: WB 9h 754 is ALONE (nearest PPM star at 146.6 arcsec).
+353) Warning: WB 9h 786 is ALONE (nearest PPM star at 149.9 arcsec).
+354) Warning: WB 9h 796 is ALONE (nearest PPM star at 211.8 arcsec).
+355) Warning: WB 9h 835 is ALONE (nearest PPM star at 146.0 arcsec).
+356) Warning: WB 9h 887 is ALONE (nearest PPM star at 433.3 arcsec).
+357) Warning: WB 9h 895 is ALONE (nearest PPM star at 120.3 arcsec).
+358) Warning: WB 9h 920 is ALONE (nearest PPM star at 1513.5 arcsec).
+359) Warning: WB 9h 934 is ALONE (nearest PPM star at 219.9 arcsec).
+360) Warning: WB 9h 944 is ALONE (nearest PPM star at 60.6 arcsec).
+361) Warning: WB 9h 946 is ALONE (nearest PPM star at 247.3 arcsec).
+362) Warning: WB 9h 971 is ALONE (nearest PPM star at 418.3 arcsec).
+363) Warning: WB 9h 989 is ALONE (nearest PPM star at 199.2 arcsec).
+364) Warning: WB 9h 993 is ALONE (nearest PPM star at 152.8 arcsec).
+365) Warning: WB 9h 997 is ALONE (nearest PPM star at 592.2 arcsec).
+366) Warning: WB 9h 1021 is ALONE (nearest PPM star at 110.4 arcsec).
+367) Warning: WB 9h 1048 is ALONE (nearest PPM star at 375.8 arcsec).
+368) Warning: WB 9h 1059 is ALONE (nearest PPM star at 385.4 arcsec).
+369) Warning: WB 9h 1065 is ALONE (nearest PPM star at 85.3 arcsec).
+370) Warning: WB 9h 1067 is ALONE (nearest PPM star at 245.0 arcsec).
+371) Warning: WB 9h 1179 is ALONE (nearest PPM star at 219.4 arcsec).
+372) Warning: WB 9h 1186 is ALONE (nearest PPM star at 154.1 arcsec).
+373) Warning: WB 9h 1227 is ALONE (nearest PPM star at 196.2 arcsec).
+374) Warning: WB 9h 1235 is ALONE (nearest PPM star at 102.5 arcsec).
+375) Warning: WB 9h 1267 is ALONE (nearest PPM star at 477.2 arcsec).
+376) Warning: WB 9h 1306 is ALONE (nearest PPM star at 210.8 arcsec).
+377) Warning: WB 9h 1311 is ALONE (nearest PPM star at 60.6 arcsec).
+378) Warning: WB 10h 9 is ALONE (nearest PPM star at 240.0 arcsec).
+379) Warning: WB 10h 14 is ALONE (nearest PPM star at 1013.0 arcsec).
+380) Warning: WB 10h 17 is ALONE (nearest PPM star at 889.8 arcsec).
+381) Warning: WB 10h 68 is ALONE (nearest PPM star at 154.6 arcsec).
+382) Warning: WB 10h 84 is ALONE (nearest PPM star at 675.9 arcsec).
+383) Warning: WB 10h 113 is ALONE (nearest PPM star at 691.0 arcsec).
+384) Warning: WB 10h 118 is ALONE (nearest PPM star at 61.1 arcsec).
+385) Warning: WB 10h 127 is ALONE (nearest PPM star at 182.0 arcsec).
+386) Warning: WB 10h 152 is ALONE (nearest PPM star at 888.2 arcsec).
+387) Warning: WB 10h 164 is ALONE (nearest PPM star at 118.6 arcsec).
+388) Warning: WB 10h 166 is ALONE (nearest PPM star at 151.4 arcsec).
+389) Warning: WB 10h 190 is ALONE (nearest PPM star at 121.7 arcsec).
+390) Warning: WB 10h 192 is ALONE (nearest PPM star at 122.3 arcsec).
+391) Warning: WB 10h 195 is ALONE (nearest PPM star at 91.4 arcsec).
+392) Warning: WB 10h 210 is ALONE (nearest PPM star at 570.6 arcsec).
+393) Warning: WB 10h 310 is ALONE (nearest PPM star at 283.9 arcsec).
+394) Warning: WB 10h 322 is ALONE (nearest PPM star at 765.4 arcsec).
+395) Warning: WB 10h 356 is ALONE (nearest PPM star at 148.8 arcsec).
+396) Warning: WB 10h 402 is ALONE (nearest PPM star at 601.2 arcsec).
+397) Warning: WB 10h 422 is ALONE (nearest PPM star at 83.2 arcsec).
+398) Warning: WB 10h 423 is ALONE (nearest PPM star at 515.9 arcsec).
+399) Warning: WB 10h 438 is ALONE (nearest PPM star at 61.7 arcsec).
+400) Warning: WB 10h 485 is ALONE (nearest PPM star at 394.4 arcsec).
+401) Warning: WB 10h 506 is ALONE (nearest PPM star at 956.1 arcsec).
+402) Warning: WB 10h 519 is ALONE (nearest PPM star at 436.8 arcsec).
+403) Warning: WB 10h 522 is ALONE (nearest PPM star at 209.7 arcsec).
+404) Warning: WB 10h 534 is ALONE (nearest PPM star at 890.5 arcsec).
+405) Warning: WB 10h 535 is ALONE (nearest PPM star at 603.8 arcsec).
+406) Warning: WB 10h 536 is ALONE (nearest PPM star at 889.7 arcsec).
+407) Warning: WB 10h 540 is ALONE (nearest PPM star at 142.7 arcsec).
+408) Warning: WB 10h 546 is ALONE (nearest PPM star at 152.3 arcsec).
+409) Warning: WB 10h 553 is ALONE (nearest PPM star at 60.4 arcsec).
+410) Warning: WB 10h 566 is ALONE (nearest PPM star at 909.2 arcsec).
+411) Warning: WB 10h 584 is ALONE (nearest PPM star at 500.8 arcsec).
+412) Warning: WB 10h 593 is ALONE (nearest PPM star at 893.0 arcsec).
+413) Warning: WB 10h 611 is ALONE (nearest PPM star at 147.2 arcsec).
+414) Warning: WB 10h 621 is ALONE (nearest PPM star at 217.5 arcsec).
+415) Warning: WB 10h 651 is ALONE (nearest PPM star at 701.8 arcsec).
+416) Warning: WB 10h 705 is ALONE (nearest PPM star at 146.6 arcsec).
+417) Warning: WB 10h 733 is ALONE (nearest PPM star at 148.6 arcsec).
+418) Warning: WB 10h 735 is ALONE (nearest PPM star at 1426.7 arcsec).
+419) Warning: WB 10h 742 is ALONE (nearest PPM star at 240.7 arcsec).
+420) Warning: WB 10h 747 is ALONE (nearest PPM star at 842.9 arcsec).
+421) Warning: WB 10h 772 is ALONE (nearest PPM star at 771.8 arcsec).
+422) Warning: WB 10h 790 is ALONE (nearest PPM star at 142.3 arcsec).
+423) Warning: WB 10h 798 is ALONE (nearest PPM star at 546.0 arcsec).
+424) Warning: WB 10h 801 is ALONE (nearest PPM star at 453.9 arcsec).
+425) Warning: WB 10h 812 is ALONE (nearest PPM star at 537.6 arcsec).
+426) Warning: WB 10h 813 is ALONE (nearest PPM star at 183.9 arcsec).
+427) Warning: WB 10h 826 is ALONE (nearest PPM star at 888.6 arcsec).
+428) Warning: WB 10h 841 is ALONE (nearest PPM star at 373.1 arcsec).
+429) Warning: WB 10h 899 is ALONE (nearest PPM star at 842.5 arcsec).
+430) Warning: WB 10h 902 is ALONE (nearest PPM star at 261.5 arcsec).
+431) Warning: WB 10h 920 is ALONE (nearest PPM star at 811.3 arcsec).
+432) Warning: WB 10h 927 is ALONE (nearest PPM star at 729.3 arcsec).
+433) Warning: WB 10h 982 is ALONE (nearest PPM star at 147.5 arcsec).
+434) Warning: WB 10h 989 is ALONE (nearest PPM star at 828.1 arcsec).
+435) Warning: WB 10h 997 is ALONE (nearest PPM star at 924.1 arcsec).
+436) Warning: WB 10h 1010 is ALONE (nearest PPM star at 472.7 arcsec).
+437) Warning: WB 10h 1089 is ALONE (nearest PPM star at 388.1 arcsec).
+438) Warning: WB 11h 39 is ALONE (nearest PPM star at 220.3 arcsec).
+439) Warning: WB 11h 52 is ALONE (nearest PPM star at 222.0 arcsec).
+440) Warning: WB 11h 103 is ALONE (nearest PPM star at 180.7 arcsec).
+441) Warning: WB 11h 134 is ALONE (nearest PPM star at 152.4 arcsec).
+442) Warning: WB 11h 156 is ALONE (nearest PPM star at 223.9 arcsec).
+443) Warning: WB 11h 163 is ALONE (nearest PPM star at 899.5 arcsec).
+444) Warning: WB 11h 196 is ALONE (nearest PPM star at 91.1 arcsec).
+445) Warning: WB 11h 202 is ALONE (nearest PPM star at 279.9 arcsec).
+446) Warning: WB 11h 206 is ALONE (nearest PPM star at 669.3 arcsec).
+447) Warning: WB 11h 220 is ALONE (nearest PPM star at 626.6 arcsec).
+448) Warning: WB 11h 247 is ALONE (nearest PPM star at 291.5 arcsec).
+449) Warning: WB 11h 249 is ALONE (nearest PPM star at 857.9 arcsec).
+450) Warning: WB 11h 276 is ALONE (nearest PPM star at 696.9 arcsec).
+451) Warning: WB 11h 281 is ALONE (nearest PPM star at 254.4 arcsec).
+452) Warning: WB 11h 297 is ALONE (nearest PPM star at 75.5 arcsec).
+453) Warning: WB 11h 343 is ALONE (nearest PPM star at 1628.6 arcsec).
+454) Warning: WB 11h 345 is ALONE (nearest PPM star at 65.0 arcsec).
+455) Warning: WB 11h 381 is ALONE (nearest PPM star at 146.2 arcsec).
+456) Warning: WB 11h 400 is ALONE (nearest PPM star at 70.0 arcsec).
+457) Warning: WB 11h 405 is ALONE (nearest PPM star at 67.7 arcsec).
+458) Warning: WB 11h 433 is ALONE (nearest PPM star at 262.7 arcsec).
+459) Warning: WB 11h 521 is ALONE (nearest PPM star at 150.4 arcsec).
+460) Warning: WB 11h 552 is ALONE (nearest PPM star at 213.0 arcsec).
+461) Warning: WB 11h 555 is ALONE (nearest PPM star at 751.7 arcsec).
+462) Warning: WB 11h 604 is ALONE (nearest PPM star at 153.0 arcsec).
+463) Warning: WB 11h 676 is ALONE (nearest PPM star at 428.4 arcsec).
+464) Warning: WB 11h 697 is ALONE (nearest PPM star at 144.1 arcsec).
+465) Warning: WB 11h 709 is ALONE (nearest PPM star at 137.2 arcsec).
+466) Warning: WB 11h 730 is ALONE (nearest PPM star at 149.7 arcsec).
+467) Warning: WB 11h 734 is ALONE (nearest PPM star at 671.3 arcsec).
+468) Warning: WB 11h 759 is ALONE (nearest PPM star at 793.9 arcsec).
+469) Warning: WB 11h 760 is ALONE (nearest PPM star at 808.1 arcsec).
+470) Warning: WB 11h 763 is ALONE (nearest PPM star at 402.2 arcsec).
+471) Warning: WB 11h 768 is ALONE (nearest PPM star at 767.5 arcsec).
+472) Warning: WB 11h 769 is ALONE (nearest PPM star at 93.8 arcsec).
+473) Warning: WB 11h 783 is ALONE (nearest PPM star at 180.7 arcsec).
+474) Warning: WB 11h 842 is ALONE (nearest PPM star at 527.7 arcsec).
+475) Warning: WB 11h 847 is ALONE (nearest PPM star at 231.6 arcsec).
+476) Warning: WB 11h 885 is ALONE (nearest PPM star at 91.8 arcsec).
+477) Warning: WB 11h 901 is ALONE (nearest PPM star at 899.9 arcsec).
+478) Warning: WB 11h 916 is ALONE (nearest PPM star at 179.1 arcsec).
+479) Warning: WB 11h 925 is ALONE (nearest PPM star at 156.1 arcsec).
+480) Warning: WB 11h 935 is ALONE (nearest PPM star at 116.3 arcsec).
+481) Warning: WB 11h 943 is ALONE (nearest PPM star at 220.2 arcsec).
+482) Warning: WB 11h 945 is ALONE (nearest PPM star at 901.0 arcsec).
+483) Warning: WB 11h 949 is ALONE (nearest PPM star at 414.1 arcsec).
+484) Warning: WB 12h 26 is ALONE (nearest PPM star at 704.2 arcsec).
+485) Warning: WB 12h 60 is ALONE (nearest PPM star at 149.0 arcsec).
+486) Warning: WB 12h 72 is ALONE (nearest PPM star at 601.6 arcsec).
+487) Warning: WB 12h 109 is ALONE (nearest PPM star at 60.3 arcsec).
+488) Warning: WB 12h 145 is ALONE (nearest PPM star at 137.3 arcsec).
+489) Warning: WB 12h 156 is ALONE (nearest PPM star at 77.7 arcsec).
+490) Warning: WB 12h 184 is ALONE (nearest PPM star at 66.2 arcsec).
+491) Warning: WB 12h 247 is ALONE (nearest PPM star at 299.2 arcsec).
+492) Warning: WB 12h 277 is ALONE (nearest PPM star at 133.2 arcsec).
+493) Warning: WB 12h 426 is ALONE (nearest PPM star at 149.5 arcsec).
+494) Warning: WB 12h 567 is ALONE (nearest PPM star at 86.3 arcsec).
+495) Warning: WB 12h 602 is ALONE (nearest PPM star at 146.5 arcsec).
+496) Warning: WB 12h 626 is ALONE (nearest PPM star at 129.4 arcsec).
+497) Warning: WB 12h 629 is ALONE (nearest PPM star at 149.6 arcsec).
+498) Warning: WB 12h 632 is ALONE (nearest PPM star at 132.1 arcsec).
+499) Warning: WB 12h 694 is ALONE (nearest PPM star at 1005.6 arcsec).
+500) Warning: WB 12h 743 is ALONE (nearest PPM star at 139.3 arcsec).
+501) Warning: WB 12h 799 is ALONE (nearest PPM star at 143.5 arcsec).
+502) Warning: WB 12h 957 is ALONE (nearest PPM star at 176.5 arcsec).
+503) Warning: WB 12h 1007 is ALONE (nearest PPM star at 442.2 arcsec).
+504) Warning: WB 12h 1061 is ALONE (nearest PPM star at 61.4 arcsec).
+505) Warning: WB 13h 33 is ALONE (nearest PPM star at 183.1 arcsec).
+506) Warning: WB 13h 45 is ALONE (nearest PPM star at 66.3 arcsec).
+507) Warning: WB 13h 50 is ALONE (nearest PPM star at 474.9 arcsec).
+508) Warning: WB 13h 107 is ALONE (nearest PPM star at 120.6 arcsec).
+509) Warning: WB 13h 115 is ALONE (nearest PPM star at 896.6 arcsec).
+510) Warning: WB 13h 131 is ALONE (nearest PPM star at 177.1 arcsec).
+511) Warning: WB 13h 242 is ALONE (nearest PPM star at 641.9 arcsec).
+512) Warning: WB 0h 300 is ALONE (nearest PPM star at 771.4 arcsec).
+513) Warning: WB 13h 339 is ALONE (nearest PPM star at 154.3 arcsec).
+514) Warning: WB 13h 360 is ALONE (nearest PPM star at 602.6 arcsec).
+515) Warning: WB 13h 432 is ALONE (nearest PPM star at 679.8 arcsec).
+516) Warning: WB 13h 475 is ALONE (nearest PPM star at 326.7 arcsec).
+517) Warning: WB 13h 487 is ALONE (nearest PPM star at 193.2 arcsec).
+518) Warning: WB 13h 494 is ALONE (nearest PPM star at 601.9 arcsec).
+519) Warning: WB 13h 540 is ALONE (nearest PPM star at 432.5 arcsec).
+520) Warning: WB 13h 576 is ALONE (nearest PPM star at 605.5 arcsec).
+521) Warning: WB 13h 614 is ALONE (nearest PPM star at 146.6 arcsec).
+522) Warning: WB 13h 618 is ALONE (nearest PPM star at 211.9 arcsec).
+523) Warning: WB 13h 635 is ALONE (nearest PPM star at 61.2 arcsec).
+524) Warning: WB 13h 660 is ALONE (nearest PPM star at 1535.0 arcsec).
+525) Warning: WB 13h 677 is ALONE (nearest PPM star at 217.5 arcsec).
+526) Warning: WB 13h 781 is ALONE (nearest PPM star at 153.3 arcsec).
+527) Warning: WB 13h 787 is ALONE (nearest PPM star at 210.4 arcsec).
+528) Warning: WB 13h 793 is ALONE (nearest PPM star at 151.9 arcsec).
+529) Warning: WB 13h 805 is ALONE (nearest PPM star at 90.5 arcsec).
+530) Warning: WB 13h 840 is ALONE (nearest PPM star at 64.7 arcsec).
+531) Warning: WB 13h 905 is ALONE (nearest PPM star at 178.7 arcsec).
+532) Warning: WB 13h 948 is ALONE (nearest PPM star at 147.6 arcsec).
+533) Warning: WB 13h 956 is ALONE (nearest PPM star at 800.4 arcsec).
+534) Warning: WB 13h 959 is ALONE (nearest PPM star at 872.6 arcsec).
+535) Warning: WB 13h 1064 is ALONE (nearest PPM star at 829.1 arcsec).
+536) Warning: WB 13h 1065 is ALONE (nearest PPM star at 893.3 arcsec).
+537) Warning: WB 13h 1090 is ALONE (nearest PPM star at 147.3 arcsec).
+538) Warning: WB 14h 27 is ALONE (nearest PPM star at 177.9 arcsec).
+539) Warning: WB 14h 47 is ALONE (nearest PPM star at 222.8 arcsec).
+540) Warning: WB 14h 105 is ALONE (nearest PPM star at 220.4 arcsec).
+541) Warning: WB 14h 128 is ALONE (nearest PPM star at 525.2 arcsec).
+542) Warning: WB 14h 175 is ALONE (nearest PPM star at 63.7 arcsec).
+543) Warning: WB 14h 199 is ALONE (nearest PPM star at 200.8 arcsec).
+544) Warning: WB 14h 302 is ALONE (nearest PPM star at 181.6 arcsec).
+545) Warning: WB 14h 359 is ALONE (nearest PPM star at 117.1 arcsec).
+546) Warning: WB 14h 360 is ALONE (nearest PPM star at 81.9 arcsec).
+547) Warning: WB 14h 411 is ALONE (nearest PPM star at 600.3 arcsec).
+548) Warning: WB 14h 428 is ALONE (nearest PPM star at 147.0 arcsec).
+549) Warning: WB 14h 676 is ALONE (nearest PPM star at 702.7 arcsec).
+550) Warning: WB 14h 705 is ALONE (nearest PPM star at 217.5 arcsec).
+551) Warning: WB 14h 706 is ALONE (nearest PPM star at 204.6 arcsec).
+552) Warning: WB 14h 712 is ALONE (nearest PPM star at 875.7 arcsec).
+553) Warning: WB 14h 730 is ALONE (nearest PPM star at 154.3 arcsec).
+554) Warning: WB 14h 765 is ALONE (nearest PPM star at 324.5 arcsec).
+555) Warning: WB 14h 778 is ALONE (nearest PPM star at 340.2 arcsec).
+556) Warning: WB 14h 808 is ALONE (nearest PPM star at 157.6 arcsec).
+557) Warning: WB 14h 810 is ALONE (nearest PPM star at 605.1 arcsec).
+558) Warning: WB 14h 858 is ALONE (nearest PPM star at 372.0 arcsec).
+559) Warning: WB 14h 879 is ALONE (nearest PPM star at 150.4 arcsec).
+560) Warning: WB 14h 888 is ALONE (nearest PPM star at 222.7 arcsec).
+561) Warning: WB 14h 924 is ALONE (nearest PPM star at 301.3 arcsec).
+562) Warning: WB 14h 964 is ALONE (nearest PPM star at 143.6 arcsec).
+563) Warning: WB 14h 1036 is ALONE (nearest PPM star at 186.3 arcsec).
+564) Warning: WB 14h 1060 is ALONE (nearest PPM star at 440.3 arcsec).
+565) Warning: WB 14h 1076 is ALONE (nearest PPM star at 155.9 arcsec).
+566) Warning: WB 14h 1102 is ALONE (nearest PPM star at 357.4 arcsec).
+567) Warning: WB 14h 1138 is ALONE (nearest PPM star at 178.5 arcsec).
+568) Warning: WB 14h 1139 is ALONE (nearest PPM star at 587.3 arcsec).
+569) Warning: WB 14h 1148 is ALONE (nearest PPM star at 145.4 arcsec).
+570) Warning: WB 14h 1160 is ALONE (nearest PPM star at 435.1 arcsec).
+571) Warning: WB 14h 1162 is ALONE (nearest PPM star at 149.9 arcsec).
+572) Warning: WB 14h 1164 is ALONE (nearest PPM star at 121.6 arcsec).
+573) Warning: WB 15h 33 is ALONE (nearest PPM star at 89.4 arcsec).
+574) Warning: WB 15h 130 is ALONE (nearest PPM star at 602.7 arcsec).
+575) Warning: WB 15h 227 is ALONE (nearest PPM star at 320.7 arcsec).
+576) Warning: WB 15h 241 is ALONE (nearest PPM star at 285.8 arcsec).
+577) Warning: WB 15h 242 is ALONE (nearest PPM star at 358.6 arcsec).
+578) Warning: WB 15h 259 is ALONE (nearest PPM star at 364.8 arcsec).
+579) Warning: WB 15h 261 is ALONE (nearest PPM star at 338.0 arcsec).
+580) Warning: WB 15h 309 is ALONE (nearest PPM star at 580.2 arcsec).
+581) Warning: WB 15h 337 is ALONE (nearest PPM star at 144.4 arcsec).
+582) Warning: WB 15h 356 is ALONE (nearest PPM star at 152.2 arcsec).
+583) Warning: WB 15h 399 is ALONE (nearest PPM star at 348.2 arcsec).
+584) Warning: WB 15h 414 is ALONE (nearest PPM star at 157.1 arcsec).
+585) Warning: WB 15h 436 is ALONE (nearest PPM star at 309.8 arcsec).
+586) Warning: WB 15h 437 is ALONE (nearest PPM star at 298.6 arcsec).
+587) Warning: WB 15h 445 is ALONE (nearest PPM star at 148.4 arcsec).
+588) Warning: WB 15h 449 is ALONE (nearest PPM star at 417.8 arcsec).
+589) Warning: WB 15h 468 is ALONE (nearest PPM star at 486.8 arcsec).
+590) Warning: WB 15h 474 is ALONE (nearest PPM star at 257.2 arcsec).
+591) Warning: WB 15h 476 is ALONE (nearest PPM star at 543.8 arcsec).
+592) Warning: WB 15h 492 is ALONE (nearest PPM star at 63.8 arcsec).
+593) Warning: WB 15h 600 is ALONE (nearest PPM star at 298.1 arcsec).
+594) Warning: WB 15h 610 is ALONE (nearest PPM star at 335.4 arcsec).
+595) Warning: WB 15h 666 is ALONE (nearest PPM star at 443.0 arcsec).
+596) Warning: WB 15h 667 is ALONE (nearest PPM star at 223.6 arcsec).
+597) Warning: WB 15h 681 is ALONE (nearest PPM star at 146.4 arcsec).
+598) Warning: WB 15h 706 is ALONE (nearest PPM star at 74.4 arcsec).
+599) Warning: WB 15h 762 is ALONE (nearest PPM star at 145.3 arcsec).
+600) Warning: WB 15h 778 is ALONE (nearest PPM star at 129.7 arcsec).
+601) Warning: WB 15h 937 is ALONE (nearest PPM star at 303.4 arcsec).
+602) Warning: WB 15h 953 is ALONE (nearest PPM star at 733.0 arcsec).
+603) Warning: WB 15h 962 is ALONE (nearest PPM star at 440.7 arcsec).
+604) Warning: WB 15h 1021 is ALONE (nearest PPM star at 300.3 arcsec).
+605) Warning: WB 15h 1048 is ALONE (nearest PPM star at 889.6 arcsec).
+606) Warning: WB 15h 1087 is ALONE (nearest PPM star at 944.1 arcsec).
+607) Warning: WB 15h 1117 is ALONE (nearest PPM star at 184.0 arcsec).
+608) Warning: WB 15h 1127 is ALONE (nearest PPM star at 599.9 arcsec).
+609) Warning: WB 15h 1137 is ALONE (nearest PPM star at 153.3 arcsec).
+610) Warning: WB 16h 70 is ALONE (nearest PPM star at 181.2 arcsec).
+611) Warning: WB 16h 107 is ALONE (nearest PPM star at 440.5 arcsec).
+612) Warning: WB 16h 187 is ALONE (nearest PPM star at 432.4 arcsec).
+613) Warning: WB 16h 191 is ALONE (nearest PPM star at 194.5 arcsec).
+614) Warning: WB 16h 252 is ALONE (nearest PPM star at 747.0 arcsec).
+615) Warning: WB 16h 256 is ALONE (nearest PPM star at 685.6 arcsec).
+616) Warning: WB 16h 260 is ALONE (nearest PPM star at 576.3 arcsec).
+617) Warning: WB 16h 304 is ALONE (nearest PPM star at 143.8 arcsec).
+618) Warning: WB 16h 312 is ALONE (nearest PPM star at 217.9 arcsec).
+619) Warning: WB 16h 334 is ALONE (nearest PPM star at 357.9 arcsec).
+620) Warning: WB 16h 346 is ALONE (nearest PPM star at 432.5 arcsec).
+621) Warning: WB 16h 348 is ALONE (nearest PPM star at 205.9 arcsec).
+622) Warning: WB 16h 369 is ALONE (nearest PPM star at 116.1 arcsec).
+623) Warning: WB 16h 378 is ALONE (nearest PPM star at 112.6 arcsec).
+624) Warning: WB 16h 385 is ALONE (nearest PPM star at 597.2 arcsec).
+625) Warning: WB 16h 401 is ALONE (nearest PPM star at 511.6 arcsec).
+626) Warning: WB 16h 413 is ALONE (nearest PPM star at 499.3 arcsec).
+627) Warning: WB 16h 434 is ALONE (nearest PPM star at 154.1 arcsec).
+628) Warning: WB 16h 531 is ALONE (nearest PPM star at 296.9 arcsec).
+629) Warning: WB 16h 549 is ALONE (nearest PPM star at 565.7 arcsec).
+630) Warning: WB 16h 661 is ALONE (nearest PPM star at 892.1 arcsec).
+631) Warning: WB 16h 662 is ALONE (nearest PPM star at 119.2 arcsec).
+632) Warning: WB 16h 679 is ALONE (nearest PPM star at 897.9 arcsec).
+633) Warning: WB 16h 684 is ALONE (nearest PPM star at 797.8 arcsec).
+634) Warning: WB 16h 693 is ALONE (nearest PPM star at 764.8 arcsec).
+635) Warning: WB 16h 741 is ALONE (nearest PPM star at 146.0 arcsec).
+636) Warning: WB 16h 762 is ALONE (nearest PPM star at 1628.7 arcsec).
+637) Warning: WB 16h 770 is ALONE (nearest PPM star at 1009.2 arcsec).
+638) Warning: WB 16h 796 is ALONE (nearest PPM star at 145.9 arcsec).
+639) Warning: WB 16h 822 is ALONE (nearest PPM star at 780.7 arcsec).
+640) Warning: WB 16h 823 is ALONE (nearest PPM star at 1389.7 arcsec).
+641) Warning: WB 16h 830 is ALONE (nearest PPM star at 224.6 arcsec).
+642) Warning: WB 16h 852 is ALONE (nearest PPM star at 222.5 arcsec).
+643) Warning: WB 16h 888 is ALONE (nearest PPM star at 123.2 arcsec).
+644) Warning: WB 16h 902 is ALONE (nearest PPM star at 376.7 arcsec).
+645) Warning: WB 16h 962 is ALONE (nearest PPM star at 952.2 arcsec).
+646) Warning: WB 16h 973 is ALONE (nearest PPM star at 617.2 arcsec).
+647) Warning: WB 16h 979 is ALONE (nearest PPM star at 874.8 arcsec).
+648) Warning: WB 16h 997 is ALONE (nearest PPM star at 101.2 arcsec).
+649) Warning: WB 16h 1015 is ALONE (nearest PPM star at 67.5 arcsec).
+650) Warning: WB 16h 1035 is ALONE (nearest PPM star at 70.5 arcsec).
+651) Warning: WB 17h 32 is ALONE (nearest PPM star at 716.0 arcsec).
+652) Warning: WB 17h 52 is ALONE (nearest PPM star at 295.9 arcsec).
+653) Warning: WB 17h 66 is ALONE (nearest PPM star at 726.0 arcsec).
+654) Warning: WB 17h 102 is ALONE (nearest PPM star at 69.3 arcsec).
+655) Warning: WB 17h 122 is ALONE (nearest PPM star at 143.2 arcsec).
+656) Warning: WB 17h 135 is ALONE (nearest PPM star at 827.8 arcsec).
+657) Warning: WB 17h 170 is ALONE (nearest PPM star at 153.0 arcsec).
+658) Warning: WB 17h 174 is ALONE (nearest PPM star at 176.1 arcsec).
+659) Warning: WB 17h 197 is ALONE (nearest PPM star at 177.9 arcsec).
+660) Warning: WB 17h 220 is ALONE (nearest PPM star at 143.4 arcsec).
+661) Warning: WB 17h 232 is ALONE (nearest PPM star at 890.8 arcsec).
+662) Warning: WB 17h 250 is ALONE (nearest PPM star at 178.8 arcsec).
+663) Warning: WB 17h 289 is ALONE (nearest PPM star at 151.2 arcsec).
+664) Warning: WB 17h 291 is ALONE (nearest PPM star at 719.6 arcsec).
+665) Warning: WB 17h 301 is ALONE (nearest PPM star at 454.7 arcsec).
+666) Warning: WB 17h 410 is ALONE (nearest PPM star at 972.9 arcsec).
+667) Warning: WB 17h 440 is ALONE (nearest PPM star at 60.8 arcsec).
+668) Warning: WB 17h 455 is ALONE (nearest PPM star at 160.0 arcsec).
+669) Warning: WB 17h 464 is ALONE (nearest PPM star at 679.4 arcsec).
+670) Warning: WB 17h 480 is ALONE (nearest PPM star at 296.7 arcsec).
+671) Warning: WB 17h 529 is ALONE (nearest PPM star at 213.6 arcsec).
+672) Warning: WB 17h 530 is ALONE (nearest PPM star at 216.8 arcsec).
+673) Warning: WB 17h 548 is ALONE (nearest PPM star at 212.3 arcsec).
+674) Warning: WB 17h 570 is ALONE (nearest PPM star at 300.0 arcsec).
+675) Warning: WB 17h 659 is ALONE (nearest PPM star at 283.0 arcsec).
+676) Warning: WB 17h 662 is ALONE (nearest PPM star at 417.2 arcsec).
+677) Warning: WB 17h 677 is ALONE (nearest PPM star at 149.6 arcsec).
+678) Warning: WB 17h 687 is ALONE (nearest PPM star at 181.8 arcsec).
+679) Warning: WB 17h 758 is ALONE (nearest PPM star at 1196.4 arcsec).
+680) Warning: WB 17h 767 is ALONE (nearest PPM star at 292.0 arcsec).
+681) Warning: WB 17h 773 is ALONE (nearest PPM star at 614.0 arcsec).
+682) Warning: WB 17h 783 is ALONE (nearest PPM star at 150.6 arcsec).
+683) Warning: WB 17h 786 is ALONE (nearest PPM star at 886.7 arcsec).
+684) Warning: WB 17h 844 is ALONE (nearest PPM star at 217.0 arcsec).
+685) Warning: WB 17h 851 is ALONE (nearest PPM star at 732.6 arcsec).
+686) Warning: WB 17h 854 is ALONE (nearest PPM star at 264.3 arcsec).
+687) Warning: WB 17h 865 is ALONE (nearest PPM star at 554.2 arcsec).
+688) Warning: WB 17h 876 is ALONE (nearest PPM star at 818.1 arcsec).
+689) Warning: WB 17h 883 is ALONE (nearest PPM star at 636.9 arcsec).
+690) Warning: WB 17h 896 is ALONE (nearest PPM star at 825.9 arcsec).
+691) Warning: WB 17h 919 is ALONE (nearest PPM star at 224.9 arcsec).
+692) Warning: WB 17h 941 is ALONE (nearest PPM star at 894.6 arcsec).
+693) Warning: WB 17h 990 is ALONE (nearest PPM star at 355.0 arcsec).
+694) Warning: WB 17h 1102 is ALONE (nearest PPM star at 301.0 arcsec).
+695) Warning: WB 17h 1117 is ALONE (nearest PPM star at 145.8 arcsec).
+696) Warning: WB 17h 1161 is ALONE (nearest PPM star at 696.2 arcsec).
+697) Warning: WB 17h 1171 is ALONE (nearest PPM star at 445.6 arcsec).
+698) Warning: WB 17h 1195 is ALONE (nearest PPM star at 245.2 arcsec).
+699) Warning: WB 17h 1207 is ALONE (nearest PPM star at 115.8 arcsec).
+700) Warning: WB 17h 1247 is ALONE (nearest PPM star at 246.9 arcsec).
+701) Warning: WB 17h 1251 is ALONE (nearest PPM star at 145.4 arcsec).
+702) Warning: WB 17h 1255 is ALONE (nearest PPM star at 218.6 arcsec).
+703) Warning: WB 18h 123 is ALONE (nearest PPM star at 514.7 arcsec).
+704) Warning: WB 18h 129 is ALONE (nearest PPM star at 120.3 arcsec).
+705) Warning: WB 18h 144 is ALONE (nearest PPM star at 124.2 arcsec).
+706) Warning: WB 18h 308 is ALONE (nearest PPM star at 336.4 arcsec).
+707) Warning: WB 18h 359 is ALONE (nearest PPM star at 570.9 arcsec).
+708) Warning: WB 18h 385 is ALONE (nearest PPM star at 119.1 arcsec).
+709) Warning: WB 18h 571 is ALONE (nearest PPM star at 296.5 arcsec).
+710) Warning: WB 18h 575 is ALONE (nearest PPM star at 183.2 arcsec).
+711) Warning: WB 18h 584 is ALONE (nearest PPM star at 1116.2 arcsec).
+712) Warning: WB 18h 606 is ALONE (nearest PPM star at 115.9 arcsec).
+713) Warning: WB 18h 619 is ALONE (nearest PPM star at 1166.2 arcsec).
+714) Warning: WB 18h 642 is ALONE (nearest PPM star at 287.0 arcsec).
+715) Warning: WB 18h 647 is ALONE (nearest PPM star at 299.6 arcsec).
+716) Warning: WB 18h 751 is ALONE (nearest PPM star at 310.1 arcsec).
+717) Warning: WB 18h 805 is ALONE (nearest PPM star at 505.9 arcsec).
+718) Warning: WB 18h 846 is ALONE (nearest PPM star at 472.5 arcsec).
+719) Warning: WB 18h 902 is ALONE (nearest PPM star at 204.3 arcsec).
+720) Warning: WB 18h 959 is ALONE (nearest PPM star at 144.4 arcsec).
+721) Warning: WB 18h 996 is ALONE (nearest PPM star at 650.8 arcsec).
+722) Warning: WB 18h 1060 is ALONE (nearest PPM star at 436.9 arcsec).
+723) Warning: WB 18h 1077 is ALONE (nearest PPM star at 187.7 arcsec).
+724) Warning: WB 18h 1131 is ALONE (nearest PPM star at 60.1 arcsec).
+725) Warning: WB 18h 1151 is ALONE (nearest PPM star at 190.2 arcsec).
+726) Warning: WB 18h 1193 is ALONE (nearest PPM star at 62.4 arcsec).
+727) Warning: WB 18h 1194 is ALONE (nearest PPM star at 474.3 arcsec).
+728) Warning: WB 18h 1201 is ALONE (nearest PPM star at 112.0 arcsec).
+729) Warning: WB 18h 1220 is ALONE (nearest PPM star at 177.4 arcsec).
+730) Warning: WB 18h 1287 is ALONE (nearest PPM star at 603.6 arcsec).
+731) Warning: WB 18h 1327 is ALONE (nearest PPM star at 118.0 arcsec).
+732) Warning: WB 18h 1360 is ALONE (nearest PPM star at 1161.8 arcsec).
+733) Warning: WB 18h 1369 is ALONE (nearest PPM star at 498.3 arcsec).
+734) Warning: WB 18h 1446 is ALONE (nearest PPM star at 102.3 arcsec).
+735) Warning: WB 18h 1484 is ALONE (nearest PPM star at 1170.7 arcsec).
+736) Warning: WB 18h 1535 is ALONE (nearest PPM star at 91.1 arcsec).
+737) Warning: WB 18h 1563 is ALONE (nearest PPM star at 76.3 arcsec).
+738) Warning: WB 18h 1566 is ALONE (nearest PPM star at 772.5 arcsec).
+739) Warning: WB 18h 1569 is ALONE (nearest PPM star at 907.2 arcsec).
+740) Warning: WB 19h 171 is ALONE (nearest PPM star at 358.1 arcsec).
+741) Warning: WB 19h 182 is ALONE (nearest PPM star at 75.8 arcsec).
+742) Warning: WB 19h 206 is ALONE (nearest PPM star at 556.1 arcsec).
+743) Warning: WB 19h 246 is ALONE (nearest PPM star at 355.9 arcsec).
+744) Warning: WB 19h 276 is ALONE (nearest PPM star at 148.7 arcsec).
+745) Warning: WB 19h 287 is ALONE (nearest PPM star at 148.2 arcsec).
+746) Warning: WB 19h 375 is ALONE (nearest PPM star at 483.9 arcsec).
+747) Warning: WB 19h 386 is ALONE (nearest PPM star at 225.1 arcsec).
+748) Warning: WB 19h 391 is ALONE (nearest PPM star at 217.8 arcsec).
+749) Warning: WB 19h 400 is ALONE (nearest PPM star at 250.6 arcsec).
+750) Warning: WB 19h 411 is ALONE (nearest PPM star at 336.5 arcsec).
+751) Warning: WB 19h 424 is ALONE (nearest PPM star at 457.1 arcsec).
+752) Warning: WB 19h 442 is ALONE (nearest PPM star at 598.1 arcsec).
+753) Warning: WB 19h 467 is ALONE (nearest PPM star at 91.4 arcsec).
+754) Warning: WB 19h 490 is ALONE (nearest PPM star at 634.6 arcsec).
+755) Warning: WB 19h 500 is ALONE (nearest PPM star at 499.0 arcsec).
+756) Warning: WB 19h 506 is ALONE (nearest PPM star at 209.8 arcsec).
+757) Warning: WB 19h 513 is ALONE (nearest PPM star at 346.6 arcsec).
+758) Warning: WB 19h 533 is ALONE (nearest PPM star at 373.5 arcsec).
+759) Warning: WB 19h 558 is ALONE (nearest PPM star at 222.6 arcsec).
+760) Warning: WB 19h 607 is ALONE (nearest PPM star at 146.7 arcsec).
+761) Warning: WB 19h 617 is ALONE (nearest PPM star at 73.5 arcsec).
+762) Warning: WB 19h 620 is ALONE (nearest PPM star at 179.9 arcsec).
+763) Warning: WB 19h 622 is ALONE (nearest PPM star at 318.8 arcsec).
+764) Warning: WB 19h 626 is ALONE (nearest PPM star at 178.3 arcsec).
+765) Warning: WB 19h 632 is ALONE (nearest PPM star at 177.4 arcsec).
+766) Warning: WB 19h 651 is ALONE (nearest PPM star at 148.7 arcsec).
+767) Warning: WB 19h 656 is ALONE (nearest PPM star at 94.7 arcsec).
+768) Warning: WB 19h 665 is ALONE (nearest PPM star at 150.4 arcsec).
+769) Warning: WB 19h 803 is ALONE (nearest PPM star at 262.3 arcsec).
+770) Warning: WB 19h 807 is ALONE (nearest PPM star at 215.1 arcsec).
+771) Warning: WB 19h 811 is ALONE (nearest PPM star at 427.2 arcsec).
+772) Warning: WB 19h 815 is ALONE (nearest PPM star at 435.4 arcsec).
+773) Warning: WB 19h 816 is ALONE (nearest PPM star at 60.8 arcsec).
+774) Warning: WB 19h 828 is ALONE (nearest PPM star at 454.9 arcsec).
+775) Warning: WB 19h 834 is ALONE (nearest PPM star at 214.1 arcsec).
+776) Warning: WB 19h 860 is ALONE (nearest PPM star at 64.5 arcsec).
+777) Warning: WB 19h 941 is ALONE (nearest PPM star at 148.4 arcsec).
+778) Warning: WB 19h 1024 is ALONE (nearest PPM star at 110.9 arcsec).
+779) Warning: WB 19h 1053 is ALONE (nearest PPM star at 151.2 arcsec).
+780) Warning: WB 19h 1054 is ALONE (nearest PPM star at 218.8 arcsec).
+781) Warning: WB 19h 1088 is ALONE (nearest PPM star at 351.4 arcsec).
+782) Warning: WB 19h 1096 is ALONE (nearest PPM star at 319.0 arcsec).
+783) Warning: WB 19h 1105 is ALONE (nearest PPM star at 154.9 arcsec).
+784) Warning: WB 19h 1142 is ALONE (nearest PPM star at 184.3 arcsec).
+785) Warning: WB 19h 1168 is ALONE (nearest PPM star at 60.8 arcsec).
+786) Warning: WB 19h 1180 is ALONE (nearest PPM star at 792.7 arcsec).
+787) Warning: WB 19h 1353 is ALONE (nearest PPM star at 586.8 arcsec).
+788) Warning: WB 19h 1356 is ALONE (nearest PPM star at 357.6 arcsec).
+789) Warning: WB 19h 1361 is ALONE (nearest PPM star at 307.8 arcsec).
+790) Warning: WB 19h 1372 is ALONE (nearest PPM star at 146.4 arcsec).
+791) Warning: WB 19h 1400 is ALONE (nearest PPM star at 435.0 arcsec).
+792) Warning: WB 19h 1535 is ALONE (nearest PPM star at 146.9 arcsec).
+793) Warning: WB 20h 23 is ALONE (nearest PPM star at 123.2 arcsec).
+794) Warning: WB 20h 37 is ALONE (nearest PPM star at 109.2 arcsec).
+795) Warning: WB 20h 41 is ALONE (nearest PPM star at 886.6 arcsec).
+796) Warning: WB 20h 65 is ALONE (nearest PPM star at 745.1 arcsec).
+797) Warning: WB 20h 111 is ALONE (nearest PPM star at 119.4 arcsec).
+798) Warning: WB 20h 192 is ALONE (nearest PPM star at 121.7 arcsec).
+799) Warning: WB 20h 198 is ALONE (nearest PPM star at 145.3 arcsec).
+800) Warning: WB 20h 250 is ALONE (nearest PPM star at 615.8 arcsec).
+801) Warning: WB 20h 271 is ALONE (nearest PPM star at 283.5 arcsec).
+802) Warning: WB 20h 328 is ALONE (nearest PPM star at 591.3 arcsec).
+803) Warning: WB 20h 345 is ALONE (nearest PPM star at 922.0 arcsec).
+804) Warning: WB 20h 354 is ALONE (nearest PPM star at 149.7 arcsec).
+805) Warning: WB 20h 370 is ALONE (nearest PPM star at 281.4 arcsec).
+806) Warning: WB 20h 399 is ALONE (nearest PPM star at 73.0 arcsec).
+807) Warning: WB 20h 531 is ALONE (nearest PPM star at 78.4 arcsec).
+808) Warning: WB 20h 624 is ALONE (nearest PPM star at 130.6 arcsec).
+809) Warning: WB 20h 660 is ALONE (nearest PPM star at 301.0 arcsec).
+810) Warning: WB 20h 682 is ALONE (nearest PPM star at 614.6 arcsec).
+811) Warning: WB 20h 757 is ALONE (nearest PPM star at 129.3 arcsec).
+812) Warning: WB 20h 904 is ALONE (nearest PPM star at 460.4 arcsec).
+813) Warning: WB 20h 982 is ALONE (nearest PPM star at 786.5 arcsec).
+814) Warning: WB 20h 984 is ALONE (nearest PPM star at 142.3 arcsec).
+815) Warning: WB 20h 1102 is ALONE (nearest PPM star at 893.4 arcsec).
+816) Warning: WB 20h 1194 is ALONE (nearest PPM star at 298.9 arcsec).
+817) Warning: WB 20h 1234 is ALONE (nearest PPM star at 208.4 arcsec).
+818) Warning: WB 20h 1339 is ALONE (nearest PPM star at 188.0 arcsec).
+819) Warning: WB 20h 1352 is ALONE (nearest PPM star at 433.9 arcsec).
+820) Warning: WB 20h 1364 is ALONE (nearest PPM star at 359.2 arcsec).
+821) Warning: WB 20h 1365 is ALONE (nearest PPM star at 73.8 arcsec).
+822) Warning: WB 20h 1410 is ALONE (nearest PPM star at 220.1 arcsec).
+823) Warning: WB 20h 1459 is ALONE (nearest PPM star at 154.9 arcsec).
+824) Warning: WB 20h 1498 is ALONE (nearest PPM star at 152.9 arcsec).
+825) Warning: WB 21h 87 is ALONE (nearest PPM star at 81.3 arcsec).
+826) Warning: WB 21h 101 is ALONE (nearest PPM star at 244.7 arcsec).
+827) Warning: WB 21h 110 is ALONE (nearest PPM star at 505.5 arcsec).
+828) Warning: WB 21h 146 is ALONE (nearest PPM star at 559.3 arcsec).
+829) Warning: WB 21h 159 is ALONE (nearest PPM star at 77.6 arcsec).
+830) Warning: WB 21h 201 is ALONE (nearest PPM star at 430.6 arcsec).
+831) Warning: WB 21h 226 is ALONE (nearest PPM star at 126.3 arcsec).
+832) Warning: WB 21h 259 is ALONE (nearest PPM star at 181.7 arcsec).
+833) Warning: WB 21h 269 is ALONE (nearest PPM star at 94.5 arcsec).
+834) Warning: WB 21h 332 is ALONE (nearest PPM star at 82.1 arcsec).
+835) Warning: WB 21h 340 is ALONE (nearest PPM star at 327.9 arcsec).
+836) Warning: WB 21h 342 is ALONE (nearest PPM star at 299.8 arcsec).
+837) Warning: WB 21h 353 is ALONE (nearest PPM star at 319.4 arcsec).
+838) Warning: WB 21h 359 is ALONE (nearest PPM star at 437.5 arcsec).
+839) Warning: WB 21h 362 is ALONE (nearest PPM star at 104.6 arcsec).
+840) Warning: WB 21h 364 is ALONE (nearest PPM star at 60.8 arcsec).
+841) Warning: WB 21h 366 is ALONE (nearest PPM star at 598.7 arcsec).
+842) Warning: WB 21h 373 is ALONE (nearest PPM star at 437.6 arcsec).
+843) Warning: WB 21h 456 is ALONE (nearest PPM star at 99.9 arcsec).
+844) Warning: WB 21h 621 is ALONE (nearest PPM star at 169.8 arcsec).
+845) Warning: WB 21h 656 is ALONE (nearest PPM star at 179.3 arcsec).
+846) Warning: WB 21h 665 is ALONE (nearest PPM star at 380.2 arcsec).
+847) Warning: WB 21h 671 is ALONE (nearest PPM star at 223.7 arcsec).
+848) Warning: WB 21h 693 is ALONE (nearest PPM star at 152.4 arcsec).
+849) Warning: WB 21h 696 is ALONE (nearest PPM star at 118.2 arcsec).
+850) Warning: WB 21h 704 is ALONE (nearest PPM star at 747.2 arcsec).
+851) Warning: WB 21h 793 is ALONE (nearest PPM star at 86.5 arcsec).
+852) Warning: WB 21h 846 is ALONE (nearest PPM star at 444.3 arcsec).
+853) Warning: WB 21h 857 is ALONE (nearest PPM star at 574.4 arcsec).
+854) Warning: WB 21h 865 is ALONE (nearest PPM star at 697.9 arcsec).
+855) Warning: WB 21h 870 is ALONE (nearest PPM star at 639.6 arcsec).
+856) Warning: WB 21h 891 is ALONE (nearest PPM star at 444.7 arcsec).
+857) Warning: WB 21h 905 is ALONE (nearest PPM star at 118.6 arcsec).
+858) Warning: WB 21h 918 is ALONE (nearest PPM star at 466.3 arcsec).
+859) Warning: WB 21h 919 is ALONE (nearest PPM star at 534.0 arcsec).
+860) Warning: WB 21h 925 is ALONE (nearest PPM star at 780.6 arcsec).
+861) Warning: WB 21h 937 is ALONE (nearest PPM star at 284.6 arcsec).
+862) Warning: WB 21h 938 is ALONE (nearest PPM star at 739.4 arcsec).
+863) Warning: WB 21h 971 is ALONE (nearest PPM star at 537.8 arcsec).
+864) Warning: WB 21h 976 is ALONE (nearest PPM star at 200.3 arcsec).
+865) Warning: WB 21h 987 is ALONE (nearest PPM star at 387.3 arcsec).
+866) Warning: WB 21h 990 is ALONE (nearest PPM star at 867.9 arcsec).
+867) Warning: WB 21h 997 is ALONE (nearest PPM star at 777.2 arcsec).
+868) Warning: WB 21h 1000 is ALONE (nearest PPM star at 144.6 arcsec).
+869) Warning: WB 21h 1008 is ALONE (nearest PPM star at 164.0 arcsec).
+870) Warning: WB 21h 1011 is ALONE (nearest PPM star at 184.2 arcsec).
+871) Warning: WB 21h 1019 is ALONE (nearest PPM star at 505.4 arcsec).
+872) Warning: WB 21h 1020 is ALONE (nearest PPM star at 744.7 arcsec).
+873) Warning: WB 21h 1035 is ALONE (nearest PPM star at 310.8 arcsec).
+874) Warning: WB 21h 1040 is ALONE (nearest PPM star at 134.4 arcsec).
+875) Warning: WB 21h 1041 is ALONE (nearest PPM star at 240.3 arcsec).
+876) Warning: WB 21h 1076 is ALONE (nearest PPM star at 60.1 arcsec).
+877) Warning: WB 21h 1077 is ALONE (nearest PPM star at 810.0 arcsec).
+878) Warning: WB 21h 1089 is ALONE (nearest PPM star at 416.5 arcsec).
+879) Warning: WB 21h 1150 is ALONE (nearest PPM star at 135.4 arcsec).
+880) Warning: WB 21h 1165 is ALONE (nearest PPM star at 152.3 arcsec).
+881) Warning: WB 21h 1166 is ALONE (nearest PPM star at 203.3 arcsec).
+882) Warning: WB 21h 1258 is ALONE (nearest PPM star at 160.1 arcsec).
+883) Warning: WB 21h 1305 is ALONE (nearest PPM star at 877.2 arcsec).
+884) Warning: WB 21h 1306 is ALONE (nearest PPM star at 871.3 arcsec).
+885) Warning: WB 21h 1325 is ALONE (nearest PPM star at 426.7 arcsec).
+886) Warning: WB 21h 1347 is ALONE (nearest PPM star at 356.0 arcsec).
+887) Warning: WB 22h 18 is ALONE (nearest PPM star at 403.4 arcsec).
+888) Warning: WB 22h 43 is ALONE (nearest PPM star at 140.4 arcsec).
+889) Warning: WB 22h 89 is ALONE (nearest PPM star at 71.6 arcsec).
+890) Warning: WB 22h 103 is ALONE (nearest PPM star at 123.9 arcsec).
+891) Warning: WB 22h 122 is ALONE (nearest PPM star at 147.6 arcsec).
+892) Warning: WB 22h 193 is ALONE (nearest PPM star at 281.0 arcsec).
+893) Warning: WB 22h 228 is ALONE (nearest PPM star at 385.3 arcsec).
+894) Warning: WB 22h 270 is ALONE (nearest PPM star at 62.4 arcsec).
+895) Warning: WB 22h 272 is ALONE (nearest PPM star at 555.1 arcsec).
+896) Warning: WB 22h 313 is ALONE (nearest PPM star at 116.9 arcsec).
+897) Warning: WB 22h 315 is ALONE (nearest PPM star at 60.8 arcsec).
+898) Warning: WB 22h 330 is ALONE (nearest PPM star at 157.4 arcsec).
+899) Warning: WB 22h 438 is ALONE (nearest PPM star at 157.9 arcsec).
+900) Warning: WB 22h 490 is ALONE (nearest PPM star at 524.2 arcsec).
+901) Warning: WB 22h 497 is ALONE (nearest PPM star at 102.9 arcsec).
+902) Warning: WB 22h 500 is ALONE (nearest PPM star at 60.6 arcsec).
+903) Warning: WB 22h 507 is ALONE (nearest PPM star at 61.5 arcsec).
+904) Warning: WB 22h 536 is ALONE (nearest PPM star at 419.0 arcsec).
+905) Warning: WB 22h 539 is ALONE (nearest PPM star at 604.0 arcsec).
+906) Warning: WB 22h 562 is ALONE (nearest PPM star at 604.9 arcsec).
+907) Warning: WB 22h 574 is ALONE (nearest PPM star at 307.3 arcsec).
+908) Warning: WB 22h 603 is ALONE (nearest PPM star at 294.5 arcsec).
+909) Warning: WB 22h 639 is ALONE (nearest PPM star at 75.0 arcsec).
+910) Warning: WB 22h 667 is ALONE (nearest PPM star at 82.3 arcsec).
+911) Warning: WB 22h 704 is ALONE (nearest PPM star at 292.9 arcsec).
+912) Warning: WB 22h 722 is ALONE (nearest PPM star at 880.2 arcsec).
+913) Warning: WB 22h 764 is ALONE (nearest PPM star at 338.1 arcsec).
+914) Warning: WB 22h 795 is ALONE (nearest PPM star at 493.6 arcsec).
+915) Warning: WB 22h 841 is ALONE (nearest PPM star at 88.0 arcsec).
+916) Warning: WB 22h 875 is ALONE (nearest PPM star at 149.7 arcsec).
+917) Warning: WB 22h 879 is ALONE (nearest PPM star at 603.9 arcsec).
+918) Warning: WB 22h 887 is ALONE (nearest PPM star at 431.2 arcsec).
+919) Warning: WB 22h 890 is ALONE (nearest PPM star at 150.3 arcsec).
+920) Warning: WB 22h 891 is ALONE (nearest PPM star at 261.8 arcsec).
+921) Warning: WB 22h 989 is ALONE (nearest PPM star at 239.4 arcsec).
+922) Warning: WB 22h 1074 is ALONE (nearest PPM star at 136.4 arcsec).
+923) Warning: WB 22h 1076 is ALONE (nearest PPM star at 286.1 arcsec).
+924) Warning: WB 22h 1185 is ALONE (nearest PPM star at 113.7 arcsec).
+925) Warning: WB 23h 22 is ALONE (nearest PPM star at 309.6 arcsec).
+926) Warning: WB 23h 37 is ALONE (nearest PPM star at 62.1 arcsec).
+927) Warning: WB 23h 60 is ALONE (nearest PPM star at 151.7 arcsec).
+928) Warning: WB 23h 62 is ALONE (nearest PPM star at 760.5 arcsec).
+929) Warning: WB 23h 64 is ALONE (nearest PPM star at 1231.5 arcsec).
+930) Warning: WB 23h 119 is ALONE (nearest PPM star at 83.9 arcsec).
+931) Warning: WB 23h 154 is ALONE (nearest PPM star at 228.2 arcsec).
+932) Warning: WB 23h 191 is ALONE (nearest PPM star at 876.7 arcsec).
+933) Warning: WB 23h 240 is ALONE (nearest PPM star at 630.7 arcsec).
+934) Warning: WB 23h 287 is ALONE (nearest PPM star at 86.4 arcsec).
+935) Warning: WB 23h 321 is ALONE (nearest PPM star at 1084.0 arcsec).
+936) Warning: WB 23h 337 is ALONE (nearest PPM star at 660.2 arcsec).
+937) Warning: WB 23h 387 is ALONE (nearest PPM star at 175.6 arcsec).
+938) Warning: WB 23h 455 is ALONE (nearest PPM star at 354.5 arcsec).
+939) Warning: WB 23h 483 is ALONE (nearest PPM star at 598.8 arcsec).
+940) Warning: WB 23h 500 is ALONE (nearest PPM star at 224.9 arcsec).
+941) Warning: WB 23h 524 is ALONE (nearest PPM star at 377.3 arcsec).
+942) Warning: WB 23h 528 is ALONE (nearest PPM star at 869.4 arcsec).
+943) Warning: WB 23h 539 is ALONE (nearest PPM star at 502.3 arcsec).
+944) Warning: WB 23h 541 is ALONE (nearest PPM star at 766.3 arcsec).
+945) Warning: WB 23h 545 is ALONE (nearest PPM star at 875.4 arcsec).
+946) Warning: WB 23h 546 is ALONE (nearest PPM star at 848.1 arcsec).
+947) Warning: WB 23h 552 is ALONE (nearest PPM star at 300.0 arcsec).
+948) Warning: WB 23h 563 is ALONE (nearest PPM star at 296.2 arcsec).
+949) Warning: WB 23h 639 is ALONE (nearest PPM star at 74.1 arcsec).
+950) Warning: WB 23h 718 is ALONE (nearest PPM star at 479.3 arcsec).
+951) Warning: WB 23h 747 is ALONE (nearest PPM star at 825.2 arcsec).
+952) Warning: WB 23h 814 is ALONE (nearest PPM star at 176.2 arcsec).
+953) Warning: WB 23h 834 is ALONE (nearest PPM star at 412.1 arcsec).
+954) Warning: WB 23h 837 is ALONE (nearest PPM star at 674.5 arcsec).
+955) Warning: WB 23h 867 is ALONE (nearest PPM star at 777.7 arcsec).
+956) Warning: WB 23h 964 is ALONE (nearest PPM star at 60.9 arcsec).
+957) Warning: WB 23h 969 is ALONE (nearest PPM star at 80.8 arcsec).
+958) Warning: WB 23h 1083 is ALONE (nearest PPM star at 123.7 arcsec).
+959) Warning: WB 23h 1148 is ALONE (nearest PPM star at 699.3 arcsec).
+960) Warning: WB 23h 1154 is ALONE (nearest PPM star at 119.1 arcsec).
+961) Warning: WB 23h 1184 is ALONE (nearest PPM star at 390.4 arcsec).
+962) Warning: WB 23h 1265 is ALONE (nearest PPM star at 456.1 arcsec).
+Available WB stars = 31895
+Stars from WB identified with PPM = 30933
+RSME of distance (arcsec) = 6.50  among a total of 30933 stars
+Errors logged = 962
+
+***************************************
 Perform comparison between Oeltzen-Argelander North catalog and PPM...
 Stars read from PPM: 175863
 1) Warning: OA 3 is ALONE (nearest PPM star at 657.9 arcsec).
@@ -767,230 +1737,298 @@ Errors logged = 212
 
 ***************************************
 Check references between USNO and BD/BAC/OA...
-1) Warning: U 205 is FAR from BD star (dist = 118.5 arcsec).
+1) Warning: U 161 is FAR from WB 0h 236 (dist = 891.1 arcsec).
+     Register U 161: 00h 15m 05s66 -05°58'06"4
+2) Warning: U 205 is FAR from BD star (dist = 118.5 arcsec).
      Register U 205: 00h 20m 17s59 +01°07'30"9
      Register BD +1°66 (en 0h):  9.3 | 20m1.0s | 3.9'     (pag. 49)
-2) Warning: U 330 reports 3.943 on precession RA but it should be 3.043 (diff=0.900).
+3) Warning: U 260 is FAR from WB 0h 444 (dist = 131.6 arcsec).
+     Register U 260: 00h 26m 51s09 -09°29'30"2
+4) Warning: U 330 reports 3.943 on precession RA but it should be 3.043 (diff=0.900).
      Register U 330: 00h 33m 17s20 -08°25'20"3
-3) Warning: U 344 is FAR from BD star (dist = 81.7 arcsec).
+5) Warning: U 332 is FAR from WB 0h 563 (dist = 7197.9 arcsec).
+     Register U 332: 00h 33m 30s69 -03°06'50"8
+6) Warning: U 344 is FAR from BD star (dist = 81.7 arcsec).
      Register U 344: 00h 34m 42s90 +01°01'46"7
      Register BD +0°104 (en 0h):  8.8 | 34m26.3s | 58.8'     (pag. 32)
-4) Warning: U 346 is FAR from BD star (dist = 92.0 arcsec).
+7) Warning: U 346 is FAR from BD star (dist = 92.0 arcsec).
      Register U 346: 00h 34m 47s12 +01°57'40"6
      Register BD +1°119 (en 0h):  8.7 | 34m34.0s | 54.6'     (pag. 49)
-5) Warning: U 350 is FAR from BD star (dist = 79.0 arcsec).
+8) Warning: U 350 is FAR from BD star (dist = 79.0 arcsec).
      Register U 350: 00h 34m 55s34 +10°03'03"6
      Register BD +10°74 (en 0h):  8.8 | 34m40.4s | 0.1'     (pag. 205)
-6) Warning: U 443 is FAR from BD star (dist = 65.3 arcsec).
+9) Warning: U 443 is FAR from BD star (dist = 65.3 arcsec).
      Register U 443: 00h 44m 16s49 +01°37'49"1
      Register BD +1°151 (en 0h):  8.8 | 44m0.5s | 35.1'     (pag. 50)
-7) Warning: U 489 is FAR from BD star (dist = 158.5 arcsec).
+10) Warning: U 452 is FAR from WB 0h 786 (dist = 60.9 arcsec).
+     Register U 452: 00h 45m 24s26 +10°09'10"2
+11) Warning: U 489 is FAR from BD star (dist = 158.5 arcsec).
      Register U 489: 00h 48m 23s96 -01°33'12"2
      Register BD -1°117 (en 0h):  9.5 | 48m8.0s | 32.2'     (pag. 1)
-8) Warning: U 508 is FAR from BD star (dist = 73.7 arcsec).
+12) Warning: U 508 is FAR from BD star (dist = 73.7 arcsec).
      Register U 508: 00h 50m 46s96 +01°43'45"3
      Register BD +1°177 (en 0h):  7.8 | 50m31.2s | 40.9'     (pag. 50)
-9) Warning: U 605 is FAR from BD star (dist = 64.7 arcsec).
+13) Warning: U 605 is FAR from BD star (dist = 64.7 arcsec).
      Register U 605: 01h 01m 49s39 +11°56'40"6
      Register BD +11°151 (en 1h):  8.3 | 1m33.0s | 54.0'     (pag. 222)
-10) Warning: U 682 is FAR from BD star (dist = 85.6 arcsec).
+14) Warning: U 682 is FAR from BD star (dist = 85.6 arcsec).
      Register U 682: 01h 14m 39s88 -01°05'00"0
      Register BD -1°178 (en 1h):  9.0 | 14m23.9s | 8.0'     (pag. 1)
-11) Warning: U 714 is FAR from BD star (dist = 82.4 arcsec).
+15) Warning: U 714 is FAR from BD star (dist = 82.4 arcsec).
      Register U 714: 01h 20m 35s91 +08°18'13"9
      Register BD +8°236 (en 1h):  9.2 | 20m20.9s | 15.3'     (pag. 170)
-12) Warning: U 863 is FAR from BAC 547 (dist = 109.5 arcsec).
+16) Warning: U 863 is FAR from BAC 547 (dist = 109.5 arcsec).
      Register U 863: 01h 40m 35s13 +47°11'52"4
-13) Warning: U 966 reports 2.755 on precession RA but it should be 2.735 (diff=0.020).
+17) Warning: U 883 is FAR from WB 1h 772 (dist = 152.0 arcsec).
+     Register U 883: 01h 43m 43s83 +07°51'19"6
+18) Warning: U 966 reports 2.755 on precession RA but it should be 2.735 (diff=0.020).
      Register U 966: 01h 56m 12s57 -27°25'04"7
-14) Warning: U 1095 is FAR from BAC 728 (dist = 885.0 arcsec).
+19) Warning: U 987 is FAR from WB 1h 1050 (dist = 133.8 arcsec).
+     Register U 987: 01h 59m 20s68 +13°54'51"0
+20) Warning: U 1081 is FAR from WB 2h 189 (dist = 151.3 arcsec).
+     Register U 1081: 02h 12m 43s06 -05°40'25"3
+21) Warning: U 1095 is FAR from BAC 728 (dist = 885.0 arcsec).
      Register U 1095: 02h 15m 44s04 +10°11'48"0
-15) Warning: U 1179 is FAR from BAC 793 (dist = 61.7 arcsec).
+22) Warning: U 1179 is FAR from BAC 793 (dist = 61.7 arcsec).
      Register U 1179: 02h 28m 26s08 +06°13'20"0
-16) Warning: U 1287 is FAR from BD star (dist = 68.9 arcsec).
+23) Warning: U 1287 is FAR from BD star (dist = 68.9 arcsec).
      Register U 1287: 02h 47m 12s61 +08°12'05"7
      Register BD +8°445 (en 2h):  8.5 | 46m56.7s | 9.7'     (pag. 171)
-17) Warning: U 1357 is FAR from OA 3458 (dist = 1199.7 arcsec).
+24) Warning: U 1357 is FAR from OA 3458 (dist = 1199.7 arcsec).
      Register U 1357: 02h 58m 31s34 +50°37'28"1
-18) Warning: U 1485 is FAR from BD star (dist = 86.5 arcsec).
+25) Warning: U 1485 is FAR from BD star (dist = 86.5 arcsec).
      Register U 1485: 03h 21m 50s96 +09°28'16"7
      Register BD +9°442 (en 3h):  9.2 | 21m35.9s | 25.8'     (pag. 188)
-19) Warning: U 1512 reports 3.690 on precession RA but it should be 3.715 (diff=0.025).
+26) Warning: U 1512 reports 3.690 on precession RA but it should be 3.715 (diff=0.025).
      Register U 1512: 03h 26m 18s23 +31°32'43"7
-20) Warning: U 1602 reports 3.556 on precession RA but it should be 3.566 (diff=0.010).
+27) Warning: U 1602 reports 3.556 on precession RA but it should be 3.566 (diff=0.010).
      Register U 1602: 03h 36m 59s74 +24°28'47"0
-21) Warning: U 1711 reports 3.550 on precession RA but it should be 3.560 (diff=0.010).
+28) Warning: U 1711 reports 3.550 on precession RA but it should be 3.560 (diff=0.010).
      Register U 1711: 03h 40m 56s59 +23°57'51"7
-22) Warning: U 1717 reports 3.546 on precession RA but it should be 3.557 (diff=0.011).
+29) Warning: U 1717 reports 3.546 on precession RA but it should be 3.557 (diff=0.011).
      Register U 1717: 03h 41m 06s23 +23°49'00"4
-23) Warning: U 1885 is FAR from BAC 1307 (dist = 61.8 arcsec).
+30) Warning: U 1858 is FAR from WB 4h 81 (dist = 299.4 arcsec).
+     Register U 1858: 04h 05m 11s48 -09°12'10"3
+31) Warning: U 1885 is FAR from BAC 1307 (dist = 61.8 arcsec).
      Register U 1885: 04h 08m 43s71 +49°41'11"7
-24) Warning: U 2034 reports 2.485 on precession RA but it should be 2.425 (diff=0.060).
+32) Warning: U 2034 reports 2.485 on precession RA but it should be 2.425 (diff=0.060).
      Register U 2034: 04h 32m 21s00 -27°32'35"6
-25) Warning: U 2499 is FAR from BD star (dist = 62.1 arcsec).
+33) Warning: U 2050 is FAR from WB 4h 733 (dist = 7201.5 arcsec).
+     Register U 2050: 04h 34m 10s07 +14°03'16"4
+34) Warning: U 2499 is FAR from BD star (dist = 62.1 arcsec).
      Register U 2499: 05h 48m 23s18 +07°22'17"9
      Register BD +7°1058 (en 5h):  9.5 | 48m5.7s | 23.2'     (pag. 155)
-26) Warning: U 2931 reports 2.735 on precession RA but it should be 2.442 (diff=0.293).
+35) Warning: U 2931 reports 2.735 on precession RA but it should be 2.442 (diff=0.293).
      Register U 2931: 07h 01m 45s00 -26°02'39"7
-27) Warning: U 3054 reports 2.943 on precession RA but it should be 2.743 (diff=0.200).
+36) Warning: U 3054 reports 2.943 on precession RA but it should be 2.743 (diff=0.200).
      Register U 3054: 07h 16m 50s80 -14°36'00"0
-28) Warning: U 3122 reports 2.395 on precession RA but it should be 2.381 (diff=0.014).
+37) Warning: U 3122 reports 2.395 on precession RA but it should be 2.381 (diff=0.014).
      Register U 3122: 07h 23m 56s16 -28°58'00"0
-29) Warning: U 3246 reports 2.819 on precession RA but it should be 2.841 (diff=0.022).
+38) Warning: U 3246 reports 2.819 on precession RA but it should be 2.841 (diff=0.022).
      Register U 3246: 07h 42m 29s00 -10°50'07"1
-30) Warning: U 3977 reports 2.610 on precession RA but it should be 2.599 (diff=0.011).
+39) Warning: U 3496 is FAR from WB 8h 569 (dist = 148.0 arcsec).
+     Register U 3496: 08h 22m 10s80 +12°03'48"2
+40) Warning: U 3878 is FAR from WB 8h 1367 (dist = 147.3 arcsec).
+     Register U 3878: 08h 53m 14s70 +09°05'37"5
+41) Warning: U 3977 reports 2.610 on precession RA but it should be 2.599 (diff=0.011).
      Register U 3977: 09h 09m 49s35 -27°37'23"2
-31) Warning: U 4205 reports 3.329 on precession RA but it should be 3.317 (diff=0.012).
+42) Warning: U 4181 is FAR from WB 9h 887 (dist = 434.0 arcsec).
+     Register U 4181: 09h 41m 20s27 +11°12'24"0
+43) Warning: U 4205 reports 3.329 on precession RA but it should be 3.317 (diff=0.012).
      Register U 4205: 09h 43m 55s88 +18°08'11"4
-32) Warning: U 4292 reports 3.385 on precession RA but it should be 3.335 (diff=0.050).
+44) Warning: U 4292 reports 3.385 on precession RA but it should be 3.335 (diff=0.050).
      Register U 4292: 09h 58m 16s39 +21°15'08"7
-33) Warning: U 4360 reports 2.523 on precession RA but it should be 2.552 (diff=0.029).
+45) Warning: U 4360 reports 2.523 on precession RA but it should be 2.552 (diff=0.029).
      Register U 4360: 10h 07m 58s55 -39°37'02"7
-34) Warning: U 4449 reports 3.292 on precession RA but it should be 3.252 (diff=0.040).
+46) Warning: U 4449 reports 3.292 on precession RA but it should be 3.252 (diff=0.040).
      Register U 4449: 10h 21m 09s83 +17°50'47"3
-35) Warning: U 4947 is FAR from BD star (dist = 69.4 arcsec).
+47) Warning: U 4617 is FAR from WB 10h 801 (dist = 857.4 arcsec).
+     Register U 4617: 10h 43m 35s60 -00°47'44"7
+48) Warning: U 4947 is FAR from BD star (dist = 69.4 arcsec).
      Register U 4947: 11h 29m 37s39 +01°28'00"0
      Register BD +1°2591 (en 11h):  9.0 | 29m22.2s | 28.5'     (pag. 58)
-36) Warning: U 5072 is FAR from BD star (dist = 128.0 arcsec).
+49) Warning: U 5072 is FAR from BD star (dist = 128.0 arcsec).
      Register U 5072: 11h 46m 54s60 +01°07'15"6
      Register BD +1°2625 (en 11h):  9.3 | 46m38.6s | 6.8'     (pag. 58)
-37) Warning: U 5317 is FAR from BD star (dist = 90.5 arcsec).
+50) Warning: U 5228 is FAR from WB 12h 184 (dist = 65.4 arcsec).
+     Register U 5228: 12h 12m 17s28 +07°46'11"6
+51) Warning: U 5317 is FAR from BD star (dist = 90.5 arcsec).
      Register U 5317: 12h 24m 07s23 +05°26'32"7
      Register BD +5°2636 (en 12h):  9.0 | 23m51.7s | 26.7'     (pag. 125)
-38) Warning: U 5377 is FAR from BD star (dist = 92.9 arcsec).
+52) Warning: U 5377 is FAR from BD star (dist = 92.9 arcsec).
      Register U 5377: 12h 31m 45s65 +13°37'46"9
      Register BD +13°2563 (en 12h):  9.0 | 31m27.3s | 38.1'     (pag. 265)
-39) Warning: U 5565 is FAR from BD star (dist = 117.5 arcsec).
+53) Warning: U 5421 is FAR from WB 12h 632 (dist = 123.2 arcsec).
+     Register U 5421: 12h 37m 53s48 +14°15'27"7
+54) Warning: U 5565 is FAR from BD star (dist = 117.5 arcsec).
      Register U 5565: 13h 00m 42s13 +12°50'01"7
      Register BD +12°2557 (en 13h):  9.3 | 0m27.2s | 53.6'     (pag. 248)
-40) Warning: U 5673 reports 2.184 on precession RA but it should be 2.195 (diff=0.011).
+55) Warning: U 5580 is FAR from WB 13h 33 (dist = 181.8 arcsec).
+     Register U 5580: 13h 03m 57s11 -11°10'50"1
+56) Warning: U 5584 is FAR from WB 13h 50 (dist = 900.5 arcsec).
+     Register U 5584: 13h 04m 39s34 +13°05'10"0
+57) Warning: U 5673 reports 2.184 on precession RA but it should be 2.195 (diff=0.011).
      Register U 5673: 13h 21m 51s71 +61°57'02"1
-41) Warning: U 5816 reports 0.355 on precession RA but it should be 0.336 (diff=0.019).
+58) Warning: U 5816 reports 0.355 on precession RA but it should be 0.336 (diff=0.019).
      Register U 5816: 13h 43m 37s08 +77°57'00"0
-42) Warning: U 6103 reports 3.595 on precession RA but it should be 3.606 (diff=0.011).
+59) Warning: U 6103 reports 3.595 on precession RA but it should be 3.606 (diff=0.011).
      Register U 6103: 14h 24m 41s70 -34°04'00"0
-43) Warning: U 6104 reports 3.595 on precession RA but it should be 3.606 (diff=0.011).
+60) Warning: U 6104 reports 3.595 on precession RA but it should be 3.606 (diff=0.011).
      Register U 6104: 14h 24m 43s78 -34°06'00"0
-44) Warning: U 6231 is FAR from BAC 4912 (dist = 63.6 arcsec).
+61) Warning: U 6231 is FAR from BAC 4912 (dist = 63.6 arcsec).
      Register U 6231: 14h 46m 05s40 -32°43'36"7
-45) Warning: U 6503 is FAR from BAC 5117 (dist = 307.8 arcsec).
+62) Warning: U 6372 is FAR from WB 15h 99 (dist = 65.8 arcsec).
+     Register U 6372: 15h 06m 48s82 -00°48'27"4
+63) Warning: U 6503 is FAR from BAC 5117 (dist = 307.8 arcsec).
      Register U 6503: 15h 25m 36s28 -24°38'04"6
-46) Warning: U 6508 reports 3.309 on precession RA but it should be 3.328 (diff=0.019).
+64) Warning: U 6508 reports 3.309 on precession RA but it should be 3.328 (diff=0.019).
      Register U 6508: 15h 26m 15s63 -13°45'19"0
-47) Warning: U 6542 reports 3.688 on precession RA but it should be 3.668 (diff=0.020).
+65) Warning: U 6542 reports 3.688 on precession RA but it should be 3.668 (diff=0.020).
      Register U 6542: 15h 30m 03s92 -29°18'50"0
-48) Warning: U 6632 is FAR from BAC 5228 (dist = 72.0 arcsec).
+66) Warning: U 6632 is FAR from BAC 5228 (dist = 72.0 arcsec).
      Register U 6632: 15h 42m 08s99 -25°51'33"5
-49) Warning: U 6691 is FAR from BAC 5281 (dist = 270.3 arcsec).
+67) Warning: U 6691 is FAR from BAC 5281 (dist = 270.3 arcsec).
      Register U 6691: 15h 49m 29s82 -20°34'25"8
-50) Warning: U 6814 is FAR from BAC 5389 (dist = 372.5 arcsec).
+68) Warning: U 6814 is FAR from BAC 5389 (dist = 372.5 arcsec).
      Register U 6814: 16h 04m 57s23 -28°41'38"2
-51) Warning: U 6874 reports 3.598 on precession RA but it should be 3.587 (diff=0.011).
+69) Warning: U 6874 reports 3.598 on precession RA but it should be 3.587 (diff=0.011).
      Register U 6874: 16h 12m 55s48 -23°21'00"0
-52) Warning: U 6986 is FAR from BAC 5564 (dist = 105.9 arcsec).
+70) Warning: U 6934 is FAR from WB 16h 439 (dist = 70.5 arcsec).
+     Register U 6934: 16h 23m 34s97 +04°32'09"2
+71) Warning: U 6986 is FAR from BAC 5564 (dist = 105.9 arcsec).
      Register U 6986: 16h 31m 30s82 -25°46'48"9
-53) Warning: U 7001 is FAR from BAC 5576 (dist = 96.6 arcsec).
+72) Warning: U 7001 is FAR from BAC 5576 (dist = 96.6 arcsec).
      Register U 7001: 16h 33m 19s60 -28°50'50"8
-54) Warning: U 7039 is FAR from BAC 5612 (dist = 135.5 arcsec).
+73) Warning: U 7039 is FAR from BAC 5612 (dist = 135.5 arcsec).
      Register U 7039: 16h 37m 55s19 -31°11'37"9
-55) Warning: U 7103 is FAR from BAC 5665 (dist = 73.1 arcsec).
+74) Warning: U 7103 is FAR from BAC 5665 (dist = 73.1 arcsec).
      Register U 7103: 16h 45m 10s58 -30°31'02"0
-56) Warning: U 7112 is FAR from BAC 5673 (dist = 152.4 arcsec).
+75) Warning: U 7112 is FAR from BAC 5673 (dist = 152.4 arcsec).
      Register U 7112: 16h 45m 45s12 -25°35'38"7
-57) Warning: U 7131 is FAR from BAC 5690 (dist = 147.1 arcsec).
+76) Warning: U 7114 is FAR from WB 16h 873 (dist = 82.3 arcsec).
+     Register U 7114: 16h 45m 54s93 +00°15'46"6
+77) Warning: U 7131 is FAR from BAC 5690 (dist = 147.1 arcsec).
      Register U 7131: 16h 47m 18s72 -31°04'39"7
-58) Warning: U 7213 is FAR from BAC 5750 (dist = 146.4 arcsec).
+78) Warning: U 7158 is FAR from WB 16h 958 (dist = 60.9 arcsec).
+     Register U 7158: 16h 50m 55s71 -04°07'22"0
+79) Warning: U 7213 is FAR from BAC 5750 (dist = 146.4 arcsec).
      Register U 7213: 16h 57m 06s93 -28°40'34"9
-59) Warning: U 7387 is FAR from BAC 5897 (dist = 83.9 arcsec).
+80) Warning: U 7387 is FAR from BAC 5897 (dist = 83.9 arcsec).
      Register U 7387: 17h 20m 09s49 -31°24'51"8
-60) Warning: U 7409 reports 3.735 on precession RA but it should be 3.720 (diff=0.015).
+81) Warning: U 7409 reports 3.735 on precession RA but it should be 3.720 (diff=0.015).
      Register U 7409: 17h 23m 02s92 -26°09'30"9
-61) Warning: U 7413 reports 3.604 on precession RA but it should be 3.629 (diff=0.025).
+82) Warning: U 7413 reports 3.604 on precession RA but it should be 3.629 (diff=0.025).
      Register U 7413: 17h 23m 27s97 -22°53'20"5
-62) Warning: U 7472 reports 2.290 on precession RA but it should be 2.279 (diff=0.011).
+83) Warning: U 7472 reports 2.290 on precession RA but it should be 2.279 (diff=0.011).
      Register U 7472: 17h 31m 17s04 +30°52'24"9
-63) Warning: U 7492 is FAR from BAC 5977 (dist = 97.1 arcsec).
+84) Warning: U 7492 is FAR from BAC 5977 (dist = 97.1 arcsec).
      Register U 7492: 17h 33m 55s53 -32°58'42"1
-64) Warning: U 7502 is FAR from BAC 5983 (dist = 152.0 arcsec).
+85) Warning: U 7502 is FAR from BAC 5983 (dist = 152.0 arcsec).
      Register U 7502: 17h 34m 31s59 -30°06'17"7
-65) Warning: U 7524 is FAR from OA 17415 (dist = 83.3 arcsec).
+86) Warning: U 7524 is FAR from OA 17415 (dist = 83.3 arcsec).
      Register U 7524: 17h 37m 13s63 +68°27'00"0
-66) Warning: U 7580 is FAR from BAC 6028 (dist = 25884.3 arcsec).
+87) Warning: U 7580 is FAR from BAC 6028 (dist = 25884.3 arcsec).
      Register U 7580: 17h 42m 53s40 -34°45'24"0
-67) Warning: U 7752 is FAR from BAC 6108 (dist = 75.8 arcsec).
+88) Warning: U 7752 is FAR from BAC 6108 (dist = 75.8 arcsec).
      Register U 7752: 17h 56m 08s47 -25°36'25"6
-68) Warning: U 7765 reports 4.078 on precession RA but it should be 4.065 (diff=0.013).
+89) Warning: U 7765 reports 4.078 on precession RA but it should be 4.065 (diff=0.013).
      Register U 7765: 17h 57m 34s54 -36°36'55"5
-69) Warning: U 7785 is FAR from BAC 6131 (dist = 71.8 arcsec).
+90) Warning: U 7785 is FAR from BAC 6131 (dist = 71.8 arcsec).
      Register U 7785: 17h 59m 55s64 -31°10'28"7
-70) Warning: U 7909 is FAR from BAC 6212 (dist = 125.8 arcsec).
+91) Warning: U 7909 is FAR from BAC 6212 (dist = 125.8 arcsec).
      Register U 7909: 18h 12m 11s88 -32°14'18"3
-71) Warning: U 7956 is FAR from BAC 6256 (dist = 60.6 arcsec).
+92) Warning: U 7956 is FAR from BAC 6256 (dist = 60.6 arcsec).
      Register U 7956: 18h 18m 30s98 -31°36'32"3
-72) Warning: U 7970 reports 3.925 on precession RA but it should be 3.893 (diff=0.032).
+93) Warning: U 7970 reports 3.925 on precession RA but it should be 3.893 (diff=0.032).
      Register U 7970: 18h 20m 13s77 -31°38'31"4
-73) Warning: U 7989 reports -22.245 on precession RA but it should be -22.143 (diff=0.102).
+94) Warning: U 7989 reports -22.245 on precession RA but it should be -22.143 (diff=0.102).
      Register U 7989: 18h 22m 36s24 +86°58'46"0
-74) Warning: U 8089 is FAR from BD star (dist = 77.4 arcsec).
+95) Warning: U 8089 is FAR from BD star (dist = 77.4 arcsec).
      Register U 8089: 18h 36m 07s38 -01°07'01"7
      Register BD -1°3550 (en 18h):  9.5 | 35m51.8s | 6.0'     (pag. 13)
-75) Warning: U 8148 reports 3.571 on precession RA but it should be 3.751 (diff=0.180).
+96) Warning: U 8144 is FAR from WB 18h 1056 (dist = 60.2 arcsec).
+     Register U 8144: 18h 42m 11s41 -06°04'04"3
+97) Warning: U 8148 reports 3.571 on precession RA but it should be 3.751 (diff=0.180).
      Register U 8148: 18h 42m 41s85 -27°19'20"4
-76) Warning: U 8355 is FAR from BAC 6568 (dist = 72.2 arcsec).
+98) Warning: U 8355 is FAR from BAC 6568 (dist = 72.2 arcsec).
      Register U 8355: 19h 05m 43s07 -30°03'58"1
-77) Warning: U 8459 reports 3.239 on precession RA but it should be 3.259 (diff=0.020).
+99) Warning: U 8459 reports 3.239 on precession RA but it should be 3.259 (diff=0.020).
      Register U 8459: 19h 16m 08s63 -08°25'00"0
-78) Warning: U 8753 is FAR from BAC 6814 (dist = 68.5 arcsec).
+100) Warning: U 8753 is FAR from BAC 6814 (dist = 68.5 arcsec).
      Register U 8753: 19h 45m 54s40 -24°17'11"3
-79) Warning: U 9024 is FAR from BAC 6984 (dist = 112.3 arcsec).
+101) Warning: U 9024 is FAR from BAC 6984 (dist = 112.3 arcsec).
      Register U 9024: 20h 11m 50s06 -29°38'01"5
-80) Warning: U 9094 reports 3.490 on precession RA but it should be 3.472 (diff=0.018).
+102) Warning: U 9094 reports 3.490 on precession RA but it should be 3.472 (diff=0.018).
      Register U 9094: 20h 18m 57s82 -20°00'05"5
-81) Warning: U 9179 reports 2.521 on precession RA but it should be 2.260 (diff=0.261).
+103) Warning: U 9179 reports 2.521 on precession RA but it should be 2.260 (diff=0.261).
      Register U 9179: 20h 30m 03s34 +37°26'04"5
-82) Warning: U 9199 reports 2.515 on precession RA but it should be 2.527 (diff=0.012).
+104) Warning: U 9199 reports 2.515 on precession RA but it should be 2.527 (diff=0.012).
      Register U 9199: 20h 31m 38s18 +27°18'00"2
-83) Warning: U 9203 is FAR from BAC 7128 (dist = 63.8 arcsec).
+105) Warning: U 9203 is FAR from BAC 7128 (dist = 63.8 arcsec).
      Register U 9203: 20h 31m 51s54 -24°16'57"0
-84) Warning: U 9221 is FAR from BAC 7148 (dist = 60.1 arcsec).
+106) Warning: U 9221 is FAR from BAC 7148 (dist = 60.1 arcsec).
      Register U 9221: 20h 33m 05s04 -28°29'18"9
-85) Warning: U 9488 is FAR from BAC 7347 (dist = 312.5 arcsec).
+107) Warning: U 9488 is FAR from BAC 7347 (dist = 312.5 arcsec).
      Register U 9488: 21h 02m 26s19 -23°02'41"1
-86) Warning: U 9546 is FAR from BAC 7393 (dist = 60.8 arcsec).
+108) Warning: U 9546 is FAR from BAC 7393 (dist = 60.8 arcsec).
      Register U 9546: 21h 10m 15s69 +74°39'11"6
-87) Warning: U 9707 is FAR from BAC 7523 (dist = 824.2 arcsec).
+109) Warning: U 9598 is FAR from WB 21h 364 (dist = 61.5 arcsec).
+     Register U 9598: 21h 16m 40s56 -11°12'33"9
+110) Warning: U 9707 is FAR from BAC 7523 (dist = 824.2 arcsec).
      Register U 9707: 21h 30m 56s40 -25°04'37"9
-88) Warning: U 9862 is FAR from BD star (dist = 141.8 arcsec).
+111) Warning: U 9862 is FAR from BD star (dist = 141.8 arcsec).
      Register U 9862: 21h 47m 28s38 +03°05'33"1
      Register BD +3°4631 (en 21h):  9.5 | 47m14.1s | 1.8'     (pag. 98)
-89) Warning: U 9961 is FAR from BAC 7702 (dist = 93.5 arcsec).
+112) Warning: U 9961 is FAR from BAC 7702 (dist = 93.5 arcsec).
      Register U 9961: 22h 00m 13s66 -34°43'27"9
-90) Warning: U 9965 reports 2.100 on precession RA but it should be 2.190 (diff=0.090).
+113) Warning: U 9965 reports 2.100 on precession RA but it should be 2.190 (diff=0.090).
      Register U 9965: 22h 00m 31s01 +52°57'20"1
-91) Warning: U 10604 reports 2.486 on precession RA but it should be 2.498 (diff=0.012).
+114) Warning: U 10283 is FAR from WB 22h 795 (dist = 1805.5 arcsec).
+     Register U 10283: 22h 37m 54s75 -14°18'21"2
+115) Warning: U 10604 reports 2.486 on precession RA but it should be 2.498 (diff=0.012).
      Register U 10604: 23h 16m 33s28 +66°17'27"1
-92) Warning: U 10662 is FAR from OA 25634 (dist = 524.7 arcsec).
+116) Warning: U 10662 is FAR from OA 25634 (dist = 524.7 arcsec).
      Register U 10662: 23h 22m 41s34 +54°21'57"0
-93) Warning: U 10678 is FAR from BD star (dist = 67.5 arcsec).
+117) Warning: U 10664 is FAR from WB 23h 452 (dist = 120.3 arcsec).
+     Register U 10664: 23h 22m 48s36 +07°00'54"4
+118) Warning: U 10678 is FAR from BD star (dist = 67.5 arcsec).
      Register U 10678: 23h 24m 22s05 +15°07'00"0
      Register BD +15°4836 (en 23h):  9.5 | 24m5.3s | 6.4'     (pag. 308)
-94) Warning: U 10770 reports 3.173 on precession RA but it should be 3.073 (diff=0.100).
+119) Warning: U 10697 is FAR from WB 23h 528 (dist = 868.9 arcsec).
+     Register U 10697: 23h 27m 26s50 +15°11'42"7
+120) Warning: U 10701 is FAR from WB 23h 539 (dist = 726.9 arcsec).
+     Register U 10701: 23h 27m 50s92 +15°06'08"8
+121) Warning: U 10770 reports 3.173 on precession RA but it should be 3.073 (diff=0.100).
      Register U 10770: 23h 38m 49s88 -00°30'47"9
 USNO properly identified with BD = 143
+USNO properly identified with WB = 1380
 USNO properly identified with BAC = 1372
 USNO properly identified with OA = 166
-Errors logged = 94
+Errors logged = 121
 
 ***************************************
 Check references between UA and BD...
-1) Warning: 84G Mon is FAR from BD star (dist = 223.8 arcsec).
+1) Warning: 242G Eri is FAR from WB 4h 585 star (dist = 75.7 arcsec).
+     Register 242G Eri: 04h 28m 13s -09°13.7'
+2) Warning: 284G Eri is FAR from WB 4h 1189 star (dist = 63.7 arcsec).
+     Register 284G Eri: 04h 54m 37s -05°54.1'
+3) Warning: 51G Mon is FAR from WB 6h 723 star (dist = 251.6 arcsec).
+     Register 51G Mon: 06h 25m 00s +05°2.0'
+4) Warning: 84G Mon is FAR from BD star (dist = 223.8 arcsec).
      Register 84G Mon: 06h 45m 00s +00°30.0'
      Register BD +0°1651 (en 6h):  8.5 | 44m6.7s | 28.2'     (pag. 37)
-2) Warning: 23G Sera is FAR from BD star (dist = 117.7 arcsec).
+5) Warning: 116G Oph is FAR from WB 17h 170 star (dist = 156.7 arcsec).
+     Register 116G Oph: 17h 11m 18s +01°52.8'
+6) Warning: 12G Sct is FAR from WB 18h 606 star (dist = 116.6 arcsec).
+     Register 12G Sct: 18h 26m 41s -06°0.1'
+7) Warning: 23G Sera is FAR from BD star (dist = 117.7 arcsec).
      Register 23G Sera: 15h 39m 18s +01°17.1'
      Register BD +1°3125 (en 15h):  6.7 | 38m17.0s | 19.0'     (pag. 60)
-3) Warning: 54G Serb is FAR from BD star (dist = 85.4 arcsec).
+8) Warning: 42G Serb is FAR from WB 18h 467 star (dist = 160.7 arcsec).
+     Register 42G Serb: 18h 21m 00s +06°28.0'
+9) Warning: 54G Serb is FAR from BD star (dist = 85.4 arcsec).
      Register 54G Serb: 18h 30m 40s +03°40.3'
      Register BD +3°3755 (en 18h):  7.6 | 29m41.7s | 40.8'     (pag. 95)
 UA stars properly identified with BD = 12
-Errors logged = 3
+UA stars properly identified with WB = 155
+Errors logged = 9
