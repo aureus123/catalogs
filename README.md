@@ -1,6 +1,7 @@
 # Old catalogs comparison
 
 💻 This repository contains some simple algorithms to compare old catalogs in order to detect typo errors during the transcription from original printed catalogs to digital ones, particularly the Durchmusterungs.
+Catalogs are in the [cat](cat) folder.
 
 ✏️ The main comparison is given between Cordoba Durchmusterung (CD) and Positions and Proper Motions (PPM) catalogs, but other "experiments" are performed between other catalogs.
 The comparison consists of computing the angular distance between the position of a star in both catalogs, and log those cases where it exceeds a given threshold. Also the difference between visual magnitude is logged.
@@ -17,6 +18,7 @@ used in its printed form. Also, the page of the printed catalog is
 estimated.
 One can compare these data against the real printed catalog, in order to
 find typo errors during the confection of the digital version of BD or CD.
+Results and logs are in the [results](results) folder.
 
 ### Limitations of the approach
 
@@ -38,7 +40,7 @@ find typo errors during the confection of the digital version of BD or CD.
 - *cross_north*: Cross-identified lower hierarchy catalogs, mostly north.
 - *cross_south*: Cross-identified lower hierarchy catalogs, mostly south.
 - *compare_cd*: Logs differences between two digital versions of CD
-- *gen_tycho2_north* and *gen_tycho2_south*: See README in tycho2 folder
+- *gen_tycho2_north* and *gen_tycho2_south*: See README in [tycho2](tycho2) folder, also see the [gallery](gallery) folder
 
 ### Requirements
 
