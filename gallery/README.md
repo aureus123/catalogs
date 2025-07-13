@@ -5,7 +5,7 @@ Here, there are pics taken with my Dwarf 3 smart telescope, from [dwarflab](dwar
 in the [tycho2](../tycho2) folder. It may give some idea of how 19th. century
 astronomers viewed and named stars.
 
-M7 and G Sco:
+M7 (Ptolemy Cluster) and G Sco:
 ![Alt text](M7.png?raw=true "M7")
 
 M17 (Omega Nebula):
@@ -28,3 +28,17 @@ M104 (Sombrero Galaxy) and Stargate:
 
 NGC 2070 (Tarantula Nebula):
 ![Alt text](NGC2070.png?raw=true "NGC2070")
+
+These pics were taken with my Dwarf 2:
+
+M42 (Orion Nebula):
+![Alt text](Orion.png?raw=true "M42")
+
+Procyon Star:
+![Alt text](Procyon.png?raw=true "Procyon")
+
+M44 (Praesepe Cluster):
+![Alt text](M44.png?raw=true "M44")
+
+IC434 and Horsehead Nebula:
+![Alt text](IC434.png?raw=true "IC434")
