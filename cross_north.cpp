@@ -507,9 +507,13 @@ void readUSNO() {
         transform(EPOCH_USNO, 1855.0, &newRA, &newDecl);
         sph2rec(newRA, newDecl, &x, &y, &z);
 
-        /* lee referencia a catalogo Durchmusterung */
-		readField(buffer, cell, 19, 4);
-        if (!strncmp(cell, "DM  ", 4)) {
+        /* lee referencia a catalogo Durchmusterung, también puede ser
+           del catálogo B.VI. cuando se dan grados en vez de horas
+           (se identifica si tiene un signo + o -). */
+		readField(buffer, cell, 19, 9);
+        if (!strncmp(cell, "DM  ", 4) ||
+                (!strncmp(cell, "BON6", 4) && 
+                    (cell[8] == '+' || cell[8] == '-'))) {
 		    readField(buffer, cell, 27, 1);
             bool signRef = (cell[0] == '-');
             readField(buffer, cell, 28, 2);
@@ -517,34 +521,22 @@ void readUSNO() {
             readField(buffer, cell, 30, 5);
             int numRefCat = atoi(cell);
 
-            bool isFirstVolume = false;
-            if (signRef) {
-                if (declRef <= 1) {
-                    /* primer volumen de BD llega hasta declinación -01 (inclusive) */
-                    isFirstVolume = true;
-                }
-            } else {
-                if (declRef <= 19) {
-                    /* primer volumen de BD comienza en declinación +19 */
-                    isFirstVolume = true;
-                }
+            int index = getDMindex(signRef, declRef, numRefCat);
+            if (index == -1) {
+                printf("DM not found for declRef = %d, numRef = %d.\n",
+                    declRef,
+                    numRefCat);
+                bye("Cannot find DM star!");
             }
-
-            if (isFirstVolume) {
-                int index = getDMindex(signRef, declRef, numRefCat);
-                if (index == -1) {
-                    bye("Cannot find DM star!");
-                }
-                double dist = 3600.0 * calcAngularDistance(x, y, z, BDstar[index].x, BDstar[index].y, BDstar[index].z);
-                if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: U %d is FAR from BD star (dist = %.1f arcsec).\n",
-                        ++errors,
-                        numRef,
-                        dist);
-                    printf("     Register U %d: %s\n", numRef, catLine);
-                    writeRegister(index, false);
-                } else checkDM++;
-            }
+            double dist = 3600.0 * calcAngularDistance(x, y, z, BDstar[index].x, BDstar[index].y, BDstar[index].z);
+            if (dist > MAX_DIST_CROSS) {
+                printf("%d) Warning: U %d is FAR from BD star (dist = %.1f arcsec).\n",
+                    ++errors,
+                    numRef,
+                    dist);
+                printf("     Register U %d: %s\n", numRef, catLine);
+                writeRegister(index, false);
+            } else checkDM++;
         }
     }
 	fclose(stream);
@@ -662,23 +654,7 @@ void readUA() {
             char numStr[5];
             sscanf(cell, "%4[^, ]", numStr);
             int numRefCat = atoi(numStr);
-
-            bool isFirstVolume = false;
-            if (signRef) {
-                if (declRef <= 1) {
-                    /* primer volumen de BD llega hasta declinación -01 (inclusive) */
-                    isFirstVolume = true;
-                }
-            } else {
-                if (declRef <= 19) {
-                    /* primer volumen de BD comienza en declinación +19 */
-                    isFirstVolume = true;
-                }
-            }
-            if (!isFirstVolume) {
-                bye("Found an inexistent DM star!");
-            }
-
+            
             int index = getDMindex(signRef, declRef, numRefCat);
             if (index == -1) {
                 bye("Cannot find DM star!");

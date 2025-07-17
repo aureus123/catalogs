@@ -15,6 +15,7 @@
 
 #define MAX_DISTANCE 180.0   // 3 minutos de arco
 #define MAX_MAGNITUDE 0.4
+#define CURATED false // true if curated BD catalog should be used
 
 /*
  * main - comienzo de la aplicacion
@@ -26,8 +27,8 @@ int main(int argc, char** argv)
 
     char ppmName[20];
 
-    /* leemos catalogo BD */
-    readDM("cat/bd.txt");
+    /* leemos catalogo BD (primer volumen) */
+    readDM(CURATED ? "cat/bd_vol1_curated.txt" : "cat/bd_vol1.txt");
     struct DMstar_struct *BDstar = getDMStruct();
 
     /* leemos catalogo PPM */

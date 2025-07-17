@@ -28,6 +28,8 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 - ua †: Uranometría Argentina from _VizieR_ (code V/135A)
 - bd : Bonner Durchmusterung from _VizieR_ (code I/122)
 - bd_curated †: Same as "bd" but after correcting typo error
+- bd_vol1 : Same as "bd" but only first volume
+- bd_vol1_curated †: Same as "bd_vol1" but after correcting typo errors
 - sd : Bonner (southern) durchmusterung from _VizieR_ (code I/119)
 - cpd : Cape Photographic Durchmusterung from _VizieR_ (code I/108)
 - gc †: Argentine General Catalog from _GAVO Data Center_
@@ -78,7 +80,7 @@ Some catalogs in this folder were sanitized but their original version was store
 - gc : 3 registers
 - weiss : 3 registers
 - gilliss : 21 registers
-- usno : 12 registers
+- usno : 13 registers
 - corda : 3 registers
 - cordc : 7 registers
 - thome1881: 4 registers

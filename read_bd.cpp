@@ -10,7 +10,8 @@
 #include "misc.h"
 #include "trig.h"
 
-#define MAX_DECL 20
+#define MAX_DECL_NORTH 90
+#define MAX_DECL_SOUTH 2
 #define MAX_NUM 7000
 
 static struct DMstar_struct BDstar[MAXDMSTAR];
@@ -18,10 +19,10 @@ static int BDstars = 0;
 static int reindexByIndex[MAXDMSTAR];
 
 /* Mapa para acceder rápido según signo, declinación y num:
-   primer argumento: 0 = positive, 1 = negative
    el índice devuelto es la estrella DM decl num, pero de haber
    más de una (por suppl) se utiliza la lista enlazada */
-static int mapBDindex[2][MAX_DECL][MAX_NUM];
+static int mapBDNorthIndex[MAX_DECL_NORTH][MAX_NUM];
+static int mapBDSouthIndex[MAX_DECL_SOUTH][MAX_NUM];
 
 /*
  * getBDStars - devuelve la cantidad de estrellas de BD leidas
@@ -35,20 +36,30 @@ int getDMStars()
  * getDMindex - devuelve el índice a partir del signo, declinación y num
  */
 int getDMindex(bool signRef, int declRef, int numRef) {
-    declRef = abs(declRef);
-    if (declRef >= MAX_DECL) bye("Declination error!");
     if (numRef >= MAX_NUM) bye("Number error!");
-    return mapBDindex[signRef ? 1 : 0][declRef][numRef];
+    declRef = abs(declRef);
+    if (!signRef) {
+        if (declRef >= MAX_DECL_NORTH) bye("Declination error!");
+        return mapBDNorthIndex[declRef][numRef];
+    }
+    if (declRef >= MAX_DECL_SOUTH) bye("Declination error!");
+    return mapBDSouthIndex[declRef][numRef];
 }
+    
 
 /*
  * setDMindex - asigna el índice a partir del signo, declinación y num
  */
 void setDMindex(bool signRef, int declRef, int numRef, int index) {
-    declRef = abs(declRef);
-    if (declRef >= MAX_DECL) bye("Declination error!");
     if (numRef >= MAX_NUM) bye("Number error!");
-    mapBDindex[signRef ? 1 : 0][declRef][numRef] = index;
+    declRef = abs(declRef);
+    if (!signRef) {
+        if (declRef >= MAX_DECL_NORTH) bye("Declination error!");
+        mapBDNorthIndex[declRef][numRef] = index;
+        return;
+    }
+    if (declRef >= MAX_DECL_SOUTH) bye("Declination error!");
+    mapBDSouthIndex[declRef][numRef] = index;
 }
 
 /*
@@ -69,6 +80,7 @@ struct DMstar_struct *getDMStruct()
 
 /*
  * writeRegister - escribe en pantalla un registro de BD en su formato
+ * Warning: ONLY WORKS FOR THE FIRST VOLUME!
  */
 void writeRegister(int bdIndex, bool neighbors)
 {
@@ -112,7 +124,6 @@ void writeRegister(int bdIndex, bool neighbors)
    27-30      F4.1      arcmin   DEm        Declination 1855 (minutes)
  *
  * Nota: se descartan estrellas variables y objetos nebulares
- * Solo se lee primer tomo (declinaciones -1 a 19)
  */
 void readDM(const char *filename)
 {
@@ -127,11 +138,14 @@ void readDM(const char *filename)
         exit(1);
     }
 
-    for (int sign = 0; sign < 2; sign++) {
-        for (int decl = 0; decl < MAX_DECL; decl++) {
-            for (int num = 0; num < MAX_NUM; num++) {
-                mapBDindex[sign][decl][num] = -1;
-            }
+    for (int decl = 0; decl < MAX_DECL_NORTH; decl++) {
+        for (int num = 0; num < MAX_NUM; num++) {
+            mapBDNorthIndex[decl][num] = -1;
+        }
+    }
+    for (int decl = 0; decl < MAX_DECL_SOUTH; decl++) {
+        for (int num = 0; num < MAX_NUM; num++) {
+            mapBDSouthIndex[decl][num] = -1;
         }
     }
  
@@ -144,7 +158,6 @@ void readDM(const char *filename)
         readField(buffer, cell, 4, 2);
         int declRef = atoi(cell);
         if (zoneSign) declRef = -declRef;
-        if (declRef >= 20) continue;
 
         /* lee numeracion y caracter suplementario */
         readField(buffer, cell, 6, 5);
@@ -239,7 +252,7 @@ void readDM(const char *filename)
     /* Ahora calculamos el indice pero con declinaciones ascendentes, aquí decl = -2 es declinación -01, decl = 1 es -00
        y para decl >= 0 ya es la declinación positiva. */
     int reindex = 0;
-    for (int decl = -2; decl <= 19; decl++) {
+    for (int decl = -2; decl <= 89; decl++) {
         for (int i = 0; i < BDstars; i++) {
             if (decl == -2) {
                 if (BDstar[i].declRef != -1 || !BDstar[i].signRef) continue;

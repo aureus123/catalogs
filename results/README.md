@@ -55,7 +55,7 @@ where the parameter may be "RAm" or "RAs" for the minutes or seconds of Right As
 
 Note that *dist1* and *dist2* are similar, thus showing that the cause of the mistake in the digital catalog is typographical. See an example in the first note of _findings.odt_ document.
 
-Curated version can be found in file *cat/bd_curated.txt* (but take into account
+Curated version can be found in file *cat/bd_vol1_curated.txt* (but take into account
 that only errors found above were corrected, I mean, declinations up to +19 were
 considered).
 
