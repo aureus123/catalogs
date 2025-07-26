@@ -20,13 +20,13 @@ mag_cd: mag_cd.o read_cd.o read_ppm.o trig.o misc.o
 mag_cd.o: mag_cd.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-gen_tycho2_north: gen_tycho2.o read_bd.o read_ppm.o read_cpd.o trig.o misc.o
+gen_tycho2_north: gen_tycho2.o read_bd.o read_ppm.o read_cpd.o read_sd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
-gen_tycho2_south: gen_tycho2.o read_cd.o read_ppm.o read_cpd.o trig.o misc.o
+gen_tycho2_south: gen_tycho2.o read_cd.o read_ppm.o read_cpd.o read_sd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
-gen_tycho2_south_alt: gen_tycho2_alt.o read_cd.o read_ppm.o read_cpd.o trig.o misc.o
+gen_tycho2_south_alt: gen_tycho2_alt.o read_cd.o read_ppm.o read_cpd.o read_sd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 gen_tycho2.o: gen_tycho2.cpp
@@ -71,7 +71,7 @@ compare_ppm: compare_ppm.o read_cd.o read_ppm.o trig.o misc.o
 compare_ppm.o: compare_ppm.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-compare_sd: compare_sd.o read_cd.o trig.o misc.o
+compare_sd: compare_sd.o read_sd.o read_cd.o trig.o misc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 compare_sd.o: compare_sd.cpp
@@ -90,6 +90,9 @@ compare_ppm_bd.o: compare_ppm_bd.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 read_cd.o: read_cd.cpp
+	$(CC) $(CCFLAGS) -c $<
+
+read_sd.o: read_sd.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 read_gc.o: read_gc.cpp

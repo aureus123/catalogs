@@ -23,6 +23,7 @@
 #include <string.h>
 #include "read_dm.h"
 #include "read_cpd.h"
+#include "read_sd.h"
 #include "read_ppm.h"
 #include "trig.h"
 #include "misc.h"
@@ -48,6 +49,7 @@ char dmStringDM[MAXDMSTAR][STRING_SIZE];
 bool dmIsColor[MAXDMSTAR];
 bool dmIsDouble[MAXDMSTAR];
 char dmStringCPD[MAXCPDSTAR][STRING_SIZE];
+char dmStringSD[MAXSDSTAR][STRING_SIZE];
 
 // Datos para estrellas no identificadas
 char unidentifiedName[MAXUNSTAR][STRING_SIZE];
@@ -242,6 +244,8 @@ int main(int argc, char** argv) {
 
     struct CPDstar_struct *CPDstar = nullptr;
     int CPDstars = 0;
+    struct SDstar_struct *SDstar = nullptr;
+    int SDstars = 0;
     struct PPMstar_struct *PPMstar = nullptr;
     int PPMstars = 0;
 #ifdef ALTERNATIVE
@@ -280,7 +284,7 @@ int main(int argc, char** argv) {
         fclose(stream);
     }
 #else
-    /* leemos catalogo CPD (en caso de ubicarnos en el Sur) */
+    /* leemos catalogos CPD y SD (en caso de ubicarnos en el Sur) */
     if (!is_north) {
         readCPD(false, false);
         CPDstar = getCPDStruct();
@@ -291,6 +295,17 @@ int main(int argc, char** argv) {
             snprintf(dmStringCPD[i], STRING_SIZE, "CPD %d°%d",
                 CPDstar[i].declRef,
                 CPDstar[i].numRef);
+        }
+
+        readSD(false);
+        SDstar = getSDStruct();
+        SDstars = getSDStars();
+
+        /* generamos identificadores de SD */
+        for (int i = 0; i < SDstars; i++) {
+            snprintf(dmStringSD[i], STRING_SIZE, "SD %d°%d",
+                SDstar[i].declRef,
+                SDstar[i].numRef);
         }
     }
 
@@ -389,6 +404,7 @@ int main(int argc, char** argv) {
     int TYCstarsPPM = 0;
     int TYCstarsDM = 0;
     int TYCstarsCPD = 0;
+    int TYCstarsSD = 0;
     int TYCstarsOther = 0;
     int TYCunidentified = 0;
     int entry = 0;
@@ -410,10 +426,11 @@ int main(int argc, char** argv) {
         // if (TYCstarsPPM > 100) break;
 		entry++;
 		if (entry % 10000 == 0) {
-			printf("Progress (%.2f%%): PPM = %d, DM = %d, CPD = %d, other = %d, unidentified = %d\n",
+			printf("Progress (%.2f%%): PPM = %d, DM = %d, SD = %d, CPD = %d, other = %d, unidentified = %d\n",
                 (100.0 * (float) entry) / 2539913.0,
                 TYCstarsPPM,
                 TYCstarsDM,
+                TYCstarsSD,
                 TYCstarsCPD,
                 TYCstarsOther,
                 TYCunidentified);
@@ -496,16 +513,48 @@ int main(int argc, char** argv) {
             }
         }
 
-        /* convertir a 1875 o 1855 */
+        /* convertir a 1875 (CD, SD, CPD, no identificadas) */
         RAtarget = RA;
         Decltarget = Decl;
         pmRAtarget = pmRA;
         pmDecltarget = pmDecl;
-        double targetYear = isCD() ? 1875.0 : 1855.0;
-        wcsconp(WCS_J2000, WCS_B1950, 0.0, targetYear, epoch, targetYear, &RAtarget, &Decltarget, &pmRAtarget, &pmDecltarget);
+        wcsconp(WCS_J2000, WCS_B1950, 0.0, 1875.0, epoch, 1875.0, &RAtarget, &Decltarget, &pmRAtarget, &pmDecltarget);
         
         /* calcula coordenadas rectangulares */
         sph2rec(RAtarget, Decltarget, &x, &y, &z);
+
+        /* Escanea las estrellas que no fueron identificadas con PPM/CD/CPD.
+         * Para poder priorizar los catálogos, si se encuentra una más cerca,
+         * debe sobrepasar un threshold de 1 arco de segundo más para elegirse. */
+        int index = -1;
+        minDistance = HUGE_NUMBER;
+        for (int i = 0; i < countUnidentified; i++) {
+            double dist = 3600.0 * calcAngularDistance(x, y, z, unidentifiedX[i], unidentifiedY[i], unidentifiedZ[i]);
+            if (dist > DIST_UN_TYC) continue;
+            alsoUnidentifiedFromTYC[i] = false;
+            if (minDistance - 1.0 > dist) {
+                index = i;
+                minDistance = dist;
+            }
+        }
+        if (index != -1) {
+            /* se almacena la identificación cruzada con la estrella */
+            writeCrossEntry(crossStream, tycString, unidentifiedName[index], minDistance);
+            TYCstarsOther++;
+            continue;
+        }
+        
+        if (!isCD()) {
+            /* convertir a 1855 (solo BD) */
+            RAtarget = RA;
+            Decltarget = Decl;
+            pmRAtarget = pmRA;
+            pmDecltarget = pmDecl;
+            wcsconp(WCS_J2000, WCS_B1950, 0.0, 1855.0, epoch, 1855.0, &RAtarget, &Decltarget, &pmRAtarget, &pmDecltarget);
+
+            /* calcula coordenadas rectangulares */
+            sph2rec(RAtarget, Decltarget, &x, &y, &z);
+        }
 
         /* halla la DM más cercana, dentro de 60 arcsec */
         if (is_north || (Decltarget <= -22.0
@@ -532,6 +581,19 @@ int main(int argc, char** argv) {
             }
         }
 
+        /* halla la SD más cercana, dentro de 60 arcsec */
+        if (Decltarget >= -23.0 && Decltarget <= -1.0) {
+            int sdIndex = -1;
+            minDistance = HUGE_NUMBER;
+            findSDByCoordinates(x, y, z, Decltarget, &sdIndex, &minDistance);
+            if (sdIndex != -1 && minDistance < DIST_DM_TYC) {
+                /* se almacena la identificación cruzada con la SD */
+                writeCrossEntry(crossStream, tycString, dmStringSD[sdIndex], minDistance);
+                TYCstarsSD++;
+                continue;
+            }
+        }
+
         /* halla la CPD más cercana, dentro de 30 arcsec */
         if (Decltarget <= -18.0) {
             int cpdIndex = -1;
@@ -545,31 +607,11 @@ int main(int argc, char** argv) {
             }
         }
 
-        /* Escanea las estrellas que no fueron identificadas con PPM/CD/CPD.
-         * Para poder priorizar los catálogos, si se encuentra una más cerca,
-         * debe sobrepasar un threshold de 1 arco de segundo más para elegirse. */
-        int index = -1;
-        minDistance = HUGE_NUMBER;
-        for (int i = 0; i < countUnidentified; i++) {
-            double dist = 3600.0 * calcAngularDistance(x, y, z, unidentifiedX[i], unidentifiedY[i], unidentifiedZ[i]);
-            if (dist > DIST_UN_TYC) continue;
-            alsoUnidentifiedFromTYC[i] = false;
-            if (minDistance - 1.0 > dist) {
-                index = i;
-                minDistance = dist;
-            }
-        }
-        if (index != -1) {
-            /* se almacena la identificación cruzada con la estrella */
-            writeCrossEntry(crossStream, tycString, unidentifiedName[index], minDistance);
-            TYCstarsOther++;
-            continue;
-        }
-
         TYCunidentified++;
     }
     printf("\nStars read and identified of Tycho-2 from PPM: %d\n", TYCstarsPPM);
     printf("Stars read and identified of Tycho-2 from DM: %d\n", TYCstarsDM);
+    printf("Stars read and identified of Tycho-2 from SD: %d\n", TYCstarsSD);
     printf("Stars read and identified of Tycho-2 from CPD: %d\n", TYCstarsCPD);
     printf("Stars read and identified of Tycho-2 from other catalogues: %d\n", TYCstarsOther);
     printf("Stars read and remain unidentified of Tycho-2: %d\n", TYCunidentified);

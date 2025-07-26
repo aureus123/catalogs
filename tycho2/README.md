@@ -4,8 +4,7 @@ Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM cat
 - Stars from Uranometría Argentina (*UA*)
 - Lalande's catalog (*Lal*)
 - Yarnall-Frisby USNO catalog (*U*)
-- *BD* designation coming from PPM stars
-- All Bonner Durchmusterung stars up to +19 declination (first volume)
+- Bonner Durchmusterung stars (*BD*)
 
 In southern hemisphere, we have stars from:
 - Uranometría Argentina (*UA*)
@@ -17,12 +16,13 @@ In southern hemisphere, we have stars from:
 - Yarnall-Frisby USNO catalog (*U*)
 - Gilliss catalog (*G*)
 - Segundo Catálogo General Argentino (*G2*)
-- *BD* / *SD* / *CD* designation coming from PPM stars
-- All Cordoba Durchmusterung stars
+- *BD* / *SD* / *CD* designations coming from PPM stars
+- All Cordoba Durchmusterung stars (*CD*)
+- All Southern Durchmusterung stars (*SD*)
 - All Cape Photographic Durchmusterung stars (*CPD*)
 
-For the northern hemisphere, there are 994 UA, 27074 Lal, 1950 U and 187118 BD stars summarizing 217136 identifications.
-For the southern hemisphere, there are 7058 UA, 10016 Lal, 5708 Lac, 19775 GC, 5213 ZC, 11497 OA, 996 U, 9081 G, 2549 G2, 5619 BD, 72115 SD, 495826 CD and 79701 CPD stars summarizing 725154 identifications.
+For the northern hemisphere, there are 994 UA, 27074 Lal, 1971 U and 287365 BD stars summarizing 317404 identifications.
+For the southern hemisphere, there are 7058 UA, 10016 Lal, 5708 L, 19762 GC, 5213 ZC, 11416 OA, 991 U, 9081 G, 2548 G2, 5619 BD, 116543 SD, 495826 CD and 75289 CPD stars summarizing 765070 identifications.
 
 ### Shortcomings of the current approach
 
