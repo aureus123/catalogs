@@ -109,6 +109,16 @@ void readCrossFile(
     printf("done!\n");
 }
 
+/* Join base directory and filename into out path */
+static void joinPath(const char *base, const char *file, char *out, size_t outsz) {
+    size_t len = strlen(base);
+    if (len > 0 && (base[len - 1] == '/' || base[len - 1] == '\\')) {
+        snprintf(out, outsz, "%s%s", base, file);
+    } else {
+        snprintf(out, outsz, "%s/%s", base, file);
+    }
+}
+
 /*
  * main - comienzo de la aplicacion
  */
@@ -116,6 +126,29 @@ int main(int argc, char** argv)
 {
     printf("CROSS_TXT - Cross custom catalog with PPM catalog.\n");
     printf("Made in 2025 by Daniel Severin.\n\n");
+
+    const char *baseDir = (argc >= 2) ? argv[1] : ".";
+
+    /* leemos Coord.txt y Flux.txt y buscamos coincidencias con PPM */
+    printf("Reading Coord.txt and Flux.txt from base folder: %s\n", baseDir);
+    
+    char coordPath[256];
+    char fluxPath[256];
+    joinPath(baseDir, "Coord.txt", coordPath, sizeof(coordPath));
+    joinPath(baseDir, "Flux.txt", fluxPath, sizeof(fluxPath));
+
+    FILE *coordFile = fopen(coordPath, "rt");
+    if (coordFile == NULL) {
+        printf("Error: Cannot open %s file.\n", coordPath);
+        return 1;
+    }
+
+    FILE *fluxFile = fopen(fluxPath, "rt");
+    if (fluxFile == NULL) {
+        printf("Error: Cannot open %s file.\n", fluxPath);
+        fclose(coordFile);
+        return 1;
+    }
 
     /* leemos catalogo PPM */
     printf("Reading PPM catalog...\n");
@@ -137,27 +170,11 @@ int main(int argc, char** argv)
         readCrossFile("results/cross/cross_ua_ppm.csv", PPMstar, PPMstars);
     }
 
-    /* ahora leemos Coord.txt y Flux.txt y buscamos coincidencias con PPM */
-    printf("\nReading Coord.txt and Flux.txt and finding PPM matches...\n");
-    
-    FILE *coordFile = fopen("Coord.txt", "rt");
-    if (coordFile == NULL) {
-        printf("Error: Cannot open Coord.txt file.\n");
-        return 1;
-    }
-
-    FILE *fluxFile = fopen("Flux.txt", "rt");
-    if (fluxFile == NULL) {
-        printf("Error: Cannot open Flux.txt file.\n");
-        fclose(coordFile);
-        return 1;
-    }
-
     char coordLine[256], fluxLine[256];
     int starIndex, fluxIndex;
     double RA, Decl, flux, background;
     int matches = 0;
-    
+
     /* Array to store custom stars data */
     struct CustomStars customStars[MAX_CUSTOM_STARS];
     int customStarCount = 0;
