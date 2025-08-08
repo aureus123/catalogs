@@ -150,6 +150,18 @@ int main(int argc, char** argv)
         return 1;
     }
 
+    /* Prepare Cross.txt output in the same base directory */
+    char crossPath[256];
+    joinPath(baseDir, "Cross.txt", crossPath, sizeof(crossPath));
+    FILE *crossFile = fopen(crossPath, "wt");
+    if (crossFile == NULL) {
+        printf("Error: Cannot write %s file.\n", crossPath);
+        fclose(coordFile);
+        fclose(fluxFile);
+        return 1;
+    }
+    fprintf(crossFile, "    Index   imag   Distance Identification\n");
+
     /* leemos catalogo PPM */
     printf("Reading PPM catalog...\n");
     readPPM(false, true, false, false, 2000.0);
@@ -184,6 +196,7 @@ int main(int argc, char** argv)
         printf("Error: Cannot read header from Coord.txt.\n");
         fclose(coordFile);
         fclose(fluxFile);
+        fclose(crossFile);
         return 1;
     }
     
@@ -191,60 +204,83 @@ int main(int argc, char** argv)
         printf("Error: Cannot read header from Flux.txt.\n");
         fclose(coordFile);
         fclose(fluxFile);
+        fclose(crossFile);
         return 1;
     }
     
     while (fgets(coordLine, sizeof(coordLine), coordFile) != NULL && 
            fgets(fluxLine, sizeof(fluxLine), fluxFile) != NULL) {
-        if (sscanf(coordLine, "%d %lf %lf", &starIndex, &RA, &Decl) == 3 &&
-            sscanf(fluxLine, "%d %lf %lf", &fluxIndex, &flux, &background) == 3) {
-            
-            /* Verify that both files have the same star index */
-            if (starIndex != fluxIndex) {
-                printf("Warning: Index mismatch at line %d (Coord: %d, Flux: %d)\n", 
-                       starIndex, starIndex, fluxIndex);
-                continue;
-            }
-
-            //printf("Star %d: RA = %f, Decl = %f, flux = %f, background = %f\n", 
-            //       starIndex, RA, Decl, flux, background);
-            
-            double x, y, z;
-            sph2rec(RA, Decl, &x, &y, &z);
-            
-            /* Find nearest PPM star within 15 arc seconds */
-            int ppmIndex = -1;
-            double minDistance = HUGE_NUMBER;
-            findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-
-            /* Omit brightest stars (or without Vmag) and those already matched */
-            if (ppmIndex != -1
-                    && minDistance < THRESHOLD_PPM
-                    && !PPMstar[ppmIndex].discard
-                    && PPMstar[ppmIndex].vmag > 3.0) {
-                double imag = -2.5 * log10(flux);
-                
-                printf("Star %d with flux=%.2f is matched with PPM %d / %s (dist = %.1f arcsec.)\n", 
-                       starIndex, flux, PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString, minDistance);
-                
-                /* Save match in custom stars structure */
-                if (customStarCount < MAX_CUSTOM_STARS) {
-                    customStars[customStarCount].index = starIndex;
-                    customStars[customStarCount].ppmIndex = ppmIndex;
-                    customStars[customStarCount].RA = RA;
-                    customStars[customStarCount].Decl = Decl;
-                    customStars[customStarCount].imag = imag;
-                    customStarCount++;
-                }
-                
-                PPMstar[ppmIndex].discard = true;
-                matches++;
-            }
+        
+        int columnsCoordRead = sscanf(coordLine, "%d %lf %lf", &starIndex, &RA, &Decl);
+        int columnsFluxRead = sscanf(fluxLine, "%d %lf %lf", &fluxIndex, &flux, &background);
+        if (columnsCoordRead != 3 || columnsFluxRead != 3) {
+            continue;
         }
+            
+        /* Verify that both files have the same star index */
+        if (starIndex != fluxIndex) {
+            printf("Warning: Index mismatch at line %d (Coord: %d, Flux: %d)\n", 
+                    starIndex, starIndex, fluxIndex);
+            continue;
+        }
+
+        //printf("Star %d: RA = %f, Decl = %f, flux = %f, background = %f\n", 
+        //       starIndex, RA, Decl, flux, background);
+        
+        double x, y, z;
+        sph2rec(RA, Decl, &x, &y, &z);
+        
+        /* Find nearest PPM star within 15 arc seconds */
+        int ppmIndex = -1;
+        double minDistance = HUGE_NUMBER;
+        findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
+
+        /* instrumental magnitude: 20.5 - 2.5 log10(flux), for flux>=100 */        
+        double imag = 20.5 - 2.5 * log10(fmax(flux, 100.0));
+        
+        /* Default write: unmatched */
+        const char *identStr = "";
+        char identBuf[128];
+
+        /* Omit brightest stars (or without Vmag) and those already matched */
+        bool ppmMatch = false;
+        if (ppmIndex != -1
+                && minDistance < THRESHOLD_PPM
+                && !PPMstar[ppmIndex].discard
+                && PPMstar[ppmIndex].vmag > 3.0) {
+            snprintf(identBuf, sizeof(identBuf), "PPM %d / %s", PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString);
+            identStr = identBuf;
+            ppmMatch = true;
+        }
+
+        /* Write Cross.txt row, also save match in custom stars structure */
+        if (ppmMatch) {
+            fprintf(crossFile, "%8d  %6.2f  %8.1f  %s\n", starIndex, imag, minDistance, identStr);
+            //printf("Star %d with flux=%.1f (imag=%.2f) is matched with PPM %d / %s (dist = %.1f arcsec.)\n", 
+            //       starIndex, flux, imag, PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString, minDistance);
+            
+            /* Save match in custom stars structure */
+            if (customStarCount < MAX_CUSTOM_STARS) {
+                customStars[customStarCount].index = starIndex;
+                customStars[customStarCount].ppmIndex = ppmIndex;
+                customStars[customStarCount].RA = RA;
+                customStars[customStarCount].Decl = Decl;
+                customStars[customStarCount].imag = imag;
+                customStarCount++;
+            }
+            
+            PPMstar[ppmIndex].discard = true;
+            matches++;
+            continue;
+        }
+        
+        // Write Cross.txt row, but without info about matching
+        fprintf(crossFile, "%8d  %6.2f\n", starIndex, imag);
     }
     
     fclose(coordFile);
     fclose(fluxFile);
+    fclose(crossFile);
     printf("\nTotal matches found: %d\n", matches);
 
     /* Perform constant regression fit between instrumental and PPM V magnitudes */
