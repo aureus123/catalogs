@@ -1,5 +1,5 @@
 /*
- * CROSS_TXT - Counts stars brighter than 8th magnitude in PPM catalog and matches with Coord.txt
+ * CROSS_TXT - Cross-identifies custom catalog against PPM catalog
  * Made in 2025 by Daniel E. Severin (partially created by Cursor AI)
  */
 
@@ -247,11 +247,16 @@ int main(int argc, char** argv)
         bool ppmMatch = false;
         if (ppmIndex != -1
                 && minDistance < THRESHOLD_PPM
-                && !PPMstar[ppmIndex].discard
-                && PPMstar[ppmIndex].vmag > 3.0) {
+                && !PPMstar[ppmIndex].discard) {
             snprintf(identBuf, sizeof(identBuf), "PPM %d / %s", PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString);
-            identStr = identBuf;
-            ppmMatch = true;
+            double vmag = PPMstar[ppmIndex].vmag;
+            if (vmag > 3.0) {
+                identStr = identBuf;
+                ppmMatch = true;
+            } else {
+                printf("Warning: Star %d identified with %s, but discarded due to (saturated) brightness: vmag = %.1f!\n",
+                    starIndex, identBuf, vmag);
+            }
         }
 
         /* Write Cross.txt row, also save match in custom stars structure */
