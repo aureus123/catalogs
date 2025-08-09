@@ -14,7 +14,8 @@
 #define MAX_CUSTOM_STARS 10000
 #define THRESHOLD_PPM 15.0
 #define THRESHOLD_MAG 1.5
-#define CROSS_OLD_CATALOGS false
+#define ZEROPOINT_IMAG 17.37
+#define CROSS_OLD_CATALOGS true
 
 /* Structure to store custom star data */
 struct CustomStars {
@@ -174,11 +175,11 @@ int main(int argc, char** argv)
     if (CROSS_OLD_CATALOGS) {
         readCrossFile("results/cross/cross_gilliss_ppm.csv", PPMstar, PPMstars);
         readCrossFile("results/cross/cross_usno_ppm.csv", PPMstar, PPMstars);
-        readCrossFile("results/cross/cross_oa_ppm.csv", PPMstar, PPMstars);
-        readCrossFile("results/cross/cross_zc_ppm.csv", PPMstar, PPMstars);
+        //readCrossFile("results/cross/cross_oa_ppm.csv", PPMstar, PPMstars);
+        //readCrossFile("results/cross/cross_zc_ppm.csv", PPMstar, PPMstars);
         readCrossFile("results/cross/cross_gc_ppm.csv", PPMstar, PPMstars);
-        readCrossFile("results/cross/cross_lalande_ppm.csv", PPMstar, PPMstars);
-        readCrossFile("results/cross/cross_lacaille_ppm.csv", PPMstar, PPMstars);
+        //readCrossFile("results/cross/cross_lalande_ppm.csv", PPMstar, PPMstars);
+        //readCrossFile("results/cross/cross_lacaille_ppm.csv", PPMstar, PPMstars);
         readCrossFile("results/cross/cross_ua_ppm.csv", PPMstar, PPMstars);
     }
 
@@ -235,9 +236,9 @@ int main(int argc, char** argv)
         double minDistance = HUGE_NUMBER;
         findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
 
-        /* instrumental magnitude: 20.5 - 2.5 log10(flux), for flux>=100 */        
-        double imag = 20.5 - 2.5 * log10(fmax(flux, 100.0));
-        
+        /* instrumental magnitude: zp - 2.5 log10(flux), for flux>=100 */        
+        double imag = ZEROPOINT_IMAG - 2.5 * log10(fmax(flux, 100.0));
+ 
         /* Default write: unmatched */
         const char *identStr = "";
         char identBuf[128];
