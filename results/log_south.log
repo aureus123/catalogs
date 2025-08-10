@@ -1433,6 +1433,117 @@ Stars from Stone identified with PPM = 12414, CD = 11605 and CPD = 11654
 RSME of distance (arcsec) = 1.48  among a total of 12414 stars
 RSME of visual magnitude = 0.74852  among a total of 10700 stars
 Errors logged = 39
+Stars read from Catalogo General Argentino: 32379
+   Doubles: 1633, Cumulus: 10, Nebulae: 17, Variables: 67
+
+***************************************
+Perform comparison between Taylor and PPM...
+Stars read from PPM: 468861
+1) Warning: T 705 is ALONE (no PPM star near it).
+  Note: Nearest PPM 66955 at 565.8 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+2) Warning: T 721 is FAR from L 661 (dist = 82.5 arcsec).
+3) Warning: T 1144 is FAR from L 1060 (dist = 142.8 arcsec).
+4) Warning: T 1309 is ALONE (no PPM star near it).
+  Note: Nearest PPM 307887 at 453.9 arcsec.
+5) Warning: T 1363 is ALONE (no PPM star near it).
+  Note: Nearest PPM 93159 at 110.6 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+6) Warning: T 1383 is ALONE (no PPM star near it).
+  Note: Nearest PPM 147158 at 466.0 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+7) Warning: T 1974 is ALONE (no PPM star near it).
+  Note: Nearest PPM 120977 at 632.9 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+8) Warning: T 2237 is ALONE (no PPM star near it).
+  Note: Nearest PPM 48613 at 317.0 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+9) Warning: T 2496 is ALONE (no PPM star near it).
+  Possible cause: lack of Decl (s).
+  Note: Nearest PPM 96052 at 162.2 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+10) Warning: T 3032 is ALONE (no PPM star near it).
+  Note: Nearest PPM 740051 at 270.6 arcsec.
+11) Warning: T 3032 is FAR from L 2773 (dist = 3599.6 arcsec).
+12) Warning: T 3230 is FAR from L 2957 (dist = 68.9 arcsec).
+13) Warning: T 3360 is ALONE (no PPM star near it).
+  Note: Nearest PPM 98263 at 368.2 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+14) Warning: T 3377 is ALONE (no PPM star near it).
+  Note: Nearest PPM 312435 at 416.8 arcsec.
+15) Warning: T 3651 is FAR from L 3369 (dist = 61.1 arcsec).
+16) Warning: T 3727 is ALONE (no PPM star near it).
+  Note: Nearest PPM 400123 at 406.2 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+17) Warning: T 3912 is FAR from L 3615 (dist = 101.8 arcsec).
+18) Warning: T 3982 is ALONE (no PPM star near it).
+  Note: Nearest PPM 99352 at 207.2 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+19) Warning: T 5022 is ALONE (no PPM star near it).
+  Note: Nearest PPM 100880 at 376.3 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+20) Warning: T 5145 is ALONE (no PPM star near it).
+  Note: Nearest PPM 288709 at 247.0 arcsec.
+21) Warning: T 5342 is ALONE (no PPM star near it).
+  Possible cause: lack of RA (s).
+  Note: Nearest PPM 743846 at 259.9 arcsec.
+22) Warning: T 5404 is FAR from L 4887 (dist = 61.6 arcsec).
+23) Warning: T 5536 is ALONE (no PPM star near it).
+  Note: Nearest PPM 340657 at 179.3 arcsec.
+24) Warning: T 5536 is FAR from L 4998 (dist = 178.7 arcsec).
+25) Warning: T 5657 is ALONE (no PPM star near it).
+  Note: Nearest PPM 128970 at 497.1 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+26) Warning: T 5914 is ALONE (no PPM star near it).
+  Note: Nearest PPM 359674 at 223.8 arcsec.
+27) Warning: T 5914 is FAR from GC 17466 (dist = 120.3 arcsec). Check if it is a 1/2 star in GC.
+28) Warning: T 5949 is FAR from GC 17585 (dist = 122.4 arcsec). Check if it is a 1/2 star in GC.
+29) Warning: T 5949 is FAR from GC 17589 (dist = 78.9 arcsec). Check if it is a 1/2 star in GC.
+30) Warning: T 6598 is ALONE (no PPM star near it).
+  Note: Nearest PPM 130354 at 181.6 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+31) Warning: T 6736 is ALONE (no PPM star near it).
+  Note: Nearest PPM 262914 at 232.1 arcsec.
+32) Warning: T 6736 is FAR from L 5973 (dist = 119544.6 arcsec).
+33) Warning: T 7216 is ALONE (no PPM star near it).
+  Note: Nearest PPM 293882 at 208.7 arcsec.
+34) Warning: T 7216 is FAR from GC 20921 (dist = 208.1 arcsec). Check if it is a 1/2 star in GC.
+35) Warning: T 7804 is ALONE (no PPM star near it).
+  Possible cause: lack of RA (s).
+  Note: Nearest PPM 762259 at 125.6 arcsec.
+36) Warning: T 7830 is FAR from L 7053 (dist = 33677.4 arcsec).
+37) Warning: T 8340 is ALONE (no PPM star near it).
+  Possible cause: lack of RA (s).
+  Note: Nearest PPM 733633 at 179.7 arcsec.
+38) Warning: T 8342 is ALONE (no PPM star near it).
+  Possible cause: lack of RA (s).
+  Note: Nearest PPM 267736 at 366.9 arcsec.
+39) Warning: T 8815 is ALONE (no PPM star near it).
+  Note: Nearest PPM 167287 at 255.3 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+40) Warning: T 8987 is ALONE (no PPM star near it).
+  Note: Nearest PPM 109154 at 1020.8 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+41) Warning: T 9260 is FAR from L 8362 (dist = 66.3 arcsec).
+42) Warning: T 9621 is ALONE (no PPM star near it).
+  Possible cause: lack of Decl (s).
+  Note: Nearest PPM 271716 at 264.6 arcsec.
+43) Warning: T 9761 is ALONE (no PPM star near it).
+  Possible cause: lack of RA (s).
+  Note: Nearest PPM 112356 at 652.7 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+44) Warning: T 9855 is ALONE (no PPM star near it).
+  Note: Nearest PPM 61147 at 560.9 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+45) Warning: T 10524 is ALONE (no PPM star near it).
+  Note: Nearest PPM 63350 at 368.7 arcsec.
+  Note: no CD/CPD coverage for stars below 18°.
+Available Taylor stars = 10990
+Taylor stars properly identified with Lacaille = 2810
+Taylor stars properly identified with GC = 21
+Stars from Taylor identified with PPM = 10944
+RSME of distance (arcsec) = 4.19  among a total of 10944 stars
+Errors logged = 45
 
 ***************************************
 Perform comparison between USNO and PPM/CD/CPD...
@@ -1589,99 +1700,99 @@ Stars read from PPM: 468861
   Possible cause: dim star.
   Note: Nearest PPM 185966 at 144.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1564 is from Pleiades and is ALONE.
+**) U 1564 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92789 at 577.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1565 is from Pleiades and is ALONE.
+**) U 1565 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92783 at 473.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1567 is from Pleiades and is ALONE.
+**) U 1567 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92783 at 483.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1570 is from Pleiades and is ALONE.
+**) U 1570 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92795 at 330.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1571 is from Pleiades and is ALONE.
+**) U 1571 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92795 at 400.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1573 is from Pleiades and is ALONE.
+**) U 1573 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92783 at 465.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1575 is from Pleiades and is ALONE.
+**) U 1575 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92795 at 446.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1576 is from Pleiades and is ALONE.
+**) U 1576 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92797 at 171.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1577 is from Pleiades and is ALONE.
+**) U 1577 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92795 at 392.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1578 is from Pleiades and is ALONE.
+**) U 1578 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92795 at 162.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1579 is from Pleiades and is ALONE.
+**) U 1579 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92803 at 433.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1582 is from Pleiades and is ALONE.
+**) U 1582 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92803 at 404.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1586 is from Pleiades and is ALONE.
+**) U 1586 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92806 at 292.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1587 is from Pleiades and is ALONE.
+**) U 1587 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92793 at 339.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1588 is from Pleiades and is ALONE.
+**) U 1588 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92803 at 221.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1590 is from Pleiades and is ALONE.
+**) U 1590 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92806 at 179.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1592 is from Pleiades and is ALONE.
+**) U 1592 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92818 at 253.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1593 is from Pleiades and is ALONE.
+**) U 1593 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92824 at 597.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1599 is from Pleiades and is ALONE.
+**) U 1599 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92818 at 66.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1601 is from Pleiades and is ALONE.
+**) U 1601 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92817 at 429.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1603 is from Pleiades and is ALONE.
+**) U 1603 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92813 at 355.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1608 is from Pleiades and is ALONE.
+**) U 1608 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92844 at 326.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1610 is from Pleiades and is ALONE.
+**) U 1610 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92844 at 584.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1611 is from Pleiades and is ALONE.
+**) U 1611 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92837 at 254.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -1689,116 +1800,116 @@ Stars read from PPM: 468861
      Register U 1612: 03h 37m 29s75 +41°01'53"0
 37) Warning: U 1614 is FAR from Lal 6888 (dist = 101.9 arcsec).
      Register U 1614: 03h 37m 30s33 +41°02'00"0
-**) U U 1619 is from Pleiades and is ALONE.
+**) U 1619 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92843 at 172.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1621 is from Pleiades and is ALONE.
+**) U 1621 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92843 at 240.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1626 is from Pleiades and is ALONE.
+**) U 1626 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92850 at 312.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1629 is from Pleiades and is ALONE.
+**) U 1629 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92878 at 459.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1631 is from Pleiades and is ALONE.
+**) U 1631 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92859 at 364.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1632 is from Pleiades and is ALONE.
+**) U 1632 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92859 at 217.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1636 is from Pleiades and is ALONE.
+**) U 1636 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92880 at 450.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1638 is from Pleiades and is ALONE.
+**) U 1638 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92865 at 456.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1639 is from Pleiades and is ALONE.
+**) U 1639 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92863 at 227.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1642 is from Pleiades and is ALONE.
+**) U 1642 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92894 at 321.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1650 is from Pleiades and is ALONE.
+**) U 1650 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92882 at 26.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1651 is from Pleiades and is ALONE.
+**) U 1651 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92882 at 340.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1663 is from Pleiades and is ALONE.
+**) U 1663 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92903 at 269.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1664 is from Pleiades and is ALONE.
+**) U 1664 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92882 at 362.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1665 is from Pleiades and is ALONE.
+**) U 1665 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92882 at 365.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1668 is from Pleiades and is ALONE.
+**) U 1668 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92903 at 229.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1669 is from Pleiades and is ALONE.
+**) U 1669 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92892 at 137.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1676 is from Pleiades and is ALONE.
+**) U 1676 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92892 at 250.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1681 is from Pleiades and is ALONE.
+**) U 1681 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92902 at 277.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1684 is from Pleiades and is ALONE.
+**) U 1684 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92909 at 188.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1686 is from Pleiades and is ALONE.
+**) U 1686 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92902 at 531.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1691 is from Pleiades and is ALONE.
+**) U 1691 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92930 at 553.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1694 is from Pleiades and is ALONE.
+**) U 1694 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92909 at 426.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1701 is from Pleiades and is ALONE.
+**) U 1701 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92934 at 216.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1709 is from Pleiades and is ALONE.
+**) U 1709 is from Pleiades and is ALONE.
   Possible cause: lack of Decl (s).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92939 at 20.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1720 is from Pleiades and is ALONE.
+**) U 1720 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92934 at 431.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1726 is from Pleiades and is ALONE.
+**) U 1726 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92961 at 373.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 1735 is from Pleiades and is ALONE.
+**) U 1735 is from Pleiades and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 92975 at 200.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -1969,97 +2080,97 @@ Stars read from PPM: 468861
   Note: no CD/CPD coverage for stars below 18°.
 73) Warning: U 3487 is FAR from L 3321 (dist = 803.8 arcsec).
      Register U 3487: 08h 21m 28s46 -31°43'29"6
-**) U U 3528 is from Praesepe and is ALONE.
+**) U 3528 is from Praesepe and is ALONE.
   Note: Nearest PPM 125453 at 328.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3530 is from Praesepe and is ALONE.
+**) U 3530 is from Praesepe and is ALONE.
   Note: Nearest PPM 98846 at 525.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3535 is from Praesepe and is ALONE.
+**) U 3535 is from Praesepe and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 125441 at 646.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3539 is from Praesepe and is ALONE.
+**) U 3539 is from Praesepe and is ALONE.
   Note: Nearest PPM 98852 at 601.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3543 is from Praesepe and is ALONE.
+**) U 3543 is from Praesepe and is ALONE.
   Possible cause: dim star.
   Note: Nearest PPM 98852 at 665.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3545 is from Praesepe and is ALONE.
+**) U 3545 is from Praesepe and is ALONE.
   Note: Nearest PPM 125487 at 1009.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3551 is from Praesepe and is ALONE.
+**) U 3551 is from Praesepe and is ALONE.
   Note: Nearest PPM 125487 at 609.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3553 is from Praesepe and is ALONE.
+**) U 3553 is from Praesepe and is ALONE.
   Note: Nearest PPM 125501 at 818.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3557 is from Praesepe and is ALONE.
+**) U 3557 is from Praesepe and is ALONE.
   Note: Nearest PPM 125501 at 773.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3559 is from Praesepe and is ALONE.
+**) U 3559 is from Praesepe and is ALONE.
   Note: Nearest PPM 98875 at 752.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3560 is from Praesepe and is ALONE.
+**) U 3560 is from Praesepe and is ALONE.
   Note: Nearest PPM 125496 at 439.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3561 is from Praesepe and is ALONE.
+**) U 3561 is from Praesepe and is ALONE.
   Note: Nearest PPM 125496 at 292.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3564 is from Praesepe and is ALONE.
+**) U 3564 is from Praesepe and is ALONE.
   Possible cause: dim star.
   Note: Nearest PPM 125501 at 461.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3565 is from Praesepe and is ALONE.
+**) U 3565 is from Praesepe and is ALONE.
   Note: Nearest PPM 125501 at 447.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3572 is from Praesepe and is ALONE.
+**) U 3572 is from Praesepe and is ALONE.
   Note: Nearest PPM 125496 at 88.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3573 is from Praesepe and is ALONE.
+**) U 3573 is from Praesepe and is ALONE.
   Note: Nearest PPM 125496 at 112.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3575 is from Praesepe and is ALONE.
+**) U 3575 is from Praesepe and is ALONE.
   Possible cause: dim star.
   Note: Nearest PPM 125501 at 486.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3576 is from Praesepe and is ALONE.
+**) U 3576 is from Praesepe and is ALONE.
   Note: Nearest PPM 125497 at 297.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3578 is from Praesepe and is ALONE.
+**) U 3578 is from Praesepe and is ALONE.
   Note: Nearest PPM 98891 at 569.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3580 is from Praesepe and is ALONE.
+**) U 3580 is from Praesepe and is ALONE.
   Note: Nearest PPM 125501 at 124.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3582 is from Praesepe and is ALONE.
+**) U 3582 is from Praesepe and is ALONE.
   Note: Nearest PPM 125497 at 255.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3583 is from Praesepe and is ALONE.
+**) U 3583 is from Praesepe and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 98891 at 378.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3585 is from Praesepe and is ALONE.
+**) U 3585 is from Praesepe and is ALONE.
   Note: Nearest PPM 125522 at 425.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3586 is from Praesepe and is ALONE.
+**) U 3586 is from Praesepe and is ALONE.
   Note: Nearest PPM 125521 at 400.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3587 is from Praesepe and is ALONE.
+**) U 3587 is from Praesepe and is ALONE.
   Note: Nearest PPM 125521 at 438.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3591 is from Praesepe and is ALONE.
+**) U 3591 is from Praesepe and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 98891 at 362.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3592 is from Praesepe and is ALONE.
+**) U 3592 is from Praesepe and is ALONE.
   Note: Nearest PPM 125524 at 317.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3593 is from Praesepe and is ALONE.
+**) U 3593 is from Praesepe and is ALONE.
   Note: Nearest PPM 125521 at 257.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3598 is from Praesepe and is ALONE.
+**) U 3598 is from Praesepe and is ALONE.
   Note: Nearest PPM 125536 at 417.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 74) Warning: U 3600 is ALONE (no PPM or CD or CPD star near it).
@@ -2067,179 +2178,179 @@ Stars read from PPM: 468861
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 98898 at 24.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3603 is from Praesepe and is ALONE.
+**) U 3603 is from Praesepe and is ALONE.
   Note: Nearest PPM 98902 at 278.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3605 is from Praesepe and is ALONE.
+**) U 3605 is from Praesepe and is ALONE.
   Possible cause: dim star.
   Note: Nearest PPM 125549 at 758.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3606 is from Praesepe and is ALONE.
+**) U 3606 is from Praesepe and is ALONE.
   Note: Nearest PPM 125527 at 324.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3613 is from Praesepe and is ALONE.
+**) U 3613 is from Praesepe and is ALONE.
   Possible cause: dim star.
   Note: Nearest PPM 125536 at 58.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3614 is from Praesepe and is ALONE.
+**) U 3614 is from Praesepe and is ALONE.
   Note: Nearest PPM 125539 at 593.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3616 is from Praesepe and is ALONE.
+**) U 3616 is from Praesepe and is ALONE.
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 98909 at 27.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3618 is from Praesepe and is ALONE.
+**) U 3618 is from Praesepe and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 125551 at 443.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3619 is from Praesepe and is ALONE.
+**) U 3619 is from Praesepe and is ALONE.
   Note: Nearest PPM 98909 at 169.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3621 is from Praesepe and is ALONE.
+**) U 3621 is from Praesepe and is ALONE.
   Note: Nearest PPM 125549 at 186.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3628 is from Praesepe and is ALONE.
+**) U 3628 is from Praesepe and is ALONE.
   Note: Nearest PPM 125549 at 173.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3629 is from Praesepe and is ALONE.
+**) U 3629 is from Praesepe and is ALONE.
   Note: Nearest PPM 98923 at 133.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3635 is from Praesepe and is ALONE.
+**) U 3635 is from Praesepe and is ALONE.
   Possible cause: dim star.
   Note: Nearest PPM 125572 at 315.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3639 is from Praesepe and is ALONE.
+**) U 3639 is from Praesepe and is ALONE.
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 98924 at 24.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3641 is from Praesepe and is ALONE.
+**) U 3641 is from Praesepe and is ALONE.
   Note: Nearest PPM 98922 at 147.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3642 is from Praesepe and is ALONE.
+**) U 3642 is from Praesepe and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 125572 at 270.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3645 is from Praesepe and is ALONE.
+**) U 3645 is from Praesepe and is ALONE.
   Note: Nearest PPM 125570 at 325.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3646 is from Praesepe and is ALONE.
+**) U 3646 is from Praesepe and is ALONE.
   Note: Nearest PPM 125571 at 246.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3648 is from Praesepe and is ALONE.
+**) U 3648 is from Praesepe and is ALONE.
   Note: Nearest PPM 125570 at 343.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3649 is from Praesepe and is ALONE.
+**) U 3649 is from Praesepe and is ALONE.
   Possible cause: dim star.
   Note: Nearest PPM 125573 at 175.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3658 is from Praesepe and is ALONE.
+**) U 3658 is from Praesepe and is ALONE.
   Note: Nearest PPM 98935 at 277.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3662 is from Praesepe and is ALONE.
+**) U 3662 is from Praesepe and is ALONE.
   Note: Nearest PPM 125570 at 249.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3665 is from Praesepe and is ALONE.
+**) U 3665 is from Praesepe and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 125570 at 227.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3668 is from Praesepe and is ALONE.
+**) U 3668 is from Praesepe and is ALONE.
   Note: Nearest PPM 125582 at 246.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3672 is from Praesepe and is ALONE.
+**) U 3672 is from Praesepe and is ALONE.
   Note: Nearest PPM 125591 at 286.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3676 is from Praesepe and is ALONE.
+**) U 3676 is from Praesepe and is ALONE.
   Note: Nearest PPM 125589 at 201.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3680 is from Praesepe and is ALONE.
+**) U 3680 is from Praesepe and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 125589 at 187.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3686 is from Praesepe and is ALONE.
+**) U 3686 is from Praesepe and is ALONE.
   Note: Nearest PPM 125589 at 237.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3688 is from Praesepe and is ALONE.
+**) U 3688 is from Praesepe and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 125599 at 93.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3690 is from Praesepe and is ALONE.
+**) U 3690 is from Praesepe and is ALONE.
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 125610 at 268.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3696 is from Praesepe and is ALONE.
+**) U 3696 is from Praesepe and is ALONE.
   Possible cause: lack of Decl (s).
   Possible cause: no magnitude (cumulus?).
   Note: Nearest PPM 125608 at 29.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3699 is from Praesepe and is ALONE.
+**) U 3699 is from Praesepe and is ALONE.
   Note: Nearest PPM 125606 at 418.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3700 is from Praesepe and is ALONE.
+**) U 3700 is from Praesepe and is ALONE.
   Note: Nearest PPM 125612 at 315.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3701 is from Praesepe and is ALONE.
+**) U 3701 is from Praesepe and is ALONE.
   Note: Nearest PPM 125609 at 147.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3704 is from Praesepe and is ALONE.
+**) U 3704 is from Praesepe and is ALONE.
   Note: Nearest PPM 98964 at 277.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3706 is from Praesepe and is ALONE.
+**) U 3706 is from Praesepe and is ALONE.
   Note: Nearest PPM 125606 at 384.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3707 is from Praesepe and is ALONE.
+**) U 3707 is from Praesepe and is ALONE.
   Note: Nearest PPM 125629 at 266.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3712 is from Praesepe and is ALONE.
+**) U 3712 is from Praesepe and is ALONE.
   Note: Nearest PPM 125628 at 191.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3713 is from Praesepe and is ALONE.
+**) U 3713 is from Praesepe and is ALONE.
   Note: Nearest PPM 125620 at 218.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3719 is from Praesepe and is ALONE.
+**) U 3719 is from Praesepe and is ALONE.
   Note: Nearest PPM 125628 at 346.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3720 is from Praesepe and is ALONE.
+**) U 3720 is from Praesepe and is ALONE.
   Note: Nearest PPM 125628 at 473.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3729 is from Praesepe and is ALONE.
+**) U 3729 is from Praesepe and is ALONE.
   Note: Nearest PPM 125629 at 369.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3736 is from Praesepe and is ALONE.
+**) U 3736 is from Praesepe and is ALONE.
   Note: Nearest PPM 125640 at 292.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3737 is from Praesepe and is ALONE.
+**) U 3737 is from Praesepe and is ALONE.
   Note: Nearest PPM 125629 at 665.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3738 is from Praesepe and is ALONE.
+**) U 3738 is from Praesepe and is ALONE.
   Note: Nearest PPM 125648 at 810.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3739 is from Praesepe and is ALONE.
+**) U 3739 is from Praesepe and is ALONE.
   Possible cause: dim star.
   Note: Nearest PPM 125640 at 519.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3740 is from Praesepe and is ALONE.
+**) U 3740 is from Praesepe and is ALONE.
   Note: Nearest PPM 98991 at 367.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3747 is from Praesepe and is ALONE.
+**) U 3747 is from Praesepe and is ALONE.
   Possible cause: lack of Decl (s).
   Possible cause: dim star.
   Note: Nearest PPM 98991 at 24.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3749 is from Praesepe and is ALONE.
+**) U 3749 is from Praesepe and is ALONE.
   Note: Nearest PPM 98991 at 115.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3750 is from Praesepe and is ALONE.
+**) U 3750 is from Praesepe and is ALONE.
   Note: Nearest PPM 125640 at 1056.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3752 is from Praesepe and is ALONE.
+**) U 3752 is from Praesepe and is ALONE.
   Note: Nearest PPM 98991 at 736.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3755 is from Praesepe and is ALONE.
+**) U 3755 is from Praesepe and is ALONE.
   Note: Nearest PPM 125714 at 1376.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) U U 3762 is from Praesepe and is ALONE.
+**) U 3762 is from Praesepe and is ALONE.
   Possible cause: dim star.
   Note: Nearest PPM 125714 at 1226.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2825,122 +2936,11 @@ Stars read from PPM: 468861
   Note: Nearest PPM 24994 at 152.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 Available USNO stars = 10965
-Stars from USNO with Lacaille = 1401, Lalande = 570 and OA = 1213
+Stars from USNO with Lacaille = 1401, Lalande = 570, Taylor = 8 and OA = 1213
 Stars from USNO identified with PPM = 10602, CD = 4295 and CPD = 4658
 RSME of distance (arcsec) = 2.76  among a total of 10602 stars
 RSME of visual magnitude = 0.63757  among a total of 5373 stars
 Errors logged = 204
-Stars read from Catalogo General Argentino: 32379
-   Doubles: 1633, Cumulus: 10, Nebulae: 17, Variables: 67
-
-***************************************
-Perform comparison between Taylor and PPM...
-Stars read from PPM: 468861
-1) Warning: T 705 is ALONE (no PPM star near it).
-  Note: Nearest PPM 66955 at 565.8 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-2) Warning: T 721 is FAR from L 661 (dist = 82.5 arcsec).
-3) Warning: T 1144 is FAR from L 1060 (dist = 142.8 arcsec).
-4) Warning: T 1309 is ALONE (no PPM star near it).
-  Note: Nearest PPM 307887 at 453.9 arcsec.
-5) Warning: T 1363 is ALONE (no PPM star near it).
-  Note: Nearest PPM 93159 at 110.6 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-6) Warning: T 1383 is ALONE (no PPM star near it).
-  Note: Nearest PPM 147158 at 466.0 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-7) Warning: T 1974 is ALONE (no PPM star near it).
-  Note: Nearest PPM 120977 at 632.9 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-8) Warning: T 2237 is ALONE (no PPM star near it).
-  Note: Nearest PPM 48613 at 317.0 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-9) Warning: T 2496 is ALONE (no PPM star near it).
-  Possible cause: lack of Decl (s).
-  Note: Nearest PPM 96052 at 162.2 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-10) Warning: T 3032 is ALONE (no PPM star near it).
-  Note: Nearest PPM 740051 at 270.6 arcsec.
-11) Warning: T 3032 is FAR from L 2773 (dist = 3599.6 arcsec).
-12) Warning: T 3230 is FAR from L 2957 (dist = 68.9 arcsec).
-13) Warning: T 3360 is ALONE (no PPM star near it).
-  Note: Nearest PPM 98263 at 368.2 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-14) Warning: T 3377 is ALONE (no PPM star near it).
-  Note: Nearest PPM 312435 at 416.8 arcsec.
-15) Warning: T 3651 is FAR from L 3369 (dist = 61.1 arcsec).
-16) Warning: T 3727 is ALONE (no PPM star near it).
-  Note: Nearest PPM 400123 at 406.2 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-17) Warning: T 3912 is FAR from L 3615 (dist = 101.8 arcsec).
-18) Warning: T 3982 is ALONE (no PPM star near it).
-  Note: Nearest PPM 99352 at 207.2 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-19) Warning: T 5022 is ALONE (no PPM star near it).
-  Note: Nearest PPM 100880 at 376.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-20) Warning: T 5145 is ALONE (no PPM star near it).
-  Note: Nearest PPM 288709 at 247.0 arcsec.
-21) Warning: T 5342 is ALONE (no PPM star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 743846 at 259.9 arcsec.
-22) Warning: T 5404 is FAR from L 4887 (dist = 61.6 arcsec).
-23) Warning: T 5536 is ALONE (no PPM star near it).
-  Note: Nearest PPM 340657 at 179.3 arcsec.
-24) Warning: T 5536 is FAR from L 4998 (dist = 178.7 arcsec).
-25) Warning: T 5657 is ALONE (no PPM star near it).
-  Note: Nearest PPM 128970 at 497.1 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-26) Warning: T 5914 is ALONE (no PPM star near it).
-  Note: Nearest PPM 359674 at 223.8 arcsec.
-27) Warning: T 5914 is FAR from GC 17466 (dist = 120.3 arcsec). Check if it is a 1/2 star in GC.
-28) Warning: T 5949 is FAR from GC 17585 (dist = 122.4 arcsec). Check if it is a 1/2 star in GC.
-29) Warning: T 5949 is FAR from GC 17589 (dist = 78.9 arcsec). Check if it is a 1/2 star in GC.
-30) Warning: T 6598 is ALONE (no PPM star near it).
-  Note: Nearest PPM 130354 at 181.6 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-31) Warning: T 6736 is ALONE (no PPM star near it).
-  Note: Nearest PPM 262914 at 232.1 arcsec.
-32) Warning: T 6736 is FAR from L 5973 (dist = 119544.6 arcsec).
-33) Warning: T 7216 is ALONE (no PPM star near it).
-  Note: Nearest PPM 293882 at 208.7 arcsec.
-34) Warning: T 7216 is FAR from GC 20921 (dist = 208.1 arcsec). Check if it is a 1/2 star in GC.
-35) Warning: T 7804 is ALONE (no PPM star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 762259 at 125.6 arcsec.
-36) Warning: T 7830 is FAR from L 7053 (dist = 33677.4 arcsec).
-37) Warning: T 8340 is ALONE (no PPM star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 733633 at 179.7 arcsec.
-38) Warning: T 8342 is ALONE (no PPM star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 267736 at 366.9 arcsec.
-39) Warning: T 8815 is ALONE (no PPM star near it).
-  Note: Nearest PPM 167287 at 255.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-40) Warning: T 8987 is ALONE (no PPM star near it).
-  Note: Nearest PPM 109154 at 1020.8 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-41) Warning: T 9260 is FAR from L 8362 (dist = 66.3 arcsec).
-42) Warning: T 9621 is ALONE (no PPM star near it).
-  Possible cause: lack of Decl (s).
-  Note: Nearest PPM 271716 at 264.6 arcsec.
-43) Warning: T 9761 is ALONE (no PPM star near it).
-  Possible cause: lack of RA (s).
-  Note: Nearest PPM 112356 at 652.7 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-44) Warning: T 9855 is ALONE (no PPM star near it).
-  Note: Nearest PPM 61147 at 560.9 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-45) Warning: T 10524 is ALONE (no PPM star near it).
-  Note: Nearest PPM 63350 at 368.7 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-Available Taylor stars = 10990
-Taylor stars properly identified with Lacaille = 2810
-Taylor stars properly identified with GC = 21
-Stars from Taylor identified with PPM = 10944
-RSME of distance (arcsec) = 4.19  among a total of 10944 stars
-Errors logged = 45
 
 ***************************************
 Perform comparison between UA and PPM/CD/CPD...
