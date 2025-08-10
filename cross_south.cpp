@@ -1100,6 +1100,7 @@ void readUSNO() {
     int countCD = 0;
     int countCPD = 0;
     int checkLac = 0;
+    int checkTaylor = 0;
     int checkLal = 0;
     int checkOA = 0;
     int errors = 0;
@@ -1263,6 +1264,21 @@ void readUSNO() {
             }
         }
 
+        if (!strncmp(cell, "TAY ", 4)) {
+            for (int i = 0; i < countTaylor; i++) {
+                if (tayRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, tayX[i], tayY[i], tayZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: U %d is FAR from T %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        numRef,
+                        numRefCat,
+                        dist);
+                    printf("     Register U %d: %s\n", numRef, catLine);    
+                } else checkTaylor++;
+            }
+        }
+
         if (!strncmp(cell, "LAL ", 4)) {
             for (int i = 0; i < countLal; i++) {
                 if (lalRef[i] != numRefCat) continue;
@@ -1299,9 +1315,9 @@ void readUSNO() {
             bool praesepe = !strncmp(cell, "PRA", 3);
             bool pleiades = !strncmp(cell, "PLE", 3);
             if (praesepe) {
-                printf("**) U %s is from Praesepe and is ALONE.\n", catName);
+                printf("**) %s is from Praesepe and is ALONE.\n", catName);
             } else if (pleiades) {
-                printf("**) U %s is from Pleiades and is ALONE.\n", catName);
+                printf("**) %s is from Pleiades and is ALONE.\n", catName);
             } else {
                 printf("%d) Warning: U %d is ALONE (no PPM or CD or CPD star near it).\n",
                     ++errors,
@@ -1330,8 +1346,8 @@ void readUSNO() {
 	fclose(crossCDStream);
 
     printf("Available USNO stars = %d\n", countUsno);
-    printf("Stars from USNO with Lacaille = %d, Lalande = %d and OA = %d\n",
-        checkLac, checkLal, checkOA);
+    printf("Stars from USNO with Lacaille = %d, Lalande = %d, Taylor = %d and OA = %d\n",
+        checkLac, checkLal, checkTaylor, checkOA);
     printf("Stars from USNO identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
@@ -2289,9 +2305,6 @@ int main(int argc, char** argv)
     /* leemos y cruzamos Stone / Lacaille */
     readStone();
 
-    /* leemos, cruzamos y revisamos identificaciones de Yarnall */
-    readUSNO();
-
     /* leemos catalogo GC */
 	readGC();
 	struct GCstar_struct *GCstar = getGCStruct();
@@ -2299,6 +2312,9 @@ int main(int argc, char** argv)
 
     /* leemos y cruzamos Taylor */
     readTaylor();
+
+    /* leemos, cruzamos y revisamos identificaciones de Yarnall */
+    readUSNO();
 
     /* leemos, cruzamos y revisamos Uranometria Argentina */
     readUA();
