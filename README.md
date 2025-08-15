@@ -52,36 +52,38 @@ The routine "wcsconp" is used for transforming coordinates.
 When comparing different old catalogues with PPM, an accuracy can be computed
 by assuming that the PPM star, corrected by proper motion, has the real coordinates
 in the target epoch (19th. century). Below there are two tables with a row
-per catalog: 2nd. column is the epoch of the target catalog, 3rd. column
-is the number of stars cross-identified between PPM and the target catalog, and 4th. column reports the accuracy in arcseconds.
+per catalog: 3rd. column is the epoch of the target catalog, 4th. column
+is the number of stars cross-identified between PPM and the target catalog, and 5th. column reports the accuracy in arcseconds.
 
 In this table, identifications are direct from PPM source:
-| Catalog | Epoch | Stars | RSME |
-| --- | --- | --- | --- |
-| Bonner Durchmusterung (BD, 1st. vol) | 1855 | 63034 | 35.99 |
-| Cordoba Durchmusterung (CD) | 1875 | 172068 | 20.48 |
-| Cordoba Durchmusterung (CD, 1st. vol) | 1875 | 40832 | 24.00 |
+| Abbrev. | Catalog | Epoch | Stars | RSME |
+| --- | --- | --- | --- | --- |
+| BD | Bonner Durchmusterung (1st. vol) | 1855 | 63034 | 35.99 |
+| CD | Cordoba Durchmusterung | 1875 | 172068 | 20.48 |
+| CD | Cordoba Durchmusterung (1st. vol) | 1875 | 40832 | 24.00 |
 
 In this table, identifications arise from small angular distances
-(below a given threshold) between PPM stars and the target catalog:
-| Catalog | Epoch | Stars | RSME |
-| --- | --- | --- | --- |
-| Uranometría Argentina | 1875 | 7605 | 5.45 |
-| Catálogo General Argentino (GC) | 1875 | 31706 | 1.96 |
-| Segundo Cat. General Argentino | 1900 | 5357 | 2.84 |
-| Resultados XV, pg. 55-74 | 1881 | 739 | 2.52 |
-| Resultados XV, pg. 140-164 | 1882 | 1259 | 2.43 |
-| Resultados XV, pg. 181-184 | 1883 | 160 | 2.62 |
-| Resultados XV, pg. 232-249 | 1884 | 658 | 1.99 |
-| Lalande | 1800 | 46914 | 6.88 |
-| Taylor | 1835 | 10944 | 4.19 |
-| Oeltzen-Argelander (North) | 1842 | 25947 | 4.77 |
-| Weiss | 1850 | 18010 | 4.66 |
-| Weisse | 1825 | 30933 | 6.50 |
-| Stone | 1880 | 12414 | 1.48 |
-| USNO 3rd. edition | 1860 | 10606 | 2.77 |
-| Gilliss | 1850 | 15792 | 2.87 |
-| British Association Catalogue | 1850 | 8165 | 9.41 |
+(below a given threshold) between PPM stars and the target catalog. Some
+of them (Weiss and Stone) are also used for obtaining the number of other
+catalogs (OA and Lacaille):
+| Abbrev. | Catalog | Epoch | Stars | RSME |
+| --- | --- | --- | --- | --- |
+| UA | Uranometría Argentina | 1875 | 7605 | 5.45 |
+| GC | Catálogo General Argentino | 1875 | 31706 | 1.96 |
+| G2 | Segundo Cat. General Argentino | 1900 | 5357 | 2.84 |
+| T 1881 | Resultados XV, pg. 55-74 | 1881 | 739 | 2.52 |
+| T 1882 | Resultados XV, pg. 140-164 | 1882 | 1259 | 2.43 |
+| T 1883 | Resultados XV, pg. 181-184 | 1883 | 160 | 2.62 |
+| T 1884 | Resultados XV, pg. 232-249 | 1884 | 658 | 1.99 |
+| Lal | Lalande | 1800 | 46914 | 6.88 |
+| T | Taylor General Catalogue | 1835 | 10944 | 4.19 |
+| OA | Oeltzen-Argelander (North) | 1842 | 25947 | 4.77 |
+| W / OA | Weiss / Oeltzen-Argelander (South) | 1850 | 18010 | 4.66 |
+| WB | Weisse | 1825 | 30933 | 6.50 |
+| St / L | Stone / Lacaille | 1880 | 12414 | 1.48 |
+| U | Yarnall-Frisby USNO 3rd. edition | 1860 | 10606 | 2.77 |
+| G | Gilliss | 1850 | 15792 | 2.87 |
+| BAC | British Association Catalogue | 1850 | 8165 | 9.41 |
 
 ### Wishlist
 
