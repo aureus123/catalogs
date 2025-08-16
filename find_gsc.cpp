@@ -12,10 +12,15 @@
 #include "trig.h"
 #include "misc.h"
 
+// #define FAKE_GSC    // uncomment this line to avoid using "gsc" tool
+
 /*
  * findGSCStar - Search for stars in the Guide Star Catalogue near given coordinates
  */
 bool findGSCStar(double RA, double Decl, double epoch, double minDistanceOutput) {
+#ifdef FAKE_GSC
+    return true;
+#else    
     char command[512];
     char result_line[256];
     FILE *pipe;
@@ -77,4 +82,5 @@ bool findGSCStar(double RA, double Decl, double epoch, double minDistanceOutput)
     }
     pclose(pipe);
     return found;
+#endif
 }

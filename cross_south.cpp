@@ -58,8 +58,8 @@ int lacRef[MAXLACSTAR];
 int countLac = 0;
 
 // Here, we save 1875.0 coordinates of Taylor stars in rectangular form
-double tayX[MAXLALSTAR], tayY[MAXLALSTAR], tayZ[MAXLALSTAR];
-int tayRef[MAXLALSTAR];
+double tayX[MAXTAYLORSTAR], tayY[MAXTAYLORSTAR], tayZ[MAXTAYLORSTAR];
+int tayRef[MAXTAYLORSTAR];
 int countTaylor = 0;
 
 // Here, we save 1875.0 coordinates of Stone stars in rectangular form
@@ -68,8 +68,8 @@ int stRef[MAXSTSTAR];
 int countSt = 0;
 
 // Here, we save 1875.0 coordinates of USNO stars in rectangular form
-double usnoX[MAXLACSTAR], usnoY[MAXLACSTAR], usnoZ[MAXLACSTAR];
-int usnoRef[MAXLACSTAR];
+double usnoX[MAXUSNOSTAR], usnoY[MAXUSNOSTAR], usnoZ[MAXUSNOSTAR];
+int usnoRef[MAXUSNOSTAR];
 int countUsno = 0;
 
 // Here, we save 1875.0 coordinates of Gould's ZC stars in rectangular form

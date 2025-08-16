@@ -3258,7 +3258,7 @@ Stars read from PPM: 468861
   Possible cause: dim star.
   Note: nearest PPM 24994 at 152.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-Available USNO stars = 10965
+Available USNO stars = 10960
 Stars from USNO with Lacaille = 1401, Lalande = 570, Taylor = 8 and OA = 1213
 Stars from USNO identified with PPM = 10602, CD = 4295 and CPD = 4658
 RSME of distance (arcsec) = 2.76  among a total of 10602 stars
@@ -3400,7 +3400,7 @@ Stars read from PPM: 468861
      Register 195G Eri: 04h 09m 20s -16°29.6'
 42) Warning: 197G Eri is FAR from Lal 7988 (dist = 312.4 arcsec).
      Register 197G Eri: 04h 09m 31s -07°50.9'
-**) USNO: Y 1128 = U 192564066
+**) USNO: Y 1128 = U 1165
 43) Warning: 71G Gru is FAR from L 9295 (dist = 91.4 arcsec).
      Register 71G Gru: 22h 47m 58s -49°9.5'
 44) Warning: 24G Hor is FAR from L 930 (dist = 96.6 arcsec).
@@ -4017,7 +4017,7 @@ Errors logged = 87
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
-**) USNO: Y 316 = U 192564066
+**) USNO: Y 316 = U 324
 1) Warning: T 1882 125 is ALONE (no PPM or CD or CPD star near it).
      Register T 1882 125: 05h 15m 08s29 -33°36'26"6
   Possible cause: dim star.
@@ -4257,7 +4257,7 @@ Stars read from PPM: 468861
   Possible cause: dim star.
   Note: nearest PPM 234395 at 59.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 10077 = U -1076784857
+**) USNO: Y 10077 = U 10363
 Stars from Thome 1882 identified with PPM = 1259, CD = 1118 and CPD = 1163
 Stars from Thome 1882 with Lacaille = 48, Lalande = 24, OA = 149, Taylor = 2, Stone = 0, GC = 0 and USNO = 12
 RSME of distance (arcsec) = 2.43  among a total of 1259 stars
@@ -4297,7 +4297,7 @@ Errors logged = 7
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
-**) USNO: Y 91 = U 7
+**) USNO: Y 91 = U 92
 1) Warning: T 1884 92 is ALONE (no PPM or CD or CPD star near it).
      Register T 1884 92: 05h 51m 50s33 -14°55'53"3
   Possible cause: dim star.
