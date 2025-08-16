@@ -22,6 +22,7 @@ Other deep space objects you can find here:
 - [M104 (Sombrero Galaxy) and Stargate](M104.png)
 - [NGC 2070 (Tarantula Nebula)](NGC2070.png)
 - [M31 (Andromeda Galaxy)](Andromeda.png)
+- [M8 (Lagoon Nebula)](M8.png)
 
 These pics were taken with my Dwarf 2:
 - [M42 (Orion Nebula)](Orion.png)
