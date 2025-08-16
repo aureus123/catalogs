@@ -645,60 +645,75 @@ void readUA() {
         transform(EPOCH_UA, 1855.0, &newRA, &newDecl);
         sph2rec(newRA, newDecl, &x, &y, &z);
 
-        /* lee referencia a catalogo Durchmusterung */
-		readField(buffer, cell, 82, 3);
-        if (!strncmp(cell, "DM.", 3)) {
-            bool signRef = newDecl < 0.0;
-            int declRef = (int) fabs(newDecl);
-            readField(buffer, cell, 85, 4);
-            char numStr[5];
-            sscanf(cell, "%4[^, ]", numStr);
-            int numRefCat = atoi(numStr);
-            
-            int index = getDMindex(signRef, declRef, numRefCat);
-            if (index == -1) {
-                bye("Cannot find DM star!");
+        /* lee referencias a catalogos (pueden ser 1 o 2, si hubiesen 3
+           se omite la del medio). */
+        char subcell[2][18];
+        readField(buffer, cell, 82, 17);
+
+        int count = 0;
+        int j = 0;
+        for (int i = 0; i < 17; i++) {
+            char c = cell[i];
+            if (c == ',') {
+                subcell[count][j] = 0;
+                count = 1;
+                j = 0;
+                i++; /* also skips the space after comma */
+                continue;
             }
-            double dist = 3600.0 * calcAngularDistance(x, y, z, BDstar[index].x, BDstar[index].y, BDstar[index].z);
-            if (dist > MAX_DIST_CROSS) {
-                printf("%d) Warning: %dG %s is FAR from BD star (dist = %.1f arcsec).\n",
-                    ++errors,
-                    gouldRef,
-                    cstRef,
-                    dist);
-                printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);
-                writeRegister(index, false);
-            } else checkDM++;
+            subcell[count][j++] = c;
         }
+        subcell[count++][j] = 0;
 
-	    /* convierte coordenadas a la de WB y calcula rectangulares */
-        newRA = RA;
-        newDecl = Decl;
-        transform(EPOCH_UA, EPOCH_WB, &newRA, &newDecl);
-        sph2rec(newRA, newDecl, &x, &y, &z);
-
-        /* lee referencia a catalogo Weisse */
-		readField(buffer, cell, 82, 4);
-        if (!strncmp(cell, "WB.", 3) && cell[3] != '(') {
-            int RARef = (int) floor(newRA / 15.0);
-            readField(buffer, cell, 85, 4);
-            char numStr[5];
-            sscanf(cell, "%4[^, ]", numStr);
-            int numRefCat = atoi(numStr);
-            for (int i = 0; i < countWB; i++) {
-                if (wbRARef[i] != RARef) continue;
-                if (wbNumRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
+        for (int refs = 0; refs < count; refs++) {
+            /* lee referencia a catalogo Durchmusterung */
+            if (!strncmp(subcell[refs], "DM.", 3)) {
+                int numRefCat = atoi(&subcell[refs][3]);
+                bool signRef = newDecl < 0.0;
+                int declRef = (int) fabs(newDecl);
+            
+                int index = getDMindex(signRef, declRef, numRefCat);
+                if (index == -1) {
+                    bye("Cannot find DM star!");
+                }
+                double dist = 3600.0 * calcAngularDistance(x, y, z, BDstar[index].x, BDstar[index].y, BDstar[index].z);
                 if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: %dG %s is FAR from WB %dh %d star (dist = %.1f arcsec).\n",
+                    printf("%d) Warning: %dG %s is FAR from BD star (dist = %.1f arcsec).\n",
                         ++errors,
                         gouldRef,
                         cstRef,
-                        RARef,
-                        numRefCat,
                         dist);
                     printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);
-                } else checkWB++;
+                    writeRegister(index, false);
+                } else checkDM++;
+            }
+
+            /* lee referencia a catalogo Weisse */
+            if (!strncmp(subcell[refs], "WB.", 3) && subcell[refs][3] != '(') {
+                int numRefCat = atoi(&subcell[refs][3]);
+
+        	    /* convierte coordenadas a la de WB y calcula rectangulares */
+                newRA = RA;
+                newDecl = Decl;
+                transform(EPOCH_UA, EPOCH_WB, &newRA, &newDecl);
+                sph2rec(newRA, newDecl, &x, &y, &z);
+
+                int RARef = (int) floor(newRA / 15.0);
+                for (int i = 0; i < countWB; i++) {
+                    if (wbRARef[i] != RARef) continue;
+                    if (wbNumRef[i] != numRefCat) continue;
+                    double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
+                    if (dist > MAX_DIST_CROSS) {
+                        printf("%d) Warning: %dG %s is FAR from WB %dh %d star (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gouldRef,
+                            cstRef,
+                            RARef,
+                            numRefCat,
+                            dist);
+                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);
+                    } else checkWB++;
+                }
             }
         }
     }
