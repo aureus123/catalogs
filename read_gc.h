@@ -8,6 +8,7 @@
 #define MAX_DIST_CD 90.0     // 1.5 minutos de arco
 #define MAX_DIST_CPD 20.0    // 20 segundos de arco
 #define MAX_DIST_PPM 20.0    // 20 segundos de arco
+#define MAX_DIST_GSC 20.0   // 20 segundos de arco
 #define DPL_DISTANCE 30.0    // 30 segundos de arco para considerar que una estrella es doble
 
 struct GCstar_struct {

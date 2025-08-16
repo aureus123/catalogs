@@ -13,6 +13,7 @@
 #include "read_gc.h"
 #include "trig.h"
 #include "misc.h"
+#include "find_gsc.h"
 
 #define MAXOASTAR 19000
 #define MAXLALSTAR 47400
@@ -319,9 +320,14 @@ void readGC2() {
             printf("%d) Warning: G2 %d is ALONE (no PPM or CD or CPD star near it).\n",
                 ++errors,
                 gcRef);
-            logCauses(catName, unidentifiedStream, x, y, z,
+            bool store = logCauses(catName, unidentifiedStream, x, y, z,
                 false, false, vmag, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            if (store) {
+                if (!findGSCStar(RA, Decl, EPOCH_GC2, MAX_DIST_GSC)) {
+                    printf("  Warning: no nearby GSC star found.\n");
+                }
+            }
         }
         countGC++;
     }
@@ -519,9 +525,14 @@ void readWeiss() {
                 weissRef,
                 oeltzenRef);
             printf("     Register W %d: %s\n", weissRef, catLine);    
-            logCauses(catName, unidentifiedStream, x, y, z,
+            bool store = logCauses(catName, unidentifiedStream, x, y, z,
                 false, false, vmag, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            if (store) {
+                if (!findGSCStar(RA, Decl, EPOCH_OA, MAX_DIST_GSC)) {
+                    printf("  Warning: no nearby GSC star found.\n");
+                }
+            }
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -864,9 +875,14 @@ void readStone() {
                     ++errors,
                     stoneRef);
             }
-            logCauses(catName, nullptr, x, y, z,
+            bool store = logCauses(catName, nullptr, x, y, z,
                 false, false, vmag, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            if (store) {
+                if (!findGSCStar(RA, Decl, EPOCH_ST, MAX_DIST_GSC)) {
+                    printf("  Warning: no nearby GSC star found.\n");
+                }
+            }
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -1157,8 +1173,13 @@ void readUSNO() {
         snprintf(catName, 20, "U %d", numRef);
 
 		/* lee magnitud */
-		readField(buffer, cell, 37, 2);
+		readField(buffer, cell, 36, 3);
 		float vmag = atof(cell)/10.0;
+
+        if (vmag < __FLT_EPSILON__) {
+            /* si la magnitud no existe, considerar una magnitud superior a 12 */
+            vmag = 12.0001;
+        }
 
         bool ppmFound = false;
 		int ppmIndex = -1;
@@ -1170,7 +1191,7 @@ void readUSNO() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag < 12.0 && ppmVmag > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -1224,7 +1245,7 @@ void readUSNO() {
             findDMByCoordinates(x, y, z, Decl1875, &cdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CD) {
 			    float cdVmag = CDstar[cdIndex].vmag;
-			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
+			    if (vmag < 12.0 && cdVmag < 29.9) {
 				    float delta = fabs(vmag - cdVmag);
 				    if (delta >= MAX_MAGNITUDE) {
 					    printf("%d) Warning: U %d (vmag = %.1f) has a near CD with dif. magnitude (delta = %.1f). Check dpl.\n",
@@ -1324,9 +1345,14 @@ void readUSNO() {
                     numRef);
                 printf("     Register U %d: %s\n", numRef, catLine);    
             }
-            logCauses(catName, unidentifiedStream, x, y, z,
+            bool store = logCauses(catName, unidentifiedStream, x, y, z,
                 false, false, vmag, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            if (store) {
+                if (!findGSCStar(RA, Decl, EPOCH_USNO, MAX_DIST_GSC)) {
+                    printf("  Warning: no nearby GSC star found.\n");
+                }
+            }
         }
 
         if (countUsno >= MAXUSNOSTAR) {
@@ -1627,7 +1653,10 @@ void readUA() {
                     usnoRef[usnoIndex],
                     minDistance);
                 printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-            } else checkUSNO++;
+            } else {
+                printf("**) USNO: Y %d = U %d\n", numRefCat, usnoRef[usnoIndex]);
+                checkUSNO++;
+            }
         }
         
         if (!ppmFound && !cdFound && !cpdFound) {
@@ -1639,9 +1668,14 @@ void readUA() {
             readField(buffer, cell, 132, 3);
             bool cumulus = !strncmp(cell, "cum", 3);
             bool nebula = !strncmp(cell, "neb", 3);
-            logCauses(catName, unidentifiedStream, x, y, z,
+            bool store = logCauses(catName, unidentifiedStream, x, y, z,
                 cumulus, nebula, 1.0, RAs, Decl, 1,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            if (store) {
+                if (!findGSCStar(RA, Decl, EPOCH_UA, MAX_DIST_GSC)) {
+                    printf("  Warning: no nearby GSC star found.\n");
+                }
+            }
         }
         countUA++;
     }
@@ -1951,7 +1985,10 @@ void readThome(double epoch, const char *filename, int correction) {
                     usnoRef[usnoIndex],
                     minDistance);
                 printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-            } else checkUSNO++;
+            } else {
+                printf("**) USNO: Y %d = U %d\n", numRefCat, usnoRef[usnoIndex]);
+                checkUSNO++;
+            }
         }
 
         if (!strncmp(cell, "ZC", 2)) {
@@ -2188,9 +2225,14 @@ void readGilliss() {
                 ++errors,
                 giRef);
             printf("     Register G %d: %s\n", giRef, catLine);
-            logCauses(catName, unidentifiedStream, x, y, z,
+            bool store = logCauses(catName, unidentifiedStream, x, y, z,
                 false, false, vmag, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            if (store) {
+                if (!findGSCStar(RA, Decl, EPOCH_GILLISS, MAX_DIST_GSC)) {
+                    printf("  Warning: no nearby GSC star found.\n");
+                }
+            }
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */

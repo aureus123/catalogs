@@ -12,6 +12,7 @@
 #include "read_gc.h"
 #include "trig.h"
 #include "misc.h"
+#include "find_gsc.h"
 
 #define CURATED true // true if curated CD catalog should be used
 #define PRINT_WARNINGS false // true if print warnings about stars without CD star near them
@@ -194,10 +195,15 @@ int main(int argc, char** argv)
         if (!ppmFound && !cdFound && !cpdFound) {
             printf("%d) Warning: GC is ALONE (no PPM or CD or CPD star near it).\n", ++errors);
             writeRegisterGC(gcIndex);
-            logCauses(catName, unidentifiedStream, x, y, z,
+            bool store = logCauses(catName, unidentifiedStream, x, y, z,
                 GCstar[gcIndex].cum, GCstar[gcIndex].neb, GCstar[gcIndex].vmag,
                 GCstar[gcIndex].RAs, decl, GCstar[gcIndex].Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            if (store) {
+                if (!findGSCStar(ra, decl, 1875.0, MAX_DIST_GSC)) {
+                    printf("  Warning: no nearby GSC star found.\n");
+                }
+            }
         }
 	}
     fclose(unidentifiedStream);

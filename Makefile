@@ -53,13 +53,13 @@ cross_north: cross_north.o read_bd.o read_ppm.o trig.o misc.o
 cross_north.o: cross_north.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-cross_south: cross_south.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o
+cross_south: cross_south.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o find_gsc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 cross_south.o: cross_south.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-cross_gc: cross_gc.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o
+cross_gc: cross_gc.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o find_gsc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 cross_gc.o: cross_gc.cpp
@@ -123,6 +123,9 @@ trig.o: trig.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 misc.o: misc.cpp
+	$(CC) $(CCFLAGS) -c $<
+
+find_gsc.o: find_gsc.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 .PHONY: clean

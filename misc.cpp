@@ -131,8 +131,9 @@ FILE *openUnidentifiedFile(const char *name)
  * También, en caso que stream != null, almacena la estrella en un archivo, junto
  * con sus coordenadas rectangulares en 1875.0, siempre que se den ciertas causas
  * razonables para identificarla con una estrella débil.
+ * Devuelve true si no hay una causa razonable para identificarla.   
  */
-void logCauses(char *name, FILE *stream, double x, double y, double z,
+bool logCauses(char *name, FILE *stream, double x, double y, double z,
         bool cumulus, bool nebula, double vmag,
         int RAs, double Decl, int Decls,
         int ppmRef, double nearestPPMDistance) {
@@ -155,13 +156,14 @@ void logCauses(char *name, FILE *stream, double x, double y, double z,
     }
     if (vmag >= 8.0) {
         printf("  Possible cause: dim star.\n");
-    } else store = false;
-    if (vmag < 0.1) {
-        printf("  Possible cause: no magnitude (cumulus?).\n");
+    } else {
+        if (vmag < 0.1) {
+            printf("  Possible cause: no magnitude (cumulus?).\n");
+        }
         store = false;
     }
     if (ppmRef != -1) {
-        printf("  Note: Nearest PPM %d at %.1f arcsec.\n", ppmRef, nearestPPMDistance);
+        printf("  Note: nearest PPM %d at %.1f arcsec.\n", ppmRef, nearestPPMDistance);
     }
     if (Decl > -18.0) {
         printf("  Note: no CD/CPD coverage for stars below 18°.\n");
@@ -172,6 +174,7 @@ void logCauses(char *name, FILE *stream, double x, double y, double z,
     if (store && stream != nullptr) {
         fprintf(stream, "%s,%.12f,%.12f,%.12f\n", name, x, y, z);
     }
+    return store;
 }
 
 /*
