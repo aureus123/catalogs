@@ -15,20 +15,19 @@ In southern hemisphere, we have stars from:
 - Oeltzen-Argelander designations coming from Weiss catalog (*OA*)
 - Yarnall-Frisby USNO catalog (*U*)
 - Gilliss catalog (*G*)
-- Segundo Catálogo General Argentino (*G2*)
 - *BD* / *SD* / *CD* designations coming from PPM stars
 - All Cordoba Durchmusterung stars (*CD*)
 - All Southern Durchmusterung stars (*SD*)
 - All Cape Photographic Durchmusterung stars (*CPD*)
 
-For the northern hemisphere, there are 994 UA, 27074 Lal, 1971 U and 287365 BD stars summarizing 317404 identifications.
-For the southern hemisphere, there are 7058 UA, 10016 Lal, 5708 L, 19762 GC, 5213 ZC, 11416 OA, 991 U, 9081 G, 2548 G2, 5619 BD, 116543 SD, 495826 CD and 75289 CPD stars summarizing 765070 identifications.
+For the northern hemisphere, there are 994 UA, 27074 Lal, 2058 U and 287330 BD stars summarizing 317456 identifications.
+For the southern hemisphere, there are 7058 UA, 10016 Lal, 5708 L, 19762 GC, 5213 ZC, 11418 OA, 994 U, 9081 G, 5619 BD, 117361 SD, 497536 CD and 75300 CPD stars summarizing 765066 identifications.
 
 ### Shortcomings of the current approach
 
 Since all identifications are performed just by angular distance thresholds, misidentifications might happen. On the other hand, some BD stars are
 missing in the southern hemisphere (only BD coming from PPM are considered).
-Files *cross_gc.cpp* and *cross_south.cpp* do the cross-identifications between PPM/CD/CPD and UA/L/Lal/GC/ZC/OA/U/G/G2.
+Files *cross_gc.cpp* and *cross_south.cpp* do the cross-identifications between PPM/CD/CPD and UA/L/Lal/GC/ZC/OA/U/G.
 
 Other further improvements (not done yet) might be to use a better
 cross-identification algorithm, e.g. that maximizes likelihood between positions
@@ -48,7 +47,7 @@ Files in this folder:
 
 In order to use plotann.py, replace it. Then, copy the CSV files here to the target folder where plotann.py will be used. Finally, use plotann with Tycho2 catalogue, e.g.
 ```
-plotann.py image.wcs image.png image.ann.png --no-grid --no-const --tycho2cat=tycho2.kd
+plotann.py image.wcs image.png image.ann.png --no-grid --no-const --no-bright --no-ngc --tycho2cat=tycho2.kd
 ```
 
 Example:
@@ -71,7 +70,6 @@ Stars that you can see here:
 | Star (SIMBAD) | Old designation | Tycho-2 | Where to find it |
 | --- | --- | --- | --- |
 | k Hya | k Hya | 6740-785-1 | Resultados del Observatorio Nacional Argentino, [Vol I](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0001&type=SCREEN_THMB), pag. 195 |
-| HD 126088 | G2 3591 | 6740-8-1 | Resultados del Observatorio Nacional Argentino, [Vol XX](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0020&type=SCREEN_THMB), pag. 66 |
 | HD 125995 | U 6039 | 6740-263-1 | Catalogue of stars observed at the [United States Naval Observatory](https://archive.org/details/cataloguestarsus00unitrich/cataloguestarsus00unitrich/) during the years 1845 to 1877, pag. 153 |
 | HD 126349 | OA 13607 | 6740-108-1 | [Argelander's Zonen-Beobachtungen vom 15. bis 31.](https://babel.hathitrust.org/cgi/pt?id=uc1.$b524535&seq=278) Grade südlicher Declination, in mittleren Positionen für 1850.0, pag. 206 |
 | CD -27°9804 | CD -27°9804 | 6740-808-1 | Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB), pag. 323 |

@@ -217,7 +217,7 @@ int main(int argc, char** argv)
         if (columnsCoordRead != 3 || columnsFluxRead != 3) {
             continue;
         }
-            
+
         /* Verify that both files have the same star index */
         if (starIndex != fluxIndex) {
             printf("Warning: Index mismatch at line %d (Coord: %d, Flux: %d)\n", 
@@ -249,14 +249,8 @@ int main(int argc, char** argv)
                 && minDistance < THRESHOLD_PPM
                 && !PPMstar[ppmIndex].discard) {
             snprintf(identBuf, sizeof(identBuf), "PPM %d / %s", PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString);
-            double vmag = PPMstar[ppmIndex].vmag;
-            if (vmag > 3.0) {
-                identStr = identBuf;
-                ppmMatch = true;
-            } else {
-                printf("Warning: Star %d identified with %s, but discarded due to (saturated) brightness: vmag = %.1f!\n",
-                    starIndex, identBuf, vmag);
-            }
+            identStr = identBuf;
+            ppmMatch = true;
         }
 
         /* Write Cross.txt row, also save match in custom stars structure */
@@ -265,8 +259,9 @@ int main(int argc, char** argv)
             //printf("Star %d with flux=%.1f (imag=%.2f) is matched with PPM %d / %s (dist = %.1f arcsec.)\n", 
             //       starIndex, flux, imag, PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString, minDistance);
             
-            /* Save match in custom stars structure */
-            if (customStarCount < MAX_CUSTOM_STARS) {
+            /* Save match in custom stars structure, but only those no so bright or with photometric magnitude. */
+            if (PPMstar[ppmIndex].vmag > 3.0 &&
+                    customStarCount < MAX_CUSTOM_STARS) {
                 customStars[customStarCount].index = starIndex;
                 customStars[customStarCount].ppmIndex = ppmIndex;
                 customStars[customStarCount].RA = RA;
