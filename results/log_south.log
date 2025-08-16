@@ -3308,351 +3308,367 @@ Stars read from PPM: 468861
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: nearest PPM 726755 at 235.3 arcsec.
+**) USNO: Y 2823 = U 2890
+**) USNO: Y 2832 = U 2900
 13) Warning: 26G CMi is FAR from Lal 14914 (dist = 95.2 arcsec).
      Register 26G CMi: 07h 32m 46s +05°32.6'
+14) Warning: 5G Cap is FAR from Lal 38711 (dist = 80.7 arcsec).
+     Register 5G Cap: 20h 07m 28s -27°24.2'
+15) Warning: 18G Cap is FAR from Lal 39229 (dist = 97159.5 arcsec).
+     Register 18G Cap: 20h 20m 31s -26°1.0'
 **) USNO: Y 8892 = U 9121
-14) Warning: 72G Cap is FAR from L 8690 (dist = 285.5 arcsec).
+16) Warning: 72G Cap is FAR from L 8690 (dist = 285.5 arcsec).
      Register 72G Cap: 20h 59m 48s -23°39.0'
-15) Warning: 80G Cap is FAR from T 9480 (dist = 132536.3 arcsec).
+17) Warning: 80G Cap is FAR from T 9480 (dist = 132536.3 arcsec).
      Register 80G Cap: 21h 08m 31s -21°10.1'
-16) Warning: 120G Car is ALONE (no PPM or CD or CPD star near it).
+18) Warning: 120G Car is ALONE (no PPM or CD or CPD star near it).
      Register 120G Car: 09h 09m 35s -64°20.9'
   Possible cause: nebula.
   Note: nearest PPM 357181 at 189.2 arcsec.
   Note: poor CD coverage for stars above 61°.
-17) Warning: 47G Cen is FAR from L 4809 (dist = 109.7 arcsec).
+19) Warning: 47G Cen is FAR from L 4809 (dist = 109.7 arcsec).
      Register 47G Cen: 11h 30m 00s -60°55.0'
-18) Warning: 69G Cen is FAR from L 4903 (dist = 60.7 arcsec).
+20) Warning: 69G Cen is FAR from L 4903 (dist = 60.7 arcsec).
      Register 69G Cen: 11h 43m 37s -63°4.6'
-19) Warning: 89G Cen is FAR from L 4993 (dist = 791.8 arcsec).
+21) Warning: 89G Cen is FAR from L 4993 (dist = 791.8 arcsec).
      Register 89G Cen: 11h 57m 16s -38°18.7'
-20) Warning: 219G Cen is FAR from L 5533 (dist = 129.7 arcsec).
+22) Warning: 219G Cen is FAR from L 5533 (dist = 129.7 arcsec).
      Register 219G Cen: 13h 19m 16s -46°49.5'
-21) Warning: 219G Cen is ALONE (no PPM or CD or CPD star near it).
+23) Warning: 219G Cen is ALONE (no PPM or CD or CPD star near it).
      Register 219G Cen: 13h 19m 16s -46°49.5'
   Possible cause: cumulus.
   Note: nearest PPM 318491 at 529.0 arcsec.
-22) Warning: 24G Cet is ALONE (no PPM or CD or CPD star near it).
+24) Warning: 24G Cet is ALONE (no PPM or CD or CPD star near it).
      Register 24G Cet: 00h 08m 16s -15°29.9'
   Note: nearest PPM 208537 at 21.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-23) Warning: 30G Cet is ALONE (no PPM or CD or CPD star near it).
+25) Warning: 30G Cet is ALONE (no PPM or CD or CPD star near it).
      Register 30G Cet: 00h 11m 32s -14°9.0'
   Note: nearest PPM 208620 at 26.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-24) Warning: 32G Cet is ALONE (no PPM or CD or CPD star near it).
+26) Warning: 32G Cet is ALONE (no PPM or CD or CPD star near it).
      Register 32G Cet: 00h 12m 14s -08°44.5'
   Note: nearest PPM 182101 at 27.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-25) Warning: 85G Cet is ALONE (no PPM or CD or CPD star near it).
+27) Warning: 59G Cet is FAR from Lal 950 (dist = 88.6 arcsec).
+     Register 59G Cet: 00h 30m 54s -25°27.3'
+28) Warning: 85G Cet is ALONE (no PPM or CD or CPD star near it).
      Register 85G Cet: 00h 44m 46s -05°42.9'
   Note: nearest PPM 182734 at 26.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-26) Warning: 142G Cet is FAR from Lal 2598 (dist = 122.0 arcsec).
+29) Warning: 142G Cet is FAR from Lal 2598 (dist = 122.0 arcsec).
      Register 142G Cet: 01h 19m 31s -04°36.6'
-27) Warning: 142G Cet is ALONE (no PPM or CD or CPD star near it).
+30) Warning: 142G Cet is ALONE (no PPM or CD or CPD star near it).
      Register 142G Cet: 01h 19m 31s -04°36.6'
   Note: nearest PPM 183425 at 116.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-28) Warning: 189G Cet is ALONE (no PPM or CD or CPD star near it).
+31) Warning: 189G Cet is ALONE (no PPM or CD or CPD star near it).
      Register 189G Cet: 01h 49m 25s +01°13.5'
   Note: nearest PPM 145130 at 23.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-29) Warning: 249G Cet is ALONE (no PPM or CD or CPD star near it).
+32) Warning: 249G Cet is ALONE (no PPM or CD or CPD star near it).
      Register 249G Cet: 02h 20m 46s +09°38.7'
   Note: nearest PPM 118239 at 24.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-30) Warning: 268G Cet is FAR from Lal 4803 (dist = 192.8 arcsec).
+33) Warning: 268G Cet is FAR from Lal 4803 (dist = 192.8 arcsec).
      Register 268G Cet: 02h 29m 14s +06°17.3'
-31) Warning: 284G Cet is ALONE (no PPM or CD or CPD star near it).
+34) Warning: 284G Cet is ALONE (no PPM or CD or CPD star near it).
      Register 284G Cet: 02h 33m 30s -12°24.0'
   Note: nearest PPM 211811 at 20.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-32) Warning: 316G Cet is FAR from Lal 1079 (dist = 167740.7 arcsec).
+35) Warning: 316G Cet is FAR from Lal 1079 (dist = 167740.7 arcsec).
      Register 316G Cet: 03h 06m 23s -01°39.9'
-33) Warning: 42G CrA is FAR from L 7990 (dist = 1214.2 arcsec).
+36) Warning: 42G CrA is FAR from L 7990 (dist = 1214.2 arcsec).
      Register 42G CrA: 18h 58m 25s -37°59.1'
-34) Warning: 10G Crv is ALONE (no PPM or CD or CPD star near it).
+37) Warning: 10G Crv is ALONE (no PPM or CD or CPD star near it).
      Register 10G Crv: 12h 02m 59s -11°9.2'
   Note: nearest PPM 225434 at 26.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-35) Warning: 31G Crv is ALONE (no PPM or CD or CPD star near it).
+38) Warning: 31G Crv is ALONE (no PPM or CD or CPD star near it).
      Register 31G Crv: 12h 25m 40s -15°30.1'
   Note: nearest PPM 225971 at 32.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-36) Warning: 17G Dor is FAR from L 1687 (dist = 119.0 arcsec).
+39) Warning: 17G Dor is FAR from L 1687 (dist = 119.0 arcsec).
      Register 17G Dor: 04h 51m 37s -68°18.6'
-37) Warning: 17G Dor is ALONE (no PPM or CD or CPD star near it).
+40) Warning: 17G Dor is ALONE (no PPM or CD or CPD star near it).
      Register 17G Dor: 04h 51m 37s -68°18.6'
   Note: nearest PPM 354371 at 91.0 arcsec.
   Note: poor CD coverage for stars above 61°.
-38) Warning: 32G Eri is ALONE (no PPM or CD or CPD star near it).
+41) Warning: 32G Eri is ALONE (no PPM or CD or CPD star near it).
      Register 32G Eri: 02h 46m 29s -13°16.5'
   Note: nearest PPM 212115 at 23.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-39) Warning: 101G Eri is FAR from Lal 6581 (dist = 69.4 arcsec).
+42) Warning: 101G Eri is FAR from Lal 6581 (dist = 69.4 arcsec).
      Register 101G Eri: 03h 27m 03s -09°52.9'
-40) Warning: 189G Eri is ALONE (no PPM or CD or CPD star near it).
+43) Warning: 189G Eri is ALONE (no PPM or CD or CPD star near it).
      Register 189G Eri: 04h 06m 21s -17°35.6'
   Note: nearest PPM 213983 at 23.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-41) Warning: 195G Eri is FAR from Lal 7892 (dist = 102709.2 arcsec).
+44) Warning: 195G Eri is FAR from Lal 7892 (dist = 102709.2 arcsec).
      Register 195G Eri: 04h 09m 20s -16°29.6'
-42) Warning: 197G Eri is FAR from Lal 7988 (dist = 312.4 arcsec).
+45) Warning: 197G Eri is FAR from Lal 7988 (dist = 312.4 arcsec).
      Register 197G Eri: 04h 09m 31s -07°50.9'
 **) USNO: Y 1128 = U 1165
-43) Warning: 71G Gru is FAR from L 9295 (dist = 91.4 arcsec).
+46) Warning: 71G Gru is FAR from L 9295 (dist = 91.4 arcsec).
      Register 71G Gru: 22h 47m 58s -49°9.5'
-44) Warning: 24G Hor is FAR from L 930 (dist = 96.6 arcsec).
+47) Warning: 24G Hor is FAR from L 930 (dist = 96.6 arcsec).
      Register 24G Hor: 02h 50m 07s -51°21.3'
-45) Warning: 38G Hya is ALONE (no PPM or CD or CPD star near it).
+48) Warning: 38G Hya is ALONE (no PPM or CD or CPD star near it).
      Register 38G Hya: 08h 31m 45s -06°22.4'
   Note: nearest PPM 191533 at 20.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-46) Warning: 159G Hya is ALONE (no PPM or CD or CPD star near it).
+49) Warning: 159G Hya is ALONE (no PPM or CD or CPD star near it).
      Register 159G Hya: 09h 27m 10s -06°38.2'
   Note: nearest PPM 192506 at 21.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) USNO: Y 4911 = U 5006
-47) Warning: 312G Hya is FAR from L 5015 (dist = 1103.6 arcsec).
+50) Warning: 312G Hya is FAR from L 5015 (dist = 1103.6 arcsec).
      Register 312G Hya: 11h 59m 41s -32°15.5'
-48) Warning: 20G Hyi is FAR from L 584 (dist = 7900.3 arcsec).
+51) Warning: 20G Hyi is FAR from L 584 (dist = 7900.3 arcsec).
      Register 20G Hyi: 01h 51m 17s -60°55.4'
-49) Warning: 34G Leo is ALONE (no PPM or CD or CPD star near it).
+52) Warning: 34G Leo is ALONE (no PPM or CD or CPD star near it).
      Register 34G Leo: 11h 00m 33s +02°38.1'
   Note: nearest PPM 157524 at 21.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-50) Warning: 47G Leo is ALONE (no PPM or CD or CPD star near it).
+53) Warning: 47G Leo is ALONE (no PPM or CD or CPD star near it).
      Register 47G Leo: 11h 15m 03s +07°19.2'
   Note: nearest PPM 157771 at 24.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-51) Warning: 91G Lep is ALONE (no PPM or CD or CPD star near it).
+54) Warning: 91G Lep is ALONE (no PPM or CD or CPD star near it).
      Register 91G Lep: 06h 01m 40s -21°48.9'
   Note: nearest PPM 249863 at 57.3 arcsec.
-52) Warning: 10G Lib is ALONE (no PPM or CD or CPD star near it).
+55) Warning: 10G Lib is ALONE (no PPM or CD or CPD star near it).
      Register 10G Lib: 14h 30m 23s -11°46.6'
   Note: nearest PPM 229046 at 34.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-53) Warning: 33G Lib is FAR from Lal 27173 (dist = 155.2 arcsec).
+56) Warning: 33G Lib is FAR from Lal 27173 (dist = 155.2 arcsec).
      Register 33G Lib: 14h 50m 10s -20°51.0'
-54) Warning: 78G Lib is ALONE (no PPM or CD or CPD star near it).
+**) USNO: Y 6139 = U 6247
+57) Warning: 78G Lib is ALONE (no PPM or CD or CPD star near it).
      Register 78G Lib: 15h 21m 23s -08°53.6'
   Note: nearest PPM 198631 at 25.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-55) Warning: 141G Lup is FAR from L 6599 (dist = 296.4 arcsec).
+58) Warning: 141G Lup is FAR from L 6599 (dist = 296.4 arcsec).
      Register 141G Lup: 15h 49m 14s -35°49.1'
 **) USNO: Y 9016 = U 9248
 **) USNO: Y 9179 = U 9416
-56) Warning: 42G Mic is FAR from L 8638 (dist = 60.5 arcsec).
+59) Warning: 42G Mic is FAR from L 8638 (dist = 60.5 arcsec).
      Register 42G Mic: 20h 54m 01s -43°28.9'
-57) Warning: 50G Mic is FAR from L 8693 (dist = 617.7 arcsec).
+**) USNO: Y 9183 = U 9420
+60) Warning: 50G Mic is FAR from L 8693 (dist = 617.7 arcsec).
      Register 50G Mic: 21h 00m 48s -37°44.7'
-58) Warning: 10G Mon is FAR from Lal 11723 (dist = 62.2 arcsec).
+61) Warning: 10G Mon is FAR from Lal 11723 (dist = 62.2 arcsec).
      Register 10G Mon: 06h 03m 07s -08°17.0'
-59) Warning: 51G Mon is ALONE (no PPM or CD or CPD star near it).
+62) Warning: 51G Mon is ALONE (no PPM or CD or CPD star near it).
      Register 51G Mon: 06h 25m 00s +05°2.0'
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: nearest PPM 150680 at 61.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-60) Warning: 73G Mon is FAR from Lal 13091 (dist = 118832.3 arcsec).
+63) Warning: 73G Mon is FAR from Lal 13091 (dist = 118832.3 arcsec).
      Register 73G Mon: 06h 39m 43s +08°43.0'
-61) Warning: 84G Mon is ALONE (no PPM or CD or CPD star near it).
+64) Warning: 84G Mon is ALONE (no PPM or CD or CPD star near it).
      Register 84G Mon: 06h 45m 00s +00°30.0'
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: nearest PPM 151409 at 240.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-62) Warning: 31G Mus is FAR from L 5072 (dist = 101.6 arcsec).
+65) Warning: 31G Mus is FAR from L 5072 (dist = 101.6 arcsec).
      Register 31G Mus: 12h 07m 35s -65°51.2'
-63) Warning: 21G Nor is FAR from L 6567 (dist = 214.5 arcsec).
+66) Warning: 21G Nor is FAR from L 6567 (dist = 214.5 arcsec).
      Register 21G Nor: 15h 46m 41s -44°9.2'
-64) Warning: 22G Nor is FAR from L 6571 (dist = 218.3 arcsec).
+67) Warning: 22G Nor is FAR from L 6571 (dist = 218.3 arcsec).
      Register 22G Nor: 15h 47m 01s -44°9.7'
-65) Warning: 57G Oct is FAR from L 8672 (dist = 119.0 arcsec).
+68) Warning: 57G Oct is FAR from L 8672 (dist = 119.0 arcsec).
      Register 57G Oct: 21h 13m 32s -83°11.5'
-66) Warning: 57G Oct is ALONE (no PPM or CD or CPD star near it).
+69) Warning: 57G Oct is ALONE (no PPM or CD or CPD star near it).
      Register 57G Oct: 21h 13m 32s -83°11.5'
   Note: nearest PPM 378600 at 117.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-67) Warning: 55G Oph is FAR from Lal 30694 (dist = 110.1 arcsec).
+70) Warning: 55G Oph is FAR from Lal 30694 (dist = 110.1 arcsec).
      Register 55G Oph: 16h 46m 41s +00°14.4'
-68) Warning: 130G Oph is ALONE (no PPM or CD or CPD star near it).
+71) Warning: 130G Oph is ALONE (no PPM or CD or CPD star near it).
      Register 130G Oph: 17h 16m 19s -06°57.8'
   Note: nearest PPM 200608 at 64.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-69) Warning: 145G Oph is ALONE (no PPM or CD or CPD star near it).
+72) Warning: 145G Oph is ALONE (no PPM or CD or CPD star near it).
      Register 145G Oph: 17h 21m 44s +08°37.0'
   Note: nearest PPM 164037 at 201.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-70) Warning: 160G Oph is ALONE (no PPM or CD or CPD star near it).
+73) Warning: 160G Oph is ALONE (no PPM or CD or CPD star near it).
      Register 160G Oph: 17h 33m 06s +03°37.9'
   Note: nearest PPM 164368 at 21.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-71) Warning: 177G Oph is FAR from Lal 32649 (dist = 83.6 arcsec).
+74) Warning: 177G Oph is FAR from Lal 32649 (dist = 83.6 arcsec).
      Register 177G Oph: 17h 45m 40s +01°7.9'
-72) Warning: 185G Oph is ALONE (no PPM or CD or CPD star near it).
+75) Warning: 185G Oph is ALONE (no PPM or CD or CPD star near it).
      Register 185G Oph: 17h 50m 52s +06°30.6'
   Note: nearest PPM 164876 at 24.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-73) Warning: 197G Oph is FAR from Lal 33169 (dist = 91.2 arcsec).
+76) Warning: 197G Oph is FAR from Lal 33169 (dist = 91.2 arcsec).
      Register 197G Oph: 17h 59m 08s +02°31.8'
-74) Warning: 199G Oph is FAR from T 8391 (dist = 2986.1 arcsec).
+77) Warning: 199G Oph is FAR from T 8391 (dist = 2986.1 arcsec).
      Register 199G Oph: 18h 01m 26s +09°32.9'
-75) Warning: 10G Ori is ALONE (no PPM or CD or CPD star near it).
+78) Warning: 10G Ori is ALONE (no PPM or CD or CPD star near it).
      Register 10G Ori: 04h 44m 53s +09°45.7'
   Note: nearest PPM 148079 at 21.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-76) Warning: 23G Ori is ALONE (no PPM or CD or CPD star near it).
+79) Warning: 23G Ori is ALONE (no PPM or CD or CPD star near it).
      Register 23G Ori: 04h 53m 57s +03°25.8'
   Note: nearest PPM 148293 at 22.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-77) Warning: 59G Ori is ALONE (no PPM or CD or CPD star near it).
+80) Warning: 59G Ori is ALONE (no PPM or CD or CPD star near it).
      Register 59G Ori: 05h 14m 57s +08°17.8'
   Note: nearest PPM 148818 at 34.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-78) Warning: 113G Ori is ALONE (no PPM or CD or CPD star near it).
+81) Warning: 113G Ori is ALONE (no PPM or CD or CPD star near it).
      Register 113G Ori: 05h 30m 02s +09°13.6'
   Note: nearest PPM 149219 at 21.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-79) Warning: 178G Ori is ALONE (no PPM or CD or CPD star near it).
+82) Warning: 178G Ori is ALONE (no PPM or CD or CPD star near it).
      Register 178G Ori: 06h 09m 14s -00°27.8'
   Note: nearest PPM 176187 at 21.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-80) Warning: 16G Peg is ALONE (no PPM or CD or CPD star near it).
+83) Warning: 16G Peg is ALONE (no PPM or CD or CPD star near it).
      Register 16G Peg: 21h 52m 13s +03°11.3'
   Note: nearest PPM 172490 at 23.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-81) Warning: 32G Peg is ALONE (no PPM or CD or CPD star near it).
+84) Warning: 32G Peg is ALONE (no PPM or CD or CPD star near it).
      Register 32G Peg: 22h 20m 14s +03°45.4'
   Note: nearest PPM 173049 at 23.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-82) Warning: 33G Peg is ALONE (no PPM or CD or CPD star near it).
+85) Warning: 33G Peg is ALONE (no PPM or CD or CPD star near it).
      Register 33G Peg: 22h 21m 31s +04°4.5'
   Note: nearest PPM 173074 at 23.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-83) Warning: 41G Peg is ALONE (no PPM or CD or CPD star near it).
+86) Warning: 41G Peg is ALONE (no PPM or CD or CPD star near it).
      Register 41G Peg: 22h 52m 13s +08°41.7'
   Note: nearest PPM 173607 at 29.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-84) Warning: 96G Psc is FAR from Lal 1299 (dist = 99.6 arcsec).
+87) Warning: 96G Psc is FAR from Lal 1299 (dist = 99.6 arcsec).
      Register 96G Psc: 00h 41m 49s +04°38.5'
-85) Warning: 139G Psc is ALONE (no PPM or CD or CPD star near it).
+88) Warning: 139G Psc is ALONE (no PPM or CD or CPD star near it).
      Register 139G Psc: 01h 59m 12s +06°25.8'
   Note: nearest PPM 145280 at 24.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) USNO: Y 9466 = U 9724
-86) Warning: 205G Pup is ALONE (no PPM or CD or CPD star near it).
+**) USNO: Y 9919 = U 10202
+89) Warning: 128G Pup is FAR from Lal 14934 (dist = 213742.7 arcsec).
+     Register 128G Pup: 07h 33m 06s -25°4.9'
+90) Warning: 205G Pup is ALONE (no PPM or CD or CPD star near it).
      Register 205G Pup: 07h 45m 59s -13°34.5'
   Note: nearest PPM 219300 at 25.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-87) Warning: 285G Pup is FAR from Lal 16304 (dist = 78.3 arcsec).
+91) Warning: 285G Pup is FAR from Lal 16304 (dist = 78.3 arcsec).
      Register 285G Pup: 08h 12m 28s -12°12.5'
 **) USNO: Y 3739 = U 3817
 **) USNO: Y 7736 = U 7886
-88) Warning: 81G Sgr is FAR from L 7786 (dist = 79.2 arcsec).
+92) Warning: 81G Sgr is FAR from L 7786 (dist = 79.2 arcsec).
      Register 81G Sgr: 18h 28m 46s -24°1.0'
 **) USNO: Y 8122 = U 8290
-89) Warning: 216G Sgr is ALONE (no PPM or CD or CPD star near it).
+93) Warning: 216G Sgr is ALONE (no PPM or CD or CPD star near it).
      Register 216G Sgr: 19h 32m 07s -31°14.8'
   Possible cause: nebula.
   Note: nearest PPM 299229 at 935.4 arcsec.
 **) USNO: Y 8493 = U 8692
-90) Warning: 49G Sco is ALONE (no PPM or CD or CPD star near it).
+94) Warning: 49G Sco is ALONE (no PPM or CD or CPD star near it).
      Register 49G Sco: 16h 08m 48s -08°2.2'
   Note: nearest PPM 199464 at 24.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-91) Warning: 63G Sco is FAR from Lal 29778 (dist = 479.0 arcsec).
+95) Warning: 63G Sco is FAR from Lal 29778 (dist = 479.0 arcsec).
      Register 63G Sco: 16h 15m 43s -16°43.3'
-92) Warning: 65G Sco is ALONE (no PPM or CD or CPD star near it).
+96) Warning: 65G Sco is ALONE (no PPM or CD or CPD star near it).
      Register 65G Sco: 16h 15m 56s -26°13.5'
   Possible cause: nebula.
   Note: nearest PPM 265478 at 227.7 arcsec.
-93) Warning: 115G Sco is ALONE (no PPM or CD or CPD star near it).
+**) USNO: Y 6984 = U 7110
+**) USNO: Y 6991 = U 7117
+97) Warning: 115G Sco is ALONE (no PPM or CD or CPD star near it).
      Register 115G Sco: 16h 51m 10s -40°47.6'
   Note: nearest PPM 762397 at 617.4 arcsec.
-94) Warning: 138G Sco is FAR from L 7189 (dist = 120.0 arcsec).
+98) Warning: 138G Sco is FAR from L 7189 (dist = 120.0 arcsec).
      Register 138G Sco: 17h 08m 11s -35°35.6'
-95) Warning: 138G Sco is ALONE (no PPM or CD or CPD star near it).
+99) Warning: 138G Sco is ALONE (no PPM or CD or CPD star near it).
      Register 138G Sco: 17h 08m 11s -35°35.6'
   Note: nearest PPM 296118 at 119.9 arcsec.
-96) Warning: 80G Scl is FAR from L 169 (dist = 1564.2 arcsec).
+**) USNO: Y 7341 = U 7476
+100) Warning: 80G Scl is FAR from L 169 (dist = 1564.2 arcsec).
      Register 80G Scl: 00h 32m 24s -30°6.5'
-97) Warning: 80G Scl is ALONE (no PPM or CD or CPD star near it).
+101) Warning: 80G Scl is ALONE (no PPM or CD or CPD star near it).
      Register 80G Scl: 00h 32m 24s -30°6.5'
   Note: nearest PPM 243047 at 528.4 arcsec.
-98) Warning: 1G Sera is FAR from Lal 27744 (dist = 102.2 arcsec).
+102) Warning: 1G Sera is FAR from Lal 27744 (dist = 102.2 arcsec).
      Register 1G Sera: 15h 07m 35s -00°51.9'
-99) Warning: 7G Sera is ALONE (no PPM or CD or CPD star near it).
+103) Warning: 7G Sera is ALONE (no PPM or CD or CPD star near it).
      Register 7G Sera: 15h 12m 22s +02°32.5'
   Possible cause: nebula.
   Note: nearest PPM 161442 at 1140.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-100) Warning: 42G Sera is FAR from Lal 29437 (dist = 77.6 arcsec).
+104) Warning: 42G Sera is FAR from Lal 29437 (dist = 77.6 arcsec).
      Register 42G Sera: 16h 03m 02s +06°43.9'
-101) Warning: 31G Serb is ALONE (no PPM or CD or CPD star near it).
+105) Warning: 31G Serb is ALONE (no PPM or CD or CPD star near it).
      Register 31G Serb: 18h 12m 00s -13°50.0'
   Possible cause: nebula.
   Possible cause: lack of RA (s).
   Note: nearest PPM 719115 at 71.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-102) Warning: 54G Serb is ALONE (no PPM or CD or CPD star near it).
+106) Warning: 54G Serb is ALONE (no PPM or CD or CPD star near it).
      Register 54G Serb: 18h 30m 40s +03°40.3'
   Note: nearest PPM 166181 at 57.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-103) Warning: 59G Serb is ALONE (no PPM or CD or CPD star near it).
+107) Warning: 59G Serb is ALONE (no PPM or CD or CPD star near it).
      Register 59G Serb: 18h 31m 42s +05°45.9'
   Note: nearest PPM 166224 at 49.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-104) Warning: 70G Serb is ALONE (no PPM or CD or CPD star near it).
+108) Warning: 70G Serb is ALONE (no PPM or CD or CPD star near it).
      Register 70G Serb: 18h 49m 41s +07°0.1'
   Note: nearest PPM 166816 at 59.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-105) Warning: 11G Tau is ALONE (no PPM or CD or CPD star near it).
+109) Warning: 11G Tau is ALONE (no PPM or CD or CPD star near it).
      Register 11G Tau: 03h 30m 30s +00°0.6'
   Note: nearest PPM 146728 at 23.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-106) Warning: 28G Tau is ALONE (no PPM or CD or CPD star near it).
+110) Warning: 28G Tau is ALONE (no PPM or CD or CPD star near it).
      Register 28G Tau: 03h 56m 10s +08°52.1'
   Note: nearest PPM 147153 at 25.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-107) Warning: 55G Tau is FAR from Lal 8465 (dist = 60.5 arcsec).
+111) Warning: 55G Tau is FAR from Lal 8465 (dist = 60.5 arcsec).
      Register 55G Tau: 04h 23m 11s +09°58.4'
-108) Warning: 55G Tau is ALONE (no PPM or CD or CPD star near it).
+112) Warning: 55G Tau is ALONE (no PPM or CD or CPD star near it).
      Register 55G Tau: 04h 23m 11s +09°58.4'
   Note: nearest PPM 119958 at 55.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-109) Warning: 51G Tuc is ALONE (no PPM or CD or CPD star near it).
+113) Warning: 51G Tuc is ALONE (no PPM or CD or CPD star near it).
      Register 51G Tuc: 00h 18m 28s -72°46.6'
   Note: nearest PPM 366914 at 320.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-110) Warning: 11G Vir is FAR from Lal 22343 (dist = 71.3 arcsec).
+114) Warning: 11G Vir is FAR from Lal 22343 (dist = 71.3 arcsec).
      Register 11G Vir: 11h 44m 11s +02°28.1'
-111) Warning: 41G Vir is FAR from Lal 22954 (dist = 75.9 arcsec).
+115) Warning: 41G Vir is FAR from Lal 22954 (dist = 75.9 arcsec).
      Register 41G Vir: 12h 08m 44s -09°34.9'
-112) Warning: 111G Vir is FAR from Lal 24414 (dist = 64.9 arcsec).
+116) Warning: 111G Vir is FAR from Lal 24414 (dist = 64.9 arcsec).
      Register 111G Vir: 13h 02m 31s +05°53.8'
-113) Warning: 142G Vir is ALONE (no PPM or CD or CPD star near it).
+117) Warning: 142G Vir is ALONE (no PPM or CD or CPD star near it).
      Register 142G Vir: 13h 17m 19s +03°22.0'
   Note: nearest PPM 159721 at 20.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-114) Warning: 174G Vir is ALONE (no PPM or CD or CPD star near it).
+118) Warning: 174G Vir is ALONE (no PPM or CD or CPD star near it).
      Register 174G Vir: 13h 36m 04s +09°1.5'
   Note: nearest PPM 159981 at 23.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-115) Warning: 175G Vir is ALONE (no PPM or CD or CPD star near it).
+119) Warning: 175G Vir is ALONE (no PPM or CD or CPD star near it).
      Register 175G Vir: 13h 36m 48s +04°10.3'
   Note: nearest PPM 159997 at 20.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-116) Warning: 190G Vir is FAR from Lal 25445 (dist = 53845.5 arcsec).
+120) Warning: 190G Vir is FAR from Lal 25445 (dist = 53845.5 arcsec).
      Register 190G Vir: 13h 43m 05s -17°30.6'
-117) Warning: 248G Vir is FAR from Lal 26427 (dist = 7192.5 arcsec).
+121) Warning: 248G Vir is FAR from Lal 26427 (dist = 7192.5 arcsec).
      Register 248G Vir: 14h 22m 15s +03°20.8'
 Available UA stars = 7727
-Stars from UA with Lacaille = 4151, Lalande = 2632, Taylor = 104, OA = 41 and USNO = 10
+Stars from UA with Lacaille = 4174, Lalande = 2919, Taylor = 111, OA = 43 and USNO = 18
 Stars from UA identified with PPM = 7639, CD = 4523 and CPD = 4758
 RSME of distance (arcsec) = 5.45  among a total of 7639 stars
-Errors logged = 117
+Errors logged = 121
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...

@@ -1543,119 +1543,122 @@ void readUA() {
             }
 		}
 
-        /* lee referencia a catalogo */
-        char desigRefCat[4];
-		readField(buffer, desigRefCat, 82, 3);
+        /* lee referencias a catalogos (pueden ser 1 o 2, si hubiesen 3
+           se omite la del medio). */
+        char subcell[2][18];
+        readField(buffer, cell, 82, 17);
 
-        if (!strncmp(desigRefCat, "L.", 2) && desigRefCat[2] != '(') {
-            readField(buffer, cell, 84, 4);
-            char numStr[5];
-            sscanf(cell, "%4[^, ]", numStr);
-            int numRefCat = atoi(numStr);
-            for (int i = 0; i < countLac; i++) {
-                if (lacRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: %dG %s is FAR from L %d (dist = %.1f arcsec).\n",
-                        ++errors,
-                        gouldRef,
-                        cstRef,
-                        numRefCat,
-                        dist);
-                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-                } else checkLac++;
+        int count = 0;
+        int j = 0;
+        for (int i = 0; i < 17; i++) {
+            char c = cell[i];
+            if (c == ',') {
+                subcell[count][j] = 0;
+                count = 1;
+                j = 0;
+                i++; /* also skips the space after comma */
+                continue;
             }
+            subcell[count][j++] = c;
         }
+        subcell[count++][j] = 0;
 
-        if (!strncmp(desigRefCat, "T.", 2)) {
-            readField(buffer, cell, 84, 5);
-            char numStr[6];
-            sscanf(cell, "%5[^, ]", numStr);
-            int numRefCat = atoi(numStr);
-            for (int i = 0; i < countTaylor; i++) {
-                if (tayRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, tayX[i], tayY[i], tayZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: %dG %s is FAR from T %d (dist = %.1f arcsec).\n",
-                        ++errors,
-                        gouldRef,
-                        cstRef,
-                        numRefCat,
-                        dist);
-                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-                } else checkTaylor++;
-            }
-        }
-
-        if (!strncmp(desigRefCat, "Ll.", 3)) {
-            readField(buffer, cell, 85, 5);
-            char numStr[6];
-            sscanf(cell, "%5[^, ]", numStr);
-            int numRefCat = atoi(numStr);
-            for (int i = 0; i < countLal; i++) {
-                if (lalRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: %dG %s is FAR from Lal %d (dist = %.1f arcsec).\n",
-                        ++errors,
-                        gouldRef,
-                        cstRef,
-                        numRefCat,
-                        dist);
-                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-                } else checkLal++;
-            }
-        }
-
-        if (!strncmp(desigRefCat, "OA.", 3)) {
-            readField(buffer, cell, 85, 5);
-            char numStr[6];
-            sscanf(cell, "%5[^, ]", numStr);
-            int numRefCat = atoi(numStr);
-            for (int i = 0; i < countOA; i++) {
-                if (oaRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: %dG %s is FAR from OA %d (dist = %.1f arcsec).\n",
-                        ++errors,
-                        gouldRef,
-                        cstRef,
-                        numRefCat,
-                        dist);
-                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-                } else checkOA++;
-            }
-        }
-
-        if (!strncmp(desigRefCat, "Y.", 2)) {
-            readField(buffer, cell, 84, 5);
-            char numStr[6];
-            sscanf(cell, "%5[^, ]", numStr);
-            int numRefCat = atoi(numStr);
-            /* Here, it is different from other cross-identifications.
-             * Difference between catalogs Yarnall (USNO 2nd Edition) and Yarnall-Frisby
-             * (USNO 3rd Edition) are in enumeration, which is similar but not equal. */
-            minDistance = HUGE_NUMBER;
-            int usnoIndex = -1;
-            for (int i = 0; i < countUsno; i++) {
-                double dist = 3600.0 * calcAngularDistance(x, y, z, usnoX[i], usnoY[i], usnoZ[i]);
-                if (minDistance > dist) {
-                    usnoIndex = i;
-                    minDistance = dist;
+        for (int refs = 0; refs < count; refs++) {
+            if (!strncmp(subcell[refs], "L.", 2) && subcell[refs][2] != '(') {
+                int numRefCat = atoi(&subcell[refs][2]);
+                for (int i = 0; i < countLac; i++) {
+                    if (lacRef[i] != numRefCat) continue;
+                    double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
+                    if (dist > MAX_DIST_CROSS) {
+                        printf("%d) Warning: %dG %s is FAR from L %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gouldRef,
+                            cstRef,
+                            numRefCat,
+                            dist);
+                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                    } else checkLac++;
                 }
             }
-            if (minDistance > MAX_DIST_CROSS) {
-                printf("%d) Warning: %dG %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
-                    ++errors,
-                    gouldRef,
-                    cstRef,
-                    numRefCat,
-                    usnoRef[usnoIndex],
-                    minDistance);
-                printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
-            } else {
-                printf("**) USNO: Y %d = U %d\n", numRefCat, usnoRef[usnoIndex]);
-                checkUSNO++;
+
+            if (!strncmp(subcell[refs], "T.", 2)) {
+                int numRefCat = atoi(&subcell[refs][2]);
+                for (int i = 0; i < countTaylor; i++) {
+                    if (tayRef[i] != numRefCat) continue;
+                    double dist = 3600.0 * calcAngularDistance(x, y, z, tayX[i], tayY[i], tayZ[i]);
+                    if (dist > MAX_DIST_CROSS) {
+                        printf("%d) Warning: %dG %s is FAR from T %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gouldRef,
+                            cstRef,
+                            numRefCat,
+                            dist);
+                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                    } else checkTaylor++;
+                }
+            }
+
+            if (!strncmp(subcell[refs], "Ll.", 3) && subcell[refs][3] != '(') {
+                int numRefCat = atoi(&subcell[refs][3]);
+                for (int i = 0; i < countLal; i++) {
+                    if (lalRef[i] != numRefCat) continue;
+                    double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
+                    if (dist > MAX_DIST_CROSS) {
+                        printf("%d) Warning: %dG %s is FAR from Lal %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gouldRef,
+                            cstRef,
+                            numRefCat,
+                            dist);
+                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                    } else checkLal++;
+                }
+            }
+
+            if (!strncmp(subcell[refs], "OA.", 3)) {
+                int numRefCat = atoi(&subcell[refs][3]);
+                for (int i = 0; i < countOA; i++) {
+                    if (oaRef[i] != numRefCat) continue;
+                    double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
+                    if (dist > MAX_DIST_CROSS) {
+                        printf("%d) Warning: %dG %s is FAR from OA %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gouldRef,
+                            cstRef,
+                            numRefCat,
+                            dist);
+                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                    } else checkOA++;
+                }
+            }
+
+            if (!strncmp(subcell[refs], "Y.", 2)) {
+                int numRefCat = atoi(&subcell[refs][2]);
+                /* Here, it is different from other cross-identifications.
+                * Difference between catalogs Yarnall (USNO 2nd Edition) and Yarnall-Frisby
+                * (USNO 3rd Edition) are in enumeration, which is similar but not equal. */
+                minDistance = HUGE_NUMBER;
+                int usnoIndex = -1;
+                for (int i = 0; i < countUsno; i++) {
+                    double dist = 3600.0 * calcAngularDistance(x, y, z, usnoX[i], usnoY[i], usnoZ[i]);
+                    if (minDistance > dist) {
+                        usnoIndex = i;
+                        minDistance = dist;
+                    }
+                }
+                if (minDistance > MAX_DIST_CROSS) {
+                    printf("%d) Warning: %dG %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        gouldRef,
+                        cstRef,
+                        numRefCat,
+                        usnoRef[usnoIndex],
+                        minDistance);
+                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                } else {
+                    printf("**) USNO: Y %d = U %d\n", numRefCat, usnoRef[usnoIndex]);
+                    checkUSNO++;
+                }
             }
         }
         
