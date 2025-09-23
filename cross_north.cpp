@@ -11,6 +11,7 @@
 #include "read_dm.h"
 #include "trig.h"
 #include "misc.h"
+#include "find_gsc.h"
 
 #define MAXWBSTAR 31900
 #define MAXOASTAR 26500
@@ -107,11 +108,15 @@ void readWB() {
 		}
 
         if (!ppmFound) {
-            printf("%d) Warning: WB %dh %d is ALONE (nearest PPM star at %.1f arcsec).\n",
-                ++errors,
-                RARef,
-                numRef,
-                minDistance);
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_WB, MAX_DIST_GSC);
+            if (!gscFound) {
+                /* printf("%d) Warning: WB %dh %d is ALONE (nearest PPM star at %.1f arcsec).\n",
+                    errors,
+                    RARef,
+                    numRef,
+                    minDistance); */
+                errors++;    
+            }
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -133,7 +138,7 @@ void readWB() {
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
-    printf("Errors logged = %d\n", errors);
+    printf("Stars not identified with PPM nor GSC = %d\n", errors);
 }
 
 /*
@@ -203,10 +208,14 @@ void readOARN() {
 		}
 
         if (!ppmFound) {
-            printf("%d) Warning: OA %d is ALONE (nearest PPM star at %.1f arcsec).\n",
-                ++errors,
-                oeltzenRef,
-                minDistance);
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_WB, MAX_DIST_GSC);
+            if (!gscFound) {
+                /* printf("%d) Warning: OA %d is ALONE (nearest PPM star at %.1f arcsec).\n",
+                    errors,
+                    oeltzenRef,
+                    minDistance); */
+                errors++;    
+            }
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -227,7 +236,7 @@ void readOARN() {
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
-    printf("Errors logged = %d\n", errors);
+    printf("Stars not identified with PPM nor GSC = %d\n", errors);
 }
 
 /*
@@ -298,10 +307,14 @@ void readBAC() {
 		}
 
         if (!ppmFound) {
-            printf("%d) Warning: BAC %d is ALONE (nearest PPM star at %.1f arcsec).\n",
-                ++errors,
-                numRef,
-                minDistance);
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_WB, MAX_DIST_GSC);
+            if (!gscFound) {
+                /* printf("%d) Warning: BAC %d is ALONE (nearest PPM star at %.1f arcsec).\n",
+                    errors,
+                    numRef,
+                    minDistance); */
+                errors++;    
+            }
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -322,7 +335,7 @@ void readBAC() {
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
-    printf("Errors logged = %d\n", errors);
+    printf("Stars not identified with PPM nor GSC = %d\n", errors);
 }
 
 /*

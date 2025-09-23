@@ -14,12 +14,44 @@
 
 // #define FAKE_GSC    // uncomment this line to avoid using "gsc" tool
 
+static char gscId[16];
+static double dist;
+
+/*
+ * getGSCId - returns the last found GSC identifier
+ */
+const char* getGSCId() {
+    return gscId;
+}
+
+/*
+ * getDist - returns the distance to the last found GSC star in arcseconds
+ */
+double getDist() {
+    return dist;
+}
+
 /*
  * findGSCStar - Search for stars in the Guide Star Catalogue near given coordinates
+ * 
+ * Parameters:
+ *   RA              - Right ascension in decimal degrees
+ *   Decl            - Declination in decimal degrees  
+ *   epoch           - Epoch of coordinates in Besselian years
+ *   minDistanceOutput - Search threshold in arcseconds
+ * 
+ * Returns:
+ *   true if GSC stars found within threshold, false otherwise
+ * 
+ * Notes:
+ *   - Coordinates are automatically precessed to J2000.0 before GSC search
+ *   - The GSC tool expects Julian epoch coordinates and arcminute radius
+ *   - Uses GSCDAT environment variable to locate GSC data
+ *   - Calls external gsc tool: gsc/bin/gsc -c RA Decl -r radius -p 2
  */
 bool findGSCStar(double RA, double Decl, double epoch, double minDistanceOutput) {
 #ifdef FAKE_GSC
-    return true;
+    return false;
 #else    
     char command[512];
     char result_line[256];
@@ -66,16 +98,13 @@ bool findGSCStar(double RA, double Decl, double epoch, double minDistanceOutput)
             found = true;
             
             // Extract GSC ID (first field)
-            char gscId[16];
             float gscRA, gscDecl;
             sscanf(result_line, "%15s %f %f", gscId, &gscRA, &gscDecl);
             double gx, gy, gz;
             sph2rec((double) gscRA, (double)gscDecl, &gx, &gy, &gz);
             double tx, ty, tz;
             sph2rec(RAtarget, Decltarget, &tx, &ty, &tz);    
-            double dist = 3600.0 *calcAngularDistance(gx, gy, gz, tx, ty, tz);
-            
-            printf("  Note: found GSC star %s near the target star at %.2f arcsec.\n", gscId, dist);
+            dist = 3600.0 *calcAngularDistance(gx, gy, gz, tx, ty, tz);
         }
 
         if (found) { break; }

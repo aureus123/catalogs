@@ -193,17 +193,20 @@ int main(int argc, char** argv)
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {
-            printf("%d) Warning: GC is ALONE (no PPM or CD or CPD star near it).\n", ++errors);
-            writeRegisterGC(gcIndex);
-            bool store = logCauses(catName, unidentifiedStream, x, y, z,
-                GCstar[gcIndex].cum, GCstar[gcIndex].neb, GCstar[gcIndex].vmag,
+            bool gscFound = findGSCStar(ra, decl, 1875.0, MAX_DIST_GSC);
+            if (gscFound) {
+                printf("**) Note: GC %d has no PPM / CD / CPD star near it but has a nearby GSC star %s at %.1f arcsec.\n",
+                    gcRef,
+                    getGSCId(),
+                    getDist());
+            } else {
+                printf("%d) Warning: GC %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
+                writeRegisterGC(gcIndex);
+            }
+            logCauses(catName, unidentifiedStream, x, y, z,
+                GCstar[gcIndex].cum, GCstar[gcIndex].neb, gscFound,
                 GCstar[gcIndex].RAs, decl, GCstar[gcIndex].Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
-            if (store) {
-                if (!findGSCStar(ra, decl, 1875.0, MAX_DIST_GSC)) {
-                    printf("  Warning: no nearby GSC star found.\n");
-                }
-            }
         }
 	}
     fclose(unidentifiedStream);

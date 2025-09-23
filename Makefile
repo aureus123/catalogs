@@ -47,7 +47,7 @@ compare_agk: compare_agk.o read_cd.o trig.o misc.o
 compare_agk.o: compare_agk.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-cross_north: cross_north.o read_bd.o read_ppm.o trig.o misc.o
+cross_north: cross_north.o read_bd.o read_ppm.o trig.o misc.o find_gsc.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 cross_north.o: cross_north.cpp

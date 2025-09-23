@@ -128,7 +128,7 @@ void saveZC(int RAh, int RAs, int Decls,
          * here, we just want to save the unidentified star. */
         printf("**) %s is also ALONE.\n", zcName);
         logCauses(zcName, unidentifiedZCStream, x, y, z,
-            false, false, 10.0, RAs, -50.0, Decls, -1, 0.0);
+            false, false, true, RAs, -50.0, Decls, -1, 0.0);
     }
 
     /* add the new star */
@@ -317,17 +317,18 @@ void readGC2() {
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {
-            printf("%d) Warning: G2 %d is ALONE (no PPM or CD or CPD star near it).\n",
-                ++errors,
-                gcRef);
-            bool store = logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
-            if (store) {
-                if (!findGSCStar(RA, Decl, EPOCH_GC2, MAX_DIST_GSC)) {
-                    printf("  Warning: no nearby GSC star found.\n");
-                }
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_GC2, MAX_DIST_GSC);
+            if (gscFound) {
+                printf("**) Note: G2 %d has no PPM / CD / CPD star near it but has a nearby GSC star %s at %.1f arcsec.\n",
+                    gcRef,
+                    getGSCId(),
+                    getDist());
+            } else {
+                printf("%d) Warning: G2 %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
             }
+            logCauses(catName, unidentifiedStream, x, y, z,
+                false, false, gscFound, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
         countGC++;
     }
@@ -520,19 +521,22 @@ void readWeiss() {
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {
-            printf("%d) Warning: W %d (OA %d) is ALONE (no PPM or CD or CPD star near it).\n",
-                ++errors,
-                weissRef,
-                oeltzenRef);
-            printf("     Register W %d: %s\n", weissRef, catLine);    
-            bool store = logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
-            if (store) {
-                if (!findGSCStar(RA, Decl, EPOCH_OA, MAX_DIST_GSC)) {
-                    printf("  Warning: no nearby GSC star found.\n");
-                }
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_OA, MAX_DIST_GSC);
+            if (gscFound) {
+                printf("**) Note: W %d has no PPM / CD / CPD star near it but has a nearby GSC star %s at %.1f arcsec.\n",
+                    weissRef,
+                    getGSCId(),
+                    getDist());
+            } else {
+                printf("%d) Warning: W %d (OA %d) is ALONE (no PPM / CD / CPD / GSC star near it).\n",
+                    ++errors,
+                    weissRef,
+                    oeltzenRef);
+                printf("     Register W %d: %s\n", weissRef, catLine);    
             }
+            logCauses(catName, unidentifiedStream, x, y, z,
+                false, false, gscFound, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -656,12 +660,15 @@ void readLalande() {
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
         if (!ppmFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
-            printf("%d) Warning: Lal %d is ALONE (no PPM star near it).\n",
-                ++errors,
-                catRef);
-            logCauses(catName, nullptr, x, y, z,
-                false, false, 1.0, RAs, Decl1875, Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_LAL, MAX_DIST_GSC);
+            if (!gscFound) {
+                printf("%d) Warning: Lal %d is ALONE (no PPM or GSC star near it).\n",
+                    ++errors,
+                    catRef);
+                logCauses(catName, nullptr, x, y, z,
+                    false, false, gscFound, RAs, Decl1875, Decls,
+                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            }
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -865,23 +872,21 @@ void readStone() {
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {
-            if (lacailleRef > 0) {
-                printf("%d) Warning: St %d (L %d) is ALONE (no PPM or CD or CPD star near it).\n",
-                    ++errors,
-                    stoneRef,
-                    lacailleRef);
-            } else {
-                printf("%d) Warning: St %d is ALONE (no PPM or CD or CPD star near it).\n",
-                    ++errors,
-                    stoneRef);
-            }
-            bool store = logCauses(catName, nullptr, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
-            if (store) {
-                if (!findGSCStar(RA, Decl, EPOCH_ST, MAX_DIST_GSC)) {
-                    printf("  Warning: no nearby GSC star found.\n");
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_ST, MAX_DIST_GSC);
+            if (!gscFound) {
+                if (lacailleRef > 0) {
+                    printf("%d) Warning: St %d (L %d) is ALONE (no PPM / CD / CPD / GSC star near it).\n",
+                        ++errors,
+                        stoneRef,
+                        lacailleRef);
+                } else {
+                    printf("%d) Warning: St %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
+                        ++errors,
+                        stoneRef);
                 }
+                logCauses(catName, nullptr, x, y, z,
+                    false, false, gscFound, RAs, Decl1875, Decls,
+                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
             }
         }
 
@@ -1022,12 +1027,15 @@ void readTaylor() {
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
         if (!ppmFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
-            printf("%d) Warning: T %d is ALONE (no PPM star near it).\n",
-                ++errors,
-                taylorRef);
-            logCauses(catName, nullptr, x, y, z,
-                false, false, 1.0, RAs, Decl1875, Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_TAYLOR, MAX_DIST_GSC);
+            if (!gscFound) {
+                printf("%d) Warning: T %d is ALONE (no PPM or GSC star near it).\n",
+                    ++errors,
+                    taylorRef);
+                logCauses(catName, nullptr, x, y, z,
+                    false, false, gscFound, RAs, Decl1875, Decls,
+                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+            }
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
@@ -1332,27 +1340,30 @@ void readUSNO() {
 
         /* Alone stars that are from Praesepe or Pleiades are ignored but recognized as unidentified. */
         if (!ppmFound && !cdFound && !cpdFound) {
-            readField(buffer, cell, 15, 3);
-            bool praesepe = !strncmp(cell, "PRA", 3);
-            bool pleiades = !strncmp(cell, "PLE", 3);
-            if (praesepe) {
-                printf("**) %s is from Praesepe and is ALONE.\n", catName);
-            } else if (pleiades) {
-                printf("**) %s is from Pleiades and is ALONE.\n", catName);
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_USNO, MAX_DIST_GSC);
+            if (gscFound) {
+                readField(buffer, cell, 15, 3);
+                bool praesepe = !strncmp(cell, "PRA", 3);
+                bool pleiades = !strncmp(cell, "PLE", 3);
+                if (praesepe) {
+                    printf("**) %s is from Praesepe and has no PPM / CD / CPD near but has a nearby GSC.\n", catName);
+                } else if (pleiades) {
+                    printf("**) %s is from Pleiades and has no PPM / CD / CPD near but has a nearby GSC.\n", catName);
+                } else {
+                    printf("**) Note: %s has no PPM / CD / CPD near it but has a nearby GSC star %s at %.1f arcsec.\n",
+                        catName,
+                        getGSCId(),
+                        getDist());
+                }
             } else {
-                printf("%d) Warning: U %d is ALONE (no PPM or CD or CPD star near it).\n",
+                printf("%d) Warning: U %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,
                     numRef);
-                printf("     Register U %d: %s\n", numRef, catLine);    
+                printf("     Register U %d: %s\n", numRef, catLine);
             }
-            bool store = logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls,
+            logCauses(catName, unidentifiedStream, x, y, z,
+                false, false, gscFound, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
-            if (store) {
-                if (!findGSCStar(RA, Decl, EPOCH_USNO, MAX_DIST_GSC)) {
-                    printf("  Warning: no nearby GSC star found.\n");
-                }
-            }
         }
 
         if (countUsno >= MAXUSNOSTAR) {
@@ -1671,14 +1682,9 @@ void readUA() {
             readField(buffer, cell, 132, 3);
             bool cumulus = !strncmp(cell, "cum", 3);
             bool nebula = !strncmp(cell, "neb", 3);
-            bool store = logCauses(catName, unidentifiedStream, x, y, z,
-                cumulus, nebula, 1.0, RAs, Decl, 1,
+            logCauses(catName, unidentifiedStream, x, y, z,
+                cumulus, nebula, true, RAs, Decl, 1,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
-            if (store) {
-                if (!findGSCStar(RA, Decl, EPOCH_UA, MAX_DIST_GSC)) {
-                    printf("  Warning: no nearby GSC star found.\n");
-                }
-            }
         }
         countUA++;
     }
@@ -1855,13 +1861,22 @@ void readThome(double epoch, const char *filename, int correction) {
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {
-            printf("%d) Warning: T %.0f %d is ALONE (no PPM or CD or CPD star near it).\n",
-                ++errors,
-                epoch,
-                numRef);
-            printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
+            bool gscFound = findGSCStar(RA, Decl, epoch, MAX_DIST_GSC);
+            if (gscFound) {
+                printf("**) Note: T %.0f %d has no PPM / CD / CPD near it but has a nearby GSC star %s at %.1f arcsec.\n",
+                    epoch,
+                    numRef,
+                    getGSCId(),
+                    getDist());
+            } else {
+                printf("%d) Warning: T %.0f %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
+                    ++errors,
+                    epoch,
+                    numRef);
+                printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
+            }
             logCauses(catName, nullptr, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls,
+                false, false, gscFound, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
@@ -2224,18 +2239,21 @@ void readGilliss() {
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {
-            printf("%d) Warning: G %d is ALONE (no PPM or CD or CPD star near it).\n",
-                ++errors,
-                giRef);
-            printf("     Register G %d: %s\n", giRef, catLine);
-            bool store = logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, vmag, RAs, Decl1875, Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
-            if (store) {
-                if (!findGSCStar(RA, Decl, EPOCH_GILLISS, MAX_DIST_GSC)) {
-                    printf("  Warning: no nearby GSC star found.\n");
-                }
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_GILLISS, MAX_DIST_GSC);
+            if (gscFound) {
+                printf("**) Note: G %d has no PPM / CD / CPD near it but has a nearby GSC star %s at %.1f arcsec.\n",
+                    giRef,
+                    getGSCId(),
+                    getDist());
+            } else {
+                printf("%d) Warning: G %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
+                    ++errors,
+                    giRef);
+                printf("     Register G %d: %s\n", giRef, catLine);
             }
+            logCauses(catName, unidentifiedStream, x, y, z,
+                false, false, gscFound, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */

@@ -134,10 +134,13 @@ FILE *openUnidentifiedFile(const char *name)
  * Devuelve true si no hay una causa razonable para identificarla.   
  */
 bool logCauses(char *name, FILE *stream, double x, double y, double z,
-        bool cumulus, bool nebula, double vmag,
+        bool cumulus, bool nebula, bool gscFound,
         int RAs, double Decl, int Decls,
         int ppmRef, double nearestPPMDistance) {
     bool store = true;
+    if (!gscFound) {
+        store = false;
+    }
     if (cumulus) {
         printf("  Possible cause: cumulus.\n");
         store = false;
@@ -152,14 +155,6 @@ bool logCauses(char *name, FILE *stream, double x, double y, double z,
     }
     if (Decls == 0) {
         printf("  Possible cause: lack of Decl (s).\n");
-        store = false;
-    }
-    if (vmag >= 8.0) {
-        printf("  Possible cause: dim star.\n");
-    } else {
-        if (vmag < 0.1) {
-            printf("  Possible cause: no magnitude (cumulus?).\n");
-        }
         store = false;
     }
     if (ppmRef != -1) {
