@@ -1401,7 +1401,7 @@ void readUSNO() {
  * tambien revisa referencias cruzadas; no tiene en cuenta magnitudes
  */
 void readUA() {
-    char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+    char buffer[1024], cell[256], catName[20], catgName[20], cdName[20], ppmName[20];
     char catLine[64];
 
     /* usamos catalogs CD y CPD */
@@ -1442,9 +1442,7 @@ void readUA() {
     }
     char serpens = 'a';
     while (fgets(buffer, 1023, stream) != NULL) {
-        /* no leemos estrellas sin designación Gould ni sin coordenadas */
-		readFieldSanitized(buffer, cell, 1, 1);
-        if (cell[0] != 'G') continue;
+        /* no leemos estrellas sin coordenadas */
 		readField(buffer, cell, 101, 1);
         if (cell[0] == ' ') continue;
 
@@ -1473,38 +1471,48 @@ void readUA() {
         snprintf(catLine, 64, "%02dh %02dm %02ds %c%02d°%02.1f'",
             RAh, RAm, RAs, cell[0], Decld, Declm);
 
-		/* lee numeración de Gould y constelación */
-		readField(buffer, cell, 3, 3);
-		int gouldRef = atoi(cell);
-        char cstRef[5];
-		readField(buffer, cell, 7, 3);
-        copyWithoutSpaces(cstRef, cell);
-        if (cstRef[0] == 'S' && cstRef[1] == 'e' && cstRef[2] == 'r') {
-            /* Serpens tiene parte (a) y (b) */
-            cstRef[3] = serpens;
-            cstRef[4] = 0;
-            /* si es la ultima estrella de (a), actualiza a (b) */
-            if (gouldRef == 49) {
-                serpens = 'b';
+		/* lee numeración de Gould y constelación, si existe */
+        bool existsRef;
+		readFieldSanitized(buffer, cell, 1, 1);
+        if (cell[0] == 'G') {
+            existsRef = true;
+    		readField(buffer, cell, 3, 3);
+		    int gouldRef = atoi(cell);
+            char cstRef[5];
+    		readField(buffer, cell, 7, 3);
+            copyWithoutSpaces(cstRef, cell);
+            if (cstRef[0] == 'S' && cstRef[1] == 'e' && cstRef[2] == 'r') {
+                /* Serpens tiene parte (a) y (b) */
+                cstRef[3] = serpens;
+                cstRef[4] = 0;
+                /* si es la ultima estrella de (a), actualiza a (b) */
+                if (gouldRef == 49) {
+                    serpens = 'b';
+                }
             }
-        }
 
-        /* si está disponible Bayer, usa esa designacion */
-        readField(buffer, cell, 15, 8);
-        if (cell[0] != ' ') {
-            char bayerRef[9];
-            copyWithoutSpaces(bayerRef, cell);
-            snprintf(catName, 20, "%s%s", bayerRef, cstRef);
-        } else {
-            /* si está disponible Flamsteed, la usa */
-            readField(buffer, cell, 11, 3);
-            if (cell[2] != ' ') {
-                int fRef = atoi(cell);
-                snprintf(catName, 20, "%d %s", fRef, cstRef);
+            /* si está disponible Bayer, usa esa designacion */
+            readField(buffer, cell, 15, 8);
+            if (cell[0] != ' ') {
+                char bayerRef[9];
+                copyWithoutSpaces(bayerRef, cell);
+                snprintf(catName, 20, "%s%s", bayerRef, cstRef);
             } else {
-                /* caso contrario, usa la denominación de Gould */
-                snprintf(catName, 20, "%dG %s", gouldRef, cstRef);
+                /* si está disponible Flamsteed, la usa */
+                readField(buffer, cell, 11, 3);
+                if (cell[2] != ' ') {
+                    int fRef = atoi(cell);
+                    snprintf(catName, 20, "%d %s", fRef, cstRef);
+                } else {
+                    /* caso contrario, usa la denominación de Gould */
+                    snprintf(catName, 20, "%dG %s", gouldRef, cstRef);
+                }
             }
+            snprintf(catgName, 20, "%dG %s", gouldRef, cstRef);
+        } else {
+            existsRef = false;
+            snprintf(catName, 11, "Annonymous");
+            snprintf(catgName, 11, "Annonymous");
         }
 
         bool ppmFound = false;
@@ -1520,8 +1528,10 @@ void readUA() {
             countDist++;
             ppmFound = true;
 
-			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+            if (existsRef) {
+			    snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+			    writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+            }
 		}
 
         bool cpdFound = false;
@@ -1534,8 +1544,10 @@ void readUA() {
                 countCPD++;
                 cpdFound = true;
 
-			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+                if (existsRef) {
+			        snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
+			        writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+                }
             }
         }
 		
@@ -1549,8 +1561,10 @@ void readUA() {
                 countCD++;
                 cdFound = true;
 
-			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+                if (existsRef) {
+			        snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
+			        writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+                }
             }
 		}
 
@@ -1579,13 +1593,12 @@ void readUA() {
                     if (lacRef[i] != numRefCat) continue;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
                     if (dist > MAX_DIST_CROSS) {
-                        printf("%d) Warning: %dG %s is FAR from L %d (dist = %.1f arcsec).\n",
+                        printf("%d) Warning: %s is FAR from L %d (dist = %.1f arcsec).\n",
                             ++errors,
-                            gouldRef,
-                            cstRef,
+                            catgName,
                             numRefCat,
                             dist);
-                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                        printf("     Register %s: %s\n", catgName, catLine);    
                     } else checkLac++;
                 }
             }
@@ -1596,13 +1609,12 @@ void readUA() {
                     if (tayRef[i] != numRefCat) continue;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, tayX[i], tayY[i], tayZ[i]);
                     if (dist > MAX_DIST_CROSS) {
-                        printf("%d) Warning: %dG %s is FAR from T %d (dist = %.1f arcsec).\n",
+                        printf("%d) Warning: %s is FAR from T %d (dist = %.1f arcsec).\n",
                             ++errors,
-                            gouldRef,
-                            cstRef,
+                            catgName,
                             numRefCat,
                             dist);
-                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                        printf("     Register %s: %s\n", catgName, catLine);    
                     } else checkTaylor++;
                 }
             }
@@ -1613,13 +1625,12 @@ void readUA() {
                     if (lalRef[i] != numRefCat) continue;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
                     if (dist > MAX_DIST_CROSS) {
-                        printf("%d) Warning: %dG %s is FAR from Lal %d (dist = %.1f arcsec).\n",
+                        printf("%d) Warning: %s is FAR from Lal %d (dist = %.1f arcsec).\n",
                             ++errors,
-                            gouldRef,
-                            cstRef,
+                            catgName,
                             numRefCat,
                             dist);
-                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                        printf("     Register %s: %s\n", catgName, catLine);    
                     } else checkLal++;
                 }
             }
@@ -1630,13 +1641,12 @@ void readUA() {
                     if (oaRef[i] != numRefCat) continue;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
                     if (dist > MAX_DIST_CROSS) {
-                        printf("%d) Warning: %dG %s is FAR from OA %d (dist = %.1f arcsec).\n",
+                        printf("%d) Warning: %s is FAR from OA %d (dist = %.1f arcsec).\n",
                             ++errors,
-                            gouldRef,
-                            cstRef,
+                            catgName,
                             numRefCat,
                             dist);
-                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                        printf("     Register %s: %s\n", catgName, catLine);    
                     } else checkOA++;
                 }
             }
@@ -1656,14 +1666,13 @@ void readUA() {
                     }
                 }
                 if (minDistance > MAX_DIST_CROSS) {
-                    printf("%d) Warning: %dG %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
+                    printf("%d) Warning: %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
                         ++errors,
-                        gouldRef,
-                        cstRef,
+                        catgName,
                         numRefCat,
                         usnoRef[usnoIndex],
                         minDistance);
-                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                    printf("     Register %s: %s\n", catgName, catLine);    
                 } else {
                     printf("**) USNO: Y %d = U %d\n", numRefCat, usnoRef[usnoIndex]);
                     checkUSNO++;
@@ -1672,19 +1681,21 @@ void readUA() {
         }
         
         if (!ppmFound && !cdFound && !cpdFound) {
-            printf("%d) Warning: %dG %s is ALONE (no PPM or CD or CPD star near it).\n",
+            printf("%d) Warning: %s is ALONE (no PPM or CD or CPD star near it).\n",
                 ++errors,
-                gouldRef,
-                cstRef);
-            printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);    
+                catgName);
+            printf("     Register %s: %s\n", catgName, catLine);    
             readField(buffer, cell, 132, 3);
             bool cumulus = !strncmp(cell, "cum", 3);
             bool nebula = !strncmp(cell, "neb", 3);
-            logCauses(catName, unidentifiedStream, x, y, z,
+            logCauses(catName, existsRef ? unidentifiedStream : nullptr, x, y, z,
                 cumulus, nebula, true, RAs, Decl, 1,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
-        countUA++;
+
+        if (existsRef) {
+            countUA++;
+        }
     }
     fclose(stream);
     fclose(unidentifiedStream);

@@ -613,16 +613,18 @@ Check references between UA and BD...
      Register BD +0°1651 (en 6h):  8.5 | 44m6.7s | 28.2'     (pag. 13)
 5) Warning: 116G Oph is FAR from WB 17h 170 star (dist = 156.7 arcsec).
      Register 116G Oph: 17h 11m 18s +01°52.8'
-6) Warning: 12G Sct is FAR from WB 18h 606 star (dist = 116.6 arcsec).
+6) Warning: Annonymous is FAR from WB 22h 1040 star (dist = 85.9 arcsec).
+     Register Annonymous: 22h 51m 16s -03°51.0'
+7) Warning: 12G Sct is FAR from WB 18h 606 star (dist = 116.6 arcsec).
      Register 12G Sct: 18h 26m 41s -06°0.1'
-7) Warning: 23G Sera is FAR from BD star (dist = 117.7 arcsec).
+8) Warning: 23G Sera is FAR from BD star (dist = 117.7 arcsec).
      Register 23G Sera: 15h 39m 18s +01°17.1'
      Register BD +1°3125 (en 15h):  6.7 | 38m17.0s | 19.0'     (pag. 21)
-8) Warning: 42G Serb is FAR from WB 18h 467 star (dist = 160.7 arcsec).
+9) Warning: 42G Serb is FAR from WB 18h 467 star (dist = 160.7 arcsec).
      Register 42G Serb: 18h 21m 00s +06°28.0'
-9) Warning: 54G Serb is FAR from BD star (dist = 85.4 arcsec).
+10) Warning: 54G Serb is FAR from BD star (dist = 85.4 arcsec).
      Register 54G Serb: 18h 30m 40s +03°40.3'
      Register BD +3°3755 (en 18h):  7.6 | 29m41.7s | 40.8'     (pag. 33)
 UA stars properly identified with BD = 12
-UA stars properly identified with WB = 166
-Errors logged = 9
+UA stars properly identified with WB = 198
+Errors logged = 10

@@ -565,7 +565,7 @@ void readUSNO() {
  * tambien revisa referencias cruzadas a BD
  */
 void readUA() {
-    char buffer[1024], cell[256], catName[20];
+    char buffer[1024], cell[256], catgName[20];
     char catLine[64];
 
     /* usamos catalogo BD */
@@ -586,9 +586,7 @@ void readUA() {
     }
     char serpens = 'a';
     while (fgets(buffer, 1023, stream) != NULL) {
-        /* no leemos estrellas sin designación Gould ni sin coordenadas */
-		readFieldSanitized(buffer, cell, 1, 1);
-        if (cell[0] != 'G') continue;
+        /* no leemos estrellas sin coordenadas */
 		readField(buffer, cell, 101, 1);
         if (cell[0] == ' ') continue;
 
@@ -617,38 +615,29 @@ void readUA() {
         snprintf(catLine, 64, "%02dh %02dm %02ds %c%02d°%02.1f'",
             RAh, RAm, RAs, cell[0], Decld, Declm);
 
-		/* lee numeración de Gould y constelación */
-		readField(buffer, cell, 3, 3);
-		int gouldRef = atoi(cell);
-        char cstRef[5];
-		readField(buffer, cell, 7, 3);
-        copyWithoutSpaces(cstRef, cell);
-        if (cstRef[0] == 'S' && cstRef[1] == 'e' && cstRef[2] == 'r') {
-            /* Serpens tiene parte (a) y (b) */
-            cstRef[3] = serpens;
-            cstRef[4] = 0;
-            /* si es la ultima estrella de (a), actualiza a (b) */
-            if (gouldRef == 49) {
-                serpens = 'b';
+		/* lee numeración de Gould y constelación, si existe */
+        bool existsRef;
+		readFieldSanitized(buffer, cell, 1, 1);
+        if (cell[0] == 'G') {
+            existsRef = true;
+    		readField(buffer, cell, 3, 3);
+		    int gouldRef = atoi(cell);
+            char cstRef[5];
+    		readField(buffer, cell, 7, 3);
+            copyWithoutSpaces(cstRef, cell);
+            if (cstRef[0] == 'S' && cstRef[1] == 'e' && cstRef[2] == 'r') {
+                /* Serpens tiene parte (a) y (b) */
+                cstRef[3] = serpens;
+                cstRef[4] = 0;
+                /* si es la ultima estrella de (a), actualiza a (b) */
+                if (gouldRef == 49) {
+                    serpens = 'b';
+                }
             }
-        }
-
-        /* si está disponible Bayer, usa esa designacion */
-        readField(buffer, cell, 15, 8);
-        if (cell[0] != ' ') {
-            char bayerRef[9];
-            copyWithoutSpaces(bayerRef, cell);
-            snprintf(catName, 20, "%s%s", bayerRef, cstRef);
+            snprintf(catgName, 20, "%dG %s", gouldRef, cstRef);
         } else {
-            /* si está disponible Flamsteed, la usa */
-            readField(buffer, cell, 11, 3);
-            if (cell[2] != ' ') {
-                int fRef = atoi(cell);
-                snprintf(catName, 20, "%d %s", fRef, cstRef);
-            } else {
-                /* caso contrario, usa la denominación de Gould */
-                snprintf(catName, 20, "%dG %s", gouldRef, cstRef);
-            }
+            existsRef = false;
+            snprintf(catgName, 11, "Annonymous");
         }
 
 	    /* convierte coordenadas a la de BD y calcula rectangulares */
@@ -689,12 +678,11 @@ void readUA() {
                 }
                 double dist = 3600.0 * calcAngularDistance(x, y, z, BDstar[index].x, BDstar[index].y, BDstar[index].z);
                 if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: %dG %s is FAR from BD star (dist = %.1f arcsec).\n",
+                    printf("%d) Warning: %s is FAR from BD star (dist = %.1f arcsec).\n",
                         ++errors,
-                        gouldRef,
-                        cstRef,
+                        catgName,
                         dist);
-                    printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);
+                    printf("     Register %s: %s\n", catgName, catLine);
                     writeRegister(index, false);
                 } else checkDM++;
             }
@@ -715,14 +703,13 @@ void readUA() {
                     if (wbNumRef[i] != numRefCat) continue;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
                     if (dist > MAX_DIST_CROSS) {
-                        printf("%d) Warning: %dG %s is FAR from WB %dh %d star (dist = %.1f arcsec).\n",
+                        printf("%d) Warning: %s is FAR from WB %dh %d star (dist = %.1f arcsec).\n",
                             ++errors,
-                            gouldRef,
-                            cstRef,
+                            catgName,
                             RARef,
                             numRefCat,
                             dist);
-                        printf("     Register %dG %s: %s\n", gouldRef, cstRef, catLine);
+                        printf("     Register %s: %s\n", catgName, catLine);
                     } else checkWB++;
                 }
             }
