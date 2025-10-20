@@ -658,20 +658,18 @@ void readUA() {
         transform(EPOCH_UA, 1855.0, &newRA, &newDecl);
         sph2rec(newRA, newDecl, &x, &y, &z);
 
-        /* lee referencias a catalogos (pueden ser 1 o 2, si hubiesen 3
-           se omite la del medio). */
-        char subcell[2][18];
+        /* lee referencias a catalogos. */
+        char subcell[3][18];
         readField(buffer, cell, 82, 17);
 
         int count = 0;
         int j = 0;
         for (int i = 0; i < 17; i++) {
             char c = cell[i];
+            if (j == 0 && c == ' ') continue; /* skip space at beggining if exists. */
             if (c == ',') {
-                subcell[count][j] = 0;
-                count = 1;
+                subcell[count++][j] = 0;
                 j = 0;
-                i++; /* also skips the space after comma */
                 continue;
             }
             subcell[count][j++] = c;
