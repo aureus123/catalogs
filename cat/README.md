@@ -79,7 +79,7 @@ Some catalogs in this folder were sanitized but their original version was store
 - ua : 48 registers
 - gc : 3 registers
 - weiss : 3 registers
-- gilliss : 21 registers
+- gilliss : 22 registers
 - usno : 13 registers
 - corda : 3 registers
 - cordc : 7 registers
