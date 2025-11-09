@@ -70,6 +70,7 @@ int countSt = 0;
 // Here, we save 1875.0 coordinates of USNO stars in rectangular form
 double usnoX[MAXUSNOSTAR], usnoY[MAXUSNOSTAR], usnoZ[MAXUSNOSTAR];
 int usnoRef[MAXUSNOSTAR];
+char usnoCatRef[MAXUSNOSTAR][30];
 int countUsno = 0;
 
 // Here, we save 1875.0 coordinates of Gould's ZC stars in rectangular form
@@ -1370,6 +1371,9 @@ void readUSNO() {
             printf("Error: too many USNO stars.\n");
             exit(1);
         }
+
+        readField(buffer, cell, 7, 28);
+        copyWithoutSpaces(usnoCatRef[countUsno], cell);
         usnoX[countUsno] = x;
         usnoY[countUsno] = y;
         usnoZ[countUsno] = z;
@@ -1674,7 +1678,7 @@ void readUA() {
                         minDistance);
                     printf("     Register %s: %s\n", catgName, catLine);    
                 } else {
-                    printf("**) USNO: Y %d = U %d\n", numRefCat, usnoRef[usnoIndex]);
+                    printf("**) USNO: Y %d = U %d <%s>\n", numRefCat, usnoRef[usnoIndex], usnoCatRef[usnoIndex]);
                     checkUSNO++;
                 }
             }
@@ -2013,7 +2017,7 @@ void readThome(double epoch, const char *filename, int correction) {
                     minDistance);
                 printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
             } else {
-                printf("**) USNO: Y %d = U %d\n", numRefCat, usnoRef[usnoIndex]);
+                printf("**) USNO: Y %d = U %d <%s>\n", numRefCat, usnoRef[usnoIndex], usnoCatRef[usnoIndex]);
                 checkUSNO++;
             }
         }

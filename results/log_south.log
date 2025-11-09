@@ -2014,9 +2014,9 @@ Stars read from PPM: 468861
      Register 15G Cnc: 09h 11m 11s +08°28.5'
   Note: nearest PPM 155661 at 24.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 2571 = U 2637
-**) USNO: Y 2572 = U 2638
-**) USNO: Y 2573 = U 2639
+**) USNO: Y 2571 = U 2637 <BON6 0600020>
+**) USNO: Y 2572 = U 2638 <BON6 0600021>
+**) USNO: Y 2573 = U 2639 <BON6 0600022>
 11) Warning: Annonymous is FAR from L 2220 (dist = 65.1 arcsec).
      Register Annonymous: 06h 14m 09s -24°54.4'
 12) Warning: 66G CMa is FAR from Lal 13040 (dist = 109.0 arcsec).
@@ -2028,16 +2028,16 @@ Stars read from PPM: 468861
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: nearest PPM 726755 at 235.3 arcsec.
-**) USNO: Y 2823 = U 2890
-**) USNO: Y 2832 = U 2900
-**) USNO: Y 2833 = U 2901
+**) USNO: Y 2823 = U 2890 <LAC 02553>
+**) USNO: Y 2832 = U 2900 <LAC 02566>
+**) USNO: Y 2833 = U 2901 <MER 083 00117>
 15) Warning: 26G CMi is FAR from Lal 14914 (dist = 95.2 arcsec).
      Register 26G CMi: 07h 32m 46s +05°32.6'
 16) Warning: 5G Cap is FAR from Lal 38711 (dist = 80.7 arcsec).
      Register 5G Cap: 20h 07m 28s -27°24.2'
 17) Warning: 18G Cap is FAR from Lal 39229 (dist = 97159.5 arcsec).
      Register 18G Cap: 20h 20m 31s -26°1.0'
-**) USNO: Y 8892 = U 9121
+**) USNO: Y 8892 = U 9121 <LAM 01201>
 18) Warning: 72G Cap is FAR from L 8690 (dist = 285.5 arcsec).
      Register 72G Cap: 20h 59m 48s -23°39.0'
 19) Warning: 80G Cap is FAR from T 9480 (dist = 132536.3 arcsec).
@@ -2063,7 +2063,7 @@ Stars read from PPM: 468861
      Register 219G Cen: 13h 19m 16s -46°49.5'
   Possible cause: cumulus.
   Note: nearest PPM 318491 at 529.0 arcsec.
-**) USNO: Y 5805 = U 5907
+**) USNO: Y 5805 = U 5907 <LAC 05798>
 28) Warning: 24G Cet is ALONE (no PPM or CD or CPD star near it).
      Register 24G Cet: 00h 08m 16s -15°29.9'
   Note: nearest PPM 208537 at 21.5 arcsec.
@@ -2146,7 +2146,7 @@ Stars read from PPM: 468861
      Register Annonymous: 04h 29m 15s -09°59.8'
   Note: nearest PPM 187104 at 25.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 1128 = U 1165
+**) USNO: Y 1128 = U 1165 <TRZ 102 00008>
 53) Warning: 71G Gru is FAR from L 9295 (dist = 91.4 arcsec).
      Register 71G Gru: 22h 47m 58s -49°9.5'
 54) Warning: 24G Hor is FAR from L 930 (dist = 96.6 arcsec).
@@ -2173,7 +2173,7 @@ Stars read from PPM: 468861
      Register 159G Hya: 09h 27m 10s -06°38.2'
   Note: nearest PPM 192506 at 21.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 4911 = U 5006
+**) USNO: Y 4911 = U 5006 <LAC 04867>
 61) Warning: 312G Hya is FAR from L 5015 (dist = 1103.6 arcsec).
      Register 312G Hya: 11h 59m 41s -32°15.5'
 62) Warning: 20G Hyi is FAR from L 584 (dist = 7900.3 arcsec).
@@ -2193,21 +2193,21 @@ Stars read from PPM: 468861
      Register 10G Lib: 14h 30m 23s -11°46.6'
   Note: nearest PPM 229046 at 34.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 6138 = U 6246
+**) USNO: Y 6138 = U 6246 <RAD2 01437>
 67) Warning: 33G Lib is FAR from Lal 27173 (dist = 155.2 arcsec).
      Register 33G Lib: 14h 50m 10s -20°51.0'
-**) USNO: Y 6139 = U 6247
+**) USNO: Y 6139 = U 6247 <PIA 1400212>
 68) Warning: 78G Lib is ALONE (no PPM or CD or CPD star near it).
      Register 78G Lib: 15h 21m 23s -08°53.6'
   Note: nearest PPM 198631 at 25.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 69) Warning: 141G Lup is FAR from L 6599 (dist = 296.4 arcsec).
      Register 141G Lup: 15h 49m 14s -35°49.1'
-**) USNO: Y 9016 = U 9248
-**) USNO: Y 9179 = U 9416
+**) USNO: Y 9016 = U 9248 <TRZ 061 00012>
+**) USNO: Y 9179 = U 9416 <LAC 08638>
 70) Warning: 42G Mic is FAR from L 8638 (dist = 60.5 arcsec).
      Register 42G Mic: 20h 54m 01s -43°28.9'
-**) USNO: Y 9183 = U 9420
+**) USNO: Y 9183 = U 9420 <LAC 08638>
 71) Warning: 50G Mic is FAR from L 8693 (dist = 617.7 arcsec).
      Register 50G Mic: 21h 00m 48s -37°44.7'
 72) Warning: 10G Mon is FAR from Lal 11723 (dist = 62.2 arcsec).
@@ -2314,12 +2314,12 @@ Stars read from PPM: 468861
      Register 139G Psc: 01h 59m 12s +06°25.8'
   Note: nearest PPM 145280 at 24.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 9466 = U 9724
+**) USNO: Y 9466 = U 9724 <>
 103) Warning: Annonymous is FAR from L 8889 (dist = 434.7 arcsec).
      Register Annonymous: 21h 34m 46s -33°4.5'
-**) USNO: Y 9471 = U 9729
-**) USNO: Y 9919 = U 10202
-**) USNO: Y 9920 = U 10203
+**) USNO: Y 9471 = U 9729 <LAC 08889>
+**) USNO: Y 9919 = U 10202 <BAC 07872>
+**) USNO: Y 9920 = U 10203 <PI 2200154>
 104) Warning: 128G Pup is FAR from Lal 14934 (dist = 213742.7 arcsec).
      Register 128G Pup: 07h 33m 06s -25°4.9'
 105) Warning: 205G Pup is ALONE (no PPM or CD or CPD star near it).
@@ -2328,20 +2328,20 @@ Stars read from PPM: 468861
   Note: no CD/CPD coverage for stars below 18°.
 106) Warning: 285G Pup is FAR from Lal 16304 (dist = 78.3 arcsec).
      Register 285G Pup: 08h 12m 28s -12°12.5'
-**) USNO: Y 3739 = U 3817
+**) USNO: Y 3739 = U 3817 <MZ 237 00017>
 107) Warning: Annonymous is FAR from L 1342 (dist = 63.3 arcsec).
      Register Annonymous: 03h 57m 58s -54°44.5'
-**) USNO: Y 7736 = U 7886
+**) USNO: Y 7736 = U 7886 <>
 108) Warning: 81G Sgr is FAR from L 7786 (dist = 79.2 arcsec).
      Register 81G Sgr: 18h 28m 46s -24°1.0'
-**) USNO: Y 8122 = U 8290
+**) USNO: Y 8122 = U 8290 <LAM 00797>
 109) Warning: Annonymous is FAR from Lal 36192 (dist = 1795.0 arcsec).
      Register Annonymous: 19h 11m 11s -18°55.2'
 110) Warning: 216G Sgr is ALONE (no PPM or CD or CPD star near it).
      Register 216G Sgr: 19h 32m 07s -31°14.8'
   Possible cause: nebula.
   Note: nearest PPM 299229 at 935.4 arcsec.
-**) USNO: Y 8493 = U 8692
+**) USNO: Y 8493 = U 8692 <LAM 00176>
 111) Warning: 49G Sco is ALONE (no PPM or CD or CPD star near it).
      Register 49G Sco: 16h 08m 48s -08°2.2'
   Note: nearest PPM 199464 at 24.8 arcsec.
@@ -2359,13 +2359,13 @@ Stars read from PPM: 468861
 116) Warning: Annonymous is ALONE (no PPM or CD or CPD star near it).
      Register Annonymous: 16h 32m 25s -35°54.3'
   Note: nearest PPM 295344 at 276.9 arcsec.
-**) USNO: Y 6979 = U 7103
-**) USNO: Y 6981 = U 7106
-**) USNO: Y 6984 = U 7110
-**) USNO: Y 6991 = U 7117
-**) USNO: Y 6998 = U 7125
-**) USNO: Y 7003 = U 7130
-**) USNO: Y 7004 = U 7131
+**) USNO: Y 6979 = U 7103 <BAC 05665>
+**) USNO: Y 6981 = U 7106 <MZ 120 00064>
+**) USNO: Y 6984 = U 7110 <BAC 05671>
+**) USNO: Y 6991 = U 7117 <BAC 05678>
+**) USNO: Y 6998 = U 7125 <BAC 05684>
+**) USNO: Y 7003 = U 7130 <>
+**) USNO: Y 7004 = U 7131 <BAC 05690>
 117) Warning: 115G Sco is ALONE (no PPM or CD or CPD star near it).
      Register 115G Sco: 16h 51m 10s -40°47.6'
   Note: nearest PPM 762397 at 617.4 arcsec.
@@ -2374,14 +2374,14 @@ Stars read from PPM: 468861
 119) Warning: 138G Sco is ALONE (no PPM or CD or CPD star near it).
      Register 138G Sco: 17h 08m 11s -35°35.6'
   Note: nearest PPM 296118 at 119.9 arcsec.
-**) USNO: Y 3333 = U 7467
+**) USNO: Y 3333 = U 7467 <LAC 07382>
 120) Warning: Annonymous is FAR from Y 7335 / U 6992 (dist = 1872.9 arcsec).
      Register Annonymous: 16h 32m 02s -32°11.0'
 121) Warning: Annonymous is ALONE (no PPM or CD or CPD star near it).
      Register Annonymous: 16h 32m 02s -32°11.0'
   Note: nearest PPM 747944 at 276.8 arcsec.
-**) USNO: Y 7340 = U 7475
-**) USNO: Y 7341 = U 7476
+**) USNO: Y 7340 = U 7475 <>
+**) USNO: Y 7341 = U 7476 <BAC 05964>
 122) Warning: 80G Scl is FAR from L 169 (dist = 1564.2 arcsec).
      Register 80G Scl: 00h 32m 24s -30°6.5'
 123) Warning: 80G Scl is ALONE (no PPM or CD or CPD star near it).
@@ -2539,7 +2539,7 @@ Stars read from PPM: 468861
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: T 1881 731 has no PPM / CD / CPD near it but has a nearby GSC star 0626800248 at 1.6 arcsec.
   Note: nearest PPM 234126 at 476.0 arcsec.
-**) USNO: Y 7659 = U 7804
+**) USNO: Y 7659 = U 7804 <>
 **) Note: T 1881 735 has no PPM / CD / CPD near it but has a nearby GSC star 0626800136 at 1.7 arcsec.
   Note: nearest PPM 234122 at 290.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2552,8 +2552,8 @@ Stars read from PPM: 468861
   Note: nearest PPM 234126 at 173.1 arcsec.
 **) Note: T 1881 745 has no PPM / CD / CPD near it but has a nearby GSC star 0626800025 at 2.4 arcsec.
   Note: nearest PPM 234137 at 255.4 arcsec.
-**) USNO: Y 7668 = U 7813
-**) USNO: Y 7670 = U 7815
+**) USNO: Y 7668 = U 7813 <>
+**) USNO: Y 7670 = U 7815 <>
 **) Note: T 1881 754 has no PPM / CD / CPD near it but has a nearby GSC star 0626400197 at 2.2 arcsec.
   Note: nearest PPM 234151 at 269.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2573,7 +2573,7 @@ Stars read from PPM: 468861
 **) Note: T 1881 778 has no PPM / CD / CPD near it but has a nearby GSC star 0626801236 at 3.8 arcsec.
   Note: nearest PPM 718894 at 371.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 7687 = U 7832
+**) USNO: Y 7687 = U 7832 <>
 **) Note: T 1881 780 has no PPM / CD / CPD near it but has a nearby GSC star 0626800282 at 2.6 arcsec.
   Note: nearest PPM 234189 at 419.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2602,7 +2602,7 @@ Stars read from PPM: 468861
 **) Note: T 1881 822 has no PPM / CD / CPD near it but has a nearby GSC star 0626801626 at 1.5 arcsec.
   Note: nearest PPM 234218 at 239.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 7704 = U 7851
+**) USNO: Y 7704 = U 7851 <>
 **) Note: T 1881 826 has no PPM / CD / CPD near it but has a nearby GSC star 0626801278 at 3.2 arcsec.
   Note: nearest PPM 718946 at 398.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2640,7 +2640,7 @@ Stars read from PPM: 468861
      Register T 1881 882: 18h 10m 12s59 -17°51'46"0
   Note: nearest PPM 719023 at 451.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 7736 = U 7886
+**) USNO: Y 7736 = U 7886 <>
 **) Note: T 1881 890 has no PPM / CD / CPD near it but has a nearby GSC star 0626902665 at 2.0 arcsec.
   Note: nearest PPM 234314 at 334.0 arcsec.
 26) Warning: T 1881 892 is ALONE (no PPM / CD / CPD / GSC star near it).
@@ -2668,7 +2668,7 @@ Stars read from PPM: 468861
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: T 1881 918 has no PPM / CD / CPD near it but has a nearby GSC star 0626901878 at 3.3 arcsec.
   Note: nearest PPM 234340 at 153.8 arcsec.
-**) USNO: Y 7750 = U 7900
+**) USNO: Y 7750 = U 7900 <>
 **) Note: T 1881 929 has no PPM / CD / CPD near it but has a nearby GSC star 0626902353 at 4.1 arcsec.
   Note: nearest PPM 234362 at 193.9 arcsec.
 **) Note: T 1881 930 has no PPM / CD / CPD near it but has a nearby GSC star 0626902035 at 1.4 arcsec.
@@ -2705,7 +2705,7 @@ Errors logged = 27
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
-**) USNO: Y 316 = U 324
+**) USNO: Y 316 = U 324 <MCZ 066 00145>
 1) Warning: T 1882 125 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 125: 05h 15m 08s29 -33°36'26"6
   Note: nearest PPM 281320 at 239.3 arcsec.
@@ -2751,19 +2751,19 @@ Stars read from PPM: 468861
 19) Warning: T 1882 584 (vmag = 7.7) has a near PPM 231150 star (vmag = 3.4) with a different magnitude (delta = 4.3).
 20) Warning: T 1882 622 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -76°871 (en 16h):  9.8 | 43m40.0s | 0.5'     (pag. 322)
-**) USNO: Y 6997 = U 7123
-**) USNO: Y 7331 = U 7467
-**) USNO: Y 7334 = U 7469
-**) USNO: Y 7335 = U 7470
-**) USNO: Y 7336 = U 7471
-**) USNO: Y 7340 = U 7475
-**) USNO: Y 7622 = U 7767
+**) USNO: Y 6997 = U 7123 <>
+**) USNO: Y 7331 = U 7467 <LAC 07382>
+**) USNO: Y 7334 = U 7469 <>
+**) USNO: Y 7335 = U 7470 <>
+**) USNO: Y 7336 = U 7471 <>
+**) USNO: Y 7340 = U 7475 <>
+**) USNO: Y 7622 = U 7767 <MZ 265 00038>
 **) Note: T 1882 801 has no PPM / CD / CPD near it but has a nearby GSC star 0626402529 at 3.1 arcsec.
   Note: nearest PPM 234070 at 419.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: T 1882 822 has no PPM / CD / CPD near it but has a nearby GSC star 0626800248 at 1.7 arcsec.
   Note: nearest PPM 234126 at 476.9 arcsec.
-**) USNO: Y 7659 = U 7804
+**) USNO: Y 7659 = U 7804 <>
 **) Note: T 1882 826 has no PPM / CD / CPD near it but has a nearby GSC star 0626800136 at 1.4 arcsec.
   Note: nearest PPM 234122 at 290.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2773,7 +2773,7 @@ Stars read from PPM: 468861
 **) Note: T 1882 829 has no PPM / CD / CPD near it but has a nearby GSC star 0626800910 at 2.5 arcsec.
   Note: nearest PPM 234122 at 298.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 7670 = U 7815
+**) USNO: Y 7670 = U 7815 <>
 **) Note: T 1882 839 has no PPM / CD / CPD near it but has a nearby GSC star 0626400197 at 3.1 arcsec.
   Note: nearest PPM 234151 at 270.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2828,7 +2828,7 @@ Stars read from PPM: 468861
 **) Note: T 1882 913 has no PPM / CD / CPD near it but has a nearby GSC star 0626902679 at 1.3 arcsec.
   Note: nearest PPM 234256 at 173.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 7735 = U 7882
+**) USNO: Y 7735 = U 7882 <>
 **) Note: T 1882 931 has no PPM / CD / CPD near it but has a nearby GSC star 0626902131 at 1.9 arcsec.
   Note: nearest PPM 719044 at 193.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2863,7 +2863,7 @@ Stars read from PPM: 468861
 **) Note: T 1882 978 has no PPM / CD / CPD near it but has a nearby GSC star 0626900288 at 2.2 arcsec.
   Note: nearest PPM 234395 at 59.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 10077 = U 10363
+**) USNO: Y 10077 = U 10363 <MZ 069 00008>
 Stars from Thome 1882 identified with PPM = 1259, CD = 1118 and CPD = 1163
 Stars from Thome 1882 with Lacaille = 48, Lalande = 24, OA = 149, Taylor = 2, Stone = 0, GC = 0 and USNO = 12
 RSME of distance (arcsec) = 2.43  among a total of 1259 stars
@@ -2900,7 +2900,7 @@ Errors logged = 6
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
-**) USNO: Y 91 = U 92
+**) USNO: Y 91 = U 92 <>
 **) Note: T 1884 92 has no PPM / CD / CPD near it but has a nearby GSC star 0536000886 at 1.8 arcsec.
   Note: nearest PPM 712104 at 814.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2911,8 +2911,8 @@ Stars read from PPM: 468861
   Note: no CD/CPD coverage for stars below 18°.
 2) Warning: T 1884 120 is FAR from GC 7778 (dist = 314.4 arcsec). Check if it is a 1/2 star in GC.
      Register T 1884 120: 06h 19m 00s00 -04°22'24"1
-**) USNO: Y 2790 = U 2859
-**) USNO: Y 3240 = U 3303
+**) USNO: Y 2790 = U 2859 <BON6 0600171>
+**) USNO: Y 3240 = U 3303 <MZ 101 00011>
 **) Note: T 1884 191 has no PPM / CD / CPD near it but has a nearby GSC star 0485500949 at 3.6 arcsec.
   Note: nearest PPM 191073 at 385.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -2938,12 +2938,12 @@ Stars read from PPM: 468861
   Note: nearest PPM 312858 at 359.0 arcsec.
 **) ZC 8h 1103 is also ALONE.
   Possible cause: lack of RA (s).
-**) USNO: Y 3382 = U 3451
+**) USNO: Y 3382 = U 3451 <MZ 090 00026>
 5) Warning: T 1884 251 (vmag = 10.0) has a near PPM 285738 star (vmag = 7.1) with a different magnitude (delta = 2.9).
 6) Warning: T 1884 251 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -35°5098 (en 8h):  7.0 | 45m29.5s | 28.0'     (pag. 188)
-**) USNO: Y 3739 = U 3817
-**) USNO: Y 3739 = U 3817
+**) USNO: Y 3739 = U 3817 <MZ 237 00017>
+**) USNO: Y 3739 = U 3817 <MZ 237 00017>
 7) Warning: T 1884 292 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -59°2753 (en 9h):  12.0 | 57m49.5s | 27.4'     (pag. 234)
 8) Warning: T 1884 319 is FAR from L 4223 (dist = 1008.5 arcsec).
@@ -2971,15 +2971,15 @@ Stars read from PPM: 468861
      Register T 1884 558: 14h 45m 05s51 -23°48'39"7
 18) Warning: T 1884 587 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -76°871 (en 16h):  9.8 | 43m40.0s | 0.5'     (pag. 322)
-**) USNO: Y 7052 = U 7180
-**) USNO: Y 7428 = U 7566
-**) USNO: Y 7433 = U 7573
-**) USNO: Y 7459 = U 7600
-**) USNO: Y 7509 = U 7651
+**) USNO: Y 7052 = U 7180 <TRZ 038 00010>
+**) USNO: Y 7428 = U 7566 <>
+**) USNO: Y 7433 = U 7573 <MZ 035 00009>
+**) USNO: Y 7459 = U 7600 <MZ 033 00024>
+**) USNO: Y 7509 = U 7651 <>
 **) Note: T 1884 753 has no PPM / CD / CPD near it but has a nearby GSC star 0626402529 at 1.4 arcsec.
   Note: nearest PPM 234070 at 416.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 7659 = U 7804
+**) USNO: Y 7659 = U 7804 <>
 **) Note: T 1884 763 has no PPM / CD / CPD near it but has a nearby GSC star 0626800889 at 0.4 arcsec.
   Note: nearest PPM 234131 at 269.7 arcsec.
 **) Note: T 1884 765 has no PPM / CD / CPD near it but has a nearby GSC star 0626800650 at 2.2 arcsec.
@@ -2992,13 +2992,13 @@ Stars read from PPM: 468861
   Note: nearest PPM 234126 at 173.5 arcsec.
 **) Note: T 1884 769 has no PPM / CD / CPD near it but has a nearby GSC star 0626800025 at 1.8 arcsec.
   Note: nearest PPM 234137 at 258.3 arcsec.
-**) USNO: Y 7668 = U 7813
-**) USNO: Y 7670 = U 7815
+**) USNO: Y 7668 = U 7813 <>
+**) USNO: Y 7670 = U 7815 <>
 **) Note: T 1884 777 has no PPM / CD / CPD near it but has a nearby GSC star 0627200060 at 0.6 arcsec.
   Note: nearest PPM 718866 at 461.7 arcsec.
 **) Note: T 1884 780 has no PPM / CD / CPD near it but has a nearby GSC star 0626801931 at 1.5 arcsec.
   Note: nearest PPM 234174 at 330.3 arcsec.
-**) USNO: Y 7687 = U 7832
+**) USNO: Y 7687 = U 7832 <>
 **) Note: T 1884 790 has no PPM / CD / CPD near it but has a nearby GSC star 0626800282 at 0.9 arcsec.
   Note: nearest PPM 234189 at 416.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -3010,7 +3010,7 @@ Stars read from PPM: 468861
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: T 1884 796 has no PPM / CD / CPD near it but has a nearby GSC star 0626800797 at 3.3 arcsec.
   Note: nearest PPM 718892 at 585.3 arcsec.
-**) USNO: Y 7704 = U 7851
+**) USNO: Y 7704 = U 7851 <>
 **) Note: T 1884 809 has no PPM / CD / CPD near it but has a nearby GSC star 0626801454 at 1.5 arcsec.
   Note: nearest PPM 234224 at 275.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -3032,7 +3032,7 @@ Stars read from PPM: 468861
      Register T 1884 841: 18h 11m 48s70 -17°09'42"7
   Note: nearest PPM 234330 at 43.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-**) USNO: Y 7750 = U 7900
+**) USNO: Y 7750 = U 7900 <>
 **) Note: T 1884 846 has no PPM / CD / CPD near it but has a nearby GSC star 0626900152 at 2.0 arcsec.
   Note: nearest PPM 234378 at 149.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -3408,9 +3408,9 @@ Stars read from PPM: 468861
 113) Warning: G 5849 reports 1.960 on precession RA but it should be -1.949 (diff=3.909).
      Register G 5849: 08h 51m 16s83 -78°56'48"8
 114) Warning: G 5875 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register G 5875: 08h 52m 44s63 -75°21'00"0
+     Register G 5875: 08h 53m 44s63 -75°21'00"0
   Possible cause: lack of Decl (s).
-  Note: nearest PPM 370107 at 129.8 arcsec.
+  Note: nearest PPM 370107 at 259.4 arcsec.
   Note: poor CD coverage for stars above 61°.
 115) Warning: G 5885 reports 1.279 on precession RA but it should be 1.179 (diff=0.100).
      Register G 5885: 08h 54m 28s01 -62°54'55"6
