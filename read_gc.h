@@ -26,5 +26,6 @@ struct GCstar_struct {
 int getGCStars();
 struct GCstar_struct *getGCStruct();
 void writeRegisterGC(int index);
+bool getGCStarData(int gcRef, int *index, double *x, double *y, double *z);
 void readGC();
 void logCauses(bool cumulus, bool nebula, double vmag, int RAs, double Decl, int Decls, int ppmIndex, double nearestPPMDistance);

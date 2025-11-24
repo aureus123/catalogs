@@ -42,6 +42,8 @@
 #define MAX_DIST_ZC_ZC 15.0
 #define CURATED true // true if curated CD catalog should be used
 
+// #define PRINT_NOTES  // uncomment if certain notes (**) should be printed
+
 // Here, we save 1875.0 coordinates of OA stars in rectangular form
 double oaX[MAXOASTAR], oaY[MAXOASTAR], oaZ[MAXOASTAR];
 int oaRef[MAXOASTAR];
@@ -1678,7 +1680,9 @@ void readUA() {
                         minDistance);
                     printf("     Register %s: %s\n", catgName, catLine);    
                 } else {
+                    #ifdef PRINT_NOTES
                     printf("**) USNO: Y %d = U %d <%s>\n", numRefCat, usnoRef[usnoIndex], usnoCatRef[usnoIndex]);
+                    #endif
                     checkUSNO++;
                 }
             }
@@ -2017,7 +2021,9 @@ void readThome(double epoch, const char *filename, int correction) {
                     minDistance);
                 printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
             } else {
+                #ifdef PRINT_NOTES
                 printf("**) USNO: Y %d = U %d <%s>\n", numRefCat, usnoRef[usnoIndex], usnoCatRef[usnoIndex]);
+                #endif
                 checkUSNO++;
             }
         }
@@ -2356,6 +2362,288 @@ void readGilliss() {
 }
 
 /*
+ * checkReferencesGC - solo cruza catalogo GC con otros
+ * (ya se deben haber leidos los catalogs OA, Lacaille, Taylor, Lalande y Stone)
+ * 
+ * Utiliza una referencia cruzada generada con IA
+ */
+void checkReferencesGC() {
+    char buffer[1024];
+
+    /* usamos catalogs GC */
+    struct GCstar_struct *GCstar = getGCStruct();
+    int GCstars = getGCStars();
+
+    printf("\n***************************************\n");
+    printf("Check cross-references from GC\n");
+
+    int checkLac = 0;
+    int checkLal = 0;
+    int checkTaylor = 0;
+    int checkOA = 0;
+    int checkStone = 0;
+    int checkUSNO = 0;
+    int errors = 0;
+
+    /* leemos referencias cruzadas */
+    FILE *stream = fopen("results/gc-ref.csv", "rt");
+    if (stream == NULL) {
+        perror("Cannot read CSV references");
+		exit(1);
+    }
+
+    FILE *output = fopen("results/gc-ref-curated.csv", "wt");
+    if (output == NULL) {
+        perror("Cannot write curated GC cross-reference");
+        exit(1);
+    }
+    fprintf(output, "StarNumber,Reference\n");
+
+    int line = 0;
+    while (fgets(buffer, 1023, stream) != NULL) {
+        line++;
+        if (line == 1) continue; /* salta header */
+
+        char subcell[5][50];
+        int count = 0;
+        int i = 0;
+        int j = 0;
+        while (buffer[i] != 0 && buffer[i] != '\n') {
+            char c = buffer[i++];
+            if (c == ',') {
+                subcell[count++][j] = 0;
+                j = 0;
+                if (count >= 5) {
+                    printf("Error parsing GC cross-reference on line %d: too many commas\n", line);
+                    bye("Bye!");
+                }
+                continue;
+            }
+            subcell[count][j++] = c;
+        }
+        subcell[count++][j] = 0;
+
+        /* lee número de estrella y coordenadas rectangulares */
+        int gcRef = atoi(subcell[0]);
+        double x, y, z;
+        int index;
+        bool found = getGCStarData(gcRef, &index, &x, &y, &z);
+        if (!found) {
+            printf("Note: Cannot find GC %d for cross-reference on line %d\n", gcRef, line);
+            continue;
+        }
+
+        /* chequea referencia */
+        if (!strncmp(&subcell[2][0], "L ", 2) && subcell[2][2] != '(') {
+            int numRefCat = atoi(&subcell[2][2]);
+            for (int i = 0; i < countLac; i++) {
+                if (lacRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    bool found = false;
+                    for (j = index - 3; j <= index + 3; j++) {
+                        if (j < 0 || j == index || j >= GCstars) continue;
+                        double xj = GCstar[j].x;
+                        double yj = GCstar[j].y;
+                        double zj = GCstar[j].z;
+                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, lacX[i], lacY[i], lacZ[i]);
+                        if (distj < MAX_DIST_CROSS) {
+                            #ifdef PRINT_NOTES
+                            printf("**) Note: Although GC %d is far, nearby GC %d is close to L %d (dist = %.1f arcsec).\n",
+                                gcRef,
+                                GCstar[j].gcRef,
+                                numRefCat,
+                                distj);
+                            #endif
+                            found = true;
+                            fprintf(output, "%d,L %d\n", GCstar[j].gcRef, numRefCat);   
+                        }
+                    }
+                    if (!found) {
+                        printf("%d) Warning: GC %d is FAR from L %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gcRef,
+                            numRefCat,
+                            dist);
+                        writeRegisterGC(index);
+                    }
+                } else {
+                    checkLac++;
+                    fprintf(output, "%d,L %d\n", gcRef, numRefCat);
+                }
+            }
+        }
+
+        if (!strncmp(&subcell[2][0], "T ", 2)) {
+            int numRefCat = atoi(&subcell[2][2]);
+            for (int i = 0; i < countTaylor; i++) {
+                if (tayRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, tayX[i], tayY[i], tayZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    bool found = false;
+                    for (j = index - 3; j <= index + 3; j++) {
+                        if (j < 0 || j == index || j >= GCstars) continue;
+                        double xj = GCstar[j].x;
+                        double yj = GCstar[j].y;
+                        double zj = GCstar[j].z;
+                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, tayX[i], tayY[i], tayZ[i]);
+                        if (distj < MAX_DIST_CROSS) {
+                            #ifdef PRINT_NOTES
+                            printf("**) Note: Although GC %d is far, nearby GC %d is close to T %d (dist = %.1f arcsec).\n",
+                                gcRef,
+                                GCstar[j].gcRef,
+                                numRefCat,
+                                distj);
+                            #endif    
+                            found = true;
+                            fprintf(output, "%d,T %d\n", GCstar[j].gcRef, numRefCat);    
+                        }
+                    }
+                    if (!found) {
+                        printf("%d) Warning: GC %d is FAR from T %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gcRef,
+                            numRefCat,
+                            dist);
+                        writeRegisterGC(index);
+                    }  
+                } else {
+                    checkTaylor++;
+                    fprintf(output, "%d,T %d\n", gcRef, numRefCat);
+                }
+            }
+        }
+
+        if ((!strncmp(&subcell[2][0], "Ll ", 3) || !strncmp(&subcell[2][0], "LL ", 3))
+               && subcell[2][3] != '(') {
+            int numRefCat = atoi(&subcell[2][3]);
+            for (int i = 0; i < countLal; i++) {
+                if (lalRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    bool found = false;
+                    for (j = index - 3; j <= index + 3; j++) {
+                        if (j < 0 || j == index || j >= GCstars) continue;
+                        double xj = GCstar[j].x;
+                        double yj = GCstar[j].y;
+                        double zj = GCstar[j].z;
+                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, lalX[i], lalY[i], lalZ[i]);
+                        if (distj < MAX_DIST_CROSS) {
+                            #ifdef PRINT_NOTES
+                            printf("**) Note: Although GC %d is far, nearby GC %d is close to Lal %d (dist = %.1f arcsec).\n",
+                                gcRef,
+                                GCstar[j].gcRef,
+                                numRefCat,
+                                distj);
+                            #endif    
+                            found = true;
+                            fprintf(output, "%d,Lal %d\n", GCstar[j].gcRef, numRefCat);    
+                        }
+                    }
+                    if (!found) {
+                        printf("%d) Warning: GC %d is FAR from Lal %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gcRef,
+                            numRefCat,
+                            dist);
+                        writeRegisterGC(index);
+                    }   
+                } else {
+                    checkLal++;
+                    fprintf(output, "%d,Lal %d\n", gcRef, numRefCat);
+                }
+            }
+        }
+
+        if (!strncmp(&subcell[2][0], "St ", 3)) {
+            int numRefCat = atoi(&subcell[2][3]);
+            for (int i = 0; i < countSt; i++) {
+                if (stRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, stX[i], stY[i], stZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    bool found = false;
+                    for (j = index - 3; j <= index + 3; j++) {
+                        if (j < 0 || j == index || j >= GCstars) continue;
+                        double xj = GCstar[j].x;
+                        double yj = GCstar[j].y;
+                        double zj = GCstar[j].z;
+                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, stX[i], stY[i], stZ[i]);
+                        if (distj < MAX_DIST_CROSS) {
+                            #ifdef PRINT_NOTES
+                            printf("**) Note: Although GC %d is far, nearby GC %d is close to St %d (dist = %.1f arcsec).\n",
+                                gcRef,
+                                GCstar[j].gcRef,
+                                numRefCat,
+                                distj);
+                            #endif    
+                            found = true;
+                            fprintf(output, "%d,St %d\n", GCstar[j].gcRef, numRefCat);    
+                        }
+                    }
+                    if (!found) {
+                        printf("%d) Warning: GC %d is FAR from St %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gcRef,
+                            numRefCat,
+                            dist);
+                        writeRegisterGC(index);
+                    }   
+                } else {
+                    checkStone++;
+                    fprintf(output, "%d,St %d\n", gcRef, numRefCat);
+                }
+            }
+        }
+
+        if (!strncmp(&subcell[2][0], "OA ", 3) && subcell[2][3] != '(') {
+            int numRefCat = atoi(&subcell[2][3]);
+            for (int i = 0; i < countOA; i++) {
+                if (oaRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    bool found = false;
+                    for (j = index - 3; j <= index + 3; j++) {
+                        if (j < 0 || j == index || j >= GCstars) continue;
+                        double xj = GCstar[j].x;
+                        double yj = GCstar[j].y;
+                        double zj = GCstar[j].z;
+                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, oaX[i], oaY[i], oaZ[i]);
+                        if (distj < MAX_DIST_CROSS) {
+                            #ifdef PRINT_NOTES
+                            printf("**) Note: Although GC %d is far, nearby GC %d is close to OA %d (dist = %.1f arcsec).\n",
+                                gcRef,
+                                GCstar[j].gcRef,
+                                numRefCat,
+                                distj);
+                            #endif    
+                            found = true;
+                            fprintf(output, "%d,OA %d\n", GCstar[j].gcRef, numRefCat);    
+                        }
+                    }
+                    if (!found) {
+                        printf("%d) Warning: GC %d is FAR from OA %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            gcRef,
+                            numRefCat,
+                            dist);
+                        writeRegisterGC(index);
+                    }
+                } else {
+                    checkOA++;
+                    fprintf(output, "%d,OA %d\n", gcRef, numRefCat);
+                }
+            }
+        }
+    }
+    fclose(output);
+    fclose(stream);
+
+    printf("Stars from GC with Lacaille = %d, Lalande = %d, OA = %d, Taylor = %d, Stone = %d and USNO = %d\n",
+        checkLac, checkLal, checkOA, checkTaylor, checkStone, checkUSNO);
+    printf("Errors logged = %d\n", errors);
+}
+
+/*
  * main - comienzo de la aplicacion
  */
 int main(int argc, char** argv)
@@ -2383,14 +2671,13 @@ int main(int argc, char** argv)
 
     /* leemos catalogo GC */
 	readGC();
-	struct GCstar_struct *GCstar = getGCStruct();
-	int GCstars = getGCStars();
 
     /* leemos y cruzamos Taylor */
     readTaylor();
 
     /* leemos, cruzamos y revisamos identificaciones de Yarnall */
     readUSNO();
+    checkReferencesGC(); // también chequeamos referencias de GC
 
     /* leemos, cruzamos y revisamos Uranometria Argentina */
     readUA();

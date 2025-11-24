@@ -54,6 +54,25 @@ void writeRegisterGC(int index) {
 }
 
 /*
+ * Lee coordenadas rectangulares de una estrella GC
+ * Si devuelve true, la estrella fue encontrada y se cargaron las coordenadas e índice
+ */
+bool getGCStarData(int gcRef, int *index, double *x, double *y, double *z)
+{
+    bool found = false;
+    for (int i = 0; i < GCstars; i++) {
+        if (GCstar[i].gcRef != gcRef) continue;
+        *x = GCstar[i].x;
+        *y = GCstar[i].y;
+        *z = GCstar[i].z;
+        *index = i;
+        found = true;
+        break;
+    }
+	return found;
+}
+
+/*
  * Lee estrellas del Primer Catalogo Argentino, coordenadas 1875.0
  * supuestamente todas estas estrellas deberian estar incluidas en el catálogo CD
  * (excepto las que están fuera de la faja, y algunas de CD marcadas como "dobles")
