@@ -79,22 +79,68 @@ void rec2sph(double x, double y, double z, double *ra, double *decl)
 /*
  * calcCosDist - calcula el producto escalar entre 2 coordenadas de la esfera unidad
  * puede ir de -1 (180 grados de distancia) hasta 1 (0 grados de distancia)
-*/
+ */
 double calcCosDistance(double x1, double y1, double z1, double x2, double y2, double z2)
 {
 	return x1*x2 + y1*y2 + z1*z2;
 }
 
 /*
-* calcAngularDist - calcula la distancia angular entre 2 coordenadas de la esfera unidad
-* puede ir de 0 a 180 grados
-*/
+ * calcAngularDist - calcula la distancia angular entre 2 coordenadas de la esfera unidad
+ * puede ir de 0 a 180 grados
+ */
 double calcAngularDistance(double x1, double y1, double z1, double x2, double y2, double z2)
 {
 	double cosdist = calcCosDistance(x1, y1, z1, x2, y2, z2);
 	if (cosdist < -1.0) cosdist = -1.0;
 	if (cosdist > 1.0) cosdist = 1.0;
 	return acos(cosdist) * 180.0 / PI;
+}
+
+
+/*
+ * solve3x3 - small 3x3 linear system solver with partial pivoting.
+ * Returns true on success, false on singular.
+ */
+bool solve3x3(double A[3][3], double b[3], double x[3]) {
+    int p[3] = {0, 1, 2};
+    // Partial pivoting for column 0
+    int maxr = 0;
+    if (fabs(A[1][0]) > fabs(A[maxr][0])) maxr = 1;
+    if (fabs(A[2][0]) > fabs(A[maxr][0])) maxr = 2;
+    if (maxr != 0) {
+        for (int j = 0; j < 3; ++j) { double t = A[0][j]; A[0][j] = A[maxr][j]; A[maxr][j] = t; }
+        double tb = b[0]; b[0] = b[maxr]; b[maxr] = tb;
+    }
+    if (fabs(A[0][0]) < 1e-15) return false;
+    double m10 = A[1][0] / A[0][0];
+    double m20 = A[2][0] / A[0][0];
+    for (int j = 1; j < 3; ++j) {
+        A[1][j] -= m10 * A[0][j];
+        A[2][j] -= m20 * A[0][j];
+    }
+    b[1] -= m10 * b[0];
+    b[2] -= m20 * b[0];
+
+    // Pivot for column 1
+    maxr = 1;
+    if (fabs(A[2][1]) > fabs(A[maxr][1])) maxr = 2;
+    if (maxr != 1) {
+        for (int j = 1; j < 3; ++j) { double t = A[1][j]; A[1][j] = A[maxr][j]; A[maxr][j] = t; }
+        double tb = b[1]; b[1] = b[maxr]; b[maxr] = tb;
+    }
+    if (fabs(A[1][1]) < 1e-15) return false;
+    double m21 = A[2][1] / A[1][1];
+    A[2][2] -= m21 * A[1][2];
+    b[2] -= m21 * b[1];
+
+    if (fabs(A[2][2]) < 1e-15) return false;
+
+    // Back substitution
+    x[2] = b[2] / A[2][2];
+    x[1] = (b[1] - A[1][2] * x[2]) / A[1][1];
+    x[0] = (b[0] - A[0][1] * x[1] - A[0][2] * x[2]) / A[0][0];
+    return true;
 }
 
 /*

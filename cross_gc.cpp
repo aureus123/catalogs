@@ -132,7 +132,7 @@ int main(int argc, char** argv)
             ppmFound = true;
 
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
 		} else {
             if (PRINT_WARNINGS) {
                 printf("Warning: GC has no PPM star near it.\n");
@@ -151,7 +151,7 @@ int main(int argc, char** argv)
                 cpdFound = true;
 
 			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+			    writeCrossEntry(crossCPDStream, catName, cdName, vmag, minDistance);
 			} else {
 				if (PRINT_WARNINGS) {
 					printf("Warning: GC has no CPD star near it.\n");
@@ -183,7 +183,7 @@ int main(int argc, char** argv)
                 cdFound = true;
 
 			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+			    writeCrossEntry(crossCDStream, catName, cdName, vmag, minDistance);
 			} else {
 				if (PRINT_WARNINGS) {
 					printf("Warning: GC has no CD star near it.\n");

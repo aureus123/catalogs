@@ -11,62 +11,19 @@
 #include "read_ppm.h"
 
 #define STRING_SIZE 14
-#define MAX_CUSTOM_STARS 10000
+#define MAX_CUSTOM_STARS 200
 #define THRESHOLD_PPM 15.0
 #define THRESHOLD_MAG 1.5
 #define ZEROPOINT_IMAG 17.37
 #define CROSS_OLD_CATALOGS true
 
-/* Structure to store custom star data */
+/* Structure to store custom star data (histogram).
+ * Note: instrumental magnitudes are given by indices,
+ * e.g. customStars[112] gives consolidated info about stars of 11.2 imag. */
 struct CustomStars {
-    int index;
-    int ppmIndex;
-    double RA;
-    double Decl;
-    double imag;  /* instrumental magnitude */
+    double ppmVmag;
+    int count;
 };
-
-/* Small 3x3 linear system solver with partial pivoting. Returns 1 on success, 0 on singular. */
-static int solve3x3(double A[3][3], double b[3], double x[3]) {
-    int p[3] = {0, 1, 2};
-    // Partial pivoting for column 0
-    int maxr = 0;
-    if (fabs(A[1][0]) > fabs(A[maxr][0])) maxr = 1;
-    if (fabs(A[2][0]) > fabs(A[maxr][0])) maxr = 2;
-    if (maxr != 0) {
-        for (int j = 0; j < 3; ++j) { double t = A[0][j]; A[0][j] = A[maxr][j]; A[maxr][j] = t; }
-        double tb = b[0]; b[0] = b[maxr]; b[maxr] = tb;
-    }
-    if (fabs(A[0][0]) < 1e-15) return 0;
-    double m10 = A[1][0] / A[0][0];
-    double m20 = A[2][0] / A[0][0];
-    for (int j = 1; j < 3; ++j) {
-        A[1][j] -= m10 * A[0][j];
-        A[2][j] -= m20 * A[0][j];
-    }
-    b[1] -= m10 * b[0];
-    b[2] -= m20 * b[0];
-
-    // Pivot for column 1
-    maxr = 1;
-    if (fabs(A[2][1]) > fabs(A[maxr][1])) maxr = 2;
-    if (maxr != 1) {
-        for (int j = 1; j < 3; ++j) { double t = A[1][j]; A[1][j] = A[maxr][j]; A[maxr][j] = t; }
-        double tb = b[1]; b[1] = b[maxr]; b[maxr] = tb;
-    }
-    if (fabs(A[1][1]) < 1e-15) return 0;
-    double m21 = A[2][1] / A[1][1];
-    A[2][2] -= m21 * A[1][2];
-    b[2] -= m21 * b[1];
-
-    if (fabs(A[2][2]) < 1e-15) return 0;
-
-    // Back substitution
-    x[2] = b[2] / A[2][2];
-    x[1] = (b[1] - A[1][2] * x[2]) / A[1][1];
-    x[0] = (b[0] - A[0][1] * x[1] - A[0][2] * x[2]) / A[0][0];
-    return 1;
-}
 
 /*
  * readCrossFile - lee archivos de identificaciones cruzadas en formato CSV
@@ -76,7 +33,7 @@ void readCrossFile(
     char buffer[1024];
     char targetRef[STRING_SIZE];
     int ppmRef, cdDeclRef, cdNumRef, cpdDeclRef, cpdNumRef;
-    float minDistance;
+    float vmag, minDistance;
 
     /* read cross file between PPM and target */
     printf("Reading cross file %s... ", ppm_file);
@@ -93,7 +50,7 @@ void readCrossFile(
             first_line = false;
             continue;
         }
-        sscanf(buffer, "%13[^,],PPM %d,%f\n", targetRef, &ppmRef, &minDistance);
+        sscanf(buffer, "%13[^,],PPM %d,%f,%f\n", targetRef, &ppmRef, &vmag, &minDistance);
         // printf("Cross: %s, PPM %d, dist = %.1f arcsec.\n", targetRef, ppmRef, minDistance);
         if (minDistance < __FLT_EPSILON__ || minDistance > THRESHOLD_PPM) {
             // omit identifications with zero distance (bug) or too far away
@@ -188,8 +145,12 @@ int main(int argc, char** argv)
     double RA, Decl, flux, background;
     int matches = 0;
 
-    /* Array to store custom stars data */
+    /* Array to store histogram of custom stars based on instrumental magnitudes. */
     struct CustomStars customStars[MAX_CUSTOM_STARS];
+    for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
+        customStars[i].ppmVmag = 0.0;
+        customStars[i].count = 0;
+    }
     int customStarCount = 0;
     
     /* Skip header lines */
@@ -260,14 +221,16 @@ int main(int argc, char** argv)
             //       starIndex, flux, imag, PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString, minDistance);
             
             /* Save match in custom stars structure, but only those no so bright or with photometric magnitude. */
-            if (PPMstar[ppmIndex].vmag > 3.0 &&
-                    customStarCount < MAX_CUSTOM_STARS) {
-                customStars[customStarCount].index = starIndex;
-                customStars[customStarCount].ppmIndex = ppmIndex;
-                customStars[customStarCount].RA = RA;
-                customStars[customStarCount].Decl = Decl;
-                customStars[customStarCount].imag = imag;
-                customStarCount++;
+            if (PPMstar[ppmIndex].vmag > 3.0) {
+                int index = (int)(10.0 * imag + 0.5);
+                if (index < 0 || index >= MAX_CUSTOM_STARS) {
+                    printf("Warning: Index out of range at line %d (imag = %.2f)\n", starIndex, imag);
+                    abort();
+                }
+                customStars[index].ppmVmag += PPMstar[ppmIndex].vmag;
+                if (++customStars[index].count == 1) {
+                    customStarCount++;
+                }
             }
             
             PPMstar[ppmIndex].discard = true;
@@ -282,7 +245,20 @@ int main(int argc, char** argv)
     fclose(coordFile);
     fclose(fluxFile);
     fclose(crossFile);
-    printf("\nTotal matches found: %d\n", matches);
+    printf("\nTotal matches found: %d, custom stars registered: %d\n", matches, customStarCount);
+
+    // Compute averages and display histogram
+    printf("\nHistogram of custom stars:\n");
+    printf("imag     ppmVmag     count\n");
+    for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
+        if (customStars[i].count == 0) {
+            continue;
+        }
+        double imag = i / 10.0;
+        double avgPpmVmag = customStars[i].ppmVmag / customStars[i].count;
+        printf("%-8.1f %-11.2f %d\n", imag, avgPpmVmag, customStars[i].count);
+        customStars[i].ppmVmag = avgPpmVmag;
+    }
 
     /* Perform constant regression fit between instrumental and PPM V magnitudes */
     if (customStarCount > 5) {
@@ -291,40 +267,39 @@ int main(int argc, char** argv)
         /* Calculate constant fit: Vmag = zeroPoint + imag */
         double sum_vmag = 0.0, sum_imag = 0.0;
         
-        for (int i = 0; i < customStarCount; i++) {
-            int ppmIndex = customStars[i].ppmIndex;
-            sum_vmag += PPMstar[ppmIndex].vmag;
-            sum_imag += customStars[i].imag;
+        for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
+            if (customStars[i].count == 0) {
+                continue;
+            }
+            double ppm_vmag = customStars[i].ppmVmag;
+            double imag = i / 10.0;
+            sum_vmag += ppm_vmag;
+            sum_imag += imag;
         }
         
         /* Calculate zero point */
         double zeroPoint = (sum_vmag - sum_imag) / customStarCount;
         
-        printf("Constant fit: Vmag = %.3f + imag\n", zeroPoint);
+        printf(" 1) Constant fit: Vmag = %.3f + imag\n", zeroPoint);
         
         /* Calculate calibrated magnitudes, RMSE, and MAPE for constant fit */
         double sum_sq_error = 0.0;
         double sum_abs_percentage_error = 0.0;
-        printf("\nConstant fit worst calibrated magnitudes:\n");
-        
-        for (int i = 0; i < customStarCount; i++) {
-            int ppmIndex = customStars[i].ppmIndex;
-            double ppm_vmag = PPMstar[ppmIndex].vmag;
-            double calibrated_vmag = zeroPoint + customStars[i].imag;
+        for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
+            if (customStars[i].count == 0) {
+                continue;
+            }
+            double ppm_vmag = customStars[i].ppmVmag;
+            double imag = i / 10.0;
+            double calibrated_vmag = zeroPoint + imag;
             double error = fabs(calibrated_vmag - ppm_vmag);
             sum_sq_error += error * error;
             sum_abs_percentage_error += error / ppm_vmag * 100.0;
-
-            if (error > THRESHOLD_MAG) {
-                printf("Star %d has Vmag=%.2f while PPM %d / %s has Vmag=%.2f, difference=%.2f\n", 
-                        customStars[i].index, calibrated_vmag, PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString, ppm_vmag, error);
-            }
         }
-        
         double rmse = sqrt(sum_sq_error / customStarCount);
         double mape = sum_abs_percentage_error / customStarCount;
-        printf("\nConstant fit RMSE: %.3f magnitudes\n", rmse);
-        printf("Constant fit MAPE: %.2f%%\n", mape);
+        printf("\n    Constant fit RMSE: %.3f magnitudes\n", rmse);
+        printf("    Constant fit MAPE: %.2f%%\n", mape);
         
         /* Now perform linear regression fit */
         printf("\nPerforming linear regression fit...\n");
@@ -333,12 +308,16 @@ int main(int argc, char** argv)
         double sum_imag_lin = 0.0, sum_vmag_lin = 0.0;
         double sum_imag_vmag = 0.0, sum_imag_sq = 0.0;
         
-        for (int i = 0; i < customStarCount; i++) {
-            int ppmIdx = customStars[i].ppmIndex;
-            sum_imag_lin += customStars[i].imag;
-            sum_vmag_lin += PPMstar[ppmIdx].vmag;
-            sum_imag_vmag += customStars[i].imag * PPMstar[ppmIdx].vmag;
-            sum_imag_sq += customStars[i].imag * customStars[i].imag;
+        for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
+            if (customStars[i].count == 0) {
+                continue;
+            }
+            double imag = i / 10.0;
+            double ppm_vmag = customStars[i].ppmVmag;
+            sum_imag_lin += imag;
+            sum_vmag_lin += ppm_vmag;
+            sum_imag_vmag += imag * ppm_vmag;
+            sum_imag_sq += imag * imag;
         }
         
         double mean_imag = sum_imag_lin / customStarCount;
@@ -349,31 +328,26 @@ int main(int argc, char** argv)
         double factor = (sum_imag_vmag - customStarCount * mean_imag * mean_vmag) / denominator;
         double linearZeroPoint = mean_vmag - factor * mean_imag;
         
-        printf("Linear fit: Vmag = %.3f + %.3f * imag\n", linearZeroPoint, factor);
+        printf(" 2) Linear fit: Vmag = %.3f + %.3f * imag\n", linearZeroPoint, factor);
         
         /* Calculate calibrated magnitudes, RMSE, and MAPE for linear fit */
         sum_sq_error = 0.0;
         sum_abs_percentage_error = 0.0;
-        printf("\nLinear fit worst calibrated magnitudes:\n");
-        
-        for (int i = 0; i < customStarCount; i++) {
-            int ppmIndex = customStars[i].ppmIndex;
-            double ppm_vmag = PPMstar[ppmIndex].vmag;
-            double calibrated_vmag = linearZeroPoint + factor * customStars[i].imag;
+        for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
+            if (customStars[i].count == 0) {
+                continue;
+            }
+            double imag = i / 10.0;
+            double ppm_vmag = customStars[i].ppmVmag;
+            double calibrated_vmag = linearZeroPoint + factor * imag;
             double error = fabs(calibrated_vmag - ppm_vmag);
             sum_sq_error += error * error;
             sum_abs_percentage_error += error / ppm_vmag * 100.0;
-
-            if (error > THRESHOLD_MAG) {
-                printf("Star %d has Vmag=%.2f while PPM %d / %s has Vmag=%.2f, difference=%.2f\n", 
-                        customStars[i].index, calibrated_vmag, PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString, ppm_vmag, error);
-            }
         }
-        
         rmse = sqrt(sum_sq_error / customStarCount);
         mape = sum_abs_percentage_error / customStarCount;
-        printf("\nLinear fit RMSE: %.3f magnitudes\n", rmse);
-        printf("Linear fit MAPE: %.2f%%\n", mape);
+        printf("\n    Linear fit RMSE: %.3f magnitudes\n", rmse);
+        printf("    Linear fit MAPE: %.2f%%\n", mape);
         
         /* Now perform quadratic regression fit (centered, solved stably) */
         printf("\nPerforming quadratic regression fit...\n");
@@ -383,9 +357,13 @@ int main(int argc, char** argv)
         double S0 = (double)customStarCount;
         double Sx = 0.0, Sx2 = 0.0, Sx3 = 0.0, Sx4 = 0.0;
         double Sy = 0.0, Sxy = 0.0, Sx2y = 0.0;
-        for (int i = 0; i < customStarCount; i++) {
-            double x = customStars[i].imag - xmean;
-            double y = PPMstar[customStars[i].ppmIndex].vmag;
+        for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
+            if (customStars[i].count == 0) {
+                continue;
+            }
+            double imag = i / 10.0;
+            double x = imag - xmean;
+            double y = customStars[i].ppmVmag;
             double x2 = x * x;
             Sx   += x;
             Sx2  += x2;
@@ -415,34 +393,29 @@ int main(int argc, char** argv)
             double quadFactor    = b_c - 2.0 * c_c * xmean;
             double quad          = c_c;
 
-            printf("Quadratic fit: Vmag = %.3f + %.3f * imag + %.3f * imag^2\n", quadZeroPoint, quadFactor, quad);
+            printf(" 3) Quadratic fit: Vmag = %.3f + %.3f * imag + %.3f * imag^2\n", quadZeroPoint, quadFactor, quad);
 
             /* Calculate calibrated magnitudes, RMSE, and MAPE for quadratic fit */
             sum_sq_error = 0.0;
             sum_abs_percentage_error = 0.0;
-            printf("\nQuadratic fit worst calibrated magnitudes:\n");
-
-            for (int i = 0; i < customStarCount; i++) {
-                int ppmIndex = customStars[i].ppmIndex;
-                double trueV = PPMstar[ppmIndex].vmag;
-                double x = customStars[i].imag;
-                double yhat = quadZeroPoint + quadFactor * x + quad * x * x;
+            for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
+                if (customStars[i].count == 0) {
+                    continue;
+                }
+                double imag = i / 10.0;
+                double trueV = customStars[i].ppmVmag;
+                double yhat = quadZeroPoint + quadFactor * imag + quad * imag * imag;
                 double err = fabs(yhat - trueV);
                 sum_sq_error += err * err;
                 sum_abs_percentage_error += err / trueV * 100.0;
-
-                if (err > THRESHOLD_MAG) {
-                    printf("Star %d has Vmag=%.2f while PPM %d / %s has Vmag=%.2f, difference=%.2f\n",
-                           customStars[i].index, yhat, PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString, trueV, err);
-                }
             }
 
             rmse = sqrt(sum_sq_error / customStarCount);
             mape = sum_abs_percentage_error / customStarCount;
-            printf("\nQuadratic fit RMSE: %.3f magnitudes\n", rmse);
-            printf("Quadratic fit MAPE: %.2f%%\n", mape);
+            printf("\n    Quadratic fit RMSE: %.3f magnitudes\n", rmse);
+            printf("    Quadratic fit MAPE: %.2f%%\n", mape);
         }
     }
 
     return 0;
-} 
+}

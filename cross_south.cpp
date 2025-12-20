@@ -111,19 +111,19 @@ void saveZC(int RAh, int RAs, int Decls,
         countPPMZC++;
         struct PPMstar_struct *PPMstar = getPPMStruct();
         snprintf(catName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-        writeCrossEntry(crossPPMZCStream, zcName, catName, minPPMDistance);
+        writeCrossEntry(crossPPMZCStream, zcName, catName, 0.0, minPPMDistance);
     }
     if (cdFound) {
         countCDZC++;
         struct DMstar_struct *CDstar = getDMStruct();
         snprintf(catName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-        writeCrossEntry(crossCDZCStream, zcName, catName, minCDDistance);
+        writeCrossEntry(crossCDZCStream, zcName, catName, 0.0, minCDDistance);
     }
     if (cpdFound) {
         countCPDZC++;
         struct CPDstar_struct *CPDstar = getCPDStruct();
         snprintf(catName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-        writeCrossEntry(crossCPDZCStream, zcName, catName, minCPDDistance);
+        writeCrossEntry(crossCPDZCStream, zcName, catName, 0.0, minCPDDistance);
     }
 
     if (!ppmFound && !cdFound && !cpdFound) {
@@ -267,7 +267,7 @@ void readGC2() {
             ppmFound = true;
 
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
 		}
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -287,7 +287,7 @@ void readGC2() {
                 cpdFound = true;
 
 			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+			    writeCrossEntry(crossCPDStream, catName, cdName, vmag, minDistance);
             }
         }
 
@@ -315,7 +315,7 @@ void readGC2() {
                 cdFound = true;
 
 			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+			    writeCrossEntry(crossCDStream, catName, cdName, vmag, minDistance);
             }
 		}
 
@@ -471,7 +471,7 @@ void readWeiss() {
             ppmFound = true;
 
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
 		}
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -491,7 +491,7 @@ void readWeiss() {
                 cpdFound = true;
 
 			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+			    writeCrossEntry(crossCPDStream, catName, cdName, vmag, minDistance);
             }
         }
 		
@@ -519,7 +519,7 @@ void readWeiss() {
                 cdFound = true;
 
 			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+			    writeCrossEntry(crossCDStream, catName, cdName, vmag, minDistance);
             }
 		}
 
@@ -652,7 +652,7 @@ void readLalande() {
             if (catRef > 0) {
 			    snprintf(catName, 20, "Lal %d", catRef);
 			    snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			    writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			    writeCrossEntry(crossPPMStream, catName, ppmName, 0.0, minDistance);
             }
 		}
 
@@ -815,7 +815,7 @@ void readStone() {
             if (lacailleRef > 0) {
 			    snprintf(catName, 20, "L %d", lacailleRef);
 			    snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			    writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			    writeCrossEntry(crossPPMStream, catName, ppmName, 0.0, minDistance);
             }
 		}
 
@@ -838,7 +838,7 @@ void readStone() {
                 if (lacailleRef > 0) {
 			        snprintf(catName, 20, "L %d", lacailleRef);
 			        snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-			        writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+			        writeCrossEntry(crossCPDStream, catName, cdName, 0.0, minDistance);
                 }
             }
         }
@@ -869,7 +869,7 @@ void readStone() {
                 if (lacailleRef > 0) {
     			    snprintf(catName, 20, "L %d", lacailleRef);
 	    		    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-		    	    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+		    	    writeCrossEntry(crossCDStream, catName, cdName, 0.0, minDistance);
                 }
             }
 		}
@@ -1020,7 +1020,7 @@ void readTaylor() {
 
 			snprintf(catName, 20, "T %d", taylorRef);
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			writeCrossEntry(crossPPMStream, catName, ppmName, 0.0, minDistance);
 		}
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -1183,13 +1183,11 @@ void readUSNO() {
 
         snprintf(catName, 20, "U %d", numRef);
 
-		/* lee magnitud */
+		/* lee magnitud, si es 0 indica ausencia de magnitud */
 		readField(buffer, cell, 36, 3);
 		float vmag = atof(cell)/10.0;
-
         if (vmag < __FLT_EPSILON__) {
-            /* si la magnitud no existe, considerar una magnitud superior a 12 */
-            vmag = 12.0001;
+            vmag = 0.0;
         }
 
         bool ppmFound = false;
@@ -1202,7 +1200,7 @@ void readUSNO() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag < 12.0 && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -1224,7 +1222,7 @@ void readUSNO() {
             ppmFound = true;
 
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
 		}
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -1244,7 +1242,7 @@ void readUSNO() {
                 cpdFound = true;
 
 			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-			    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+			    writeCrossEntry(crossCPDStream, catName, cdName, vmag, minDistance);
             }
         }
 		
@@ -1256,7 +1254,7 @@ void readUSNO() {
             findDMByCoordinates(x, y, z, Decl1875, &cdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CD) {
 			    float cdVmag = CDstar[cdIndex].vmag;
-			    if (vmag < 12.0 && cdVmag < 29.9) {
+			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9) {
 				    float delta = fabs(vmag - cdVmag);
 				    if (delta >= MAX_MAGNITUDE) {
 					    printf("%d) Warning: U %d (vmag = %.1f) has a near CD with dif. magnitude (delta = %.1f). Check dpl.\n",
@@ -1272,7 +1270,7 @@ void readUSNO() {
                 cdFound = true;
 
 			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-			    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+			    writeCrossEntry(crossCDStream, catName, cdName, vmag, minDistance);
             }
 		}
 
@@ -1520,6 +1518,38 @@ void readUA() {
             snprintf(catName, 11, "Annonymous");
             snprintf(catgName, 11, "Annonymous");
         }
+        
+        // Lee magnitud (puede ser un entero, un flotante, una fracción o una palabra)
+        double vmag = 0.0;
+        readField(buffer, cell, 120, 5);
+        if (strstr(cell, "var.") != NULL || strstr(cell, "cum.") != NULL || strstr(cell, "neb.") != NULL) {
+            vmag = 0.0;
+        } else {
+            char *fracPtr = strstr(cell, " 1/");
+            if (fracPtr == NULL) {
+                fracPtr = strstr(cell, " 3/");
+            }
+            if (fracPtr != NULL) {
+                // Tiene fracción: interpreta la parte entera
+                char intPart[10];
+                int len = fracPtr - cell;
+                strncpy(intPart, cell, len);
+                intPart[len] = '\0';
+                vmag = atof(intPart);
+                
+                // Agrega la fracción
+                if (strstr(fracPtr, "1/2") != NULL) {
+                    vmag += 0.5;
+                } else if (strstr(fracPtr, "1/4") != NULL) {
+                    vmag += 0.2;
+                } else if (strstr(fracPtr, "3/4") != NULL) {
+                    vmag += 0.8;
+                }
+            } else {
+                // No tiene fracción: interpreta como número normal
+                vmag = atof(cell);
+            }
+        }
 
         bool ppmFound = false;
 		int ppmIndex = -1;
@@ -1536,7 +1566,7 @@ void readUA() {
 
             if (existsRef) {
 			    snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			    writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			    writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
             }
 		}
 
@@ -1552,7 +1582,7 @@ void readUA() {
 
                 if (existsRef) {
 			        snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-			        writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+			        writeCrossEntry(crossCPDStream, catName, cdName, vmag, minDistance);
                 }
             }
         }
@@ -1569,7 +1599,7 @@ void readUA() {
 
                 if (existsRef) {
 			        snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-			        writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+			        writeCrossEntry(crossCDStream, catName, cdName, vmag, minDistance);
                 }
             }
 		}
@@ -2207,7 +2237,7 @@ void readGilliss() {
             ppmFound = true;
 
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, minDistance);
+			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
 		}
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -2227,7 +2257,7 @@ void readGilliss() {
             cpdFound = true;
 
 		    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-		    writeCrossEntry(crossCPDStream, catName, cdName, minDistance);
+		    writeCrossEntry(crossCPDStream, catName, cdName, vmag, minDistance);
         }
 		
         bool cdFound = false;
@@ -2254,7 +2284,7 @@ void readGilliss() {
             cdFound = true;
 
 		    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-		    writeCrossEntry(crossCDStream, catName, cdName, minDistance);
+		    writeCrossEntry(crossCDStream, catName, cdName, vmag, minDistance);
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {

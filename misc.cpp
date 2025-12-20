@@ -56,16 +56,16 @@ FILE *openCrossFile(const char *name)
         perror("Cannot write in cross file");
         exit(1);
     }
-    fprintf(stream, "index1,index2,dist\n");
+    fprintf(stream, "index1,index2,mag,dist\n");
     return stream;
 }
 
 /*
  * writeCrossEntry - escribe una entrada en un archivo de identificación cruzada
  */
-void writeCrossEntry(FILE *stream, char *index1, char *index2, double dist)
+void writeCrossEntry(FILE *stream, char *index1, char *index2, double mag, double dist)
 {
-    fprintf(stream, "%s,%s,%.2f\n", index1, index2, dist);
+    fprintf(stream, "%s,%s,%.1f,%.2f\n", index1, index2, mag, dist);
 }
 
 /*
