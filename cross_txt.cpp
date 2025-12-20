@@ -85,66 +85,17 @@ int main(int argc, char** argv)
     printf("CROSS_TXT - Cross custom catalog with PPM catalog.\n");
     printf("Made in 2025 by Daniel Severin.\n\n");
 
-    const char *baseDir = (argc >= 2) ? argv[1] : ".";
+    if (argc < 2) {
+        printf("Usage: %s --txt [baseDir]\n", argv[0]);
+        printf("         It reads Coord.txt and Flux.txt from base folder and searches\n");
+        printf("         for matches with PPM catalog. It also writes results to Cross.txt.\n");
+        printf("Usage: %s --csv [csvFile]\n", argv[0]);
+        printf("         It reads CSV cross-identification file and performs magnitude fits.\n");
+        return 1;
+    }
 
-    /* leemos Coord.txt y Flux.txt y buscamos coincidencias con PPM */
-    printf("Reading Coord.txt and Flux.txt from base folder: %s\n", baseDir);
+    const char *mode = argv[1];
     
-    char coordPath[256];
-    char fluxPath[256];
-    joinPath(baseDir, "Coord.txt", coordPath, sizeof(coordPath));
-    joinPath(baseDir, "Flux.txt", fluxPath, sizeof(fluxPath));
-
-    FILE *coordFile = fopen(coordPath, "rt");
-    if (coordFile == NULL) {
-        printf("Error: Cannot open %s file.\n", coordPath);
-        return 1;
-    }
-
-    FILE *fluxFile = fopen(fluxPath, "rt");
-    if (fluxFile == NULL) {
-        printf("Error: Cannot open %s file.\n", fluxPath);
-        fclose(coordFile);
-        return 1;
-    }
-
-    /* Prepare Cross.txt output in the same base directory */
-    char crossPath[256];
-    joinPath(baseDir, "Cross.txt", crossPath, sizeof(crossPath));
-    FILE *crossFile = fopen(crossPath, "wt");
-    if (crossFile == NULL) {
-        printf("Error: Cannot write %s file.\n", crossPath);
-        fclose(coordFile);
-        fclose(fluxFile);
-        return 1;
-    }
-    fprintf(crossFile, "    Index   imag   Distance Identification\n");
-
-    /* leemos catalogo PPM */
-    printf("Reading PPM catalog...\n");
-    readPPM(false, true, false, false, 2000.0);
-    sortPPM();
-    int PPMstars = getPPMStars();
-    struct PPMstar_struct *PPMstar = getPPMStruct();
-
-    /* leemos identificaciones cruzadas
-     * Order de prioridad: UA, Lal, Lac, GC, ZC, OA, U, G */
-    if (CROSS_OLD_CATALOGS) {
-        readCrossFile("results/cross/cross_gilliss_ppm.csv", PPMstar, PPMstars);
-        readCrossFile("results/cross/cross_usno_ppm.csv", PPMstar, PPMstars);
-        //readCrossFile("results/cross/cross_oa_ppm.csv", PPMstar, PPMstars);
-        //readCrossFile("results/cross/cross_zc_ppm.csv", PPMstar, PPMstars);
-        readCrossFile("results/cross/cross_gc_ppm.csv", PPMstar, PPMstars);
-        //readCrossFile("results/cross/cross_lalande_ppm.csv", PPMstar, PPMstars);
-        //readCrossFile("results/cross/cross_lacaille_ppm.csv", PPMstar, PPMstars);
-        readCrossFile("results/cross/cross_ua_ppm.csv", PPMstar, PPMstars);
-    }
-
-    char coordLine[256], fluxLine[256];
-    int starIndex, fluxIndex;
-    double RA, Decl, flux, background;
-    int matches = 0;
-
     /* Array to store histogram of custom stars based on instrumental magnitudes. */
     struct CustomStars customStars[MAX_CUSTOM_STARS];
     for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
@@ -152,100 +103,255 @@ int main(int argc, char** argv)
         customStars[i].count = 0;
     }
     int customStarCount = 0;
-    
-    /* Skip header lines */
-    if (fgets(coordLine, sizeof(coordLine), coordFile) == NULL) {
-        printf("Error: Cannot read header from Coord.txt.\n");
-        fclose(coordFile);
-        fclose(fluxFile);
-        fclose(crossFile);
-        return 1;
-    }
-    
-    if (fgets(fluxLine, sizeof(fluxLine), fluxFile) == NULL) {
-        printf("Error: Cannot read header from Flux.txt.\n");
-        fclose(coordFile);
-        fclose(fluxFile);
-        fclose(crossFile);
-        return 1;
-    }
-    
-    while (fgets(coordLine, sizeof(coordLine), coordFile) != NULL && 
-           fgets(fluxLine, sizeof(fluxLine), fluxFile) != NULL) {
-        
-        int columnsCoordRead = sscanf(coordLine, "%d %lf %lf", &starIndex, &RA, &Decl);
-        int columnsFluxRead = sscanf(fluxLine, "%d %lf %lf", &fluxIndex, &flux, &background);
-        if (columnsCoordRead != 3 || columnsFluxRead != 3) {
-            continue;
+
+    if (strcmp(mode, "--csv") == 0) {
+        /* Mode is --csv, read CSV file and perform magnitude fits */
+        if (argc < 3) {
+            printf("Error: CSV file name is required for --csv mode.\n");
+            return 1;
         }
-
-        /* Verify that both files have the same star index */
-        if (starIndex != fluxIndex) {
-            printf("Warning: Index mismatch at line %d (Coord: %d, Flux: %d)\n", 
-                    starIndex, starIndex, fluxIndex);
-            continue;
-        }
-
-        //printf("Star %d: RA = %f, Decl = %f, flux = %f, background = %f\n", 
-        //       starIndex, RA, Decl, flux, background);
         
-        double x, y, z;
-        sph2rec(RA, Decl, &x, &y, &z);
+        const char *csvFile = argv[2];
+        printf("Reading CSV cross-identification file: %s\n", csvFile);
+        printf("(original visual magnitudes are treated as instrumental magnitudes)\n");
         
-        /* Find nearest PPM star within 15 arc seconds */
-        int ppmIndex = -1;
-        double minDistance = HUGE_NUMBER;
-        findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-
-        /* instrumental magnitude: zp - 2.5 log10(flux), for flux>=100 */        
-        double imag = ZEROPOINT_IMAG - 2.5 * log10(fmax(flux, 100.0));
- 
-        /* Default write: unmatched */
-        const char *identStr = "";
-        char identBuf[128];
-
-        /* Omit brightest stars (or without Vmag) and those already matched */
-        bool ppmMatch = false;
-        if (ppmIndex != -1
-                && minDistance < THRESHOLD_PPM
-                && !PPMstar[ppmIndex].discard) {
-            snprintf(identBuf, sizeof(identBuf), "PPM %d / %s", PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString);
-            identStr = identBuf;
-            ppmMatch = true;
+        FILE *stream = fopen(csvFile, "rt");
+        if (stream == NULL) {
+            printf("Error: Cannot open %s file.\n", csvFile);
+            return 1;
         }
-
-        /* Write Cross.txt row, also save match in custom stars structure */
-        if (ppmMatch) {
-            fprintf(crossFile, "%8d  %6.2f  %8.1f  %s\n", starIndex, imag, minDistance, identStr);
-            //printf("Star %d with flux=%.1f (imag=%.2f) is matched with PPM %d / %s (dist = %.1f arcsec.)\n", 
-            //       starIndex, flux, imag, PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString, minDistance);
+        
+        /* Load PPM catalog */
+        printf("Reading PPM catalog...\n");
+        readPPM(false, true, false, false, 2000.0);
+        sortPPM();
+        int PPMstars = getPPMStars();
+        struct PPMstar_struct *PPMstar = getPPMStruct();
+        
+        /* Read CSV file and populate customStars histogram */
+        char buffer[1024];
+        char targetRef[STRING_SIZE];
+        int ppmRef;
+        float vmag, minDistance;
+        bool first_line = true;
+        int matches = 0;
+        
+        while (fgets(buffer, 1023, stream) != NULL) {
+            if (first_line) {
+                // omit first line (header)
+                first_line = false;
+                continue;
+            }
             
-            /* Save match in custom stars structure, but only those no so bright or with photometric magnitude. */
-            if (PPMstar[ppmIndex].vmag > 3.0) {
-                int index = (int)(10.0 * imag + 0.5);
-                if (index < 0 || index >= MAX_CUSTOM_STARS) {
-                    printf("Warning: Index out of range at line %d (imag = %.2f)\n", starIndex, imag);
-                    abort();
-                }
-                customStars[index].ppmVmag += PPMstar[ppmIndex].vmag;
-                if (++customStars[index].count == 1) {
-                    customStarCount++;
+            int scanned = sscanf(buffer, "%13[^,],PPM %d,%f,%f\n", targetRef, &ppmRef, &vmag, &minDistance);
+            if (scanned != 4) {
+                continue;
+            }
+            
+            // Ignore if distance is too far of magnitude is absent
+            if (minDistance < __FLT_EPSILON__ || minDistance > THRESHOLD_PPM || vmag < __FLT_EPSILON__) {
+                continue;
+            }
+            
+            // Find PPM star by ppmRef
+            int ppmIndex = -1;
+            for (int i = 0; i < PPMstars; i++) {
+                if (PPMstar[i].ppmRef == ppmRef) {
+                    ppmIndex = i;
+                    break;
                 }
             }
             
-            PPMstar[ppmIndex].discard = true;
+            // Ignore if PPM star not found or too bright
+            if (ppmIndex == -1 || PPMstar[ppmIndex].vmag <= 1.0) {
+                continue;
+            }
+            
+            // Populate customStars histogram
+            int index = (int)(10.0 * vmag + 0.5);
+            if (index < 0 || index >= MAX_CUSTOM_STARS) {
+                printf("Warning: Index out of range for vmag = %.2f (ppmRef = %d)\n", vmag, ppmRef);
+                continue;
+            }
+            
+            customStars[index].ppmVmag += PPMstar[ppmIndex].vmag;
+            if (++customStars[index].count == 1) {
+                customStarCount++;
+            }
             matches++;
-            continue;
         }
         
-        // Write Cross.txt row, but without info about matching
-        fprintf(crossFile, "%8d  %6.2f\n", starIndex, imag);
+        fclose(stream);
+
+        // Discard those bins having less than 5 stars
+        for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
+            if (customStars[i].count > 0 && customStars[i].count < 5) {
+                customStars[i].ppmVmag = 0.0;
+                customStars[i].count = 0;
+                customStarCount--;
+            }
+        }
+        printf("\nTotal matches processed: %d, custom stars registered: %d\n", matches, customStarCount);
+        
+    } else if (strcmp(mode, "--txt") == 0) {
+        /* Mode is --txt, proceed with normal operation */
+        const char *baseDir = (argc >= 3) ? argv[2] : ".";
+
+        /* leemos Coord.txt y Flux.txt y buscamos coincidencias con PPM */
+        printf("Reading Coord.txt and Flux.txt from base folder: %s\n", baseDir);
+
+        char coordPath[256];
+        char fluxPath[256];
+        joinPath(baseDir, "Coord.txt", coordPath, sizeof(coordPath));
+        joinPath(baseDir, "Flux.txt", fluxPath, sizeof(fluxPath));
+
+        FILE *coordFile = fopen(coordPath, "rt");
+        if (coordFile == NULL) {
+            printf("Error: Cannot open %s file.\n", coordPath);
+            return 1;
+        }
+
+        FILE *fluxFile = fopen(fluxPath, "rt");
+        if (fluxFile == NULL) {
+            printf("Error: Cannot open %s file.\n", fluxPath);
+            fclose(coordFile);
+            return 1;
+        }
+
+        /* Prepare Cross.txt output in the same base directory */
+        char crossPath[256];
+        joinPath(baseDir, "Cross.txt", crossPath, sizeof(crossPath));
+        FILE *crossFile = fopen(crossPath, "wt");
+        if (crossFile == NULL) {
+            printf("Error: Cannot write %s file.\n", crossPath);
+            fclose(coordFile);
+            fclose(fluxFile);
+            return 1;
+        }
+        fprintf(crossFile, "    Index   imag   Distance Identification\n");
+
+        /* leemos catalogo PPM */
+        printf("Reading PPM catalog...\n");
+        readPPM(false, true, false, false, 2000.0);
+        sortPPM();
+        int PPMstars = getPPMStars();
+        struct PPMstar_struct *PPMstar = getPPMStruct();
+
+        /* leemos identificaciones cruzadas
+            * Order de prioridad: UA, Lal, Lac, GC, ZC, OA, U, G */
+        if (CROSS_OLD_CATALOGS) {
+            readCrossFile("results/cross/cross_gilliss_ppm.csv", PPMstar, PPMstars);
+            readCrossFile("results/cross/cross_usno_ppm.csv", PPMstar, PPMstars);
+            //readCrossFile("results/cross/cross_oa_ppm.csv", PPMstar, PPMstars);
+            //readCrossFile("results/cross/cross_zc_ppm.csv", PPMstar, PPMstars);
+            readCrossFile("results/cross/cross_gc_ppm.csv", PPMstar, PPMstars);
+            //readCrossFile("results/cross/cross_lalande_ppm.csv", PPMstar, PPMstars);
+            //readCrossFile("results/cross/cross_lacaille_ppm.csv", PPMstar, PPMstars);
+            readCrossFile("results/cross/cross_ua_ppm.csv", PPMstar, PPMstars);
+        }
+
+        char coordLine[256], fluxLine[256];
+        int starIndex, fluxIndex;
+        double RA, Decl, flux, background;
+        int matches = 0;
+
+        /* Skip header lines */
+        if (fgets(coordLine, sizeof(coordLine), coordFile) == NULL) {
+            printf("Error: Cannot read header from Coord.txt.\n");
+            fclose(coordFile);
+            fclose(fluxFile);
+            fclose(crossFile);
+            return 1;
+        }
+
+        if (fgets(fluxLine, sizeof(fluxLine), fluxFile) == NULL) {
+            printf("Error: Cannot read header from Flux.txt.\n");
+            fclose(coordFile);
+            fclose(fluxFile);
+            fclose(crossFile);
+            return 1;
+        }
+
+        while (fgets(coordLine, sizeof(coordLine), coordFile) != NULL && 
+                fgets(fluxLine, sizeof(fluxLine), fluxFile) != NULL) {
+            
+            int columnsCoordRead = sscanf(coordLine, "%d %lf %lf", &starIndex, &RA, &Decl);
+            int columnsFluxRead = sscanf(fluxLine, "%d %lf %lf", &fluxIndex, &flux, &background);
+            if (columnsCoordRead != 3 || columnsFluxRead != 3) {
+                continue;
+            }
+
+            /* Verify that both files have the same star index */
+            if (starIndex != fluxIndex) {
+                printf("Warning: Index mismatch at line %d (Coord: %d, Flux: %d)\n", 
+                        starIndex, starIndex, fluxIndex);
+                continue;
+            }
+
+            //printf("Star %d: RA = %f, Decl = %f, flux = %f, background = %f\n", 
+            //       starIndex, RA, Decl, flux, background);
+            
+            double x, y, z;
+            sph2rec(RA, Decl, &x, &y, &z);
+            
+            /* Find nearest PPM star within 15 arc seconds */
+            int ppmIndex = -1;
+            double minDistance = HUGE_NUMBER;
+            findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
+
+            /* instrumental magnitude: zp - 2.5 log10(flux), for flux>=100 */        
+            double imag = ZEROPOINT_IMAG - 2.5 * log10(fmax(flux, 100.0));
+
+            /* Default write: unmatched */
+            const char *identStr = "";
+            char identBuf[128];
+
+            /* Omit brightest stars (or without Vmag) and those already matched */
+            bool ppmMatch = false;
+            if (ppmIndex != -1
+                    && minDistance < THRESHOLD_PPM
+                    && !PPMstar[ppmIndex].discard) {
+                snprintf(identBuf, sizeof(identBuf), "PPM %d / %s", PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString);
+                identStr = identBuf;
+                ppmMatch = true;
+            }
+
+            /* Write Cross.txt row, also save match in custom stars structure */
+            if (ppmMatch) {
+                fprintf(crossFile, "%8d  %6.2f  %8.1f  %s\n", starIndex, imag, minDistance, identStr);
+                //printf("Star %d with flux=%.1f (imag=%.2f) is matched with PPM %d / %s (dist = %.1f arcsec.)\n", 
+                //       starIndex, flux, imag, PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString, minDistance);
+                
+                /* Save match in custom stars structure, but only those no so bright or with photometric magnitude. */
+                if (PPMstar[ppmIndex].vmag > 3.0) {
+                    int index = (int)(10.0 * imag + 0.5);
+                    if (index < 0 || index >= MAX_CUSTOM_STARS) {
+                        printf("Warning: Index out of range at line %d (imag = %.2f)\n", starIndex, imag);
+                        abort();
+                    }
+                    customStars[index].ppmVmag += PPMstar[ppmIndex].vmag;
+                    if (++customStars[index].count == 1) {
+                        customStarCount++;
+                    }
+                }
+                
+                PPMstar[ppmIndex].discard = true;
+                matches++;
+                continue;
+            }
+            
+            // Write Cross.txt row, but without info about matching
+            fprintf(crossFile, "%8d  %6.2f\n", starIndex, imag);
+        }
+
+        fclose(coordFile);
+        fclose(fluxFile);
+        fclose(crossFile);
+        printf("\nTotal matches found: %d, custom stars registered: %d\n", matches, customStarCount);
+    } else {
+        printf("Error: Invalid mode '%s'. Use --csv or --txt\n", mode);
+        return 1;
     }
-    
-    fclose(coordFile);
-    fclose(fluxFile);
-    fclose(crossFile);
-    printf("\nTotal matches found: %d, custom stars registered: %d\n", matches, customStarCount);
 
     // Compute averages and display histogram
     printf("\nHistogram of custom stars:\n");
@@ -266,6 +372,7 @@ int main(int argc, char** argv)
         
         /* Calculate constant fit: Vmag = zeroPoint + imag */
         double sum_vmag = 0.0, sum_imag = 0.0;
+        double sum_weights = 0.0;
         
         for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
             if (customStars[i].count == 0) {
@@ -273,12 +380,14 @@ int main(int argc, char** argv)
             }
             double ppm_vmag = customStars[i].ppmVmag;
             double imag = i / 10.0;
-            sum_vmag += ppm_vmag;
-            sum_imag += imag;
+            double weight = log10(customStars[i].count);
+            sum_vmag += ppm_vmag * weight;
+            sum_imag += imag * weight;
+            sum_weights += weight;
         }
         
         /* Calculate zero point */
-        double zeroPoint = (sum_vmag - sum_imag) / customStarCount;
+        double zeroPoint = (sum_vmag - sum_imag) / sum_weights;
         
         printf(" 1) Constant fit: Vmag = %.3f + imag\n", zeroPoint);
         
@@ -307,6 +416,7 @@ int main(int argc, char** argv)
         /* Calculate means for least squares fit */
         double sum_imag_lin = 0.0, sum_vmag_lin = 0.0;
         double sum_imag_vmag = 0.0, sum_imag_sq = 0.0;
+        double sum_weights_lin = 0.0;
         
         for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
             if (customStars[i].count == 0) {
@@ -314,18 +424,20 @@ int main(int argc, char** argv)
             }
             double imag = i / 10.0;
             double ppm_vmag = customStars[i].ppmVmag;
-            sum_imag_lin += imag;
-            sum_vmag_lin += ppm_vmag;
-            sum_imag_vmag += imag * ppm_vmag;
-            sum_imag_sq += imag * imag;
+            double weight = log10(customStars[i].count);
+            sum_imag_lin += imag * weight;
+            sum_vmag_lin += ppm_vmag * weight;
+            sum_imag_vmag += imag * ppm_vmag * weight;
+            sum_imag_sq += imag * imag * weight;
+            sum_weights_lin += weight;
         }
         
-        double mean_imag = sum_imag_lin / customStarCount;
-        double mean_vmag = sum_vmag_lin / customStarCount;
+        double mean_imag = sum_imag_lin / sum_weights_lin;
+        double mean_vmag = sum_vmag_lin / sum_weights_lin;
         
         /* Calculate slope and intercept */
-        double denominator = sum_imag_sq - customStarCount * mean_imag * mean_imag;
-        double factor = (sum_imag_vmag - customStarCount * mean_imag * mean_vmag) / denominator;
+        double denominator = sum_imag_sq - sum_weights_lin * mean_imag * mean_imag;
+        double factor = (sum_imag_vmag - sum_weights_lin * mean_imag * mean_vmag) / denominator;
         double linearZeroPoint = mean_vmag - factor * mean_imag;
         
         printf(" 2) Linear fit: Vmag = %.3f + %.3f * imag\n", linearZeroPoint, factor);
@@ -354,7 +466,7 @@ int main(int argc, char** argv)
 
         /* Center x to improve conditioning */
         double xmean = mean_imag;
-        double S0 = (double)customStarCount;
+        double S0 = 0.0;
         double Sx = 0.0, Sx2 = 0.0, Sx3 = 0.0, Sx4 = 0.0;
         double Sy = 0.0, Sxy = 0.0, Sx2y = 0.0;
         for (int i = 0; i < MAX_CUSTOM_STARS; i++) {
@@ -364,14 +476,16 @@ int main(int argc, char** argv)
             double imag = i / 10.0;
             double x = imag - xmean;
             double y = customStars[i].ppmVmag;
+            double weight = log10(customStars[i].count);
             double x2 = x * x;
-            Sx   += x;
-            Sx2  += x2;
-            Sx3  += x2 * x;
-            Sx4  += x2 * x2;
-            Sy   += y;
-            Sxy  += x * y;
-            Sx2y += x2 * y;
+            S0   += weight;
+            Sx   += x * weight;
+            Sx2  += x2 * weight;
+            Sx3  += x2 * x * weight;
+            Sx4  += x2 * x2 * weight;
+            Sy   += y * weight;
+            Sxy  += x * y * weight;
+            Sx2y += x2 * y * weight;
         }
 
         /* Normal equations in centered basis: y = a + b*x + c*x^2 */

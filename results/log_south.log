@@ -260,19 +260,18 @@ Stars read from PPM: 468861
 20) Warning: W 12079 (OA 14782) is ALONE (no PPM / CD / CPD / GSC star near it).
      Register W 12079: 15h 33m 19s57 -20°41'35"8
   Note: nearest PPM 264589 at 484.7 arcsec.
-21) Warning: W 12269 (vmag = 6.7) has a near PPM 264903 star (vmag = 3.7) with a different magnitude (delta = 3.0).
-22) Warning: W 12550 (OA 15467) is ALONE (no PPM / CD / CPD / GSC star near it).
+21) Warning: W 12550 (OA 15467) is ALONE (no PPM / CD / CPD / GSC star near it).
      Register W 12550: 16h 08m 06s00 -22°35'53"5
   Note: nearest PPM 265354 at 261.5 arcsec.
 **) Note: W 12988 has no PPM / CD / CPD star near it but has a nearby GSC star 0736001220 at 16.0 arcsec.
   Note: nearest PPM 748231 at 534.6 arcsec.
 **) Note: W 13200 has no PPM / CD / CPD star near it but has a nearby GSC star 0623701091 at 5.7 arcsec.
   Note: nearest PPM 718222 at 635.2 arcsec.
-23) Warning: W 13751 (OA 17353) is ALONE (no PPM / CD / CPD / GSC star near it).
+22) Warning: W 13751 (OA 17353) is ALONE (no PPM / CD / CPD / GSC star near it).
      Register W 13751: 17h 46m 26s01 -16°16'56"4
   Note: nearest PPM 233736 at 63.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-24) Warning: W 13925 (OA 17573) is ALONE (no PPM / CD / CPD / GSC star near it).
+23) Warning: W 13925 (OA 17573) is ALONE (no PPM / CD / CPD / GSC star near it).
      Register W 13925: 17h 55m 52s05 -15°40'41"3
   Note: nearest PPM 233983 at 118.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -286,26 +285,26 @@ Stars read from PPM: 468861
 **) Note: W 14356 has no PPM / CD / CPD star near it but has a nearby GSC star 0626602751 at 1.6 arcsec.
   Note: nearest PPM 719277 at 127.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-25) Warning: W 14639 (OA 18571) is ALONE (no PPM / CD / CPD / GSC star near it).
+24) Warning: W 14639 (OA 18571) is ALONE (no PPM / CD / CPD / GSC star near it).
      Register W 14639: 18h 33m 49s69 -14°45'32"1
   Note: nearest PPM 234917 at 96.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-26) Warning: W 15091 (OA 19178) is ALONE (no PPM / CD / CPD / GSC star near it).
+25) Warning: W 15091 (OA 19178) is ALONE (no PPM / CD / CPD / GSC star near it).
      Register W 15091: 19h 01m 34s81 -15°54'40"8
   Note: nearest PPM 235589 at 56.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: W 15179 has no PPM / CD / CPD star near it but has a nearby GSC star 0629600239 at 5.1 arcsec.
   Note: nearest PPM 720290 at 118.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-27) Warning: W 15242 (OA 19372) is ALONE (no PPM / CD / CPD / GSC star near it).
+26) Warning: W 15242 (OA 19372) is ALONE (no PPM / CD / CPD / GSC star near it).
      Register W 15242: 19h 10m 08s11 -15°03'06"0
   Note: nearest PPM 235811 at 62.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-28) Warning: W 15348 (OA 19504) is ALONE (no PPM / CD / CPD / GSC star near it).
+27) Warning: W 15348 (OA 19504) is ALONE (no PPM / CD / CPD / GSC star near it).
      Register W 15348: 19h 15m 57s09 -16°51'01"3
   Note: nearest PPM 235948 at 58.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-29) Warning: W 15499 (OA 19714) is ALONE (no PPM / CD / CPD / GSC star near it).
+28) Warning: W 15499 (OA 19714) is ALONE (no PPM / CD / CPD / GSC star near it).
      Register W 15499: 19h 25m 18s16 -27°26'33"9
   Note: nearest PPM 735350 at 131.7 arcsec.
 **) Note: W 16389 has no PPM / CD / CPD star near it but has a nearby GSC star 0633100219 at 1.8 arcsec.
@@ -316,8 +315,8 @@ Stars read from PPM: 468861
 Available OA stars = 18235
 Stars from OA identified with PPM = 18011, CD = 9296 and CPD = 13146
 RSME of distance (arcsec) = 4.66  among a total of 18011 stars
-RSME of visual magnitude = 0.45823  among a total of 17257 stars
-Errors logged = 29
+RSME of visual magnitude = 0.46283  among a total of 17258 stars
+Errors logged = 28
 
 ***************************************
 Perform comparison between Lalande and PPM...

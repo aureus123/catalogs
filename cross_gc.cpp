@@ -101,7 +101,7 @@ int main(int argc, char** argv)
         double x = GCstar[gcIndex].x;
         double y = GCstar[gcIndex].y;
         double z = GCstar[gcIndex].z;
-        float vmag = GCstar[gcIndex].vmag;
+        float gcVmag = GCstar[gcIndex].vmag;
 
         bool ppmFound = false;
 		int ppmIndex = -1;
@@ -111,8 +111,8 @@ int main(int argc, char** argv)
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__ && !GCstar[gcIndex].dpl) {
-				// Note: no fit is performed to convert scales of magnitudes
+			if (gcVmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__ && !GCstar[gcIndex].dpl) {
+                float vmag = compGCmagToVmag(gcVmag); // perform magnitude transformation
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
                     akkuDeltaError += delta * delta;
@@ -132,7 +132,7 @@ int main(int argc, char** argv)
             ppmFound = true;
 
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
+			writeCrossEntry(crossPPMStream, catName, ppmName, gcVmag, minDistance);
 		} else {
             if (PRINT_WARNINGS) {
                 printf("Warning: GC has no PPM star near it.\n");
@@ -151,7 +151,7 @@ int main(int argc, char** argv)
                 cpdFound = true;
 
 			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
-			    writeCrossEntry(crossCPDStream, catName, cdName, vmag, minDistance);
+			    writeCrossEntry(crossCPDStream, catName, cdName, gcVmag, minDistance);
 			} else {
 				if (PRINT_WARNINGS) {
 					printf("Warning: GC has no CPD star near it.\n");
@@ -168,8 +168,8 @@ int main(int argc, char** argv)
             findDMByCoordinates(x, y, z, decl, &cdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CD) {
 			    float cdVmag = CDstar[cdIndex].vmag;
-			    if (vmag > __FLT_EPSILON__ && cdVmag < 29.9 && !GCstar[gcIndex].dpl) {
-				    float delta = fabs(vmag - cdVmag);
+			    if (gcVmag > __FLT_EPSILON__ && cdVmag < 29.9 && !GCstar[gcIndex].dpl) {
+				    float delta = fabs(gcVmag - cdVmag);
 				    if (delta >= MAX_MAGNITUDE) {
 					    printf("%d) Warning: GC has a near CD with a different magnitude (delta = %.1f).\n",
                             ++errors,
@@ -183,7 +183,7 @@ int main(int argc, char** argv)
                 cdFound = true;
 
 			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
-			    writeCrossEntry(crossCDStream, catName, cdName, vmag, minDistance);
+			    writeCrossEntry(crossCDStream, catName, cdName, gcVmag, minDistance);
 			} else {
 				if (PRINT_WARNINGS) {
 					printf("Warning: GC has no CD star near it.\n");

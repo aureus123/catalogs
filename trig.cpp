@@ -97,7 +97,6 @@ double calcAngularDistance(double x1, double y1, double z1, double x2, double y2
 	return acos(cosdist) * 180.0 / PI;
 }
 
-
 /*
  * solve3x3 - small 3x3 linear system solver with partial pivoting.
  * Returns true on success, false on singular.
@@ -175,4 +174,12 @@ double compVmagToCDmag(int decl_ref, double vmag)
 
     // old CD fit:
     // return -0.046197294300226*vmag*vmag + 1.435555317168187*vmag - 0.557294231481489;
+}
+
+/*
+ * compGCmagToVmag - dada una magnitud en la escala usada en GC la convierte a Johnson V
+*/
+double compGCmagToVmag(double gcVmag) {
+    // Quadratic fit of 28977 stars grouped in 48 magnitudes, ECM = 0.202
+    return - 5.003 + 2.305 * gcVmag - 0.085 * gcVmag * gcVmag;
 }

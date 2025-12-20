@@ -433,11 +433,12 @@ void readWeiss() {
         snprintf(catLine, 64, "%02dh %02dm %02ds%02d -%02d°%02d'%02d\"%01d",
             RAh, RAm, RAs / 100, RAs % 100, Decld, Declm, Decls / 10, Decls % 10);
 
-		/* lee magnitud */
+		/* lee magnitud (tiene un formato extraño en el que x.y con y=x+1 significa
+         * x.5, por ejemplo 6.7 significa 6.5). */
 		readField(buffer, cell, 9, 1);
 		float vmag = atof(cell);
 		readField(buffer, cell, 11, 1);
-		vmag += atof(cell)/10.0;
+        if (atoi(cell) > 0) vmag += 0.5;
 
         bool ppmFound = false;
 		int ppmIndex = -1;

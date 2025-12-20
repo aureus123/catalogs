@@ -69,7 +69,7 @@ Perform comparison between GC and PPM/CD/CPD...
 **) Note: GC 6599 has no PPM / CD / CPD star near it but has a nearby GSC star 0592100838 at 1.3 arcsec.
   Note: nearest PPM 216077 at 88.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-14) Warning: GC has a near PPM 354885 star (vmag = 9.6) with a different magnitude (delta = 3.4).
+14) Warning: GC has a near PPM 354885 star (vmag = 9.6) with a different magnitude (delta = 3.6).
      Register GC 6744: mag = 6.2, RA = 05h39m34s72, DE = 69°09'50''6 (pag 134) 
 **) Note: GC 7015 has no PPM / CD / CPD star near it but has a nearby GSC star 0536000886 at 2.3 arcsec.
   Note: nearest PPM 712104 at 811.7 arcsec.
@@ -319,5 +319,5 @@ Perform comparison between GC and PPM/CD/CPD...
   Note: no CD/CPD coverage for stars below 18°.
 Stars from GC identified with PPM = 31706, CD = 28436 and CPD = 28910
 RSME of distance (arcsec) = 1.96  among a total of 31706 stars
-RSME of visual magnitude = 0.42078  among a total of 27807 stars
+RSME of visual magnitude = 0.42326  among a total of 27807 stars
 Errors logged = 68
