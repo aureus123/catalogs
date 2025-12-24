@@ -8,7 +8,7 @@ during that process. In particular, you can find the following files:
 - table_mag_*.csv = table with magnitude errors found
 - findings.odt = open-office document with other minor results
 
-There is also a folder _cross_ with results of the experiment *cross_gc* and *cross_south* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander (South), Lalande, Lacaille, USNO, Taylor) and PPM/CD/CPD.
+There is also a folder _cross_ with results of the experiment *compare_ppm*, *cross_gc* and *cross_south* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander (South), Lalande, Lacaille, USNO, Taylor) and PPM/CD/CPD.
 
 Below some experiments are reported.
 
@@ -156,3 +156,46 @@ After running "compare_ppm" over that file, only false positives are shown.
 Curated version of full catalogue can be found in file *cat/cd_curated.txt* (but
 take into account that only errors found above were corrected, I mean,
 declinations up to -31 were considered).
+
+### 4. Conversion between magnitude scales
+
+When magnitudes are compared between BD/CD and PPM catalog, a simple transformation is computed. For BD a quadratic fit was performed over 1412 stars. For CD, a quadratic fit per volume was performed (see function `compVmagToCDmag` in file *trig.cpp*). Preparation of data is performed by *mag_bd* and *mag_cd* tools.
+
+As an alternative, it was tested a different regression method. Instead of using individual visual magnitudes of CD where each cross-identification weights the same, these magnitudes were grouped in a scale, as it is explained below.
+For a given magnitude value, the tool finds all PPM stars that matches CD stars having that magnitude, and compute an average among them. Then, the regression is made
+by weighting the average by log10(stars).
+For example, given the following magnitude histogram:
+```
+CDmag    ppmVmag     count
+7.2      7.45        74
+7.3      7.51        130
+```
+it matches visual CD magnitude 7.2 with 74 PPM stars averaging Johnson V 7.45, and 7.3 with 130 stars averaging 7.51.
+The first match is weighted by log10(74)=1.87 and the third by log10(130)=2.11.
+Here, tool *cross_txt* was used. For instance,
+```
+./cross_txt --csv results/cross/cross_cd_vol1_ppm.csv
+```
+generates formulas for offset, linear and quadratic transformation.
+Functions `compCDmagToVmag` and `compGCmagToVmag` in file *trig.cpp* have transformations for
+converting the magnitudes of CD and GC to Johnson V.
+
+Below, we present offset transformations for CD and other catalogs, which can give an insight of
+their photometric quality. The transformation is `ppmVmag = visualMag + offset`:
+| Abbrev. | Catalog | Offset | Stars | RSME | MAPE (%) |
+| --- | --- | --- | --- | --- | --- |
+| CD | Córdoba Durchmusterung (1st. vol)      |  0.223 | 15187 | 0.280 | 3.17 |
+| CD | Córdoba Durchmusterung (2nd. vol)      |  0.254 | 15038 | 0.348 | 4.13 |
+| CD | Córdoba Durchmusterung (3rd. vol)      |  0.011 | 25597 | 0.272 | 3.17 |
+| CD | Córdoba Durchmusterung (4th. vol)      |  0.008 | 12980 | 0.218 | 1.55 |
+| CD | Córdoba Durchmusterung (5th. vol)      | -0.010 | 12218 | 0.056 | 0.60 |
+| UA | Uranometría Argentina                  | -0.333 |  4980 | 0.240 | 4.36 |
+| GC | Catálogo General Argentino             | -0.207 | 28977 | 0.316 | 4.71 |
+| G2 | Segundo Cat. General Argentino         |  0.001 |  4518 | 0.310 | 3.85 |
+| W / OA | Weiss / Oeltzen-Argelander (South) |  0.173 | 17127 | 0.239 | 3.36 |
+| U | Yarnall-Frisby USNO 3rd. edition        |  0.246 |  5358 | 0.205 | 2.30 |
+| G | Gilliss                                 | -0.304 | 14756 | 0.599 | 3.32 |
+
+Note that, besides almost all stars of UA are cross-identified with PPM, only 4980 have been used for comparison. The reason is that PPM V magnitude coverage is poor for the northern hemisphere (same happens for quadratic fit of BD stars).
+
+An interesting fact is that the visual magnitudes of last CD volume fits well when compared with PPM magnitudes, since the measurement of star brightness used the then-recent Harvard standard. Here, the mean error is less than 0.06 magnitudes.

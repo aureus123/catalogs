@@ -15,6 +15,7 @@
 
 #define MAX_DISTANCE 120.0   // 2 minutos de arco
 #define MAX_MAGNITUDE 1.5
+//#define MAGNITUDE_METHOD
 
 /*
  * main - comienzo de la aplicacion
@@ -54,10 +55,19 @@ int main(int argc, char** argv)
     int PPMstars = getPPMStars();
     struct PPMstar_struct *PPMstar = getPPMStruct();
 
-    /* revisamos la identificación cruzada y generamos dos planillas */
-    FILE *posStream, *magStream;
+    /* revisamos la identificación cruzada y generamos planillas */
+    FILE *posStream, *magStream, *crossPPMStreamV1, *crossPPMStreamV2;
+    FILE *crossPPMStreamV3, *crossPPMStreamV4, *crossPPMStreamV5;
     posStream = openPositionFile("results/table_pos_ppm.csv");
     magStream = openMagnitudeFile("results/table_mag_ppm.csv");
+    if (allSky) {
+        /* si cubrimos todo el cielo, generamos planillas para cada volumen */
+        crossPPMStreamV1 = openCrossFile("results/cross/cross_cd_vol1_ppm.csv");
+        crossPPMStreamV2 = openCrossFile("results/cross/cross_cd_vol2_ppm.csv");
+        crossPPMStreamV3 = openCrossFile("results/cross/cross_cd_vol3_ppm.csv");
+        crossPPMStreamV4 = openCrossFile("results/cross/cross_cd_vol4_ppm.csv");
+        crossPPMStreamV5 = openCrossFile("results/cross/cross_cd_vol5_ppm.csv");
+    }
 
     int maxDistError = 0;
     int magDiffError = 0;
@@ -76,6 +86,10 @@ int main(int argc, char** argv)
             isProblematic = true;
             problematic++;
         }
+
+        char ppmName[20];
+        snprintf(ppmName, 20, "PPM %d", PPMstar[i].ppmRef);
+
         int cdIndex = PPMstar[i].dmIndex;
         char *cdString = PPMstar[i].dmString;
         float dist = PPMstar[i].dist;
@@ -83,20 +97,19 @@ int main(int argc, char** argv)
             // posiciones muy separadas, supera umbral
             maxDistError++;
             indexError++;
-            printf("%d) %s separated from PPM %d%s in %.1f arcsec.\n",
+            printf("%d) %s separated from %s%s in %.1f arcsec.\n",
                 indexError,
                 cdString,
-                PPMstar[i].ppmRef,
+                ppmName,
                 isProblematic ? " (PROBLEM)" : "",
                 dist);
             writeRegister(cdIndex, true);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            snprintf(buffer, 64, "PPM %d", PPMstar[i].ppmRef);
             writePositionEntry(posStream,
                 indexError,
                 CDstar[cdIndex].declRef,
                 CDstar[cdIndex].numRef,
-                buffer,
+                ppmName,
                 dist);
             continue;
         }
@@ -106,30 +119,54 @@ int main(int argc, char** argv)
         double ppmVmag = PPMstar[i].vmag;
         double cdVmag = CDstar[cdIndex].vmag;
         if (ppmVmag < 0.00001 || cdVmag > 29.9) continue; // se omiten aquellas estrellas con Vmag=0 o variables
-        ppmVmag = compVmagToCDmag(CDstar[cdIndex].declRef, ppmVmag);
-        double delta = fabs(ppmVmag - cdVmag);
+#ifdef MAGNITUDE_METHOD        
+        double convertedCDmag = compCDmagToVmag(CDstar[cdIndex].declRef, cdVmag);
+        double delta = fabs(ppmVmag - convertedCDmag);
+#else
+        double convertedPPMVmag = compVmagToCDmag(CDstar[cdIndex].declRef, ppmVmag);
+        double delta = fabs(cdVmag - convertedPPMVmag);
+#endif        
         if (delta >= MAX_MAGNITUDE) {
             // diferencia en magnitud V y visual supera umbral
             magDiffError++;
             indexError++;
-            printf("%d) %s reports mag=%.1f but it should be mag=%.1f from PPM %d%s: Delta = %.1f.\n",
+            printf("%d) %s reports mag=%.1f but %s%s has Vmag=%.1f: Delta = %.1f.\n",
                 indexError,
                 cdString,
                 cdVmag,
-                ppmVmag,
-                PPMstar[i].ppmRef,
+                ppmName,
                 isProblematic ? " (PROBLEM)" : "",
+                ppmVmag,
                 delta);
             writeRegister(cdIndex, false);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            snprintf(buffer, 64, "PPM %d", PPMstar[i].ppmRef);
             writeMagnitudeEntry(magStream,
                 indexError,
                 CDstar[cdIndex].declRef,
                 CDstar[cdIndex].numRef,
-                buffer,
+                ppmName,
                 delta);
             continue;
+        }
+
+        if (allSky) {
+            // Las estrellas sin errores se cruzan con PPM y se almacenan según el volumen
+            int decl = -CDstar[cdIndex].declRef;
+            FILE *targetStream = NULL;
+            if (decl >= 22 && decl <= 31) {
+                targetStream = crossPPMStreamV1;
+            } else if (decl >= 32 && decl <= 41) {
+                targetStream = crossPPMStreamV2;
+            } else if (decl >= 42 && decl <= 51) {
+                targetStream = crossPPMStreamV3;
+            } else if (decl >= 52 && decl <= 61) {
+                targetStream = crossPPMStreamV4;
+            } else if (decl >= 62 && decl <= 89) {
+                targetStream = crossPPMStreamV5;
+            }
+            if (targetStream != NULL) {
+                writeCrossEntry(targetStream, cdString, ppmName, cdVmag, dist);
+            }
         }
         goodStarsMagnitude++;
         akkuDeltaError += delta * delta;

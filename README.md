@@ -37,9 +37,10 @@ Results and logs are in the [results](results) folder.
 ### Other experiments
 
 - *cross_gc*: Cross-identifies curated CD and GC (Argentine General Catalog) and compares them
-- *cross_north*: Cross-identified lower hierarchy catalogs, mostly north.
-- *cross_south*: Cross-identified lower hierarchy catalogs, mostly south.
+- *cross_north*: Cross-identified lower hierarchy catalogs, mostly north
+- *cross_south*: Cross-identified lower hierarchy catalogs, mostly south
 - *compare_cd*: Logs differences between two digital versions of CD
+- *cross_txt*: Fits (by mean squares) magnitude scales
 - *gen_tycho2_north* and *gen_tycho2_south*: See README in [tycho2](tycho2) folder, also see the [gallery](gallery) folder
 
 ### Requirements
@@ -47,22 +48,24 @@ Results and logs are in the [results](results) folder.
 🚰 Sources of WCSTools 3.9.7 from http://tdc-www.harvard.edu/wcstools should be downloaded to wcstools-3.9.7 folder, and compiled.
 The routine "wcsconp" is used for transforming coordinates.
 
+🚰 Some experiments require having GSC catalog and source files is gsc folder.
+
 ### Mean accuracy of catalogues
 
-When comparing different old catalogues with PPM, an accuracy can be computed
+🔭 When comparing different old catalogues with PPM, an accuracy can be computed
 by assuming that the PPM star, corrected by proper motion, has the real coordinates
 in the target epoch (19th. century). Below there are two tables with a row
 per catalog: 3rd. column is the epoch of the target catalog, 4th. column
 is the number of stars cross-identified between PPM and the target catalog, and 5th. column reports the accuracy in arcseconds.
 
-In this table, identifications are direct from PPM source:
+📓 In this table, identifications are direct from PPM source:
 | Abbrev. | Catalog | Epoch | Stars | RSME |
 | --- | --- | --- | --- | --- |
 | BD | Bonner Durchmusterung (1st. vol) | 1855 | 63034 | 35.99 |
 | CD | Cordoba Durchmusterung | 1875 | 172068 | 20.48 |
 | CD | Cordoba Durchmusterung (1st. vol) | 1875 | 40832 | 24.00 |
 
-In this table, identifications arise from small angular distances
+📓 In this table, identifications arise from small angular distances
 (below a given threshold) between PPM stars and the target catalog. Some
 of them (Weiss and Stone) are also used for obtaining the number of other
 catalogs (OA and Lacaille):

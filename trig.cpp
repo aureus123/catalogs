@@ -148,32 +148,67 @@ bool solve3x3(double A[3][3], double b[3], double x[3]) {
 double compVmagToCDmag(int decl_ref, double vmag)
 {
     if (decl_ref <= -22 && decl_ref >= -31) {
-        // Quadratic fit of 11659 stars, ECM = 0.3004
+        // Quadratic fit of 11659 stars, RSME = 0.3004
         return -0.157169 + 1.188316*vmag -0.022130*vmag*vmag;
     }
     if (decl_ref <= -32 && decl_ref >= -41) {
-        // Quadratic fit of 11796 stars, ECM = 0.3013 
+        // Quadratic fit of 11796 stars, RSME = 0.3013 
         return -1.517044 + 1.595675*vmag -0.050674*vmag*vmag;
     }
     if (decl_ref <= -42 && decl_ref >= -51) {
-        // Quadratic fit of 9620 stars, ECM = 0.2714
+        // Quadratic fit of 9620 stars, RSME = 0.2714
         return -4.903298 + 2.435433*vmag -0.098302*vmag*vmag;
     }
     if (decl_ref <= -52 && decl_ref >= -61) {
-        // Quadratic fit of 7672 stars, ECM = 0.3834
+        // Quadratic fit of 7672 stars, RSME = 0.3834
         return -1.347719 + 1.513742*vmag -0.040125*vmag*vmag;
     }
     if (decl_ref <= -62) {
-        // Quadratic fit of 7372 stars, ECM = 0.3239
+        // Quadratic fit of 7372 stars, RSME = 0.3239
         return -4.814060 + 2.342925*vmag -0.087990*vmag*vmag;
     }
 
     // If we reach here, BD scale should be used
-    // Quadratic fit of 1412 stars, ECM = 0.1155
+    // Quadratic fit of 1412 stars, RSME = 0.1155
     return 0.441147 + 1.699235*vmag -0.079943*vmag*vmag;
 
-    // old CD fit:
+    // old CD fit for full sky:
     // return -0.046197294300226*vmag*vmag + 1.435555317168187*vmag - 0.557294231481489;
+}
+
+/**
+ * compCDmagToVmag - dada una magnitud en la escala usada en CD la convierte a Johnson V
+ * se obtuvo con la herramienta:
+ * > ./cross_txt --csv results/cross/cross_cd_vol1_ppm.csv
+ * > ./cross_txt --csv results/cross/cross_cd_vol2_ppm.csv
+ * > ./cross_txt --csv results/cross/cross_cd_vol3_ppm.csv
+ * > ./cross_txt --csv results/cross/cross_cd_vol4_ppm.csv
+ * > ./cross_txt --csv results/cross/cross_cd_vol5_ppm.csv
+ */
+double compCDmagToVmag(int decl_ref, double cdVmag) {
+    if (decl_ref <= -22 && decl_ref >= -31) {
+        // Weighted quadratic fit of 15187 stars, RSME = 0.075, MAPE = 0.78%
+        return -8.955 + 3.221 * cdVmag - 0.132 * cdVmag * cdVmag;
+    }
+    if (decl_ref <= -32 && decl_ref >= -41) {
+        // Weighted quadratic fit of 15038 stars, RSME = 0.085, MAPE = 0.94%
+        return -4.874 + 2.084 * cdVmag - 0.055 * cdVmag * cdVmag;
+    }
+    if (decl_ref <= -42 && decl_ref >= -51) {
+        // Weighted linear fit of 25597 stars, RSME = 0.092, MAPE = 1.03%
+        return -1.302 + 1.163 * cdVmag;
+    }
+    if (decl_ref <= -52 && decl_ref >= -61) {
+        // Weighted quadratic fit of 12980 stars, RSME = 0.149, MAPE = 1.34%
+        return -5.647 + 2.384 * cdVmag - 0.083 * cdVmag * cdVmag;
+    }
+    if (decl_ref <= -62) {
+        // Weighted linear fit of 12218 stars, RSME = 0.052, MAPE = 0.55%
+        return 0.154 + 0.981 * cdVmag;
+    }
+
+    abort();
+    return 0;
 }
 
 /*
