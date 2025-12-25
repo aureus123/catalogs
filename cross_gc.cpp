@@ -22,7 +22,7 @@
  */
 int main(int argc, char** argv)
 {
-    char catName[20], cdName[20], ppmName[20];
+    char catName[20], cdName[20], ppmName[20], saoName[20], hdName[20];
 
     printf("CROSS_GC - Compare GC and PPM/CD catalogs.\n");
     printf("Made in 2025 by Daniel Severin.\n");
@@ -52,6 +52,8 @@ int main(int argc, char** argv)
 	FILE *crossCDStream = openCrossFile("results/cross/cross_gc_cd.csv");
 	FILE *crossCPDStream = openCrossFile("results/cross/cross_gc_cpd.csv");
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_gc_ppm.csv");
+	FILE *crossSAOStream = openCrossFile("results/cross/cross_gc_sao.csv");
+	FILE *crossHDStream = openCrossFile("results/cross/cross_gc_hd.csv");
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gc_unidentified.csv");
 
     int countDist = 0;
@@ -133,6 +135,15 @@ int main(int argc, char** argv)
 
 			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
 			writeCrossEntry(crossPPMStream, catName, ppmName, gcVmag, minDistance);
+
+            if (PPMstar[ppmIndex].saoRef > 0) {
+                snprintf(saoName, 20, "SAO %d", PPMstar[ppmIndex].saoRef);
+                writeCrossEntry(crossSAOStream, catName, saoName, gcVmag, minDistance);
+            }
+            if (PPMstar[ppmIndex].hdRef > 0) {
+                snprintf(hdName, 20, "HD %d", PPMstar[ppmIndex].hdRef);
+                writeCrossEntry(crossHDStream, catName, hdName, gcVmag, minDistance);
+            }
 		} else {
             if (PRINT_WARNINGS) {
                 printf("Warning: GC has no PPM star near it.\n");
@@ -211,6 +222,8 @@ int main(int argc, char** argv)
 	}
     fclose(unidentifiedStream);
 	fclose(crossPPMStream);
+	fclose(crossSAOStream);
+	fclose(crossHDStream);
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
 

@@ -71,7 +71,7 @@ of them (Weiss and Stone) are also used for obtaining the number of other
 catalogs (OA and Lacaille):
 | Abbrev. | Catalog | Epoch | Stars | RSME |
 | --- | --- | --- | --- | --- |
-| UA | Uranometría Argentina | 1875 | 7605 | 5.45 |
+| UA | Uranometría Argentina | 1875 | 8381 | 5.87 |
 | GC | Catálogo General Argentino | 1875 | 31706 | 1.96 |
 | G2 | Segundo Cat. General Argentino | 1900 | 5357 | 2.84 |
 | T 1881 | Resultados XV, pg. 55-74 | 1881 | 739 | 2.52 |

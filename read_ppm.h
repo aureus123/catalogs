@@ -15,6 +15,7 @@ struct PPMstar_struct {
     char dmString[14]; /* String con la identificación */
     double x, y, z; /* coordenadas rectangulares en circulo unidad */
     double dist; /* distancia angular a su CD asociada (en arcsec) */
+    int saoRef, hdRef; /* other designations, 0 = none */
 };
 
 int getPPMStars();

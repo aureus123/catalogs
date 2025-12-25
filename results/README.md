@@ -8,7 +8,8 @@ during that process. In particular, you can find the following files:
 - table_mag_*.csv = table with magnitude errors found
 - findings.odt = open-office document with other minor results
 
-There is also a folder _cross_ with results of the experiment *compare_ppm*, *cross_gc* and *cross_south* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander (South), Lalande, Lacaille, USNO, Taylor) and PPM/CD/CPD.
+There is also a folder _cross_ with results of the experiment *compare_ppm*, *cross_gc* and *cross_south* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander (South), Lalande, Lacaille, USNO, Taylor) and PPM/CD/CPD/SAO/HD (the latter two are taken
+from identifications in the PPM catalog).
 
 Below some experiments are reported.
 
@@ -159,7 +160,7 @@ declinations up to -31 were considered).
 
 ### 4. Conversion between magnitude scales
 
-When magnitudes are compared between BD/CD and PPM catalog, a simple transformation is computed. For BD a quadratic fit was performed over 1412 stars. For CD, a quadratic fit per volume was performed (see function `compVmagToCDmag` in file *trig.cpp*). Preparation of data is performed by *mag_bd* and *mag_cd* tools.
+When magnitudes are compared between BD/CD and PPM catalog, a simple transformation is computed with an unweighted least-squares adjustment. For BD a quadratic fit was performed over 1412 stars. For CD, a quadratic fit per volume was performed (11659 stars for first, 11796 for 2nd., 9620 for 3rd., 7672 for 4th. and 7372 for the last volume), see function `compVmagToCDmag` in file *trig.cpp*. Preparation of data and adjustment are processed by *mag_bd* and *mag_cd* tools, and *compute_mag.m* Matlab script.
 
 As an alternative, it was tested a different regression method. Instead of using individual visual magnitudes of CD where each cross-identification weights the same, these magnitudes were grouped in a scale, as it is explained below.
 For a given magnitude value, the tool finds all PPM stars that matches CD stars having that magnitude, and compute an average among them. Then, the regression is made
@@ -176,7 +177,7 @@ Here, tool *cross_txt* was used. For instance,
 ```
 ./cross_txt --csv results/cross/cross_cd_vol1_ppm.csv
 ```
-generates formulas for offset, linear and quadratic transformation.
+generates formulas for constant (offset), linear and quadratic transformations.
 Functions `compCDmagToVmag` and `compGCmagToVmag` in file *trig.cpp* have transformations for
 converting the magnitudes of CD and GC to Johnson V.
 
@@ -196,6 +197,6 @@ their photometric quality. The transformation is `ppmVmag = visualMag + offset`:
 | U | Yarnall-Frisby USNO 3rd. edition        |  0.246 |  5358 | 0.205 | 2.30 |
 | G | Gilliss                                 | -0.304 | 14756 | 0.599 | 3.32 |
 
-Note that, besides almost all stars of UA are cross-identified with PPM, only 4980 have been used for comparison. The reason is that PPM V magnitude coverage is poor for the northern hemisphere (same happens for quadratic fit of BD stars).
+Note that, besides almost all stars of UA are cross-identified with PPM, only 4980 have been used for the least-squares adjustment. The reason is that PPM V magnitude coverage is poor for the northern hemisphere (same happens for quadratic fit of BD stars).
 
 An interesting fact is that the visual magnitudes of last CD volume fits well when compared with PPM magnitudes, since the measurement of star brightness used the then-recent Harvard standard. Here, the mean error is less than 0.06 magnitudes.

@@ -324,6 +324,12 @@ void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south,
         }
       }
 
+      /* lee otras designaciones */
+      readFieldSanitized(buffer, cell, 102, 6);
+      int saoRef = atoi(cell);
+      readFieldSanitized(buffer, cell, 109, 6);
+      int hdRef = atoi(cell);
+
       /* la almacena en memoria */
       if (PPMstars == MAXPPMSTAR) bye("Maximum amount reached!\n");
       PPMstar[PPMstars].ppmRef = ppmRef;
@@ -337,6 +343,8 @@ void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south,
       PPMstar[PPMstars].y = y;
       PPMstar[PPMstars].z = z;
       PPMstar[PPMstars].dist = minDistance;
+      PPMstar[PPMstars].saoRef = saoRef;
+      PPMstar[PPMstars].hdRef = hdRef;
 
       /* proxima estrella */
       PPMstars++;
