@@ -36,6 +36,7 @@
 #define MAX_DIST_TAY_PPM 40.0
 #define MAX_DIST_OA_CPD 45.0
 #define MAX_DIST_ST_CPD 30.0
+#define MAX_DIST_USNO_PPM 30.0
 #define MAX_DIST_USNO_CPD 30.0
 #define MAX_DIST_TH_CPD 30.0
 #define MAX_DIST_UA_PPM 45.0
@@ -1255,7 +1256,7 @@ void readUSNO() {
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
         double nearestPPMDistance = minDistance;
-		if (minDistance < MAX_DIST_PPM) {
+		if (minDistance < MAX_DIST_USNO_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
 			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
