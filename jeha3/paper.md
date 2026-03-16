@@ -63,23 +63,23 @@ All three catalogs sacrificed astrometric precision in exchange for sky coverage
 
 *Table 1. Summary of the large nineteenth-century survey catalogs. Precision column gives the RMSE of angular separation relative to PPM (for the first volumes of BD and CD). The CPD limiting magnitude is photographic.*
 
-For BD, we consider as authority the last Edition of the printed catalog [5] which was the source base for the digital BD [9]. For CD, we consider the original printed catalog [4] but with those entries overrided by subsequent corrigenda published by the same Observatory [10].
+For BD, we consider as authority the last Edition of the printed catalog [5] which was the source base for the digital BD [9]. For CD, we consider the original printed catalog [4] but with those entries overrided by subsequent corrigenda published by the same Observatory: maybe other volume of the same series, such as Vol. 18, proemio pp. 54-56, or an individual paper [10].
 
-This work is mainly focused to find typo errors in the first volume of CD (around 180,000 stars) and, to a lesser extend, the first volume of BD (around 111,000 stars).
-
+This work is mainly focused to find typo errors in the first volume of CD [11] (around 180,000 stars) and, to a lesser extend, the first volume of BD (around 111,000 stars).
 
 ### 2.2 Reference and Comparison Catalogs
 
-The primary reference catalog used for detecting errors in CD is the *Positions and Proper Motions* catalog (PPM), a compilation of positions at J2000.0 for ~469,000 stars [11]. Of these, 172,000 carry a cross-identification with a CD star (about 28% of CD). The PPM positions are sufficiently precise — the star with the largest positional uncertainty (i.e. PPM 266698) among those identified with CD reports $\sigma_{\alpha *}$ = 0.57 arcseconds and $\sigma_{\delta}$ = 0.61 arcseconds when propagated to B1875.0 from their former mean epoch of 1973 — that any residual error from proper-motion propagation is negligible compared to the intrinsic uncertainty of the Durchmusterungs.
+The primary reference catalog used for detecting errors in CD is the *Positions and Proper Motions* catalog (PPM), a compilation of positions at J2000.0 for ~469,000 stars [12]. Of these, 172,000 carry a cross-identification with a CD star (about 28% of CD). The PPM positions are sufficiently precise — the star with the largest positional uncertainty (i.e. PPM 266698) among those identified with CD reports $\sigma_{\alpha *}$ = 0.57 arcseconds and $\sigma_{\delta}$ = 0.61 arcseconds when propagated to B1875.0 from their former mean epoch of 1973 — that any residual error from proper-motion propagation is negligible compared to the intrinsic uncertainty of the Durchmusterungs.
 
-Additional comparison catalogs used include the SD and CPD as we will see in the next section, and the *Córdoba* series of *Astronomische Gesellschaft Katalog* (AGK) zones, labelled Cordoba A, B, and C (epoch B1900.0, declinations −22° to −37°) [12]. These catalogs were measured at roughly the same epoch as CD and thus requires no proper-motion correction. More about AGK can be consulted in Chapter 17 of [7].
+Additional comparison catalogs used include the SD and CPD as we will see in the next section, and the *Córdoba* series of *Astronomische Gesellschaft Katalog* (AGK) zones, labelled Cordoba A, B, and C (epoch B1900.0, declinations −22° to −37°) [13]. These catalogs were measured at roughly the same epoch as CD and thus requires no proper-motion correction. More about AGK can be consulted in Chapter 17 of [7].
 
 ### 2.3 Cross-Identification Catalogs
 
 A crucial component of the method is that the cross-identifications between the Durchmusterungs and comparison catalogs must be *independent* of the digital positions: they must have been derived by humans comparing the printed catalogs, not by comparing the digital files. Besides the cross-identification information present in PPM catalog, two published cross-identification tables meet this requirement and are used here:
 
-- **Catalog IV/5** (*Table of Correspondences BD/CD/CPD*, Jung & Bischoff 1971) [13]: provides correspondences between BD, CD, and CPD for irregular sky patches.
-- **Catalog IV/11** (*Correspondences CD/CPD, Zones −18 to −39*, Bonnet) [14]: a more complete table covering CD and CPD for declinations −18° to −39°.
+- **Catalog IV/5** (*Table of Correspondences BD/CD/CPD*, Jung & Bischoff 1971) [14]: provides correspondences between BD, CD, and CPD for irregular sky patches.
+
+- **Catalog IV/11** (*Correspondences CD/CPD, Zones −18 to −39*, Bonnet) [15]: a more complete table covering CD and CPD for declinations −18° to −39°.
 
 Note that these catalogs, being hand-made, are not exempt from errors. Moreover, some of these errors appear to have survived and are now found in modern databases. For instance, in catalog IV/5, SD -22°5630 is identified
 to CD -22°15216 and this identification is also
@@ -90,31 +90,31 @@ SD -22°5630 is the same as HD 202025 which is near CD -22°15266. On the other 
 
 ### 2.4 Other Old Catalogs
 
-Besides [12], there are plenty of other old catalogs available at GAVO Data Center. In this work, we tried to curate some of them by comparing their entries with other catalogs via cross-identifications available on the catalog itself. Below, we enumerate them and their peculiarities (except UA, digital catalogs are at GAVO Data Center):
+Besides [13], there are plenty of other old catalogs available at GAVO Data Center. In this work, we tried to curate some of them by comparing their entries with other catalogs via cross-identifications available on the catalog itself. Below, we enumerate them and their peculiarities (except UA, digital catalogs can be downloaded from GAVO Data Center):
 
-- *Uranometría Argentina* (UA): This is a catalog of ~8,500 bright stars down to 7th. magnitude for epoch 1875.0 done at the Observatorio Nacional Argentino under the management of B. A. Gould. It covers all the southern sky and 10 degrees of the northern one. It contains Bayer and Flamsteed designations and references to BD, Lacaille, Lalande, Taylor, Oeltzen-Argelander South, Yarnall (2nd Ed.) and Weisse among others. More info in Chapter 5 of [7]. The digital version is available with code V/135A in Vizier.
+- *Uranometría Argentina* (UA): This is a catalog of ~8,500 bright stars down to 7th magnitude for epoch 1875.0 done at the Observatorio Nacional Argentino under the management of B. A. Gould. It covers all the southern sky and 10 degrees of the northern one. It contains Bayer and Flamsteed designations and references to BD, Lacaille, Lalande, Taylor, Oeltzen-Argelander South, Yarnall (2nd Ed.) and Weisse among others. More info in Chapter 5 of [7]. The digital version is available with code V/135A in Vizier.
 
 - *Argentine General Catalog* / *Catálogo General Argentino* (GC): A catalog of ~32,000 stars down to approximately magnitude 9 for epoch 1875.0, published in 1886 as part of the *Resultados del Observatorio Nacional Argentino* series under the direction of B. A. Gould. It fairly covers the southern sky. More info in Chapter 6 of [7]. Although the printed version contains cross-identifications to other catalogs, unfortunately this information were not added in the digital catalog.
 
 - *Segundo Catálogo General Argentino* (G2): A catalog of ~5,800 stars for epoch 1900.0, compiled at the Observatorio Nacional Argentino under the direction of J. M. Thome. It covers the southern sky, but the coverage is irregular. More info in Chapter 17 of [7].
 
-- *Histoire Céleste Française* (Lal): A catalog of ~47,000 stars down to approximately magnitude 9, with positions reduced to epoch 1800.0. Observations were made at the Paris Observatory by J. J. de Lalande during the late 18th century; the standard reduced edition was published by F. Baily in 1847. It covers roughly declinations −30° to the north pole. See [LIBROS3].
+- *Histoire Céleste Française* (Lal): A catalog of ~47,000 stars down to approximately magnitude 9, with positions reduced to epoch 1800.0. Observations were made at the Paris Observatory by J. J. de Lalande during the late 18th century; the standard reduced edition was published by F. Baily in 1847. It covers roughly declinations −30° to the north pole. See [16].
 
-- *Cape Catalogue of 12,441 Stars* (St): A catalog of ~12,000 stars for epoch 1880.0, observed at the Royal Observatory, Cape of Good Hope, by E. J. Stone, and published in 1881. It covers the sky accessible from the Cape of Good Hope, from approximately declination +50° to the south pole, although it is focused on the southern sky. In this work, it is also used when Lacaille (L) designations are found, since this catalog faily covers Lacaille's stars and has better precision. Digital version contains cross-identifications to older catalogs although this information were not exploited in this work.
+- *Cape Catalogue of 12,441 Stars* (St): A catalog of ~12,000 stars for epoch 1880.0, observed at the Royal Observatory, Cape of Good Hope, by E. J. Stone, and published in 1881. It covers the sky accessible from the Cape of Good Hope, from approximately declination +50° to the south pole, although it is focused on the southern sky. In this work, it is also used when Lacaille (L) designations are found, since this catalog fairly covers Lacaille's stars and has better precision. Digital version contains cross-identifications to older catalogs although this information were not exploited in this work.
 
-- *Katalog der Argelander'schen Zonen* (W): A catalog of ~18,000 stars for epoch 1850.0 covering declinations −15° to −31°, based on F. W. A. Argelander's zone observations reduced by E. Weiss at the Vienna Observatory. In this work, it is also used when Oeltzen-Argelander South (OA) designations are found, since this catalog covers most of OA's stars and the latter is not available in digital form. See [LIBROS3] for more info about OA catalog.
+- *Katalog der Argelander'schen Zonen* (W): A catalog of ~18,000 stars for epoch 1850.0 covering declinations −15° to −31°, based on F. W. A. Argelander's zone observations reduced by E. Weiss at the Vienna Observatory. In this work, it is also used when Oeltzen-Argelander South (OA) designations are found, since this catalog covers most of OA's stars and the latter is not available in digital form. See [16] for more info about OA catalog.
 
 - *Catalogue of 16,748 Southern Stars* (G): A catalog of 16,748 stars for epoch 1850.0 derived from zone observations made by the U.S. Naval Astronomical Expedition at a temporary observatory on Cerro Santa Lucía, Santiago de Chile (1849–1852), under the direction of J. M. Gilliss. The reductions were completed at the U.S. Naval Observatory and published in 1895. It covers about 30 degrees around the south pole. It has references to Lacaille, Stone and GC catalogs among others. It also has references to Gould's Zone Catalog. 
 
-- *Catalogue of Stars observed at the United States Naval Observatory* (U): A catalog of ~11,000 stars for epoch 1860.0 observed at the U.S. Naval Observatory in Washington during 1845–1877. The 3rd edition was originally compiled by M. Yarnall and later revised by E. Frisby (1889). It irregularly covers declinations from approximately −30° to the north pole. It contains designations to several other catalogs of that era: BD, BAC, Lacaille, Lalande, Taylor, Oeltzen-Argelander North and South, and WB among others. Cordoba catalogs refer to the 2nd edition of this catalog [LIBROS3], so number designations may differ up to ~300 units. For instance, star 37G Pyx of UA (HD 75722) corresponds to Y. 3739 (2nd Ed.) which is U. 3817 (3rd Ed.).
+- *Catalogue of Stars observed at the United States Naval Observatory* (U): A catalog of ~11,000 stars for epoch 1860.0 observed at the U.S. Naval Observatory in Washington during 1845–1877 [17]. The 3rd edition was originally compiled by M. Yarnall and later revised by E. Frisby (1889). It irregularly covers declinations from approximately −35° to the north pole. It contains designations to several other catalogs of that era: BD, BAC, Lacaille, Lalande, Taylor, Oeltzen-Argelander North and South, and WB among others. Cordoba catalogs refer to the 2nd edition of this catalog (1845-1871) [16], so number designations may differ up to ~300 units. For instance, star 37G Pyx of UA (HD 75722) corresponds to Y. 3739 (2nd Ed.) which is U. 3817 (3rd Ed.).
 
 - *Zonen-Beobachtungen, nördliche Zonen* (OARN): A catalog of ~26,000 stars for epoch 1842.0 covering declinations +45° to +80°, based on Argelander's northern zone observations and reduced by W. Oeltzen. It is the northern counterpart of the OA South zones used in this work.
 
-- *General Catalogue of the Principal Fixed Stars* (T): A catalog of ~11,000 stars down to approximately magnitude 8 for epoch 1835.0, observed at the Madras Observatory (India) during 1830–1843 under the direction of T. G. Taylor [LIBROS3]. The digital version contains cross-identifications with Lacaille and GC catalogs, among others. It covers the whole sky.
+- *General Catalogue of the Principal Fixed Stars* (T): A catalog of ~11,000 stars down to approximately magnitude 8 for epoch 1835.0, observed at the Madras Observatory (India) during 1830–1843 under the direction of T. G. Taylor [16]. The digital version contains cross-identifications with Lacaille and GC catalogs, among others. It covers the whole sky.
 
 - *Catalogue of Stars of the British Association for the Advancement of Science* (BAC): A catalog of ~8,000 bright stars reduced to epoch 1850.0, compiled by F. Baily and published in 1845. It covers the whole sky.
 
-- *Positiones Mediae Stellarum Fixarum* (WB): A catalog of ~32,000 stars for epoch 1825.0 covering declinations −15° to +15°, based on F. W. Bessel's zone observations at the Königsberg Observatory, reduced by M. Weisse and published by F. G. W. Struve in 1846 [LIBROS3]. Its limiting magnitude is approximately 9.
+- *Positiones Mediae Stellarum Fixarum* (WB): A catalog of ~32,000 stars for epoch 1825.0 covering declinations −15° to +15°, based on F. W. Bessel's zone observations at the Königsberg Observatory, reduced by M. Weisse and published by F. G. W. Struve in 1846 [16]. Its limiting magnitude is approximately 9.
 
 ---
 
@@ -124,17 +124,17 @@ Besides [12], there are plenty of other old catalogs available at GAVO Data Cent
 
 The core detection strategy exploits the fact that a typo error in a digital catalog manifests as an anomalously large discrepancy between the digitized position (or magnitude) and an independently obtained counterpart. The algorithm operates as follows:
 
-1. For each star in the reference catalog (e.g., PPM) that carries a cross-identification to CD, precess its J2000.0 coordinates and apply proper motion to obtain its expected position at epoch B1875.0 (in the FK4 system, using the WCSTools `wcsconp` routine) [TO DO: cite WCSTools].
+1. For each star in the reference catalog (e.g., PPM) that carries a cross-identification to CD, precess its J2000.0 coordinates and apply proper motion to obtain its expected position at epoch B1875.0 (in the FK4 system, using the WCSTools `wcsconp` routine) [18].
 2. Compute the angular distance between the propagated reference position and the position recorded in the digital CD.
 3. If this distance exceeds a pre-set threshold *d_pos*, log the entry for manual review, together with the entry as it would appear in the printed catalog (including an estimate of the printed page).
 4. If the reference catalog provides a visual or Johnson *V* magnitude, compare it with the CD magnitude after applying a polynomial magnitude-scale transformation (see below). If the magnitude difference exceeds a threshold *d_mag*, log the entry separately.
-5. Logged entries are then examined manually: the digital record is compared against the corresponding entry in the printed catalog, and any genuine digit error is corrected.
+5. Logged entries are then examined manually: the digital record is compared against the corresponding entry in the printed catalog, and any genuine digit error is corrected. Also check if the star is mentioned in any corrigenda (in that case, it requires further investigation).
 
-The choice of thresholds represents a trade-off between sensitivity and the number of false positives that must be manually inspected. For CD versus PPM, thresholds of *d_pos* = 120 arcseconds (2 arcminutes, approximately 5.7σ) and *d_mag* = 1.5 magnitudes (approximately 5σ) were found to produce a manageable log while retaining a high success rate.
+The choice of thresholds represents a trade-off between sensitivity and the number of false positives that must be manually inspected. For CD versus PPM, thresholds of *d_pos* = 120 arcseconds and *d_mag* = 1.5 magnitudes (approximately 5σ in both cases) were found to produce a manageable log while retaining a high success rate.
 
 **Magnitude scale transformation.** The visual magnitudes of the Durchmusterungs and modern Johnson *V* magnitudes follow slightly different scales. For each volume of CD, a quadratic polynomial transformation was fitted by least squares using the cross-identified PPM stars. For the first volume of CD (declinations −22° to −31°), the transformation derived from 11,659 stars is:
 
-*mag_V = −0.157169 + 1.188316 V − 0.022130 V²*
+$mag_V = −0.157169 + 1.188316 · V − 0.022130 · V^2$
 
 with RMSE = 0.30 magnitudes. Separate fits were performed for each of the five volumes of CD, with RMSEs ranging from 0.28 to 0.35 magnitudes.
 
@@ -142,18 +142,21 @@ with RMSE = 0.30 magnitudes. Separate fits were performed for each of the five v
 
 ### 3.2 Alternative Method: Reverse-Engineering of Printed Precession Constants
 
-Certain old catalogs (notably the *Argentine General Catalog*, abbreviated by GC) include, for each star, a pre-computed annual precession constant for right ascension and declination. These constants were computed from the star's own position using the formulae (Struve constants):
+Certain old catalogs (notably the *Argentine General Catalog*) include, for each star, a pre-computed annual precession constant for right ascension and declination. These constants were computed from the star's own position using the Bessel formulae with Struve/Peters coefficients [17]. For instance, for epoch 1875.0 used by GC catalog we have:
 
-*p_α = 3.072245 + 1.33695 · sin(α) · tan(δ)*
-*p_δ = 20.05425 · cos(α)*
+$p_{\alpha} = 3.072245 + 1.33695 · sin(\alpha) · tan(\delta) ~~~[s]$
 
-where α and δ are the right ascension and declination of the star. A typo error in the position will therefore cause the reported precession constant to disagree with the value recomputed from the (incorrect) position. Conversely, a typo error in the *precession column itself* — leaving the position unchanged — can be detected directly by comparing the reported constant against the value recomputed from the reported position.
+$p_{\delta} = 20.05425 · cos(\alpha) ~~~['']$
 
-This technique was implemented in GC, *Yarnall-Frisby USNO 3rd ed.* and *Gilliss* catalogs, yielding some candidates in which the discrepancy was unambiguously in the precession column of the printed catalog rather than in the position. For instance, GC 1795 reports an annual precession in right ascension of 0.409 s/yr, whereas the value recomputed from its position is 1.409 s/yr — a clear digit dropout. However, detections with this technique were rather limited.
+where $\alpha$ and $\delta$ are the right ascension and declination of the star. A typo error in the position will therefore cause the reported precession constant to disagree with the value recomputed from the (incorrect) position. Conversely, a typo error in the *precession column itself* — leaving the position unchanged — can be detected directly by comparing the reported constant against the value recomputed from the reported position.
+
+This technique was implemented in GC, *Yarnall-Frisby USNO 3rd ed.* and *Gilliss* catalogs, yielding some candidates in which the discrepancy was unambiguously in the precession column of the printed catalog rather than in the position. For instance, in the printed catalog, GC 1795 reports an annual precession in right ascension of 0.409 s/yr, whereas the value recomputed from its position is $p_{\alpha}$ = 1.409 s/yr — a clear digit dropout. Since the annual precession in declination is fine, it means there is no error in right ascension (because $p_{\delta}$ only depends on $\alpha$) leading to two hypotheses: the aforementioned error is in $p_{\alpha}$, or in $\delta$. Finally, we can discard an error in declination since the distance between GC 1795 and the nearest PPM is less than an arc second (PPM 352586).
+
+Detections with this technique were rather limited.
 
 ### 3.3 Isolated-Star Detection
 
-For catalogs without pre-existing cross-identifications, a complementary approach flags stars in the old catalog for which no counterpart is found within a generous angular radius in any of several reference catalogs (PPM, CD, CPD, or the Guide Star Catalog). A star that is truly isolated in the old catalog — with no plausible counterpart nearby — is a candidate for a position typo so large that the star appears displaced far from its true location. This method was applied to GC and yielded additional candidates, including entries corresponding to extended nebular objects (e.g., GC 322, which appears to be a star cluster rather than a single star).
+For catalogs without pre-existing cross-identifications, a complementary approach flags stars in the old catalog for which no counterpart is found within a generous angular radius in any of several reference catalogs (PPM, CD, CPD, or the Guide Star Catalog). A star that is truly isolated in the old catalog — with no plausible counterpart nearby — is a candidate for a position typo so large that the star appears displaced far from its true location. This method was applied to GC and yielded additional candidates, although several entries correspond to nebular objects and thus are false positives (e.g., GC 18278 is the star cluster omega Centauri).
 
 ---
 
@@ -191,11 +194,11 @@ The corrected entries include 78 corrections to right ascension, 40 corrections 
 
 In these cases, the angular discrepancy between the digital position and the PPM counterpart is explained almost exactly by the positional difference between the correct and incorrect printed values (the *dist1* and *dist2* columns in Table 3 of results/README.md agree to within observational noise), providing strong evidence that the cause is typographic rather than observational.
 
-The corrected first-volume catalog is available as `cat/cd_vol1_curated.txt` and includes all corrections from the 2018 Mendeley dataset [16] as well as the new corrections described here.
+The corrected first-volume catalog is available as `cat/cd_vol1_curated.txt` and includes all corrections from the 2018 Mendeley dataset [19] as well as the new corrections described here.
 
 ### 4.4 CD Declination −22° via the Southern Durchmusterung
 
-For the declination −22° strip of CD, PPM does not provide identifications because the SD boundary lies at this declination. Instead, the SD was used as the reference, with identifications obtained through catalog IV/5 [13]. Of 3,485 identified pairs (21% of the −22° strip), the algorithm flagged 21 position and 12 magnitude discrepancies. Manual inspection yielded only 4 genuine typo corrections (success rate 12%), notably CD −22°9451 and CD −22°9452, whose declination-minutes values in the digital file appear to have been swapped between the two consecutive entries.
+For the declination −22° strip of CD, PPM does not provide identifications because the SD boundary lies at this declination. Instead, the SD was used as the reference, with identifications obtained through catalog IV/5 [14]. Of 3,485 identified pairs (21% of the −22° strip), the algorithm flagged 21 position and 12 magnitude discrepancies. Manual inspection yielded only 4 genuine typo corrections (success rate 12%), notably CD −22°9451 and CD −22°9452, whose declination-minutes values in the digital file appear to have been swapped between the two consecutive entries.
 
 ### 4.5 Typo Errors Found in the Bonner Durchmusterung
 
@@ -278,7 +281,7 @@ We have described and applied a simple but effective method for detecting and co
 
 For the first volume of the *Córdoba Durchmusterung* (declinations −22° to −31°), a total of 127 parameter corrections were made (78 in right ascension, 40 in declination, and 9 in magnitude), yielding an algorithm success rate of 83% when used with PPM as the reference. The non-flagged pairs give an RMSE of 24.0 arcseconds, consistent with Thome's own precision estimate. For the *Bonner Durchmusterung* (first volume), 14 corrections were confirmed at a 15% success rate, reflecting the inherently noisier BD precision. Across all nine catalogs processed, 247 corrections have been validated and applied.
 
-The method has important limitations: it can only detect errors that produce discrepancies exceeding the threshold, and it is restricted to the fraction of stars carrying pre-existing cross-identifications (roughly 23–28% of the Durchmusterungs). Approximately 70–77% of CD remains unexplored. Future work could address this by (i) extending the comparison to additional volumes of CD using the existing PPM log, (ii) exploiting CPD identifications (IV/11 provides 22% coverage at declinations −22° to −39°), and (iii) applying probabilistic cross-identification algorithms [17, 18] to extend coverage to stars not currently identified in any reference catalog.
+The method has important limitations: it can only detect errors that produce discrepancies exceeding the threshold, and it is restricted to the fraction of stars carrying pre-existing cross-identifications (roughly 23–28% of the Durchmusterungs). Approximately 70–77% of CD remains unexplored. Future work could address this by (i) extending the comparison to additional volumes of CD using the existing PPM log, (ii) exploiting CPD identifications (IV/11 provides 22% coverage at declinations −22° to −39°), and (iii) applying probabilistic cross-identification algorithms [18, 19] to extend coverage to stars not currently identified in any reference catalog.
 
 The curated catalogs are publicly available at https://github.com/aureus123/catalogs, together with the source code of all comparison tools and the full logs of flagged entries.
 
@@ -288,7 +291,7 @@ The curated catalogs are publicly available at https://github.com/aureus123/cata
 
 [1] Williams, T. R.; Saladyga, M. (2011). *Advancing Variable Star Astronomy: The Centennial History of the American Association of Variable Star Observers*. Cambridge: Cambridge University Press. ISBN 9780521519120.
 
-[2] Wagner, M. J. (1984). The BD : a progress report. *Bulletin d'Information du CDS*, Vol. 26, p. 87.
+[2] Wagner, M. J. (1984). The BD : a progress report. *Bulletin d'Information du CDS*, Vol. 26, p. 87. https://articles.adsabs.harvard.edu/pdf/1984BICDS..26...87W
 
 [3] Severin, D. E.; Sevilla, D. J. (2015). Development of a new digital version of "Cordoba Durchmusterung" stellar catalog. *Revista Académica Electrónica de la UNR*, Vol. 15 (8), pp. 2250–2260. https://rephip.unr.edu.ar/server/api/core/bitstreams/0362c1df-b472-4216-99fe-46c7f135921a/content
 
@@ -306,17 +309,24 @@ The curated catalogs are publicly available at https://github.com/aureus123/cata
 
 [10] Thome, J. M. (1896). List of additional errors found in the Cordoba catalogues. *The Astronomical Journal*, Vol. 364, p. 30.
 
-[11] Röser, S.; Bastian, U. (1991). PPM Star Catalogue. Vizier catalogs I/146, I/193, I/206, I/208, e.g. https://cdsarc.cds.unistra.fr/viz-bin/cat/I/146
+[11] Vizier catalog I/114: Córdoba Durchmusterung at CDS. https://cdsarc.cds.unistra.fr/viz-bin/cat/I/114
 
-[12] Astronomische Gesellschaft Katalog: Cordoba A, B, C at GAVO Data Center in Heidelberg. http://dc.g-vo.org/arigfh/katkat
+[12] Röser, S.; Bastian, U. (1991). PPM Star Catalogue. Vizier catalogs I/146, I/193, I/206, I/208, e.g. https://cdsarc.cds.unistra.fr/viz-bin/cat/I/146
 
-[13] Jung, J.; Bischoff, M. (1971). *Table of Correspondences BD/CD/CPD*. NASA Astronomical Data Center, catalog IV/5. [Also available at VizieR.](https://cdsarc.cds.unistra.fr/viz-bin/cat/IV/5)
+[13] Astronomische Gesellschaft Katalog: Cordoba A, B, C at GAVO Data Center in Heidelberg, codes T0986P10, T0987P10, T0988P10. https://dc.g-vo.org/arigfh/katkat/q/form
 
-[14] Bonnet, R. M. (circa 1970). *Correspondences CD/CPD, Zones −18 to −39*. NASA Astronomical Data Center, catalog IV/11. [Also available at VizieR.](https://cdsarc.cds.unistra.fr/viz-bin/cat/IV/11)
+[14] Jung, J.; Bischoff, M. (1971). *Table of Correspondences BD/CD/CPD*. NASA Astronomical Data Center, catalog IV/5. [Also available at VizieR.](https://cdsarc.cds.unistra.fr/viz-bin/cat/IV/5)
 
-[15] Rappaport, B. N.; Warren, W. H., Jr. (1987). Cross-identification of the Cordoba and Cape Photographic Durchmusterung. *Bulletin of the American Astronomical Society* 18, p. 897. (Catalog IV/19, NASA-ADC.)
+[15] Bonnet, R. M. (circa 1970). *Correspondences CD/CPD, Zones −18 to −39*. NASA Astronomical Data Center, catalog IV/11. [Also available at VizieR.](https://cdsarc.cds.unistra.fr/viz-bin/cat/IV/11)
 
-[16] Severin, D. E. (2018). Cross-identification between Cordoba Durchmusterung catalog (declinations −22, −23 and −24) and PPMX catalog. *Mendeley Data*, V1. http://dx.doi.org/10.17632/5wwwtv7c8c.1
+[16] Paolantonio, S. (2014). Libros con historia III. Available at https://historiadelaastronomia.wordpress.com/documentos/librosconhistoriaiii/
 
-[17] Severin, D. E. (2018). Cross-identification of stellar catalogs with multiple stars: Complexity and Resolution. *Electronic Notes in Discrete Mathematics* 69, pp. 29–36. https://doi.org/10.1016/j.endm.2018.07.005
+[17] Yarnall, M.; Frisby, E. (1889). *Catalogue of Stars observed at the United States Naval Observatory during the Years 1845 to 1877*, Third Edition. Washington: U.S. Government Printing Office.
 
+[18] Mink, D. J. (1997). WCSTools: Putting Image World Coordinate Systems to Use. *Astronomical Data Analysis Software and Systems VI, A.S.P. Conference Series*, Vol. 125, pp. 249-252. San Francisco: Astronomical Society of the Pacific.
+
+[19] Severin, D. E. (2018). Cross-identification between Cordoba Durchmusterung catalog (declinations −22, −23 and −24) and PPMX catalog. *Mendeley Data*, V1. http://dx.doi.org/10.17632/5wwwtv7c8c.1
+
+[20] Severin, D. E. (2018). Cross-identification of stellar catalogs with multiple stars: Complexity and Resolution. *Electronic Notes in Discrete Mathematics* 69, pp. 29–36. https://doi.org/10.1016/j.endm.2018.07.005
+
+[20] Rappaport, B. N.; Warren, W. H., Jr. (1987). Cross-identification of the Cordoba and Cape Photographic Durchmusterung. *Bulletin of the American Astronomical Society* Vol. 18, p. 897. (Catalog IV/19, NASA-ADC.)
