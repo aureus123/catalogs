@@ -372,7 +372,7 @@ Check references between USNO and BD/BAC/OA...
 49) Warning: U 3054 reports 2.943 on precession RA but it should be 2.743 (diff=0.200).
      Register U 3054: 07h 16m 50s80 -14°36'00"0
 50) Warning: U 3122 reports 2.395 on precession RA but it should be 2.381 (diff=0.014).
-     Register U 3122: 07h 23m 56s16 -28°58'00"0
+     Register U 3122: 07h 23m 56s20 -28°58'00"0
 51) Warning: U 3246 reports 2.819 on precession RA but it should be 2.841 (diff=0.022).
      Register U 3246: 07h 42m 29s00 -10°50'07"1
 52) Warning: U 3496 is FAR from WB 8h 569 (dist = 148.0 arcsec).
@@ -492,8 +492,8 @@ Check references between USNO and BD/BAC/OA...
      Register U 7492: 17h 33m 55s53 -32°58'42"1
 104) Warning: U 7502 is FAR from BAC 5983 (dist = 152.0 arcsec).
      Register U 7502: 17h 34m 31s59 -30°06'17"7
-105) Warning: U 7524 is FAR from OA 17415 (dist = 83.3 arcsec).
-     Register U 7524: 17h 37m 13s63 +68°27'00"0
+105) Warning: U 7524 reports -0.301 on precession RA but it should be -0.317 (diff=0.016).
+     Register U 7524: 17h 37m 13s69 +68°34'00"0
 106) Warning: U 7580 is FAR from BAC 6028 (dist = 25884.3 arcsec).
      Register U 7580: 17h 42m 53s40 -34°45'24"0
 107) Warning: U 7752 is FAR from BAC 6108 (dist = 75.8 arcsec).
@@ -597,7 +597,7 @@ Check references between USNO and BD/BAC/OA...
 USNO properly identified with BD = 380
 USNO properly identified with WB = 1380
 USNO properly identified with BAC = 1372
-USNO properly identified with OA = 166
+USNO properly identified with OA = 167
 Errors logged = 149
 
 ***************************************

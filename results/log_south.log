@@ -1128,9 +1128,9 @@ Stars read from PPM: 468861
 42) Warning: U 3110 is FAR from OA 6875 (dist = 73.7 arcsec).
      Register U 3110: 07h 22m 47s04 -14°44'57"4
 43) Warning: U 3122 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register U 3122: 07h 23m 56s16 -28°58'00"0
+     Register U 3122: 07h 23m 56s20 -28°58'00"0
   Possible cause: lack of Decl (s).
-  Note: nearest PPM 252521 at 768.9 arcsec.
+  Note: nearest PPM 252521 at 768.8 arcsec.
 **) Note: U 3162 has no PPM / CD / CPD near it but has a nearby GSC star 0540902351 at 17.8 arcsec.
   Note: nearest PPM 218925 at 41.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -1538,52 +1538,47 @@ Stars read from PPM: 468861
 **) Note: U 7522 has no PPM / CD / CPD near it but has a nearby GSC star 0566000176 at 9.7 arcsec.
   Note: nearest PPM 200993 at 148.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-89) Warning: U 7524 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register U 7524: 17h 37m 13s63 +68°27'00"0
-  Possible cause: lack of Decl (s).
-  Note: nearest PPM 20474 at 54.2 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-90) Warning: U 7541 is FAR from Lal 23418 (dist = 258066.3 arcsec).
+89) Warning: U 7541 is FAR from Lal 23418 (dist = 258066.3 arcsec).
      Register U 7541: 17h 39m 05s83 -25°07'53"1
-91) Warning: U 7584 is ALONE (no PPM / CD / CPD / GSC star near it).
+90) Warning: U 7584 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 7584: 17h 43m 04s87 +36°35'31"9
   Note: nearest PPM 80593 at 43.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-92) Warning: U 7688 is ALONE (no PPM / CD / CPD / GSC star near it).
+91) Warning: U 7688 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 7688: 17h 50m 28s88 -28°02'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 267606 at 322.3 arcsec.
 **) Note: U 7843 has no PPM / CD / CPD near it but has a nearby GSC star 0627601101 at 3.8 arcsec.
   Note: nearest PPM 268080 at 52.6 arcsec.
-93) Warning: U 7967 is ALONE (no PPM / CD / CPD / GSC star near it).
+92) Warning: U 7967 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 7967: 18h 20m 02s57 +00°06'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 165855 at 58.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-94) Warning: U 8010 is ALONE (no PPM / CD / CPD / GSC star near it).
+93) Warning: U 8010 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8010: 18h 24m 51s50 +61°05'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 20919 at 37.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-95) Warning: U 8013 is ALONE (no PPM / CD / CPD / GSC star near it).
+94) Warning: U 8013 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8013: 18h 25m 13s00 +61°08'55"0
   Note: nearest PPM 20924 at 110.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: U 8221 has no PPM / CD / CPD near it but has a nearby GSC star 0570602260 at 7.1 arcsec.
   Note: nearest PPM 202382 at 217.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-96) Warning: U 8279 is FAR from L 7990 (dist = 1212.7 arcsec).
+95) Warning: U 8279 is FAR from L 7990 (dist = 1212.7 arcsec).
      Register U 8279: 18h 57m 23s88 -38°00'23"1
-97) Warning: U 8289 (vmag = 9.2) has a near PPM 235507 star (vmag = 5.8) with a different magnitude (delta = 3.4).
-98) Warning: U 8380 is ALONE (no PPM / CD / CPD / GSC star near it).
+96) Warning: U 8289 (vmag = 9.2) has a near PPM 235507 star (vmag = 5.8) with a different magnitude (delta = 3.4).
+97) Warning: U 8380 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8380: 19h 08m 45s66 +38°47'49"5
   Note: nearest PPM 82539 at 30.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-99) Warning: U 8430 is ALONE (no PPM / CD / CPD / GSC star near it).
+98) Warning: U 8430 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8430: 19h 13m 07s60 +05°26'26"3
   Note: nearest PPM 167638 at 362.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-100) Warning: U 8459 is ALONE (no PPM / CD / CPD / GSC star near it).
+99) Warning: U 8459 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8459: 19h 16m 08s63 -08°25'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 202856 at 263.6 arcsec.
@@ -1591,16 +1586,16 @@ Stars read from PPM: 468861
 **) Note: U 8495 has no PPM / CD / CPD near it but has a nearby GSC star 0266601223 at 3.5 arcsec.
   Note: nearest PPM 82862 at 374.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-101) Warning: U 8582 is ALONE (no PPM / CD / CPD / GSC star near it).
+100) Warning: U 8582 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8582: 19h 28m 46s01 +19°29'31"3
   Note: nearest PPM 136538 at 33.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-102) Warning: U 8641 is ALONE (no PPM / CD / CPD / GSC star near it).
+101) Warning: U 8641 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8641: 19h 33m 43s66 +38°31'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 83281 at 139.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-103) Warning: U 8731 is ALONE (no PPM / CD / CPD / GSC star near it).
+102) Warning: U 8731 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8731: 19h 42m 49s84 +34°54'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 83576 at 48.2 arcsec.
@@ -1609,7 +1604,7 @@ Stars read from PPM: 468861
   Possible cause: lack of Decl (s).
   Note: nearest PPM 59089 at 56.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-104) Warning: U 8857 is ALONE (no PPM / CD / CPD / GSC star near it).
+103) Warning: U 8857 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8857: 19h 55m 03s52 +34°58'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 84005 at 32.4 arcsec.
@@ -1617,65 +1612,65 @@ Stars read from PPM: 468861
 **) Note: U 8929 has no PPM / CD / CPD near it but has a nearby GSC star 0517301156 at 8.3 arcsec.
   Note: nearest PPM 203718 at 871.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-105) Warning: U 8959 is ALONE (no PPM / CD / CPD / GSC star near it).
+104) Warning: U 8959 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8959: 20h 06m 19s76 -14°18'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 237114 at 43.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-106) Warning: U 8982 is ALONE (no PPM / CD / CPD / GSC star near it).
+105) Warning: U 8982 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8982: 20h 08m 18s48 +38°24'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 84476 at 200.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-107) Warning: U 9006 is ALONE (no PPM / CD / CPD / GSC star near it).
+106) Warning: U 9006 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 9006: 20h 10m 33s99 +36°41'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 84574 at 65.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-108) Warning: U 9020 is ALONE (no PPM / CD / CPD / GSC star near it).
+107) Warning: U 9020 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 9020: 20h 11m 35s11 +36°43'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 84611 at 36.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-109) Warning: U 9266 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
+108) Warning: U 9266 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
      Register CD -25°15018 (en 20h):  4.3 | 38m41.5s | 42.5'     (pag. 227)
-110) Warning: U 9320 (vmag = 6.6) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+109) Warning: U 9320 (vmag = 6.6) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -41°14265 (en 20h):  10.0 | 43m30.7s | 22.2'     (pag. 535)
 **) Note: U 9383 has no PPM / CD / CPD near it but has a nearby GSC star 0270001198 at 9.1 arcsec.
   Note: nearest PPM 85712 at 576.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-111) Warning: U 9464 is FAR from L 8690 (dist = 287.2 arcsec).
+110) Warning: U 9464 is FAR from L 8690 (dist = 287.2 arcsec).
      Register U 9464: 20h 58m 55s65 -23°42'29"7
-112) Warning: U 9469 is FAR from L 8693 (dist = 618.0 arcsec).
+111) Warning: U 9469 is FAR from L 8693 (dist = 618.0 arcsec).
      Register U 9469: 20h 59m 50s99 -37°48'16"0
-113) Warning: U 9474 is ALONE (no PPM / CD / CPD / GSC star near it).
+112) Warning: U 9474 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 9474: 21h 00m 33s86 +38°03'18"6
   Note: nearest PPM 86045 at 50.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: U 9536 has no PPM / CD / CPD near it but has a nearby GSC star 0317300703 at 5.0 arcsec.
   Note: nearest PPM 61147 at 561.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-114) Warning: U 9588 is ALONE (no PPM / CD / CPD / GSC star near it).
+113) Warning: U 9588 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 9588: 21h 15m 52s28 +48°47'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 61303 at 250.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-115) Warning: U 9622 is ALONE (no PPM / CD / CPD / GSC star near it).
+114) Warning: U 9622 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 9622: 21h 19m 25s99 +38°00'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 86525 at 57.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-116) Warning: U 9634 is FAR from L 8827 (dist = 35999.8 arcsec).
+115) Warning: U 9634 is FAR from L 8827 (dist = 35999.8 arcsec).
      Register U 9634: 21h 21m 08s76 -38°17'57"6
 **) Note: U 9691 has no PPM / CD / CPD near it but has a nearby GSC star 0318700362 at 2.3 arcsec.
   Note: nearest PPM 86749 at 320.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-117) Warning: U 9729 is FAR from L 8889 (dist = 435.8 arcsec).
+116) Warning: U 9729 is FAR from L 8889 (dist = 435.8 arcsec).
      Register U 9729: 21h 33m 52s22 -33°08'30"3
 **) Note: U 9765 has no PPM / CD / CPD near it but has a nearby GSC star 0318402150 at 1.1 arcsec.
   Note: nearest PPM 86946 at 444.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-118) Warning: U 9826 is ALONE (no PPM / CD / CPD / GSC star near it).
+117) Warning: U 9826 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 9826: 21h 44m 18s06 +38°58'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 87081 at 168.6 arcsec.
@@ -1683,42 +1678,42 @@ Stars read from PPM: 468861
 **) Note: U 9849 has no PPM / CD / CPD near it but has a nearby GSC star 0318501155 at 13.2 arcsec.
   Note: nearest PPM 87115 at 170.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-119) Warning: U 9977 is ALONE (no PPM / CD / CPD / GSC star near it).
+118) Warning: U 9977 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 9977: 22h 01m 48s71 +53°02'43"1
   Note: nearest PPM 40235 at 77.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-120) Warning: U 10051 is ALONE (no PPM / CD / CPD / GSC star near it).
+119) Warning: U 10051 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10051: 22h 10m 05s02 +37°40'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 87598 at 74.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-121) Warning: U 10130 is ALONE (no PPM / CD / CPD / GSC star near it).
+120) Warning: U 10130 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10130: 22h 19m 30s35 +38°30'51"1
   Note: nearest PPM 87756 at 37.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-122) Warning: U 10277 is ALONE (no PPM / CD / CPD / GSC star near it).
+121) Warning: U 10277 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10277: 22h 37m 25s65 -14°20'33"5
   Note: nearest PPM 240690 at 56.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-123) Warning: U 10436 is FAR from L 9352 (dist = 69.2 arcsec).
+122) Warning: U 10436 is FAR from L 9352 (dist = 69.2 arcsec).
      Register U 10436: 22h 56m 52s96 -36°39'16"0
-124) Warning: U 10436 is ALONE (no PPM / CD / CPD / GSC star near it).
+123) Warning: U 10436 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10436: 22h 56m 52s96 -36°39'16"0
   Note: nearest PPM 400306 at 54.6 arcsec.
-125) Warning: U 10580 is ALONE (no PPM / CD / CPD / GSC star near it).
+124) Warning: U 10580 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10580: 23h 13m 33s76 -19°15'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 241502 at 211.5 arcsec.
-126) Warning: U 10623 is ALONE (no PPM / CD / CPD / GSC star near it).
+125) Warning: U 10623 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10623: 23h 19m 03s19 +54°40'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 41790 at 37.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-127) Warning: U 10664 is ALONE (no PPM / CD / CPD / GSC star near it).
+126) Warning: U 10664 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10664: 23h 22m 48s36 +07°00'54"4
   Note: nearest PPM 174137 at 119.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-128) Warning: U 10678 is ALONE (no PPM / CD / CPD / GSC star near it).
+127) Warning: U 10678 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10678: 23h 24m 22s05 +15°07'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 142591 at 38.0 arcsec.
@@ -1726,22 +1721,22 @@ Stars read from PPM: 468861
 **) Note: U 10789 has no PPM / CD / CPD near it but has a nearby GSC star 0117001186 at 4.4 arcsec.
   Note: nearest PPM 174438 at 230.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-129) Warning: U 10843 is ALONE (no PPM / CD / CPD / GSC star near it).
+128) Warning: U 10843 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10843: 23h 47m 20s18 +10°47'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 142957 at 325.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-130) Warning: U 10948 is ALONE (no PPM / CD / CPD / GSC star near it).
+129) Warning: U 10948 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10948: 23h 58m 33s47 +57°30'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 24994 at 152.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 Available USNO stars = 10960
 Stars from USNO with Lacaille = 1401, Lalande = 570, Taylor = 8 and OA = 1213
-Stars from USNO identified with PPM = 10676, CD = 4295 and CPD = 4658
-RSME of distance (arcsec) = 3.41  among a total of 10676 stars
+Stars from USNO identified with PPM = 10677, CD = 4295 and CPD = 4658
+RSME of distance (arcsec) = 3.41  among a total of 10677 stars
 RSME of visual magnitude = 0.63917  among a total of 5401 stars
-Errors logged = 130
+Errors logged = 129
 
 ***************************************
 Check cross-references from GC
