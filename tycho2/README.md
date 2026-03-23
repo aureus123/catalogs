@@ -1,6 +1,6 @@
 # Cross identifications with Tycho-2 catalogue
 
-Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues, however the DM designation is used instead of PPM. In the case designations of other old catalogues were available, the latter are reported. In the case of PPM stars, DM designation are taken from their DM column. In northern hemisphere, stars are reported in the following order of priority:
+Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM catalogues, however the DM designation is used instead of PPM. If designations of other old catalogues were available, the latter are reported. In the case of PPM stars, DM designations are taken from their DM column. In northern hemisphere, stars are reported in the following order of priority:
 - Stars from Uranometría Argentina (*UA*)
 - Lalande's catalog (*Lal*)
 - Yarnall-Frisby USNO catalog (*U*)
@@ -11,7 +11,7 @@ In southern hemisphere, we have stars from:
 - Lacaille's catalog (*L*)
 - Lalande's catalog (*Lal*)
 - Catálogo General Argentino (*GC*)
-- Gould's Zone Catalog designiations coming from other catalogs (*ZC*)
+- Gould's Zone Catalog designations coming from other catalogs (*ZC*)
 - Oeltzen-Argelander designations coming from Weiss catalog (*OA*)
 - Yarnall-Frisby USNO catalog (*U*)
 - Gilliss catalog (*G*)
@@ -29,7 +29,7 @@ Since all identifications are performed just by angular distance thresholds, mis
 missing in the southern hemisphere (only BD coming from PPM are considered).
 Files *cross_gc.cpp* and *cross_south.cpp* do the cross-identifications between PPM/CD/CPD and UA/L/Lal/GC/ZC/OA/U/G.
 
-Other further improvements (not done yet) might be to use a better
+Further improvements (not done yet) might be to use a better
 cross-identification algorithm, e.g. that maximizes likelihood between positions
 and magnitudes when comparing Tycho-2 and a target catalogue, with Hungarian
 algorithm, see this [paper](https://doi.org/10.1016/j.endm.2018.07.005).
@@ -51,7 +51,7 @@ plotann.py image.wcs image.png image.ann.png --no-grid --no-const --no-bright --
 ```
 
 Example:
-![Alt text](C102.png?raw=true "Southern Pleyades")
+![Alt text](C102.png?raw=true "Southern Pleiades")
 
 Some stars that you can see in the example:
 | Star (SIMBAD) | Old designation | Tycho-2 | Where to find it |
@@ -87,4 +87,4 @@ Currently, only stars of the first volume of CD are considered (declinations -22
 Example:
 ![Alt text](NGC4993.png?raw=true "NGC4993")
 
-Here, it is shown that the star CD -22°9774 is colored (psi Hydrae). Also the star CD -22°9808 is double.
+Here, it is shown that the star CD -22°9774 is colored (psi Hydrae). Also, the star CD -22°9808 is double.

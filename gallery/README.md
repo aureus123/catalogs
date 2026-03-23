@@ -1,8 +1,8 @@
 # Gallery with historical annotations
 
-Here, there are pics taken with my Dwarf 3 smart telescope, from [dwarflab](dwarflab.com). Plate-solving and annotations are generated with
+Here, there are pics taken with my Dwarf 3 smart telescope, from [dwarflab](dwarflab.com). Plate-solving and annotations are generated with the
 [astrometry.net](astrometry.net) package and a custom plotann.py described
-in the [tycho2](../tycho2) folder. It may give some idea of how 19th. century
+in the [tycho2](../tycho2) folder. It may give some idea of how 19th-century
 astronomers viewed and named stars.
 
 M7 (Ptolemy Cluster) and G Sco:

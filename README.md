@@ -4,27 +4,27 @@
 Catalogs are in the [cat](cat) folder.
 
 ✏️ The main comparison is given between Cordoba Durchmusterung (CD) and Positions and Proper Motions (PPM) catalogs, but other "experiments" are performed between other catalogs.
-The comparison consists of computing the angular distance between the position of a star in both catalogs, and log those cases where it exceeds a given threshold. Also the difference between visual magnitude is logged.
+The comparison consists of computing the angular distance between the position of a star in both catalogs, and log those cases where it exceeds a given threshold. Also, the difference between visual magnitude is logged.
 The threshold used for comparing CD and PPM is 2 arcmin, and for magnitude is 1.5 units.
-The hypothesis is that, since the cross-identifications between both catalogs were also transcribed from older documents, it provides an independent matching between both catalogs (i.e. the cross-identification does not comes from the comparison between the digital version of the Durchmusterung and the target catalog, but from a man-made identification between the printed version and the target catalog).
+The hypothesis is that, since the cross-identifications between both catalogs were also transcribed from older documents, it provides an independent matching between both catalogs (i.e. the cross-identification does not come from the comparison between the digital version of the Durchmusterung and the target catalog, but from a man-made identification between the printed version and the target catalog).
 
 ### Algorithm
 
 📄 The approach considers two catalogs, the source (e.g. CD) and the target (e.g PPM).
-In first place, all stars from the target catalog having a cross-identification between both catalogs are considered. Then, coordinates are precessed to the epoch of the source catalog (e.g from J2000 to B1875) and corrected by proper motion.
+In the first place, all stars from the target catalog having a cross-identification between both catalogs are considered. Then, coordinates are precessed to the epoch of the source catalog (e.g from J2000 to B1875) and corrected by proper motion.
 The resulting coordinates are compared to those from the source catalog.
 If the angular distance exceeds a given threshold, a warning is generated, with the data of that star in the source catalog in the format
 used in its printed form. Also, the page of the printed catalog is
 estimated.
 One can compare these data against the real printed catalog, in order to
-find typo errors during the confection of the digital version of BD or CD.
+find typo errors during the creation of the digital version of BD or CD.
 Results and logs are in the [results](results) folder.
 
 ### Limitations of the approach
 
-🛑 On the one hand, only typo mistakes that leads to an excess in the thresholds can be corrected. For instance, a threshold of 0.5 for magnitudes will find some errors in the first digit of them (e.g. if the value reported is 8.8 but the real is 9.3) and will skip some other (e.g. if the real is 9.1), however mistakes in the second digit will not be found. Naturally, one can reduce the threshold to raise the number of hits, but at the expense of increase a lot the number of false-positives (see Experiment 2 in the results folder).
+🛑 On the one hand, only typo mistakes that leads to an excess in the thresholds can be corrected. For instance, a threshold of 0.5 for magnitudes will find some errors in the first digit of them (e.g. if the value reported is 8.8 but the real is 9.3) and will skip some others (e.g. if the real is 9.1), however mistakes in the second digit will not be found. Naturally, one can reduce the threshold to raise the number of hits, but at the expense of greatly increasing the number of false-positives (see Experiment 2 in the results folder).
 
-✋ On the other hand, the approach is limited to the cross-identified stars. In the case of CD, from a total of 613778 stars, only 171303 has useful cross-identifications with PPM. That means that there are roughly 72% of stars in the CD digital catalog that the algorithm does not explore.  
+✋ On the other hand, the approach is limited to the cross-identified stars. In the case of CD, from a total of 613778 stars, only 171303 have useful cross-identifications with PPM. That means that there are roughly 72% of stars in the CD digital catalog that the algorithm does not explore.  
 
 ### Comparison schemes
 
@@ -37,10 +37,10 @@ Results and logs are in the [results](results) folder.
 ### Other experiments
 
 - *cross_gc*: Cross-identifies curated CD and GC (Argentine General Catalog) and compares them
-- *cross_north*: Cross-identified lower hierarchy catalogs, mostly north
-- *cross_south*: Cross-identified lower hierarchy catalogs, mostly south
+- *cross_north*: Cross-identifies lower hierarchy catalogs, mostly north
+- *cross_south*: Cross-identifies lower hierarchy catalogs, mostly south
 - *compare_cd*: Logs differences between two digital versions of CD
-- *cross_txt*: Fits (by mean squares) magnitude scales
+- *cross_txt*: Fits (by least squares) magnitude scales
 - *gen_tycho2_north* and *gen_tycho2_south*: See README in [tycho2](tycho2) folder, also see the [gallery](gallery) folder
 
 ### Requirements
@@ -48,7 +48,7 @@ Results and logs are in the [results](results) folder.
 🚰 Sources of WCSTools 3.9.7 from http://tdc-www.harvard.edu/wcstools should be downloaded to wcstools-3.9.7 folder, and compiled.
 The routine "wcsconp" is used for transforming coordinates.
 
-🚰 Some experiments require having GSC catalog and source files is gsc folder.
+🚰 Some experiments require having GSC catalog and source files in the gsc folder.
 
 ### Mean accuracy of catalogues
 
@@ -91,8 +91,8 @@ catalogs (OA and Lacaille):
 ### Wishlist
 
 - Use cross-identification algorithm based on a matching that maximizes likelihood (see bibliography) instead of simple angular distance thresholds.
-- Write a list of all double stars from footnotes of Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB) (only declinations -22, -23 and -24 were transcripted at the moment) and perform a cross-identification of that CD volume with a modern catalog.
-- Correct typo error of all CD catalog.
+- Write a list of all double stars from footnotes of Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB) (only declinations -22, -23 and -24 were transcribed at the moment) and perform a cross-identification of that CD volume with a modern catalog.
+- Correct typo errors in all CD catalogs.
 - Usually, the supplementary letter of BD/SD/CD designations is ignored. Revise it.
 - Refactor code! Consider Jupyter Lab and AstroPy instead of C++ code.
 

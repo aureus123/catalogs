@@ -1,12 +1,12 @@
 # Available catalogs
 
 This folder has a copy of different digital catalogs. We mark with a dagger (†)
-those files that were partially sanitized
+those files that were partially sanitized.
 
 ### Cordoba Durchmusterung
 
 - cd : Current catalog from _VizieR_ (code I/114)
-- cd_curated †: Same as "cd" but after correcting typo error
+- cd_curated †: Same as "cd" but after correcting typo errors
 - cd_vol1 : Same as "cd" but only first volume (Resultados del Observatorio Nacional Argentino, Tomo XVI, declinaciones -22 a -31)
 - cd_vol1_curated †: Same as "cd_vol1" but after correcting typo errors
 - 1114 : Catalog from _NASA-ADC CD-ROMs_, circa 1994
@@ -27,7 +27,7 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 - ppm : Positions and Proper Motions from _VizieR_ (merge of I/146, I/193, I/206 and I/208)
 - ua †: Uranometría Argentina from _VizieR_ (code V/135A)
 - bd : Bonner Durchmusterung from _VizieR_ (code I/122)
-- bd_curated †: Same as "bd" but after correcting typo error
+- bd_curated †: Same as "bd" but after correcting typo errors
 - bd_vol1 : Same as "bd" but only first volume
 - bd_vol1_curated †: Same as "bd_vol1" but after correcting typo errors
 - sd : Bonner (southern) durchmusterung from _VizieR_ (code I/119)
@@ -54,13 +54,13 @@ January 1, 1850, from _GAVO Data Center_
 - thome1882 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 140-164, from _GAVO Data Center_
 - thome1883 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 181-184, from _GAVO Data Center_
 - thome1884 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 232-249, from _GAVO Data Center_
-- 4005 †: Table of Correspondences BD/CD/CPD (Jung, Bischoffl 1971) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/5)
+- 4005 †: Table of Correspondences BD/CD/CPD (Jung, Bischoff 1971) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/5)
 - 4011 †: Correspondences CD/CPD, Zones -18 to -39 (Bonnet) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/11)
 - 4019 †: CD/CPD Cross Index (Rappaport, Warren 1987), from _NASA-ADC CD-ROMs_
 
 _Note_: a buggy line from catalog 4019 was deleted.
 
-In the "other" subfolder there are catalogs from _GAVO Data Center_ not used yet
+In the "other" subfolder, there are catalogs from _GAVO Data Center_ not used yet
 by the current code:
 
 - cordd : Cordoba D, epoch 1950.0, declinations -37 to -47
