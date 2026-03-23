@@ -1739,67 +1739,6 @@ RSME of visual magnitude = 0.63917  among a total of 5401 stars
 Errors logged = 129
 
 ***************************************
-Check cross-references from GC
-1) Warning: GC 110 is FAR from OA 55 (dist = 33941.0 arcsec).
-     Register GC 110: mag = 9.0, RA = 00h06m28s73, DE = 32°35'39''1 (pag 3) 
-2) Warning: GC 168 is FAR from Lal 222 (dist = 303035.0 arcsec).
-     Register GC 168: mag = 9.0, RA = 00h09m51s07, DE = 38°15'23''7 (pag 5) 
-3) Warning: GC 339 is FAR from Lal 537 (dist = 203363.0 arcsec).
-     Register GC 339: mag = 9.0, RA = 00h19m22s83, DE = 65°31'52''2 (pag 8) 
-4) Warning: GC 340 is FAR from L 85 (dist = 107177.8 arcsec).
-     Register GC 340: mag = 7.5, RA = 00h19m24s76, DE = 22°19'28''3 (pag 8) 
-5) Warning: GC 342 is FAR from OA 182 (dist = 159639.2 arcsec).
-     Register GC 342: mag = 8.7, RA = 00h19m30s19, DE = 73°18'34''9 (pag 8) 
-6) Warning: GC 435 is FAR from L 112 (dist = 922.7 arcsec).
-     Register GC 435: mag = 9.0, RA = 00h24m56s45, DE = 44°02'45''9 (pag 10) 
-7) Warning: GC 438 is FAR from L 114 (dist = 9861.2 arcsec).
-     Register GC 438: mag = 8.0, RA = 00h25m04s97, DE = 49°19'52''9 (pag 10) 
-8) Warning: GC 440 is FAR from L 116 (dist = 112159.5 arcsec).
-     Register GC 440: mag = 8.5, RA = 00h25m14s32, DE = 25°46'35''3 (pag 10) 
-9) Warning: GC 447 is FAR from L 118 (dist = 20751.2 arcsec).
-     Register GC 447: mag = 8.7, RA = 00h25m34s36, DE = 31°06'01''2 (pag 11) 
-10) Warning: GC 536 is FAR from L 936 (dist = 115299.8 arcsec).
-     Register GC 536: mag = 7.7, RA = 00h30m33s91, DE = 25°11'15''2 (pag 12) 
-11) Warning: GC 620 is FAR from L 171 (dist = 124934.4 arcsec).
-     Register GC 620: mag = 8.5, RA = 00h34m54s56, DE = 39°56'35''5 (pag 14) 
-12) Warning: GC 860 is FAR from L 229 (dist = 55344.6 arcsec).
-     Register GC 860: mag = 5.5, RA = 00h50m19s79, DE = 70°12'12''6 (pag 20) 
-13) Warning: GC 994 is FAR from L 308 (dist = 86877.1 arcsec).
-     Register GC 994: mag = 8.5, RA = 00h58m59s19, DE = 71°31'13''2 (pag 22) neb 
-14) Warning: GC 1044 is FAR from OA 641 (dist = 34268.6 arcsec).
-     Register GC 1044: mag = 5.8, RA = 01h01m29s07, DE = 10°27'16''8 (pag 23) 
-15) Warning: GC 1055 is FAR from OA 651 (dist = 58792.7 arcsec).
-     Register GC 1055: mag = 8.5, RA = 01h02m15s02, DE = 41°14'26''4 (pag 23) 
-16) Warning: GC 1059 is FAR from L 324 (dist = 192043.8 arcsec).
-     Register GC 1059: mag = 8.2, RA = 01h02m24s55, DE = 24°54'30''4 (pag 24) 
-17) Warning: GC 1061 is FAR from L 317 (dist = 51277.0 arcsec).
-     Register GC 1061: mag = 8.5, RA = 01h02m29s92, DE = 33°05'36''2 (pag 24) 
-18) Warning: GC 1062 is FAR from OA 656 (dist = 109562.5 arcsec).
-     Register GC 1062: mag = 9.0, RA = 01h02m34s58, DE = 56°38'09''7 (pag 24) 
-19) Warning: GC 1165 is FAR from Lal 2265 (dist = 100634.0 arcsec).
-     Register GC 1165: mag = 8.7, RA = 01h09m00s28, DE = 50°54'45''2 (pag 25) 
-20) Warning: GC 1168 is FAR from OA 716 (dist = 38110.2 arcsec).
-     Register GC 1168: mag = 9.0, RA = 01h09m09s51, DE = 39°30'13''8 (pag 25) 
-21) Warning: GC 1169 is FAR from OA 717 (dist = 5962.2 arcsec).
-     Register GC 1169: mag = 7.7, RA = 01h09m11s75, DE = 22°57'31''3 (pag 25) 
-22) Warning: GC 1178 is FAR from L 338 (dist = 113112.6 arcsec).
-     Register GC 1178: mag = 8.5, RA = 01h09m47s47, DE = 56°02'03''7 (pag 26) 
-23) Warning: GC 1544 is FAR from L 465 (dist = 111323.0 arcsec).
-     Register GC 1544: mag = 8.2, RA = 01h30m18s95, DE = 71°30'29''0 (pag 34) 
-24) Warning: GC 1547 is FAR from L 468 (dist = 101629.2 arcsec).
-     Register GC 1547: mag = 7.5, RA = 01h30m22s03, DE = 30°32'52''3 (pag 34) dpl 
-25) Warning: GC 1550 is FAR from L 491 (dist = 3214.7 arcsec).
-     Register GC 1550: mag = 8.5, RA = 01h30m30s66, DE = 79°36'11''6 (pag 34) 
-26) Warning: GC 1552 is FAR from L 469 (dist = 57258.7 arcsec).
-     Register GC 1552: mag = 8.7, RA = 01h30m34s91, DE = 37°56'08''3 (pag 34) dpl 
-27) Warning: GC 1553 is FAR from Lal 2983 (dist = 53456.7 arcsec).
-     Register GC 1553: mag = 9.2, RA = 01h30m36s84, DE = 37°55'52''3 (pag 34) dpl 
-28) Warning: GC 1908 is FAR from L 584 (dist = 7897.0 arcsec).
-     Register GC 1908: mag = 7.0, RA = 01h51m17s06, DE = 60°55'27''3 (pag 41) dpl 
-Stars from GC with Lacaille = 239, Lalande = 58, OA = 92, Taylor = 0, Stone = 0 and USNO = 0
-Errors logged = 28
-
-***************************************
 Perform comparison between UA and PPM/CD/CPD...
 Stars read from PPM: 468861
 **) Note: SAO references mismatch for zeta1 Ant: 200445 != 200444.

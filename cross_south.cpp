@@ -114,18 +114,7 @@ void saveZC(int RAh, int RAs, int Decls,
     if (ppmFound) {
         countPPMZC++;
         struct PPMstar_struct *PPMstar = getPPMStruct();
-        snprintf(catName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-        writeCrossEntry(crossPPMZCStream, zcName, catName, 0.0, minPPMDistance);
-
-        if (PPMstar[ppmIndex].saoRef > 0) {
-            snprintf(catName, 20, "SAO %d", PPMstar[ppmIndex].saoRef);
-            writeCrossEntry(crossSAOZCStream, zcName, catName, 0.0, minPPMDistance);
-
-        }
-        if (PPMstar[ppmIndex].hdRef > 0) {
-            snprintf(catName, 20, "HD %d", PPMstar[ppmIndex].hdRef);
-            writeCrossEntry(crossHDZCStream, zcName, catName, 0.0, minPPMDistance);
-        }
+        writePPMCrossEntry(crossPPMZCStream, crossSAOZCStream, crossHDZCStream, zcName, &PPMstar[ppmIndex], 0.0, minPPMDistance);
     }
     if (cdFound) {
         countCDZC++;
@@ -167,7 +156,6 @@ void saveZC(int RAh, int RAs, int Decls,
  */
 void readGC2() {
     char buffer[1024], cell[256], catName[20], cdName[20];
-    char ppmName[20], saoName[20], hdName[20];
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -283,17 +271,7 @@ void readGC2() {
             countDist++;
             ppmFound = true;
 
-			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
-
-            if (PPMstar[ppmIndex].saoRef > 0) {
-                snprintf(saoName, 20, "SAO %d", PPMstar[ppmIndex].saoRef);
-                writeCrossEntry(crossSAOStream, catName, saoName, vmag, minDistance);
-            }
-            if (PPMstar[ppmIndex].hdRef > 0) {
-                snprintf(hdName, 20, "HD %d", PPMstar[ppmIndex].hdRef);
-                writeCrossEntry(crossHDStream, catName, hdName, vmag, minDistance);
-            }
+			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
         }
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -386,7 +364,7 @@ void readGC2() {
  */
 void readWeiss() {
     char buffer[1024], cell[256], catName[20], cdName[20];
-    char ppmName[20], saoName[20], hdName[20], catLine[64];
+    char catLine[64];
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -501,17 +479,7 @@ void readWeiss() {
             countDist++;
             ppmFound = true;
 
-			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
-
-            if (PPMstar[ppmIndex].saoRef > 0) {
-                snprintf(saoName, 20, "SAO %d", PPMstar[ppmIndex].saoRef);
-                writeCrossEntry(crossSAOStream, catName, saoName, vmag, minDistance);
-            }
-            if (PPMstar[ppmIndex].hdRef > 0) {
-                snprintf(hdName, 20, "HD %d", PPMstar[ppmIndex].hdRef);
-                writeCrossEntry(crossHDStream, catName, hdName, vmag, minDistance);
-            }
+			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
         }
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -616,12 +584,14 @@ void readWeiss() {
  * readLalande - lee catalogo de Lalande
  */
 void readLalande() {
-    char buffer[1024], cell[256], catName[20], ppmName[20];
+    char buffer[1024], cell[256], catName[20];
 
     printf("\n***************************************\n");
     printf("Perform comparison between Lalande and PPM...\n");
 
     FILE *crossPPMStream = openCrossFile("results/cross/cross_lalande_ppm.csv");
+	FILE *crossSAOStream = openCrossFile("results/cross/cross_lalande_sao.csv");
+	FILE *crossHDStream = openCrossFile("results/cross/cross_lalande_hd.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -693,8 +663,7 @@ void readLalande() {
 
             if (catRef > 0) {
 			    snprintf(catName, 20, "Lal %d", catRef);
-			    snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			    writeCrossEntry(crossPPMStream, catName, ppmName, 0.0, minDistance);
+			    writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], 0.0, minDistance);
             }
 		}
 
@@ -729,6 +698,8 @@ void readLalande() {
     }
     fclose(stream);
 	fclose(crossPPMStream);
+	fclose(crossSAOStream);
+	fclose(crossHDStream);
 
     printf("Available Lalande stars = %d\n", countLal);
     printf("Stars from Lalande identified with PPM = %d\n", countDist);
@@ -744,7 +715,6 @@ void readLalande() {
  */
 void readStone() {
     char buffer[1024], cell[256], catName[20], cdName[20];
-    char ppmName[20], saoName[20], hdName[20];
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -859,17 +829,7 @@ void readStone() {
 
             if (lacailleRef > 0) {
 			    snprintf(catName, 20, "L %d", lacailleRef);
-			    snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			    writeCrossEntry(crossPPMStream, catName, ppmName, 0.0, minDistance);
-
-                if (PPMstar[ppmIndex].saoRef > 0) {
-                    snprintf(saoName, 20, "SAO %d", PPMstar[ppmIndex].saoRef);
-                    writeCrossEntry(crossSAOStream, catName, saoName, 0.0, minDistance);
-                }
-                if (PPMstar[ppmIndex].hdRef > 0) {
-                    snprintf(hdName, 20, "HD %d", PPMstar[ppmIndex].hdRef);
-                    writeCrossEntry(crossHDStream, catName, hdName, 0.0, minDistance);
-                }
+			    writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], 0.0, minDistance);
             }
 		}
 
@@ -994,7 +954,7 @@ void readStone() {
  * (ya se deben haber leidos catalogos Stone y GC)
  */
 void readTaylor() {
-    char buffer[1024], cell[256], catName[20], ppmName[20];
+    char buffer[1024], cell[256], catName[20];
 
     /* usamos catalogo GC */
     struct GCstar_struct *GCstar = getGCStruct();
@@ -1004,6 +964,8 @@ void readTaylor() {
     printf("Perform comparison between Taylor and PPM...\n");
 
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_taylor_ppm.csv");
+	FILE *crossSAOStream = openCrossFile("results/cross/cross_taylor_sao.csv");
+	FILE *crossHDStream = openCrossFile("results/cross/cross_taylor_hd.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1075,8 +1037,7 @@ void readTaylor() {
             ppmFound = true;
 
 			snprintf(catName, 20, "T %d", taylorRef);
-			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, 0.0, minDistance);
+			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], 0.0, minDistance);
 		}
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -1144,6 +1105,8 @@ void readTaylor() {
     fclose(stream2);
     fclose(stream);
 	fclose(crossPPMStream);
+	fclose(crossSAOStream);
+	fclose(crossHDStream);
 
     printf("Available Taylor stars = %d\n", countTaylor);
     printf("Taylor stars properly identified with Lacaille = %d\n", checkLac);
@@ -1162,7 +1125,7 @@ void readTaylor() {
  */
 void readUSNO() {
     char buffer[1024], cell[256], catName[20], cdName[20];
-    char ppmName[20], saoName[20], hdName[20], catLine[64];
+    char catLine[64];
 
     /* usamos catalogs CD y CPD */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -1279,17 +1242,7 @@ void readUSNO() {
             countDist++;
             ppmFound = true;
 
-			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
-
-            if (PPMstar[ppmIndex].saoRef > 0) {
-                snprintf(saoName, 20, "SAO %d", PPMstar[ppmIndex].saoRef);
-                writeCrossEntry(crossSAOStream, catName, saoName, vmag, minDistance);
-            }
-            if (PPMstar[ppmIndex].hdRef > 0) {
-                snprintf(hdName, 20, "HD %d", PPMstar[ppmIndex].hdRef);
-                writeCrossEntry(crossHDStream, catName, hdName, vmag, minDistance);
-            }
+			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
         }
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -1877,7 +1830,7 @@ void readUA() {
  * tambien genera identificaciones cruzadas para aquellas estrellas ZC
  */
 void readThome(double epoch, const char *filename, int correction) {
-    char buffer[1024], cell[256], catName[20], cdName[20], ppmName[20];
+    char buffer[1024], cell[256], catName[20], cdName[20];
     char catLine[64];
 
     /* usamos catalogs CD, CPD y GC */
@@ -2208,7 +2161,7 @@ void readThome(double epoch, const char *filename, int correction) {
  */
 void readGilliss() {
     char buffer[1024], cell[256], catName[20], cdName[20];
-    char ppmName[20], saoName[20], hdName[20], catLine[64];
+    char catLine[64];
 
     /* usamos catalogs CD, CPD y GC */
     struct DMstar_struct *CDstar = getDMStruct();
@@ -2357,17 +2310,7 @@ void readGilliss() {
             countDist++;
             ppmFound = true;
 
-			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, vmag, minDistance);
-
-            if (PPMstar[ppmIndex].saoRef > 0) {
-                snprintf(saoName, 20, "SAO %d", PPMstar[ppmIndex].saoRef);
-                writeCrossEntry(crossSAOStream, catName, saoName, vmag, minDistance);
-            }
-            if (PPMstar[ppmIndex].hdRef > 0) {
-                snprintf(hdName, 20, "HD %d", PPMstar[ppmIndex].hdRef);
-                writeCrossEntry(crossHDStream, catName, hdName, vmag, minDistance);
-            }
+			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
         }
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -2524,288 +2467,6 @@ void readGilliss() {
 }
 
 /*
- * checkReferencesGC - solo cruza catalogo GC con otros
- * (ya se deben haber leidos los catalogs OA, Lacaille, Taylor, Lalande y Stone)
- * 
- * Utiliza una referencia cruzada generada con IA
- */
-void checkReferencesGC() {
-    char buffer[1024];
-
-    /* usamos catalogs GC */
-    struct GCstar_struct *GCstar = getGCStruct();
-    int GCstars = getGCStars();
-
-    printf("\n***************************************\n");
-    printf("Check cross-references from GC\n");
-
-    int checkLac = 0;
-    int checkLal = 0;
-    int checkTaylor = 0;
-    int checkOA = 0;
-    int checkStone = 0;
-    int checkUSNO = 0;
-    int errors = 0;
-
-    /* leemos referencias cruzadas */
-    FILE *stream = fopen("results/gc-ref.csv", "rt");
-    if (stream == NULL) {
-        perror("Cannot read CSV references");
-		exit(1);
-    }
-
-    FILE *output = fopen("results/gc-ref-curated.csv", "wt");
-    if (output == NULL) {
-        perror("Cannot write curated GC cross-reference");
-        exit(1);
-    }
-    fprintf(output, "StarNumber,Reference\n");
-
-    int line = 0;
-    while (fgets(buffer, 1023, stream) != NULL) {
-        line++;
-        if (line == 1) continue; /* salta header */
-
-        char subcell[5][50];
-        int count = 0;
-        int i = 0;
-        int j = 0;
-        while (buffer[i] != 0 && buffer[i] != '\n') {
-            char c = buffer[i++];
-            if (c == ',') {
-                subcell[count++][j] = 0;
-                j = 0;
-                if (count >= 5) {
-                    printf("Error parsing GC cross-reference on line %d: too many commas\n", line);
-                    bye("Bye!");
-                }
-                continue;
-            }
-            subcell[count][j++] = c;
-        }
-        subcell[count++][j] = 0;
-
-        /* lee número de estrella y coordenadas rectangulares */
-        int gcRef = atoi(subcell[0]);
-        double x, y, z;
-        int index;
-        bool found = getGCStarData(gcRef, &index, &x, &y, &z);
-        if (!found) {
-            printf("Note: Cannot find GC %d for cross-reference on line %d\n", gcRef, line);
-            continue;
-        }
-
-        /* chequea referencia */
-        if (!strncmp(&subcell[2][0], "L ", 2) && subcell[2][2] != '(') {
-            int numRefCat = atoi(&subcell[2][2]);
-            for (int i = 0; i < countLac; i++) {
-                if (lacRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    bool found = false;
-                    for (j = index - 3; j <= index + 3; j++) {
-                        if (j < 0 || j == index || j >= GCstars) continue;
-                        double xj = GCstar[j].x;
-                        double yj = GCstar[j].y;
-                        double zj = GCstar[j].z;
-                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, lacX[i], lacY[i], lacZ[i]);
-                        if (distj < MAX_DIST_CROSS) {
-                            #ifdef PRINT_NOTES
-                            printf("**) Note: Although GC %d is far, nearby GC %d is close to L %d (dist = %.1f arcsec).\n",
-                                gcRef,
-                                GCstar[j].gcRef,
-                                numRefCat,
-                                distj);
-                            #endif
-                            found = true;
-                            fprintf(output, "%d,L %d\n", GCstar[j].gcRef, numRefCat);   
-                        }
-                    }
-                    if (!found) {
-                        printf("%d) Warning: GC %d is FAR from L %d (dist = %.1f arcsec).\n",
-                            ++errors,
-                            gcRef,
-                            numRefCat,
-                            dist);
-                        writeRegisterGC(index);
-                    }
-                } else {
-                    checkLac++;
-                    fprintf(output, "%d,L %d\n", gcRef, numRefCat);
-                }
-            }
-        }
-
-        if (!strncmp(&subcell[2][0], "T ", 2)) {
-            int numRefCat = atoi(&subcell[2][2]);
-            for (int i = 0; i < countTaylor; i++) {
-                if (tayRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, tayX[i], tayY[i], tayZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    bool found = false;
-                    for (j = index - 3; j <= index + 3; j++) {
-                        if (j < 0 || j == index || j >= GCstars) continue;
-                        double xj = GCstar[j].x;
-                        double yj = GCstar[j].y;
-                        double zj = GCstar[j].z;
-                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, tayX[i], tayY[i], tayZ[i]);
-                        if (distj < MAX_DIST_CROSS) {
-                            #ifdef PRINT_NOTES
-                            printf("**) Note: Although GC %d is far, nearby GC %d is close to T %d (dist = %.1f arcsec).\n",
-                                gcRef,
-                                GCstar[j].gcRef,
-                                numRefCat,
-                                distj);
-                            #endif    
-                            found = true;
-                            fprintf(output, "%d,T %d\n", GCstar[j].gcRef, numRefCat);    
-                        }
-                    }
-                    if (!found) {
-                        printf("%d) Warning: GC %d is FAR from T %d (dist = %.1f arcsec).\n",
-                            ++errors,
-                            gcRef,
-                            numRefCat,
-                            dist);
-                        writeRegisterGC(index);
-                    }  
-                } else {
-                    checkTaylor++;
-                    fprintf(output, "%d,T %d\n", gcRef, numRefCat);
-                }
-            }
-        }
-
-        if ((!strncmp(&subcell[2][0], "Ll ", 3) || !strncmp(&subcell[2][0], "LL ", 3))
-               && subcell[2][3] != '(') {
-            int numRefCat = atoi(&subcell[2][3]);
-            for (int i = 0; i < countLal; i++) {
-                if (lalRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    bool found = false;
-                    for (j = index - 3; j <= index + 3; j++) {
-                        if (j < 0 || j == index || j >= GCstars) continue;
-                        double xj = GCstar[j].x;
-                        double yj = GCstar[j].y;
-                        double zj = GCstar[j].z;
-                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, lalX[i], lalY[i], lalZ[i]);
-                        if (distj < MAX_DIST_CROSS) {
-                            #ifdef PRINT_NOTES
-                            printf("**) Note: Although GC %d is far, nearby GC %d is close to Lal %d (dist = %.1f arcsec).\n",
-                                gcRef,
-                                GCstar[j].gcRef,
-                                numRefCat,
-                                distj);
-                            #endif    
-                            found = true;
-                            fprintf(output, "%d,Lal %d\n", GCstar[j].gcRef, numRefCat);    
-                        }
-                    }
-                    if (!found) {
-                        printf("%d) Warning: GC %d is FAR from Lal %d (dist = %.1f arcsec).\n",
-                            ++errors,
-                            gcRef,
-                            numRefCat,
-                            dist);
-                        writeRegisterGC(index);
-                    }   
-                } else {
-                    checkLal++;
-                    fprintf(output, "%d,Lal %d\n", gcRef, numRefCat);
-                }
-            }
-        }
-
-        if (!strncmp(&subcell[2][0], "St ", 3)) {
-            int numRefCat = atoi(&subcell[2][3]);
-            for (int i = 0; i < countSt; i++) {
-                if (stRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, stX[i], stY[i], stZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    bool found = false;
-                    for (j = index - 3; j <= index + 3; j++) {
-                        if (j < 0 || j == index || j >= GCstars) continue;
-                        double xj = GCstar[j].x;
-                        double yj = GCstar[j].y;
-                        double zj = GCstar[j].z;
-                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, stX[i], stY[i], stZ[i]);
-                        if (distj < MAX_DIST_CROSS) {
-                            #ifdef PRINT_NOTES
-                            printf("**) Note: Although GC %d is far, nearby GC %d is close to St %d (dist = %.1f arcsec).\n",
-                                gcRef,
-                                GCstar[j].gcRef,
-                                numRefCat,
-                                distj);
-                            #endif    
-                            found = true;
-                            fprintf(output, "%d,St %d\n", GCstar[j].gcRef, numRefCat);    
-                        }
-                    }
-                    if (!found) {
-                        printf("%d) Warning: GC %d is FAR from St %d (dist = %.1f arcsec).\n",
-                            ++errors,
-                            gcRef,
-                            numRefCat,
-                            dist);
-                        writeRegisterGC(index);
-                    }   
-                } else {
-                    checkStone++;
-                    fprintf(output, "%d,St %d\n", gcRef, numRefCat);
-                }
-            }
-        }
-
-        if (!strncmp(&subcell[2][0], "OA ", 3) && subcell[2][3] != '(') {
-            int numRefCat = atoi(&subcell[2][3]);
-            for (int i = 0; i < countOA; i++) {
-                if (oaRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    bool found = false;
-                    for (j = index - 3; j <= index + 3; j++) {
-                        if (j < 0 || j == index || j >= GCstars) continue;
-                        double xj = GCstar[j].x;
-                        double yj = GCstar[j].y;
-                        double zj = GCstar[j].z;
-                        double distj = 3600.0 * calcAngularDistance(xj, yj, zj, oaX[i], oaY[i], oaZ[i]);
-                        if (distj < MAX_DIST_CROSS) {
-                            #ifdef PRINT_NOTES
-                            printf("**) Note: Although GC %d is far, nearby GC %d is close to OA %d (dist = %.1f arcsec).\n",
-                                gcRef,
-                                GCstar[j].gcRef,
-                                numRefCat,
-                                distj);
-                            #endif    
-                            found = true;
-                            fprintf(output, "%d,OA %d\n", GCstar[j].gcRef, numRefCat);    
-                        }
-                    }
-                    if (!found) {
-                        printf("%d) Warning: GC %d is FAR from OA %d (dist = %.1f arcsec).\n",
-                            ++errors,
-                            gcRef,
-                            numRefCat,
-                            dist);
-                        writeRegisterGC(index);
-                    }
-                } else {
-                    checkOA++;
-                    fprintf(output, "%d,OA %d\n", gcRef, numRefCat);
-                }
-            }
-        }
-    }
-    fclose(output);
-    fclose(stream);
-
-    printf("Stars from GC with Lacaille = %d, Lalande = %d, OA = %d, Taylor = %d, Stone = %d and USNO = %d\n",
-        checkLac, checkLal, checkOA, checkTaylor, checkStone, checkUSNO);
-    printf("Errors logged = %d\n", errors);
-}
-
-/*
  * main - comienzo de la aplicacion
  */
 int main(int argc, char** argv)
@@ -2839,7 +2500,6 @@ int main(int argc, char** argv)
 
     /* leemos, cruzamos y revisamos identificaciones de Yarnall */
     readUSNO();
-    checkReferencesGC(); // también chequeamos referencias de GC
 
     /* leemos, cruzamos y revisamos Uranometria Argentina */
     readUA();

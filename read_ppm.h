@@ -24,3 +24,5 @@ bool revise(int ppmIndex);
 void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south, double targetYear);
 void sortPPM();
 void findPPMByCoordinates(double x, double y, double z, double decl, int *ppmIndex, double *minDistance);
+void writePPMCrossEntry(FILE *crossPPMStream, FILE *crossSAOStream, FILE *crossHDStream,
+    char *catName, struct PPMstar_struct *star, double vmag, double minDistance);

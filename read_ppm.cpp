@@ -418,3 +418,21 @@ void findPPMByCoordinates(double x, double y, double z, double decl, int *ppmInd
   *ppmIndexOutput = ppmIndex;
   *minDistanceOutput = minDistance;
 }
+
+/*
+ * writePPMCrossEntry - escribe identificaciones cruzadas de PPM, SAO y HD en archivos CSV
+ */
+void writePPMCrossEntry(FILE *crossPPMStream, FILE *crossSAOStream, FILE *crossHDStream,
+        char *catName, struct PPMstar_struct *star, double vmag, double minDistance) {
+    char name[20];
+    snprintf(name, 20, "PPM %d", star->ppmRef);
+    writeCrossEntry(crossPPMStream, catName, name, vmag, minDistance);
+    if (star->saoRef > 0) {
+        snprintf(name, 20, "SAO %d", star->saoRef);
+        writeCrossEntry(crossSAOStream, catName, name, vmag, minDistance);
+    }
+    if (star->hdRef > 0) {
+        snprintf(name, 20, "HD %d", star->hdRef);
+        writeCrossEntry(crossHDStream, catName, name, vmag, minDistance);
+    }
+}
