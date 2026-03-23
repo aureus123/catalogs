@@ -76,7 +76,7 @@ Some catalogs in this folder were sanitized but their original version was store
 
 - 4005 : 51 registers
 - 4011 : 76 registers
-- ua : 48 registers
+- ua : 50 registers
 - gc : 3 registers
 - weiss : 3 registers
 - gilliss : 22 registers
