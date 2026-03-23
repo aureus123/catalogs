@@ -8,14 +8,14 @@ during that process. In particular, you can find the following files:
 - table_mag_*.csv = table with magnitude errors found
 - findings.odt = open-office document with other minor results
 
-There is also a folder _cross_ with results of the experiment *compare_ppm*, *cross_gc* and *cross_south* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander (South), Lalande, Lacaille, USNO, Taylor) and PPM/CD/CPD/SAO/HD (the latter two are taken
+There is also a folder _cross_ with results of the experiment *compare_ppm*, *cross_gc* and *cross_south* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander (South), Lalande, Lacaille, USNO, Taylor, WB, BAC) and PPM/CD/CPD/SAO/HD (the latter two are taken
 from identifications in the PPM catalog).
 
 Below some experiments are reported.
 
 ### 1. Efficiency of algorithm
 
-An experiment was carried out to analize the efficiency in finding errors in CD digital catalog. Two comparisons are made:
+An experiment was carried out to analyze the efficiency in finding errors in the CD digital catalog. Two comparisons are made:
 
 - *Compare files cd_vol1 and I88*: In this case, the first volume of the latest CD catalog was compared against I88, an older one having typo mistakes. By comparing both files (see *compare_cd* tool), 205 differences were found: 202 errors in Position and 3 in Magnitude. Also I88 has 44 unknown codes in the magnitude field (probably also typo errors) that was not taken into account. When comparing cd_vol1 against PPM via *compare_ppm* it logs 84 warnings (72 in Position and 12 in Magnitude), whereas the comparison between I88 and PPM generates 138 warnings (123 in Position and 15 in Magnitude) meaning that using the older catalog adds 51 warnings in Position and 3 in Magnitude. Therefore, the algorithm is able to reach all magnitude differences, but for the position it only hits roughly 25% of the cases (51 out of 202).
 
@@ -31,7 +31,7 @@ section 3 for details.
 
 By using tool *compare_ppm_bd* with 180 arcsec and 0.4 magnitude units as thresholds, a total of 86 warnings were found (82 in position and 4 in magnitude). By manually comparing those registers with the printed catalog, 13 typo errors in position were found (see file *log_ppm_bd*). It gives a success rate of 15%. If the position threshold is reduced to 150 arcsec, 61 new warnings are generated but almost all of them are false-positives while only 1 typo error is found.
 
-Since the RSME of distance is 36 arcsec, a threshold of 150 arcsec represents roughly 4 standard deviations. In the case of magnitude, the RSME is 0.1 so a threshold of 0.4 represents also 4 standard deviations, although none typo errors were found for that parameter.
+Since the RMSE of distance is 36 arcsec, a threshold of 150 arcsec represents roughly 4 standard deviations. In the case of magnitude, the RMSE is 0.1 so a threshold of 0.4 represents also 4 standard deviations, although no typo errors were found for that parameter.
 
 Below is the list of corrections:
 
@@ -66,7 +66,7 @@ In 2018, with this approach 45 typo mistakes were found in the current CD catalo
 
 We now enumerate those errors found by comparing CD and SD. In case more than
 one parameter mismatches for the same star, columns dist1 and dist2 are only
-reported for the comparison of the parameter with larger difference:
+reported for the comparison of the parameter with the largest difference:
 
 | Star | Parameter | current | corrected | dist1 | dist2 |
 | --- | --- | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ reported for the comparison of the parameter with larger difference:
 | CD -22°9452 | DEm | 29.9 | 6.5 |  |  |
 
 We now enumerate those errors found by comparing CD (first volume) and PPM.
-Those swaps (i.e. two or more consecutive stars in a wrong order) are given next to the following table:
+Those swaps (i.e. two or more consecutive stars in a wrong order) are given after the following table:
 
 | Star | Parameter | current | corrected | dist1 | dist2 |
 | --- | --- | --- | --- | --- | --- |
@@ -160,7 +160,7 @@ declinations up to -31 were considered).
 
 ### 4. Conversion between magnitude scales
 
-When magnitudes are compared between BD/CD and PPM catalog, a simple transformation is computed with an unweighted least-squares adjustment. For BD a quadratic fit was performed over 1412 stars. For CD, a quadratic fit per volume was performed (11659 stars for first, 11796 for 2nd., 9620 for 3rd., 7672 for 4th. and 7372 for the last volume), see function `compVmagToCDmag` in file *trig.cpp*. Preparation of data and adjustment are processed by *mag_bd* and *mag_cd* tools, and *compute_mag.m* Matlab script.
+When magnitudes are compared between BD/CD and PPM catalog, a simple transformation is computed with an unweighted least-squares adjustment. For BD a quadratic fit was performed over 1412 stars. For CD, a quadratic fit per volume was performed (11659 stars for the first, 11796 for 2nd., 9620 for 3rd., 7672 for 4th. and 7372 for the last volume), see function `compVmagToCDmag` in file *trig.cpp*. Preparation of data and adjustment are processed by *mag_bd* and *mag_cd* tools, and *compute_mag.m* Matlab script.
 
 As an alternative, it was tested a different regression method. Instead of using individual visual magnitudes of CD where each cross-identification weights the same, these magnitudes were grouped in a scale, as it is explained below.
 For a given magnitude value, the tool finds all PPM stars that matches CD stars having that magnitude, and compute an average among them. Then, the regression is made
@@ -172,7 +172,7 @@ CDmag    ppmVmag     count
 7.3      7.51        130
 ```
 it matches visual CD magnitude 7.2 with 74 PPM stars averaging Johnson V 7.45, and 7.3 with 130 stars averaging 7.51.
-The first match is weighted by log10(74)=1.87 and the third by log10(130)=2.11.
+The first match is weighted by log10(74)=1.87 and the second by log10(130)=2.11.
 Here, tool *cross_txt* was used. For instance,
 ```
 ./cross_txt --csv results/cross/cross_cd_vol1_ppm.csv
@@ -181,9 +181,9 @@ generates formulas for constant (offset), linear and quadratic transformations.
 Functions `compCDmagToVmag` and `compGCmagToVmag` in file *trig.cpp* have transformations for
 converting the magnitudes of CD and GC to Johnson V.
 
-Below, we present offset transformations for CD and other catalogs, which can give an insight of
+Below, we present offset transformations for CD and other catalogs, which can give an insight into
 their photometric quality. The transformation is `ppmVmag = visualMag + offset`:
-| Abbrev. | Catalog | Offset | Stars | RSME | MAPE (%) |
+| Abbrev. | Catalog | Offset | Stars | RMSE | MAPE (%) |
 | --- | --- | --- | --- | --- | --- |
 | CD | Córdoba Durchmusterung (1st. vol)      |  0.223 | 15187 | 0.280 | 3.17 |
 | CD | Córdoba Durchmusterung (2nd. vol)      |  0.254 | 15038 | 0.348 | 4.13 |
@@ -197,6 +197,6 @@ their photometric quality. The transformation is `ppmVmag = visualMag + offset`:
 | U | Yarnall-Frisby USNO 3rd. edition        |  0.246 |  5358 | 0.205 | 2.30 |
 | G | Gilliss                                 | -0.304 | 14756 | 0.599 | 3.32 |
 
-Note that, besides almost all stars of UA are cross-identified with PPM, only 4980 have been used for the least-squares adjustment. The reason is that PPM V magnitude coverage is poor for the northern hemisphere (same happens for quadratic fit of BD stars).
+Note that, although almost all stars of UA are cross-identified with PPM, only 4980 have been used for the least-squares adjustment. The reason is that PPM V magnitude coverage is poor for the northern hemisphere (same happens for quadratic fit of BD stars).
 
-An interesting fact is that the visual magnitudes of last CD volume fits well when compared with PPM magnitudes, since the measurement of star brightness used the then-recent Harvard standard. Here, the mean error is less than 0.06 magnitudes.
+An interesting fact is that the visual magnitudes of the last CD volume fit well when compared with PPM magnitudes, since the measurement of star brightness used the then-recent Harvard standard. Here, the mean error is less than 0.06 magnitudes.
