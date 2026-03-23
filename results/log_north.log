@@ -224,6 +224,8 @@ Stars read from Bonner Durchmusterung: 324652
 ***************************************
 Perform comparison between Weisse catalog and PPM...
 Stars read from PPM: 468861
+Error: line 6365 has unexpected value 9 in magnitude columns 12-13 (expected 6, 8 or blank). Using integer magnitude.
+Error: line 24080 has unexpected value 8 in magnitude columns 12-13 (expected 7, 9 or blank). Using integer magnitude.
 Available WB stars = 31895
 Stars from WB identified with PPM = 30933
 RSME of distance (arcsec) = 6.50  among a total of 30933 stars

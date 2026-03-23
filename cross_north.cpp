@@ -43,7 +43,7 @@ int countBAC = 0;
  * readWB - lee y cruza catalogo de Weisse
  */
 void readWB() {
-    char buffer[1024], cell[256];
+    char buffer[1024], cell[256], catName[20];
 
     printf("\n***************************************\n");
     printf("Perform comparison between Weisse catalog and PPM...\n");
@@ -58,18 +58,44 @@ void readWB() {
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
+    FILE *crossPPMStream = openCrossFile("results/cross/cross_wb_ppm.csv");
+    FILE *crossSAOStream = openCrossFile("results/cross/cross_wb_sao.csv");
+    FILE *crossHDStream = openCrossFile("results/cross/cross_wb_hd.csv");
+
     /* leemos catalogo WB */
     FILE *stream = fopen("cat/wb.txt", "rt");
     if (stream == NULL) {
         perror("Cannot read wb.txt");
 		exit(1);
     }
+    int lineNum = 0;
     while (fgets(buffer, 1023, stream) != NULL) {
+        lineNum++;
 		/* lee numeración */
 		readField(buffer, cell, 14, 2);
 		int RARef = atoi(cell);
 		readField(buffer, cell, 6, 4);
 		int numRef = atoi(cell);
+
+		/* lee magnitud */
+		float vmag = 0.0;
+		readField(buffer, cell, 10, 2);
+		if (cell[0] != ' ') {
+		    int magInt = atoi(cell);
+		    vmag = (float) magInt;
+		    readField(buffer, cell, 12, 2);
+		    if (cell[0] != ' ') {
+		        int magFrac = atoi(cell);
+		        if (magFrac == magInt + 1) {
+		            vmag += 0.3;
+		        } else if (magFrac == magInt - 1) {
+		            vmag -= 0.3;
+		        } else {
+		            printf("Error: line %d has unexpected value %d in magnitude columns 12-13 (expected %d, %d or blank). Using integer magnitude.\n",
+		                lineNum, magFrac, magInt - 1, magInt + 1);
+		        }
+		    }
+		}
 
 		/* lee ascension recta B1825.0 */
         double RA = (double) RARef; // same as RAh
@@ -105,6 +131,8 @@ void readWB() {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
+            snprintf(catName, 20, "WB %dh %d", RARef, numRef);
+            writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
 		}
 
         if (!ppmFound) {
@@ -115,7 +143,7 @@ void readWB() {
                     RARef,
                     numRef,
                     minDistance); */
-                errors++;    
+                errors++;
             }
         }
 
@@ -132,6 +160,9 @@ void readWB() {
         countWB++;
     }
 	fclose(stream);
+    fclose(crossPPMStream);
+    fclose(crossSAOStream);
+    fclose(crossHDStream);
 
     printf("Available WB stars = %d\n", countWB);
     printf("Stars from WB identified with PPM = %d\n", countDist);

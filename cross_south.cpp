@@ -441,12 +441,20 @@ void readWeiss() {
         snprintf(catLine, 64, "%02dh %02dm %02ds%02d -%02d°%02d'%02d\"%01d",
             RAh, RAm, RAs / 100, RAs % 100, Decld, Declm, Decls / 10, Decls % 10);
 
-		/* lee magnitud (tiene un formato extraño en el que x.y con y=x+1 significa
-         * x.5, por ejemplo 6.7 significa 6.5). */
-		readField(buffer, cell, 9, 1);
-		float vmag = atof(cell);
-		readField(buffer, cell, 11, 1);
-        if (atoi(cell) > 0) vmag += 0.5;
+		/* lee magnitud */
+		readField(buffer, cell, 8, 2);
+		int magInt = atoi(cell);
+		float vmag = (float) magInt;
+		readField(buffer, cell, 10, 2);
+		if (cell[0] != ' ') {
+		    int magFrac = atoi(cell);
+		    if (magFrac != magInt + 1) {
+		        printf("Error: Weiss %d has unexpected value %d in magnitude columns 10-11 (expected %d or blank).\n",
+		            weissRef, magFrac, magInt + 1);
+		        exit(1);
+		    }
+		    vmag += 0.5;
+		}
 
         bool ppmFound = false;
 		int ppmIndex = -1;
