@@ -274,7 +274,7 @@ void readOARN() {
  * readBAC - lee y cruza catalogo de la British Association
  */
 void readBAC() {
-    char buffer[1024], cell[256];
+    char buffer[1024], cell[256], catName[20];
 
     printf("\n***************************************\n");
     printf("Perform comparison between BAC catalog and PPM...\n");
@@ -289,6 +289,10 @@ void readBAC() {
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
+    FILE *crossPPMStream = openCrossFile("results/cross/cross_bac_ppm.csv");
+    FILE *crossSAOStream = openCrossFile("results/cross/cross_bac_sao.csv");
+    FILE *crossHDStream = openCrossFile("results/cross/cross_bac_hd.csv");
+
     /* leemos catalogo BAC */
     FILE *stream = fopen("cat/bac.txt", "rt");
     if (stream == NULL) {
@@ -299,6 +303,15 @@ void readBAC() {
 		/* lee numeración */
 		readField(buffer, cell, 1, 4);
 		int numRef = atoi(cell);
+
+		/* lee magnitud */
+		readField(buffer, cell, 17, 1);
+		float vmag = 0.0;
+		if (cell[0] != ' ') {
+		    vmag = (float) atoi(cell);
+		    readField(buffer, cell, 18, 1);
+		    if (cell[0] == '5') vmag += 0.5;
+		}
 
 		/* lee ascension recta B1850.0 */
 		readFieldSanitized(buffer, cell, 20, 2);
@@ -335,6 +348,8 @@ void readBAC() {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
+            snprintf(catName, 20, "BAC %d", numRef);
+            writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
 		}
 
         if (!ppmFound) {
@@ -344,7 +359,7 @@ void readBAC() {
                     errors,
                     numRef,
                     minDistance); */
-                errors++;    
+                errors++;
             }
         }
 
@@ -360,6 +375,9 @@ void readBAC() {
         countBAC++;
     }
 	fclose(stream);
+    fclose(crossPPMStream);
+    fclose(crossSAOStream);
+    fclose(crossHDStream);
 
     printf("Available BAC stars = %d\n", countBAC);
     printf("Stars from BAC identified with PPM = %d\n", countDist);
