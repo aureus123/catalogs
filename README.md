@@ -59,7 +59,7 @@ per catalog: 3rd. column is the epoch of the target catalog, 4th. column
 is the number of stars cross-identified between PPM and the target catalog, and 5th. column reports the accuracy in arcseconds.
 
 📓 In this table, identifications are direct from PPM source:
-| Abbrev. | Catalog | Epoch | Stars | RSME |
+| Abbrev. | Catalog | Epoch | Stars | RMSE |
 | --- | --- | --- | --- | --- |
 | BD | Bonner Durchmusterung (1st. vol) | 1855 | 63034 | 35.99 |
 | CD | Cordoba Durchmusterung | 1875 | 172068 | 20.48 |
@@ -69,7 +69,7 @@ is the number of stars cross-identified between PPM and the target catalog, and 
 (below a given threshold) between PPM stars and the target catalog. Some
 of them (Weiss and Stone) are also used for obtaining the number of other
 catalogs (OA and Lacaille):
-| Abbrev. | Catalog | Epoch | Stars | RSME |
+| Abbrev. | Catalog | Epoch | Stars | RMSE |
 | --- | --- | --- | --- | --- |
 | UA | Uranometría Argentina | 1875 | 8381 | 5.87 |
 | GC | Catálogo General Argentino | 1875 | 31706 | 1.96 |
