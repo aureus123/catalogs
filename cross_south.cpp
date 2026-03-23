@@ -623,6 +623,15 @@ void readLalande() {
 		readField(buffer, cell, 1, 5);
 		int catRef = atoi(cell);
 
+		/* lee magnitud */
+		readField(buffer, cell, 15, 2);
+		float vmag = 0.0;
+		if (cell[0] != ' ') {
+		    vmag = (float) atoi(cell);
+		    readField(buffer, cell, 17, 1);
+		    if (cell[0] == '5') vmag += 0.5;
+		}
+
 		/* lee ascension recta B1800.0 (si existiese) */
         readField(buffer, cell, 19, 1);
 		readFieldSanitized(buffer, cell, 19, 2);
@@ -663,7 +672,7 @@ void readLalande() {
 
             if (catRef > 0) {
 			    snprintf(catName, 20, "Lal %d", catRef);
-			    writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], 0.0, minDistance);
+			    writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
             }
 		}
 
@@ -998,6 +1007,15 @@ void readTaylor() {
 		readField(buffer, cell, 7, 5);
 		int taylorRef = atoi(cell);
 
+		/* lee magnitud */
+		readField(buffer, cell, 42, 2);
+		float vmag = 0.0;
+		if (cell[0] != ' ') {
+		    vmag = (float) atoi(cell);
+		    readField(buffer, cell, 44, 1);
+		    if (cell[0] == '5') vmag += 0.5;
+		}
+
 		/* lee ascension recta B1835.0 */
 		readFieldSanitized(buffer, cell, 46, 2);
 		int RAh = atoi(cell);
@@ -1037,7 +1055,7 @@ void readTaylor() {
             ppmFound = true;
 
 			snprintf(catName, 20, "T %d", taylorRef);
-			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], 0.0, minDistance);
+			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
 		}
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
