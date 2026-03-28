@@ -2,7 +2,7 @@
 
 ## Cross-Identification File
 
-`yarnall_usno.txt` (69 entries) contains cross-identifications between the **[2nd Edition](https://archive.org/details/catalogueofstars00sand)** of the Yarnall-Frisby catalog (entries prefixed with `Y`) and the **[3rd Edition](https://archive.org/details/cataloguestarsus00unitrich)** (entries prefixed with `U`). Each line gives the correspondence between a star's number in the two editions, e.g. `Y 91 = U 92`.
+`yarnall_usno.txt` (69 entries) contains cross-identifications between the **[2nd Edition](https://archive.org/details/catalogueofstars00sand)** of the Yarnall-Frisby catalog (entries prefixed with `Y`) and the **[3rd Edition](https://archive.org/details/cataloguestarsus00unitrich)** (entries prefixed with `U`) obtained from cross-identifications between Uranometría Argentina and Resultados XV with USNO catalog. Each line gives the correspondence between a star's number in the two editions, e.g. `Y 91 = U 92`.
 
 ## Zone Files
 
