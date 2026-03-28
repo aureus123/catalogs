@@ -15,7 +15,7 @@
 #define THRESHOLD_PPM 15.0
 #define THRESHOLD_MAG 1.5
 #define ZEROPOINT_IMAG 17.37
-#define CROSS_OLD_CATALOGS true
+#define CROSS_OLD_CATALOGS false
 
 /* Structure to store custom star data (histogram).
  * Note: instrumental magnitudes are given by indices,
@@ -23,6 +23,15 @@
 struct CustomStars {
     double ppmVmag;
     int count;
+};
+
+/* Structure to store per-star data for Estim.txt output */
+struct StarRecord {
+    int index;
+    double imag;
+    double ppmVmag;  /* 0.0 if no match */
+    bool hasMatch;
+    char identification[128];
 };
 
 /*
@@ -104,6 +113,20 @@ int main(int argc, char** argv)
     }
     int customStarCount = 0;
 
+    /* Per-star records for Estim.txt */
+    struct StarRecord *starRecords = NULL;
+    int starRecordCount = 0;
+    int starRecordCapacity = 0;
+    char estimPath[256];
+    estimPath[0] = '\0';
+
+    /* Fit parameters (set later if enough data) */
+    bool fitComputed = false;
+    double fit_constZP = 0.0;
+    double fit_linZP = 0.0, fit_linSlope = 0.0;
+    bool fit_quadOK = false;
+    double fit_quadZP = 0.0, fit_quadSlope = 0.0, fit_quadCurve = 0.0;
+
     if (strcmp(mode, "--csv") == 0) {
         /* Mode is --csv, read CSV file and perform magnitude fits */
         if (argc < 3) {
@@ -121,6 +144,8 @@ int main(int argc, char** argv)
             return 1;
         }
         
+        strcpy(estimPath, "Estim.txt");
+
         /* Load PPM catalog */
         printf("Reading PPM catalog...\n");
         readPPM(false, true, false, false, 2000.0);
@@ -179,8 +204,22 @@ int main(int argc, char** argv)
                 customStarCount++;
             }
             matches++;
+
+            /* Store star record for Estim.txt */
+            if (starRecordCount >= starRecordCapacity) {
+                starRecordCapacity = (starRecordCapacity == 0) ? 1024 : starRecordCapacity * 2;
+                starRecords = (struct StarRecord *)realloc(starRecords, starRecordCapacity * sizeof(struct StarRecord));
+            }
+            {
+                struct StarRecord *rec = &starRecords[starRecordCount++];
+                rec->index = starRecordCount;
+                rec->imag = vmag;
+                rec->ppmVmag = PPMstar[ppmIndex].vmag;
+                rec->hasMatch = true;
+                snprintf(rec->identification, sizeof(rec->identification), "PPM %d", ppmRef);
+            }
         }
-        
+
         fclose(stream);
 
         // Discard those bins having less than 5 stars
@@ -221,6 +260,7 @@ int main(int argc, char** argv)
         /* Prepare Cross.txt output in the same base directory */
         char crossPath[256];
         joinPath(baseDir, "Cross.txt", crossPath, sizeof(crossPath));
+        joinPath(baseDir, "Estim.txt", estimPath, sizeof(estimPath));
         FILE *crossFile = fopen(crossPath, "wt");
         if (crossFile == NULL) {
             printf("Error: Cannot write %s file.\n", crossPath);
@@ -316,6 +356,27 @@ int main(int argc, char** argv)
                 ppmMatch = true;
             }
 
+            /* Store star record for Estim.txt */
+            if (starRecordCount >= starRecordCapacity) {
+                starRecordCapacity = (starRecordCapacity == 0) ? 1024 : starRecordCapacity * 2;
+                starRecords = (struct StarRecord *)realloc(starRecords, starRecordCapacity * sizeof(struct StarRecord));
+            }
+            {
+                struct StarRecord *rec = &starRecords[starRecordCount++];
+                rec->index = starIndex;
+                rec->imag = imag;
+                if (ppmMatch) {
+                    rec->ppmVmag = PPMstar[ppmIndex].vmag;
+                    rec->hasMatch = true;
+                    strncpy(rec->identification, identStr, sizeof(rec->identification) - 1);
+                    rec->identification[sizeof(rec->identification) - 1] = '\0';
+                } else {
+                    rec->ppmVmag = 0.0;
+                    rec->hasMatch = false;
+                    rec->identification[0] = '\0';
+                }
+            }
+
             /* Write Cross.txt row, also save match in custom stars structure */
             if (ppmMatch) {
                 fprintf(crossFile, "%8d  %6.2f  %8.1f  %s\n", starIndex, imag, minDistance, identStr);
@@ -388,7 +449,9 @@ int main(int argc, char** argv)
         
         /* Calculate zero point */
         double zeroPoint = (sum_vmag - sum_imag) / sum_weights;
-        
+        fit_constZP = zeroPoint;
+        fitComputed = true;
+
         printf(" 1) Constant fit: Vmag = %.3f + imag\n", zeroPoint);
         
         /* Calculate calibrated magnitudes, RMSE, and MAPE for constant fit */
@@ -439,7 +502,9 @@ int main(int argc, char** argv)
         double denominator = sum_imag_sq - sum_weights_lin * mean_imag * mean_imag;
         double factor = (sum_imag_vmag - sum_weights_lin * mean_imag * mean_vmag) / denominator;
         double linearZeroPoint = mean_vmag - factor * mean_imag;
-        
+        fit_linZP = linearZeroPoint;
+        fit_linSlope = factor;
+
         printf(" 2) Linear fit: Vmag = %.3f + %.3f * imag\n", linearZeroPoint, factor);
         
         /* Calculate calibrated magnitudes, RMSE, and MAPE for linear fit */
@@ -506,6 +571,10 @@ int main(int argc, char** argv)
             double quadZeroPoint = a_c - b_c * xmean + c_c * xmean * xmean;
             double quadFactor    = b_c - 2.0 * c_c * xmean;
             double quad          = c_c;
+            fit_quadZP = quadZeroPoint;
+            fit_quadSlope = quadFactor;
+            fit_quadCurve = quad;
+            fit_quadOK = true;
 
             printf(" 3) Quadratic fit: Vmag = %.3f + %.3f * imag + %.3f * imag^2\n", quadZeroPoint, quadFactor, quad);
 
@@ -531,5 +600,44 @@ int main(int argc, char** argv)
         }
     }
 
+    /* Generate Estim.txt with estimated magnitudes */
+    if (fitComputed && starRecordCount > 0 && estimPath[0] != '\0') {
+        FILE *estimFile = fopen(estimPath, "wt");
+        if (estimFile == NULL) {
+            printf("Error: Cannot write %s file.\n", estimPath);
+        } else {
+            fprintf(estimFile, "   Index    Vmag  ConstEst    LinEst   QuadEst  Identification\n");
+            for (int i = 0; i < starRecordCount; i++) {
+                struct StarRecord *rec = &starRecords[i];
+                double constEst = fit_constZP + rec->imag;
+                double linEst = fit_linZP + fit_linSlope * rec->imag;
+
+                fprintf(estimFile, "%8d", rec->index);
+
+                if (rec->hasMatch && rec->ppmVmag > __FLT_EPSILON__) {
+                    fprintf(estimFile, "  %6.1f", rec->ppmVmag);
+                } else {
+                    fprintf(estimFile, "        ");
+                }
+
+                fprintf(estimFile, "  %8.2f  %8.2f", constEst, linEst);
+
+                if (fit_quadOK) {
+                    double quadEst = fit_quadZP + fit_quadSlope * rec->imag + fit_quadCurve * rec->imag * rec->imag;
+                    fprintf(estimFile, "  %8.2f", quadEst);
+                }
+
+                if (rec->hasMatch) {
+                    fprintf(estimFile, "  %s", rec->identification);
+                }
+
+                fprintf(estimFile, "\n");
+            }
+            fclose(estimFile);
+            printf("\nCross.txt and Estim.txt written to %s with %d stars.\n", estimPath, starRecordCount);
+        }
+    }
+
+    free(starRecords);
     return 0;
 }
