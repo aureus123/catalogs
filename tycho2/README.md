@@ -70,7 +70,7 @@ Stars that you can see here:
 | Star (SIMBAD) | Old designation | Tycho-2 | Where to find it |
 | --- | --- | --- | --- |
 | k Hya | k Hya | 6740-785-1 | Resultados del Observatorio Nacional Argentino, [Vol I](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0001&type=SCREEN_THMB), pag. 195 |
-| HD 125995 | U 6039 | 6740-263-1 | Catalogue of stars observed at the [United States Naval Observatory](https://archive.org/details/cataloguestarsus00unitrich/cataloguestarsus00unitrich/) during the years 1845 to 1877, pag. 153 |
+| HD 125995 | U 6039 | 6740-263-1 | Catalogue of stars observed at the [United States Naval Observatory](https://archive.org/details/cataloguestarsus00unitrich) during the years 1845 to 1877, pag. 153 |
 | HD 126349 | OA 13607 | 6740-108-1 | [Argelander's Zonen-Beobachtungen vom 15. bis 31.](https://babel.hathitrust.org/cgi/pt?id=uc1.$b524535&seq=278) Grade südlicher Declination, in mittleren Positionen für 1850.0, pag. 206 |
 | CD -27°9804 | CD -27°9804 | 6740-808-1 | Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB), pag. 323 |
 
