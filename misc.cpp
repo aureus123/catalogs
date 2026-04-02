@@ -133,29 +133,21 @@ FILE *openUnidentifiedFile(const char *name)
  * razonables para identificarla con una estrella débil.
  * Devuelve true si no hay una causa razonable para identificarla.   
  */
-bool logCauses(char *name, FILE *stream, double x, double y, double z,
-        bool cumulus, bool nebula, bool gscFound,
+void logCauses(char *name,
+        bool cumulus, bool nebula,
         int RAs, double Decl, int Decls,
         int ppmRef, double nearestPPMDistance) {
-    bool store = true;
-    if (!gscFound) {
-        store = false;
-    }
     if (cumulus) {
         printf("  Possible cause: cumulus.\n");
-        store = false;
     }
     if (nebula) {
         printf("  Possible cause: nebula.\n");
-        store = false;
     }
     if (RAs == 0) {
         printf("  Possible cause: lack of RA (s).\n");
-        store = false;
     }
     if (Decls == 0) {
         printf("  Possible cause: lack of Decl (s).\n");
-        store = false;
     }
     if (ppmRef != -1) {
         printf("  Note: nearest PPM %d at %.1f arcsec.\n", ppmRef, nearestPPMDistance);
@@ -166,10 +158,6 @@ bool logCauses(char *name, FILE *stream, double x, double y, double z,
     if (Decl < -61.0) {
         printf("  Note: poor CD coverage for stars above 61°.\n");
     }
-    if (store && stream != nullptr) {
-        fprintf(stream, "%s,%.12f,%.12f,%.12f\n", name, x, y, z);
-    }
-    return store;
 }
 
 /*

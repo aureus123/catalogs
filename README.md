@@ -80,13 +80,13 @@ catalogs (OA and Lacaille):
 | T 1884 | Resultados XV, pg. 232-249 | 1884 | 658 | 1.99 |
 | Lal | Lalande | 1800 | 46914 | 6.88 |
 | T | Taylor General Catalogue | 1835 | 10944 | 4.19 |
-| OA | Oeltzen-Argelander (North) | 1842 | 25947 | 4.77 |
+| OA | Oeltzen-Argelander (North) | 1842 | 26001 | 6.17 |
 | W / OA | Weiss / Oeltzen-Argelander (South) | 1850 | 18010 | 4.66 |
-| WB | Weisse | 1825 | 30933 | 6.50 |
+| WB | Weisse | 1825 | 31079 | 8.82 |
 | St / L | Stone / Lacaille | 1880 | 12414 | 1.48 |
 | U | Yarnall-Frisby USNO 3rd. edition | 1860 | 10676 | 3.41 |
 | G | Gilliss | 1850 | 15792 | 2.87 |
-| BAC | British Association Catalogue | 1850 | 8165 | 9.41 |
+| BAC | British Association Catalogue | 1850 | 8228 | 11.91 |
 
 ### Wishlist
 

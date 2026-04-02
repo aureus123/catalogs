@@ -199,4 +199,5 @@ their photometric quality. The transformation is `ppmVmag = visualMag + offset`:
 
 Note that, although almost all stars of UA are cross-identified with PPM, only 4980 have been used for the least-squares adjustment. The reason is that PPM V magnitude coverage is poor for the northern hemisphere (same happens for quadratic fit of BD stars).
 
-An interesting fact is that the visual magnitudes of the last CD volume fit well when compared with PPM magnitudes, since the measurement of star brightness used the then-recent Harvard standard. Here, the mean error is less than 0.06 magnitudes.
+An interesting fact is that the visual magnitudes of the last CD volume fit well when compared with PPM magnitudes, since the measurement of star brightness used the then-recent Harvard standard (as Santiago Paolantonio explained to me).
+Here, the mean error is less than 0.06 magnitudes.

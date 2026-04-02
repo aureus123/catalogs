@@ -13,8 +13,8 @@ void writePositionEntry(FILE *stream, int index, int decl, int num, const char *
 FILE *openMagnitudeFile(const char *name);
 void writeMagnitudeEntry(FILE *stream, int index, int decl, int num, const char *ref, double delta);
 FILE *openUnidentifiedFile(const char *name);
-bool logCauses(char *name, FILE *stream, double x, double y, double z,
-    bool cumulus, bool nebula, bool gscFound,
+void logCauses(char *name,
+    bool cumulus, bool nebula,
     int RAs, double Decl, int Decls,
     int ppmRef, double nearestPPMDistance);
 void copyWithoutSpaces(char *dest, char *src);

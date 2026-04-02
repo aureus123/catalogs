@@ -81,7 +81,7 @@ int countUsno = 0;
 double zcX[MAXZCSTAR], zcY[MAXZCSTAR], zcZ[MAXZCSTAR];
 int zcHour[MAXZCSTAR], zcNum[MAXZCSTAR];
 int countZC = 0;
-int countPPMZC = 0, countCDZC = 0, countCPDZC = 0;
+int countPPMZC = 0, countGSCZC = 0, countCDZC = 0, countCPDZC = 0;
 FILE *crossPPMZCStream;
 FILE *crossCDZCStream;
 FILE *crossCPDZCStream;
@@ -92,6 +92,7 @@ FILE *unidentifiedZCStream;
 void saveZC(int RAh, int RAs, int Decls,
         int numRef, double x, double y, double z,
         bool ppmFound, int ppmIndex, double minPPMDistance,
+        bool gscFound, const char *gscId, double nearestGSCDistance,
         bool cdFound, int cdIndex, double minCDDistance,
         bool cpdFound, int cpdIndex, double minCPDDistance) {
     char zcName[20], catName[20];
@@ -116,6 +117,11 @@ void saveZC(int RAh, int RAs, int Decls,
         struct PPMstar_struct *PPMstar = getPPMStruct();
         writePPMCrossEntry(crossPPMZCStream, crossSAOZCStream, crossHDZCStream, zcName, &PPMstar[ppmIndex], 0.0, minPPMDistance);
     }
+    if (gscFound) {
+        countGSCZC++;
+        snprintf(catName, 20, "GSC %s", gscId);
+        writeCrossEntry(crossPPMZCStream, zcName, catName, 0.0, nearestGSCDistance);
+    }
     if (cdFound) {
         countCDZC++;
         struct DMstar_struct *CDstar = getDMStruct();
@@ -130,11 +136,13 @@ void saveZC(int RAh, int RAs, int Decls,
     }
 
     if (!ppmFound && !cdFound && !cpdFound) {
-        /* note: some of the parameters are fake in order to avoid log.
-         * here, we just want to save the unidentified star. */
-        printf("**) %s is also ALONE.\n", zcName);
-        logCauses(zcName, unidentifiedZCStream, x, y, z,
-            false, false, true, RAs, -50.0, Decls, -1, 0.0);
+        if (gscFound) {
+            fprintf(unidentifiedZCStream, "%s,%.12f,%.12f,%.12f\n", zcName, x, y, z);
+        } else {
+            printf("**) %s is also ALONE.\n", zcName);
+            logCauses(zcName,
+                false, false, RAs, -50.0, Decls, -1, 0.0);
+        }
     }
 
     /* add the new star */
@@ -169,12 +177,12 @@ void readGC2() {
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_gc2_ppm.csv");
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_gc2_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_gc2_hd.csv");
-	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gc2_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
     int countDelta = 0;
     double akkuDeltaError = 0.0;
+    int countGSC = 0;
     int countGC = 0;
     int countCD = 0;
     int countCPD = 0;
@@ -274,6 +282,17 @@ void readGC2() {
 			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
         }
 
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        if (!ppmFound) {
+            gscFound = findGSCStar(RA, Decl, EPOCH_GC2, MAX_DIST_GSC);
+            if (gscFound) {
+			    snprintf(cdName, 20, "GSC %s", getGSCId());
+			    writeCrossEntry(crossPPMStream, catName, cdName, vmag, getDist());
+                countGSC++;
+            }
+        }
+
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
         double RA1875 = RA;
         double Decl1875 = Decl;
@@ -323,24 +342,15 @@ void readGC2() {
             }
 		}
 
-        if (!ppmFound && !cdFound && !cpdFound) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_GC2, MAX_DIST_GSC);
-            if (gscFound) {
-                printf("**) Note: G2 %d has no PPM / CD / CPD star near it but has a nearby GSC star %s at %.1f arcsec.\n",
-                    gcRef,
-                    getGSCId(),
-                    getDist());
-            } else {
-                printf("%d) Warning: G2 %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
-            }
-            logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, gscFound, RAs, Decl1875, Decls,
+        if (!ppmFound && !cdFound && !cpdFound && !gscFound) {
+            printf("%d) Warning: G2 %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
+            logCauses(catName,
+                false, false, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
         countGC++;
     }
     fclose(stream);
-    fclose(unidentifiedStream);
 	fclose(crossHDStream);
 	fclose(crossSAOStream);
 	fclose(crossPPMStream);
@@ -348,7 +358,7 @@ void readGC2() {
 	fclose(crossCDStream);
 
     printf("Available G2 stars = %d\n", countGC);
-    printf("Stars from G2 identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
+    printf("Stars from G2 identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist, countGSC, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -384,6 +394,7 @@ void readWeiss() {
     double akkuDistError = 0.0;
     int countDelta = 0;
     double akkuDeltaError = 0.0;
+    int countGSC = 0;
     int countCD = 0;
     int countCPD = 0;
     int errors = 0;
@@ -490,6 +501,17 @@ void readWeiss() {
 			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
         }
 
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        if (!ppmFound) {
+            gscFound = findGSCStar(RA, Decl, EPOCH_OA, MAX_DIST_GSC);
+            if (gscFound) {
+			    snprintf(cdName, 20, "GSC %s", getGSCId());
+			    writeCrossEntry(crossPPMStream, catName, cdName, vmag, getDist());
+                countGSC++;
+            }
+        }
+
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
         double RA1875 = RA;
         double Decl1875 = Decl;
@@ -540,22 +562,18 @@ void readWeiss() {
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_OA, MAX_DIST_GSC);
             if (gscFound) {
-                printf("**) Note: W %d has no PPM / CD / CPD star near it but has a nearby GSC star %s at %.1f arcsec.\n",
-                    weissRef,
-                    getGSCId(),
-                    getDist());
+                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: W %d (OA %d) is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,
                     weissRef,
                     oeltzenRef);
-                printf("     Register W %d: %s\n", weissRef, catLine);    
+                printf("     Register W %d: %s\n", weissRef, catLine);
+                logCauses(catName,
+                    false, false, RAs, Decl1875, Decls,
+                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
             }
-            logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, gscFound, RAs, Decl1875, Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -578,7 +596,7 @@ void readWeiss() {
 	fclose(crossCDStream);
 
     printf("Available OA stars = %d\n", countOA);
-    printf("Stars from OA identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
+    printf("Stars from OA identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist, countGSC, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -592,7 +610,7 @@ void readWeiss() {
  * readLalande - lee catalogo de Lalande
  */
 void readLalande() {
-    char buffer[1024], cell[256], catName[20];
+    char buffer[1024], cell[256], catName[20], cdName[20];
 
     printf("\n***************************************\n");
     printf("Perform comparison between Lalande and PPM...\n");
@@ -603,6 +621,7 @@ void readLalande() {
 
     int countDist = 0;
     double akkuDistError = 0.0;
+    int countGSC = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -684,22 +703,31 @@ void readLalande() {
             }
 		}
 
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        if (!ppmFound) {
+            gscFound = findGSCStar(RA, Decl, EPOCH_LAL, MAX_DIST_GSC);
+            if (gscFound && catRef > 0) {
+			    snprintf(catName, 20, "Lal %d", catRef);
+			    snprintf(cdName, 20, "GSC %s", getGSCId());
+			    writeCrossEntry(crossPPMStream, catName, cdName, vmag, getDist());
+                countGSC++;
+            }
+        }
+
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
         double RA1875 = RA;
         double Decl1875 = Decl;
         transform(EPOCH_LAL, 1875.0, &RA1875, &Decl1875);
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
-        if (!ppmFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_LAL, MAX_DIST_GSC);
-            if (!gscFound) {
-                printf("%d) Warning: Lal %d is ALONE (no PPM or GSC star near it).\n",
-                    ++errors,
-                    catRef);
-                logCauses(catName, nullptr, x, y, z,
-                    false, false, gscFound, RAs, Decl1875, Decls,
-                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
-            }
+        if (!ppmFound && !gscFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
+            printf("%d) Warning: Lal %d is ALONE (no PPM or GSC star near it).\n",
+                ++errors,
+                catRef);
+            logCauses(catName,
+                false, false, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -719,7 +747,7 @@ void readLalande() {
 	fclose(crossHDStream);
 
     printf("Available Lalande stars = %d\n", countLal);
-    printf("Stars from Lalande identified with PPM = %d\n", countDist);
+    printf("Stars from Lalande identified with PPM = %d, GSC-PPM = %d\n", countDist, countGSC);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -750,6 +778,7 @@ void readStone() {
     double akkuDistError = 0.0;
     int countDelta = 0;
     double akkuDeltaError = 0.0;
+    int countGSC = 0;
     int countCD = 0;
     int countCPD = 0;
     int errors = 0;
@@ -850,6 +879,18 @@ void readStone() {
             }
 		}
 
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        if (!ppmFound) {
+            gscFound = findGSCStar(RA, Decl, EPOCH_ST, MAX_DIST_GSC);
+            if (gscFound && lacailleRef > 0) {
+			    snprintf(catName, 20, "L %d", lacailleRef);
+			    snprintf(cdName, 20, "GSC %s", getGSCId());
+			    writeCrossEntry(crossPPMStream, catName, cdName, 0.0, getDist());
+                countGSC++;
+            }
+        }
+
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
         double RA1875 = RA;
         double Decl1875 = Decl;
@@ -905,23 +946,20 @@ void readStone() {
             }
 		}
 
-        if (!ppmFound && !cdFound && !cpdFound) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_ST, MAX_DIST_GSC);
-            if (!gscFound) {
-                if (lacailleRef > 0) {
-                    printf("%d) Warning: St %d (L %d) is ALONE (no PPM / CD / CPD / GSC star near it).\n",
-                        ++errors,
-                        stoneRef,
-                        lacailleRef);
-                } else {
-                    printf("%d) Warning: St %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
-                        ++errors,
-                        stoneRef);
-                }
-                logCauses(catName, nullptr, x, y, z,
-                    false, false, gscFound, RAs, Decl1875, Decls,
-                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+        if (!ppmFound && !cdFound && !cpdFound && !gscFound) {
+            if (lacailleRef > 0) {
+                printf("%d) Warning: St %d (L %d) is ALONE (no PPM / CD / CPD / GSC star near it).\n",
+                    ++errors,
+                    stoneRef,
+                    lacailleRef);
+            } else {
+                printf("%d) Warning: St %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
+                    ++errors,
+                    stoneRef);
             }
+            logCauses(catName,
+                false, false, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -956,7 +994,7 @@ void readStone() {
 	fclose(crossCDStream);
 
     printf("Available Stone stars = %d, and Lacaille = %d\n", countSt, countLac);
-    printf("Stars from Stone identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
+    printf("Stars from Stone identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist, countGSC, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -971,7 +1009,7 @@ void readStone() {
  * (ya se deben haber leidos catalogos Stone y GC)
  */
 void readTaylor() {
-    char buffer[1024], cell[256], catName[20];
+    char buffer[1024], cell[256], catName[20], cdName[20];
 
     /* usamos catalogo GC */
     struct GCstar_struct *GCstar = getGCStruct();
@@ -986,6 +1024,7 @@ void readTaylor() {
 
     int countDist = 0;
     double akkuDistError = 0.0;
+    int countGSC = 0;
     int checkLac = 0;
     int checkGC = 0;
     int errors = 0;
@@ -1066,22 +1105,31 @@ void readTaylor() {
 			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
 		}
 
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        if (!ppmFound) {
+            gscFound = findGSCStar(RA, Decl, EPOCH_TAYLOR, MAX_DIST_GSC);
+            if (gscFound) {
+			    snprintf(catName, 20, "T %d", taylorRef);
+			    snprintf(cdName, 20, "GSC %s", getGSCId());
+			    writeCrossEntry(crossPPMStream, catName, cdName, vmag, getDist());
+                countGSC++;
+            }
+        }
+
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
         double RA1875 = RA;
         double Decl1875 = Decl;
         transform(EPOCH_TAYLOR, 1875.0, &RA1875, &Decl1875);
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
-        if (!ppmFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_TAYLOR, MAX_DIST_GSC);
-            if (!gscFound) {
-                printf("%d) Warning: T %d is ALONE (no PPM or GSC star near it).\n",
-                    ++errors,
-                    taylorRef);
-                logCauses(catName, nullptr, x, y, z,
-                    false, false, gscFound, RAs, Decl1875, Decls,
-                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
-            }
+        if (!ppmFound && !gscFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
+            printf("%d) Warning: T %d is ALONE (no PPM or GSC star near it).\n",
+                ++errors,
+                taylorRef);
+            logCauses(catName,
+                false, false, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
@@ -1137,7 +1185,7 @@ void readTaylor() {
     printf("Available Taylor stars = %d\n", countTaylor);
     printf("Taylor stars properly identified with Lacaille = %d\n", checkLac);
     printf("Taylor stars properly identified with GC = %d\n", checkGC);
-    printf("Stars from Taylor identified with PPM = %d\n", countDist);
+    printf("Stars from Taylor identified with PPM = %d, GSC-PPM = %d\n", countDist, countGSC);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -1171,6 +1219,7 @@ void readUSNO() {
     double akkuDistError = 0.0;
     int countDelta = 0;
     double akkuDeltaError = 0.0;
+    int countGSC = 0;
     int countCD = 0;
     int countCPD = 0;
     int checkLac = 0;
@@ -1269,6 +1318,17 @@ void readUSNO() {
             ppmFound = true;
 
 			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
+        }
+
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        if (!ppmFound) {
+            gscFound = findGSCStar(RA, Decl, EPOCH_USNO, MAX_DIST_GSC);
+            if (gscFound) {
+			    snprintf(cdName, 20, "GSC %s", getGSCId());
+			    writeCrossEntry(crossPPMStream, catName, cdName, vmag, getDist());
+                countGSC++;
+            }
         }
 
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
@@ -1385,32 +1445,18 @@ void readUSNO() {
             }
         }
 
-        /* Alone stars that are from Praesepe or Pleiades are ignored but recognized as unidentified. */
         if (!ppmFound && !cdFound && !cpdFound) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_USNO, MAX_DIST_GSC);
             if (gscFound) {
-                readField(buffer, cell, 15, 3);
-                bool praesepe = !strncmp(cell, "PRA", 3);
-                bool pleiades = !strncmp(cell, "PLE", 3);
-                if (praesepe) {
-                    printf("**) %s is from Praesepe and has no PPM / CD / CPD near but has a nearby GSC.\n", catName);
-                } else if (pleiades) {
-                    printf("**) %s is from Pleiades and has no PPM / CD / CPD near but has a nearby GSC.\n", catName);
-                } else {
-                    printf("**) Note: %s has no PPM / CD / CPD near it but has a nearby GSC star %s at %.1f arcsec.\n",
-                        catName,
-                        getGSCId(),
-                        getDist());
-                }
+                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: U %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,
                     numRef);
                 printf("     Register U %d: %s\n", numRef, catLine);
+                logCauses(catName,
+                    false, false, RAs, Decl1875, Decls,
+                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
             }
-            logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, gscFound, RAs, Decl1875, Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         if (countUsno >= MAXUSNOSTAR) {
@@ -1437,7 +1483,7 @@ void readUSNO() {
     printf("Available USNO stars = %d\n", countUsno);
     printf("Stars from USNO with Lacaille = %d, Lalande = %d, Taylor = %d and OA = %d\n",
         checkLac, checkLal, checkTaylor, checkOA);
-    printf("Stars from USNO identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
+    printf("Stars from USNO identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist, countGSC, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -1468,7 +1514,6 @@ void readUA() {
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_ua_ppm.csv");
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_ua_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_ua_hd.csv");
-	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/ua_unidentified.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1547,7 +1592,7 @@ void readUA() {
 
             /* si está disponible Bayer, usa esa designacion */
             readField(buffer, cell, 15, 8);
-            if (cell[0] != ' ') {
+            if (cell[0] != ' ' && !(cell[0] == 'N' && cell[1] == 'G' && cell[2] == 'C')) {
                 char bayerRef[9];
                 copyWithoutSpaces(bayerRef, cell);
                 snprintf(catName, 20, "%s%s", bayerRef, cstRef);
@@ -1665,7 +1710,7 @@ void readUA() {
                 }
             }
 		}
-        
+
         bool cpdFound = false;
         /* busca la CPD mas cercana y genera el cruzamiento */
         if (Decl <= -18.0) {
@@ -1815,15 +1860,15 @@ void readUA() {
         }
         
         if (!ppmFound && !cdFound && !cpdFound) {
-            printf("%d) Warning: %s is ALONE (no PPM or CD or CPD star near it).\n",
+            printf("%d) Warning: %s is ALONE (no PPM / CD / CPD star near it).\n",
                 ++errors,
                 catgName);
-            printf("     Register %s: %s\n", catgName, catLine);    
+            printf("     Register %s: %s\n", catgName, catLine);
             readField(buffer, cell, 132, 3);
             bool cumulus = !strncmp(cell, "cum", 3);
             bool nebula = !strncmp(cell, "neb", 3);
-            logCauses(catName, existsRef ? unidentifiedStream : nullptr, x, y, z,
-                cumulus, nebula, true, RAs, Decl, 1,
+            logCauses(catName,
+                cumulus, nebula, RAs, Decl, 1,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
@@ -1832,7 +1877,6 @@ void readUA() {
         }
     }
     fclose(stream);
-    fclose(unidentifiedStream);
 	fclose(crossHDStream);
 	fclose(crossSAOStream);
 	fclose(crossPPMStream);
@@ -1872,6 +1916,7 @@ void readThome(double epoch, const char *filename, int correction) {
     double akkuDistError = 0.0;
     int countDelta = 0;
     double akkuDeltaError = 0.0;
+    int countGSC = 0;
     int countCD = 0;
     int countCPD = 0;
     int checkLac = 0;
@@ -1963,6 +2008,19 @@ void readThome(double epoch, const char *filename, int correction) {
             ppmFound = true;
 		}
 
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        const char *gscId;
+        double nearestGSCDistance = HUGE_NUMBER;
+        if (!ppmFound) {
+            gscFound = findGSCStar(RA, Decl, epoch, MAX_DIST_GSC);
+            if (gscFound) {
+                gscId = getGSCId();
+                nearestGSCDistance = getDist();
+                countGSC++;
+            }
+        }
+
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
         double RA1875 = RA;
         double Decl1875 = Decl;
@@ -2005,23 +2063,14 @@ void readThome(double epoch, const char *filename, int correction) {
             cdFound = true;
 		}
 
-        if (!ppmFound && !cdFound && !cpdFound) {
-            bool gscFound = findGSCStar(RA, Decl, epoch, MAX_DIST_GSC);
-            if (gscFound) {
-                printf("**) Note: T %.0f %d has no PPM / CD / CPD near it but has a nearby GSC star %s at %.1f arcsec.\n",
-                    epoch,
-                    numRef,
-                    getGSCId(),
-                    getDist());
-            } else {
-                printf("%d) Warning: T %.0f %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
-                    ++errors,
-                    epoch,
-                    numRef);
-                printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-            }
-            logCauses(catName, nullptr, x, y, z,
-                false, false, gscFound, RAs, Decl1875, Decls,
+        if (!ppmFound && !cdFound && !cpdFound & !gscFound) {
+            printf("%d) Warning: T %.0f %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
+                ++errors,
+                epoch,
+                numRef);
+            printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
+            logCauses(catName,
+                false, false, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
@@ -2161,6 +2210,7 @@ void readThome(double epoch, const char *filename, int correction) {
             RAh = (int) (floor(RA1875 / 15.0) + __FLT_EPSILON__);
             saveZC(RAh, RAs, Decls, numRefCat, x, y, z,
                 ppmFound, ppmIndex, nearestPPMDistance,
+                gscFound, gscId, nearestGSCDistance,
                 cdFound, cdIndex, nearestCDDistance,
                 cpdFound, cpdIndex, nearestCPDDistance);
         }
@@ -2209,6 +2259,7 @@ void readGilliss() {
     double akkuDistError = 0.0;
     int countDelta = 0;
     double akkuDeltaError = 0.0;
+    int countGSC = 0;
     int countCD = 0;
     int countCPD = 0;
     int checkLac = 0;
@@ -2339,6 +2390,21 @@ void readGilliss() {
 			writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
         }
 
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        const char *gscId;
+        double nearestGSCDistance = HUGE_NUMBER;
+        if (!ppmFound) {
+            gscFound = findGSCStar(RA, Decl, EPOCH_GILLISS, MAX_DIST_GSC);
+            if (gscFound) {
+                gscId = getGSCId();
+                nearestGSCDistance = getDist();
+			    snprintf(cdName, 20, "GSC %s", gscId);
+			    writeCrossEntry(crossPPMStream, catName, cdName, vmag, nearestGSCDistance);
+                countGSC++;
+            }
+        }
+
 	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
         double RA1875 = RA;
         double Decl1875 = Decl;
@@ -2387,21 +2453,17 @@ void readGilliss() {
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_GILLISS, MAX_DIST_GSC);
             if (gscFound) {
-                printf("**) Note: G %d has no PPM / CD / CPD near it but has a nearby GSC star %s at %.1f arcsec.\n",
-                    giRef,
-                    getGSCId(),
-                    getDist());
+                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: G %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,
                     giRef);
                 printf("     Register G %d: %s\n", giRef, catLine);
+                logCauses(catName,
+                    false, false, RAs, Decl1875, Decls,
+                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
             }
-            logCauses(catName, unidentifiedStream, x, y, z,
-                false, false, gscFound, RAs, Decl1875, Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell") */
@@ -2468,6 +2530,7 @@ void readGilliss() {
             }
             saveZC(RAh, RAs, Decls, numRefCat, x, y, z,
                 ppmFound, ppmIndex, nearestPPMDistance,
+                gscFound, gscId, nearestGSCDistance,
                 cdFound, cdIndex, nearestCDDistance,
                 cpdFound, cpdIndex, nearestCPDDistance);
         }
@@ -2480,7 +2543,7 @@ void readGilliss() {
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
 
-    printf("Stars from Gilliss identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
+    printf("Stars from Gilliss identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist, countGSC, countCD, countCPD);
     printf("Stars from Gilliss with Lacaille = %d, Stone = %d and GC = %d\n",
         checkLac, checkStone, checkGC);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
@@ -2553,6 +2616,6 @@ int main(int argc, char** argv)
 	fclose(crossCPDZCStream);
 	fclose(crossCDZCStream);
     printf("\nNumber of ZC stars registered = %d\n", countZC);
-    printf("Stars from ZC identified with PPM = %d, CD = %d and CPD = %d\n", countPPMZC, countCDZC, countCPDZC);
+    printf("Stars from ZC identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countPPMZC, countGSCZC, countCDZC, countCPDZC);
     return 0;
 }

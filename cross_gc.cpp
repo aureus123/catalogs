@@ -60,6 +60,7 @@ int main(int argc, char** argv)
     double akkuDistError = 0.0;
     int countDelta = 0;
     double akkuDeltaError = 0.0;
+    int countGSC = 0;
     int countCD = 0;
     int countCPD = 0;
     int errors = 0;
@@ -133,23 +134,24 @@ int main(int argc, char** argv)
             countDist++;
             ppmFound = true;
 
-			snprintf(ppmName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
-			writeCrossEntry(crossPPMStream, catName, ppmName, gcVmag, minDistance);
-
-            if (PPMstar[ppmIndex].saoRef > 0) {
-                snprintf(saoName, 20, "SAO %d", PPMstar[ppmIndex].saoRef);
-                writeCrossEntry(crossSAOStream, catName, saoName, gcVmag, minDistance);
-            }
-            if (PPMstar[ppmIndex].hdRef > 0) {
-                snprintf(hdName, 20, "HD %d", PPMstar[ppmIndex].hdRef);
-                writeCrossEntry(crossHDStream, catName, hdName, gcVmag, minDistance);
-            }
+            writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], gcVmag, minDistance);
 		} else {
             if (PRINT_WARNINGS) {
                 printf("Warning: GC has no PPM star near it.\n");
                 writeRegisterGC(gcIndex);
             }
 		}
+
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        if (!ppmFound) {
+            gscFound = findGSCStar(ra, decl, 1875.0, MAX_DIST_GSC);
+            if (gscFound) {
+			    snprintf(cdName, 20, "GSC %s", getGSCId());
+			    writeCrossEntry(crossPPMStream, catName, cdName, gcVmag, getDist());
+                countGSC++;
+            }
+        }
 
         bool cpdFound = false;
         /* busca la CPD mas cercana y genera el cruzamiento */
@@ -204,20 +206,16 @@ int main(int argc, char** argv)
 		}
 
         if (!ppmFound && !cdFound && !cpdFound) {
-            bool gscFound = findGSCStar(ra, decl, 1875.0, MAX_DIST_GSC);
             if (gscFound) {
-                printf("**) Note: GC %d has no PPM / CD / CPD star near it but has a nearby GSC star %s at %.1f arcsec.\n",
-                    gcRef,
-                    getGSCId(),
-                    getDist());
+                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: GC %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
                 writeRegisterGC(gcIndex);
+                logCauses(catName,
+                    GCstar[gcIndex].cum, GCstar[gcIndex].neb,
+                    GCstar[gcIndex].RAs, decl, GCstar[gcIndex].Decls,
+                    PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
             }
-            logCauses(catName, unidentifiedStream, x, y, z,
-                GCstar[gcIndex].cum, GCstar[gcIndex].neb, gscFound,
-                GCstar[gcIndex].RAs, decl, GCstar[gcIndex].Decls,
-                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 	}
     fclose(unidentifiedStream);
@@ -227,7 +225,7 @@ int main(int argc, char** argv)
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
 
-    printf("Stars from GC identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
+    printf("Stars from GC identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist,  countGSC, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);

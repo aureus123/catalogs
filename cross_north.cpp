@@ -22,6 +22,7 @@
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
 #define MAX_DIST_CROSS 60.0
+#define MAX_DIST_PPM 120.0
 #define CURATED true // true if curated BD catalog should be used
 
 // Here, we save 1825.0 coordinates of WB stars in rectangular form
@@ -127,7 +128,7 @@ void readWB() {
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_CROSS) {
+		if (minDistance < MAX_DIST_PPM) {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
@@ -138,12 +139,11 @@ void readWB() {
         if (!ppmFound) {
             bool gscFound = findGSCStar(RA, Decl, EPOCH_WB, MAX_DIST_GSC);
             if (!gscFound) {
-                /* printf("%d) Warning: WB %dh %d is ALONE (nearest PPM star at %.1f arcsec).\n",
-                    errors,
+                printf("%d) Warning: WB %dh %d is ALONE (nearest PPM star at %.1f arcsec).\n",
+                    ++errors,
                     RARef,
                     numRef,
-                    minDistance); */
-                errors++;
+                    minDistance);
             }
         }
 
@@ -232,20 +232,19 @@ void readOARN() {
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_CROSS) {
+		if (minDistance < MAX_DIST_PPM) {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
 		}
 
         if (!ppmFound) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_WB, MAX_DIST_GSC);
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_OA, MAX_DIST_GSC);
             if (!gscFound) {
-                /* printf("%d) Warning: OA %d is ALONE (nearest PPM star at %.1f arcsec).\n",
-                    errors,
+                printf("%d) Warning: OA %d is ALONE (nearest PPM star at %.1f arcsec).\n",
+                    ++errors,
                     oeltzenRef,
-                    minDistance); */
-                errors++;    
+                    minDistance);
             }
         }
 
@@ -344,7 +343,7 @@ void readBAC() {
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_CROSS) {
+		if (minDistance < MAX_DIST_PPM) {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
@@ -353,13 +352,12 @@ void readBAC() {
 		}
 
         if (!ppmFound) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_WB, MAX_DIST_GSC);
+            bool gscFound = findGSCStar(RA, Decl, EPOCH_BAC, MAX_DIST_GSC);
             if (!gscFound) {
-                /* printf("%d) Warning: BAC %d is ALONE (nearest PPM star at %.1f arcsec).\n",
-                    errors,
+                printf("%d) Warning: BAC %d is ALONE (nearest PPM star at %.1f arcsec).\n",
+                    ++errors,
                     numRef,
-                    minDistance); */
-                errors++;
+                    minDistance);
             }
         }
 

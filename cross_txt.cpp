@@ -39,8 +39,7 @@ struct StarRecord {
  */
 void readCrossFile(
         const char *ppm_file, struct PPMstar_struct *PPMstar, int PPMstars) {
-    char buffer[1024];
-    char targetRef[STRING_SIZE];
+    char buffer[1024], targetRef[STRING_SIZE], code[4];
     int ppmRef, cdDeclRef, cdNumRef, cpdDeclRef, cpdNumRef;
     float vmag, minDistance;
 
@@ -59,7 +58,8 @@ void readCrossFile(
             first_line = false;
             continue;
         }
-        sscanf(buffer, "%13[^,],PPM %d,%f,%f\n", targetRef, &ppmRef, &vmag, &minDistance);
+        sscanf(buffer, "%13[^,],%3s %d,%f,%f\n", targetRef, code, &ppmRef, &vmag, &minDistance);
+        if (strcmp(code, "PPM") != 0) continue;
         // printf("Cross: %s, PPM %d, dist = %.1f arcsec.\n", targetRef, ppmRef, minDistance);
         if (minDistance < __FLT_EPSILON__ || minDistance > THRESHOLD_PPM) {
             // omit identifications with zero distance (bug) or too far away
@@ -154,8 +154,7 @@ int main(int argc, char** argv)
         struct PPMstar_struct *PPMstar = getPPMStruct();
         
         /* Read CSV file and populate customStars histogram */
-        char buffer[1024];
-        char targetRef[STRING_SIZE];
+        char buffer[1024], targetRef[STRING_SIZE], code[4];
         int ppmRef;
         float vmag, minDistance;
         bool first_line = true;
@@ -168,10 +167,8 @@ int main(int argc, char** argv)
                 continue;
             }
             
-            int scanned = sscanf(buffer, "%13[^,],PPM %d,%f,%f\n", targetRef, &ppmRef, &vmag, &minDistance);
-            if (scanned != 4) {
-                continue;
-            }
+            sscanf(buffer, "%13[^,],%3s %d,%f,%f\n", targetRef, code, &ppmRef, &vmag, &minDistance);
+            if (strcmp(code, "PPM") != 0) continue;
             
             // Ignore if distance is too far of magnitude is absent
             if (minDistance < __FLT_EPSILON__ || minDistance > THRESHOLD_PPM || vmag < __FLT_EPSILON__) {
@@ -634,7 +631,7 @@ int main(int argc, char** argv)
                 fprintf(estimFile, "\n");
             }
             fclose(estimFile);
-            printf("\nCross.txt and Estim.txt written to %s with %d stars.\n", estimPath, starRecordCount);
+            printf("\nEstim.txt written to %s with %d stars.\n", estimPath, starRecordCount);
         }
     }
 

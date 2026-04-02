@@ -66,8 +66,7 @@ void readCrossFile(
         const char *ppm_file, struct PPMstar_struct *PPMstar, int PPMstars,
         const char *cd_file, struct DMstar_struct *DMstar, int DMstars,
         const char *cpd_file, struct CPDstar_struct *CPDstar, int CPDstars) {
-    char buffer[1024];
-    char targetRef[STRING_SIZE];
+    char buffer[1024], targetRef[STRING_SIZE], code[4];
     int ppmRef, cdDeclRef, cdNumRef, cpdDeclRef, cpdNumRef;
     float vmag, minDistance;
 
@@ -86,7 +85,9 @@ void readCrossFile(
             first_line = false;
             continue;
         }
-        sscanf(buffer, "%13[^,],PPM %d,%f,%f\n", targetRef, &ppmRef, &vmag,&minDistance);
+        sscanf(buffer, "%13[^,],%3s %d,%f,%f\n", targetRef, code, &ppmRef, &vmag, &minDistance);
+        if (strcmp(code, "PPM") != 0) continue;
+
         // printf("Cross: %s, PPM %d, dist = %.1f arcsec.\n", targetRef, ppmRef, minDistance);
         if (minDistance < __FLT_EPSILON__ || minDistance > THRESHOLD_PPM) {
             // omit identifications with zero distance (bug) or too far away
