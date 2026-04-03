@@ -8,8 +8,8 @@ during that process. In particular, you can find the following files:
 - table_mag_*.csv = table with magnitude errors found
 - findings.odt = open-office document with other minor results
 
-There is also a folder _cross_ with results of the experiment *compare_ppm*, *cross_gc* and *cross_south* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander (South), Lalande, Lacaille, USNO, Taylor, WB, BAC) and PPM/CD/CPD/SAO/HD (the latter two are taken
-from identifications in the PPM catalog).
+There is also a folder _cross_ with results of the experiment *compare_ppm*, *cross_gc*, *cross_north* and *cross_south* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander (South), Lalande, Lacaille, USNO, Taylor, Gilliss, WB, BAC) and PPM/GSC/SAO/HD/CD/CPD. In the PPM files, there are also stars matching with GSC stars when they do not match with PPM stars. In SAO and HD files, these identification are taken
+from identifications in the PPM catalog, not from direct comparison against SAO/HD catalogs.
 
 Below some experiments are reported.
 

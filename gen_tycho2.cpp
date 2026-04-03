@@ -389,12 +389,12 @@ int main(int argc, char** argv) {
     }
 
 #ifdef ALTERNATIVE
-    FILE *crossStream = openCrossFile("tycho2/cross_tyc2_south_plain.csv");
-    FILE *crossStreamColor = openCrossFile("tycho2/cross_tyc2_south_color.csv");
-    FILE *crossStreamDpl = openCrossFile("tycho2/cross_tyc2_south_dpl.csv");
+    FILE *crossStream = openCrossFileWithMagnitude("tycho2/cross_tyc2_south_plain.csv", false);
+    FILE *crossStreamColor = openCrossFileWithMagnitude("tycho2/cross_tyc2_south_color.csv", false);
+    FILE *crossStreamDpl = openCrossFileWithMagnitude("tycho2/cross_tyc2_south_dpl.csv", false);
 #else
     snprintf(buffer, 1024, "tycho2/cross_tyc2_%s.csv", is_north ? "north" : "south");
-    FILE *crossStream = openCrossFile(buffer);
+    FILE *crossStream = openCrossFileWithMagnitude(buffer, false);
 #endif
 
     int TYCstarsPPM = 0;
@@ -503,7 +503,7 @@ int main(int argc, char** argv) {
         if (ppmIndex != -1 && minDistance < DIST_PPM_TYC) {
             if (PPMstar[ppmIndex].dmString[0] != 0) {
                 /* se almacena la identificación cruzada con la DM dada por PPM */
-                writeCrossEntry(crossStream, tycString, PPMstar[ppmIndex].dmString, 0.0, minDistance);
+                writeCrossEntry(crossStream, tycString, PPMstar[ppmIndex].dmString, 99.9, minDistance);
                 TYCstarsPPM++;
                 continue;
             }
@@ -535,7 +535,7 @@ int main(int argc, char** argv) {
         }
         if (index != -1) {
             /* se almacena la identificación cruzada con la estrella */
-            writeCrossEntry(crossStream, tycString, unidentifiedName[index], 0.0, minDistance);
+            writeCrossEntry(crossStream, tycString, unidentifiedName[index], 99.9, minDistance);
             TYCstarsOther++;
             continue;
         }
@@ -571,7 +571,7 @@ int main(int argc, char** argv) {
                     chosenStream = crossStreamColor;
                 }
 #endif
-                writeCrossEntry(chosenStream, tycString, dmStringDM[dmIndex], 0.0, minDistance);
+                writeCrossEntry(chosenStream, tycString, dmStringDM[dmIndex], 99.9, minDistance);
                 TYCstarsDM++;
                 continue;
             }
@@ -584,7 +584,7 @@ int main(int argc, char** argv) {
             findSDByCoordinates(x, y, z, Decltarget, &sdIndex, &minDistance);
             if (sdIndex != -1 && minDistance < DIST_DM_TYC) {
                 /* se almacena la identificación cruzada con la SD */
-                writeCrossEntry(crossStream, tycString, dmStringSD[sdIndex], 0.0, minDistance);
+                writeCrossEntry(crossStream, tycString, dmStringSD[sdIndex], 99.9, minDistance);
                 TYCstarsSD++;
                 continue;
             }
@@ -597,7 +597,7 @@ int main(int argc, char** argv) {
             findCPDByCoordinates(x, y, z, Decltarget, &cpdIndex, &minDistance);
             if (cpdIndex != -1 && minDistance < DIST_CPD_TYC) {
                 /* se almacena la identificación cruzada con la CPD */
-                writeCrossEntry(crossStream, tycString, dmStringCPD[cpdIndex], 0.0, minDistance);
+                writeCrossEntry(crossStream, tycString, dmStringCPD[cpdIndex], 99.9, minDistance);
                 TYCstarsCPD++;
                 continue;
             }

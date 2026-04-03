@@ -8,7 +8,7 @@ Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM cat
 
 In southern hemisphere, we have stars from:
 - Uranometría Argentina (*UA*)
-- Lacaille's catalog (*L*)
+- Lacaille's designations coming from Stone catalog (*L*)
 - Lalande's catalog (*Lal*)
 - Catálogo General Argentino (*GC*)
 - Gould's Zone Catalog designations coming from other catalogs (*ZC*)
@@ -20,8 +20,8 @@ In southern hemisphere, we have stars from:
 - All Southern Durchmusterung stars (*SD*)
 - All Cape Photographic Durchmusterung stars (*CPD*)
 
-For the northern hemisphere, there are 994 UA, 27074 Lal, 2058 U and 287330 BD stars summarizing 317456 identifications.
-For the southern hemisphere, there are 7058 UA, 10016 Lal, 5708 L, 19762 GC, 5213 ZC, 11418 OA, 994 U, 9081 G, 5619 BD, 117361 SD, 497536 CD and 75300 CPD stars summarizing 765066 identifications.
+For the northern hemisphere, there are 939 UA, 25923 Lal, 1991 U and 263502 BD stars summarizing 292355 identifications.
+For the southern hemisphere, there are 6594 UA, 9559 Lal, 5372 L, 18287 GC, 4634 ZC, 10926 OA, 943 U, 8897 G, 5431 BD, 111043 SD, 469605 CD and 74008 CPD stars summarizing 725299 identifications.
 
 ### Shortcomings of the current approach
 
