@@ -1,6 +1,68 @@
 /*
  * CROSS_TXT - Cross-identifies custom catalog against PPM catalog
- * Made in 2025 by Daniel E. Severin (partially created by Cursor AI)
+ * Made in 2025 by Daniel E. Severin (partially created by Cursor AI and Claude AI)
+ *
+ * This tool cross-matches stars from a custom source (either extracted from
+ * Coord.txt/Flux.txt files or from a pre-existing CSV cross-identification file)
+ * against the PPM catalog, and performs photometric calibration by fitting
+ * instrumental magnitudes to PPM V magnitudes.
+ *
+ * Three modes of operation:
+ *
+ * 1) --txt [baseDir]
+ *    Reads Coord.txt (positions) and Flux.txt (fluxes) from the given base
+ *    directory (defaults to current directory). For each star, computes its
+ *    instrumental magnitude (imag = ZEROPOINT_IMAG - 2.5 * log10(flux)) and
+ *    finds the nearest PPM match within THRESHOLD_PPM arcseconds. Writes all
+ *    results to Cross.txt. Then builds a histogram of matched stars binned by
+ *    instrumental magnitude (bins with fewer than 5 stars are discarded), and
+ *    performs three regression fits (constant, linear, quadratic) of PPM V
+ *    magnitude as a function of instrumental magnitude, reporting RMSE and MAPE
+ *    for each. Finally writes Estim.txt with per-star estimated magnitudes
+ *    from all three fits.
+ *
+ * 2) --csv csvFile
+ *    Reads a pre-existing CSV cross-identification file (with columns:
+ *    targetRef, "PPM" ppmRef, vmag, minDistance). The original visual
+ *    magnitudes in the CSV are treated as instrumental magnitudes. Matches
+ *    are looked up in the PPM catalog and the same histogram-based regression
+ *    fits (constant, linear, quadratic) are performed as in --txt mode.
+ *    Writes Estim.txt with per-star estimated magnitudes.
+ *
+ * 3) --var baseDir variablePPMid [controlPPMid] [sequencePPMid1] [sequencePPMid2]
+ *              [controlVmag] [sequenceVmag1] [sequenceVmag2]
+ *    Estimates the magnitude of a variable star. Reads Coord.txt/Flux.txt and
+ *    performs cross-matching as in --txt mode (writing Cross.txt), but instead
+ *    of histogram binning, it uses individual matched stars for calibration.
+ *    The fitting strategy depends on the arguments provided:
+ *
+ *    a) Only variablePPMid given:
+ *       Performs a linear fit (Vmag = a + b * imag) using an ensemble of all
+ *       cross-matched PPM stars except the variable itself, with equal weights.
+ *       Reports the fit, its RMSE and MAPE, and the estimated Vmag of the
+ *       variable star.
+ *
+ *    b) controlPPMid also given:
+ *       Same as (a), but additionally reports the estimated Vmag of the
+ *       control star and the absolute error with respect to its PPM magnitude,
+ *       as a quality check.
+ *
+ *    c) sequencePPMid1 also given:
+ *       Instead of an ensemble fit, performs a constant fit (Vmag = zp + imag)
+ *       derived from the single comparison star.
+ *
+ *    d) sequencePPMid2 also given:
+ *       Instead of a constant fit, performs a linear fit (Vmag = a + b * imag)
+ *       derived from the two comparison stars. Reports the variable and control
+ *       star estimates, and indicates whether the variable star estimation is
+ *       interpolated (its imag falls between the two sequence stars) or
+ *       extrapolated.
+ *
+ *    Optionally, after all three PPM ids (cases b+c+d), exactly three Vmag
+ *    values may be appended (controlVmag sequenceVmag1 sequenceVmag2). When
+ *    present, these override the PPM catalog magnitudes for the control and
+ *    sequence stars so that the fit is derived from user-supplied values
+ *    instead.
  */
 
 #include <stdio.h>
@@ -98,8 +160,11 @@ int main(int argc, char** argv)
         printf("Usage: %s --txt [baseDir]\n", argv[0]);
         printf("         It reads Coord.txt and Flux.txt from base folder and searches\n");
         printf("         for matches with PPM catalog. It also writes results to Cross.txt.\n");
-        printf("Usage: %s --csv [csvFile]\n", argv[0]);
+        printf("Usage: %s --csv csvFile\n", argv[0]);
         printf("         It reads CSV cross-identification file and performs magnitude fits.\n");
+        printf("Usage: %s --var baseDir variablePPMid [controlPPMid] [sequencePPMid1] [sequencePPMid2]\n", argv[0]);
+        printf("              [controlVmag] [sequenceVmag1] [sequenceVmag2]\n");
+        printf("         Estimates variable star magnitude from Coord.txt/Flux.txt data.\n");
         return 1;
     }
 
@@ -406,8 +471,318 @@ int main(int argc, char** argv)
         fclose(fluxFile);
         fclose(crossFile);
         printf("\nTotal matches found: %d, custom stars registered: %d\n", matches, customStarCount);
+    } else if (strcmp(mode, "--var") == 0) {
+        /* Mode is --var, estimate variable star magnitude */
+        if (argc < 4) {
+            printf("Error: baseDir and variablePPMid are required for --var mode.\n");
+            return 1;
+        }
+
+        const char *baseDir = argv[2];
+        int variablePPMid = atoi(argv[3]);
+        int controlPPMid = (argc >= 5) ? atoi(argv[4]) : 0;
+        int sequencePPMid1 = (argc >= 6) ? atoi(argv[5]) : 0;
+        int sequencePPMid2 = (argc >= 7) ? atoi(argv[6]) : 0;
+        bool hasControl = (argc >= 5);
+        bool hasSeq1 = (argc >= 6);
+        bool hasSeq2 = (argc >= 7);
+
+        /* Custom vmags: if given, must be exactly 3 (positions 7, 8, 9 in argv) */
+        if (argc > 7 && argc < 10) {
+            printf("Error: Custom vmags must be provided as a group of exactly 3 "
+                   "(controlVmag sequenceVmag1 sequenceVmag2).\n");
+            return 1;
+        }
+        bool hasCustomVmags = (argc >= 10);
+        double customControlVmag = hasCustomVmags ? atof(argv[7]) : 0.0;
+        double customSeq1Vmag    = hasCustomVmags ? atof(argv[8]) : 0.0;
+        double customSeq2Vmag    = hasCustomVmags ? atof(argv[9]) : 0.0;
+
+        if (hasCustomVmags && !hasSeq2) {
+            printf("Error: Custom vmags require all three PPM ids "
+                   "(controlPPMid, sequencePPMid1, sequencePPMid2) to be given.\n");
+            return 1;
+        }
+
+        printf("Variable star estimation mode.\n");
+        printf("  Variable:   PPM %d\n", variablePPMid);
+        if (hasControl) printf("  Control:    PPM %d\n", controlPPMid);
+
+        /* Read Coord.txt and Flux.txt */
+        char coordPath[256], fluxPath[256], crossPath[256];
+        joinPath(baseDir, "Coord.txt", coordPath, sizeof(coordPath));
+        joinPath(baseDir, "Flux.txt", fluxPath, sizeof(fluxPath));
+        joinPath(baseDir, "Cross.txt", crossPath, sizeof(crossPath));
+
+        FILE *coordFile = fopen(coordPath, "rt");
+        if (coordFile == NULL) {
+            printf("Error: Cannot open %s file.\n", coordPath);
+            return 1;
+        }
+        FILE *fluxFile = fopen(fluxPath, "rt");
+        if (fluxFile == NULL) {
+            printf("Error: Cannot open %s file.\n", fluxPath);
+            fclose(coordFile);
+            return 1;
+        }
+        FILE *crossFile = fopen(crossPath, "wt");
+        if (crossFile == NULL) {
+            printf("Error: Cannot write %s file.\n", crossPath);
+            fclose(coordFile);
+            fclose(fluxFile);
+            return 1;
+        }
+        fprintf(crossFile, "    Index   imag   Distance Identification\n");
+
+        /* Read PPM catalog */
+        printf("Reading PPM catalog...\n");
+        readPPM(false, true, false, false, 2000.0);
+        sortPPM();
+        int PPMstars = getPPMStars();
+        struct PPMstar_struct *PPMstar = getPPMStruct();
+
+        if (CROSS_OLD_CATALOGS) {
+            readCrossFile("results/cross/cross_gilliss_ppm.csv", PPMstar, PPMstars);
+            readCrossFile("results/cross/cross_usno_ppm.csv", PPMstar, PPMstars);
+            readCrossFile("results/cross/cross_gc_ppm.csv", PPMstar, PPMstars);
+            readCrossFile("results/cross/cross_ua_ppm.csv", PPMstar, PPMstars);
+        }
+
+        /* Per-match storage for variable star analysis */
+        struct VarMatch { int starIndex; double imag; int ppmRef; double ppmVmag; };
+        struct VarMatch *varMatches = NULL;
+        int varMatchCount = 0, varMatchCapacity = 0;
+
+        char coordLine[256], fluxLine[256];
+        int starIndex, fluxIndex;
+        double RA, Decl, flux, background;
+        int matches = 0;
+
+        /* Skip headers */
+        if (fgets(coordLine, sizeof(coordLine), coordFile) == NULL) {
+            printf("Error: Cannot read header from Coord.txt.\n");
+            fclose(coordFile); fclose(fluxFile); fclose(crossFile);
+            return 1;
+        }
+        if (fgets(fluxLine, sizeof(fluxLine), fluxFile) == NULL) {
+            printf("Error: Cannot read header from Flux.txt.\n");
+            fclose(coordFile); fclose(fluxFile); fclose(crossFile);
+            return 1;
+        }
+
+        while (fgets(coordLine, sizeof(coordLine), coordFile) != NULL &&
+               fgets(fluxLine, sizeof(fluxLine), fluxFile) != NULL) {
+            int columnsCoordRead = sscanf(coordLine, "%d %lf %lf", &starIndex, &RA, &Decl);
+            int columnsFluxRead = sscanf(fluxLine, "%d %lf %lf", &fluxIndex, &flux, &background);
+            if (columnsCoordRead != 3 || columnsFluxRead != 3) continue;
+            if (starIndex != fluxIndex) {
+                printf("Warning: Index mismatch (Coord: %d, Flux: %d)\n", starIndex, fluxIndex);
+                continue;
+            }
+
+            double x, y, z;
+            sph2rec(RA, Decl, &x, &y, &z);
+
+            int ppmIndex = -1;
+            double minDistance = HUGE_NUMBER;
+            findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
+
+            double imag = ZEROPOINT_IMAG - 2.5 * log10(fmax(flux, 100.0));
+
+            bool ppmMatch = false;
+            char identBuf[128];
+            if (ppmIndex != -1 && minDistance < THRESHOLD_PPM && !PPMstar[ppmIndex].discard) {
+                snprintf(identBuf, sizeof(identBuf), "PPM %d / %s",
+                         PPMstar[ppmIndex].ppmRef, PPMstar[ppmIndex].dmString);
+                ppmMatch = true;
+            }
+
+            if (ppmMatch) {
+                fprintf(crossFile, "%8d  %6.2f  %8.1f  %s\n", starIndex, imag, minDistance, identBuf);
+
+                /* Store match */
+                if (varMatchCount >= varMatchCapacity) {
+                    varMatchCapacity = (varMatchCapacity == 0) ? 1024 : varMatchCapacity * 2;
+                    varMatches = (struct VarMatch *)realloc(varMatches,
+                            varMatchCapacity * sizeof(struct VarMatch));
+                }
+                varMatches[varMatchCount].starIndex = starIndex;
+                varMatches[varMatchCount].imag = imag;
+                varMatches[varMatchCount].ppmRef = PPMstar[ppmIndex].ppmRef;
+                varMatches[varMatchCount].ppmVmag = PPMstar[ppmIndex].vmag;
+                varMatchCount++;
+
+                PPMstar[ppmIndex].discard = true;
+                matches++;
+                continue;
+            }
+
+            fprintf(crossFile, "%8d  %6.2f\n", starIndex, imag);
+        }
+
+        fclose(coordFile);
+        fclose(fluxFile);
+        fclose(crossFile);
+        printf("\nTotal matches found: %d\n", matches);
+
+        /* Find variable star in matches */
+        int varIdx = -1;
+        for (int i = 0; i < varMatchCount; i++) {
+            if (varMatches[i].ppmRef == variablePPMid) { varIdx = i; break; }
+        }
+        if (varIdx == -1) {
+            printf("Error: Variable star PPM %d not found in cross-identification.\n", variablePPMid);
+            free(varMatches);
+            return 1;
+        }
+
+        /* Find control star */
+        int ctrlIdx = -1;
+        if (hasControl) {
+            for (int i = 0; i < varMatchCount; i++) {
+                if (varMatches[i].ppmRef == controlPPMid) { ctrlIdx = i; break; }
+            }
+            if (ctrlIdx == -1) {
+                printf("Error: Control star PPM %d not found in cross-identification.\n", controlPPMid);
+                free(varMatches);
+                return 1;
+            }
+        }
+
+        /* Find sequence stars */
+        int seq1Idx = -1, seq2Idx = -1;
+        if (hasSeq1) {
+            for (int i = 0; i < varMatchCount; i++) {
+                if (varMatches[i].ppmRef == sequencePPMid1) { seq1Idx = i; break; }
+            }
+            if (seq1Idx == -1) {
+                printf("Error: Sequence star 1 (PPM %d) not found in cross-identification.\n", sequencePPMid1);
+                free(varMatches);
+                return 1;
+            }
+        }
+        if (hasSeq2) {
+            for (int i = 0; i < varMatchCount; i++) {
+                if (varMatches[i].ppmRef == sequencePPMid2) { seq2Idx = i; break; }
+            }
+            if (seq2Idx == -1) {
+                printf("Error: Sequence star 2 (PPM %d) not found in cross-identification.\n", sequencePPMid2);
+                free(varMatches);
+                return 1;
+            }
+        }
+
+        /* Override PPM vmags with user-supplied values if provided */
+        if (hasCustomVmags) {
+            varMatches[ctrlIdx].ppmVmag  = customControlVmag;
+            varMatches[seq1Idx].ppmVmag  = customSeq1Vmag;
+            varMatches[seq2Idx].ppmVmag  = customSeq2Vmag;
+            printf("  (Using user-supplied Vmag values instead of PPM catalog)\n");
+        }
+
+        if (hasSeq1)
+            printf("  Sequence 1: PPM %d (Vmag = %.1f)\n", sequencePPMid1, varMatches[seq1Idx].ppmVmag);
+        if (hasSeq2)
+            printf("  Sequence 2: PPM %d (Vmag = %.1f)\n", sequencePPMid2, varMatches[seq2Idx].ppmVmag);
+
+        /* Perform fitting */
+        double fitIntercept = 0.0, fitSlope = 1.0;
+
+        if (!hasSeq1) {
+            /* Ensemble linear fit: all matched except variable, weight=1.
+             * Exclude stars with no visual magnitude (vmag=0.0) or too bright
+             * (vmag <= 3.0), same criteria as the --txt histogram. */
+            double si = 0.0, sv = 0.0, siv = 0.0, sii = 0.0;
+            int n = 0;
+            for (int i = 0; i < varMatchCount; i++) {
+                if (i == varIdx) continue;
+                if (varMatches[i].ppmVmag <= 3.0) continue;
+                double im = varMatches[i].imag;
+                double vm = varMatches[i].ppmVmag;
+                si += im;
+                sv += vm;
+                siv += im * vm;
+                sii += im * im;
+                n++;
+            }
+            if (n < 2) {
+                printf("Error: Not enough stars for ensemble fit (need at least 2, got %d).\n", n);
+                free(varMatches);
+                return 1;
+            }
+            double mi = si / n, mv = sv / n;
+            double denom = sii - n * mi * mi;
+            fitSlope = (siv - n * mi * mv) / denom;
+            fitIntercept = mv - fitSlope * mi;
+
+            printf("\nEnsemble linear fit: Vmag = %.3f + %.3f * imag\n", fitIntercept, fitSlope);
+
+            /* RMSE and MAPE */
+            double sse = 0.0, sape = 0.0;
+            for (int i = 0; i < varMatchCount; i++) {
+                if (i == varIdx) continue;
+                if (varMatches[i].ppmVmag <= 3.0) continue;
+                double est = fitIntercept + fitSlope * varMatches[i].imag;
+                double err = fabs(est - varMatches[i].ppmVmag);
+                sse += err * err;
+                sape += err / varMatches[i].ppmVmag * 100.0;
+            }
+            printf("    Ensemble RMSE: %.3f magnitudes\n", sqrt(sse / n));
+            printf("    Ensemble MAPE: %.2f%%\n", sape / n);
+
+        } else if (!hasSeq2) {
+            /* Constant fit with one sequence star */
+            fitSlope = 1.0;
+            fitIntercept = varMatches[seq1Idx].ppmVmag - varMatches[seq1Idx].imag;
+
+            printf("\nConstant fit: Vmag = %.3f + imag\n", fitIntercept);
+
+        } else {
+            /* Linear fit with two sequence stars */
+            double s1i = varMatches[seq1Idx].imag, s1v = varMatches[seq1Idx].ppmVmag;
+            double s2i = varMatches[seq2Idx].imag, s2v = varMatches[seq2Idx].ppmVmag;
+
+            if (fabs(s2i - s1i) < 1e-9) {
+                printf("Error: Sequence stars have identical instrumental magnitudes.\n");
+                free(varMatches);
+                return 1;
+            }
+
+            fitSlope = (s2v - s1v) / (s2i - s1i);
+            fitIntercept = s1v - fitSlope * s1i;
+
+            printf("\nLinear fit: Vmag = %.3f + %.3f * imag\n", fitIntercept, fitSlope);
+        }
+
+        /* Variable star estimation */
+        double varEst = fitIntercept + fitSlope * varMatches[varIdx].imag;
+        printf("\nVariable star PPM %d: imag = %.2f, estimated Vmag = %.2f",
+               variablePPMid, varMatches[varIdx].imag, varEst);
+
+        if (hasSeq2) {
+            double minImag = fmin(varMatches[seq1Idx].imag, varMatches[seq2Idx].imag);
+            double maxImag = fmax(varMatches[seq1Idx].imag, varMatches[seq2Idx].imag);
+            if (varMatches[varIdx].imag >= minImag && varMatches[varIdx].imag <= maxImag) {
+                printf(" (interpolated)");
+            } else {
+                printf(" (extrapolated)");
+            }
+        }
+        printf("\n");
+
+        /* Control star estimation */
+        if (hasControl) {
+            double ctrlEst = fitIntercept + fitSlope * varMatches[ctrlIdx].imag;
+            double ctrlErr = fabs(ctrlEst - varMatches[ctrlIdx].ppmVmag);
+            printf("Control star PPM %d: imag = %.2f, estimated Vmag = %.2f, PPM Vmag = %.1f, error = %.2f mag\n",
+                   controlPPMid, varMatches[ctrlIdx].imag, ctrlEst, varMatches[ctrlIdx].ppmVmag, ctrlErr);
+        }
+
+        free(varMatches);
+        return 0;
+
     } else {
-        printf("Error: Invalid mode '%s'. Use --csv or --txt\n", mode);
+        printf("Error: Invalid mode '%s'. Use --csv, --txt, or --var\n", mode);
         return 1;
     }
 
