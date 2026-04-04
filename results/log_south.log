@@ -1208,16 +1208,22 @@ Errors logged = 129
 Perform comparison between UA and PPM/CD/CPD...
 Stars read from PPM: 468861
 **) Note: SAO references mismatch for zeta1 Ant: 200445 != 200444.
+     No match found in PPM for SAO 200444 referenced by UA.
 1) Warning: SAO references mismatch for 60G Aqr: 164311 != 164303.
+     Match suggested by UA (vmag=6.9): PPM 238672 (vmag=7.4) at distance 648.5 arcsec, instead of PPM 238690 (vmag=8.4) at 1.0 arcsec
 2) Warning: HD references mismatch for 60G Aqr: 203035 != 202929.
+     Match suggested by UA (vmag=6.9): PPM 238672 (vmag=7.4) at distance 648.5 arcsec, instead of PPM 238690 (vmag=8.4) at 1.0 arcsec
 3) Warning: 76G Aqr is ALONE (no PPM / CD / CPD star near it).
      Register 76G Aqr: 21h 27m 01s -01°22.6'
   Possible cause: nebula.
   Note: nearest PPM 709115 at 271.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: SAO references mismatch for 29 Aqr: 164829 != 164830.
+     No match found in PPM for SAO 164830 referenced by UA.
 **) Note: SAO references mismatch for f Aqr: 165078 != 165077.
+     No match found in PPM for SAO 165077 referenced by UA.
 **) Note: HD references mismatch for f Aqr: 212698 != 212697.
+     No match found in PPM for HD 212697 referenced by UA.
 4) Warning: 17G Aql is FAR from Lal 35697 (dist = 68078.6 arcsec).
      Register 17G Aql: 18h 59m 11s -09°27.3'
 5) Warning: 17G Aql is ALONE (no PPM / CD / CPD star near it).
@@ -1225,13 +1231,19 @@ Stars read from PPM: 468861
   Note: nearest PPM 707529 at 488.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: SAO references mismatch for 15G Ara: 227282 != 227281.
+     No match found in PPM for SAO 227281 referenced by UA.
 **) Note: SAO references mismatch for 37G Ara: 227682 != 227683.
+     No match found in PPM for SAO 227683 referenced by UA.
 **) Note: SAO references mismatch for 56G Ara: 227972 != 227971.
+     No match found in PPM for SAO 227971 referenced by UA.
 6) Warning: 70G Ara is FAR from L 7356 (dist = 62.2 arcsec).
      Register 70G Ara: 17h 30m 35s -53°35.6'
 **) Note: HD references mismatch for 3G Boo: 126128 != 126129.
+     No match found in PPM for HD 126129 referenced by UA.
 7) Warning: SAO references mismatch for 6G Cnc: 116931 != 116929.
+     Match suggested by UA (vmag=6.2): PPM 154707 (vmag=0.0) at distance 9.2 arcsec, instead of PPM 154708 (vmag=0.0) at 7.0 arcsec
 **) Note: HD references mismatch for 6G Cnc: 72946 != 72945.
+     Match suggested by UA (vmag=6.2): PPM 154707 (vmag=0.0) at distance 9.2 arcsec, instead of PPM 154708 (vmag=0.0) at 7.0 arcsec
 8) Warning: 7G Cnc is FAR from Lal 17038 (dist = 118.4 arcsec).
      Register 7G Cnc: 08h 32m 42s +08°25.5'
 9) Warning: 7G Cnc is ALONE (no PPM / CD / CPD star near it).
@@ -1241,6 +1253,7 @@ Stars read from PPM: 468861
 10) Warning: Annonymous is FAR from L 2220 (dist = 65.1 arcsec).
      Register Annonymous: 06h 14m 09s -24°54.4'
 **) Note: SAO references mismatch for 28G CMa: 151463 != 151462.
+     Match suggested by UA (vmag=6.9): PPM 217145 (vmag=7.1) at distance 9.9 arcsec, instead of PPM 217146 (vmag=8.6) at 8.9 arcsec
 11) Warning: 66G CMa is FAR from Lal 13040 (dist = 109.0 arcsec).
      Register 66G CMa: 06h 39m 38s -16°32.8'
 12) Warning: 73G CMa is FAR from Lal 13067 (dist = 438.8 arcsec).
@@ -1251,6 +1264,7 @@ Stars read from PPM: 468861
   Possible cause: lack of RA (s).
   Note: nearest PPM 726755 at 235.3 arcsec.
 14) Warning: SAO references mismatch for 101G CMa: 172629 != 172631.
+     No match found in PPM for SAO 172631 referenced by UA.
 15) Warning: 26G CMi is FAR from Lal 14914 (dist = 95.2 arcsec).
      Register 26G CMi: 07h 32m 46s +05°32.6'
 16) Warning: 5G Cap is FAR from Lal 38711 (dist = 80.7 arcsec).
@@ -1258,19 +1272,24 @@ Stars read from PPM: 468861
 17) Warning: 18G Cap is FAR from Lal 39229 (dist = 97159.5 arcsec).
      Register 18G Cap: 20h 20m 31s -26°1.0'
 **) Note: SAO references mismatch for omicron Cap: 163625 != 163626.
+     Match suggested by UA (vmag=6.2): PPM 237509 (vmag=6.4) at distance 12.7 arcsec, instead of PPM 237508 (vmag=7.1) at 9.7 arcsec
 **) Note: HD references mismatch for omicron Cap: 195093 != 195094.
+     Match suggested by UA (vmag=6.2): PPM 237509 (vmag=6.4) at distance 12.7 arcsec, instead of PPM 237508 (vmag=7.1) at 9.7 arcsec
 18) Warning: 72G Cap is FAR from L 8690 (dist = 285.5 arcsec).
      Register 72G Cap: 20h 59m 48s -23°39.0'
 19) Warning: 80G Cap is FAR from T 9480 (dist = 132536.3 arcsec).
      Register 80G Cap: 21h 08m 31s -21°10.1'
 **) Note: SAO references mismatch for 102G Car: 236240 != 236241.
+     No match found in PPM for SAO 236241 referenced by UA.
 20) Warning: 120G Car is ALONE (no PPM / CD / CPD star near it).
      Register 120G Car: 09h 09m 35s -64°20.9'
   Possible cause: nebula.
   Note: nearest PPM 357181 at 189.2 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) Note: HD references mismatch for upsilon Car: 85124 != 85123.
+     No match found in PPM for HD 85123 referenced by UA.
 **) Note: HD references mismatch for 225G Car: 93128 != 93129.
+     No match found in PPM for HD 93129 referenced by UA.
 21) Warning: Annonymous is FAR from L 4696 (dist = 399.3 arcsec).
      Register Annonymous: 11h 11m 58s -58°25.4'
 22) Warning: Annonymous is FAR from L 4699 (dist = 113.4 arcsec).
@@ -1288,9 +1307,11 @@ Stars read from PPM: 468861
   Possible cause: cumulus.
   Note: nearest PPM 318491 at 529.0 arcsec.
 **) Note: SAO references mismatch for 268G Cen: 241172 != 241173.
+     No match found in PPM for SAO 241173 referenced by UA.
 28) Warning: 59G Cet is FAR from Lal 950 (dist = 88.6 arcsec).
      Register 59G Cet: 00h 30m 54s -25°27.3'
 **) Note: SAO references mismatch for 107G Cet: 129129 != 129128.
+     No match found in PPM for SAO 129128 referenced by UA.
 29) Warning: 142G Cet is FAR from Lal 2598 (dist = 122.0 arcsec).
      Register 142G Cet: 01h 19m 31s -04°36.6'
 30) Warning: 142G Cet is ALONE (no PPM / CD / CPD star near it).
@@ -1302,12 +1323,17 @@ Stars read from PPM: 468861
 32) Warning: 316G Cet is FAR from Lal 1079 (dist = 167740.7 arcsec).
      Register 316G Cet: 03h 06m 23s -01°39.9'
 **) Note: SAO references mismatch for kappa1 CrA: 210295 != 210296.
+     Match suggested by UA (vmag=5.4): PPM 297868 (vmag=6.4) at distance 22.6 arcsec, instead of PPM 297869 (vmag=5.7) at 1.2 arcsec
 33) Warning: 42G CrA is FAR from L 7990 (dist = 1214.2 arcsec).
      Register 42G CrA: 18h 58m 25s -37°59.1'
 34) Warning: SAO references mismatch for 17G Crv: 180617 != 180619.
+     No match found in PPM for SAO 180619 referenced by UA.
 **) Note: SAO references mismatch for 43G Crv: 157448 != 157447.
+     No match found in PPM for SAO 157447 referenced by UA.
 **) Note: HD references mismatch for 43G Crv: 110318 != 110317.
+     No match found in PPM for HD 110317 referenced by UA.
 **) Note: SAO references mismatch for 33G Crt: 179936 != 179935.
+     No match found in PPM for SAO 179935 referenced by UA.
 35) Warning: 17G Dor is FAR from L 1687 (dist = 119.0 arcsec).
      Register 17G Dor: 04h 51m 37s -68°18.6'
 36) Warning: 17G Dor is ALONE (no PPM / CD / CPD star near it).
@@ -1315,11 +1341,15 @@ Stars read from PPM: 468861
   Note: nearest PPM 354371 at 91.0 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) Note: SAO references mismatch for epsilon Equ: 126429 != 126428.
+     Match suggested by UA (vmag=5.6): PPM 171073 (vmag=0.0) at distance 7.2 arcsec, instead of PPM 171074 (vmag=0.0) at 6.6 arcsec
 **) Note: HD references mismatch for p Eri: 10360 != 10361.
+     No match found in PPM for HD 10361 referenced by UA.
 37) Warning: 101G Eri is FAR from Lal 6581 (dist = 69.4 arcsec).
      Register 101G Eri: 03h 27m 03s -09°52.9'
 **) Note: SAO references mismatch for f1 Eri: 194551 != 194550.
+     No match found in PPM for SAO 194550 referenced by UA.
 **) Note: HD references mismatch for f1 Eri: 24072 != 24071.
+     No match found in PPM for HD 24071 referenced by UA.
 38) Warning: 195G Eri is FAR from Lal 7892 (dist = 102709.2 arcsec).
      Register 195G Eri: 04h 09m 20s -16°29.6'
 39) Warning: 197G Eri is FAR from Lal 7988 (dist = 312.4 arcsec).
@@ -1327,7 +1357,9 @@ Stars read from PPM: 468861
 40) Warning: 71G Gru is FAR from L 9295 (dist = 91.4 arcsec).
      Register 71G Gru: 22h 47m 58s -49°9.5'
 **) Note: HD references mismatch for 87G Gru: 218268 != 218269.
+     No match found in PPM for HD 218269 referenced by UA.
 **) Note: SAO references mismatch for 24G Hor: 232934 != 232933.
+     Match suggested by UA (vmag=6.2): PPM 332241 (vmag=5.9) at distance 96.7 arcsec, instead of PPM 332243 (vmag=7.9) at 4.2 arcsec
 41) Warning: 24G Hor is FAR from L 930 (dist = 96.6 arcsec).
      Register 24G Hor: 02h 50m 07s -51°21.3'
 42) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
@@ -1335,7 +1367,9 @@ Stars read from PPM: 468861
   Note: nearest PPM 191095 at 299.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: HD references mismatch for 4G Hya: 69479 != 69480.
+     No match found in PPM for HD 69480 referenced by UA.
 **) Note: SAO references mismatch for 17 Hya: 136408 != 136409.
+     No match found in PPM for SAO 136409 referenced by UA.
 43) Warning: Annonymous is FAR from Lal 17812 (dist = 146.4 arcsec).
      Register Annonymous: 08h 54m 50s -08°42.2'
 44) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
@@ -1343,21 +1377,28 @@ Stars read from PPM: 468861
   Note: nearest PPM 191935 at 141.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: SAO references mismatch for N Hya: 179968 != 179967.
+     Match suggested by UA (vmag=5.2): PPM 259117 (vmag=0.0) at distance 11.0 arcsec, instead of PPM 259116 (vmag=0.0) at 2.7 arcsec
 **) Note: HD references mismatch for N Hya: 100287 != 100286.
+     Match suggested by UA (vmag=5.2): PPM 259117 (vmag=0.0) at distance 11.0 arcsec, instead of PPM 259116 (vmag=0.0) at 2.7 arcsec
 45) Warning: 312G Hya is FAR from L 5015 (dist = 1103.6 arcsec).
      Register 312G Hya: 11h 59m 41s -32°15.5'
 **) Note: SAO references mismatch for 20G Hyi: 248462 != 248461.
+     No match found in PPM for SAO 248461 referenced by UA.
 46) Warning: 20G Hyi is FAR from L 584 (dist = 7900.3 arcsec).
      Register 20G Hyi: 01h 51m 17s -60°55.4'
 **) Note: SAO references mismatch for 83 Leo: 118865 != 118864.
+     Match suggested by UA (vmag=6.5): PPM 157865 (vmag=0.0) at distance 22.4 arcsec, instead of PPM 157866 (vmag=0.0) at 17.3 arcsec
 **) Note: HD references mismatch for 83 Leo: 99492 != 99491.
+     Match suggested by UA (vmag=6.5): PPM 157865 (vmag=0.0) at distance 22.4 arcsec, instead of PPM 157866 (vmag=0.0) at 17.3 arcsec
 47) Warning: 91G Lep is ALONE (no PPM / CD / CPD star near it).
      Register 91G Lep: 06h 01m 40s -21°48.9'
   Note: nearest PPM 249863 at 57.3 arcsec.
 48) Warning: 33G Lib is FAR from Lal 27173 (dist = 155.2 arcsec).
      Register 33G Lib: 14h 50m 10s -20°51.0'
 **) Note: SAO references mismatch for 40G Lup: 225327 != 225328.
+     No match found in PPM for SAO 225328 referenced by UA.
 **) Note: HD references mismatch for 72G Lup: 135345 != 135346.
+     No match found in PPM for HD 135346 referenced by UA.
 49) Warning: 141G Lup is FAR from L 6599 (dist = 296.4 arcsec).
      Register 141G Lup: 15h 49m 14s -35°49.1'
 50) Warning: 42G Mic is FAR from L 8638 (dist = 60.5 arcsec).
@@ -1391,8 +1432,11 @@ Stars read from PPM: 468861
 59) Warning: 22G Nor is FAR from L 6571 (dist = 218.3 arcsec).
      Register 22G Nor: 15h 47m 01s -44°9.7'
 60) Warning: SAO references mismatch for 36G Oct: 258810 != 258814.
+     Match suggested by UA (vmag=6.4): PPM 378256 (vmag=6.8) at distance 748.6 arcsec, instead of PPM 378239 (vmag=7.3) at 3.0 arcsec
 61) Warning: HD references mismatch for 36G Oct: 171161 != 172226.
+     Match suggested by UA (vmag=6.4): PPM 378256 (vmag=6.8) at distance 748.6 arcsec, instead of PPM 378239 (vmag=7.3) at 3.0 arcsec
 **) Note: SAO references mismatch for mu2 Oct: 257837 != 257836.
+     Match suggested by UA (vmag=6.2): PPM 374746 (vmag=6.7) at distance 15.7 arcsec, instead of PPM 374747 (vmag=7.4) at 9.5 arcsec
 62) Warning: 57G Oct is FAR from L 8672 (dist = 119.0 arcsec).
      Register 57G Oct: 21h 13m 32s -83°11.5'
 63) Warning: 57G Oct is ALONE (no PPM / CD / CPD star near it).
@@ -1400,7 +1444,9 @@ Stars read from PPM: 468861
   Note: nearest PPM 378600 at 117.7 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) Note: SAO references mismatch for rho Oph: 184382 != 184381.
+     No match found in PPM for SAO 184381 referenced by UA.
 **) Note: HD references mismatch for rho Oph: 147933 != 147934.
+     No match found in PPM for HD 147934 referenced by UA.
 64) Warning: 55G Oph is FAR from Lal 30694 (dist = 110.1 arcsec).
      Register 55G Oph: 16h 46m 41s +00°14.4'
 65) Warning: 130G Oph is ALONE (no PPM / CD / CPD star near it).
@@ -1412,20 +1458,27 @@ Stars read from PPM: 468861
   Note: nearest PPM 164037 at 201.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 67) Warning: SAO references mismatch for 177G Oph: 122843 != 122847.
+     Match suggested by UA (vmag=6.7): PPM 164729 (vmag=0.0) at distance 80.7 arcsec, instead of PPM 164723 (vmag=0.0) at 5.9 arcsec
 **) Note: HD references mismatch for 177G Oph: 162651 != 162652.
+     Match suggested by UA (vmag=6.7): PPM 164729 (vmag=0.0) at distance 80.7 arcsec, instead of PPM 164723 (vmag=0.0) at 5.9 arcsec
 68) Warning: 177G Oph is FAR from Lal 32649 (dist = 83.6 arcsec).
      Register 177G Oph: 17h 45m 40s +01°7.9'
 **) Note: HD references mismatch for tau Oph: 164764 != 164765.
+     No match found in PPM for HD 164765 referenced by UA.
 69) Warning: 197G Oph is FAR from Lal 33169 (dist = 91.2 arcsec).
      Register 197G Oph: 17h 59m 08s +02°31.8'
 70) Warning: 199G Oph is FAR from T 8391 (dist = 2986.1 arcsec).
      Register 199G Oph: 18h 01m 26s +09°32.9'
 71) Warning: SAO references mismatch for 170G Ori: 113509 != 113507.
+     Match suggested by UA (vmag=5.8): PPM 149973 (vmag=0.0) at distance 24.3 arcsec, instead of PPM 149975 (vmag=0.0) at 9.6 arcsec
 72) Warning: HD references mismatch for 170G Ori: 42092 != 42111.
+     Match suggested by UA (vmag=5.8): PPM 149973 (vmag=0.0) at distance 24.3 arcsec, instead of PPM 149975 (vmag=0.0) at 9.6 arcsec
 **) Note: SAO references mismatch for 114G Pav: 254884 != 254883.
+     No match found in PPM for SAO 254883 referenced by UA.
 73) Warning: Annonymous is FAR from L 2055 (dist = 110.3 arcsec).
      Register Annonymous: 05h 47m 51s -55°5.3'
 **) Note: SAO references mismatch for 50G Pic: 234418 != 234417.
+     Match suggested by UA (vmag=6.5): PPM 335046 (vmag=7.9) at distance 53.0 arcsec, instead of PPM 335049 (vmag=6.6) at 3.2 arcsec
 74) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
      Register Annonymous: 22h 51m 16s -03°51.0'
   Note: nearest PPM 206974 at 87.4 arcsec.
@@ -1433,28 +1486,41 @@ Stars read from PPM: 468861
 75) Warning: 96G Psc is FAR from Lal 1299 (dist = 99.6 arcsec).
      Register 96G Psc: 00h 41m 49s +04°38.5'
 **) Note: SAO references mismatch for zeta Psc: 109739 != 109740.
+     Match suggested by UA (vmag=4.8): PPM 144381 (vmag=0.0) at distance 25.2 arcsec, instead of PPM 144380 (vmag=0.0) at 1.8 arcsec
 **) Note: HD references mismatch for zeta Psc: 7344 != 7345.
+     Match suggested by UA (vmag=4.8): PPM 144381 (vmag=0.0) at distance 25.2 arcsec, instead of PPM 144380 (vmag=0.0) at 1.8 arcsec
 **) Note: HD references mismatch for alpha Psc: 12446 != 12447.
+     No match found in PPM for HD 12447 referenced by UA.
 76) Warning: Annonymous is FAR from L 8889 (dist = 434.7 arcsec).
      Register Annonymous: 21h 34m 46s -33°4.5'
 **) Note: SAO references mismatch for 90G Pup: 197975 != 197974.
+     No match found in PPM for SAO 197974 referenced by UA.
 **) Note: HD references mismatch for 90G Pup: 58635 != 58634.
+     No match found in PPM for HD 58634 referenced by UA.
 **) Note: SAO references mismatch for n1 Pup: 174020 != 174019.
+     Match suggested by UA (vmag=5.7): PPM 252685 (vmag=0.0) at distance 12.7 arcsec, instead of PPM 252684 (vmag=3.0) at 7.2 arcsec
 77) Warning: 128G Pup is FAR from Lal 14934 (dist = 213742.7 arcsec).
      Register 128G Pup: 07h 33m 06s -25°4.9'
 **) Note: SAO references mismatch for 2 Pup: 153362 != 153363.
+     No match found in PPM for SAO 153363 referenced by UA.
 **) Note: HD references mismatch for 2 Pup: 62863 != 62864.
+     No match found in PPM for HD 62864 referenced by UA.
 **) Note: SAO references mismatch for 5 Pup: 153413 != 153414.
+     No match found in PPM for SAO 153414 referenced by UA.
 78) Warning: 285G Pup is FAR from Lal 16304 (dist = 78.3 arcsec).
      Register 285G Pup: 08h 12m 28s -12°12.5'
 79) Warning: SAO references mismatch for 312G Pup: 199224 != 199222.
+     Match suggested by UA (vmag=6.5): PPM 285226 (vmag=0.0) at distance 7.7 arcsec, instead of PPM 285229 (vmag=0.0) at 5.0 arcsec
 80) Warning: Annonymous is FAR from L 1342 (dist = 63.3 arcsec).
      Register Annonymous: 03h 57m 58s -54°44.5'
 **) Note: HD references mismatch for 14G Sgr: 163756 != 163755.
+     No match found in PPM for HD 163755 referenced by UA.
 81) Warning: 81G Sgr is FAR from L 7786 (dist = 79.2 arcsec).
      Register 81G Sgr: 18h 28m 46s -24°1.0'
 82) Warning: SAO references mismatch for 117G Sgr: 161991 != 162001.
+     Match suggested by UA (vmag=6.9): PPM 235258 (vmag=6.9) at distance 722.2 arcsec, instead of PPM 235249 (vmag=8.6) at 2.7 arcsec
 83) Warning: HD references mismatch for 117G Sgr: 175384 != 175453.
+     Match suggested by UA (vmag=6.9): PPM 235258 (vmag=6.9) at distance 722.2 arcsec, instead of PPM 235249 (vmag=8.6) at 2.7 arcsec
 84) Warning: Annonymous is FAR from Lal 36192 (dist = 1795.0 arcsec).
      Register Annonymous: 19h 11m 11s -18°55.2'
 85) Warning: 216G Sgr is ALONE (no PPM / CD / CPD star near it).
@@ -1462,9 +1528,13 @@ Stars read from PPM: 468861
   Possible cause: nebula.
   Note: nearest PPM 299229 at 935.4 arcsec.
 **) Note: SAO references mismatch for 286G Sgr: 230135 != 230134.
+     Match suggested by UA (vmag=6.8): PPM 326005 (vmag=0.0) at distance 9.8 arcsec, instead of PPM 326006 (vmag=0.0) at 2.8 arcsec
 **) Note: HD references mismatch for xi Sco: 144069 != 144070.
+     No match found in PPM for HD 144070 referenced by UA.
 **) Note: SAO references mismatch for 28G Sco: 207397 != 207396.
+     Match suggested by UA (vmag=6.6): PPM 294737 (vmag=0.0) at distance 10.7 arcsec, instead of PPM 294735 (vmag=0.0) at 4.5 arcsec
 **) Note: HD references mismatch for 28G Sco: 144928 != 144927.
+     No match found in PPM for HD 144927 referenced by UA.
 86) Warning: 63G Sco is FAR from Lal 29778 (dist = 479.0 arcsec).
      Register 63G Sco: 16h 15m 43s -16°43.3'
 87) Warning: 65G Sco is ALONE (no PPM / CD / CPD star near it).
@@ -1526,6 +1596,7 @@ Stars read from PPM: 468861
   Note: nearest PPM 166816 at 59.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: SAO references mismatch for 35 Sex: 118448 != 118449.
+     Match suggested by UA (vmag=6.2): PPM 157110 (vmag=0.0) at distance 7.9 arcsec, instead of PPM 157109 (vmag=0.0) at 5.6 arcsec
 106) Warning: 55G Tau is FAR from Lal 8465 (dist = 60.5 arcsec).
      Register 55G Tau: 04h 23m 11s +09°58.4'
 107) Warning: 55G Tau is ALONE (no PPM / CD / CPD star near it).
@@ -1548,11 +1619,13 @@ Stars read from PPM: 468861
 113) Warning: 111G Vir is FAR from Lal 24414 (dist = 64.9 arcsec).
      Register 111G Vir: 13h 02m 31s +05°53.8'
 **) Note: SAO references mismatch for 54 Vir: 157799 != 157798.
+     No match found in PPM for SAO 157798 referenced by UA.
 114) Warning: 190G Vir is FAR from Lal 25445 (dist = 53845.5 arcsec).
      Register 190G Vir: 13h 43m 05s -17°30.6'
 115) Warning: 248G Vir is FAR from Lal 26427 (dist = 7192.5 arcsec).
      Register 248G Vir: 14h 22m 15s +03°20.8'
 **) Note: SAO references mismatch for 269G Vir: 120821 != 120822.
+     Match suggested by UA (vmag=6.7): PPM 161228 (vmag=0.0) at distance 10.9 arcsec, instead of PPM 161227 (vmag=0.0) at 0.2 arcsec
 Available UA stars = 7727
 Stars from UA with Lacaille = 4436, Lalande = 3132, Taylor = 118, OA = 51 and USNO = 33
 Stars from UA identified with PPM = 8381, CD = 4994 and CPD = 5227

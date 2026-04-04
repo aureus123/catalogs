@@ -1668,19 +1668,49 @@ void readUA() {
                 int saoRefFromUA = atoi(cell);
 
                 if (saoRef > 0 && saoRefFromUA > 0) {
+                    bool mismatch = false;
                     if (saoRefFromUA < saoRef - 1 || saoRefFromUA > saoRef + 1) {
                         printf("%d) Warning: SAO references mismatch for %s: %d != %d.\n",
                             ++errors,
                             catName,
                             saoRef,
                             saoRefFromUA);
+                        mismatch = true;    
                     } else {
                         if (saoRefFromUA != saoRef) {
                             printf("**) Note: SAO references mismatch for %s: %d != %d.\n",
                                 catName,
                                 saoRef,
                                 saoRefFromUA);
+                            mismatch = true;    
                         }
+                    }
+
+                    // Find cause of mismatch
+                    bool foundInPPM = false;
+                    if (mismatch) {
+                        for (int i = 0; i < PPMstars; i++) {
+                            if (PPMstar[i].saoRef == saoRefFromUA) {
+                                double dist = 3600.0 * calcAngularDistance(x, y, z, PPMstar[i].x, PPMstar[i].y, PPMstar[i].z);
+                                printf("     Match suggested by UA (vmag=%.1f): PPM %d (vmag=%.1f) at distance %.1f arcsec, instead of %s (vmag=%.1f) at %.1f arcsec\n",
+                                    vmag,
+                                    PPMstar[i].ppmRef,
+                                    PPMstar[i].vmag,
+                                    dist,
+                                    ppmName,
+                                    PPMstar[ppmIndex].vmag,
+                                    nearestPPMDistance);
+                                foundInPPM = true;
+                                break;
+                            }
+                        }
+                        if (!foundInPPM) {
+                            printf("     No match found in PPM for SAO %d referenced by UA.\n", saoRefFromUA);
+                        }
+                    }
+
+                    if (!mismatch || !foundInPPM) {
+                        // Only save if both matches or if the mismatch comes from the fact that the star is not in PPM
                         snprintf(saoName, 20, "SAO %d", saoRefFromUA);
                         writeCrossEntry(crossSAOStream, catName, saoName, vmag, minDistance);
                     }
@@ -1691,19 +1721,49 @@ void readUA() {
                 int hdRefFromUA = atoi(cell);
 
                 if (hdRef > 0 && hdRefFromUA > 0) {
+                    bool mismatch = false;
                     if (hdRefFromUA < hdRef - 1 || hdRefFromUA > hdRef + 1) {
                         printf("%d) Warning: HD references mismatch for %s: %d != %d.\n",
                             ++errors,
                             catName,
                             hdRef,
                             hdRefFromUA);
+                        mismatch = true;    
                     } else {
                         if (hdRefFromUA != hdRef) {
                             printf("**) Note: HD references mismatch for %s: %d != %d.\n",
                                 catName,
                                 hdRef,
                                 hdRefFromUA);
+                            mismatch = true;    
                         }
+                    }
+
+                    // Find cause of mismatch
+                    bool foundInPPM = false;
+                    if (mismatch) {
+                        for (int i = 0; i < PPMstars; i++) {
+                            if (PPMstar[i].hdRef == hdRefFromUA) {
+                                double dist = 3600.0 * calcAngularDistance(x, y, z, PPMstar[i].x, PPMstar[i].y, PPMstar[i].z);
+                                printf("     Match suggested by UA (vmag=%.1f): PPM %d (vmag=%.1f) at distance %.1f arcsec, instead of %s (vmag=%.1f) at %.1f arcsec\n",
+                                    vmag,
+                                    PPMstar[i].ppmRef,
+                                    PPMstar[i].vmag,
+                                    dist,
+                                    ppmName,
+                                    PPMstar[ppmIndex].vmag,
+                                    nearestPPMDistance);
+                                foundInPPM = true;
+                                break;
+                            }
+                        }
+                        if (!foundInPPM) {
+                            printf("     No match found in PPM for HD %d referenced by UA.\n", hdRefFromUA);
+                        }
+                    }
+
+                    if (!mismatch || !foundInPPM) {
+                        // Only save if both matches or if the mismatch comes from the fact that the star is not in PPM
                         snprintf(hdName, 20, "HD %d", hdRefFromUA);
                         writeCrossEntry(crossHDStream, catName, hdName, vmag, minDistance);
                     }
