@@ -22,3 +22,5 @@ bool solve3x3(double A[3][3], double b[3], double x[3]);
 double compVmagToCDmag(int decl_ref, double vmag);
 double compCDmagToVmag(int decl_ref, double cdVmag);
 double compGCmagToVmag(double gcVmag);
+void makeDoubles(int n, int *ref, double *X, double *Y, double *Z,
+                 double *mag, const char *desig, const char *filename);

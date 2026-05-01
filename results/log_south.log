@@ -250,6 +250,7 @@ Stars from OA identified with PPM = 18011, GSC-PPM = 175, CD = 9296 and CPD = 13
 RSME of distance (arcsec) = 4.66  among a total of 18011 stars
 RSME of visual magnitude = 0.45137  among a total of 17260 stars
 Errors logged = 28
+Doubles found in OA catalog: 15 (saved to results/doubles/oa.csv)
 
 ***************************************
 Perform comparison between Lalande and PPM...
@@ -736,6 +737,7 @@ Taylor stars properly identified with GC = 21
 Stars from Taylor identified with PPM = 10944, GSC-PPM = 6
 RSME of distance (arcsec) = 4.19  among a total of 10944 stars
 Errors logged = 40
+Doubles found in T catalog: 86 (saved to results/doubles/taylor.csv)
 
 ***************************************
 Perform comparison between USNO and PPM/CD/CPD...
@@ -1203,6 +1205,7 @@ Stars from USNO identified with PPM = 10677, GSC-PPM = 178, CD = 4295 and CPD = 
 RSME of distance (arcsec) = 3.41  among a total of 10677 stars
 RSME of visual magnitude = 0.63917  among a total of 5401 stars
 Errors logged = 129
+Doubles found in U catalog: 98 (saved to results/doubles/usno.csv)
 
 ***************************************
 Perform comparison between UA and PPM/CD/CPD...
@@ -2437,6 +2440,7 @@ Stars from Gilliss with Lacaille = 1557, Stone = 68 and GC = 955
 RSME of distance (arcsec) = 2.87  among a total of 15773 stars
 RSME of visual magnitude = 0.49149  among a total of 14761 stars
 Errors logged = 258
+Doubles found in G catalog: 5 (saved to results/doubles/gilliss.csv)
 
 Number of ZC stars registered = 5796
 Stars from ZC identified with PPM = 5552, GSC-PPM = 221, CD = 5755 and CPD = 5756

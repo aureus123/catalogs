@@ -21,6 +21,7 @@
 #define MAXSTSTAR 12500
 #define MAXTAYLORSTAR 11100
 #define MAXUSNOSTAR 11000
+#define MAXGILLISSSTAR 17000
 #define MAXZCSTAR 15000
 #define EPOCH_GC2 1900.0
 #define EPOCH_OA 1850.0
@@ -47,22 +48,22 @@
 // #define PRINT_NOTES  // uncomment if certain notes (**) should be printed
 
 // Here, we save 1875.0 coordinates of OA stars in rectangular form
-double oaX[MAXOASTAR], oaY[MAXOASTAR], oaZ[MAXOASTAR];
+double oaX[MAXOASTAR], oaY[MAXOASTAR], oaZ[MAXOASTAR], oaMag[MAXOASTAR];
 int oaRef[MAXOASTAR];
 int countOA = 0;
 
 // Here, we save 1875.0 coordinates of Lalande stars in rectangular form
-double lalX[MAXLALSTAR], lalY[MAXLALSTAR], lalZ[MAXLALSTAR];
+double lalX[MAXLALSTAR], lalY[MAXLALSTAR], lalZ[MAXLALSTAR], lalMag[MAXLALSTAR];
 int lalRef[MAXLALSTAR];
 int countLal = 0;
 
 // Here, we save 1875.0 coordinates of Lacaille stars in rectangular form
-double lacX[MAXLACSTAR], lacY[MAXLACSTAR], lacZ[MAXLACSTAR];
+double lacX[MAXLACSTAR], lacY[MAXLACSTAR], lacZ[MAXLACSTAR], lacMag[MAXLACSTAR];
 int lacRef[MAXLACSTAR];
 int countLac = 0;
 
 // Here, we save 1875.0 coordinates of Taylor stars in rectangular form
-double tayX[MAXTAYLORSTAR], tayY[MAXTAYLORSTAR], tayZ[MAXTAYLORSTAR];
+double tayX[MAXTAYLORSTAR], tayY[MAXTAYLORSTAR], tayZ[MAXTAYLORSTAR], tayMag[MAXTAYLORSTAR];
 int tayRef[MAXTAYLORSTAR];
 int countTaylor = 0;
 
@@ -72,10 +73,15 @@ int stRef[MAXSTSTAR];
 int countSt = 0;
 
 // Here, we save 1875.0 coordinates of USNO stars in rectangular form
-double usnoX[MAXUSNOSTAR], usnoY[MAXUSNOSTAR], usnoZ[MAXUSNOSTAR];
+double usnoX[MAXUSNOSTAR], usnoY[MAXUSNOSTAR], usnoZ[MAXUSNOSTAR], usnoMag[MAXUSNOSTAR];
 int usnoRef[MAXUSNOSTAR];
 char usnoCatRef[MAXUSNOSTAR][30];
 int countUsno = 0;
+
+// Here, we save 1875.0 coordinates of Gilliss stars in rectangular form
+double gilX[MAXGILLISSSTAR], gilY[MAXGILLISSSTAR], gilZ[MAXGILLISSSTAR], gilMag[MAXGILLISSSTAR];
+int gilRef[MAXGILLISSSTAR];
+int countGil = 0;
 
 // Here, we save 1875.0 coordinates of Gould's ZC stars in rectangular form
 double zcX[MAXZCSTAR], zcY[MAXZCSTAR], zcZ[MAXZCSTAR];
@@ -585,6 +591,7 @@ void readWeiss() {
         oaY[countOA] = y;
         oaZ[countOA] = z;
         oaRef[countOA] = oeltzenRef;
+        oaMag[countOA] = vmag;
         countOA++;
     }
     fclose(stream);
@@ -739,6 +746,7 @@ void readLalande() {
         lalY[countLal] = y;
         lalZ[countLal] = z;
         lalRef[countLal] = catRef;
+        lalMag[countLal] = vmag;
         countLal++;
     }
     fclose(stream);
@@ -972,6 +980,7 @@ void readStone() {
             lacY[countLac] = y;
             lacZ[countLac] = z;
             lacRef[countLac] = lacailleRef;
+            lacMag[countLac] = vmag;
             countLac++;
         }
 
@@ -1174,6 +1183,7 @@ void readTaylor() {
         tayY[countTaylor] = y;
         tayZ[countTaylor] = z;
         tayRef[countTaylor] = taylorRef;
+        tayMag[countTaylor] = vmag;
         countTaylor++;
     }
     fclose(stream2);
@@ -1470,6 +1480,7 @@ void readUSNO() {
         usnoY[countUsno] = y;
         usnoZ[countUsno] = z;
         usnoRef[countUsno] = numRef;
+        usnoMag[countUsno] = vmag;
         countUsno++;
     }
     fclose(stream);
@@ -2471,6 +2482,18 @@ void readGilliss() {
         transform(EPOCH_GILLISS, 1875.0, &RA1875, &Decl1875);
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
+        /* la almacenamos para futuras identificaciones */
+        if (countGil >= MAXGILLISSSTAR) {
+            printf("Error: too many Gilliss stars.\n");
+            exit(1);
+        }
+        gilX[countGil] = x;
+        gilY[countGil] = y;
+        gilZ[countGil] = z;
+        gilRef[countGil] = giRef;
+        gilMag[countGil] = vmag;
+        countGil++;
+
         bool cpdFound = false;
         /* busca la CPD mas cercana y genera el cruzamiento */
         int cpdIndex = -1;
@@ -2634,6 +2657,7 @@ int main(int argc, char** argv)
 
     /* leemos y cruzamos Weiss / OA */
     readWeiss();
+    makeDoubles(countOA, oaRef, oaX, oaY, oaZ, oaMag, "OA", "results/doubles/oa.csv");
 
     /* leemos y cruzamos Lalande (solo contra PPM) */
     readLalande();
@@ -2646,9 +2670,11 @@ int main(int argc, char** argv)
 
     /* leemos y cruzamos Taylor */
     readTaylor();
+    makeDoubles(countTaylor, tayRef, tayX, tayY, tayZ, tayMag, "T", "results/doubles/taylor.csv");
 
     /* leemos, cruzamos y revisamos identificaciones de Yarnall */
     readUSNO();
+    makeDoubles(countUsno, usnoRef, usnoX, usnoY, usnoZ, usnoMag, "U", "results/doubles/usno.csv");
 
     /* leemos, cruzamos y revisamos Uranometria Argentina */
     readUA();
@@ -2670,6 +2696,7 @@ int main(int argc, char** argv)
     /* leemos, cruzamos y revisamos identificaciones de Gilliss */
     /* tambien generamos Gould's Zone Catalog */
     readGilliss();
+    makeDoubles(countGil, gilRef, gilX, gilY, gilZ, gilMag, "G", "results/doubles/gilliss.csv");
 
     fclose(unidentifiedZCStream);
 	fclose(crossPPMZCStream);

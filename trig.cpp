@@ -14,6 +14,12 @@
 extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, double ep2,
              double *dtheta, double *dphi, double *ptheta, double *pphi);
 
+/* Constantes para makeDoubles */
+static const double MAX_DIST_DOUBLE = 60.0;     // arcsec
+static const double MIN_DIST_NODOUBLE = 300.0;  // arcsec
+static const double MAG_MIN_DOUBLE = 3.0;
+static const double MAG_MAX_DOUBLE = 8.0;
+
 
 /*
  * Transforma coordenadas entre épocas (ep1 y ep2) en FK4
@@ -217,4 +223,96 @@ double compCDmagToVmag(int decl_ref, double cdVmag) {
 double compGCmagToVmag(double gcVmag) {
     // Quadratic fit of 28977 stars grouped in 48 magnitudes, ECM = 0.202
     return - 5.003 + 2.305 * gcVmag - 0.085 * gcVmag * gcVmag;
+}
+
+/*
+ * makeDoubles - busca pares de estrellas dobles aisladas y los guarda en un CSV.
+ *
+ * Una estrella i forma una doble con j si:
+ *   - mag[i] y mag[j] estan en [3, 8]
+ *   - dist(i, j) < MAX_DIST_DOUBLE
+ *   - dentro de MIN_DIST_NODOUBLE alrededor de i no hay otras estrellas que j
+ *     (y simetricamente, alrededor de j no hay otras que i)
+ * Cada par se emite una sola vez, con la estrella mas brillante primero.
+ * Se reporta la ascension recta (en horas) y declinacion (en grados enteros)
+ * de la estrella mas brillante, habitualmente en la época 1875, junto con los
+ * nombres, magnitudes y distancia entre ambas estrellas.
+ *
+ * Algoritmo O(n^2): se hace una pasada para contar, por cada estrella, cuantos
+ * vecinos tiene dentro de MIN_DIST_NODOUBLE y cual es uno de ellos. Luego se
+ * recorren las estrellas y se emiten las que tienen exactamente un vecino y
+ * cuyo vecino tambien tiene exactamente uno.
+ */
+void makeDoubles(int n, int *ref, double *X, double *Y, double *Z,
+                 double *mag, const char *desig, const char *filename)
+{
+    int *nearCount = (int*) calloc(n, sizeof(int));
+    int *nearIdx = (int*) malloc(n * sizeof(int));
+    double *nearDist = (double*) malloc(n * sizeof(double));
+    for (int i = 0; i < n; i++) {
+        nearIdx[i] = -1;
+        nearDist[i] = HUGE_NUMBER;
+    }
+
+    /* Pasada O(n^2): contamos vecinos dentro de MIN_DIST_NODOUBLE para cada estrella. */
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            double d = 3600.0 * calcAngularDistance(X[i], Y[i], Z[i],
+                                                    X[j], Y[j], Z[j]);
+            if (d < MIN_DIST_NODOUBLE) {
+                if (nearCount[i] == 0) {
+                    nearIdx[i] = j;
+                    nearDist[i] = d;
+                }
+                nearCount[i]++;
+                if (nearCount[j] == 0) {
+                    nearIdx[j] = i;
+                    nearDist[j] = d;
+                }
+                nearCount[j]++;
+            }
+        }
+    }
+
+    FILE *stream = fopen(filename, "wt");
+    if (stream == NULL) {
+        perror("Cannot write doubles file");
+        exit(1);
+    }
+    fprintf(stream, "RAh,Decl,name1,mag1,name2,mag2,dist\n");
+
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        if (nearCount[i] != 1) continue;
+        int j = nearIdx[i];
+        if (i > j) continue;                  /* emit each pair only once */
+        if (nearCount[j] != 1) continue;      /* simetria del aislamiento */
+        if (nearDist[i] >= MAX_DIST_DOUBLE) continue;
+        if (mag[i] < MAG_MIN_DOUBLE || mag[i] > MAG_MAX_DOUBLE) continue;
+        if (mag[j] < MAG_MIN_DOUBLE || mag[j] > MAG_MAX_DOUBLE) continue;
+
+        int a = i, b = j;
+        if (mag[b] < mag[a]) { a = j; b = i; }   /* brighter first */
+
+        double ra, decl;
+        rec2sph(X[a], Y[a], Z[a], &ra, &decl);
+        if (ra < 0.0) ra += 360.0;
+        int rah = (int) round(ra / 15.0);
+        if (rah == 24) rah = 0;
+        int decl_int = (int) round(decl);
+
+        fprintf(stream, "%d,%d,%s %d,%.1f,%s %d,%.1f,%.1f\n",
+                rah, decl_int,
+                desig, ref[a], mag[a],
+                desig, ref[b], mag[b],
+                nearDist[i]);
+        count++;
+    }
+
+    fclose(stream);
+    free(nearCount);
+    free(nearIdx);
+    free(nearDist);
+
+    printf("Doubles found in %s catalog: %d (saved to %s)\n", desig, count, filename);
 }

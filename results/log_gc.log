@@ -235,3 +235,4 @@ Stars from GC identified with PPM = 31706, GSC-PPM = 595, CD = 28436 and CPD = 2
 RSME of distance (arcsec) = 1.96  among a total of 31706 stars
 RSME of visual magnitude = 0.42326  among a total of 27807 stars
 Errors logged = 68
+Doubles found in GC catalog: 193 (saved to results/doubles/gc.csv)
