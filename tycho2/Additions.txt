@@ -3,13 +3,14 @@ Some entries that might be manually added to cross_tyc2_south.csv:
 TYC 6995-1264-1,ZC 23h 1584,0.0
 TYC 6654-219-1,ZC 11h 1114,0.0
 TYC 8215-1532-1,ZC 11h 2211,0.0
-TYC 8078-1749-1,CD -45°1841,0.0
+TYC 8078-1749-1,ZC 5h 243,0.0
 TYC 7512-1263-1,L 9352,0.0
 TYC 7966-1201-1,L 8760,0.0
 TYC 5312-2325-1,40 Eri A,0.0
 TYC 8817-984-1,eps Ind,0.0
 TYC 5855-2292-1,tau Cet,0.0
 TYC 7586-662-1,R Cae,0.0
+TYC 8346-37-1,ZC 17h 1298,0.0
 
 And to cross_tyc2_north.csv:
 
