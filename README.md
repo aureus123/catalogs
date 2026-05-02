@@ -42,6 +42,8 @@ Results and logs are in the [results](results) folder.
 - *compare_cd*: Logs differences between two digital versions of CD
 - *cross_txt*: Fits (by least squares) magnitude scales
 - *gen_tycho2_north* and *gen_tycho2_south*: See README in [tycho2](tycho2) folder, also see the [gallery](gallery) folder
+- Python scripts: *find_const*, *gen_atlas* and *keep_nearest*
+(you can see description of them in the comments of their source code).
 
 ### Requirements
 
