@@ -149,6 +149,28 @@ FILE *openUnidentifiedFile(const char *name)
 }
 
 /*
+ * openCatalogFile - abre un archivo de catalogo con coordenadas rectangulares 1875 y magnitud
+ */
+FILE *openCatalogFile(const char *name)
+{
+    FILE *stream = fopen(name, "wt");
+    if (stream == NULL) {
+        perror("Cannot write in catalog file");
+        exit(1);
+    }
+    fprintf(stream, "name,x,y,z,mag\n");
+    return stream;
+}
+
+/*
+ * writeCatalogFile - escribe una fila en un archivo de catalogo
+ */
+void writeCatalogFile(FILE *stream, const char *name, double x, double y, double z, double mag)
+{
+    fprintf(stream, "%s,%.12f,%.12f,%.12f,%.1f\n", name, x, y, z, mag);
+}
+
+/*
  * logCauses - escribe posibles causas de falta de identificacion
  * También, en caso que stream != null, almacena la estrella en un archivo, junto
  * con sus coordenadas rectangulares en 1875.0, siempre que se den ciertas causas

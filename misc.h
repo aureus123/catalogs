@@ -14,6 +14,8 @@ void writePositionEntry(FILE *stream, int index, int decl, int num, const char *
 FILE *openMagnitudeFile(const char *name);
 void writeMagnitudeEntry(FILE *stream, int index, int decl, int num, const char *ref, double delta);
 FILE *openUnidentifiedFile(const char *name);
+FILE *openCatalogFile(const char *name);
+void writeCatalogFile(FILE *stream, const char *name, double x, double y, double z, double mag);
 void logCauses(char *name,
     bool cumulus, bool nebula,
     int RAs, double Decl, int Decls,

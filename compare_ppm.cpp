@@ -29,14 +29,15 @@ int main(int argc, char** argv)
         printf("Usage: compare_ppm file\n");
         printf("    where file can be:\n");
         printf("        cd.txt = Current CD catalog at Vizier\n");
+        printf("        cd_curated.txt = Curated version of cd.txt\n");
         printf("        1114.txt = NASA-ADC CD catalog (has some errors)\n");
-        printf("        cd_vol1.txt = same as cd.txt but only 1st. Volume (Resultados XVI)\n");
-        printf("        cd_vol1_curated.txt = curated version of cd_vol1.txt\n");
+        printf("        cd_vol1.txt = Same as cd.txt but only 1st. Volume (Resultados XVI)\n");
+        printf("        cd_vol1_curated.txt = Curated version of cd_vol1.txt\n");
         printf("        I88.txt = 1982 CD catalog version (has some errors)\n");
         exit(-1);
     }
     bool allSky = true;
-    if (strcmp(argv[1], "cd.txt") && strcmp(argv[1], "1114.txt")) {
+    if (strcmp(argv[1], "cd.txt") && strcmp(argv[1], "cd_curated.txt") && strcmp(argv[1], "1114.txt")) {
         if (strcmp(argv[1], "cd_vol1.txt") && strcmp(argv[1], "cd_vol1_curated.txt") && strcmp(argv[1], "I88.txt")) {
             printf("Bad file name. See usage.\n");
             exit(-1);
@@ -55,11 +56,14 @@ int main(int argc, char** argv)
     int PPMstars = getPPMStars();
     struct PPMstar_struct *PPMstar = getPPMStruct();
 
+    int CDstars = getDMStars();
+
     /* revisamos la identificación cruzada y generamos planillas */
     FILE *posStream, *magStream, *crossPPMStreamV1, *crossPPMStreamV2;
     FILE *crossPPMStreamV3, *crossPPMStreamV4, *crossPPMStreamV5;
     posStream = openPositionFile("results/table_pos_ppm.csv");
     magStream = openMagnitudeFile("results/table_mag_ppm.csv");
+    FILE *cdCatStream  = openCatalogFile("results/cat1875/cd.csv");
     if (allSky) {
         /* si cubrimos todo el cielo, generamos planillas para cada volumen */
         crossPPMStreamV1 = openCrossFile("results/cross/cross_cd_vol1_ppm.csv");
@@ -171,6 +175,24 @@ int main(int argc, char** argv)
         goodStarsMagnitude++;
         akkuDeltaError += delta * delta;
     }
+    char cdName[20];
+    for (int i = 0; i < CDstars; i++) {
+        snprintf(cdName, 20, "CD %d°%d", CDstar[i].declRef, CDstar[i].numRef);
+        writeCatalogFile(cdCatStream, cdName, CDstar[i].x, CDstar[i].y, CDstar[i].z, CDstar[i].vmag);
+    }
+    fclose(cdCatStream);
+
+    readPPM(false, true, true, false, 1875.0);
+    PPMstars = getPPMStars();
+    PPMstar = getPPMStruct();
+    FILE *ppmCatStream = openCatalogFile("results/cat1875/ppm.csv");
+    char ppmCatName[20];
+    for (int i = 0; i < PPMstars; i++) {
+        snprintf(ppmCatName, 20, "PPM %d", PPMstar[i].ppmRef);
+        writeCatalogFile(ppmCatStream, ppmCatName, PPMstar[i].x, PPMstar[i].y, PPMstar[i].z, PPMstar[i].vmag);
+    }
+    fclose(ppmCatStream);
+
     fclose(magStream);
     fclose(posStream);
     printf("Total errors: %d (position: %d, mag: %d); errors without warning = %d, PPM with problems = %d\n",

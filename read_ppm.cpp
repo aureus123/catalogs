@@ -75,9 +75,9 @@ bool revise(int ppmIndex) {
  * read_ppm - lee base de datos PPM
  *
    Bytes  Format  Units   Label    Explanations
-   2-  7   I6     ---     PPM     *[181732/378910]+ Designation of the star
+   2-  7   I6     ---     PPM     *Designation of the star
   10- 18   A9     ---     DM      *Durchmusterung, BD or CD (10-12 decl., 13-17 number, 18 component [AB])
-  20- 23   F4.1   mag     Mag     *Magnitude, Visual if Flag5 is 'V'
+  20- 23   F4.1   mag     Mag     *Magnitude, Visual if Flag5 is 'V' (except 400001-400321 which is always visual)
   25- 26   A2     ---     Sp      *Spectral type
   28- 29   I2     h       RAh      Right Ascension for the Equinox=J2000.0 and
                                    Epoch=J2000.0, on the system of FK5
@@ -276,7 +276,7 @@ void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south,
       /* lee magnitud (si Flag5 != 'V' la magnitud es fotografica o hay una remark --> poner 0.0) */
       double vmag = 0.0;
       readField(buffer, cell, 131, 1);
-      if (cell[0] == 'V') {
+      if (cell[0] == 'V' || (ppmRef >= 400001 && ppmRef <= 400321)) {
           readField(buffer, cell, 20, 4);
           vmag = atof(cell);
       }

@@ -395,6 +395,7 @@ void readWeiss() {
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_oa_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_oa_hd.csv");
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/oa_unidentified.csv");
+    FILE *catalogStream = openCatalogFile("results/cat1875/oa.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -592,10 +593,12 @@ void readWeiss() {
         oaZ[countOA] = z;
         oaRef[countOA] = oeltzenRef;
         oaMag[countOA] = vmag;
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
         countOA++;
     }
     fclose(stream);
     fclose(unidentifiedStream);
+    fclose(catalogStream);
 	fclose(crossHDStream);
 	fclose(crossSAOStream);
 	fclose(crossPPMStream);
@@ -781,6 +784,7 @@ void readStone() {
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_lacaille_ppm.csv");
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_lacaille_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_lacaille_hd.csv");
+    FILE *catalogStream = openCatalogFile("results/cat1875/lacaille.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -981,6 +985,8 @@ void readStone() {
             lacZ[countLac] = z;
             lacRef[countLac] = lacailleRef;
             lacMag[countLac] = vmag;
+            snprintf(catName, 20, "L %d", lacailleRef);
+            writeCatalogFile(catalogStream, catName, x, y, z, vmag);
             countLac++;
         }
 
@@ -996,6 +1002,7 @@ void readStone() {
     }
     fclose(stream2);
     fclose(stream);
+    fclose(catalogStream);
 	fclose(crossHDStream);
 	fclose(crossSAOStream);
 	fclose(crossPPMStream);
@@ -1030,6 +1037,7 @@ void readTaylor() {
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_taylor_ppm.csv");
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_taylor_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_taylor_hd.csv");
+    FILE *catalogStream = openCatalogFile("results/cat1875/taylor.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1184,10 +1192,13 @@ void readTaylor() {
         tayZ[countTaylor] = z;
         tayRef[countTaylor] = taylorRef;
         tayMag[countTaylor] = vmag;
+        snprintf(catName, 20, "T %d", taylorRef);
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
         countTaylor++;
     }
     fclose(stream2);
     fclose(stream);
+    fclose(catalogStream);
 	fclose(crossPPMStream);
 	fclose(crossSAOStream);
 	fclose(crossHDStream);
@@ -1224,6 +1235,7 @@ void readUSNO() {
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_usno_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_usno_hd.csv");
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/usno_unidentified.csv");
+    FILE *catalogStream = openCatalogFile("results/cat1875/usno.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1481,10 +1493,12 @@ void readUSNO() {
         usnoZ[countUsno] = z;
         usnoRef[countUsno] = numRef;
         usnoMag[countUsno] = vmag;
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
         countUsno++;
     }
     fclose(stream);
     fclose(unidentifiedStream);
+    fclose(catalogStream);
 	fclose(crossPPMStream);
 	fclose(crossSAOStream);
 	fclose(crossHDStream);
@@ -1525,6 +1539,7 @@ void readUA() {
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_ua_ppm.csv");
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_ua_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_ua_hd.csv");
+    FILE *catalogStream = openCatalogFile("results/cat1875/ua.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1944,10 +1959,12 @@ void readUA() {
         }
 
         if (existsRef) {
+            writeCatalogFile(catalogStream, catName, x, y, z, vmag);
             countUA++;
         }
     }
     fclose(stream);
+    fclose(catalogStream);
 	fclose(crossHDStream);
 	fclose(crossSAOStream);
 	fclose(crossPPMStream);
@@ -2325,6 +2342,7 @@ void readGilliss() {
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_gilliss_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_gilliss_hd.csv");
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gilliss_unidentified.csv");
+    FILE *catalogStream = openCatalogFile("results/cat1875/gilliss.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -2492,6 +2510,7 @@ void readGilliss() {
         gilZ[countGil] = z;
         gilRef[countGil] = giRef;
         gilMag[countGil] = vmag;
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
         countGil++;
 
         bool cpdFound = false;
@@ -2620,6 +2639,7 @@ void readGilliss() {
     }
     fclose(stream);
     fclose(unidentifiedStream);
+    fclose(catalogStream);
 	fclose(crossPPMStream);
 	fclose(crossSAOStream);
 	fclose(crossHDStream);
