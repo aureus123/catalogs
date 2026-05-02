@@ -193,7 +193,7 @@ void readUnidentifiedFile(const char *file) {
             continue;
         }
         sscanf(buffer, "%13[^,],%lf,%lf,%lf\n", targetRef, &x, &y, &z);
-        // printf("Unidentified: %s -> (%.12f, %.12f, %.12f)\n", targetRef, x, y, z);
+        // printf("Unidentified: %s -> (%.8f, %.8f, %.8f)\n", targetRef, x, y, z);
 
         if (countUnidentified >= MAXUNSTAR) {
             printf("Error: too many unidentified stars.\n");

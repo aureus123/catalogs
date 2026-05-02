@@ -279,7 +279,7 @@ void makeDoubles(int n, int *ref, double *X, double *Y, double *Z,
         perror("Cannot write doubles file");
         exit(1);
     }
-    fprintf(stream, "RAh,Decl,name1,mag1,name2,mag2,dist\n");
+    fprintf(stream, "RAh,Decl,name1,mag1,name2,mag2,x,y,z,dist\n");
 
     int count = 0;
     for (int i = 0; i < n; i++) {
@@ -301,10 +301,11 @@ void makeDoubles(int n, int *ref, double *X, double *Y, double *Z,
         if (rah == 24) rah = 0;
         int decl_int = (int) round(decl);
 
-        fprintf(stream, "%d,%d,%s %d,%.1f,%s %d,%.1f,%.1f\n",
+        fprintf(stream, "%d,%d,%s %d,%.1f,%s %d,%.1f,%.8f,%.8f,%.8f,%.1f\n",
                 rah, decl_int,
                 desig, ref[a], mag[a],
                 desig, ref[b], mag[b],
+                X[a], Y[a], Z[a],
                 nearDist[i]);
         count++;
     }

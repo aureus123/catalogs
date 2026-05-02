@@ -167,7 +167,7 @@ FILE *openCatalogFile(const char *name)
  */
 void writeCatalogFile(FILE *stream, const char *name, double x, double y, double z, double mag)
 {
-    fprintf(stream, "%s,%.12f,%.12f,%.12f,%.1f\n", name, x, y, z, mag);
+    fprintf(stream, "%s,%.8f,%.8f,%.8f,%.1f\n", name, x, y, z, mag);
 }
 
 /*

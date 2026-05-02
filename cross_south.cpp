@@ -143,7 +143,7 @@ void saveZC(int RAh, int RAs, int Decls,
 
     if (!ppmFound && !cdFound && !cpdFound) {
         if (gscFound) {
-            fprintf(unidentifiedZCStream, "%s,%.12f,%.12f,%.12f\n", zcName, x, y, z);
+            fprintf(unidentifiedZCStream, "%s,%.8f,%.8f,%.8f\n", zcName, x, y, z);
         } else {
             printf("**) %s is also ALONE.\n", zcName);
             logCauses(zcName,
@@ -570,7 +570,7 @@ void readWeiss() {
 
         if (!ppmFound && !cdFound && !cpdFound) {
             if (gscFound) {
-                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
+                fprintf(unidentifiedStream, "%s,%.8f,%.8f,%.8f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: W %d (OA %d) is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,
@@ -1469,7 +1469,7 @@ void readUSNO() {
 
         if (!ppmFound && !cdFound && !cpdFound) {
             if (gscFound) {
-                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
+                fprintf(unidentifiedStream, "%s,%.8f,%.8f,%.8f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: U %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,
@@ -2556,7 +2556,7 @@ void readGilliss() {
 
         if (!ppmFound && !cdFound && !cpdFound) {
             if (gscFound) {
-                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
+                fprintf(unidentifiedStream, "%s,%.8f,%.8f,%.8f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: G %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,

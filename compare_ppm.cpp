@@ -63,7 +63,6 @@ int main(int argc, char** argv)
     FILE *crossPPMStreamV3, *crossPPMStreamV4, *crossPPMStreamV5;
     posStream = openPositionFile("results/table_pos_ppm.csv");
     magStream = openMagnitudeFile("results/table_mag_ppm.csv");
-    FILE *cdCatStream  = openCatalogFile("results/cat1875/cd.csv");
     if (allSky) {
         /* si cubrimos todo el cielo, generamos planillas para cada volumen */
         crossPPMStreamV1 = openCrossFile("results/cross/cross_cd_vol1_ppm.csv");
@@ -175,6 +174,9 @@ int main(int argc, char** argv)
         goodStarsMagnitude++;
         akkuDeltaError += delta * delta;
     }
+
+    // Also generate CSV file for CD
+    FILE *cdCatStream  = openCatalogFile("results/cat1875/cd.csv");
     char cdName[20];
     for (int i = 0; i < CDstars; i++) {
         snprintf(cdName, 20, "CD %d°%d", CDstar[i].declRef, CDstar[i].numRef);
@@ -182,6 +184,7 @@ int main(int argc, char** argv)
     }
     fclose(cdCatStream);
 
+    // Also generate CSV file for PPM (southern stars)
     readPPM(false, true, true, false, 1875.0);
     PPMstars = getPPMStars();
     PPMstar = getPPMStruct();

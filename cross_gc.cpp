@@ -209,7 +209,7 @@ int main(int argc, char** argv)
 
         if (!ppmFound && !cdFound && !cpdFound) {
             if (gscFound) {
-                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
+                fprintf(unidentifiedStream, "%s,%.8f,%.8f,%.8f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: GC %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
                 writeRegisterGC(gcIndex);
