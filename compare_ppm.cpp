@@ -176,7 +176,7 @@ int main(int argc, char** argv)
     }
 
     // Also generate CSV file for CD
-    FILE *cdCatStream  = openCatalogFile("results/cat1875/cd.csv");
+    FILE *cdCatStream  = openCatalogFile("likelihood/cat1875/cd.csv");
     char cdName[20];
     for (int i = 0; i < CDstars; i++) {
         snprintf(cdName, 20, "CD %d°%d", CDstar[i].declRef, CDstar[i].numRef);
@@ -188,7 +188,7 @@ int main(int argc, char** argv)
     readPPM(false, true, true, false, 1875.0);
     PPMstars = getPPMStars();
     PPMstar = getPPMStruct();
-    FILE *ppmCatStream = openCatalogFile("results/cat1875/ppm.csv");
+    FILE *ppmCatStream = openCatalogFile("likelihood/cat1875/ppm.csv");
     char ppmCatName[20];
     for (int i = 0; i < PPMstars; i++) {
         snprintf(ppmCatName, 20, "PPM %d", PPMstar[i].ppmRef);

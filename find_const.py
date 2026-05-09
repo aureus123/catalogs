@@ -18,7 +18,7 @@ Ejemplos:
   python3 find_const.py --2000 11 22 05.29 -24 46 39.8
   python3 find_const.py --1875 11 18 30.00 -24 30 00.0
   python3 find_const.py --csv results/doubles/gilliss.csv
-  python3 find_const.py --csv results/cat1875/gc.csv
+  python3 find_const.py --csv likelihood/cat1875/gc.csv
 """
 
 import csv

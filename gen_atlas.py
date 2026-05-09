@@ -7,12 +7,12 @@ Uso:
 
 Donde:
     <input.csv>  CSV con columnas (name, x, y, z, mag) en frame B1875.0 (FK4),
-                 al estilo de results/cat1875/*.csv.  No usar las variantes
+                 al estilo de likelihood/cat1875/*.csv.  No usar las variantes
                  .const.csv (esquema distinto).
     <CONST>      Código IAU de 3 letras, sin distinguir mayúsculas
                  (Oct, Ori, CMa, ...).
     <output.png> Ruta de salida (PNG).
-    [modo]       Modo de etiqueta para estrellas con mag <= 6.0 (por defecto: full).
+    [modo]       Modo de etiqueta para estrellas con mag <= 7.0 (por defecto: full).
                    full   – nombre completo ("GC 1234", "bet CMa")
                    number – solo el número final ("1234"); si no hay número, nombre completo
                    mag    – magnitud × 10 como entero ("54" para mag 5.4)
@@ -22,14 +22,14 @@ starplot:
   - los bordes IAU de la constelación con líneas a trazos cortos,
   - una grilla RA/Dec cada 10 grados con líneas punteadas,
   - todas las estrellas del CSV (ninguna se descarta), con radio escalado por
-    magnitud y rotuladas según el modo elegido para EPSILON < mag <= 6.0.
+    magnitud y rotuladas según el modo elegido para EPSILON < mag <= 7.0.
 
 Primera ejecución: starplot descarga su catálogo + efemérides (~50 MB) en su
 directorio de datos.
 
 Ejemplos:
-    python3 gen_atlas.py results/cat1875/gc.csv CMa cma_gc.png number
-    python3 gen_atlas.py results/cat1875/ppm.csv CMa cma_ppm.png mag
+    python3 gen_atlas.py likelihood/cat1875/gc.csv CMa cma_gc.png number
+    python3 gen_atlas.py likelihood/cat1875/ppm.csv CMa cma_ppm.png mag
 """
 
 import csv
@@ -60,7 +60,7 @@ LABEL_MODE = "full"   # "full" | "number" | "mag"
 
 EPSILON = 1e-6        # mag <= EPSILON treated as the "missing" placeholder
 MAG_LIMIT = 10.0      # magnitudes >= this share the smallest visible radius
-LABEL_MAG_MAX = 6.0   # only stars brighter than this get a label
+LABEL_MAG_MAX = 7.0   # only stars brighter than this get a label
 PLACEHOLDER_MAG = 9.0 # value substituted for the mag=0 placeholder
 
 

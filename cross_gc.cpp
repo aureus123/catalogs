@@ -56,7 +56,7 @@ int main(int argc, char** argv)
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_gc_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_gc_hd.csv");
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gc_unidentified.csv");
-    FILE *catalogStream = openCatalogFile("results/cat1875/gc.csv");
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/gc.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
