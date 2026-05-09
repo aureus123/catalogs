@@ -121,7 +121,7 @@ int main(int argc, char** argv)
 
         double ppmVmag = PPMstar[i].vmag;
         double cdVmag = CDstar[cdIndex].vmag;
-        if (ppmVmag < 0.00001 || cdVmag > 29.9) continue; // se omiten aquellas estrellas con Vmag=0 o variables
+        if (fabs(ppmVmag) < 0.00001 || cdVmag > 29.9) continue; // se omiten aquellas estrellas con Vmag=0 o variables
 #ifdef MAGNITUDE_METHOD        
         double convertedCDmag = compCDmagToVmag(CDstar[cdIndex].declRef, cdVmag);
         double delta = fabs(ppmVmag - convertedCDmag);
@@ -180,7 +180,10 @@ int main(int argc, char** argv)
     char cdName[20];
     for (int i = 0; i < CDstars; i++) {
         snprintf(cdName, 20, "CD %d°%d", CDstar[i].declRef, CDstar[i].numRef);
-        writeCatalogFile(cdCatStream, cdName, CDstar[i].x, CDstar[i].y, CDstar[i].z, CDstar[i].vmag);
+        double vmag = CDstar[i].vmag;
+        if (fabs(vmag) < 0.00001) vmag = 0.1; // workaround for stars with Vmag=0 to avoid confusion with variables
+        if (vmag > 29.9) vmag = 0.0; // variable stars are considered as having Vmag=0 for the catalog file
+        writeCatalogFile(cdCatStream, cdName, CDstar[i].x, CDstar[i].y, CDstar[i].z, vmag);
     }
     fclose(cdCatStream);
 

@@ -116,7 +116,7 @@ int main(int argc, char** argv)
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (gcVmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__ && !GCstar[gcIndex].dpl) {
+			if (gcVmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__ && !GCstar[gcIndex].dpl) {
                 float vmag = compGCmagToVmag(gcVmag); // perform magnitude transformation
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {

@@ -233,6 +233,6 @@ Perform comparison between GC and PPM/CD/CPD...
   Note: no CD/CPD coverage for stars below 18°.
 Stars from GC identified with PPM = 31706, GSC-PPM = 595, CD = 28436 and CPD = 28910
 RSME of distance (arcsec) = 1.96  among a total of 31706 stars
-RSME of visual magnitude = 0.42326  among a total of 27807 stars
+RSME of visual magnitude = 0.42347  among a total of 27822 stars
 Errors logged = 68
 Doubles found in GC catalog: 193 (saved to results/doubles/gc.csv)

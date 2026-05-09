@@ -264,7 +264,7 @@ void readGC2() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -484,7 +484,7 @@ void readWeiss() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_OA_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -864,7 +864,7 @@ void readStone() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -1318,7 +1318,7 @@ void readUSNO() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_USNO_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -2073,7 +2073,7 @@ void readThome(double epoch, const char *filename, int correction) {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -2455,7 +2455,7 @@ void readGilliss() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {

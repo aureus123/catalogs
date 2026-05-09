@@ -249,7 +249,7 @@ int main(int argc, char** argv)
                 }
             }
             
-            // Ignore if PPM star not found or too bright
+            // Ignore if PPM star not found or too bright or does not report magnitude
             if (ppmIndex == -1 || PPMstar[ppmIndex].vmag <= 1.0) {
                 continue;
             }

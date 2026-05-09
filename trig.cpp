@@ -219,8 +219,10 @@ double compCDmagToVmag(int decl_ref, double cdVmag) {
 
 /*
  * compGCmagToVmag - dada una magnitud en la escala usada en GC la convierte a Johnson V
+ * para estrellas brillantes no se hace fit ya que la misma escala es prácticamente igual a V
 */
 double compGCmagToVmag(double gcVmag) {
+    if (gcVmag <= 3.0) return gcVmag;
     // Quadratic fit of 28977 stars grouped in 48 magnitudes, ECM = 0.202
     return - 5.003 + 2.305 * gcVmag - 0.085 * gcVmag * gcVmag;
 }

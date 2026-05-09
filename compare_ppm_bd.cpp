@@ -87,7 +87,7 @@ int main(int argc, char** argv)
 
         double ppmVmag = PPMstar[i].vmag;
         double bdVmag = BDstar[bdIndex].vmag;
-        if (ppmVmag < 0.00001 || bdVmag > 29.9) continue; // se omiten aquellas estrellas con Vmag=0 o variables
+        if (fabs(ppmVmag) < 0.00001 || bdVmag > 29.9) continue; // se omiten aquellas estrellas con Vmag=0 o variables
         ppmVmag = compVmagToCDmag(BDstar[bdIndex].declRef, ppmVmag);
         double delta = fabs(ppmVmag - bdVmag);
         if (delta >= MAX_MAGNITUDE) {

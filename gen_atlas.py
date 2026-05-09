@@ -58,7 +58,8 @@ from starplot import (
 
 LABEL_MODE = "full"   # "full" | "number" | "mag"
 
-EPSILON = 1e-6        # mag <= EPSILON treated as the "missing" placeholder
+EPSILON = 1e-6        # |mag| < EPSILON treated as the "missing" placeholder
+                      # (PPM has bright stars with negative mag, so abs() is required)
 MAG_LIMIT = 10.0      # magnitudes >= this share the smallest visible radius
 LABEL_MAG_MAX = 7.0   # only stars brighter than this get a label
 PLACEHOLDER_MAG = 9.0 # value substituted for the mag=0 placeholder
@@ -81,11 +82,11 @@ def rec_to_radec_deg(x, y, z):
 
 def label_for(name, mag, mode):
     if mode == "mag":
-        effective_mag = PLACEHOLDER_MAG if mag <= EPSILON else mag
+        effective_mag = PLACEHOLDER_MAG if abs(mag) < EPSILON else mag
         if effective_mag > LABEL_MAG_MAX:
             return None
         return str(int(round(effective_mag * 10)))
-    if mag <= EPSILON or mag > LABEL_MAG_MAX:
+    if abs(mag) < EPSILON or mag > LABEL_MAG_MAX:
         return None
     if mode == "full":
         return name
@@ -264,7 +265,7 @@ def main():
 
     for s, ra, dec in zip(stars, ra_icrs, dec_icrs):
         mag = s["mag"]
-        effective_mag = PLACEHOLDER_MAG if mag <= EPSILON else mag
+        effective_mag = PLACEHOLDER_MAG if abs(mag) < EPSILON else mag
         radius_pt = max(2.0, 2.0 * (MAG_LIMIT - effective_mag))
         label = label_for(s["name"], mag, label_mode)
         chart.marker(

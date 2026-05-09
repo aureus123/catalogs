@@ -279,6 +279,7 @@ void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south,
       if (cell[0] == 'V' || (ppmRef >= 400001 && ppmRef <= 400321)) {
           readField(buffer, cell, 20, 4);
           vmag = atof(cell);
+          if (fabs(vmag) < 0.00001) vmag = 0.1; // workaround para evitar confusión con estrellas sin magnitud
       }
 
       /* lee si la estrella es "problematica" */

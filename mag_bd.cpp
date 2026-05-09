@@ -47,7 +47,7 @@ int main(int argc, char** argv)
         /* descartamos problemáticas, con Vmag=0 (hay muchas fotográficas en esta franja) o muy separadas */
         if (PPMstar[i].problem == 1) continue;
         double ppmVmag = PPMstar[i].vmag;
-        if (ppmVmag < 0.00001) continue;
+        if (fabs(ppmVmag) < 0.00001) continue;
         int bdIndex = PPMstar[i].dmIndex;
         float dist = 3600.0 * calcAngularDistance(PPMstar[i].x, PPMstar[i].y, PPMstar[i].z, BDstar[bdIndex].x, BDstar[bdIndex].y, BDstar[bdIndex].z);
         if (dist > MAX_DISTANCE) continue;
