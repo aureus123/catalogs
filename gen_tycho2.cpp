@@ -397,6 +397,9 @@ int main(int argc, char** argv) {
     FILE *crossStream = openCrossFileWithMagnitude(buffer, false);
 #endif
 
+    snprintf(buffer, 1024, "likelihood/cat1875/%s.csv", is_north ? "north" : "south");
+    FILE *catStream = openCatalogFile(buffer);
+
     int TYCstarsPPM = 0;
     int TYCstarsDM = 0;
     int TYCstarsCPD = 0;
@@ -496,18 +499,24 @@ int main(int argc, char** argv) {
         double x, y, z;
         sph2rec(RAtarget, Decltarget, &x, &y, &z);
 
+        /* lee magnitud: esta magnitud habitualmente es VT y a veces es Hp, pero
+         * si además viene la componente BT entonces se puede aproximar así:
+         * V = VT - 0.090 * (BT-VT) */
+        readField(buffer, cell, readSupplement ? 97 : 124, 6);
+        double tycVmag = atof(cell);
+        if (fabs(tycVmag) > __FLT_EPSILON__) {
+            readField(buffer, cell, readSupplement ? 84 : 111, 6);
+            double BTmag = atof(cell);
+            if (fabs(BTmag) > __FLT_EPSILON__) {
+                tycVmag -= 0.090 * (BTmag - tycVmag);
+            }
+        }
+
         /* halla PPM más cercana, dentro de 15 arcsec */
         int ppmIndex = -1;
         double minDistance = HUGE_NUMBER;
         findPPMByCoordinates(x, y, z, Decltarget, &ppmIndex, &minDistance);
-        if (ppmIndex != -1 && minDistance < DIST_PPM_TYC) {
-            if (PPMstar[ppmIndex].dmString[0] != 0) {
-                /* se almacena la identificación cruzada con la DM dada por PPM */
-                writeCrossEntry(crossStream, tycString, PPMstar[ppmIndex].dmString, 99.9, minDistance);
-                TYCstarsPPM++;
-                continue;
-            }
-        }
+        bool matchedPPM = (ppmIndex != -1 && minDistance < DIST_PPM_TYC);
 
         /* convertir a 1875 (CD, SD, CPD, no identificadas) */
         RAtarget = RA;
@@ -515,9 +524,32 @@ int main(int argc, char** argv) {
         pmRAtarget = pmRA;
         pmDecltarget = pmDecl;
         wcsconp(WCS_J2000, WCS_B1950, 0.0, 1875.0, epoch, 1875.0, &RAtarget, &Decltarget, &pmRAtarget, &pmDecltarget);
-        
+
         /* calcula coordenadas rectangulares */
         sph2rec(RAtarget, Decltarget, &x, &y, &z);
+
+        /* escribe registro en archivo cat1875: si hay match PPM se usa la designación
+         * PPM y, si tycVmag = 0, también la magnitud PPM; caso contrario se usa TYC */
+        const char *catName = tycString;
+        double catVmag = tycVmag;
+        char ppmCatName[20];
+        if (matchedPPM) {
+            snprintf(ppmCatName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+            catName = ppmCatName;
+            if (fabs(tycVmag) < __FLT_EPSILON__) {
+                catVmag = PPMstar[ppmIndex].vmag;
+            }
+        }
+        writeCatalogFile(catStream, catName, x, y, z, catVmag);
+
+        if (matchedPPM) {
+            if (PPMstar[ppmIndex].dmString[0] != 0) {
+                /* se almacena la identificación cruzada con la DM dada por PPM */
+                writeCrossEntry(crossStream, tycString, PPMstar[ppmIndex].dmString, 99.9, minDistance);
+                TYCstarsPPM++;
+                continue;
+            }
+        }
 
         /* Escanea las estrellas que no fueron identificadas con PPM/CD/CPD.
          * Para poder priorizar los catálogos, si se encuentra una más cerca,
@@ -612,6 +644,7 @@ int main(int argc, char** argv) {
     printf("Stars read and identified of Tycho-2 from other catalogues: %d\n", TYCstarsOther);
     printf("Stars read and remain unidentified of Tycho-2: %d\n", TYCunidentified);
     fclose(crossStream);
+    fclose(catStream);
 #ifdef ALTERNATIVE
     fclose(crossStreamColor);
     fclose(crossStreamDpl);
