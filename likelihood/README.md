@@ -9,7 +9,7 @@ The motivation is to enforce a true one-to-one matching: greedy assigns the clos
 Let *A* and *B* be the two catalogs. For each candidate pair (*a*, *b*) we model the joint observation by independent Gaussians on the angular separation $\theta(a,b)$ and the magnitude difference $\Delta m = m_a - m_b$. Following my 2018 work [1] and dropping the doubles/multiples component (we only consider single-star matches here), the *log-likelihood weight* of an edge is
 
 $$
-w(a,b) \;=\; \frac{\theta(a,b)^2}{2\,\sigma_{pos}^{2}} \;+\; \frac{\Delta m^{2}}{2\,\sigma_{m}^{2}}
+w(a,b) = \frac{\theta(a,b)^2}{2 \sigma_{pos}^{2}} + \frac{\Delta m^{2}}{2 \sigma_{m}^{2}}
 $$
 
 i.e. minus the log of the product of two Gaussians, with constants dropped (they shift every edge equally and do not affect the optimum). The optimal matching is the one that *minimizes* the sum of $w(a,b)$ over selected edges.
