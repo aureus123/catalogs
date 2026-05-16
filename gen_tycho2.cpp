@@ -39,7 +39,7 @@ extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, 
 #define THRESHOLD_PPM 15.0
 #define THRESHOLD_CPD 30.0
 #define THRESHOLD_CD 45.0
-#define DIST_PPM_TYC 15.0
+#define DIST_PPM_TYC 10.0
 #define DIST_CPD_TYC 30.0 
 #define DIST_DM_TYC 60.0
 #define DIST_UN_TYC 15.0
@@ -389,16 +389,16 @@ int main(int argc, char** argv) {
     }
 
 #ifdef ALTERNATIVE
-    FILE *crossStream = openCrossFileWithMagnitude("tycho2/cross_tyc2_south_plain.csv", false);
-    FILE *crossStreamColor = openCrossFileWithMagnitude("tycho2/cross_tyc2_south_color.csv", false);
-    FILE *crossStreamDpl = openCrossFileWithMagnitude("tycho2/cross_tyc2_south_dpl.csv", false);
+    FILE *crossStream = openCrossFile("tycho2/cross_tyc2_south_plain.csv");
+    FILE *crossStreamColor = openCrossFile("tycho2/cross_tyc2_south_color.csv");
+    FILE *crossStreamDpl = openCrossFile("tycho2/cross_tyc2_south_dpl.csv");
 #else
     snprintf(buffer, 1024, "tycho2/cross_tyc2_%s.csv", is_north ? "north" : "south");
-    FILE *crossStream = openCrossFileWithMagnitude(buffer, false);
-#endif
+    FILE *crossStream = openCrossFile(buffer);
 
     snprintf(buffer, 1024, "likelihood/cat1875/%s.csv", is_north ? "north" : "south");
     FILE *catStream = openCatalogFile(buffer);
+#endif
 
     int TYCstarsPPM = 0;
     int TYCstarsDM = 0;
@@ -528,6 +528,7 @@ int main(int argc, char** argv) {
         /* calcula coordenadas rectangulares */
         sph2rec(RAtarget, Decltarget, &x, &y, &z);
 
+#ifndef ALTERNATIVE
         /* escribe registro en archivo cat1875: si hay match PPM se usa la designación
          * PPM y, si tycVmag = 0, también la magnitud PPM; caso contrario se usa TYC */
         const char *catName = tycString;
@@ -541,11 +542,12 @@ int main(int argc, char** argv) {
             }
         }
         writeCatalogFile(catStream, catName, x, y, z, catVmag);
+#endif
 
         if (matchedPPM) {
             if (PPMstar[ppmIndex].dmString[0] != 0) {
                 /* se almacena la identificación cruzada con la DM dada por PPM */
-                writeCrossEntry(crossStream, tycString, PPMstar[ppmIndex].dmString, 99.9, minDistance);
+                writeCrossEntry(crossStream, tycString, PPMstar[ppmIndex].dmString, tycVmag, minDistance);
                 TYCstarsPPM++;
                 continue;
             }
@@ -567,7 +569,7 @@ int main(int argc, char** argv) {
         }
         if (index != -1) {
             /* se almacena la identificación cruzada con la estrella */
-            writeCrossEntry(crossStream, tycString, unidentifiedName[index], 99.9, minDistance);
+            writeCrossEntry(crossStream, tycString, unidentifiedName[index], tycVmag, minDistance);
             TYCstarsOther++;
             continue;
         }
@@ -603,7 +605,7 @@ int main(int argc, char** argv) {
                     chosenStream = crossStreamColor;
                 }
 #endif
-                writeCrossEntry(chosenStream, tycString, dmStringDM[dmIndex], 99.9, minDistance);
+                writeCrossEntry(chosenStream, tycString, dmStringDM[dmIndex], tycVmag, minDistance);
                 TYCstarsDM++;
                 continue;
             }
@@ -616,7 +618,7 @@ int main(int argc, char** argv) {
             findSDByCoordinates(x, y, z, Decltarget, &sdIndex, &minDistance);
             if (sdIndex != -1 && minDistance < DIST_DM_TYC) {
                 /* se almacena la identificación cruzada con la SD */
-                writeCrossEntry(crossStream, tycString, dmStringSD[sdIndex], 99.9, minDistance);
+                writeCrossEntry(crossStream, tycString, dmStringSD[sdIndex], tycVmag, minDistance);
                 TYCstarsSD++;
                 continue;
             }
@@ -629,7 +631,7 @@ int main(int argc, char** argv) {
             findCPDByCoordinates(x, y, z, Decltarget, &cpdIndex, &minDistance);
             if (cpdIndex != -1 && minDistance < DIST_CPD_TYC) {
                 /* se almacena la identificación cruzada con la CPD */
-                writeCrossEntry(crossStream, tycString, dmStringCPD[cpdIndex], 99.9, minDistance);
+                writeCrossEntry(crossStream, tycString, dmStringCPD[cpdIndex], tycVmag, minDistance);
                 TYCstarsCPD++;
                 continue;
             }
@@ -644,10 +646,11 @@ int main(int argc, char** argv) {
     printf("Stars read and identified of Tycho-2 from other catalogues: %d\n", TYCstarsOther);
     printf("Stars read and remain unidentified of Tycho-2: %d\n", TYCunidentified);
     fclose(crossStream);
-    fclose(catStream);
 #ifdef ALTERNATIVE
     fclose(crossStreamColor);
     fclose(crossStreamDpl);
+#else
+    fclose(catStream);
 #endif
     fclose(stream2);
     fclose(stream);

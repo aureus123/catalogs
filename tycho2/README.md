@@ -20,19 +20,17 @@ In southern hemisphere, we have stars from:
 - All Southern Durchmusterung stars (*SD*)
 - All Cape Photographic Durchmusterung stars (*CPD*)
 
-For the northern hemisphere, there are 939 UA, 25923 Lal, 1991 U and 263502 BD stars summarizing 292355 identifications.
-For the southern hemisphere, there are 6594 UA, 9559 Lal, 5372 L, 18287 GC, 4634 ZC, 10926 OA, 943 U, 8897 G, 5431 BD, 111043 SD, 469605 CD and 74008 CPD stars summarizing 725299 identifications.
+For the northern hemisphere, there are 940 UA, 25914 Lal, 1962 U and 263583 BD stars summarizing 292399 identifications.
+For the southern hemisphere, there are 6583 UA, 9557 Lal, 5371 L, 18344 GC, 4639 ZC, 10919 OA, 942 U, 8897 G, 5431 BD, 111114 SD, 469612 CD and 74009 CPD stars summarizing 725418 identifications.
 
 ### Shortcomings of the current approach
 
 Since all identifications are performed just by angular distance thresholds, misidentifications might happen. On the other hand, some BD stars are
-missing in the southern hemisphere (only BD coming from PPM are considered).
+missing in the southern hemisphere (precisely declination -0 and -1; only BD identified with PPM are considered).
 Files *cross_gc.cpp* and *cross_south.cpp* do the cross-identifications between PPM/CD/CPD and UA/L/Lal/GC/ZC/OA/U/G.
 
-Further improvements (not done yet) might be to use a better
-cross-identification algorithm, e.g. that maximizes likelihood between positions
-and magnitudes when comparing Tycho-2 and a target catalogue, with Hungarian
-algorithm, see this [paper](https://doi.org/10.1016/j.endm.2018.07.005).
+Further improvements might be to use a better
+cross-identification algorithm, this idea is explored (here)[likelihood/README.md].
 
 ### Instructions
 
