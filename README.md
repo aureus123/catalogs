@@ -1,6 +1,6 @@
 # Old catalogs comparison
 
-💻 This repository contains some simple algorithms to compare old catalogs in order to detect typo errors during the transcription from original printed catalogs to digital ones, particularly the Durchmusterungs.
+💻 This repository contains some algorithms to compare old catalogs in order to detect typo errors during the transcription from original printed catalogs to digital ones, particularly the Durchmusterungs.
 Catalogs are in the [cat](cat) folder.
 
 ✏️ The main comparison is given between Cordoba Durchmusterung (CD) and Positions and Proper Motions (PPM) catalogs, but other "experiments" are performed between other catalogs.
@@ -10,7 +10,7 @@ The hypothesis is that, since the cross-identifications between both catalogs we
 
 ### Algorithm
 
-📄 The approach considers two catalogs, the source (e.g. CD) and the target (e.g PPM).
+📄 The greedy approach considers two catalogs, the source (e.g. CD) and the target (e.g PPM).
 In the first place, all stars from the target catalog having a cross-identification between both catalogs are considered. Then, coordinates are precessed to the epoch of the source catalog (e.g from J2000 to B1875) and corrected by proper motion.
 The resulting coordinates are compared to those from the source catalog.
 If the angular distance exceeds a given threshold, a warning is generated, with the data of that star in the source catalog in the format
@@ -19,6 +19,8 @@ estimated.
 One can compare these data against the real printed catalog, in order to
 find typo errors during the creation of the digital version of BD or CD.
 Results and logs are in the [results](results) folder.
+
+Another more complex approach for making cross-identifications is explained [here](likelihood/README.md) but it is more experimental and not used for typo corrections. It models the cross-identification problem as a Maximum Weighted Matching Problem where the goal is to maximize the joint likelihood, taking into account both the angular distance and the magnitude difference.
 
 ### Limitations of the approach
 
@@ -42,6 +44,8 @@ Results and logs are in the [results](results) folder.
 - *compare_cd*: Logs differences between two digital versions of CD
 - *cross_txt*: Fits (by least squares) magnitude scales
 - *gen_tycho2_north* and *gen_tycho2_south*: See README in [tycho2](tycho2) folder, also see the [gallery](gallery) folder
+- Python scripts: *find_const*, *gen_atlas* and *keep_nearest*, *cross_likelihood*
+(you can see description of them in the comments of their source code).
 
 ### Requirements
 
@@ -90,11 +94,10 @@ catalogs (OA and Lacaille):
 
 ### Wishlist
 
-- Use cross-identification algorithm based on a matching that maximizes likelihood (see bibliography) instead of simple angular distance thresholds.
+- Perform comparisons between the greedy and the likelihood approach. Which one is better for cross-identifications?
 - Write a list of all double stars from footnotes of Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB) (only declinations -22, -23 and -24 were transcribed at the moment) and perform a cross-identification of that CD volume with a modern catalog.
 - Correct typo errors in all CD catalogs.
 - Usually, the supplementary letter of BD/SD/CD designations is ignored. Revise it.
-- Refactor code! Consider Jupyter Lab and AstroPy instead of C++ code.
 
 ### Bibliography
 

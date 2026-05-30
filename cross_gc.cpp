@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 #include "read_ppm.h"
 #include "read_cpd.h"
 #include "read_dm.h"
@@ -55,6 +56,7 @@ int main(int argc, char** argv)
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_gc_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_gc_hd.csv");
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gc_unidentified.csv");
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/gc.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -114,7 +116,7 @@ int main(int argc, char** argv)
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (gcVmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__ && !GCstar[gcIndex].dpl) {
+			if (gcVmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__ && !GCstar[gcIndex].dpl) {
                 float vmag = compGCmagToVmag(gcVmag); // perform magnitude transformation
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -207,7 +209,7 @@ int main(int argc, char** argv)
 
         if (!ppmFound && !cdFound && !cpdFound) {
             if (gscFound) {
-                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
+                fprintf(unidentifiedStream, "%s,%.8f,%.8f,%.8f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: GC %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
                 writeRegisterGC(gcIndex);
@@ -217,14 +219,17 @@ int main(int argc, char** argv)
                     PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
             }
         }
+        writeCatalogFile(catalogStream, catName, x, y, z, gcVmag);
 	}
     fclose(unidentifiedStream);
+    fclose(catalogStream);
 	fclose(crossPPMStream);
 	fclose(crossSAOStream);
 	fclose(crossHDStream);
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
 
+    
     printf("Stars from GC identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist,  countGSC, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
@@ -233,5 +238,25 @@ int main(int argc, char** argv)
         sqrt(akkuDeltaError / (double)countDelta),
         countDelta);
     printf("Errors logged = %d\n", errors);
+
+    // Also, generate a file with all GC double stars
+    double *gcX   = (double*) malloc(GCstars * sizeof(double));
+    double *gcY   = (double*) malloc(GCstars * sizeof(double));
+    double *gcZ   = (double*) malloc(GCstars * sizeof(double));
+    double *gcMag = (double*) malloc(GCstars * sizeof(double));
+    int    *gcRef = (int*)    malloc(GCstars * sizeof(int));
+    for (int i = 0; i < GCstars; i++) {
+        gcX[i]   = GCstar[i].x;
+        gcY[i]   = GCstar[i].y;
+        gcZ[i]   = GCstar[i].z;
+        gcMag[i] = GCstar[i].vmag;
+        gcRef[i] = GCstar[i].gcRef;
+    }
+    makeDoubles(GCstars, gcRef, gcX, gcY, gcZ, gcMag, "GC", "results/doubles/gc.csv");
+    free(gcX);
+    free(gcY);
+    free(gcZ);
+    free(gcMag);
+    free(gcRef);
     return 0;
 }

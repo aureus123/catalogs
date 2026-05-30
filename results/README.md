@@ -11,6 +11,9 @@ during that process. In particular, you can find the following files:
 There is also a folder _cross_ with results of the experiment *compare_ppm*, *cross_gc*, *cross_north* and *cross_south* with cross-identifications between old catalogs (Catálogos Argentinos, Oeltzen-Argelander (South), Lalande, Lacaille, USNO, Taylor, Gilliss, WB, BAC) and PPM/GSC/SAO/HD/CD/CPD. In the PPM files, there are also stars matching with GSC stars when they do not match with PPM stars. In SAO and HD files, these identification are taken
 from identifications in the PPM catalog, not from direct comparison against SAO/HD catalogs.
 
+Also, another folder _doubles_ contains some visual double stars found in old catalogs by following a criterion explained in trig.cpp (function makeDoubles).
+Constellations were added with the tool find_const.py.  
+
 Below some experiments are reported.
 
 ### 1. Efficiency of algorithm

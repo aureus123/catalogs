@@ -21,6 +21,7 @@
 #define MAXSTSTAR 12500
 #define MAXTAYLORSTAR 11100
 #define MAXUSNOSTAR 11000
+#define MAXGILLISSSTAR 17000
 #define MAXZCSTAR 15000
 #define EPOCH_GC2 1900.0
 #define EPOCH_OA 1850.0
@@ -47,22 +48,22 @@
 // #define PRINT_NOTES  // uncomment if certain notes (**) should be printed
 
 // Here, we save 1875.0 coordinates of OA stars in rectangular form
-double oaX[MAXOASTAR], oaY[MAXOASTAR], oaZ[MAXOASTAR];
+double oaX[MAXOASTAR], oaY[MAXOASTAR], oaZ[MAXOASTAR], oaMag[MAXOASTAR];
 int oaRef[MAXOASTAR];
 int countOA = 0;
 
 // Here, we save 1875.0 coordinates of Lalande stars in rectangular form
-double lalX[MAXLALSTAR], lalY[MAXLALSTAR], lalZ[MAXLALSTAR];
+double lalX[MAXLALSTAR], lalY[MAXLALSTAR], lalZ[MAXLALSTAR], lalMag[MAXLALSTAR];
 int lalRef[MAXLALSTAR];
 int countLal = 0;
 
 // Here, we save 1875.0 coordinates of Lacaille stars in rectangular form
-double lacX[MAXLACSTAR], lacY[MAXLACSTAR], lacZ[MAXLACSTAR];
+double lacX[MAXLACSTAR], lacY[MAXLACSTAR], lacZ[MAXLACSTAR], lacMag[MAXLACSTAR];
 int lacRef[MAXLACSTAR];
 int countLac = 0;
 
 // Here, we save 1875.0 coordinates of Taylor stars in rectangular form
-double tayX[MAXTAYLORSTAR], tayY[MAXTAYLORSTAR], tayZ[MAXTAYLORSTAR];
+double tayX[MAXTAYLORSTAR], tayY[MAXTAYLORSTAR], tayZ[MAXTAYLORSTAR], tayMag[MAXTAYLORSTAR];
 int tayRef[MAXTAYLORSTAR];
 int countTaylor = 0;
 
@@ -72,10 +73,15 @@ int stRef[MAXSTSTAR];
 int countSt = 0;
 
 // Here, we save 1875.0 coordinates of USNO stars in rectangular form
-double usnoX[MAXUSNOSTAR], usnoY[MAXUSNOSTAR], usnoZ[MAXUSNOSTAR];
+double usnoX[MAXUSNOSTAR], usnoY[MAXUSNOSTAR], usnoZ[MAXUSNOSTAR], usnoMag[MAXUSNOSTAR];
 int usnoRef[MAXUSNOSTAR];
 char usnoCatRef[MAXUSNOSTAR][30];
 int countUsno = 0;
+
+// Here, we save 1875.0 coordinates of Gilliss stars in rectangular form
+double gilX[MAXGILLISSSTAR], gilY[MAXGILLISSSTAR], gilZ[MAXGILLISSSTAR], gilMag[MAXGILLISSSTAR];
+int gilRef[MAXGILLISSSTAR];
+int countGil = 0;
 
 // Here, we save 1875.0 coordinates of Gould's ZC stars in rectangular form
 double zcX[MAXZCSTAR], zcY[MAXZCSTAR], zcZ[MAXZCSTAR];
@@ -137,7 +143,7 @@ void saveZC(int RAh, int RAs, int Decls,
 
     if (!ppmFound && !cdFound && !cpdFound) {
         if (gscFound) {
-            fprintf(unidentifiedZCStream, "%s,%.12f,%.12f,%.12f\n", zcName, x, y, z);
+            fprintf(unidentifiedZCStream, "%s,%.8f,%.8f,%.8f\n", zcName, x, y, z);
         } else {
             printf("**) %s is also ALONE.\n", zcName);
             logCauses(zcName,
@@ -258,7 +264,7 @@ void readGC2() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -389,6 +395,7 @@ void readWeiss() {
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_oa_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_oa_hd.csv");
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/oa_unidentified.csv");
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/oa.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -477,7 +484,7 @@ void readWeiss() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_OA_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -563,7 +570,7 @@ void readWeiss() {
 
         if (!ppmFound && !cdFound && !cpdFound) {
             if (gscFound) {
-                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
+                fprintf(unidentifiedStream, "%s,%.8f,%.8f,%.8f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: W %d (OA %d) is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,
@@ -585,10 +592,13 @@ void readWeiss() {
         oaY[countOA] = y;
         oaZ[countOA] = z;
         oaRef[countOA] = oeltzenRef;
+        oaMag[countOA] = vmag;
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
         countOA++;
     }
     fclose(stream);
     fclose(unidentifiedStream);
+    fclose(catalogStream);
 	fclose(crossHDStream);
 	fclose(crossSAOStream);
 	fclose(crossPPMStream);
@@ -739,6 +749,7 @@ void readLalande() {
         lalY[countLal] = y;
         lalZ[countLal] = z;
         lalRef[countLal] = catRef;
+        lalMag[countLal] = vmag;
         countLal++;
     }
     fclose(stream);
@@ -773,6 +784,7 @@ void readStone() {
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_lacaille_ppm.csv");
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_lacaille_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_lacaille_hd.csv");
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/lacaille.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -852,7 +864,7 @@ void readStone() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -972,6 +984,9 @@ void readStone() {
             lacY[countLac] = y;
             lacZ[countLac] = z;
             lacRef[countLac] = lacailleRef;
+            lacMag[countLac] = vmag;
+            snprintf(catName, 20, "L %d", lacailleRef);
+            writeCatalogFile(catalogStream, catName, x, y, z, vmag);
             countLac++;
         }
 
@@ -987,6 +1002,7 @@ void readStone() {
     }
     fclose(stream2);
     fclose(stream);
+    fclose(catalogStream);
 	fclose(crossHDStream);
 	fclose(crossSAOStream);
 	fclose(crossPPMStream);
@@ -1021,6 +1037,7 @@ void readTaylor() {
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_taylor_ppm.csv");
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_taylor_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_taylor_hd.csv");
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/taylor.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1174,10 +1191,14 @@ void readTaylor() {
         tayY[countTaylor] = y;
         tayZ[countTaylor] = z;
         tayRef[countTaylor] = taylorRef;
+        tayMag[countTaylor] = vmag;
+        snprintf(catName, 20, "T %d", taylorRef);
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
         countTaylor++;
     }
     fclose(stream2);
     fclose(stream);
+    fclose(catalogStream);
 	fclose(crossPPMStream);
 	fclose(crossSAOStream);
 	fclose(crossHDStream);
@@ -1214,6 +1235,7 @@ void readUSNO() {
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_usno_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_usno_hd.csv");
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/usno_unidentified.csv");
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/usno.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1296,7 +1318,7 @@ void readUSNO() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_USNO_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -1447,7 +1469,7 @@ void readUSNO() {
 
         if (!ppmFound && !cdFound && !cpdFound) {
             if (gscFound) {
-                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
+                fprintf(unidentifiedStream, "%s,%.8f,%.8f,%.8f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: U %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,
@@ -1470,10 +1492,13 @@ void readUSNO() {
         usnoY[countUsno] = y;
         usnoZ[countUsno] = z;
         usnoRef[countUsno] = numRef;
+        usnoMag[countUsno] = vmag;
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
         countUsno++;
     }
     fclose(stream);
     fclose(unidentifiedStream);
+    fclose(catalogStream);
 	fclose(crossPPMStream);
 	fclose(crossSAOStream);
 	fclose(crossHDStream);
@@ -1514,6 +1539,7 @@ void readUA() {
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_ua_ppm.csv");
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_ua_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_ua_hd.csv");
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/ua.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -1933,10 +1959,12 @@ void readUA() {
         }
 
         if (existsRef) {
+            writeCatalogFile(catalogStream, catName, x, y, z, vmag);
             countUA++;
         }
     }
     fclose(stream);
+    fclose(catalogStream);
 	fclose(crossHDStream);
 	fclose(crossSAOStream);
 	fclose(crossPPMStream);
@@ -2045,7 +2073,7 @@ void readThome(double epoch, const char *filename, int correction) {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -2314,6 +2342,7 @@ void readGilliss() {
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_gilliss_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_gilliss_hd.csv");
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gilliss_unidentified.csv");
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/gilliss.csv");
 
     int countDist = 0;
     double akkuDistError = 0.0;
@@ -2426,7 +2455,7 @@ void readGilliss() {
         double nearestPPMDistance = minDistance;
 		if (minDistance < MAX_DIST_PPM) {
 			float ppmVmag = PPMstar[ppmIndex].vmag;
-			if (vmag > __FLT_EPSILON__ && ppmVmag > __FLT_EPSILON__) {
+			if (vmag > __FLT_EPSILON__ && fabs(ppmVmag) > __FLT_EPSILON__) {
 				// Note: no fit is performed to convert scales of magnitudes
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
@@ -2471,6 +2500,19 @@ void readGilliss() {
         transform(EPOCH_GILLISS, 1875.0, &RA1875, &Decl1875);
         sph2rec(RA1875, Decl1875, &x, &y, &z);
 
+        /* la almacenamos para futuras identificaciones */
+        if (countGil >= MAXGILLISSSTAR) {
+            printf("Error: too many Gilliss stars.\n");
+            exit(1);
+        }
+        gilX[countGil] = x;
+        gilY[countGil] = y;
+        gilZ[countGil] = z;
+        gilRef[countGil] = giRef;
+        gilMag[countGil] = vmag;
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
+        countGil++;
+
         bool cpdFound = false;
         /* busca la CPD mas cercana y genera el cruzamiento */
         int cpdIndex = -1;
@@ -2514,7 +2556,7 @@ void readGilliss() {
 
         if (!ppmFound && !cdFound && !cpdFound) {
             if (gscFound) {
-                fprintf(unidentifiedStream, "%s,%.12f,%.12f,%.12f\n", catName, x, y, z);
+                fprintf(unidentifiedStream, "%s,%.8f,%.8f,%.8f\n", catName, x, y, z);
             } else {
                 printf("%d) Warning: G %d is ALONE (no PPM / CD / CPD / GSC star near it).\n",
                     ++errors,
@@ -2597,6 +2639,7 @@ void readGilliss() {
     }
     fclose(stream);
     fclose(unidentifiedStream);
+    fclose(catalogStream);
 	fclose(crossPPMStream);
 	fclose(crossSAOStream);
 	fclose(crossHDStream);
@@ -2634,6 +2677,7 @@ int main(int argc, char** argv)
 
     /* leemos y cruzamos Weiss / OA */
     readWeiss();
+    makeDoubles(countOA, oaRef, oaX, oaY, oaZ, oaMag, "OA", "results/doubles/oa.csv");
 
     /* leemos y cruzamos Lalande (solo contra PPM) */
     readLalande();
@@ -2646,9 +2690,11 @@ int main(int argc, char** argv)
 
     /* leemos y cruzamos Taylor */
     readTaylor();
+    makeDoubles(countTaylor, tayRef, tayX, tayY, tayZ, tayMag, "T", "results/doubles/taylor.csv");
 
     /* leemos, cruzamos y revisamos identificaciones de Yarnall */
     readUSNO();
+    makeDoubles(countUsno, usnoRef, usnoX, usnoY, usnoZ, usnoMag, "U", "results/doubles/usno.csv");
 
     /* leemos, cruzamos y revisamos Uranometria Argentina */
     readUA();
@@ -2670,6 +2716,7 @@ int main(int argc, char** argv)
     /* leemos, cruzamos y revisamos identificaciones de Gilliss */
     /* tambien generamos Gould's Zone Catalog */
     readGilliss();
+    makeDoubles(countGil, gilRef, gilX, gilY, gilZ, gilMag, "G", "results/doubles/gilliss.csv");
 
     fclose(unidentifiedZCStream);
 	fclose(crossPPMZCStream);

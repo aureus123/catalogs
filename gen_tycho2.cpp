@@ -39,7 +39,7 @@ extern "C" void wcsconp(int sys1, int sys2, double eq1, double eq2, double ep1, 
 #define THRESHOLD_PPM 15.0
 #define THRESHOLD_CPD 30.0
 #define THRESHOLD_CD 45.0
-#define DIST_PPM_TYC 15.0
+#define DIST_PPM_TYC 10.0
 #define DIST_CPD_TYC 30.0 
 #define DIST_DM_TYC 60.0
 #define DIST_UN_TYC 15.0
@@ -193,7 +193,7 @@ void readUnidentifiedFile(const char *file) {
             continue;
         }
         sscanf(buffer, "%13[^,],%lf,%lf,%lf\n", targetRef, &x, &y, &z);
-        // printf("Unidentified: %s -> (%.12f, %.12f, %.12f)\n", targetRef, x, y, z);
+        // printf("Unidentified: %s -> (%.8f, %.8f, %.8f)\n", targetRef, x, y, z);
 
         if (countUnidentified >= MAXUNSTAR) {
             printf("Error: too many unidentified stars.\n");
@@ -389,12 +389,15 @@ int main(int argc, char** argv) {
     }
 
 #ifdef ALTERNATIVE
-    FILE *crossStream = openCrossFileWithMagnitude("tycho2/cross_tyc2_south_plain.csv", false);
-    FILE *crossStreamColor = openCrossFileWithMagnitude("tycho2/cross_tyc2_south_color.csv", false);
-    FILE *crossStreamDpl = openCrossFileWithMagnitude("tycho2/cross_tyc2_south_dpl.csv", false);
+    FILE *crossStream = openCrossFile("tycho2/cross_tyc2_south_plain.csv");
+    FILE *crossStreamColor = openCrossFile("tycho2/cross_tyc2_south_color.csv");
+    FILE *crossStreamDpl = openCrossFile("tycho2/cross_tyc2_south_dpl.csv");
 #else
     snprintf(buffer, 1024, "tycho2/cross_tyc2_%s.csv", is_north ? "north" : "south");
-    FILE *crossStream = openCrossFileWithMagnitude(buffer, false);
+    FILE *crossStream = openCrossFile(buffer);
+
+    snprintf(buffer, 1024, "likelihood/cat1875/%s.csv", is_north ? "north" : "south");
+    FILE *catStream = openCatalogFile(buffer);
 #endif
 
     int TYCstarsPPM = 0;
@@ -496,18 +499,24 @@ int main(int argc, char** argv) {
         double x, y, z;
         sph2rec(RAtarget, Decltarget, &x, &y, &z);
 
+        /* lee magnitud: esta magnitud habitualmente es VT y a veces es Hp, pero
+         * si además viene la componente BT entonces se puede aproximar así:
+         * V = VT - 0.090 * (BT-VT) */
+        readField(buffer, cell, readSupplement ? 97 : 124, 6);
+        double tycVmag = atof(cell);
+        if (fabs(tycVmag) > __FLT_EPSILON__) {
+            readField(buffer, cell, readSupplement ? 84 : 111, 6);
+            double BTmag = atof(cell);
+            if (fabs(BTmag) > __FLT_EPSILON__) {
+                tycVmag -= 0.090 * (BTmag - tycVmag);
+            }
+        }
+
         /* halla PPM más cercana, dentro de 15 arcsec */
         int ppmIndex = -1;
         double minDistance = HUGE_NUMBER;
         findPPMByCoordinates(x, y, z, Decltarget, &ppmIndex, &minDistance);
-        if (ppmIndex != -1 && minDistance < DIST_PPM_TYC) {
-            if (PPMstar[ppmIndex].dmString[0] != 0) {
-                /* se almacena la identificación cruzada con la DM dada por PPM */
-                writeCrossEntry(crossStream, tycString, PPMstar[ppmIndex].dmString, 99.9, minDistance);
-                TYCstarsPPM++;
-                continue;
-            }
-        }
+        bool matchedPPM = (ppmIndex != -1 && minDistance < DIST_PPM_TYC);
 
         /* convertir a 1875 (CD, SD, CPD, no identificadas) */
         RAtarget = RA;
@@ -515,9 +524,34 @@ int main(int argc, char** argv) {
         pmRAtarget = pmRA;
         pmDecltarget = pmDecl;
         wcsconp(WCS_J2000, WCS_B1950, 0.0, 1875.0, epoch, 1875.0, &RAtarget, &Decltarget, &pmRAtarget, &pmDecltarget);
-        
+
         /* calcula coordenadas rectangulares */
         sph2rec(RAtarget, Decltarget, &x, &y, &z);
+
+#ifndef ALTERNATIVE
+        /* escribe registro en archivo cat1875: si hay match PPM se usa la designación
+         * PPM y, si tycVmag = 0, también la magnitud PPM; caso contrario se usa TYC */
+        const char *catName = tycString;
+        double catVmag = tycVmag;
+        char ppmCatName[20];
+        if (matchedPPM) {
+            snprintf(ppmCatName, 20, "PPM %d", PPMstar[ppmIndex].ppmRef);
+            catName = ppmCatName;
+            if (fabs(tycVmag) < __FLT_EPSILON__) {
+                catVmag = PPMstar[ppmIndex].vmag;
+            }
+        }
+        writeCatalogFile(catStream, catName, x, y, z, catVmag);
+#endif
+
+        if (matchedPPM) {
+            if (PPMstar[ppmIndex].dmString[0] != 0) {
+                /* se almacena la identificación cruzada con la DM dada por PPM */
+                writeCrossEntry(crossStream, tycString, PPMstar[ppmIndex].dmString, tycVmag, minDistance);
+                TYCstarsPPM++;
+                continue;
+            }
+        }
 
         /* Escanea las estrellas que no fueron identificadas con PPM/CD/CPD.
          * Para poder priorizar los catálogos, si se encuentra una más cerca,
@@ -535,7 +569,7 @@ int main(int argc, char** argv) {
         }
         if (index != -1) {
             /* se almacena la identificación cruzada con la estrella */
-            writeCrossEntry(crossStream, tycString, unidentifiedName[index], 99.9, minDistance);
+            writeCrossEntry(crossStream, tycString, unidentifiedName[index], tycVmag, minDistance);
             TYCstarsOther++;
             continue;
         }
@@ -571,7 +605,7 @@ int main(int argc, char** argv) {
                     chosenStream = crossStreamColor;
                 }
 #endif
-                writeCrossEntry(chosenStream, tycString, dmStringDM[dmIndex], 99.9, minDistance);
+                writeCrossEntry(chosenStream, tycString, dmStringDM[dmIndex], tycVmag, minDistance);
                 TYCstarsDM++;
                 continue;
             }
@@ -584,7 +618,7 @@ int main(int argc, char** argv) {
             findSDByCoordinates(x, y, z, Decltarget, &sdIndex, &minDistance);
             if (sdIndex != -1 && minDistance < DIST_DM_TYC) {
                 /* se almacena la identificación cruzada con la SD */
-                writeCrossEntry(crossStream, tycString, dmStringSD[sdIndex], 99.9, minDistance);
+                writeCrossEntry(crossStream, tycString, dmStringSD[sdIndex], tycVmag, minDistance);
                 TYCstarsSD++;
                 continue;
             }
@@ -597,7 +631,7 @@ int main(int argc, char** argv) {
             findCPDByCoordinates(x, y, z, Decltarget, &cpdIndex, &minDistance);
             if (cpdIndex != -1 && minDistance < DIST_CPD_TYC) {
                 /* se almacena la identificación cruzada con la CPD */
-                writeCrossEntry(crossStream, tycString, dmStringCPD[cpdIndex], 99.9, minDistance);
+                writeCrossEntry(crossStream, tycString, dmStringCPD[cpdIndex], tycVmag, minDistance);
                 TYCstarsCPD++;
                 continue;
             }
@@ -615,6 +649,8 @@ int main(int argc, char** argv) {
 #ifdef ALTERNATIVE
     fclose(crossStreamColor);
     fclose(crossStreamDpl);
+#else
+    fclose(catStream);
 #endif
     fclose(stream2);
     fclose(stream);

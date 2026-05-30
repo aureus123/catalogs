@@ -29,14 +29,15 @@ int main(int argc, char** argv)
         printf("Usage: compare_ppm file\n");
         printf("    where file can be:\n");
         printf("        cd.txt = Current CD catalog at Vizier\n");
+        printf("        cd_curated.txt = Curated version of cd.txt\n");
         printf("        1114.txt = NASA-ADC CD catalog (has some errors)\n");
-        printf("        cd_vol1.txt = same as cd.txt but only 1st. Volume (Resultados XVI)\n");
-        printf("        cd_vol1_curated.txt = curated version of cd_vol1.txt\n");
+        printf("        cd_vol1.txt = Same as cd.txt but only 1st. Volume (Resultados XVI)\n");
+        printf("        cd_vol1_curated.txt = Curated version of cd_vol1.txt\n");
         printf("        I88.txt = 1982 CD catalog version (has some errors)\n");
         exit(-1);
     }
     bool allSky = true;
-    if (strcmp(argv[1], "cd.txt") && strcmp(argv[1], "1114.txt")) {
+    if (strcmp(argv[1], "cd.txt") && strcmp(argv[1], "cd_curated.txt") && strcmp(argv[1], "1114.txt")) {
         if (strcmp(argv[1], "cd_vol1.txt") && strcmp(argv[1], "cd_vol1_curated.txt") && strcmp(argv[1], "I88.txt")) {
             printf("Bad file name. See usage.\n");
             exit(-1);
@@ -54,6 +55,8 @@ int main(int argc, char** argv)
     readPPM(true, allSky, true, false, 1875.0);
     int PPMstars = getPPMStars();
     struct PPMstar_struct *PPMstar = getPPMStruct();
+
+    int CDstars = getDMStars();
 
     /* revisamos la identificación cruzada y generamos planillas */
     FILE *posStream, *magStream, *crossPPMStreamV1, *crossPPMStreamV2;
@@ -118,7 +121,7 @@ int main(int argc, char** argv)
 
         double ppmVmag = PPMstar[i].vmag;
         double cdVmag = CDstar[cdIndex].vmag;
-        if (ppmVmag < 0.00001 || cdVmag > 29.9) continue; // se omiten aquellas estrellas con Vmag=0 o variables
+        if (fabs(ppmVmag) < 0.00001 || cdVmag > 29.9) continue; // se omiten aquellas estrellas con Vmag=0 o variables
 #ifdef MAGNITUDE_METHOD        
         double convertedCDmag = compCDmagToVmag(CDstar[cdIndex].declRef, cdVmag);
         double delta = fabs(ppmVmag - convertedCDmag);
@@ -171,6 +174,31 @@ int main(int argc, char** argv)
         goodStarsMagnitude++;
         akkuDeltaError += delta * delta;
     }
+
+    // Also generate CSV file for CD
+    FILE *cdCatStream  = openCatalogFile("likelihood/cat1875/cd.csv");
+    char cdName[20];
+    for (int i = 0; i < CDstars; i++) {
+        snprintf(cdName, 20, "CD %d°%d", CDstar[i].declRef, CDstar[i].numRef);
+        double vmag = CDstar[i].vmag;
+        if (fabs(vmag) < 0.00001) vmag = 0.1; // workaround for stars with Vmag=0 to avoid confusion with variables
+        if (vmag > 29.9) vmag = 0.0; // variable stars are considered as having Vmag=0 for the catalog file
+        writeCatalogFile(cdCatStream, cdName, CDstar[i].x, CDstar[i].y, CDstar[i].z, vmag);
+    }
+    fclose(cdCatStream);
+
+    // Also generate CSV file for PPM (southern stars)
+    readPPM(false, true, true, false, 1875.0);
+    PPMstars = getPPMStars();
+    PPMstar = getPPMStruct();
+    FILE *ppmCatStream = openCatalogFile("likelihood/cat1875/ppm.csv");
+    char ppmCatName[20];
+    for (int i = 0; i < PPMstars; i++) {
+        snprintf(ppmCatName, 20, "PPM %d", PPMstar[i].ppmRef);
+        writeCatalogFile(ppmCatStream, ppmCatName, PPMstar[i].x, PPMstar[i].y, PPMstar[i].z, PPMstar[i].vmag);
+    }
+    fclose(ppmCatStream);
+
     fclose(magStream);
     fclose(posStream);
     printf("Total errors: %d (position: %d, mag: %d); errors without warning = %d, PPM with problems = %d\n",

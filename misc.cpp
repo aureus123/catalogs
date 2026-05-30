@@ -51,43 +51,21 @@ void readFieldSanitized(char *buffer, char *cell, int initial, int bytes) {
  */
 FILE *openCrossFile(const char *name)
 {
-    return openCrossFileWithMagnitude(name, true);
-}
-
-/*
- * openCrossFileWithMagnitude - abre un archivo de identificación cruzada
- *
- * Si withMagnitude es true, se incluye una columna adicional para la magnitud.
- */
-FILE *openCrossFileWithMagnitude(const char *name, bool withMagnitude)
-{
     FILE *stream = fopen(name, "wt");
     if (stream == NULL) {
         perror("Cannot write in cross file");
         exit(1);
     }
-    if (withMagnitude) {
-        fprintf(stream, "index1,index2,mag,dist\n");
-    } else {
-        fprintf(stream, "index1,index2,dist\n");
-    }
+    fprintf(stream, "index1,index2,mag,dist\n");
     return stream;
 }
 
 /*
  * writeCrossEntry - escribe una entrada en un archivo de identificación cruzada
- *
- * Si mag > 99.0, asume que no se dispone de magnitud y omite esa columna.
  */
 void writeCrossEntry(FILE *stream, char *index1, char *index2, double mag, double dist)
 {
-    if (mag > 99.0) {
-        // omit magnitude
-        fprintf(stream, "%s,%s,%.2f\n", index1, index2, dist);
-    } else {
-        // include magnitude
-        fprintf(stream, "%s,%s,%.1f,%.2f\n", index1, index2, mag, dist);
-    }
+    fprintf(stream, "%s,%s,%.1f,%.2f\n", index1, index2, mag, dist);
 }
 
 /*
@@ -146,6 +124,28 @@ FILE *openUnidentifiedFile(const char *name)
     }
     fprintf(stream, "name,x,y,z\n");
     return stream;
+}
+
+/*
+ * openCatalogFile - abre un archivo de catalogo con coordenadas rectangulares 1875 y magnitud
+ */
+FILE *openCatalogFile(const char *name)
+{
+    FILE *stream = fopen(name, "wt");
+    if (stream == NULL) {
+        perror("Cannot write in catalog file");
+        exit(1);
+    }
+    fprintf(stream, "name,x,y,z,mag\n");
+    return stream;
+}
+
+/*
+ * writeCatalogFile - escribe una fila en un archivo de catalogo
+ */
+void writeCatalogFile(FILE *stream, const char *name, double x, double y, double z, double mag)
+{
+    fprintf(stream, "%s,%.8f,%.8f,%.8f,%.1f\n", name, x, y, z, mag);
 }
 
 /*
