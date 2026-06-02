@@ -176,7 +176,7 @@ void readWB() {
  * readOARN - lee y cruza catalogo de Oeltzen-Argelander (North)
  */
 void readOARN() {
-    char buffer[1024], cell[256];
+    char buffer[1024], cell[256], catName[20];
 
     printf("\n***************************************\n");
     printf("Perform comparison between Oeltzen-Argelander North catalog and PPM...\n");
@@ -191,6 +191,10 @@ void readOARN() {
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
+    FILE *crossPPMStream = openCrossFile("results/cross/cross_oarn_ppm.csv");
+    FILE *crossSAOStream = openCrossFile("results/cross/cross_oarn_sao.csv");
+    FILE *crossHDStream = openCrossFile("results/cross/cross_oarn_hd.csv");
+
     /* leemos catalogo OARN */
     FILE *stream = fopen("cat/oarn.txt", "rt");
     if (stream == NULL) {
@@ -201,6 +205,24 @@ void readOARN() {
 		/* lee numeración */
 		readField(buffer, cell, 1, 5);
 		int oeltzenRef = atoi(cell);
+
+		/* lee magnitud (columnas 6-9; en blanco si no hay magnitud) */
+		readField(buffer, cell, 6, 2);
+		int magInt = atoi(cell);
+		float vmag = (float) magInt;
+		readField(buffer, cell, 8, 2);
+		if (cell[0] != ' ') {
+		    int magFrac = atoi(cell);
+		    if (magFrac == magInt + 1) {
+		        vmag += 0.5;
+		    } else if (magFrac == magInt - 1) {
+		        vmag -= 0.2;
+		    } else {
+		        printf("Error: OA %d has unexpected value %d in magnitude columns 8-9 (expected %d, %d or blank).\n",
+		            oeltzenRef, magFrac, magInt - 1, magInt + 1);
+		        exit(1);
+		    }
+		}
 
 		/* lee ascension recta B1842.0 */
 		readFieldSanitized(buffer, cell, 11, 2);
@@ -236,6 +258,8 @@ void readOARN() {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
+            snprintf(catName, 20, "OA %d", oeltzenRef);
+            writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
 		}
 
         if (!ppmFound) {
@@ -260,6 +284,9 @@ void readOARN() {
         countOA++;
     }
 	fclose(stream);
+    fclose(crossPPMStream);
+    fclose(crossSAOStream);
+    fclose(crossHDStream);
 
     printf("Available OA stars = %d\n", countOA);
     printf("Stars from OA identified with PPM = %d\n", countDist);

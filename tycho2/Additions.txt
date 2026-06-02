@@ -11,6 +11,7 @@ TYC 8817-984-1,eps Ind,4.7,0.0
 TYC 5855-2292-1,tau Cet,3.5,0.0
 TYC 7586-662-1,R Cae,6.7,0.0
 TYC 8346-37-1,ZC 17h 1298,9.4,0.0
+TYC 6180-855-1,33G Lib,6.3,0.0
 
 And to cross_tyc2_north.csv:
 
