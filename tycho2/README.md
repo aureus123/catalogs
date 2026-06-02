@@ -4,6 +4,8 @@ Tool *gen_tycho2* generates cross identifications between Tycho-2 and PPM/DM cat
 - Stars from Uranometría Argentina (*UA*)
 - Lalande's catalog (*Lal*)
 - Yarnall-Frisby USNO catalog (*U*)
+- Weisse catalog (*WB*)
+- Northern Oeltzen-Argelander designations (*OA*)
 - Bonner Durchmusterung stars (*BD*)
 
 In southern hemisphere, we have stars from:
@@ -12,22 +14,23 @@ In southern hemisphere, we have stars from:
 - Lalande's catalog (*Lal*)
 - Catálogo General Argentino (*GC*)
 - Gould's Zone Catalog designations coming from other catalogs (*ZC*)
-- Oeltzen-Argelander designations coming from Weiss catalog (*OA*)
+- Southern Oeltzen-Argelander designations coming from Weiss catalog (*OA*)
 - Yarnall-Frisby USNO catalog (*U*)
 - Gilliss catalog (*G*)
+- Weisse catalog (*WB*)
 - *BD* / *SD* / *CD* designations coming from PPM stars
 - All Cordoba Durchmusterung stars (*CD*)
 - All Southern Durchmusterung stars (*SD*)
 - All Cape Photographic Durchmusterung stars (*CPD*)
 
-For the northern hemisphere, there are 940 UA, 25914 Lal, 1962 U and 263583 BD stars summarizing 292399 identifications.
-For the southern hemisphere, there are 6583 UA, 9557 Lal, 5371 L, 18344 GC, 4639 ZC, 10919 OA, 942 U, 8897 G, 5431 BD, 111114 SD, 469612 CD and 74009 CPD stars summarizing 725418 identifications.
+For the northern hemisphere, there are 940 UA, 25914 Lal, 1962 U, 9149 WB, 17908 OA and 238167 BD stars summarizing 294040 identifications.
+For the southern hemisphere, there are 6584 UA, 9557 Lal, 5371 L, 18344 GC, 4639 ZC, 10919 OA, 942 U, 8897 G, 8451 WB, 4387 BD, 103968 SD, 469612 CD and 74009 CPD stars summarizing 725680 identifications.
 
 ### Shortcomings of the current approach
 
 Since all identifications are performed just by angular distance thresholds, misidentifications might happen. On the other hand, some BD stars are
 missing in the southern hemisphere (precisely declination -0 and -1; only BD identified with PPM are considered).
-Files *cross_gc.cpp* and *cross_south.cpp* do the cross-identifications between PPM/CD/CPD and UA/L/Lal/GC/ZC/OA/U/G.
+Files *cross_gc.cpp* and *cross_south.cpp* do the cross-identifications between PPM/CD/CPD and UA/L/Lal/GC/ZC/OA/U/G/WB.
 
 Further improvements might be to use a better
 cross-identification algorithm, this idea is explored (here)[likelihood/README.md].
