@@ -19,6 +19,7 @@
 #define MAXLALSTAR 47400
 #define MAXLACSTAR 10000
 #define MAXSTSTAR 12500
+#define MAXBRISTAR 8000
 #define MAXTAYLORSTAR 11100
 #define MAXUSNOSTAR 11000
 #define MAXGILLISSSTAR 17000
@@ -27,6 +28,7 @@
 #define EPOCH_OA 1850.0
 #define EPOCH_LAL 1800.0
 #define EPOCH_ST 1880.0
+#define EPOCH_BRI 1825.0
 #define EPOCH_TAYLOR 1835.0
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
@@ -34,6 +36,7 @@
 #define MAX_DIST_PPM_FAR 90.0
 #define MAX_DIST_OA_PPM 45.0
 #define MAX_DIST_LAL_PPM 45.0
+#define MAX_DIST_BRI_PPM 45.0
 #define MAX_DIST_TAY_PPM 40.0
 #define MAX_DIST_OA_CPD 45.0
 #define MAX_DIST_ST_CPD 30.0
@@ -71,6 +74,11 @@ int countTaylor = 0;
 double stX[MAXSTSTAR], stY[MAXSTSTAR], stZ[MAXSTSTAR];
 int stRef[MAXSTSTAR];
 int countSt = 0;
+
+// Here, we save 1875.0 coordinates of Brisbane stars in rectangular form
+double briX[MAXBRISTAR], briY[MAXBRISTAR], briZ[MAXBRISTAR], briMag[MAXBRISTAR];
+int briRef[MAXBRISTAR];
+int countBri = 0;
 
 // Here, we save 1875.0 coordinates of USNO stars in rectangular form
 double usnoX[MAXUSNOSTAR], usnoY[MAXUSNOSTAR], usnoZ[MAXUSNOSTAR], usnoMag[MAXUSNOSTAR];
@@ -767,7 +775,7 @@ void readLalande() {
 
 /*
  * readStone - lee y cruza catalogo de Stone
- * (ya se deben haber leidos los catalogs CD y CPD)
+ * (ya se deben haber leidos los catalogs CD, CPD y Brisbane)
  */
 void readStone() {
     char buffer[1024], cell[256], catName[20], cdName[20];
@@ -793,6 +801,7 @@ void readStone() {
     int countGSC = 0;
     int countCD = 0;
     int countCPD = 0;
+    int checkBri = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -974,6 +983,24 @@ void readStone() {
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
 
+        /* revisa identificacion cruzada con Brisbane */
+        readField(buffer, cell, 65, 4);
+        int brisRefStone = cell[0] == '&' ? 0 : atoi(cell);
+        if (brisRefStone > 0) {
+            for (int i = 0; i < countBri; i++) {
+                if (briRef[i] != brisRefStone) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, briX[i], briY[i], briZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    /* printf("%d) Warning: St %d is FAR from B %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        stoneRef,
+                        brisRefStone,
+                        dist); */
+                } else checkBri++;
+                break;
+            }
+        }
+
         /* la almacenamos para futuras identificaciones */
         if (lacailleRef > 0) {
             if (countLac >= MAXLACSTAR) {
@@ -1010,6 +1037,7 @@ void readStone() {
 	fclose(crossCDStream);
 
     printf("Available Stone stars = %d, and Lacaille = %d\n", countSt, countLac);
+    printf("Stone stars properly identified with Brisbane = %d\n", checkBri);
     printf("Stars from Stone identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist, countGSC, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
@@ -1021,8 +1049,169 @@ void readStone() {
 }
 
 /*
+ * readBrisbane - lee catalogo de Brisbane
+ */
+void readBrisbane() {
+    char buffer[1024], cell[256], catName[20], cdName[20];
+
+    printf("\n***************************************\n");
+    printf("Perform comparison between Brisbane and PPM...\n");
+
+    FILE *crossPPMStream = openCrossFile("results/cross/cross_bri_ppm.csv");
+    FILE *crossSAOStream = openCrossFile("results/cross/cross_bri_sao.csv");
+    FILE *crossHDStream = openCrossFile("results/cross/cross_bri_hd.csv");
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/brisbane.csv");
+
+    int countDist = 0;
+    double akkuDistError = 0.0;
+    int countGSC = 0;
+    int errors = 0;
+
+    /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
+    readPPM(false, true, false, false, EPOCH_BRI);
+    sortPPM();
+    struct PPMstar_struct *PPMstar = getPPMStruct();
+    int PPMstars = getPPMStars();
+
+    /* leemos catalogo Brisbane */
+    FILE *stream = fopen("cat/brisbane.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read brisbane.txt");
+        exit(1);
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+        /* lee numeración Brisbane */
+        readField(buffer, cell, 1, 4);
+        int brisRef = atoi(cell);
+
+        /* descarta nebulas */
+        readField(buffer, cell, 20, 1);
+        if (cell[0] == 'N') continue;
+
+        /* descarta si faltan los segundos de RA o SPD */
+        readField(buffer, cell, 29, 1);
+        if (cell[0] == ' ') continue;
+        readField(buffer, cell, 55, 1);
+        if (cell[0] == ' ') continue;
+
+        /* lee magnitud (mismo formato que Weiss) */
+        readField(buffer, cell, 21, 2);
+        float vmag = 0.0;
+        if (cell[0] != ' ') {
+            int magInt = atoi(cell);
+            vmag = (float) magInt;
+            readField(buffer, cell, 23, 2);
+            if (cell[0] != ' ') {
+                int magFrac = atoi(cell);
+                if (magFrac == magInt + 1) {
+                    vmag += 0.5;
+                } else {
+                    printf("Warning: B %d has unexpected value %d in magnitude columns 23-24 (expected %d or blank).\n",
+                        brisRef, magFrac, magInt + 1);
+                }
+            }
+        }
+
+        /* lee ascension recta B1825.0 */
+        readFieldSanitized(buffer, cell, 25, 2);
+        int RAh = atoi(cell);
+        double RA = (double) RAh;
+        readFieldSanitized(buffer, cell, 27, 2);
+        int RAm = atoi(cell);
+        RA += ((double) RAm)/60.0;
+        readFieldSanitized(buffer, cell, 29, 4);
+        int RAs = atoi(cell);
+        RA += (((double) RAs)/100.0)/3600.0;
+        RA *= 15.0; /* conversion horas a grados */
+
+        /* lee SPD B1825.0 (distancia polar sur) */
+        readFieldSanitized(buffer, cell, 50, 3);
+        int Decld = atoi(cell);
+        double Decl = (double) Decld;
+        readFieldSanitized(buffer, cell, 53, 2);
+        int Declm = atoi(cell);
+        Decl += ((double) Declm)/60.0;
+        readFieldSanitized(buffer, cell, 55, 3);
+        int Decls = atoi(cell);
+        Decl += (((double) Decls)/10.0)/3600.0;
+        Decl -= 90.0; /* convertimos SPD a declinación */
+
+        bool ppmFound = false;
+        int ppmIndex = -1;
+        double minDistance = HUGE_NUMBER;
+        /* busca la PPM mas cercana y genera el cruzamiento */
+        double x, y, z;
+        sph2rec(RA, Decl, &x, &y, &z);
+        findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
+        double nearestPPMDistance = minDistance;
+        if (minDistance < MAX_DIST_BRI_PPM) {
+            akkuDistError += minDistance * minDistance;
+            countDist++;
+            ppmFound = true;
+
+            snprintf(catName, 20, "B %d", brisRef);
+            writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
+        }
+
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = false;
+        if (!ppmFound) {
+            gscFound = findGSCStar(RA, Decl, EPOCH_BRI, MAX_DIST_GSC);
+            if (gscFound) {
+                snprintf(catName, 20, "B %d", brisRef);
+                snprintf(cdName, 20, "GSC %s", getGSCId());
+                writeCrossEntry(crossPPMStream, catName, cdName, vmag, getDist());
+                countGSC++;
+            }
+        }
+
+        /* convierte coordenadas a 1875.0 y calcula rectangulares */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        transform(EPOCH_BRI, 1875.0, &RA1875, &Decl1875);
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+        if (!ppmFound && !gscFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
+            snprintf(catName, 20, "B %d", brisRef);
+            printf("%d) Warning: B %d is ALONE (no PPM or GSC star near it).\n",
+                ++errors,
+                brisRef);
+            logCauses(catName,
+                false, false, RAs, Decl1875, Decls,
+                PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+        }
+
+        /* la almacenamos para futuras identificaciones */
+        if (countBri >= MAXBRISTAR) {
+            printf("Error: too many Brisbane stars.\n");
+            exit(1);
+        }
+        briX[countBri] = x;
+        briY[countBri] = y;
+        briZ[countBri] = z;
+        briRef[countBri] = brisRef;
+        briMag[countBri] = vmag;
+        snprintf(catName, 20, "B %d", brisRef);
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
+        countBri++;
+    }
+    fclose(stream);
+    fclose(catalogStream);
+    fclose(crossPPMStream);
+    fclose(crossSAOStream);
+    fclose(crossHDStream);
+
+    printf("Available Brisbane stars = %d\n", countBri);
+    printf("Stars from Brisbane identified with PPM = %d, GSC-PPM = %d\n", countDist, countGSC);
+    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
+        sqrt(akkuDistError / (double)countDist),
+        countDist);
+    printf("Errors logged = %d\n", errors);
+}
+
+/*
  * readTaylor - lee y cruza catalogo de Taylor
- * (ya se deben haber leidos catalogos Stone y GC)
+ * (ya se deben haber leidos catalogos Stone, Brisbane y GC)
  */
 void readTaylor() {
     char buffer[1024], cell[256], catName[20], cdName[20];
@@ -1043,6 +1232,7 @@ void readTaylor() {
     double akkuDistError = 0.0;
     int countGSC = 0;
     int checkLac = 0;
+    int checkBri = 0;
     int checkGC = 0;
     int errors = 0;
 
@@ -1182,6 +1372,21 @@ void readTaylor() {
             }
         }
 
+        if (!strncmp(cell, "BRI", 3)) {
+            for (int i = 0; i < countBri; i++) {
+                if (briRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, briX[i], briY[i], briZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    /* printf("%d) Warning: T %d is FAR from B %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        taylorRef,
+                        numRefCat,
+                        dist); */
+                } else checkBri++;
+                break;
+            }
+        }
+
         /* la almacenamos para futuras identificaciones */
         if (countTaylor >= MAXTAYLORSTAR) {
             printf("Error: too many Taylor stars.\n");
@@ -1205,6 +1410,7 @@ void readTaylor() {
 
     printf("Available Taylor stars = %d\n", countTaylor);
     printf("Taylor stars properly identified with Lacaille = %d\n", checkLac);
+    printf("Taylor stars properly identified with Brisbane = %d\n", checkBri);
     printf("Taylor stars properly identified with GC = %d\n", checkGC);
     printf("Stars from Taylor identified with PPM = %d, GSC-PPM = %d\n", countDist, countGSC);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
@@ -1216,7 +1422,7 @@ void readTaylor() {
 /*
  * readUSNO - lee y cruza catalogo de Yarnall-Frisby
  * (ya se deben haber leidos los catalogs CD, CPD, Weiss y Stone)
- * tambien revisa referencias cruzadas a OA y Lacaille
+ * tambien revisa referencias cruzadas a OA, Lacaille y Brisbane
  */
 void readUSNO() {
     char buffer[1024], cell[256], catName[20], cdName[20];
@@ -1248,6 +1454,7 @@ void readUSNO() {
     int checkTaylor = 0;
     int checkLal = 0;
     int checkOA = 0;
+    int checkBri = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -1266,6 +1473,12 @@ void readUSNO() {
         /* omite la estrella si es una doble */
         readField(buffer, cell, 6, 1);
         if (cell[0] != ' ') continue;
+
+        /* descarta si faltan los segundos de RA o Decl */
+        readField(buffer, cell, 44, 1);
+        if (cell[0] == ' ') continue;
+        readField(buffer, cell, 65, 1);
+        if (cell[0] == ' ') continue;
 
 		/* lee ascension recta B1860.0 */
 		readFieldSanitized(buffer, cell, 40, 2);
@@ -1462,8 +1675,24 @@ void readUSNO() {
                         numRef,
                         numRefCat,
                         dist);
-                    printf("     Register U %d: %s\n", numRef, catLine);    
+                    printf("     Register U %d: %s\n", numRef, catLine);
                 } else checkOA++;
+            }
+        }
+
+        if (!strncmp(cell, "BRI ", 4)) {
+            for (int i = 0; i < countBri; i++) {
+                if (briRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, briX[i], briY[i], briZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: U %d is FAR from B %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        numRef,
+                        numRefCat,
+                        dist);
+                    printf("     Register U %d: %s\n", numRef, catLine);
+                } else checkBri++;
+                break;
             }
         }
 
@@ -1506,8 +1735,8 @@ void readUSNO() {
 	fclose(crossCDStream);
 
     printf("Available USNO stars = %d\n", countUsno);
-    printf("Stars from USNO with Lacaille = %d, Lalande = %d, Taylor = %d and OA = %d\n",
-        checkLac, checkLal, checkTaylor, checkOA);
+    printf("Stars from USNO with Lacaille = %d, Brisbane = %d, Lalande = %d, Taylor = %d and OA = %d\n",
+        checkLac, checkBri, checkLal, checkTaylor, checkOA);
     printf("Stars from USNO identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist, countGSC, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
@@ -1520,7 +1749,7 @@ void readUSNO() {
 
 /*
  * readUA - lee y cruza Uranometria Argentina
- * (ya se deben haber leidos los catalogs CD, CPD, Weiss, Stone y Yarnall)
+ * (ya se deben haber leidos los catalogs CD, CPD, Weiss, Brisbane, Stone y Yarnall)
  * tambien revisa referencias cruzadas; no tiene en cuenta magnitudes
  */
 void readUA() {
@@ -1551,6 +1780,7 @@ void readUA() {
     int checkOA = 0;
     int checkTaylor = 0;
     int checkUSNO = 0;
+    int checkBri = 0;
     int countUA = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -1861,8 +2091,25 @@ void readUA() {
                             catgName,
                             numRefCat,
                             dist);
-                        printf("     Register %s: %s\n", catgName, catLine);    
+                        printf("     Register %s: %s\n", catgName, catLine);
                     } else checkLac++;
+                }
+            }
+
+            if (!strncmp(subcell[refs], "B.", 2)) {
+                int numRefCat = atoi(&subcell[refs][2]);
+                for (int i = 0; i < countBri; i++) {
+                    if (briRef[i] != numRefCat) continue;
+                    double dist = 3600.0 * calcAngularDistance(x, y, z, briX[i], briY[i], briZ[i]);
+                    if (dist > MAX_DIST_CROSS) {
+                        printf("%d) Warning: %s is FAR from B %d (dist = %.1f arcsec).\n",
+                            ++errors,
+                            catgName,
+                            numRefCat,
+                            dist);
+                        printf("     Register %s: %s\n", catgName, catLine);
+                    } else checkBri++;
+                    break;
                 }
             }
 
@@ -1972,8 +2219,8 @@ void readUA() {
 	fclose(crossCDStream);
 
     printf("Available UA stars = %d\n", countUA);
-    printf("Stars from UA with Lacaille = %d, Lalande = %d, Taylor = %d, OA = %d and USNO = %d\n",
-        checkLac, checkLal, checkTaylor, checkOA, checkUSNO);
+    printf("Stars from UA with Lacaille = %d, Brisbane = %d, Lalande = %d, Taylor = %d, OA = %d and USNO = %d\n",
+        checkLac, checkBri, checkLal, checkTaylor, checkOA, checkUSNO);
     printf("Stars from UA identified with PPM = %d, CD = %d and CPD = %d\n", countDist, countCD, countCPD);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
@@ -1983,8 +2230,8 @@ void readUA() {
 
 /*
  * readThome - lee y cruza catalogo de los Resultados 15
- * (ya se deben haber leidos los catalogs CD, CPD, GC, Yarnall y Stone)
- * tambien revisa referencias cruzadas a GC, OA, Yarnall, Lacaille y Stone
+ * (ya se deben haber leidos los catalogs CD, CPD, GC, Yarnall, Brisbane y Stone)
+ * tambien revisa referencias cruzadas a GC, OA, Yarnall, Lacaille, Brisbane y Stone
  * tambien genera identificaciones cruzadas para aquellas estrellas ZC
  */
 void readThome(double epoch, const char *filename, int correction) {
@@ -2014,6 +2261,7 @@ void readThome(double epoch, const char *filename, int correction) {
     int checkStone = 0;
     int checkGC = 0;
     int checkUSNO = 0;
+    int checkBri = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -2263,6 +2511,22 @@ void readThome(double epoch, const char *filename, int correction) {
             }
         }
 
+        if (!strncmp(cell, "B ", 2)) {
+            for (int i = 0; i < countBri; i++) {
+                if (briRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, briX[i], briY[i], briZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: T %.0f %d is FAR from B %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        epoch,
+                        numRef,
+                        numRefCat,
+                        dist);
+                    printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
+                } else checkBri++;
+            }
+        }
+
         if (!strncmp(cell, "Y ", 2)) {
             /* Here, it is different from other cross-identifications.
              * Difference between catalogs Yarnall (USNO 2nd Edition) and Yarnall-Frisby
@@ -2306,8 +2570,8 @@ void readThome(double epoch, const char *filename, int correction) {
     fclose(stream);
 
     printf("Stars from Thome %.0f identified with PPM = %d, CD = %d and CPD = %d\n", epoch, countDist, countCD, countCPD);
-    printf("Stars from Thome %.0f with Lacaille = %d, Lalande = %d, OA = %d, Taylor = %d, Stone = %d, GC = %d and USNO = %d\n",
-        epoch, checkLac, checkLal, checkOA, checkTaylor, checkStone, checkGC, checkUSNO);
+    printf("Stars from Thome %.0f with Lacaille = %d, Lalande = %d, OA = %d, Taylor = %d, Stone = %d, GC = %d, USNO = %d and Brisbane = %d\n",
+        epoch, checkLac, checkLal, checkOA, checkTaylor, checkStone, checkGC, checkUSNO, checkBri);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -2320,7 +2584,7 @@ void readThome(double epoch, const char *filename, int correction) {
 /*
  * readGilliss - lee y cruza catalogo de Gilliss
  * (ya se deben haber leidos los catalogs CD, CPD, GC y Stone)
- * tambien revisa referencias cruzadas a GC, Stone y Lacaille
+ * tambien revisa referencias cruzadas a GC, Stone, Brisbane y Lacaille
  * tambien genera identificaciones cruzadas para aquellas estrellas ZC
  */
 void readGilliss() {
@@ -2354,6 +2618,7 @@ void readGilliss() {
     int checkLac = 0;
     int checkGC = 0;
     int checkStone = 0;
+    int checkBri = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -2618,6 +2883,21 @@ void readGilliss() {
             }
         }
 
+        if (!strncmp(cell, "BRI", 3)) {
+            for (int i = 0; i < countBri; i++) {
+                if (briRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, briX[i], briY[i], briZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: G %d is FAR from B %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        giRef,
+                        numRefCat,
+                        dist);
+                    printf("     Register G %d: %s\n", giRef, catLine);
+                } else checkBri++;
+            }
+        }
+
         if (!strncmp(cell, "GZC", 3)) {
             // save Gould's Zone Catalog
             readField(buffer, cell, 18, 2);
@@ -2647,8 +2927,8 @@ void readGilliss() {
 	fclose(crossCDStream);
 
     printf("Stars from Gilliss identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist, countGSC, countCD, countCPD);
-    printf("Stars from Gilliss with Lacaille = %d, Stone = %d and GC = %d\n",
-        checkLac, checkStone, checkGC);
+    printf("Stars from Gilliss with Lacaille = %d, Stone = %d, GC = %d and Brisbane = %d\n",
+        checkLac, checkStone, checkGC, checkBri);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -2681,6 +2961,9 @@ int main(int argc, char** argv)
 
     /* leemos y cruzamos Lalande (solo contra PPM) */
     readLalande();
+
+    /* leemos y cruzamos Brisbane */
+    readBrisbane();
 
     /* leemos y cruzamos Stone / Lacaille */
     readStone();

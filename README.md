@@ -88,8 +88,9 @@ catalogs (OA and Lacaille):
 | W / OA | Weiss / Oeltzen-Argelander (South) | 1850 | 18010 | 4.66 |
 | WB | Weisse | 1825 | 31079 | 8.82 |
 | St / L | Stone / Lacaille | 1880 | 12414 | 1.48 |
-| U | Yarnall-Frisby USNO 3rd. edition | 1860 | 10676 | 3.41 |
+| U | Yarnall-Frisby USNO 3rd. edition | 1860 | 10495 | 2.71 |
 | G | Gilliss | 1850 | 15792 | 2.87 |
+| B | Brisbane | 1825 | 6403 | 19.99 |
 | BAC | British Association Catalogue | 1850 | 8228 | 11.91 |
 
 ### Wishlist
