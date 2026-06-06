@@ -70,6 +70,8 @@ by the current code:
 - laplatab : La Plata B, epoch 1925.0, declinations -57 to -62
 - laplatac : La Plata C, epoch 1925.0, declinations -62 to -66
 - lacaille : N. L. de Lacaille, T. Henderson, A catalogue of 9766 stars in the southern hemisphere
+- groombridge : S. Groombridge, New reduction of Groombridge's circumpolar catalogue for the epoch 1810
+
 
 ### Original catalogs
 
