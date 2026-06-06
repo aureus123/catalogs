@@ -155,7 +155,7 @@ void writeCatalogFile(FILE *stream, const char *name, double x, double y, double
  * razonables para identificarla con una estrella débil.
  * Devuelve true si no hay una causa razonable para identificarla.   
  */
-void logCauses(char *name,
+void logCauses(char *name, bool durchCoverage,
         bool cumulus, bool nebula,
         int RAs, double Decl, int Decls,
         int ppmRef, double nearestPPMDistance) {
@@ -174,10 +174,10 @@ void logCauses(char *name,
     if (ppmRef != -1) {
         printf("  Note: nearest PPM %d at %.1f arcsec.\n", ppmRef, nearestPPMDistance);
     }
-    if (Decl > -18.0) {
+    if (Decl > -18.0 && durchCoverage) {
         printf("  Note: no CD/CPD coverage for stars below 18°.\n");
     }
-    if (Decl < -61.0) {
+    if (Decl < -61.0 && durchCoverage) {
         printf("  Note: poor CD coverage for stars above 61°.\n");
     }
 }

@@ -154,7 +154,7 @@ void saveZC(int RAh, int RAs, int Decls,
             fprintf(unidentifiedZCStream, "%s,%.8f,%.8f,%.8f\n", zcName, x, y, z);
         } else {
             printf("**) %s is also ALONE.\n", zcName);
-            logCauses(zcName,
+            logCauses(zcName, true,
                 false, false, RAs, -50.0, Decls, -1, 0.0);
         }
     }
@@ -358,7 +358,7 @@ void readGC2() {
 
         if (!ppmFound && !cdFound && !cpdFound && !gscFound) {
             printf("%d) Warning: G2 %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
-            logCauses(catName,
+            logCauses(catName, true,
                 false, false, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
@@ -585,7 +585,7 @@ void readWeiss() {
                     weissRef,
                     oeltzenRef);
                 printf("     Register W %d: %s\n", weissRef, catLine);
-                logCauses(catName,
+                logCauses(catName, true,
                     false, false, RAs, Decl1875, Decls,
                     PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
             }
@@ -743,7 +743,7 @@ void readLalande() {
             printf("%d) Warning: Lal %d is ALONE (no PPM or GSC star near it).\n",
                 ++errors,
                 catRef);
-            logCauses(catName,
+            logCauses(catName, false,
                 false, false, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
@@ -978,7 +978,7 @@ void readStone() {
                     ++errors,
                     stoneRef);
             }
-            logCauses(catName,
+            logCauses(catName, true,
                 false, false, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
@@ -1176,7 +1176,7 @@ void readBrisbane() {
             printf("%d) Warning: B %d is ALONE (no PPM or GSC star near it).\n",
                 ++errors,
                 brisRef);
-            logCauses(catName,
+            logCauses(catName, false,
                 false, false, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
@@ -1334,7 +1334,7 @@ void readTaylor() {
             printf("%d) Warning: T %d is ALONE (no PPM or GSC star near it).\n",
                 ++errors,
                 taylorRef);
-            logCauses(catName,
+            logCauses(catName, false,
                 false, false, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
@@ -1704,7 +1704,7 @@ void readUSNO() {
                     ++errors,
                     numRef);
                 printf("     Register U %d: %s\n", numRef, catLine);
-                logCauses(catName,
+                logCauses(catName, true,
                     false, false, RAs, Decl1875, Decls,
                     PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
             }
@@ -2200,7 +2200,7 @@ void readUA() {
             readField(buffer, cell, 132, 3);
             bool cumulus = !strncmp(cell, "cum", 3);
             bool nebula = !strncmp(cell, "neb", 3);
-            logCauses(catName,
+            logCauses(catName, true,
                 cumulus, nebula, RAs, Decl, 1,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
@@ -2405,7 +2405,7 @@ void readThome(double epoch, const char *filename, int correction) {
                 epoch,
                 numRef);
             printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
-            logCauses(catName,
+            logCauses(catName, true,
                 false, false, RAs, Decl1875, Decls,
                 PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
         }
@@ -2827,7 +2827,7 @@ void readGilliss() {
                     ++errors,
                     giRef);
                 printf("     Register G %d: %s\n", giRef, catLine);
-                logCauses(catName,
+                logCauses(catName, true,
                     false, false, RAs, Decl1875, Decls,
                     PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
             }

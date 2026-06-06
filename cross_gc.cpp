@@ -213,7 +213,7 @@ int main(int argc, char** argv)
             } else {
                 printf("%d) Warning: GC %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
                 writeRegisterGC(gcIndex);
-                logCauses(catName,
+                logCauses(catName, true,
                     GCstar[gcIndex].cum, GCstar[gcIndex].neb,
                     GCstar[gcIndex].RAs, decl, GCstar[gcIndex].Decls,
                     PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
