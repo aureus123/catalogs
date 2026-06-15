@@ -82,11 +82,11 @@ Some catalogs in this folder were sanitized (i.e. those with the "†") but thei
 - ua : 53 registers
 - gc : 3 registers
 - weiss : 3 registers
-- gilliss : 22 registers
+- gilliss : 28 registers
 - usno : 15 registers
 - corda : 3 registers
 - cordc : 7 registers
-- stone1: 1 register
+- stone1: 2 register
 - thome1881: 4 registers
 - thome1882: 1 register
 - thome1884: 2 registers

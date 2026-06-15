@@ -809,7 +809,7 @@ Stars read from PPM: 468861
 40) Warning: T 10524 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 63350 at 368.7 arcsec.
 Available Taylor stars = 10990
-Taylor stars properly identified with Lacaille = 2810
+Taylor stars properly identified with Lacaille = 2811
 Taylor stars properly identified with Brisbane = 816
 Taylor stars properly identified with GC = 21
 Stars from Taylor identified with PPM = 10944, GSC-PPM = 6
@@ -1070,7 +1070,7 @@ Stars read from PPM: 468861
   Note: nearest PPM 174137 at 119.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 Available USNO stars = 10716
-Stars from USNO with Lacaille = 1399, Brisbane = 9, Lalande = 564, Taylor = 8 and OA = 1198
+Stars from USNO with Lacaille = 1400, Brisbane = 9, Lalande = 564, Taylor = 8 and OA = 1198
 Stars from USNO identified with PPM = 10495, GSC-PPM = 172, CD = 4226 and CPD = 4603
 RSME of distance (arcsec) = 2.71  among a total of 10495 stars
 RSME of visual magnitude = 0.64630  among a total of 5401 stars
@@ -2049,305 +2049,291 @@ Stars read from PPM: 468861
      Register G 6469: 09h 41m 52s44 -66°05'59"9
 134) Warning: G 6493 (vmag = 9.5) has a near CD with dif. magnitude (delta = 6.2). Check dpl.
      Register CD -64°412 (en 9h):  3.3 | 43m56.0s | 30.0'     (pag. 40)
-135) Warning: G 6538 is FAR from GC 13472 (dist = 16670.2 arcsec). Check if it is a 1/2 star in GC.
-     Register G 6538: 09h 46m 28s55 -69°22'28"3
-136) Warning: G 6590 reports -5.772 on precession RA but it should be -5.662 (diff=0.110).
+135) Warning: G 6590 reports -5.772 on precession RA but it should be -5.662 (diff=0.110).
      Register G 6590: 09h 50m 41s34 -85°19'10"7
-137) Warning: G 6600 reports -2.116 on precession RA but it should be -1.934 (diff=0.182).
+136) Warning: G 6600 reports -2.116 on precession RA but it should be -1.934 (diff=0.182).
      Register G 6600: 09h 56m 34s03 -82°11'57"7
-138) Warning: G 6600 reports -16.99 on precession DECL but it should be -17.22 (diff=0.23).
+137) Warning: G 6600 reports -16.99 on precession DECL but it should be -17.22 (diff=0.23).
      Register G 6600: 09h 56m 34s03 -82°11'57"7
-139) Warning: G 6602 (vmag = 10.0) has a near PPM 357650 star (vmag = 6.8) with a different magnitude (delta = 3.2).
-140) Warning: G 6602 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
+138) Warning: G 6602 (vmag = 10.0) has a near PPM 357650 star (vmag = 6.8) with a different magnitude (delta = 3.2).
+139) Warning: G 6602 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
      Register CD -68°702 (en 9h):  6.8 | 52m30.0s | 36.0'     (pag. 153)
-141) Warning: G 6637 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+140) Warning: G 6637 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -62°427 (en 9h):  8.0 | 55m29.0s | 45.2'     (pag. 4)
-142) Warning: G 6873 (vmag = 11.0) has a near PPM 357897 star (vmag = 7.9) with a different magnitude (delta = 3.1).
-143) Warning: G 6873 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+141) Warning: G 6873 (vmag = 11.0) has a near PPM 357897 star (vmag = 7.9) with a different magnitude (delta = 3.1).
+142) Warning: G 6873 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -65°905 (en 10h):  8.0 | 13m32.0s | 58.0'     (pag. 62)
-144) Warning: G 6902 (vmag = 9.0) has a near PPM 357917 star (vmag = 5.8) with a different magnitude (delta = 3.2).
-145) Warning: G 6904 (vmag = 9.0) has a near PPM 357917 star (vmag = 5.8) with a different magnitude (delta = 3.2).
-146) Warning: G 6973 reports 1.958 on precession RA but it should be 1.885 (diff=0.073).
+143) Warning: G 6902 (vmag = 9.0) has a near PPM 357917 star (vmag = 5.8) with a different magnitude (delta = 3.2).
+144) Warning: G 6904 (vmag = 9.0) has a near PPM 357917 star (vmag = 5.8) with a different magnitude (delta = 3.2).
+145) Warning: G 6973 reports 1.958 on precession RA but it should be 1.885 (diff=0.073).
      Register G 6973: 10h 19m 39s48 -64°28'06"3
-147) Warning: G 6992 is FAR from L 4311 (dist = 958.5 arcsec).
+146) Warning: G 6992 is FAR from L 4311 (dist = 958.5 arcsec).
      Register G 6992: 10h 21m 13s32 -62°32'08"9
-148) Warning: G 7024 is FAR from L 4335 (dist = 112858.3 arcsec).
-     Register G 7024: 10h 23m 28s70 -72°24'14"8
-149) Warning: G 7159 reports 1.405 on precession RA but it should be 1.366 (diff=0.039).
+147) Warning: G 7159 reports 1.405 on precession RA but it should be 1.366 (diff=0.039).
      Register G 7159: 10h 32m 04s27 -73°38'38"0
-150) Warning: G 7178 is ALONE (no PPM / CD / CPD / GSC star near it).
+148) Warning: G 7178 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 7178: 10h 32m 42s19 -77°08'59"9
   Note: nearest PPM 370796 at 424.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-151) Warning: G 7230 reports -2.101 on precession RA but it should be 2.101 (diff=4.202).
+149) Warning: G 7230 reports -2.101 on precession RA but it should be 2.101 (diff=4.202).
      Register G 7230: 10h 35m 49s58 -63°41'29"4
-152) Warning: G 7259 (vmag = 9.0) has a near CD with dif. magnitude (delta = 6.0). Check dpl.
+150) Warning: G 7259 (vmag = 9.0) has a near CD with dif. magnitude (delta = 6.0). Check dpl.
      Register CD -63°580 (en 10h):  3.0 | 38m28.0s | 44.4'     (pag. 23)
-153) Warning: G 7291 (vmag = 1.0) has a near CD with dif. magnitude (delta = 7.2). Check dpl.
+151) Warning: G 7291 (vmag = 1.0) has a near CD with dif. magnitude (delta = 7.2). Check dpl.
      Register CD -59°3306 (en 10h):  8.2 | 40m13.3s | 2.0'     (pag. 236)
-154) Warning: G 7401 reports 1.375 on precession RA but it should be 1.336 (diff=0.039).
+152) Warning: G 7401 reports 1.375 on precession RA but it should be 1.336 (diff=0.039).
      Register G 7401: 10h 46m 16s96 -76°18'53"0
-155) Warning: G 7470 (vmag = 9.6) has a near PPM 358361 star (vmag = 6.5) with a different magnitude (delta = 3.1).
-156) Warning: G 7517 is ALONE (no PPM / CD / CPD / GSC star near it).
+153) Warning: G 7470 (vmag = 9.6) has a near PPM 358361 star (vmag = 6.5) with a different magnitude (delta = 3.1).
+154) Warning: G 7517 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 7517: 10h 56m 22s17 -63°30'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 358418 at 155.5 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) ZC 10h 4150 is also ALONE.
   Possible cause: lack of Decl (s).
-157) Warning: G 7596 is FAR from L 4618 (dist = 1246.1 arcsec).
+155) Warning: G 7596 is FAR from L 4618 (dist = 1246.1 arcsec).
      Register G 7596: 11h 00m 54s90 -67°06'50"6
-158) Warning: G 7693 reports 1.358 on precession RA but it should be 1.492 (diff=0.134).
+156) Warning: G 7693 reports 1.358 on precession RA but it should be 1.492 (diff=0.134).
      Register G 7693: 11h 09m 49s32 -79°35'01"3
-159) Warning: G 7765 reports 2.451 on precession RA but it should be 2.410 (diff=0.041).
+157) Warning: G 7765 reports 2.451 on precession RA but it should be 2.410 (diff=0.041).
      Register G 7765: 11h 11m 49s37 -67°08'12"0
-160) Warning: G 8169 is ALONE (no PPM / CD / CPD / GSC star near it).
+158) Warning: G 8169 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8169: 11h 43m 34s69 -69°21'00"9
   Note: nearest PPM 371278 at 131.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-161) Warning: G 8179 (vmag = 11.0) has a near PPM 359020 star (vmag = 7.1) with a different magnitude (delta = 3.9).
-162) Warning: G 8179 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
+159) Warning: G 8179 (vmag = 11.0) has a near PPM 359020 star (vmag = 7.1) with a different magnitude (delta = 3.9).
+160) Warning: G 8179 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
      Register CD -63°675 (en 11h):  7.8 | 45m40.0s | 54.2'     (pag. 24)
-163) Warning: G 8254 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+161) Warning: G 8254 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -70°899 (en 11h):  9.7 | 51m36.0s | 40.5'     (pag. 207)
-164) Warning: G 8311 (vmag = 11.0) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
+162) Warning: G 8311 (vmag = 11.0) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
      Register CD -72°766 (en 11h):  6.9 | 55m30.0s | 36.0'     (pag. 248)
-165) Warning: G 8323 reports 2.903 on precession RA but it should be 3.003 (diff=0.100).
+163) Warning: G 8323 reports 2.903 on precession RA but it should be 3.003 (diff=0.100).
      Register G 8323: 11h 54m 45s93 -66°03'13"7
-166) Warning: G 8395 (vmag = 9.5) has a near PPM 359192 star (vmag = 5.6) with a different magnitude (delta = 3.9).
-167) Warning: G 8425 (vmag = 13.0) has a near PPM 371390 star (vmag = 9.8) with a different magnitude (delta = 3.2).
-168) Warning: G 8425 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.8). Check dpl.
+164) Warning: G 8395 (vmag = 9.5) has a near PPM 359192 star (vmag = 5.6) with a different magnitude (delta = 3.9).
+165) Warning: G 8425 (vmag = 13.0) has a near PPM 371390 star (vmag = 9.8) with a different magnitude (delta = 3.2).
+166) Warning: G 8425 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.8). Check dpl.
      Register CD -75°571 (en 12h):  9.2 | 2m9.0s | 47.5'     (pag. 304)
-169) Warning: G 8574 reports 3.721 on precession RA but it should be 3.769 (diff=0.048).
+167) Warning: G 8574 reports 3.721 on precession RA but it should be 3.769 (diff=0.048).
      Register G 8574: 12h 14m 17s58 -83°11'17"4
-170) Warning: G 8651 is ALONE (no PPM / CD / CPD / GSC star near it).
+168) Warning: G 8651 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8651: 12h 22m 01s44 -72°12'18"5
   Note: nearest PPM 371533 at 201.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-171) Warning: G 8733 is ALONE (no PPM / CD / CPD / GSC star near it).
+169) Warning: G 8733 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8733: 12h 29m 10s94 -66°08'07"3
   Note: nearest PPM 779086 at 171.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-172) Warning: G 8753 is ALONE (no PPM / CD / CPD / GSC star near it).
+170) Warning: G 8753 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8753: 12h 30m 20s07 -72°32'58"5
   Note: nearest PPM 371595 at 120.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-173) Warning: G 8874 (vmag = 11.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
+171) Warning: G 8874 (vmag = 11.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
      Register CD -84°127 (en 12h):  5.5 | 42m5.0s | 26.6'     (pag. 392)
-174) Warning: G 8876 is ALONE (no PPM / CD / CPD / GSC star near it).
+172) Warning: G 8876 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8876: 12h 40m 41s65 -86°38'36"0
   Note: nearest PPM 377536 at 208.9 arcsec.
   Note: poor CD coverage for stars above 61°.
-175) Warning: G 8894 is ALONE (no PPM / CD / CPD / GSC star near it).
+173) Warning: G 8894 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8894: 12h 42m 15s51 -73°34'10"3
   Note: nearest PPM 371660 at 333.7 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) ZC 12h 2622 is also ALONE.
-176) Warning: G 8945 (vmag = 0.2) has a near PPM 779216 star (vmag = 9.1) with a different magnitude (delta = 8.9).
-177) Warning: G 8945 (vmag = 0.2) has a near CD with dif. magnitude (delta = 8.8). Check dpl.
+174) Warning: G 8945 (vmag = 0.2) has a near PPM 779216 star (vmag = 9.1) with a different magnitude (delta = 8.9).
+175) Warning: G 8945 (vmag = 0.2) has a near CD with dif. magnitude (delta = 8.8). Check dpl.
      Register CD -66°1318 (en 12h):  9.0 | 48m23.0s | 51.5'     (pag. 100)
-178) Warning: G 9003 is ALONE (no PPM / CD / CPD / GSC star near it).
+176) Warning: G 9003 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 9003: 12h 51m 19s37 -76°22'37"4
   Note: nearest PPM 371734 at 595.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-179) Warning: G 9016 reports -19.54 on precession DECL but it should be -19.44 (diff=0.10).
+177) Warning: G 9016 reports -19.54 on precession DECL but it should be -19.44 (diff=0.10).
      Register G 9016: 12h 57m 10s62 -88°00'55"1
-180) Warning: G 9034 is FAR from GC 17759 (dist = 10502.7 arcsec). Check if it is a 1/2 star in GC.
-     Register G 9034: 12h 53m 48s62 -71°42'15"3
-181) Warning: G 9073 is ALONE (no PPM / CD / CPD / GSC star near it).
+178) Warning: G 9073 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 9073: 12h 56m 40s36 -66°18'50"5
   Note: nearest PPM 779283 at 280.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-182) Warning: G 9123 is FAR from B 4342 (dist = 80.7 arcsec).
+179) Warning: G 9123 is FAR from B 4342 (dist = 80.7 arcsec).
      Register G 9123: 13h 01m 37s87 -68°07'01"2
-183) Warning: G 9254 reports 5.516 on precession RA but it should be 5.460 (diff=0.056).
+180) Warning: G 9254 reports 5.516 on precession RA but it should be 5.460 (diff=0.056).
      Register G 9254: 13h 11m 07s97 -80°17'47"4
-184) Warning: G 9308 reports 5.335 on precession RA but it should be 15.327 (diff=9.992).
+181) Warning: G 9308 reports 5.335 on precession RA but it should be 15.327 (diff=9.992).
      Register G 9308: 13h 14m 52s61 -87°59'40"8
-185) Warning: G 9382 is FAR from GC 18389 (dist = 140960.9 arcsec). Check if it is a 1/2 star in GC.
-     Register G 9382: 13h 21m 07s86 -79°57'52"8
-186) Warning: G 9409 is FAR from B 4505 (dist = 67.9 arcsec).
+182) Warning: G 9409 is FAR from B 4505 (dist = 67.9 arcsec).
      Register G 9409: 13h 23m 10s58 -65°57'30"0
-187) Warning: G 9577 reports 8.092 on precession RA but it should be 8.126 (diff=0.034).
+183) Warning: G 9577 reports 8.092 on precession RA but it should be 8.126 (diff=0.034).
      Register G 9577: 13h 37m 58s03 -83°44'30"5
-188) Warning: G 9591 is ALONE (no PPM / CD / CPD / GSC star near it).
+184) Warning: G 9591 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 9591: 13h 38m 25s98 -71°27'21"9
   Note: nearest PPM 786091 at 107.9 arcsec.
   Note: poor CD coverage for stars above 61°.
-189) Warning: G 9686 reports 5.284 on precession RA but it should be 5.336 (diff=0.052).
+185) Warning: G 9686 reports 5.284 on precession RA but it should be 5.336 (diff=0.052).
      Register G 9686: 13h 45m 43s79 -75°16'14"9
-190) Warning: G 10011 is ALONE (no PPM / CD / CPD / GSC star near it).
+186) Warning: G 10011 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 10011: 14h 11m 12s83 -70°16'30"4
   Note: nearest PPM 786253 at 191.8 arcsec.
   Note: poor CD coverage for stars above 61°.
-191) Warning: G 10239 is FAR from GC 18798 (dist = 74907.3 arcsec). Check if it is a 1/2 star in GC.
-     Register G 10239: 14h 27m 30s39 -77°05'09"4
-192) Warning: G 10274 reports 5.008 on precession RA but it should be 4.964 (diff=0.044).
+187) Warning: G 10274 reports 5.008 on precession RA but it should be 4.964 (diff=0.044).
      Register G 10274: 14h 29m 24s20 -66°47'44"6
-193) Warning: G 10368 is FAR from L 6009 (dist = 579.8 arcsec).
-     Register G 10368: 14h 36m 03s50 -82°36'40"2
-194) Warning: G 10434 reports 16.098 on precession RA but it should be 16.068 (diff=0.030).
+188) Warning: G 10434 reports 16.098 on precession RA but it should be 16.068 (diff=0.030).
      Register G 10434: 14h 40m 18s10 -86°12'37"8
-195) Warning: G 10549 (vmag = 10.5) has a near PPM 361143 star (vmag = 7.2) with a different magnitude (delta = 3.3).
-196) Warning: G 10549 (vmag = 10.5) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
+189) Warning: G 10549 (vmag = 10.5) has a near PPM 361143 star (vmag = 7.2) with a different magnitude (delta = 3.3).
+190) Warning: G 10549 (vmag = 10.5) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
      Register CD -67°1670 (en 14h):  7.3 | 50m10.0s | 29.0'     (pag. 134)
-197) Warning: G 10595 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.0). Check dpl.
+191) Warning: G 10595 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.0). Check dpl.
      Register CD -86°98 (en 15h):  8.0 | 0m34.0s | 49.6'     (pag. 397)
-198) Warning: G 10775 (vmag = 15.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
+192) Warning: G 10775 (vmag = 15.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
      Register CD -75°788 (en 15h):  9.5 | 5m37.0s | 50.0'     (pag. 306)
-199) Warning: G 10829 reports 15.682 on precession RA but it should be 15.635 (diff=0.047).
+193) Warning: G 10829 reports 15.682 on precession RA but it should be 15.635 (diff=0.047).
      Register G 10829: 15h 06m 45s31 -85°34'18"1
-200) Warning: G 10835 reports -13.74 on precession DECL but it should be -13.61 (diff=0.13).
+194) Warning: G 10835 reports -13.74 on precession DECL but it should be -13.61 (diff=0.13).
      Register G 10835: 15h 09m 02s32 -66°39'27"5
-201) Warning: G 10975 (vmag = 0.9) has a near CD with dif. magnitude (delta = 9.1). Check dpl.
+195) Warning: G 10975 (vmag = 0.9) has a near CD with dif. magnitude (delta = 9.1). Check dpl.
      Register CD -67°1765 (en 15h):  10.0 | 19m11.0s | 49.5'     (pag. 136)
-202) Warning: G 11020 reports 7.748 on precession RA but it should be 7.648 (diff=0.100).
+196) Warning: G 11020 reports 7.748 on precession RA but it should be 7.648 (diff=0.100).
      Register G 11020: 15h 19m 35s07 -77°24'09"1
-203) Warning: G 11025 is FAR from L 6371 (dist = 432.7 arcsec).
+197) Warning: G 11025 is FAR from L 6371 (dist = 432.7 arcsec).
      Register G 11025: 15h 19m 41s34 -66°49'13"1
-204) Warning: G 11035 reports 6.727 on precession RA but it should be 6.627 (diff=0.100).
+198) Warning: G 11035 reports 6.727 on precession RA but it should be 6.627 (diff=0.100).
      Register G 11035: 15h 20m 15s05 -73°54'56"2
-205) Warning: G 11061 is FAR from B 5364 (dist = 205.8 arcsec).
+199) Warning: G 11061 is FAR from B 5364 (dist = 205.8 arcsec).
      Register G 11061: 15h 22m 46s12 -73°55'21"9
-206) Warning: G 11113 reports 76.717 on precession RA but it should be 76.516 (diff=0.201).
+200) Warning: G 11113 reports 76.717 on precession RA but it should be 76.516 (diff=0.201).
      Register G 11113: 15h 26m 03s32 -89°11'00"8
-207) Warning: G 11324 reports 17.130 on precession RA but it should be 17.162 (diff=0.032).
+201) Warning: G 11324 reports 17.130 on precession RA but it should be 17.162 (diff=0.032).
      Register G 11324: 15h 41m 40s96 -85°31'57"2
-208) Warning: G 11456 reports 28.776 on precession RA but it should be 28.867 (diff=0.091).
+202) Warning: G 11456 reports 28.776 on precession RA but it should be 28.867 (diff=0.091).
      Register G 11456: 15h 51m 20s58 -87°29'14"8
-209) Warning: G 11713 reports 5.991 on precession RA but it should be 6.042 (diff=0.051).
+203) Warning: G 11713 reports 5.991 on precession RA but it should be 6.042 (diff=0.051).
      Register G 11713: 16h 09m 31s03 -68°15'28"2
-210) Warning: G 11986 is ALONE (no PPM / CD / CPD / GSC star near it).
+204) Warning: G 11986 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 11986: 16h 31m 14s02 -69°38'53"2
   Note: nearest PPM 362315 at 58.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-211) Warning: G 12050 reports 24.046 on precession RA but it should be 23.946 (diff=0.100).
+205) Warning: G 12050 reports 24.046 on precession RA but it should be 23.946 (diff=0.100).
      Register G 12050: 16h 35m 53s87 -86°34'42"2
-212) Warning: G 12285 reports 9.031 on precession RA but it should be 9.062 (diff=0.031).
+206) Warning: G 12285 reports 9.031 on precession RA but it should be 9.062 (diff=0.031).
      Register G 12285: 16h 56m 48s53 -77°52'37"6
-213) Warning: G 12285 reports -5.80 on precession DECL but it should be -5.46 (diff=0.34).
+207) Warning: G 12285 reports -5.80 on precession DECL but it should be -5.46 (diff=0.34).
      Register G 12285: 16h 56m 48s53 -77°52'37"6
-214) Warning: G 12378 reports 6.991 on precession RA but it should be 7.034 (diff=0.043).
+208) Warning: G 12378 reports 6.991 on precession RA but it should be 7.034 (diff=0.043).
      Register G 12378: 17h 09m 24s28 -71°46'25"3
-215) Warning: G 12378 reports -5.24 on precession DECL but it should be -4.39 (diff=0.85).
+209) Warning: G 12378 reports -5.24 on precession DECL but it should be -4.39 (diff=0.85).
      Register G 12378: 17h 09m 24s28 -71°46'25"3
-216) Warning: G 12380 reports 6.219 on precession RA but it should be 6.119 (diff=0.100).
+210) Warning: G 12380 reports 6.219 on precession RA but it should be 6.119 (diff=0.100).
      Register G 12380: 16h 59m 36s11 -67°02'33"2
-217) Warning: G 12403 is ALONE (no PPM / CD / CPD / GSC star near it).
+211) Warning: G 12403 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 12403: 17h 01m 30s93 -75°51'56"2
   Note: nearest PPM 787075 at 113.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-218) Warning: G 12557 reports 10.907 on precession RA but it should be 10.943 (diff=0.036).
+212) Warning: G 12557 reports 10.907 on precession RA but it should be 10.943 (diff=0.036).
      Register G 12557: 17h 14m 22s28 -80°32'45"3
-219) Warning: G 12611 is FAR from L 7361 (dist = 15758.3 arcsec).
+213) Warning: G 12611 is FAR from L 7361 (dist = 15758.3 arcsec).
      Register G 12611: 17h 18m 45s44 -73°32'07"2
-220) Warning: G 12658 reports 18.215 on precession RA but it should be 18.251 (diff=0.036).
+214) Warning: G 12658 reports 18.215 on precession RA but it should be 18.251 (diff=0.036).
      Register G 12658: 17h 22m 35s06 -85°01'56"7
-221) Warning: G 12663 reports 5.913 on precession RA but it should be 6.047 (diff=0.134).
+215) Warning: G 12663 reports 5.913 on precession RA but it should be 6.047 (diff=0.134).
      Register G 12663: 17h 23m 01s65 -66°04'48"3
-222) Warning: G 12881 reports -1.62 on precession DECL but it should be -1.45 (diff=0.17).
+216) Warning: G 12881 reports -1.62 on precession DECL but it should be -1.45 (diff=0.17).
      Register G 12881: 17h 43m 26s61 -75°06'00"3
-223) Warning: G 12995 reports 23.634 on precession RA but it should be 23.541 (diff=0.093).
+217) Warning: G 12995 reports 23.634 on precession RA but it should be 23.541 (diff=0.093).
      Register G 12995: 17h 50m 40s03 -86°15'56"6
-224) Warning: G 13019 reports 11.843 on precession RA but it should be 13.005 (diff=1.162).
+218) Warning: G 13019 reports 11.843 on precession RA but it should be 13.005 (diff=1.162).
      Register G 13019: 17h 52m 53s42 -82°20'13"6
-225) Warning: G 13031 reports -0.58 on precession DECL but it should be -0.76 (diff=0.18).
+219) Warning: G 13031 reports -0.58 on precession DECL but it should be -0.76 (diff=0.18).
      Register G 13031: 17h 51m 19s63 -79°54'41"2
-226) Warning: G 13222 reports 10.467 on precession RA but it should be 10.433 (diff=0.034).
+220) Warning: G 13222 reports 10.467 on precession RA but it should be 10.433 (diff=0.034).
      Register G 13222: 18h 11m 08s40 -79°43'00"9
-227) Warning: G 13449 is FAR from B 6457 (dist = 228.0 arcsec).
+221) Warning: G 13449 is FAR from B 6457 (dist = 228.0 arcsec).
      Register G 13449: 18h 32m 06s44 -73°03'05"3
-228) Warning: G 13501 reports 26.108 on precession RA but it should be 26.208 (diff=0.100).
+222) Warning: G 13501 reports 26.108 on precession RA but it should be 26.208 (diff=0.100).
      Register G 13501: 18h 36m 44s16 -86°44'05"2
-229) Warning: G 13507 reports 9.809 on precession RA but it should be 9.841 (diff=0.032).
+223) Warning: G 13507 reports 9.809 on precession RA but it should be 9.841 (diff=0.032).
      Register G 13507: 18h 37m 30s53 -78°58'18"2
-230) Warning: G 13514 reports 3.08 on precession DECL but it should be 3.34 (diff=0.26).
+224) Warning: G 13514 reports 3.08 on precession DECL but it should be 3.34 (diff=0.26).
      Register G 13514: 18h 38m 19s24 -65°50'46"7
-231) Warning: G 13514 is ALONE (no PPM / CD / CPD / GSC star near it).
+225) Warning: G 13514 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 13514: 18h 38m 19s24 -65°50'46"7
   Note: nearest PPM 782218 at 789.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-232) Warning: G 13549 is FAR from B 6504 (dist = 63.9 arcsec).
+226) Warning: G 13549 is FAR from B 6504 (dist = 63.9 arcsec).
      Register G 13549: 18h 42m 33s25 -76°18'10"2
-233) Warning: G 13842 is FAR from L 8036 (dist = 116.8 arcsec).
+227) Warning: G 13842 is FAR from L 8036 (dist = 116.8 arcsec).
      Register G 13842: 19h 09m 34s91 -71°44'42"6
-234) Warning: G 13851 reports 7.140 on precession RA but it should be 7.192 (diff=0.052).
+228) Warning: G 13851 reports 7.140 on precession RA but it should be 7.192 (diff=0.052).
      Register G 13851: 19h 00m 03s51 -72°35'48"8
-235) Warning: G 13851 reports 6.04 on precession DECL but it should be 5.20 (diff=0.84).
+229) Warning: G 13851 reports 6.04 on precession DECL but it should be 5.20 (diff=0.84).
      Register G 13851: 19h 00m 03s51 -72°35'48"8
-236) Warning: G 13861 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+230) Warning: G 13861 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -76°998 (en 19h):  9.5 | 14m12.0s | 54.0'     (pag. 324)
-237) Warning: G 13917 reports 16.680 on precession RA but it should be 16.723 (diff=0.043).
+231) Warning: G 13917 reports 16.680 on precession RA but it should be 16.723 (diff=0.043).
      Register G 13917: 19h 14m 47s54 -84°41'58"2
-238) Warning: G 14154 is FAR from L 8171 (dist = 2624.0 arcsec).
-     Register G 14154: 19h 35m 59s47 -72°50'30"2
-239) Warning: G 14173 is ALONE (no PPM / CD / CPD / GSC star near it).
+232) Warning: G 14173 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 14173: 19h 37m 30s44 -78°03'11"0
   Note: nearest PPM 374438 at 28.3 arcsec.
   Note: poor CD coverage for stars above 61°.
-240) Warning: G 14288 reports 24.073 on precession RA but it should be 24.303 (diff=0.230).
+233) Warning: G 14288 reports 24.073 on precession RA but it should be 24.303 (diff=0.230).
      Register G 14288: 19h 43m 24s00 -86°45'22"0
-241) Warning: G 14288 reports 9.14 on precession DECL but it should be 8.74 (diff=0.40).
+234) Warning: G 14288 reports 9.14 on precession DECL but it should be 8.74 (diff=0.40).
      Register G 14288: 19h 43m 24s00 -86°45'22"0
-242) Warning: G 14333 (vmag = 12.0) has a near PPM 374506 star (vmag = 7.6) with a different magnitude (delta = 4.4).
-243) Warning: G 14333 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.2). Check dpl.
+235) Warning: G 14333 (vmag = 12.0) has a near PPM 374506 star (vmag = 7.6) with a different magnitude (delta = 4.4).
+236) Warning: G 14333 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.2). Check dpl.
      Register CD -71°1601 (en 19h):  7.8 | 54m33.0s | 10.0'     (pag. 237)
-244) Warning: G 14702 is FAR from L 8467 (dist = 1103.6 arcsec).
+237) Warning: G 14702 is FAR from L 8467 (dist = 1103.6 arcsec).
      Register G 14702: 20h 25m 55s55 -70°16'48"4
-245) Warning: G 14840 reports 16.224 on precession RA but it should be 17.011 (diff=0.787).
+238) Warning: G 14840 reports 16.224 on precession RA but it should be 17.011 (diff=0.787).
      Register G 14840: 20h 23m 49s80 -85°33'36"2
-246) Warning: G 14840 reports 12.95 on precession DECL but it should be 11.78 (diff=1.17).
+239) Warning: G 14840 reports 12.95 on precession DECL but it should be 11.78 (diff=1.17).
      Register G 14840: 20h 23m 49s80 -85°33'36"2
-247) Warning: G 14880 reports 12.542 on precession RA but it should be 12.506 (diff=0.036).
+240) Warning: G 14880 reports 12.542 on precession RA but it should be 12.506 (diff=0.036).
      Register G 14880: 20h 45m 19s06 -83°55'30"0
-248) Warning: G 15028 reports 8.320 on precession RA but it should be 8.251 (diff=0.069).
+241) Warning: G 15028 reports 8.320 on precession RA but it should be 8.251 (diff=0.069).
      Register G 15028: 21h 03m 04s96 -79°47'30"3
-249) Warning: G 15028 reports 14.19 on precession DECL but it should be 14.37 (diff=0.18).
+242) Warning: G 15028 reports 14.19 on precession DECL but it should be 14.37 (diff=0.18).
      Register G 15028: 21h 03m 04s96 -79°47'30"3
-250) Warning: G 15055 is FAR from L 8696 (dist = 1000.4 arcsec).
+243) Warning: G 15055 is FAR from L 8696 (dist = 1000.4 arcsec).
      Register G 15055: 21h 03m 13s54 -73°38'40"9
-251) Warning: G 15291 (vmag = 9.0) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 4.0).
-252) Warning: G 15291 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.6). Check dpl.
+244) Warning: G 15291 (vmag = 9.0) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 4.0).
+245) Warning: G 15291 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.6). Check dpl.
      Register CD -83°276 (en 21h):  5.4 | 31m30.0s | 17.4'     (pag. 390)
-253) Warning: G 15853 reports 8.496 on precession RA but it should be 8.549 (diff=0.053).
+246) Warning: G 15853 reports 8.496 on precession RA but it should be 8.549 (diff=0.053).
      Register G 15853: 22h 22m 24s45 -84°14'30"4
-254) Warning: G 15874 reports 8.597 on precession RA but it should be 8.725 (diff=0.128).
+247) Warning: G 15874 reports 8.597 on precession RA but it should be 8.725 (diff=0.128).
      Register G 15874: 22h 25m 47s16 -84°36'03"6
-255) Warning: G 16000 reports 4.449 on precession RA but it should be 4.409 (diff=0.040).
+248) Warning: G 16000 reports 4.449 on precession RA but it should be 4.409 (diff=0.040).
      Register G 16000: 22h 39m 07s38 -70°56'27"8
-256) Warning: G 16121 reports 3.860 on precession RA but it should be 3.936 (diff=0.076).
+249) Warning: G 16121 reports 3.860 on precession RA but it should be 3.936 (diff=0.076).
      Register G 16121: 22h 52m 32s60 -65°50'07"5
-257) Warning: G 16225 reports 3.859 on precession RA but it should be 3.959 (diff=0.100).
+250) Warning: G 16225 reports 3.859 on precession RA but it should be 3.959 (diff=0.100).
      Register G 16225: 23h 03m 18s00 -69°44'14"8
-258) Warning: G 16289 reports 6.893 on precession RA but it should be 6.806 (diff=0.087).
+251) Warning: G 16289 reports 6.893 on precession RA but it should be 6.806 (diff=0.087).
      Register G 16289: 23h 08m 32s05 -85°26'28"0
-259) Warning: G 16311 reports 4.206 on precession RA but it should be 4.106 (diff=0.100).
+252) Warning: G 16311 reports 4.206 on precession RA but it should be 4.106 (diff=0.100).
      Register G 16311: 23h 12m 05s74 -74°59'13"3
-260) Warning: G 16350 reports 4.124 on precession RA but it should be 4.212 (diff=0.088).
+253) Warning: G 16350 reports 4.124 on precession RA but it should be 4.212 (diff=0.088).
      Register G 16350: 23h 16m 50s25 -77°36'52"2
-261) Warning: G 16474 reports 4.081 on precession RA but it should be 4.170 (diff=0.089).
+254) Warning: G 16474 reports 4.081 on precession RA but it should be 4.170 (diff=0.089).
      Register G 16474: 23h 31m 23s72 -81°22'51"3
-262) Warning: G 16487 reports 4.663 on precession RA but it should be 4.592 (diff=0.071).
+255) Warning: G 16487 reports 4.663 on precession RA but it should be 4.592 (diff=0.071).
      Register G 16487: 23h 32m 23s23 -83°57'55"2
-263) Warning: G 16491 reports 3.880 on precession RA but it should be 3.912 (diff=0.032).
+256) Warning: G 16491 reports 3.880 on precession RA but it should be 3.912 (diff=0.032).
      Register G 16491: 23h 31m 55s90 -78°59'48"1
-264) Warning: G 16497 is ALONE (no PPM / CD / CPD / GSC star near it).
+257) Warning: G 16497 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 16497: 23h 33m 54s89 -85°24'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 789670 at 74.9 arcsec.
   Note: poor CD coverage for stars above 61°.
-265) Warning: G 16580 reports 5.120 on precession RA but it should be 5.000 (diff=0.120).
+258) Warning: G 16580 reports 5.120 on precession RA but it should be 5.000 (diff=0.120).
      Register G 16580: 23h 43m 51s32 -87°12'22"6
-266) Warning: G 16640 reports 3.742 on precession RA but it should be 3.842 (diff=0.100).
+259) Warning: G 16640 reports 3.742 on precession RA but it should be 3.842 (diff=0.100).
      Register G 16640: 23h 48m 50s05 -85°09'59"4
-267) Warning: G 16678 (vmag = 10.5) has a near PPM 351563 star (vmag = 7.4) with a different magnitude (delta = 3.1).
-268) Warning: G 16710 reports 3.112 on precession RA but it should be 3.212 (diff=0.100).
+260) Warning: G 16678 (vmag = 10.5) has a near PPM 351563 star (vmag = 7.4) with a different magnitude (delta = 3.1).
+261) Warning: G 16710 reports 3.112 on precession RA but it should be 3.212 (diff=0.100).
      Register G 16710: 23h 56m 17s75 -81°13'51"5
 Stars from Gilliss identified with PPM = 15773, GSC-PPM = 766, CD = 15941 and CPD = 16176
-Stars from Gilliss with Lacaille = 1557, Stone = 68, GC = 955 and Brisbane = 334
+Stars from Gilliss with Lacaille = 1557, Stone = 68, GC = 959 and Brisbane = 336
 RSME of distance (arcsec) = 2.87  among a total of 15773 stars
 RSME of visual magnitude = 0.49631  among a total of 14783 stars
-Errors logged = 268
+Errors logged = 261
 Doubles found in G catalog: 5 (saved to results/doubles/gilliss.csv)
 
 Number of ZC stars registered = 5796
