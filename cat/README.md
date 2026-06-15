@@ -41,7 +41,7 @@ _GAVO Data Center_
 - taylor : Taylor's general catalogue of stars for the equinox 1835.0 from observations made at the Madras Observatory during the years 1831 to 1842
 - usno †: Yarnall-Frisby, Catalogue of stars observed at the USNO 
 during years 1845 to 1877. 3rd. Edition. from _GAVO Data Center_
-- stone : Stone, Cape catalog of 12441 stars observed during years 1871
+- stone †: Stone, Cape catalog of 12441 stars observed during years 1871
 to 1879 from _GAVO Data Center_
 - gilliss †: Gilliss, A catalogue of 16748 southern stars deduced by the
 United States Naval Observatory from the zone observations made at
@@ -75,7 +75,7 @@ by the current code:
 
 ### Original catalogs
 
-Some catalogs in this folder were sanitized but their original version was stored in the "original" subfolder. Differences:
+Some catalogs in this folder were sanitized (i.e. those with the "†") but their original version was stored in the "original" subfolder. Differences:
 
 - 4005 : 51 registers
 - 4011 : 76 registers

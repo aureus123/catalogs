@@ -792,6 +792,9 @@ void readStone() {
 	FILE *crossPPMStream = openCrossFile("results/cross/cross_lacaille_ppm.csv");
 	FILE *crossSAOStream = openCrossFile("results/cross/cross_lacaille_sao.csv");
 	FILE *crossHDStream = openCrossFile("results/cross/cross_lacaille_hd.csv");
+	FILE *crossStonePPMStream = openCrossFile("results/cross/cross_stone_ppm.csv");
+	FILE *crossStoneSAOStream = openCrossFile("results/cross/cross_stone_sao.csv");
+	FILE *crossStoneHDStream = openCrossFile("results/cross/cross_stone_hd.csv");
     FILE *catalogStream = openCatalogFile("likelihood/cat1875/lacaille.csv");
 
     int countDist = 0;
@@ -898,6 +901,9 @@ void readStone() {
 			    snprintf(catName, 20, "L %d", lacailleRef);
 			    writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], 0.0, minDistance);
             }
+
+            snprintf(catName, 20, "St %d", stoneRef);
+            writePPMCrossEntry(crossStonePPMStream, crossStoneSAOStream, crossStoneHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
 		}
 
         /* si no encuentra una PPM cercana, prueba con GSC */
@@ -1030,6 +1036,9 @@ void readStone() {
     fclose(stream2);
     fclose(stream);
     fclose(catalogStream);
+	fclose(crossStoneHDStream);
+	fclose(crossStoneSAOStream);
+	fclose(crossStonePPMStream);
 	fclose(crossHDStream);
 	fclose(crossSAOStream);
 	fclose(crossPPMStream);
