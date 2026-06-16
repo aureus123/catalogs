@@ -1078,6 +1078,116 @@ Errors logged = 88
 Doubles found in U catalog: 97 (saved to results/doubles/usno.csv)
 
 ***************************************
+Perform cross-checking of scanned GC pages...
+Stars read from PPM: 468861
+**) Note: GC 3118 references OA 1898, absent from OA catalog.
+**) Note: GC 3243 references B 454, absent from Brisbane catalog.
+**) Note: GC 3252 references OA 1960, absent from OA catalog.
+1) Warning: GC 3378 is FAR from L 1146 (dist = 872.1 arcsec).
+     Register GC 3378: mag = 7.5, RA = 03h02m18s79, DE = 85°39'57''8 (pag 69) 
+**) Note: GC 3619 references OA 2205, absent from OA catalog.
+**) Note: GC 3620 references OA 2208, absent from OA catalog.
+**) Warning: ZC 3h 681 is FAR from previous registration (dist = 53257.0 arcsec).
+**) Note: GC 4046 references OA 2440, absent from OA catalog.
+**) Note: GC 4212 references OA 2546, absent from OA catalog.
+**) Note: GC 4318 references OA 2617, absent from OA catalog.
+2) Warning: GC 4540 is FAR from B 650 (dist = 338.1 arcsec).
+     Register GC 4540: mag = 8.0, RA = 03h58m57s84, DE = 44°44'04''7 (pag 91) 
+**) Note: GC 4641 references OA 2862, absent from OA catalog.
+**) Note: GC 4961 references OA 3073, absent from OA catalog.
+3) Warning: GC 5081 is FAR from L 1523 (dist = 129.7 arcsec).
+     Register GC 5081: mag = 6.1, RA = 04h26m00s00, DE = 62°47'45''7 (pag 102) 
+4) Warning: GC 5277 is FAR from B 759 (dist = 89.3 arcsec).
+     Register GC 5277: mag = 9.2, RA = 04h35m18s63, DE = 69°20'12''4 (pag 105) 
+**) Note: GC 5376 references OA 3360, absent from OA catalog.
+**) Note: GC 5493 references B 796, absent from Brisbane catalog.
+**) Note: GC 5576 references L 1672, absent from Lacaille catalog.
+5) Warning: GC 5643 is FAR from B 831 (dist = 73.8 arcsec).
+     Register GC 5643: mag = 8.0, RA = 04h52m08s27, DE = 63°49'04''1 (pag 113) 
+6) Warning: GC 5665 is FAR from B 838 (dist = 86.5 arcsec).
+     Register GC 5665: mag = 9.2, RA = 04h53m08s87, DE = 70°16'00''9 (pag 113) 
+**) Note: GC 5704 references OA 3569, absent from OA catalog.
+**) Note: GC 5831 references OA 3657, absent from OA catalog.
+7) Warning: GC 5867 is FAR from OA 686 (dist = 195271.9 arcsec).
+     Register GC 5867: mag = 9.0, RA = 05h02m25s60, DE = 23°26'23''6 (pag 117) 
+**) Note: GC 5912 references OA 3716, absent from OA catalog.
+**) Note: GC 5916 references OA 3719, absent from OA catalog.
+**) Note: GC 6022 references OA 3791, absent from OA catalog.
+**) Note: GC 6172 references OA 3894, absent from OA catalog.
+**) Note: GC 6310 references B 961, absent from Brisbane catalog.
+8) Warning: GC 6319 is FAR from L 1873 (dist = 481.3 arcsec).
+     Register GC 6319: mag = 8.2, RA = 05h22m01s84, DE = 58°12'24''0 (pag 126) 
+9) Warning: GC 6922 is FAR from L 2055 (dist = 109.8 arcsec).
+     Register GC 6922: mag = 7.5, RA = 05h47m51s36, DE = 55°05'19''6 (pag 138) 
+10) Warning: GC 7192 is FAR from B 1121 (dist = 60.5 arcsec).
+     Register GC 7192: mag = 8.5, RA = 05h58m10s86, DE = 60°29'13''4 (pag 143) 
+11) Warning: GC 7217 is FAR from B 1125 (dist = 70.8 arcsec).
+     Register GC 7217: mag = 8.5, RA = 05h58m58s09, DE = 60°29'33''3 (pag 143) 
+12) Warning: GC 7292 is FAR from OA 4643 (dist = 20564.7 arcsec).
+     Register GC 7292: mag = 8.5, RA = 06h01m30s43, DE = 28°06'10''9 (pag 144) 
+13) Warning: GC 7641 is FAR from B 1206 (dist = 78.8 arcsec).
+     Register GC 7641: mag = 8.5, RA = 06h14m05s66, DE = 62°19'35''5 (pag 151) 
+**) Note: GC 7658 references OA 4968, absent from OA catalog.
+**) Note: GC 7671 references OA 4980, absent from OA catalog.
+**) Note: GC 7723 references OA 5024, absent from OA catalog.
+**) Note: GC 8125 references OA 5353, absent from OA catalog.
+**) Note: GC 8140 references OA 5395, absent from OA catalog.
+**) Note: GC 8405 references OA 5668, absent from OA catalog.
+**) Note: GC 8471 references OA 5729, absent from OA catalog.
+**) Note: GC 8546 references OA 5791, absent from OA catalog.
+**) Note: GC 8636 references OA 5875, absent from OA catalog.
+14) Warning: GC 8690 is FAR from B 1405 (dist = 2291.1 arcsec).
+     Register GC 8690: mag = 8.0, RA = 06h51m19s45, DE = 32°54'37''3 (pag 171) 
+15) Warning: GC 8794 is FAR from Lal 13622 (dist = 195949.7 arcsec).
+     Register GC 8794: mag = 7.0, RA = 06h55m11s55, DE = 20°27'58''8 (pag 173) 
+16) Warning: GC 8807 is FAR from OA 6041 (dist = 13366.4 arcsec).
+     Register GC 8807: mag = 8.2, RA = 06h55m42s30, DE = 25°55'06''6 (pag 174) 
+**) Note: GC 9096 references OA 6360, absent from OA catalog.
+**) Note: GC 9202 references B 1518, absent from Brisbane catalog.
+17) Warning: GC 9226 is FAR from L 2634 (dist = 5835.7 arcsec).
+     Register GC 9226: mag = 6.8, RA = 07h10m32s72, DE = 23°31'19''2 (pag 182) 
+**) Note: GC 9239 references OA 6515, absent from OA catalog.
+18) Warning: GC 9251 is FAR from L 2708 (dist = 283.1 arcsec).
+     Register GC 9251: mag = 7.1, RA = 07h11m22s70, DE = 41°52'08''3 (pag 183) 
+19) Warning: GC 9396 is FAR from OA 6673 (dist = 28005.2 arcsec).
+     Register GC 9396: mag = 8.0, RA = 07h16m28s59, DE = 27°57'22''0 (pag 186) 
+**) Note: GC 9449 references B 1582, absent from Brisbane catalog.
+**) Note: GC 9489 references OA 6769, absent from OA catalog.
+**) Note: GC 9586 references B 1611, absent from Brisbane catalog.
+20) Warning: GC 9595 is FAR from B 1623 (dist = 77.7 arcsec).
+     Register GC 9595: mag = 8.7, RA = 07h23m12s03, DE = 55°06'41''5 (pag 190) 
+**) Note: GC 9630 references OA 6910, absent from OA catalog.
+21) Warning: GC 9660 is FAR from L 2833 (dist = 89.4 arcsec).
+     Register GC 9660: mag = 8.0, RA = 07h25m44s30, DE = 27°50'05''3 (pag 191) 
+22) Warning: GC 9684 is FAR from OA 6964 (dist = 355.2 arcsec).
+     Register GC 9684: mag = 8.2, RA = 07h26m26s12, DE = 30°08'24''6 (pag 192) 
+23) Warning: GC 9778 is FAR from Lal 14863 (dist = 22254.0 arcsec).
+     Register GC 9778: mag = 6.0, RA = 07h30m19s14, DE = 14°13'02''6 (pag 194) dpl 
+24) Warning: GC 9960 is FAR from B 1703 (dist = 97.5 arcsec).
+     Register GC 9960: mag = 8.2, RA = 07h36m11s49, DE = 44°08'41''7 (pag 197) 
+**) Note: GC 9991 references OA 7295, absent from OA catalog.
+25) Warning: GC 9998 is FAR from B 1712 (dist = 66.0 arcsec).
+     Register GC 9998: mag = 8.5, RA = 07h37m32s42, DE = 44°35'24''7 (pag 198) 
+26) Warning: GC 10031 is FAR from L 2959 (dist = 82165.5 arcsec).
+     Register GC 10031: mag = 6.2, RA = 07h38m37s58, DE = 35°45'13''9 (pag 199) 
+**) Note: GC 10288 references OA 7548, absent from OA catalog.
+**) Note: GC 10332 references OA 7585, absent from OA catalog.
+**) Note: GC 10447 references L 3072, absent from Lacaille catalog.
+27) Warning: GC 10453 is FAR from B 1821 (dist = 126.9 arcsec).
+     Register GC 10453: mag = 7.7, RA = 07h51m38s48, DE = 46°58'55''0 (pag 207) 
+28) Warning: GC 10493 is FAR from B 1832 (dist = 119.4 arcsec).
+     Register GC 10493: mag = 8.5, RA = 07h53m02s32, DE = 47°08'02''3 (pag 208) 
+29) Warning: GC 10740 is FAR from B 1893 (dist = 231.9 arcsec).
+     Register GC 10740: mag = 8.7, RA = 08h01m23s06, DE = 54°38'24''0 (pag 213) 
+**) Note: GC 10771 references B 1903, absent from Brisbane catalog.
+**) Note: GC 10787 references OA 0, absent from OA catalog.
+Scanned GC rows with a reference = 6809; references to checked catalogs (OA/Ll/B/St/L/T/Y) = 3835
+Cross-checks OK: Lacaille = 1914, Brisbane = 321, Lalande = 635, Taylor = 10, OA = 813, Stone = 7, USNO = 64
+References absent from their catalog = 42, GC numbers absent from GC catalog = 0
+ZC (Gould's Zone Catalog) stars saved = 2554
+Errors logged = 29
+
+***************************************
 Perform comparison between UA and PPM/CD/CPD...
 Stars read from PPM: 468861
 **) Note: SAO references mismatch for zeta1 Ant: 200445 != 200444.
@@ -1579,10 +1689,11 @@ Errors logged = 28
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
+**) Warning: ZC 2h 1560 is FAR from previous registration (dist = 49721.1 arcsec).
 1) Warning: T 1882 125 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 125: 05h 15m 08s29 -33°36'26"6
   Note: nearest PPM 281320 at 239.3 arcsec.
-**) ZC 5h 539 is also ALONE.
+**) Warning: ZC 5h 539 is FAR from previous registration (dist = 240.2 arcsec).
 2) Warning: T 1882 126 (vmag = 9.7) has a near PPM 248771 star (vmag = 4.2) with a different magnitude (delta = 5.5).
 3) Warning: T 1882 128 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 128: 05h 22m 32s70 -02°30'25"8
@@ -1964,6 +2075,7 @@ Stars read from PPM: 468861
   Possible cause: lack of Decl (s).
   Note: nearest PPM 369682 at 173.1 arcsec.
   Note: poor CD coverage for stars above 61°.
+**) Warning: ZC 7h 4109 is FAR from previous registration (dist = 110075.2 arcsec).
 100) Warning: G 5240 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 5240: 07h 55m 49s90 -62°47'33"9
   Note: nearest PPM 776839 at 38.6 arcsec.
@@ -2336,5 +2448,5 @@ RSME of visual magnitude = 0.49631  among a total of 14783 stars
 Errors logged = 261
 Doubles found in G catalog: 5 (saved to results/doubles/gilliss.csv)
 
-Number of ZC stars registered = 5796
-Stars from ZC identified with PPM = 5552, GSC-PPM = 221, CD = 5755 and CPD = 5756
+Number of ZC stars registered = 8273
+Stars from ZC identified with PPM = 8002, GSC-PPM = 245, CD = 8225 and CPD = 8227
