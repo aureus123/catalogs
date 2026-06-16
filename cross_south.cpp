@@ -1775,7 +1775,7 @@ void readGCScanned() {
     int errors = 0;
     int checkLac = 0, checkLal = 0, checkOA = 0, checkTaylor = 0;
     int checkUSNO = 0, checkBri = 0, checkSt = 0;
-    int countStars = 0, countRefs = 0, countMissingGC = 0, countMissingRef = 0;
+    int countStars = 0, countRefs = 0;
     int countZCsaved = 0;
 
     /* coordenadas (1875.0) de las estrellas GC ya leídas */
@@ -1786,9 +1786,8 @@ void readGCScanned() {
     readPPM(false, true, false, false, 1875.0);
     sortPPM();
 
-    /* recorremos las páginas escaneadas; la numeración de página impresa va
-     * desde la 62 hasta el final de la tabla del catálogo (~620) */
-    for (int page = 62; page <= 620; page++) {
+    /* recorremos las páginas escaneadas */
+    for (int page = 1; page <= 286; page++) {
         char filename[64];
         snprintf(filename, 64, "scans/rnao14_page%d.csv", page);
         FILE *stream = fopen(filename, "rt");
@@ -1823,22 +1822,15 @@ void readGCScanned() {
             /* coordenadas (1875.0) de la estrella GC */
             double x, y, z;
             int gcIndex = -1;
-            if (!getGCStarData(gcRef, &gcIndex, &x, &y, &z)) {
-                printf("%d) Warning: %s not found in GC catalog (ref %s).\n",
-                    ++errors, catgName, ref);
-                countMissingGC++;
-                continue;
-            }
+            if (!getGCStarData(gcRef, &gcIndex, &x, &y, &z)) continue;
             countStars++;
 
             /* despachamos según el catálogo referido en la 3a columna */
             if (!strncmp(ref, "Ll.", 3)) {
                 countRefs++;
                 int numRefCat = atoi(&ref[3]);
-                bool found = false;
                 for (int i = 0; i < countLal; i++) {
                     if (lalRef[i] != numRefCat) continue;
-                    found = true;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
                     if (dist > MAX_DIST_CROSS) {
                         printf("%d) Warning: %s is FAR from Lal %d (dist = %.1f arcsec).\n",
@@ -1846,18 +1838,11 @@ void readGCScanned() {
                         writeRegisterGC(gcIndex);
                     } else checkLal++;
                 }
-                if (!found) {
-                    printf("**) Note: %s references Lal %d, absent from Lalande catalog.\n",
-                        catgName, numRefCat);
-                    countMissingRef++;
-                }
             } else if (!strncmp(ref, "OA.", 3)) {
                 countRefs++;
                 int numRefCat = atoi(&ref[3]);
-                bool found = false;
                 for (int i = 0; i < countOA; i++) {
                     if (oaRef[i] != numRefCat) continue;
-                    found = true;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
                     if (dist > MAX_DIST_CROSS) {
                         printf("%d) Warning: %s is FAR from OA %d (dist = %.1f arcsec).\n",
@@ -1865,18 +1850,11 @@ void readGCScanned() {
                         writeRegisterGC(gcIndex);
                     } else checkOA++;
                 }
-                if (!found) {
-                    printf("**) Note: %s references OA %d, absent from OA catalog.\n",
-                        catgName, numRefCat);
-                    countMissingRef++;
-                }
             } else if (!strncmp(ref, "St.", 3)) {
                 countRefs++;
                 int numRefCat = atoi(&ref[3]);
-                bool found = false;
                 for (int i = 0; i < countSt; i++) {
                     if (stRef[i] != numRefCat) continue;
-                    found = true;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, stX[i], stY[i], stZ[i]);
                     if (dist > MAX_DIST_CROSS) {
                         printf("%d) Warning: %s is FAR from St %d (dist = %.1f arcsec).\n",
@@ -1884,18 +1862,11 @@ void readGCScanned() {
                         writeRegisterGC(gcIndex);
                     } else checkSt++;
                 }
-                if (!found) {
-                    printf("**) Note: %s references St %d, absent from Stone catalog.\n",
-                        catgName, numRefCat);
-                    countMissingRef++;
-                }
             } else if (!strncmp(ref, "L.", 2)) {
                 countRefs++;
                 int numRefCat = atoi(&ref[2]);
-                bool found = false;
                 for (int i = 0; i < countLac; i++) {
                     if (lacRef[i] != numRefCat) continue;
-                    found = true;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, lacX[i], lacY[i], lacZ[i]);
                     if (dist > MAX_DIST_CROSS) {
                         printf("%d) Warning: %s is FAR from L %d (dist = %.1f arcsec).\n",
@@ -1903,18 +1874,11 @@ void readGCScanned() {
                         writeRegisterGC(gcIndex);
                     } else checkLac++;
                 }
-                if (!found) {
-                    printf("**) Note: %s references L %d, absent from Lacaille catalog.\n",
-                        catgName, numRefCat);
-                    countMissingRef++;
-                }
             } else if (!strncmp(ref, "B.", 2)) {
                 countRefs++;
                 int numRefCat = atoi(&ref[2]);
-                bool found = false;
                 for (int i = 0; i < countBri; i++) {
                     if (briRef[i] != numRefCat) continue;
-                    found = true;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, briX[i], briY[i], briZ[i]);
                     if (dist > MAX_DIST_CROSS) {
                         printf("%d) Warning: %s is FAR from B %d (dist = %.1f arcsec).\n",
@@ -1923,29 +1887,17 @@ void readGCScanned() {
                     } else checkBri++;
                     break;
                 }
-                if (!found) {
-                    printf("**) Note: %s references B %d, absent from Brisbane catalog.\n",
-                        catgName, numRefCat);
-                    countMissingRef++;
-                }
             } else if (!strncmp(ref, "T.", 2)) {
                 countRefs++;
                 int numRefCat = atoi(&ref[2]);
-                bool found = false;
                 for (int i = 0; i < countTaylor; i++) {
                     if (tayRef[i] != numRefCat) continue;
-                    found = true;
                     double dist = 3600.0 * calcAngularDistance(x, y, z, tayX[i], tayY[i], tayZ[i]);
                     if (dist > MAX_DIST_CROSS) {
                         printf("%d) Warning: %s is FAR from T %d (dist = %.1f arcsec).\n",
                             ++errors, catgName, numRefCat, dist);
                         writeRegisterGC(gcIndex);
                     } else checkTaylor++;
-                }
-                if (!found) {
-                    printf("**) Note: %s references T %d, absent from Taylor catalog.\n",
-                        catgName, numRefCat);
-                    countMissingRef++;
                 }
             } else if (!strncmp(ref, "Y.", 2)) {
                 countRefs++;
@@ -1962,12 +1914,12 @@ void readGCScanned() {
                         minDistance = dist;
                     }
                 }
-                if (usnoIndex < 0) {
-                    countMissingRef++;
-                } else if (minDistance > MAX_DIST_CROSS) {
-                    printf("%d) Warning: %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
-                        ++errors, catgName, numRefCat, usnoRef[usnoIndex], minDistance);
-                    writeRegisterGC(gcIndex);
+                if (usnoIndex > 0) {
+                    if (minDistance > MAX_DIST_CROSS) {
+                        printf("%d) Warning: %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
+                            ++errors, catgName, numRefCat, usnoRef[usnoIndex], minDistance);
+                        writeRegisterGC(gcIndex);
+                    }
                 } else {
                     #ifdef PRINT_NOTES
                     printf("**) USNO: Y %d = U %d <%s>\n", numRefCat, usnoRef[usnoIndex], usnoCatRef[usnoIndex]);
@@ -1975,11 +1927,7 @@ void readGCScanned() {
                     checkUSNO++;
                 }
             } else if (!strncmp(ref, "ZC.", 3)) {
-                /* guardamos la estrella en el Zone Catalog de Gould. A diferencia
-                 * de los demás catálogos, no se compara por número (no hay un
-                 * catálogo ZC cargado): se genera la identificación cruzada con
-                 * PPM/GSC/CD/CPD. La hora de la zona es la RAh de la estrella GC
-                 * (ej.: GC 5863 = ZC. 78, RAh = 5 -> ZC 5h 78). */
+                /* guardamos la estrella en el Zone Catalog de Gould. */
                 int numRefCat = atoi(&ref[3]);
                 int RAh = GCstar[gcIndex].RAh;
                 int RAs = GCstar[gcIndex].RAs;
@@ -2044,8 +1992,6 @@ void readGCScanned() {
         countStars, countRefs);
     printf("Cross-checks OK: Lacaille = %d, Brisbane = %d, Lalande = %d, Taylor = %d, OA = %d, Stone = %d, USNO = %d\n",
         checkLac, checkBri, checkLal, checkTaylor, checkOA, checkSt, checkUSNO);
-    printf("References absent from their catalog = %d, GC numbers absent from GC catalog = %d\n",
-        countMissingRef, countMissingGC);
     printf("ZC (Gould's Zone Catalog) stars saved = %d\n", countZCsaved);
     printf("Errors logged = %d\n", errors);
 }

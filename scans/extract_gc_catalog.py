@@ -246,8 +246,12 @@ def detect_layout(img: Image.Image) -> dict:
     crops[2] = (crops[2][0] - 14, crops[2][1])   # '10' can overflow Mag cell
     if not (60 <= width(gaps[0]) <= 260):
         raise ValueError(f"suspicious N column width {gaps[0]}")
-    if not (35 <= width(gaps[2]) <= 160):
-        raise ValueError(f"suspicious Mag column width {gaps[2]}")
+    # Check the Mag *crop* (what is actually sent to the model), not the white
+    # gap: on darker pages the flanking rules are printed bold/bleed wide, which
+    # squeezes the white gap to ~26 px even though the crop still captures the
+    # full magnitude glyph (pages 43, 61).
+    if not (40 <= width(crops[2]) <= 200):
+        raise ValueError(f"suspicious Mag column crop width {crops[2]}")
     if not (180 <= width(gaps[12]) <= 520):
         raise ValueError(f"suspicious reference column width {gaps[12]}")
     obs_ok = all(12 <= width(g) <= 95 for g in gaps[10:12])
