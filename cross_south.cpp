@@ -33,10 +33,10 @@
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
 #define EPOCH_GILLISS 1850.0
-#define MAX_DIST_PPM_FAR 90.0
+#define MAX_DIST_PPM_FAR 120.0
 #define MAX_DIST_OA_PPM 45.0
-#define MAX_DIST_LAL_PPM 45.0
-#define MAX_DIST_BRI_PPM 45.0
+#define MAX_DIST_LAL_PPM 90.0
+#define MAX_DIST_BRI_PPM 90.0
 #define MAX_DIST_TAY_PPM 40.0
 #define MAX_DIST_OA_CPD 45.0
 #define MAX_DIST_ST_CPD 30.0
@@ -44,7 +44,8 @@
 #define MAX_DIST_USNO_CPD 30.0
 #define MAX_DIST_TH_CPD 30.0
 #define MAX_DIST_UA_PPM 45.0
-#define MAX_DIST_CROSS 60.0
+#define MAX_DIST_CROSS 120.0
+#define MAX_DIST_CROSS_YARNALL 60.0
 #define MAX_DIST_ZC_ZC 15.0
 #define CURATED true // true if curated CD catalog should be used
 
@@ -74,6 +75,10 @@ int countTaylor = 0;
 double stX[MAXSTSTAR], stY[MAXSTSTAR], stZ[MAXSTSTAR];
 int stRef[MAXSTSTAR];
 int countSt = 0;
+
+// Maps a Taylor designation (number) to the index (into stX/stY/stZ/stRef)
+// of the Stone star that cross-references it.
+int stTayRef[MAXTAYLORSTAR];
 
 // Here, we save 1875.0 coordinates of Brisbane stars in rectangular form
 double briX[MAXBRISTAR], briY[MAXBRISTAR], briZ[MAXBRISTAR], briMag[MAXBRISTAR];
@@ -813,6 +818,9 @@ void readStone() {
 	struct PPMstar_struct *PPMstar = getPPMStruct();
     int PPMstars = getPPMStars();
 
+    /* inicializamos el mapa Taylor->Stone (sin referencia) */
+    for (int i = 0; i < MAXTAYLORSTAR; i++) stTayRef[i] = -1;
+
     /* leemos catalogo Stone */
     FILE *stream = fopen("cat/stone1.txt", "rt");
     if (stream == NULL) {
@@ -997,11 +1005,11 @@ void readStone() {
                 if (briRef[i] != brisRefStone) continue;
                 double dist = 3600.0 * calcAngularDistance(x, y, z, briX[i], briY[i], briZ[i]);
                 if (dist > MAX_DIST_CROSS) {
-                    /* printf("%d) Warning: St %d is FAR from B %d (dist = %.1f arcsec).\n",
+                    printf("%d) Warning: St %d is FAR from B %d (dist = %.1f arcsec).\n",
                         ++errors,
                         stoneRef,
                         brisRefStone,
-                        dist); */
+                        dist);
                 } else checkBri++;
                 break;
             }
@@ -1027,11 +1035,20 @@ void readStone() {
             printf("Error: too many Stone stars.\n");
             exit(1);
         }
+
+        /* guarda la referencia cruzada a Taylor */
+        readField(buffer2, cell, 49, 5);
+        if (cell[0] != '&') {
+            int taylorRefStone = atoi(cell);
+            if (taylorRefStone > 0 && taylorRefStone < MAXTAYLORSTAR) {
+                stTayRef[taylorRefStone] = countSt;
+            }
+        }
         stX[countSt] = x;
         stY[countSt] = y;
         stZ[countSt] = z;
         stRef[countSt] = stoneRef;
-        countSt++; 
+        countSt++;
     }
     fclose(stream2);
     fclose(stream);
@@ -1243,6 +1260,7 @@ void readTaylor() {
     int checkLac = 0;
     int checkBri = 0;
     int checkGC = 0;
+    int checkSt = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -1386,14 +1404,27 @@ void readTaylor() {
                 if (briRef[i] != numRefCat) continue;
                 double dist = 3600.0 * calcAngularDistance(x, y, z, briX[i], briY[i], briZ[i]);
                 if (dist > MAX_DIST_CROSS) {
-                    /* printf("%d) Warning: T %d is FAR from B %d (dist = %.1f arcsec).\n",
+                    printf("%d) Warning: T %d is FAR from B %d (dist = %.1f arcsec).\n",
                         ++errors,
                         taylorRef,
                         numRefCat,
-                        dist); */
+                        dist);
                 } else checkBri++;
                 break;
             }
+        }
+
+        /* revisa identificacion cruzada con Stone (acceso O(1) via stTayRef) */
+        if (taylorRef > 0 && taylorRef < MAXTAYLORSTAR && stTayRef[taylorRef] >= 0) {
+            int i = stTayRef[taylorRef];
+            double dist = 3600.0 * calcAngularDistance(x, y, z, stX[i], stY[i], stZ[i]);
+            if (dist > MAX_DIST_CROSS) {
+                printf("%d) Warning: T %d is FAR from St %d (dist = %.1f arcsec).\n",
+                    ++errors,
+                    taylorRef,
+                    stRef[i],
+                    dist);
+            } else checkSt++;
         }
 
         /* la almacenamos para futuras identificaciones */
@@ -1421,6 +1452,7 @@ void readTaylor() {
     printf("Taylor stars properly identified with Lacaille = %d\n", checkLac);
     printf("Taylor stars properly identified with Brisbane = %d\n", checkBri);
     printf("Taylor stars properly identified with GC = %d\n", checkGC);
+    printf("Taylor stars properly identified with Stone = %d\n", checkSt);
     printf("Stars from Taylor identified with PPM = %d, GSC-PPM = %d\n", countDist, countGSC);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
@@ -1915,7 +1947,7 @@ void readGCScanned() {
                     }
                 }
                 if (usnoIndex > 0) {
-                    if (minDistance > MAX_DIST_CROSS) {
+                    if (minDistance > MAX_DIST_CROSS_YARNALL) {
                         printf("%d) Warning: %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
                             ++errors, catgName, numRefCat, usnoRef[usnoIndex], minDistance);
                         writeRegisterGC(gcIndex);
@@ -2424,7 +2456,7 @@ void readUA() {
                         minDistance = dist;
                     }
                 }
-                if (minDistance > MAX_DIST_CROSS) {
+                if (minDistance > MAX_DIST_CROSS_YARNALL) {
                     printf("%d) Warning: %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
                         ++errors,
                         catgName,
@@ -2789,7 +2821,7 @@ void readThome(double epoch, const char *filename, int correction) {
                     minDistance = dist;
                 }
             }
-            if (minDistance > MAX_DIST_CROSS) {
+            if (minDistance > MAX_DIST_CROSS_YARNALL) {
                 printf("%d) Warning: T %.0f %d is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
                     ++errors,
                     epoch,

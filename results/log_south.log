@@ -265,204 +265,183 @@ Stars read from PPM: 468861
   Note: nearest PPM 65450 at 563.1 arcsec.
 5) Warning: Lal 886 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 65450 at 566.3 arcsec.
-6) Warning: Lal 919 is ALONE (no PPM or GSC star near it).
-  Possible cause: lack of Decl (s).
-  Note: nearest PPM 89973 at 118.8 arcsec.
-7) Warning: Lal 1115 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 43228 at 107.8 arcsec.
-8) Warning: Lal 1202 is ALONE (no PPM or GSC star near it).
+6) Warning: Lal 1202 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 90109 at 546.6 arcsec.
-9) Warning: Lal 2317 is ALONE (no PPM or GSC star near it).
+7) Warning: Lal 2317 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 43847 at 541.7 arcsec.
-10) Warning: Lal 2377 is ALONE (no PPM or GSC star near it).
+8) Warning: Lal 2377 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 66183 at 899.7 arcsec.
-11) Warning: Lal 2773 is ALONE (no PPM or GSC star near it).
+9) Warning: Lal 2773 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 244034 at 819.5 arcsec.
-12) Warning: Lal 2785 is ALONE (no PPM or GSC star near it).
+10) Warning: Lal 2785 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 117431 at 604.3 arcsec.
-13) Warning: Lal 3367 is ALONE (no PPM or GSC star near it).
+11) Warning: Lal 3367 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 244355 at 1228.8 arcsec.
-14) Warning: Lal 4497 is ALONE (no PPM or GSC star near it).
+12) Warning: Lal 4497 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 118222 at 377.5 arcsec.
-15) Warning: Lal 5094 is ALONE (no PPM or GSC star near it).
+13) Warning: Lal 5094 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 91975 at 1482.7 arcsec.
-16) Warning: Lal 5590 is ALONE (no PPM or GSC star near it).
+14) Warning: Lal 5590 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 212297 at 304.0 arcsec.
-17) Warning: Lal 5761 is ALONE (no PPM or GSC star near it).
+15) Warning: Lal 5761 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 92248 at 1070.5 arcsec.
-18) Warning: Lal 7054 is ALONE (no PPM or GSC star near it).
+16) Warning: Lal 7054 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 28765 at 181.2 arcsec.
-19) Warning: Lal 7443 is ALONE (no PPM or GSC star near it).
+17) Warning: Lal 7443 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 69038 at 180.2 arcsec.
-20) Warning: Lal 7728 is ALONE (no PPM or GSC star near it).
+18) Warning: Lal 7728 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 93314 at 358.9 arcsec.
-21) Warning: Lal 9584 is ALONE (no PPM or GSC star near it).
+19) Warning: Lal 9584 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 69970 at 746.8 arcsec.
-22) Warning: Lal 11072 is ALONE (no PPM or GSC star near it).
+20) Warning: Lal 11072 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 48542 at 603.1 arcsec.
-23) Warning: Lal 11311 is ALONE (no PPM or GSC star near it).
+21) Warning: Lal 11311 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 188615 at 1036.2 arcsec.
-24) Warning: Lal 11729 is ALONE (no PPM or GSC star near it).
+22) Warning: Lal 11729 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 48873 at 182.3 arcsec.
-25) Warning: Lal 13288 is ALONE (no PPM or GSC star near it).
+23) Warning: Lal 13288 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 72258 at 1342.0 arcsec.
-26) Warning: Lal 13664 is ALONE (no PPM or GSC star near it).
+24) Warning: Lal 13664 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 251421 at 232.9 arcsec.
-27) Warning: Lal 13742 is ALONE (no PPM or GSC star near it).
+25) Warning: Lal 13742 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 72487 at 820.1 arcsec.
-28) Warning: Lal 14144 is ALONE (no PPM or GSC star near it).
+26) Warning: Lal 14144 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 72679 at 694.5 arcsec.
-29) Warning: Lal 14167 is ALONE (no PPM or GSC star near it).
+27) Warning: Lal 14167 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 97371 at 336.3 arcsec.
-30) Warning: Lal 14189 is ALONE (no PPM or GSC star near it).
+28) Warning: Lal 14189 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 72715 at 592.2 arcsec.
-31) Warning: Lal 14284 is ALONE (no PPM or GSC star near it).
+29) Warning: Lal 14284 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 190166 at 249.0 arcsec.
-32) Warning: Lal 15290 is ALONE (no PPM or GSC star near it).
+30) Warning: Lal 15290 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 73225 at 718.2 arcsec.
-33) Warning: Lal 16000 is ALONE (no PPM or GSC star near it).
+31) Warning: Lal 16000 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 251757 at 261.4 arcsec.
-34) Warning: Lal 16455 is ALONE (no PPM or GSC star near it).
+32) Warning: Lal 16455 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 98691 at 851.2 arcsec.
-35) Warning: Lal 16779 is ALONE (no PPM or GSC star near it).
+33) Warning: Lal 16779 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 715428 at 244.2 arcsec.
-36) Warning: Lal 17468 is ALONE (no PPM or GSC star near it).
+34) Warning: Lal 17468 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 50899 at 935.2 arcsec.
-37) Warning: Lal 18593 is ALONE (no PPM or GSC star near it).
+35) Warning: Lal 18593 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 51287 at 808.6 arcsec.
-38) Warning: Lal 19070 is ALONE (no PPM or GSC star near it).
+36) Warning: Lal 19070 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 51452 at 361.9 arcsec.
-39) Warning: Lal 19219 is ALONE (no PPM or GSC star near it).
+37) Warning: Lal 19219 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 126805 at 736.8 arcsec.
-40) Warning: Lal 19710 is ALONE (no PPM or GSC star near it).
+38) Warning: Lal 19710 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 74992 at 987.3 arcsec.
-41) Warning: Lal 19995 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 156694 at 118.2 arcsec.
-42) Warning: Lal 20464 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 193556 at 114.8 arcsec.
-43) Warning: Lal 21095 is ALONE (no PPM or GSC star near it).
+39) Warning: Lal 21095 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 100801 at 561.2 arcsec.
-44) Warning: Lal 21237 is ALONE (no PPM or GSC star near it).
+40) Warning: Lal 21237 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 100880 at 381.0 arcsec.
-45) Warning: Lal 21368 is ALONE (no PPM or GSC star near it).
+41) Warning: Lal 21368 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 75717 at 128.0 arcsec.
-46) Warning: Lal 21686 is ALONE (no PPM or GSC star near it).
+42) Warning: Lal 21686 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 705534 at 258.2 arcsec.
-47) Warning: Lal 22379 is ALONE (no PPM or GSC star near it).
+43) Warning: Lal 22379 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 128616 at 731.4 arcsec.
-48) Warning: Lal 23346 is ALONE (no PPM or GSC star near it).
-  Possible cause: lack of Decl (s).
-  Note: nearest PPM 129087 at 92.1 arcsec.
-49) Warning: Lal 23650 is ALONE (no PPM or GSC star near it).
+44) Warning: Lal 23650 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 102046 at 534.5 arcsec.
-50) Warning: Lal 23889 is ALONE (no PPM or GSC star near it).
+45) Warning: Lal 23889 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 226374 at 1023.5 arcsec.
-51) Warning: Lal 24290 is ALONE (no PPM or GSC star near it).
+46) Warning: Lal 24290 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of RA (s).
   Note: nearest PPM 102343 at 367.7 arcsec.
-52) Warning: Lal 24426 is ALONE (no PPM or GSC star near it).
+47) Warning: Lal 24426 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 76963 at 1039.0 arcsec.
-53) Warning: Lal 24800 is ALONE (no PPM or GSC star near it).
+48) Warning: Lal 24800 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 77125 at 601.5 arcsec.
-54) Warning: Lal 24821 is ALONE (no PPM or GSC star near it).
+49) Warning: Lal 24821 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 159709 at 973.0 arcsec.
-55) Warning: Lal 25070 is ALONE (no PPM or GSC star near it).
-  Possible cause: lack of Decl (s).
-  Note: nearest PPM 102681 at 105.6 arcsec.
-56) Warning: Lal 25111 is ALONE (no PPM or GSC star near it).
+50) Warning: Lal 25111 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 196646 at 587.9 arcsec.
-57) Warning: Lal 25452 is ALONE (no PPM or GSC star near it).
+51) Warning: Lal 25452 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 77447 at 650.4 arcsec.
-58) Warning: Lal 25642 is ALONE (no PPM or GSC star near it).
+52) Warning: Lal 25642 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 102967 at 434.0 arcsec.
-59) Warning: Lal 25840 is ALONE (no PPM or GSC star near it).
+53) Warning: Lal 25840 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of RA (s).
   Note: nearest PPM 197175 at 438.3 arcsec.
-60) Warning: Lal 26177 is ALONE (no PPM or GSC star near it).
+54) Warning: Lal 26177 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 717530 at 204.2 arcsec.
-61) Warning: Lal 26294 is ALONE (no PPM or GSC star near it).
+55) Warning: Lal 26294 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 103270 at 998.1 arcsec.
-62) Warning: Lal 26427 is ALONE (no PPM or GSC star near it).
+56) Warning: Lal 26427 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 160687 at 1008.4 arcsec.
-63) Warning: Lal 26599 is ALONE (no PPM or GSC star near it).
+57) Warning: Lal 26599 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 77977 at 1294.6 arcsec.
-64) Warning: Lal 26646 is ALONE (no PPM or GSC star near it).
+58) Warning: Lal 26646 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 197754 at 621.4 arcsec.
-65) Warning: Lal 27155 is ALONE (no PPM or GSC star near it).
+59) Warning: Lal 27155 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 103660 at 949.1 arcsec.
-66) Warning: Lal 27611 is ALONE (no PPM or GSC star near it).
+60) Warning: Lal 27611 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 78364 at 408.3 arcsec.
-67) Warning: Lal 27827 is ALONE (no PPM or GSC star near it).
+61) Warning: Lal 27827 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 131256 at 413.3 arcsec.
-68) Warning: Lal 29275 is ALONE (no PPM or GSC star near it).
+62) Warning: Lal 29275 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 79010 at 1212.2 arcsec.
-69) Warning: Lal 29879 is ALONE (no PPM or GSC star near it).
+63) Warning: Lal 29879 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 55372 at 122.2 arcsec.
-70) Warning: Lal 30411 is ALONE (no PPM or GSC star near it).
+64) Warning: Lal 30411 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 132563 at 781.5 arcsec.
-71) Warning: Lal 31334 is ALONE (no PPM or GSC star near it).
+65) Warning: Lal 31334 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 232852 at 398.0 arcsec.
-72) Warning: Lal 31843 is ALONE (no PPM or GSC star near it).
+66) Warning: Lal 31843 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 105930 at 225.4 arcsec.
-73) Warning: Lal 32911 is ALONE (no PPM or GSC star near it).
+67) Warning: Lal 32911 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 20602 at 281.6 arcsec.
-74) Warning: Lal 33251 is ALONE (no PPM or GSC star near it).
+68) Warning: Lal 33251 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 80915 at 1051.7 arcsec.
-75) Warning: Lal 33252 is ALONE (no PPM or GSC star near it).
+69) Warning: Lal 33252 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 80915 at 1056.1 arcsec.
-76) Warning: Lal 34190 is ALONE (no PPM or GSC star near it).
+70) Warning: Lal 34190 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 134808 at 1172.4 arcsec.
-77) Warning: Lal 34409 is ALONE (no PPM or GSC star near it).
+71) Warning: Lal 34409 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 719531 at 331.6 arcsec.
-78) Warning: Lal 35525 is ALONE (no PPM or GSC star near it).
+72) Warning: Lal 35525 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 57686 at 441.4 arcsec.
-79) Warning: Lal 35694 is ALONE (no PPM or GSC star near it).
+73) Warning: Lal 35694 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 720134 at 212.2 arcsec.
-80) Warning: Lal 36192 is ALONE (no PPM or GSC star near it).
+74) Warning: Lal 36192 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 235806 at 447.4 arcsec.
-81) Warning: Lal 36800 is ALONE (no PPM or GSC star near it).
+75) Warning: Lal 36800 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 167951 at 663.9 arcsec.
-82) Warning: Lal 37647 is ALONE (no PPM or GSC star near it).
+76) Warning: Lal 37647 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 83469 at 646.9 arcsec.
-83) Warning: Lal 37648 is ALONE (no PPM or GSC star near it).
+77) Warning: Lal 37648 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 83469 at 647.7 arcsec.
-84) Warning: Lal 37967 is ALONE (no PPM or GSC star near it).
+78) Warning: Lal 37967 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 168974 at 489.0 arcsec.
-85) Warning: Lal 38553 is ALONE (no PPM or GSC star near it).
+79) Warning: Lal 38553 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 270820 at 958.3 arcsec.
-86) Warning: Lal 39352 is ALONE (no PPM or GSC star near it).
+80) Warning: Lal 39352 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 271161 at 419.1 arcsec.
-87) Warning: Lal 40765 is ALONE (no PPM or GSC star near it).
+81) Warning: Lal 40765 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 238326 at 487.4 arcsec.
-88) Warning: Lal 40766 is ALONE (no PPM or GSC star near it).
+82) Warning: Lal 40766 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 238326 at 481.5 arcsec.
-89) Warning: Lal 41300 is ALONE (no PPM or GSC star near it).
+83) Warning: Lal 41300 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 61119 at 458.9 arcsec.
-90) Warning: Lal 41816 is ALONE (no PPM or GSC star near it).
+84) Warning: Lal 41816 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 140217 at 421.2 arcsec.
-91) Warning: Lal 42049 is ALONE (no PPM or GSC star near it).
-  Possible cause: lack of Decl (s).
-  Note: nearest PPM 171979 at 97.4 arcsec.
-92) Warning: Lal 44228 is ALONE (no PPM or GSC star near it).
+85) Warning: Lal 44228 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of Decl (s).
   Note: nearest PPM 206610 at 974.4 arcsec.
-93) Warning: Lal 44550 is ALONE (no PPM or GSC star near it).
+86) Warning: Lal 44550 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 63436 at 283.8 arcsec.
-94) Warning: Lal 45025 is ALONE (no PPM or GSC star near it).
+87) Warning: Lal 45025 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 241098 at 287.0 arcsec.
-95) Warning: Lal 45200 is ALONE (no PPM or GSC star near it).
-  Possible cause: lack of Decl (s).
-  Note: nearest PPM 173755 at 91.3 arcsec.
-96) Warning: Lal 45277 is ALONE (no PPM or GSC star near it).
+88) Warning: Lal 45277 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 207220 at 179.1 arcsec.
-97) Warning: Lal 46477 is ALONE (no PPM or GSC star near it).
+89) Warning: Lal 46477 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 115736 at 551.9 arcsec.
-98) Warning: Lal 47011 is ALONE (no PPM or GSC star near it).
+90) Warning: Lal 47011 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 116018 at 548.8 arcsec.
 Available Lalande stars = 47298
-Stars from Lalande identified with PPM = 46914, GSC-PPM = 210
-RSME of distance (arcsec) = 6.88  among a total of 46914 stars
-Errors logged = 98
+Stars from Lalande identified with PPM = 47000, GSC-PPM = 200
+RSME of distance (arcsec) = 7.35  among a total of 47000 stars
+Errors logged = 90
 
 ***************************************
 Perform comparison between Brisbane and PPM...
@@ -477,259 +456,291 @@ Stars read from PPM: 468861
   Note: nearest PPM 367160 at 195.0 arcsec.
 5) Warning: B 650 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 308247 at 340.2 arcsec.
-6) Warning: B 686 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 353985 at 90.0 arcsec.
-7) Warning: B 767 is ALONE (no PPM or GSC star near it).
+6) Warning: B 767 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 368460 at 121.7 arcsec.
-8) Warning: B 768 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 368458 at 114.7 arcsec.
-9) Warning: B 829 is ALONE (no PPM or GSC star near it).
+7) Warning: B 829 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 354381 at 514.5 arcsec.
-10) Warning: B 890 is ALONE (no PPM or GSC star near it).
+8) Warning: B 890 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 309410 at 592.5 arcsec.
-11) Warning: B 909 is ALONE (no PPM or GSC star near it).
+9) Warning: B 909 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 334151 at 544.7 arcsec.
-12) Warning: B 982 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 354786 at 93.6 arcsec.
-13) Warning: B 1160 is ALONE (no PPM or GSC star near it).
+10) Warning: B 1160 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 739091 at 466.5 arcsec.
-14) Warning: B 1405 is ALONE (no PPM or GSC star near it).
+11) Warning: B 1405 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 739609 at 136.0 arcsec.
-15) Warning: B 1543 is ALONE (no PPM or GSC star near it).
+12) Warning: B 1543 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 767427 at 537.5 arcsec.
-16) Warning: B 1646 is ALONE (no PPM or GSC star near it).
+13) Warning: B 1646 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 369487 at 302.7 arcsec.
-17) Warning: B 1696 is ALONE (no PPM or GSC star near it).
+14) Warning: B 1696 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 284241 at 201.9 arcsec.
-18) Warning: B 1703 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 312039 at 92.6 arcsec.
-19) Warning: B 1821 is ALONE (no PPM or GSC star near it).
+15) Warning: B 1821 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 312312 at 124.3 arcsec.
-20) Warning: B 1832 is ALONE (no PPM or GSC star near it).
+16) Warning: B 1832 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 312344 at 120.3 arcsec.
-21) Warning: B 1989 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 755803 at 92.5 arcsec.
-22) Warning: B 2029 is ALONE (no PPM or GSC star near it).
+17) Warning: B 2029 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 336885 at 506.9 arcsec.
-23) Warning: B 2240 is ALONE (no PPM or GSC star near it).
+18) Warning: B 2240 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 337290 at 130.4 arcsec.
-24) Warning: B 2245 is ALONE (no PPM or GSC star near it).
+19) Warning: B 2245 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 337294 at 362.3 arcsec.
-25) Warning: B 2310 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 370132 at 118.8 arcsec.
-26) Warning: B 2335 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 337576 at 111.1 arcsec.
-27) Warning: B 2337 is ALONE (no PPM or GSC star near it).
+20) Warning: B 2337 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 337574 at 174.0 arcsec.
-28) Warning: B 2350 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 255750 at 92.0 arcsec.
-29) Warning: B 2448 is ALONE (no PPM or GSC star near it).
+21) Warning: B 2448 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 370225 at 242.4 arcsec.
 Warning: B 2449 has unexpected value 9 in magnitude columns 23-24 (expected 8 or blank).
-30) Warning: B 2467 is ALONE (no PPM or GSC star near it).
+22) Warning: B 2467 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 337888 at 301.4 arcsec.
-31) Warning: B 2502 is ALONE (no PPM or GSC star near it).
+23) Warning: B 2502 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 768673 at 490.3 arcsec.
-32) Warning: B 2560 is ALONE (no PPM or GSC star near it).
+24) Warning: B 2560 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 314465 at 174.8 arcsec.
-33) Warning: B 2622 is ALONE (no PPM or GSC star near it).
+25) Warning: B 2622 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 357487 at 570.4 arcsec.
-34) Warning: B 2652 is ALONE (no PPM or GSC star near it).
+26) Warning: B 2652 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 286874 at 204.3 arcsec.
-35) Warning: B 2713 is ALONE (no PPM or GSC star near it).
+27) Warning: B 2713 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 370475 at 462.4 arcsec.
 Warning: B 2740 has unexpected value 8 in magnitude columns 23-24 (expected 7 or blank).
-36) Warning: B 2832 is ALONE (no PPM or GSC star near it).
+28) Warning: B 2832 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 777775 at 342.4 arcsec.
-37) Warning: B 2868 is ALONE (no PPM or GSC star near it).
+29) Warning: B 2868 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 339084 at 312.9 arcsec.
-38) Warning: B 2964 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 338910 at 92.0 arcsec.
-39) Warning: B 3063 is ALONE (no PPM or GSC star near it).
+30) Warning: B 3063 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 339138 at 481.9 arcsec.
-40) Warning: B 3066 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 339149 at 93.0 arcsec.
-41) Warning: B 3406 is ALONE (no PPM or GSC star near it).
+31) Warning: B 3406 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 358484 at 131.1 arcsec.
-42) Warning: B 3435 is ALONE (no PPM or GSC star near it).
+32) Warning: B 3435 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 258661 at 374.3 arcsec.
-43) Warning: B 3458 is ALONE (no PPM or GSC star near it).
+33) Warning: B 3458 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 258690 at 352.8 arcsec.
-44) Warning: B 3587 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 358715 at 93.3 arcsec.
-45) Warning: B 3928 is ALONE (no PPM or GSC star near it).
+34) Warning: B 3928 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 340716 at 159.5 arcsec.
-46) Warning: B 4065 is ALONE (no PPM or GSC star near it).
+35) Warning: B 4065 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 317471 at 526.2 arcsec.
-47) Warning: B 4295 is ALONE (no PPM or GSC star near it).
+36) Warning: B 4295 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 261132 at 421.6 arcsec.
-48) Warning: B 4463 is ALONE (no PPM or GSC star near it).
+37) Warning: B 4463 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 318491 at 544.5 arcsec.
-49) Warning: B 4732 is ALONE (no PPM or GSC star near it).
+38) Warning: B 4732 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 360515 at 225.5 arcsec.
-50) Warning: B 4794 is ALONE (no PPM or GSC star near it).
+39) Warning: B 4794 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 342651 at 199.7 arcsec.
-51) Warning: B 4837 is ALONE (no PPM or GSC star near it).
+40) Warning: B 4837 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 779933 at 184.1 arcsec.
-52) Warning: B 4907 is ALONE (no PPM or GSC star near it).
+41) Warning: B 4907 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 342868 at 372.2 arcsec.
-53) Warning: B 4910 is ALONE (no PPM or GSC star near it).
+42) Warning: B 4910 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 342860 at 324.5 arcsec.
-54) Warning: B 5124 is ALONE (no PPM or GSC star near it).
+43) Warning: B 5124 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 343322 at 236.9 arcsec.
-55) Warning: B 5364 is ALONE (no PPM or GSC star near it).
+44) Warning: B 5364 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 786691 at 205.2 arcsec.
-56) Warning: B 5649 is ALONE (no PPM or GSC star near it).
+45) Warning: B 5649 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 344793 at 126.6 arcsec.
-57) Warning: B 5702 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 294961 at 117.7 arcsec.
-58) Warning: B 5721 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 761918 at 96.0 arcsec.
-59) Warning: B 5753 is ALONE (no PPM or GSC star near it).
+46) Warning: B 5753 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 321902 at 364.4 arcsec.
-60) Warning: B 5756 is ALONE (no PPM or GSC star near it).
+47) Warning: B 5756 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 362256 at 235.2 arcsec.
-61) Warning: B 6021 is ALONE (no PPM or GSC star near it).
+48) Warning: B 6021 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 772934 at 620.9 arcsec.
-62) Warning: B 6149 is ALONE (no PPM or GSC star near it).
+49) Warning: B 6149 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 362883 at 166.5 arcsec.
-63) Warning: B 6186 is ALONE (no PPM or GSC star near it).
+50) Warning: B 6186 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 762970 at 405.0 arcsec.
-64) Warning: B 6187 is ALONE (no PPM or GSC star near it).
+51) Warning: B 6187 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 762980 at 459.4 arcsec.
-65) Warning: B 6225 is ALONE (no PPM or GSC star near it).
+52) Warning: B 6225 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 323488 at 146.9 arcsec.
-66) Warning: B 6328 is ALONE (no PPM or GSC star near it).
+53) Warning: B 6328 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 346656 at 576.0 arcsec.
-67) Warning: B 6437 is ALONE (no PPM or GSC star near it).
+54) Warning: B 6437 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 347011 at 448.5 arcsec.
-68) Warning: B 6517 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 324563 at 98.0 arcsec.
-69) Warning: B 6543 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 298401 at 119.9 arcsec.
-70) Warning: B 6604 is ALONE (no PPM or GSC star near it).
+55) Warning: B 6604 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 363902 at 282.8 arcsec.
-71) Warning: B 6605 is ALONE (no PPM or GSC star near it).
+56) Warning: B 6605 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 363902 at 172.3 arcsec.
-72) Warning: B 6610 is ALONE (no PPM or GSC star near it).
+57) Warning: B 6610 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 750545 at 603.5 arcsec.
-73) Warning: B 6667 is ALONE (no PPM or GSC star near it).
+58) Warning: B 6667 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 299015 at 338.3 arcsec.
-74) Warning: B 6693 is ALONE (no PPM or GSC star near it).
+59) Warning: B 6693 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 789585 at 336.1 arcsec.
-75) Warning: B 6697 is ALONE (no PPM or GSC star near it).
+60) Warning: B 6697 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 789590 at 410.3 arcsec.
-76) Warning: B 6698 is ALONE (no PPM or GSC star near it).
+61) Warning: B 6698 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 789585 at 618.1 arcsec.
-77) Warning: B 6715 is ALONE (no PPM or GSC star near it).
+62) Warning: B 6715 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 774149 at 628.9 arcsec.
-78) Warning: B 6825 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 326023 at 118.3 arcsec.
-79) Warning: B 6845 is ALONE (no PPM or GSC star near it).
+63) Warning: B 6845 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 326087 at 341.8 arcsec.
-80) Warning: B 6848 is ALONE (no PPM or GSC star near it).
+64) Warning: B 6848 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 326106 at 203.3 arcsec.
-81) Warning: B 7026 is ALONE (no PPM or GSC star near it).
+65) Warning: B 7026 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 788056 at 240.9 arcsec.
-82) Warning: B 7032 is ALONE (no PPM or GSC star near it).
+66) Warning: B 7032 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 788085 at 395.0 arcsec.
-83) Warning: B 7062 is ALONE (no PPM or GSC star near it).
+67) Warning: B 7062 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 327486 at 206.3 arcsec.
-84) Warning: B 7076 is ALONE (no PPM or GSC star near it).
+68) Warning: B 7076 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 327547 at 289.3 arcsec.
-85) Warning: B 7109 is ALONE (no PPM or GSC star near it).
+69) Warning: B 7109 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 783216 at 478.8 arcsec.
 Available Brisbane stars = 6672
-Stars from Brisbane identified with PPM = 6403, GSC-PPM = 38
-RSME of distance (arcsec) = 19.99  among a total of 6403 stars
-Errors logged = 85
+Stars from Brisbane identified with PPM = 6570, GSC-PPM = 17
+RSME of distance (arcsec) = 21.99  among a total of 6570 stars
+Errors logged = 69
 
 ***************************************
 Perform comparison between Stone and PPM/CD/CPD...
 Stars read from PPM: 468861
-1) Warning: St 141 (L 80) is ALONE (no PPM / CD / CPD / GSC star near it).
+1) Warning: St 94 is FAR from B 24 (dist = 601.4 arcsec).
+2) Warning: St 107 is FAR from B 26 (dist = 122.1 arcsec).
+3) Warning: St 141 (L 80) is ALONE (no PPM / CD / CPD / GSC star near it).
   Note: nearest PPM 366914 at 314.8 arcsec.
   Note: poor CD coverage for stars above 61°.
-2) Warning: St 420 (vmag = 5.0) has a near PPM 367144 star (vmag = 10.0) with a different magnitude (delta = 5.0).
-3) Warning: St 766 (L 584) is ALONE (no PPM / CD / CPD / GSC star near it).
+4) Warning: St 146 is FAR from B 40 (dist = 131.8 arcsec).
+5) Warning: St 420 (vmag = 5.0) has a near PPM 367144 star (vmag = 10.0) with a different magnitude (delta = 5.0).
+6) Warning: St 436 is FAR from B 147 (dist = 194.9 arcsec).
+7) Warning: St 598 is FAR from B 211 (dist = 153968.8 arcsec).
+8) Warning: St 766 (L 584) is ALONE (no PPM / CD / CPD / GSC star near it).
   Note: nearest PPM 775334 at 775.3 arcsec.
   Note: poor CD coverage for stars above 61°.
-4) Warning: St 1231 (vmag = 5.6) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+9) Warning: St 869 is FAR from B 311 (dist = 143.0 arcsec).
+10) Warning: St 1231 (vmag = 5.6) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -40°771 (en 2h):  2.6 | 53m31.7s | 48.2'     (pag. 438)
-5) Warning: St 2029 (vmag = 7.6) has a near PPM 187260 star (vmag = 4.7) with a different magnitude (delta = 2.9).
-6) Warning: St 2303 (L 1775) is ALONE (no PPM / CD / CPD / GSC star near it).
+11) Warning: St 1729 is FAR from B 650 (dist = 337.9 arcsec).
+12) Warning: St 1941 is FAR from B 721 (dist = 2292.5 arcsec).
+13) Warning: St 2016 is FAR from B 767 (dist = 123.2 arcsec).
+14) Warning: St 2029 (vmag = 7.6) has a near PPM 187260 star (vmag = 4.7) with a different magnitude (delta = 2.9).
+15) Warning: St 2303 (L 1775) is ALONE (no PPM / CD / CPD / GSC star near it).
   Note: nearest PPM 309486 at 668.7 arcsec.
-7) Warning: St 2610 (vmag = 7.0) has a near CD with dif. magnitude (delta = 4.0). Check dpl.
+16) Warning: St 2610 (vmag = 7.0) has a near CD with dif. magnitude (delta = 4.0). Check dpl.
      Register CD -55°1256 (en 5h):  11.0 | 42m55.6s | 46.4'     (pag. 106)
-8) Warning: St 2941 is ALONE (no PPM / CD / CPD / GSC star near it).
+17) Warning: St 2941 is ALONE (no PPM / CD / CPD / GSC star near it).
   Possible cause: lack of Decl (s).
   Note: nearest PPM 2162 at 303.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-9) Warning: St 3321 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.9). Check dpl.
+18) Warning: St 3039 is FAR from B 1271 (dist = 9120.0 arcsec).
+19) Warning: St 3058 is FAR from B 1279 (dist = 78837.4 arcsec).
+20) Warning: St 3059 is FAR from B 1306 (dist = 70165.3 arcsec).
+21) Warning: St 3173 is FAR from B 1338 (dist = 149115.0 arcsec).
+22) Warning: St 3174 is FAR from B 1340 (dist = 40540.9 arcsec).
+23) Warning: St 3306 is FAR from B 1405 (dist = 2290.8 arcsec).
+24) Warning: St 3321 (vmag = 6.7) has a near CD with dif. magnitude (delta = 2.9). Check dpl.
      Register CD -26°3646 (en 6h):  9.6 | 53m6.8s | 59.6'     (pag. 246)
-10) Warning: St 3550 (vmag = 3.0) has a near CD with dif. magnitude (delta = 6.0). Check dpl.
+25) Warning: St 3423 is FAR from B 1740 (dist = 49847.6 arcsec).
+26) Warning: St 3480 is FAR from B 1503 (dist = 15120.1 arcsec).
+27) Warning: St 3525 is FAR from B 2537 (dist = 43893.4 arcsec).
+28) Warning: St 3550 (vmag = 3.0) has a near CD with dif. magnitude (delta = 6.0). Check dpl.
      Register CD -36°3487 (en 7h):  9.0 | 12m41.2s | 52.9'     (pag. 236)
-11) Warning: St 3655 (vmag = 6.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+29) Warning: St 3655 (vmag = 6.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -33°3811 (en 7h):  9.5 | 22m3.0s | 54.0'     (pag. 72)
-12) Warning: St 3720 (vmag = 6.0) has a near PPM 252684 star (vmag = 3.0) with a different magnitude (delta = 3.0).
-13) Warning: St 3901 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
+30) Warning: St 3720 (vmag = 6.0) has a near PPM 252684 star (vmag = 3.0) with a different magnitude (delta = 3.0).
+31) Warning: St 3886 is FAR from B 1751 (dist = 3861.4 arcsec).
+32) Warning: St 3901 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
      Register CD -72°417 (en 7h):  4.3 | 43m23.0s | 18.0'     (pag. 244)
-14) Warning: St 3911 (vmag = 6.7) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+33) Warning: St 3911 (vmag = 6.7) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -24°6020 (en 7h):  10.0 | 43m43.0s | 36.0'     (pag. 137)
-15) Warning: St 6361 (vmag = 6.5) has a near CD with dif. magnitude (delta = 4.5). Check dpl.
+34) Warning: St 3998 is FAR from B 1821 (dist = 125.5 arcsec).
+35) Warning: St 4112 is FAR from B 1893 (dist = 230.8 arcsec).
+36) Warning: St 4303 is FAR from B 1989 (dist = 236.2 arcsec).
+37) Warning: St 4425 is FAR from B 2063 (dist = 792.2 arcsec).
+38) Warning: St 4690 is FAR from B 2250 (dist = 15348.6 arcsec).
+39) Warning: St 4695 is FAR from B 2240 (dist = 131.0 arcsec).
+40) Warning: St 4840 is FAR from B 2336 (dist = 27238.6 arcsec).
+41) Warning: St 4842 is FAR from B 2337 (dist = 27243.7 arcsec).
+42) Warning: St 5178 is FAR from B 2560 (dist = 178.5 arcsec).
+43) Warning: St 5258 is FAR from B 2622 (dist = 571.7 arcsec).
+44) Warning: St 5283 is FAR from B 2652 (dist = 205.6 arcsec).
+45) Warning: St 5362 is FAR from B 2719 (dist = 1665.8 arcsec).
+46) Warning: St 5364 is FAR from B 2718 (dist = 1658.3 arcsec).
+47) Warning: St 5739 is FAR from B 3032 (dist = 107898.5 arcsec).
+48) Warning: St 5780 is FAR from B 3063 (dist = 483.7 arcsec).
+49) Warning: St 5787 is FAR from B 3077 (dist = 3177.8 arcsec).
+50) Warning: St 5797 is FAR from B 3088 (dist = 122502.4 arcsec).
+51) Warning: St 6122 is FAR from B 3406 (dist = 1115.4 arcsec).
+52) Warning: St 6209 is FAR from B 3435 (dist = 401.9 arcsec).
+53) Warning: St 6264 is FAR from B 3505 (dist = 960.3 arcsec).
+54) Warning: St 6361 (vmag = 6.5) has a near CD with dif. magnitude (delta = 4.5). Check dpl.
      Register CD -52°4400 (en 11h):  11.0 | 21m1.1s | 28.7'     (pag. 15)
-16) Warning: St 6954 (vmag = 5.6) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
+55) Warning: St 6730 is FAR from B 3918 (dist = 1072.7 arcsec).
+56) Warning: St 6761 is FAR from B 3928 (dist = 158.3 arcsec).
+57) Warning: St 6899 is FAR from B 4040 (dist = 35940.6 arcsec).
+58) Warning: St 6954 (vmag = 5.6) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
      Register CD -58°4603 (en 12h):  9.3 | 24m42.4s | 44.3'     (pag. 211)
-17) Warning: St 7047 (vmag = 7.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+59) Warning: St 7047 (vmag = 7.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -52°5225 (en 12h):  10.5 | 37m46.6s | 4.4'     (pag. 17)
-18) Warning: St 7055 (vmag = 4.5) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
+60) Warning: St 7055 (vmag = 4.5) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
      Register CD -55°4778 (en 12h):  8.6 | 39m14.6s | 48.3'     (pag. 118)
-19) Warning: St 7360 (L 5533) is ALONE (no PPM / CD / CPD / GSC star near it).
+61) Warning: St 7176 is FAR from B 4295 (dist = 418.7 arcsec).
+62) Warning: St 7360 (L 5533) is ALONE (no PPM / CD / CPD / GSC star near it).
   Note: nearest PPM 318491 at 567.7 arcsec.
-20) Warning: St 7773 (vmag = 5.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+63) Warning: St 7482 is FAR from B 4565 (dist = 324.1 arcsec).
+64) Warning: St 7773 (vmag = 5.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -82°255 (en 14h):  8.0 | 6m5.0s | 16.1'     (pag. 386)
-21) Warning: St 7828 (vmag = 7.8) has a near PPM 342793 star (vmag = 4.3) with a different magnitude (delta = 3.5).
-22) Warning: St 7974 (vmag = 8.0) has a near CD with dif. magnitude (delta = 4.5). Check dpl.
+65) Warning: St 7828 (vmag = 7.8) has a near PPM 342793 star (vmag = 4.3) with a different magnitude (delta = 3.5).
+66) Warning: St 7964 is FAR from B 4991 (dist = 194.3 arcsec).
+67) Warning: St 7965 is FAR from B 4990 (dist = 183.4 arcsec).
+68) Warning: St 7974 (vmag = 8.0) has a near CD with dif. magnitude (delta = 4.5). Check dpl.
      Register CD -64°867 (en 14h):  3.5 | 32m26.0s | 25.5'     (pag. 45)
-23) Warning: St 8527 (vmag = 6.7) has a near PPM 344126 star (vmag = 10.2) with a different magnitude (delta = 3.5).
-24) Warning: St 8699 (vmag = 8.7) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+69) Warning: St 8146 is FAR from B 5127 (dist = 3654.4 arcsec).
+70) Warning: St 8222 is FAR from B 5183 (dist = 579.6 arcsec).
+71) Warning: St 8527 (vmag = 6.7) has a near PPM 344126 star (vmag = 10.2) with a different magnitude (delta = 3.5).
+72) Warning: St 8699 (vmag = 8.7) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -57°6235 (en 15h):  5.2 | 53m22.5s | 25.1'     (pag. 186)
-25) Warning: St 8911 (L 6820) is ALONE (no PPM / CD / CPD / GSC star near it).
+73) Warning: St 8911 (L 6820) is ALONE (no PPM / CD / CPD / GSC star near it).
   Note: nearest PPM 265478 at 198.9 arcsec.
-26) Warning: St 9269 is ALONE (no PPM / CD / CPD / GSC star near it).
+74) Warning: St 8981 is FAR from B 5753 (dist = 364.1 arcsec).
+75) Warning: St 9005 is FAR from B 5756 (dist = 236.8 arcsec).
+76) Warning: St 9203 is FAR from B 5890 (dist = 248.5 arcsec).
+77) Warning: St 9269 is ALONE (no PPM / CD / CPD / GSC star near it).
   Possible cause: lack of Decl (s).
   Note: nearest PPM 2162 at 303.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-27) Warning: St 9781 is ALONE (no PPM / CD / CPD / GSC star near it).
+78) Warning: St 9662 is FAR from B 6282 (dist = 27043.6 arcsec).
+79) Warning: St 9664 is FAR from B 6289 (dist = 13304.2 arcsec).
+80) Warning: St 9724 is FAR from B 6225 (dist = 150.2 arcsec).
+81) Warning: St 9781 is ALONE (no PPM / CD / CPD / GSC star near it).
   Possible cause: lack of Decl (s).
   Note: nearest PPM 2162 at 303.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-28) Warning: St 10603 (L 8178) is ALONE (no PPM / CD / CPD / GSC star near it).
+82) Warning: St 9789 is FAR from B 6266 (dist = 374.0 arcsec).
+83) Warning: St 10118 is FAR from B 6437 (dist = 483.1 arcsec).
+84) Warning: St 10603 (L 8178) is ALONE (no PPM / CD / CPD / GSC star near it).
   Note: nearest PPM 299229 at 910.4 arcsec.
-29) Warning: St 10628 (vmag = 7.0) has a near PPM 374387 star (vmag = 10.0) with a different magnitude (delta = 3.0).
-30) Warning: St 10786 is ALONE (no PPM / CD / CPD / GSC star near it).
+85) Warning: St 10628 (vmag = 7.0) has a near PPM 374387 star (vmag = 10.0) with a different magnitude (delta = 3.0).
+86) Warning: St 10786 is ALONE (no PPM / CD / CPD / GSC star near it).
   Possible cause: lack of Decl (s).
   Note: nearest PPM 2162 at 303.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-31) Warning: St 11081 (vmag = 7.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+87) Warning: St 10894 is FAR from B 6848 (dist = 204.2 arcsec).
+88) Warning: St 10895 is FAR from B 6845 (dist = 707.0 arcsec).
+89) Warning: St 11081 (vmag = 7.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -41°14265 (en 20h):  10.0 | 43m30.7s | 22.2'     (pag. 535)
-32) Warning: St 11123 is ALONE (no PPM / CD / CPD / GSC star near it).
+90) Warning: St 11123 is ALONE (no PPM / CD / CPD / GSC star near it).
   Note: nearest PPM 326668 at 318.7 arcsec.
-33) Warning: St 11276 is ALONE (no PPM / CD / CPD / GSC star near it).
+91) Warning: St 11123 is FAR from B 6940 (dist = 349.1 arcsec).
+92) Warning: St 11204 is FAR from B 6971 (dist = 133140.5 arcsec).
+93) Warning: St 11276 is ALONE (no PPM / CD / CPD / GSC star near it).
   Note: nearest PPM 238605 at 61.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-34) Warning: St 11376 (L 8827) is ALONE (no PPM / CD / CPD / GSC star near it).
+94) Warning: St 11376 (L 8827) is ALONE (no PPM / CD / CPD / GSC star near it).
   Note: nearest PPM 327254 at 1312.2 arcsec.
-35) Warning: St 11625 is ALONE (no PPM / CD / CPD / GSC star near it).
+95) Warning: St 11452 is FAR from B 7090 (dist = 45285.8 arcsec).
+96) Warning: St 11475 is FAR from B 7076 (dist = 289.4 arcsec).
+97) Warning: St 11576 is FAR from B 7110 (dist = 276.8 arcsec).
+98) Warning: St 11625 is ALONE (no PPM / CD / CPD / GSC star near it).
   Possible cause: lack of Decl (s).
   Note: nearest PPM 114048 at 25.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
+99) Warning: St 12189 is FAR from B 7299 (dist = 103009.9 arcsec).
 Available Stone stars = 12440, and Lacaille = 9632
-Stone stars properly identified with Brisbane = 4865
+Stone stars properly identified with Brisbane = 4927
 Stars from Stone identified with PPM = 12414, GSC-PPM = 5, CD = 11605 and CPD = 11654
 RSME of distance (arcsec) = 1.48  among a total of 12414 stars
 RSME of visual magnitude = 0.74890  among a total of 10719 stars
-Errors logged = 35
+Errors logged = 99
 Stars read from Catalogo General Argentino: 32379
    Doubles: 1633, Cumulus: 10, Nebulae: 17, Variables: 67
 
@@ -738,83 +749,114 @@ Perform comparison between Taylor and PPM...
 Stars read from PPM: 468861
 1) Warning: T 705 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 66955 at 565.8 arcsec.
-2) Warning: T 721 is FAR from L 661 (dist = 82.5 arcsec).
-3) Warning: T 1144 is FAR from L 1060 (dist = 142.8 arcsec).
-4) Warning: T 1309 is ALONE (no PPM or GSC star near it).
+2) Warning: T 813 is FAR from St 963 (dist = 53187.0 arcsec).
+3) Warning: T 1076 is FAR from St 1301 (dist = 194.5 arcsec).
+4) Warning: T 1078 is FAR from St 1300 (dist = 196.8 arcsec).
+5) Warning: T 1144 is FAR from L 1060 (dist = 142.8 arcsec).
+6) Warning: T 1144 is FAR from St 1384 (dist = 142.8 arcsec).
+7) Warning: T 1146 is FAR from St 1389 (dist = 130453.6 arcsec).
+8) Warning: T 1309 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 307887 at 453.9 arcsec.
-5) Warning: T 1363 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 93159 at 110.6 arcsec.
-6) Warning: T 1383 is ALONE (no PPM or GSC star near it).
+9) Warning: T 1383 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 147158 at 466.0 arcsec.
-7) Warning: T 2237 is ALONE (no PPM or GSC star near it).
+10) Warning: T 1383 is FAR from St 1703 (dist = 599.3 arcsec).
+11) Warning: T 1415 is FAR from B 650 (dist = 344.3 arcsec).
+12) Warning: T 1475 is FAR from St 1801 (dist = 198.9 arcsec).
+13) Warning: T 1832 is FAR from St 7737 (dist = 254188.7 arcsec).
+14) Warning: T 2173 is FAR from St 2622 (dist = 29378.1 arcsec).
+15) Warning: T 2174 is FAR from St 2619 (dist = 29380.4 arcsec).
+16) Warning: T 2237 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 48613 at 317.0 arcsec.
-8) Warning: T 2496 is ALONE (no PPM or GSC star near it).
+17) Warning: T 2496 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of Decl (s).
   Note: nearest PPM 96052 at 162.2 arcsec.
-9) Warning: T 3032 is ALONE (no PPM or GSC star near it).
+18) Warning: T 3032 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 740051 at 270.6 arcsec.
-10) Warning: T 3032 is FAR from L 2773 (dist = 3599.6 arcsec).
-11) Warning: T 3230 is FAR from L 2957 (dist = 68.9 arcsec).
-12) Warning: T 3360 is ALONE (no PPM or GSC star near it).
+19) Warning: T 3032 is FAR from L 2773 (dist = 3599.6 arcsec).
+20) Warning: T 3032 is FAR from St 3619 (dist = 3599.6 arcsec).
+21) Warning: T 3335 is FAR from B 1821 (dist = 128.3 arcsec).
+22) Warning: T 3360 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 98263 at 368.2 arcsec.
-13) Warning: T 3651 is FAR from L 3369 (dist = 61.1 arcsec).
-14) Warning: T 3727 is ALONE (no PPM or GSC star near it).
+23) Warning: T 3431 is FAR from B 1893 (dist = 227.3 arcsec).
+24) Warning: T 3560 is FAR from B 1989 (dist = 240.8 arcsec).
+25) Warning: T 3727 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 400123 at 406.2 arcsec.
-15) Warning: T 3912 is FAR from L 3615 (dist = 101.8 arcsec).
-16) Warning: T 3982 is ALONE (no PPM or GSC star near it).
+26) Warning: T 3982 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 99352 at 207.2 arcsec.
-17) Warning: T 5022 is ALONE (no PPM or GSC star near it).
+27) Warning: T 4242 is FAR from B 2560 (dist = 182.6 arcsec).
+28) Warning: T 4387 is FAR from B 2719 (dist = 1666.7 arcsec).
+29) Warning: T 4388 is FAR from B 2718 (dist = 1656.9 arcsec).
+30) Warning: T 4743 is FAR from B 3063 (dist = 488.0 arcsec).
+31) Warning: T 4747 is FAR from B 3077 (dist = 3178.5 arcsec).
+32) Warning: T 5022 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 100880 at 376.3 arcsec.
-18) Warning: T 5145 is ALONE (no PPM or GSC star near it).
+33) Warning: T 5145 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 288709 at 247.0 arcsec.
-19) Warning: T 5342 is ALONE (no PPM or GSC star near it).
+34) Warning: T 5145 is FAR from B 3505 (dist = 1150.1 arcsec).
+35) Warning: T 5145 is FAR from St 6264 (dist = 248.2 arcsec).
+36) Warning: T 5145 is FAR from St 6264 (dist = 994.0 arcsec).
+37) Warning: T 5342 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of RA (s).
   Note: nearest PPM 743846 at 259.9 arcsec.
-20) Warning: T 5404 is FAR from L 4887 (dist = 61.6 arcsec).
-21) Warning: T 5536 is ALONE (no PPM or GSC star near it).
+38) Warning: T 5536 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 340657 at 179.3 arcsec.
-22) Warning: T 5536 is FAR from L 4998 (dist = 178.7 arcsec).
-23) Warning: T 5657 is ALONE (no PPM or GSC star near it).
+39) Warning: T 5536 is FAR from L 4998 (dist = 178.7 arcsec).
+40) Warning: T 5536 is FAR from St 6720 (dist = 178.7 arcsec).
+41) Warning: T 5657 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 128970 at 497.1 arcsec.
-24) Warning: T 5914 is ALONE (no PPM or GSC star near it).
+42) Warning: T 5914 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 359674 at 223.8 arcsec.
-25) Warning: T 5914 is FAR from GC 17466 (dist = 120.3 arcsec). Check if it is a 1/2 star in GC.
-26) Warning: T 5949 is FAR from GC 17585 (dist = 122.4 arcsec). Check if it is a 1/2 star in GC.
-27) Warning: T 5949 is FAR from GC 17589 (dist = 78.9 arcsec). Check if it is a 1/2 star in GC.
-28) Warning: T 6736 is ALONE (no PPM or GSC star near it).
+43) Warning: T 5914 is FAR from GC 17466 (dist = 120.3 arcsec). Check if it is a 1/2 star in GC.
+44) Warning: T 5949 is FAR from GC 17585 (dist = 122.4 arcsec). Check if it is a 1/2 star in GC.
+45) Warning: T 6360 is FAR from St 7528 (dist = 414823.1 arcsec).
+46) Warning: T 6736 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 262914 at 232.1 arcsec.
-29) Warning: T 6736 is FAR from L 5973 (dist = 119544.6 arcsec).
-30) Warning: T 7216 is ALONE (no PPM or GSC star near it).
+47) Warning: T 6736 is FAR from L 5973 (dist = 119544.6 arcsec).
+48) Warning: T 6829 is FAR from St 7965 (dist = 174.1 arcsec).
+49) Warning: T 6830 is FAR from St 7964 (dist = 185.9 arcsec).
+50) Warning: T 7216 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 293882 at 208.7 arcsec.
-31) Warning: T 7216 is FAR from GC 20921 (dist = 208.1 arcsec). Check if it is a 1/2 star in GC.
-32) Warning: T 7804 is ALONE (no PPM or GSC star near it).
+51) Warning: T 7216 is FAR from GC 20921 (dist = 208.1 arcsec). Check if it is a 1/2 star in GC.
+52) Warning: T 7220 is FAR from St 8429 (dist = 127130.1 arcsec).
+53) Warning: T 7656 is FAR from B 5753 (dist = 360.2 arcsec).
+54) Warning: T 7687 is FAR from St 9244 (dist = 169665.5 arcsec).
+55) Warning: T 7804 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of RA (s).
   Note: nearest PPM 762259 at 125.6 arcsec.
-33) Warning: T 7830 is FAR from L 7053 (dist = 33677.4 arcsec).
-34) Warning: T 8340 is ALONE (no PPM or GSC star near it).
+56) Warning: T 7804 is FAR from St 9165 (dist = 405.7 arcsec).
+57) Warning: T 7830 is FAR from L 7053 (dist = 33677.4 arcsec).
+58) Warning: T 7894 is FAR from St 9269 (dist = 212027.6 arcsec).
+59) Warning: T 8155 is FAR from St 9622 (dist = 173.5 arcsec).
+60) Warning: T 8302 is FAR from St 9781 (dist = 230147.1 arcsec).
+61) Warning: T 8340 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of RA (s).
   Note: nearest PPM 733633 at 179.7 arcsec.
-35) Warning: T 8342 is ALONE (no PPM or GSC star near it).
+62) Warning: T 8342 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of RA (s).
   Note: nearest PPM 267736 at 366.9 arcsec.
-36) Warning: T 8815 is ALONE (no PPM or GSC star near it).
+63) Warning: T 8342 is FAR from St 9827 (dist = 621.0 arcsec).
+64) Warning: T 8815 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 167287 at 255.3 arcsec.
-37) Warning: T 9260 is FAR from L 8362 (dist = 66.3 arcsec).
-38) Warning: T 9621 is ALONE (no PPM or GSC star near it).
+65) Warning: T 8965 is FAR from St 10545 (dist = 78360.7 arcsec).
+66) Warning: T 9228 is FAR from St 10786 (dist = 299015.5 arcsec).
+67) Warning: T 9621 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of Decl (s).
   Note: nearest PPM 271716 at 264.6 arcsec.
-39) Warning: T 9761 is ALONE (no PPM or GSC star near it).
+68) Warning: T 9761 is ALONE (no PPM or GSC star near it).
   Possible cause: lack of RA (s).
   Note: nearest PPM 112356 at 652.7 arcsec.
-40) Warning: T 10524 is ALONE (no PPM or GSC star near it).
+69) Warning: T 10091 is FAR from B 7076 (dist = 288.2 arcsec).
+70) Warning: T 10200 is FAR from St 11576 (dist = 183.8 arcsec).
+71) Warning: T 10524 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 63350 at 368.7 arcsec.
 Available Taylor stars = 10990
-Taylor stars properly identified with Lacaille = 2811
-Taylor stars properly identified with Brisbane = 816
-Taylor stars properly identified with GC = 21
+Taylor stars properly identified with Lacaille = 2817
+Taylor stars properly identified with Brisbane = 834
+Taylor stars properly identified with GC = 22
+Taylor stars properly identified with Stone = 4950
 Stars from Taylor identified with PPM = 10944, GSC-PPM = 6
 RSME of distance (arcsec) = 4.19  among a total of 10944 stars
-Errors logged = 40
+Errors logged = 71
 Doubles found in T catalog: 86 (saved to results/doubles/taylor.csv)
 
 ***************************************
@@ -826,522 +868,378 @@ Stars read from PPM: 468861
      Register U 116: 00h 10m 27s14 +43°13'49"0
   Note: nearest PPM 42798 at 33.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-3) Warning: U 266 is FAR from L 131 (dist = 61.3 arcsec).
-     Register U 266: 00h 27m 10s97 -33°04'31"6
-4) Warning: U 332 is ALONE (no PPM / CD / CPD / GSC star near it).
+3) Warning: U 332 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 332: 00h 33m 30s69 -03°06'50"8
   Note: nearest PPM 182524 at 218.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-5) Warning: U 341 is ALONE (no PPM / CD / CPD / GSC star near it).
+4) Warning: U 341 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 341: 00h 34m 28s63 -07°10'23"9
   Note: nearest PPM 182539 at 119.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-6) Warning: U 489 is ALONE (no PPM / CD / CPD / GSC star near it).
+5) Warning: U 489 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 489: 00h 48m 23s96 -01°33'12"2
   Note: nearest PPM 174817 at 197.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-7) Warning: U 577 is ALONE (no PPM / CD / CPD / GSC star near it).
+6) Warning: U 577 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 577: 00h 59m 04s28 +54°13'36"8
   Note: nearest PPM 26046 at 51.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-8) Warning: U 788 is FAR from Lal 2966 (dist = 61.9 arcsec).
-     Register U 788: 01h 31m 16s32 +66°12'28"5
-9) Warning: U 987 is ALONE (no PPM / CD / CPD / GSC star near it).
+7) Warning: U 987 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 987: 01h 59m 20s68 +13°54'51"0
   Note: nearest PPM 117959 at 132.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-10) Warning: U 1121 is FAR from OA 1531 (dist = 3662.6 arcsec).
+8) Warning: U 1121 is FAR from OA 1531 (dist = 3662.6 arcsec).
      Register U 1121: 02h 19m 21s06 -15°58'21"4
-11) Warning: U 1173 (vmag = 9.0) has a near PPM 245146 star (vmag = 4.4) with a different magnitude (delta = 4.6).
-12) Warning: U 1173 (vmag = 9.0) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
+9) Warning: U 1173 (vmag = 9.0) has a near PPM 245146 star (vmag = 4.4) with a different magnitude (delta = 4.6).
+10) Warning: U 1173 (vmag = 9.0) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
      Register CD -28°819 (en 2h):  4.9 | 28m23.1s | 47.7'     (pag. 349)
-13) Warning: U 1179 is ALONE (no PPM / CD / CPD / GSC star near it).
+11) Warning: U 1179 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 1179: 02h 28m 26s08 +06°13'20"0
   Note: nearest PPM 145742 at 32.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-14) Warning: U 1332 is FAR from Lal 5490 (dist = 82.4 arcsec).
-     Register U 1332: 02h 52m 45s03 +61°10'32"4
-15) Warning: U 1434 (vmag = 8.4) has a near PPM 212728 star (vmag = 5.0) with a different magnitude (delta = 3.4).
-16) Warning: U 1484 is ALONE (no PPM / CD / CPD / GSC star near it).
+12) Warning: U 1434 (vmag = 8.4) has a near PPM 212728 star (vmag = 5.0) with a different magnitude (delta = 3.4).
+13) Warning: U 1484 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 1484: 03h 21m 48s05 +18°16'15"9
   Note: nearest PPM 119122 at 61.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-17) Warning: U 1528 is ALONE (no PPM / CD / CPD / GSC star near it).
+14) Warning: U 1528 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 1528: 03h 29m 10s63 -09°05'46"8
   Note: nearest PPM 185966 at 144.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-18) Warning: U 1612 is FAR from Lal 6888 (dist = 104.9 arcsec).
-     Register U 1612: 03h 37m 29s75 +41°01'53"0
-19) Warning: U 1614 is FAR from Lal 6888 (dist = 101.9 arcsec).
-     Register U 1614: 03h 37m 30s33 +41°02'00"0
-20) Warning: U 1788 is ALONE (no PPM / CD / CPD / GSC star near it).
+15) Warning: U 1788 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 1788: 03h 52m 52s88 +34°59'19"8
   Note: nearest PPM 69025 at 30.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-21) Warning: U 1885 is ALONE (no PPM / CD / CPD / GSC star near it).
+16) Warning: U 1885 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 1885: 04h 08m 43s71 +49°41'11"7
   Note: nearest PPM 29062 at 61.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-22) Warning: U 1886 is ALONE (no PPM / CD / CPD / GSC star near it).
+17) Warning: U 1886 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 1886: 04h 08m 47s37 -07°53'13"6
   Note: nearest PPM 400061 at 60.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-23) Warning: U 1891 is ALONE (no PPM / CD / CPD / GSC star near it).
+18) Warning: U 1891 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 1891: 04h 09m 28s26 +16°13'30"2
   Note: nearest PPM 119759 at 56.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-24) Warning: U 2130 is ALONE (no PPM / CD / CPD / GSC star near it).
+19) Warning: U 2130 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 2130: 04h 45m 49s96 +43°53'16"4
   Note: nearest PPM 47506 at 123.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-25) Warning: U 2237 is ALONE (no PPM / CD / CPD / GSC star near it).
+20) Warning: U 2237 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 2237: 05h 02m 53s15 +30°11'34"3
   Note: nearest PPM 70023 at 145.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-26) Warning: U 2421 (vmag = 5.0) has a near PPM 400076 star (vmag = 1.8) with a different magnitude (delta = 3.2).
-27) Warning: U 2520 is ALONE (no PPM / CD / CPD / GSC star near it).
+21) Warning: U 2421 (vmag = 5.0) has a near PPM 400076 star (vmag = 1.8) with a different magnitude (delta = 3.2).
+22) Warning: U 2520 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 2520: 05h 50m 28s64 +20°09'05"7
   Note: nearest PPM 95179 at 132.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-28) Warning: U 2703 (vmag = 6.9) has a near PPM 400087 star (vmag = 3.8) with a different magnitude (delta = 3.1).
-29) Warning: U 2884 (vmag = 5.3) has a near CD with dif. magnitude (delta = 4.3). Check dpl.
+23) Warning: U 2703 (vmag = 6.9) has a near PPM 400087 star (vmag = 3.8) with a different magnitude (delta = 3.1).
+24) Warning: U 2884 (vmag = 5.3) has a near CD with dif. magnitude (delta = 4.3). Check dpl.
      Register CD -26°3646 (en 6h):  9.6 | 53m6.8s | 59.6'     (pag. 246)
-30) Warning: U 3011 is FAR from OA 7536 (dist = 28714.8 arcsec).
+25) Warning: U 3011 is FAR from OA 7536 (dist = 28714.8 arcsec).
      Register U 3011: 07h 11m 11s65 -28°25'31"3
-31) Warning: U 3027 is ALONE (no PPM / CD / CPD / GSC star near it).
+26) Warning: U 3027 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 3027: 07h 12m 56s47 +45°14'24"7
   Note: nearest PPM 49813 at 58.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-32) Warning: U 3110 is FAR from OA 6875 (dist = 73.7 arcsec).
-     Register U 3110: 07h 22m 47s04 -14°44'57"4
-33) Warning: U 3257 (vmag = 6.3) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
+27) Warning: U 3257 (vmag = 6.3) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
      Register CD -24°6020 (en 7h):  10.0 | 43m43.0s | 36.0'     (pag. 137)
-34) Warning: U 3270 is ALONE (no PPM / CD / CPD / GSC star near it).
+28) Warning: U 3270 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 3270: 07h 44m 36s58 +31°01'41"2
   Note: nearest PPM 73225 at 751.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-35) Warning: U 3487 is FAR from L 3321 (dist = 803.8 arcsec).
+29) Warning: U 3487 is FAR from L 3321 (dist = 803.8 arcsec).
      Register U 3487: 08h 21m 28s46 -31°43'29"6
-36) Warning: U 3787 is ALONE (no PPM / CD / CPD / GSC star near it).
+30) Warning: U 3787 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 3787: 08h 42m 05s15 +71°19'55"7
   Note: nearest PPM 7195 at 788.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-37) Warning: U 3788 is ALONE (no PPM / CD / CPD / GSC star near it).
+31) Warning: U 3788 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 3788: 08h 42m 06s22 +71°20'01"1
   Note: nearest PPM 7195 at 796.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-38) Warning: U 3944 is FAR from Lal 18115 (dist = 138.1 arcsec).
+32) Warning: U 3944 is FAR from Lal 18115 (dist = 138.1 arcsec).
      Register U 3944: 09h 04m 46s16 +53°16'51"8
-39) Warning: U 3945 is FAR from Lal 18122 (dist = 135.9 arcsec).
+33) Warning: U 3945 is FAR from Lal 18122 (dist = 135.9 arcsec).
      Register U 3945: 09h 04m 48s06 +53°17'03"8
-40) Warning: U 4128 is FAR from Lal 19022 (dist = 60.6 arcsec).
-     Register U 4128: 09h 34m 34s31 +43°21'28"7
-41) Warning: U 4265 is FAR from L 4107 (dist = 1289.6 arcsec).
+34) Warning: U 4265 is FAR from L 4107 (dist = 1289.6 arcsec).
      Register U 4265: 09h 55m 21s78 -38°46'44"0
-42) Warning: U 4298 is ALONE (no PPM / CD / CPD / GSC star near it).
+35) Warning: U 4298 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 4298: 09h 59m 08s84 +30°08'30"9
   Note: nearest PPM 100097 at 193.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-43) Warning: U 4572 is ALONE (no PPM / CD / CPD / GSC star near it).
+36) Warning: U 4572 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 4572: 10h 37m 34s21 +58°09'19"4
   Note: nearest PPM 32780 at 189.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-44) Warning: U 4617 is ALONE (no PPM / CD / CPD / GSC star near it).
+37) Warning: U 4617 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 4617: 10h 43m 35s60 -00°47'44"7
   Note: nearest PPM 705359 at 934.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-45) Warning: U 4659 (vmag = 8.1) has a near PPM 400158 star (vmag = 4.3) with a different magnitude (delta = 3.8).
-46) Warning: U 4711 is FAR from Lal 21185 (dist = 366.2 arcsec).
+38) Warning: U 4659 (vmag = 8.1) has a near PPM 400158 star (vmag = 4.3) with a different magnitude (delta = 3.8).
+39) Warning: U 4711 is FAR from Lal 21185 (dist = 366.2 arcsec).
      Register U 4711: 10h 55m 39s91 +36°53'33"6
-47) Warning: U 4711 is ALONE (no PPM / CD / CPD / GSC star near it).
+40) Warning: U 4711 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 4711: 10h 55m 39s91 +36°53'33"6
   Note: nearest PPM 75640 at 54.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-48) Warning: U 4727 is FAR from Lal 21258 (dist = 337.7 arcsec).
+41) Warning: U 4727 is FAR from Lal 21258 (dist = 337.7 arcsec).
      Register U 4727: 10h 58m 27s22 +44°14'51"8
-49) Warning: U 4727 is ALONE (no PPM / CD / CPD / GSC star near it).
+42) Warning: U 4727 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 4727: 10h 58m 27s22 +44°14'51"8
   Note: nearest PPM 52239 at 35.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-50) Warning: U 5059 is ALONE (no PPM / CD / CPD / GSC star near it).
+43) Warning: U 5059 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 5059: 11h 44m 56s48 +38°43'01"7
   Note: nearest PPM 76134 at 38.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-51) Warning: U 5134 is FAR from L 4993 (dist = 795.0 arcsec).
+44) Warning: U 5134 is FAR from L 4993 (dist = 795.0 arcsec).
      Register U 5134: 11h 56m 30s41 -38°13'41"7
-52) Warning: U 5145 is FAR from L 5015 (dist = 1098.2 arcsec).
+45) Warning: U 5145 is FAR from L 5015 (dist = 1098.2 arcsec).
      Register U 5145: 11h 58m 54s54 -32°10'27"7
-53) Warning: U 5685 is FAR from Lal 25012 (dist = 61.4 arcsec).
-     Register U 5685: 13h 24m 34s27 -01°36'16"6
-54) Warning: U 5769 is FAR from Lal 25372 (dist = 179.2 arcsec).
+46) Warning: U 5769 is FAR from Lal 25372 (dist = 179.2 arcsec).
      Register U 5769: 13h 38m 39s84 +15°38'48"7
-55) Warning: U 5860 is ALONE (no PPM / CD / CPD / GSC star near it).
+47) Warning: U 5860 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 5860: 13h 49m 28s41 +25°12'58"7
   Note: nearest PPM 102967 at 439.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-56) Warning: U 5907 is FAR from L 5798 (dist = 75.9 arcsec).
-     Register U 5907: 13h 55m 44s46 -36°36'27"3
-57) Warning: U 6014 is ALONE (no PPM / CD / CPD / GSC star near it).
+48) Warning: U 6014 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 6014: 14h 11m 58s08 -13°03'44"2
   Note: nearest PPM 717530 at 192.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-58) Warning: U 6015 is ALONE (no PPM / CD / CPD / GSC star near it).
+49) Warning: U 6015 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 6015: 14h 11m 58s24 -13°03'44"2
   Note: nearest PPM 717530 at 194.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-59) Warning: U 6259 is FAR from Lal 27298 (dist = 81.9 arcsec).
-     Register U 6259: 14h 51m 12s00 +54°13'48"1
-60) Warning: U 6590 is FAR from Lal 28607 (dist = 87.2 arcsec).
-     Register U 6590: 15h 35m 33s67 -10°28'21"9
-61) Warning: U 6744 (vmag = 8.0) has a near PPM 231150 star (vmag = 3.4) with a different magnitude (delta = 4.6).
-62) Warning: U 6811 is FAR from OA 16358 (dist = 51346.6 arcsec).
+50) Warning: U 6744 (vmag = 8.0) has a near PPM 231150 star (vmag = 3.4) with a different magnitude (delta = 4.6).
+51) Warning: U 6811 is FAR from OA 16358 (dist = 51346.6 arcsec).
      Register U 6811: 16h 03m 54s09 -29°47'10"0
-63) Warning: U 6869 (vmag = 9.2) has a near CD with dif. magnitude (delta = 5.8). Check dpl.
+52) Warning: U 6869 (vmag = 9.2) has a near CD with dif. magnitude (delta = 5.8). Check dpl.
      Register CD -25°11485 (en 16h):  3.4 | 13m37.2s | 17.1'     (pag. 215)
-64) Warning: U 6875 is ALONE (no PPM / CD / CPD / GSC star near it).
+53) Warning: U 6875 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 6875: 16h 13m 03s71 +79°35'02"0
   Note: nearest PPM 9102 at 64.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-65) Warning: U 7215 is FAR from Lal 31055 (dist = 113.1 arcsec).
-     Register U 7215: 16h 57m 45s80 -04°49'47"0
-66) Warning: U 7286 (vmag = 8.0) has a near PPM 400225 star (vmag = 3.6) with a different magnitude (delta = 4.4).
-67) Warning: U 7506 is FAR from Lal 32322 (dist = 61.9 arcsec).
-     Register U 7506: 17h 34m 53s62 +37°17'35"0
-68) Warning: U 7541 is FAR from Lal 23418 (dist = 258066.3 arcsec).
+54) Warning: U 7286 (vmag = 8.0) has a near PPM 400225 star (vmag = 3.6) with a different magnitude (delta = 4.4).
+55) Warning: U 7541 is FAR from Lal 23418 (dist = 258066.3 arcsec).
      Register U 7541: 17h 39m 05s83 -25°07'53"1
-69) Warning: U 7584 is ALONE (no PPM / CD / CPD / GSC star near it).
+56) Warning: U 7584 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 7584: 17h 43m 04s87 +36°35'31"9
   Note: nearest PPM 80593 at 43.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-70) Warning: U 8013 is ALONE (no PPM / CD / CPD / GSC star near it).
+57) Warning: U 8013 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8013: 18h 25m 13s00 +61°08'55"0
   Note: nearest PPM 20924 at 110.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-71) Warning: U 8279 is FAR from L 7990 (dist = 1212.7 arcsec).
+58) Warning: U 8279 is FAR from L 7990 (dist = 1212.7 arcsec).
      Register U 8279: 18h 57m 23s88 -38°00'23"1
-72) Warning: U 8289 (vmag = 9.2) has a near PPM 235507 star (vmag = 5.8) with a different magnitude (delta = 3.4).
-73) Warning: U 8380 is ALONE (no PPM / CD / CPD / GSC star near it).
+59) Warning: U 8289 (vmag = 9.2) has a near PPM 235507 star (vmag = 5.8) with a different magnitude (delta = 3.4).
+60) Warning: U 8380 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8380: 19h 08m 45s66 +38°47'49"5
   Note: nearest PPM 82539 at 30.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-74) Warning: U 8430 is ALONE (no PPM / CD / CPD / GSC star near it).
+61) Warning: U 8430 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8430: 19h 13m 07s60 +05°26'26"3
   Note: nearest PPM 167638 at 362.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-75) Warning: U 8582 is ALONE (no PPM / CD / CPD / GSC star near it).
+62) Warning: U 8582 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 8582: 19h 28m 46s01 +19°29'31"3
   Note: nearest PPM 136538 at 33.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-76) Warning: U 9266 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
+63) Warning: U 9266 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.7). Check dpl.
      Register CD -25°15018 (en 20h):  4.3 | 38m41.5s | 42.5'     (pag. 227)
-77) Warning: U 9320 (vmag = 6.6) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+64) Warning: U 9320 (vmag = 6.6) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -41°14265 (en 20h):  10.0 | 43m30.7s | 22.2'     (pag. 535)
-78) Warning: U 9464 is FAR from L 8690 (dist = 287.2 arcsec).
+65) Warning: U 9464 is FAR from L 8690 (dist = 287.2 arcsec).
      Register U 9464: 20h 58m 55s65 -23°42'29"7
-79) Warning: U 9469 is FAR from L 8693 (dist = 618.0 arcsec).
+66) Warning: U 9469 is FAR from L 8693 (dist = 618.0 arcsec).
      Register U 9469: 20h 59m 50s99 -37°48'16"0
-80) Warning: U 9474 is ALONE (no PPM / CD / CPD / GSC star near it).
+67) Warning: U 9474 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 9474: 21h 00m 33s86 +38°03'18"6
   Note: nearest PPM 86045 at 50.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-81) Warning: U 9634 is FAR from L 8827 (dist = 35999.8 arcsec).
+68) Warning: U 9634 is FAR from L 8827 (dist = 35999.8 arcsec).
      Register U 9634: 21h 21m 08s76 -38°17'57"6
-82) Warning: U 9729 is FAR from L 8889 (dist = 435.8 arcsec).
+69) Warning: U 9729 is FAR from L 8889 (dist = 435.8 arcsec).
      Register U 9729: 21h 33m 52s22 -33°08'30"3
-83) Warning: U 9977 is ALONE (no PPM / CD / CPD / GSC star near it).
+70) Warning: U 9977 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 9977: 22h 01m 48s71 +53°02'43"1
   Note: nearest PPM 40235 at 77.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-84) Warning: U 10130 is ALONE (no PPM / CD / CPD / GSC star near it).
+71) Warning: U 10130 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10130: 22h 19m 30s35 +38°30'51"1
   Note: nearest PPM 87756 at 37.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-85) Warning: U 10277 is ALONE (no PPM / CD / CPD / GSC star near it).
+72) Warning: U 10277 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10277: 22h 37m 25s65 -14°20'33"5
   Note: nearest PPM 240690 at 56.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-86) Warning: U 10436 is FAR from L 9352 (dist = 69.2 arcsec).
-     Register U 10436: 22h 56m 52s96 -36°39'16"0
-87) Warning: U 10436 is ALONE (no PPM / CD / CPD / GSC star near it).
+73) Warning: U 10436 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10436: 22h 56m 52s96 -36°39'16"0
   Note: nearest PPM 400306 at 54.6 arcsec.
-88) Warning: U 10664 is ALONE (no PPM / CD / CPD / GSC star near it).
+74) Warning: U 10664 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register U 10664: 23h 22m 48s36 +07°00'54"4
   Note: nearest PPM 174137 at 119.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 Available USNO stars = 10716
-Stars from USNO with Lacaille = 1400, Brisbane = 9, Lalande = 564, Taylor = 8 and OA = 1198
+Stars from USNO with Lacaille = 1403, Brisbane = 9, Lalande = 574, Taylor = 8 and OA = 1199
 Stars from USNO identified with PPM = 10495, GSC-PPM = 172, CD = 4226 and CPD = 4603
 RSME of distance (arcsec) = 2.71  among a total of 10495 stars
 RSME of visual magnitude = 0.64630  among a total of 5401 stars
-Errors logged = 88
+Errors logged = 74
 Doubles found in U catalog: 97 (saved to results/doubles/usno.csv)
 
 ***************************************
 Perform cross-checking of scanned GC pages...
 Stars read from PPM: 468861
-1) Warning: GC 961 is FAR from L 286 (dist = 103.3 arcsec).
-     Register GC 961: mag = 7.7, RA = 00h57m00s54, DE = 37°59'07''0 (pag 22) 
-2) Warning: GC 1181 is FAR from L 338 (dist = 372.0 arcsec).
+1) Warning: GC 1181 is FAR from L 338 (dist = 372.0 arcsec).
      Register GC 1181: mag = 7.2, RA = 01h09m53s28, DE = 24°38'05''5 (pag 26) 
-3) Warning: GC 1908 is FAR from L 584 (dist = 7897.0 arcsec).
+2) Warning: GC 1908 is FAR from L 584 (dist = 7897.0 arcsec).
      Register GC 1908: mag = 7.0, RA = 01h51m17s06, DE = 60°55'27''3 (pag 41) dpl 
-4) Warning: GC 1909 is FAR from L 584 (dist = 7900.8 arcsec).
+3) Warning: GC 1909 is FAR from L 584 (dist = 7900.8 arcsec).
      Register GC 1909: mag = 7.5, RA = 01h51m17s33, DE = 60°55'23''5 (pag 41) dpl 
-5) Warning: GC 2393 is FAR from OA 1495 (dist = 60.3 arcsec).
-     Register GC 2393: mag = 8.7, RA = 02h14m59s72, DE = 29°25'35''6 (pag 50) 
-6) Warning: GC 2615 is FAR from OA 1616 (dist = 41185.3 arcsec).
+4) Warning: GC 2615 is FAR from OA 1616 (dist = 41185.3 arcsec).
      Register GC 2615: mag = 9.0, RA = 02h24m55s49, DE = 27°18'24''8 (pag 54) 
-7) Warning: GC 2943 is FAR from L 869 (dist = 63.3 arcsec).
-     Register GC 2943: mag = 8.0, RA = 02h40m30s46, DE = 34°24'05''5 (pag 61) 
-8) Warning: GC 3378 is FAR from L 1146 (dist = 872.1 arcsec).
+5) Warning: GC 3378 is FAR from L 1146 (dist = 872.1 arcsec).
      Register GC 3378: mag = 7.5, RA = 03h02m18s79, DE = 85°39'57''8 (pag 69) 
 **) Warning: ZC 3h 681 is FAR from previous registration (dist = 53257.0 arcsec).
-9) Warning: GC 4540 is FAR from B 650 (dist = 338.1 arcsec).
+6) Warning: GC 4540 is FAR from B 650 (dist = 338.1 arcsec).
      Register GC 4540: mag = 8.0, RA = 03h58m57s84, DE = 44°44'04''7 (pag 91) 
-10) Warning: GC 5081 is FAR from L 1523 (dist = 129.7 arcsec).
+7) Warning: GC 5081 is FAR from L 1523 (dist = 129.7 arcsec).
      Register GC 5081: mag = 6.1, RA = 04h26m00s00, DE = 62°47'45''7 (pag 102) 
-11) Warning: GC 5277 is FAR from B 759 (dist = 89.3 arcsec).
-     Register GC 5277: mag = 9.2, RA = 04h35m18s63, DE = 69°20'12''4 (pag 105) 
-12) Warning: GC 5643 is FAR from B 831 (dist = 73.8 arcsec).
-     Register GC 5643: mag = 8.0, RA = 04h52m08s27, DE = 63°49'04''1 (pag 113) 
-13) Warning: GC 5665 is FAR from B 838 (dist = 86.5 arcsec).
-     Register GC 5665: mag = 9.2, RA = 04h53m08s87, DE = 70°16'00''9 (pag 113) 
-14) Warning: GC 5867 is FAR from OA 686 (dist = 195271.9 arcsec).
+8) Warning: GC 5867 is FAR from OA 686 (dist = 195271.9 arcsec).
      Register GC 5867: mag = 9.0, RA = 05h02m25s60, DE = 23°26'23''6 (pag 117) 
-15) Warning: GC 6319 is FAR from L 1873 (dist = 481.3 arcsec).
+9) Warning: GC 6319 is FAR from L 1873 (dist = 481.3 arcsec).
      Register GC 6319: mag = 8.2, RA = 05h22m01s84, DE = 58°12'24''0 (pag 126) 
-16) Warning: GC 6922 is FAR from L 2055 (dist = 109.8 arcsec).
-     Register GC 6922: mag = 7.5, RA = 05h47m51s36, DE = 55°05'19''6 (pag 138) 
-17) Warning: GC 7192 is FAR from B 1121 (dist = 60.5 arcsec).
-     Register GC 7192: mag = 8.5, RA = 05h58m10s86, DE = 60°29'13''4 (pag 143) 
-18) Warning: GC 7217 is FAR from B 1125 (dist = 70.8 arcsec).
-     Register GC 7217: mag = 8.5, RA = 05h58m58s09, DE = 60°29'33''3 (pag 143) 
-19) Warning: GC 7292 is FAR from OA 4643 (dist = 20564.7 arcsec).
+10) Warning: GC 7292 is FAR from OA 4643 (dist = 20564.7 arcsec).
      Register GC 7292: mag = 8.5, RA = 06h01m30s43, DE = 28°06'10''9 (pag 144) 
-20) Warning: GC 7641 is FAR from B 1206 (dist = 78.8 arcsec).
-     Register GC 7641: mag = 8.5, RA = 06h14m05s66, DE = 62°19'35''5 (pag 151) 
-21) Warning: GC 8690 is FAR from B 1405 (dist = 2291.1 arcsec).
+11) Warning: GC 8690 is FAR from B 1405 (dist = 2291.1 arcsec).
      Register GC 8690: mag = 8.0, RA = 06h51m19s45, DE = 32°54'37''3 (pag 171) 
-22) Warning: GC 9226 is FAR from L 2634 (dist = 5835.7 arcsec).
+12) Warning: GC 9226 is FAR from L 2634 (dist = 5835.7 arcsec).
      Register GC 9226: mag = 6.8, RA = 07h10m32s72, DE = 23°31'19''2 (pag 182) 
-23) Warning: GC 9251 is FAR from L 2708 (dist = 283.1 arcsec).
+13) Warning: GC 9251 is FAR from L 2708 (dist = 283.1 arcsec).
      Register GC 9251: mag = 7.1, RA = 07h11m22s70, DE = 41°52'08''3 (pag 183) 
-24) Warning: GC 9396 is FAR from OA 6673 (dist = 28005.2 arcsec).
+14) Warning: GC 9396 is FAR from OA 6673 (dist = 28005.2 arcsec).
      Register GC 9396: mag = 8.0, RA = 07h16m28s59, DE = 27°57'22''0 (pag 186) 
-25) Warning: GC 9595 is FAR from B 1623 (dist = 77.7 arcsec).
-     Register GC 9595: mag = 8.7, RA = 07h23m12s03, DE = 55°06'41''5 (pag 190) 
-26) Warning: GC 9660 is FAR from L 2833 (dist = 89.4 arcsec).
-     Register GC 9660: mag = 8.0, RA = 07h25m44s30, DE = 27°50'05''3 (pag 191) 
-27) Warning: GC 9684 is FAR from OA 6964 (dist = 355.2 arcsec).
+15) Warning: GC 9684 is FAR from OA 6964 (dist = 355.2 arcsec).
      Register GC 9684: mag = 8.2, RA = 07h26m26s12, DE = 30°08'24''6 (pag 192) 
-28) Warning: GC 9778 is FAR from Lal 14863 (dist = 22254.0 arcsec).
+16) Warning: GC 9778 is FAR from Lal 14863 (dist = 22254.0 arcsec).
      Register GC 9778: mag = 6.0, RA = 07h30m19s14, DE = 14°13'02''6 (pag 194) dpl 
-29) Warning: GC 9960 is FAR from B 1703 (dist = 97.5 arcsec).
-     Register GC 9960: mag = 8.2, RA = 07h36m11s49, DE = 44°08'41''7 (pag 197) 
-30) Warning: GC 9998 is FAR from B 1712 (dist = 66.0 arcsec).
-     Register GC 9998: mag = 8.5, RA = 07h37m32s42, DE = 44°35'24''7 (pag 198) 
-31) Warning: GC 10453 is FAR from B 1821 (dist = 126.9 arcsec).
+17) Warning: GC 10453 is FAR from B 1821 (dist = 126.9 arcsec).
      Register GC 10453: mag = 7.7, RA = 07h51m38s48, DE = 46°58'55''0 (pag 207) 
-32) Warning: GC 10493 is FAR from B 1832 (dist = 119.4 arcsec).
-     Register GC 10493: mag = 8.5, RA = 07h53m02s32, DE = 47°08'02''3 (pag 208) 
-33) Warning: GC 10740 is FAR from B 1893 (dist = 231.9 arcsec).
+18) Warning: GC 10740 is FAR from B 1893 (dist = 231.9 arcsec).
      Register GC 10740: mag = 8.7, RA = 08h01m23s06, DE = 54°38'24''0 (pag 213) 
-34) Warning: GC 11009 is FAR from B 1949 (dist = 62.6 arcsec).
-     Register GC 11009: mag = 8.7, RA = 08h10m26s27, DE = 48°51'16''9 (pag 218) 
-35) Warning: GC 11070 is FAR from Lal 16304 (dist = 87.4 arcsec).
-     Register GC 11070: mag = 6.5, RA = 08h12m28s05, DE = 12°12'39''3 (pag 219) 
-36) Warning: GC 11214 is FAR from B 1989 (dist = 236.5 arcsec).
+19) Warning: GC 11214 is FAR from B 1989 (dist = 236.5 arcsec).
      Register GC 11214: mag = 8.2, RA = 08h17m17s78, DE = 44°35'31''8 (pag 222) 
-37) Warning: GC 11344 is FAR from L 3321 (dist = 803.9 arcsec).
+20) Warning: GC 11344 is FAR from L 3321 (dist = 803.9 arcsec).
      Register GC 11344: mag = 7.2, RA = 08h22m04s44, DE = 31°46'22''5 (pag 225) 
-38) Warning: GC 11447 is FAR from L 3369 (dist = 63.3 arcsec).
-     Register GC 11447: mag = 7.2, RA = 08h26m03s50, DE = 40°05'31''0 (pag 227) 
-39) Warning: GC 11608 is FAR from OA 8796 (dist = 1465.8 arcsec).
+21) Warning: GC 11608 is FAR from OA 8796 (dist = 1465.8 arcsec).
      Register GC 11608: mag = 8.7, RA = 08h31m54s02, DE = 23°52'00''8 (pag 230) 
-40) Warning: GC 11618 is FAR from B 2107 (dist = 80.9 arcsec).
-     Register GC 11618: mag = 8.5, RA = 08h32m12s09, DE = 54°40'10''2 (pag 230) 
-41) Warning: GC 12086 is FAR from B 2255 (dist = 60.8 arcsec).
-     Register GC 12086: mag = 8.7, RA = 08h48m18s19, DE = 59°00'51''4 (pag 240) 
-42) Warning: GC 12097 is FAR from B 2257 (dist = 69.7 arcsec).
-     Register GC 12097: mag = 8.5, RA = 08h48m43s41, DE = 52°51'15''3 (pag 240) 
-43) Warning: GC 12245 is FAR from B 2310 (dist = 118.1 arcsec).
-     Register GC 12245: mag = 8.0, RA = 08h55m10s43, DE = 73°33'45''2 (pag 243) 
-44) Warning: GC 12706 is FAR from L 3806 (dist = 1200.8 arcsec).
+22) Warning: GC 12706 is FAR from L 3806 (dist = 1200.8 arcsec).
      Register GC 12706: mag = 8.0, RA = 09h15m12s14, DE = 67°09'01''9 (pag 251) 
-45) Warning: GC 12912 is FAR from B 2500 (dist = 69.8 arcsec).
-     Register GC 12912: mag = 9.0, RA = 09h23m15s41, DE = 53°46'03''5 (pag 255) 
-46) Warning: GC 12923 is FAR from L 3881 (dist = 65.0 arcsec).
-     Register GC 12923: mag = 9.0, RA = 09h23m55s21, DE = 56°26'40''8 (pag 256) cum 
-47) Warning: GC 12956 is FAR from L 3879 (dist = 107.3 arcsec).
-     Register GC 12956: mag = 7.2, RA = 09h24m46s33, DE = 43°59'09''1 (pag 256) 
-48) Warning: GC 13038 is FAR from Lal 18823 (dist = 127886.6 arcsec).
+23) Warning: GC 13038 is FAR from Lal 18823 (dist = 127886.6 arcsec).
      Register GC 13038: mag = 6.3, RA = 09h27m44s67, DE = 22°18'44''5 (pag 258) 
-49) Warning: GC 13058 is FAR from L 3908 (dist = 284.8 arcsec).
+24) Warning: GC 13058 is FAR from L 3908 (dist = 284.8 arcsec).
      Register GC 13058: mag = 8.0, RA = 09h28m37s01, DE = 31°23'24''7 (pag 258) 
-50) Warning: GC 13078 is FAR from L 3919 (dist = 133.9 arcsec).
+25) Warning: GC 13078 is FAR from L 3919 (dist = 133.9 arcsec).
      Register GC 13078: mag = 7.7, RA = 09h29m19s64, DE = 49°10'12''1 (pag 259) 
-51) Warning: GC 13111 is FAR from B 2560 (dist = 178.9 arcsec).
+26) Warning: GC 13111 is FAR from B 2560 (dist = 178.9 arcsec).
      Register GC 13111: mag = 8.5, RA = 09h30m46s69, DE = 48°34'20''9 (pag 259) 
-52) Warning: GC 13211 is FAR from L 3978 (dist = 297.9 arcsec).
+27) Warning: GC 13211 is FAR from L 3978 (dist = 297.9 arcsec).
      Register GC 13211: mag = 8.5, RA = 09h35m28s89, DE = 49°38'56''1 (pag 261) 
-53) Warning: GC 13248 is FAR from B 2621 (dist = 2087.3 arcsec).
+28) Warning: GC 13248 is FAR from B 2621 (dist = 2087.3 arcsec).
      Register GC 13248: mag = 9.5, RA = 09h37m30s79, DE = 45°19'53''8 (pag 262) 
-54) Warning: GC 13495 is FAR from B 2719 (dist = 1666.3 arcsec).
+29) Warning: GC 13495 is FAR from B 2719 (dist = 1666.3 arcsec).
      Register GC 13495: mag = 8.5, RA = 09h48m33s54, DE = 41°43'14''0 (pag 267) 
-55) Warning: GC 13497 is FAR from B 2718 (dist = 1658.8 arcsec).
+30) Warning: GC 13497 is FAR from B 2718 (dist = 1658.8 arcsec).
      Register GC 13497: mag = 7.7, RA = 09h48m39s63, DE = 41°15'31''2 (pag 267) 
-56) Warning: GC 13667 is FAR from L 4107 (dist = 1288.4 arcsec).
+31) Warning: GC 13667 is FAR from L 4107 (dist = 1288.4 arcsec).
      Register GC 13667: mag = 7.5, RA = 09h55m59s63, DE = 38°51'00''9 (pag 270) 
-57) Warning: GC 14501 is FAR from OA 10769 (dist = 63.8 arcsec).
-     Register GC 14501: mag = 9.0, RA = 10h31m36s44, DE = 29°20'07''5 (pag 287) 
 **) ZC 10h 2585 is also ALONE.
   Possible cause: lack of RA (s).
-58) Warning: GC 15229 is FAR from L 4618 (dist = 1245.7 arcsec).
+32) Warning: GC 15229 is FAR from L 4618 (dist = 1245.7 arcsec).
      Register GC 15229: mag = 7.7, RA = 11h01m51s54, DE = 67°14'55''6 (pag 302) 
-59) Warning: GC 15457 is FAR from OA 11233 (dist = 7690.7 arcsec).
+33) Warning: GC 15457 is FAR from OA 11233 (dist = 7690.7 arcsec).
      Register GC 15457: mag = 8.5, RA = 11h11m38s87, DE = 23°17'34''5 (pag 306) 
-60) Warning: GC 15463 is FAR from Lal 21565 (dist = 62.8 arcsec).
-     Register GC 15463: mag = 7.7, RA = 11h11m54s19, DE = 04°22'46''2 (pag 306) 
-61) Warning: GC 15464 is FAR from L 4696 (dist = 400.6 arcsec).
+34) Warning: GC 15464 is FAR from L 4696 (dist = 400.6 arcsec).
      Register GC 15464: mag = 7.1, RA = 11h11m57s92, DE = 58°25'22''8 (pag 306) 
-62) Warning: GC 15475 is FAR from L 4699 (dist = 113.2 arcsec).
-     Register GC 15475: mag = 7.2, RA = 11h12m18s22, DE = 58°31'29''4 (pag 307) 
-63) Warning: GC 15477 is FAR from B 3519 (dist = 61.8 arcsec).
-     Register GC 15477: mag = 7.3, RA = 11h12m23s82, DE = 58°33'12''8 (pag 307) 
-64) Warning: GC 15697 is FAR from B 3598 (dist = 69.2 arcsec).
-     Register GC 15697: mag = 8.2, RA = 11h23m01s10, DE = 57°42'22''1 (pag 311) 
-65) Warning: GC 15742 is FAR from B 3623 (dist = 85.8 arcsec).
-     Register GC 15742: mag = 8.0, RA = 11h25m08s41, DE = 44°16'41''7 (pag 312) 
-66) Warning: GC 15862 is FAR from L 4810 (dist = 1947.2 arcsec).
+35) Warning: GC 15862 is FAR from L 4810 (dist = 1947.2 arcsec).
      Register GC 15862: mag = 6.6, RA = 11h30m33s31, DE = 60°54'07''8 (pag 314) 
-67) Warning: GC 15868 is FAR from L 4809 (dist = 375.7 arcsec).
+36) Warning: GC 15868 is FAR from L 4809 (dist = 375.7 arcsec).
      Register GC 15868: mag = 8.5, RA = 11h30m46s00, DE = 60°55'06''2 (pag 314) 
-68) Warning: GC 16087 is FAR from B 3753 (dist = 79.0 arcsec).
-     Register GC 16087: mag = 8.5, RA = 11h39m44s12, DE = 49°15'16''5 (pag 318) 
-69) Warning: GC 16174 is FAR from Lal 22301 (dist = 122902.4 arcsec).
+37) Warning: GC 16174 is FAR from Lal 22301 (dist = 122902.4 arcsec).
      Register GC 16174: mag = 6.0, RA = 11h44m38s84, DE = 04°38'17''6 (pag 320) 
-70) Warning: GC 16411 is FAR from L 4970 (dist = 36398.5 arcsec).
+38) Warning: GC 16411 is FAR from L 4970 (dist = 36398.5 arcsec).
      Register GC 16411: mag = 9.0, RA = 11h54m43s89, DE = 38°20'15''7 (pag 324) 
-71) Warning: GC 16460 is FAR from L 4993 (dist = 791.3 arcsec).
+39) Warning: GC 16460 is FAR from L 4993 (dist = 791.3 arcsec).
      Register GC 16460: mag = 6.9, RA = 11h57m15s95, DE = 38°18'41''1 (pag 325) 
-72) Warning: GC 16521 is FAR from L 5015 (dist = 1100.7 arcsec).
+40) Warning: GC 16521 is FAR from L 5015 (dist = 1100.7 arcsec).
      Register GC 16521: mag = 6.7, RA = 11h59m40s79, DE = 32°15'28''9 (pag 326) 
-73) Warning: GC 16606 is FAR from B 3942 (dist = 75.6 arcsec).
-     Register GC 16606: mag = 7.5, RA = 12h03m16s41, DE = 51°05'17''7 (pag 328) 
 **) ZC 12h 874 is also ALONE.
-74) Warning: GC 18406 is FAR from B 4505 (dist = 65.9 arcsec).
-     Register GC 18406: mag = 8.0, RA = 13h24m54s43, DE = 66°05'20''2 (pag 360) 
-75) Warning: GC 18414 is FAR from Lal 25012 (dist = 66.3 arcsec).
-     Register GC 18414: mag = 8.5, RA = 13h25m20s28, DE = 01°40'53''2 (pag 360) 
-76) Warning: GC 18458 is FAR from B 4531 (dist = 63.1 arcsec).
-     Register GC 18458: mag = 8.2, RA = 13h27m00s95, DE = 57°43'27''1 (pag 361) 
-77) Warning: GC 18494 is FAR from Lal 25116 (dist = 36178.6 arcsec).
+41) Warning: GC 18494 is FAR from Lal 25116 (dist = 36178.6 arcsec).
      Register GC 18494: mag = 8.7, RA = 13h28m55s43, DE = 04°17'31''9 (pag 361) 
-78) Warning: GC 19168 is FAR from B 4776 (dist = 75.0 arcsec).
-     Register GC 19168: mag = 8.5, RA = 14h00m55s75, DE = 34°22'33''5 (pag 374) 
-79) Warning: GC 19808 is FAR from Lal 26630 (dist = 77.1 arcsec).
-     Register GC 19808: mag = 6.6, RA = 14h30m20s78, DE = 11°46'20''2 (pag 385) 
-80) Warning: GC 19815 is FAR from B 4984 (dist = 68.7 arcsec).
-     Register GC 19815: mag = 8.2, RA = 14h30m40s41, DE = 39°23'11''6 (pag 385) 
-81) Warning: GC 19900 is FAR from B 5012 (dist = 84.9 arcsec).
-     Register GC 19900: mag = 8.5, RA = 14h34m37s17, DE = 45°03'41''9 (pag 387) 
-82) Warning: GC 20128 is FAR from Lal 27026 (dist = 87.2 arcsec).
-     Register GC 20128: mag = 8.2, RA = 14h44m34s72, DE = 23°46'22''9 (pag 391) 
-83) Warning: GC 20171 is FAR from St 8109 (dist = 141.0 arcsec).
+42) Warning: GC 20171 is FAR from St 8109 (dist = 141.0 arcsec).
      Register GC 20171: mag = 7.7, RA = 14h46m36s94, DE = 38°49'59''2 (pag 392) 
-84) Warning: GC 20175 is FAR from L 6133 (dist = 142.9 arcsec).
+43) Warning: GC 20175 is FAR from L 6133 (dist = 142.9 arcsec).
      Register GC 20175: mag = 7.7, RA = 14h46m41s61, DE = 38°47'48''0 (pag 392) 
-85) Warning: GC 20257 is FAR from Lal 27173 (dist = 158.9 arcsec).
+44) Warning: GC 20257 is FAR from Lal 27173 (dist = 158.9 arcsec).
      Register GC 20257: mag = 6.3, RA = 14h50m10s25, DE = 20°51'02''4 (pag 394) dpl 
-86) Warning: GC 20267 is FAR from B 5127 (dist = 3655.9 arcsec).
+45) Warning: GC 20267 is FAR from B 5127 (dist = 3655.9 arcsec).
      Register GC 20267: mag = 9.2, RA = 14h50m31s19, DE = 50°03'24''0 (pag 394) 
-87) Warning: GC 20544 is FAR from B 5200 (dist = 72.3 arcsec).
-     Register GC 20544: mag = 8.7, RA = 15h02m02s58, DE = 40°31'29''4 (pag 398) 
-88) Warning: GC 20662 is FAR from Lal 27744 (dist = 108.0 arcsec).
-     Register GC 20662: mag = 6.7, RA = 15h07m34s69, DE = 00°51'57''7 (pag 401) 
-89) Warning: GC 20677 is FAR from B 5246 (dist = 61.5 arcsec).
-     Register GC 20677: mag = 8.2, RA = 15h07m56s15, DE = 36°31'51''5 (pag 401) 
-90) Warning: GC 21533 is FAR from L 6567 (dist = 217.0 arcsec).
+46) Warning: GC 21533 is FAR from L 6567 (dist = 217.0 arcsec).
      Register GC 21533: mag = 6.9, RA = 15h46m40s75, DE = 44°09'13''5 (pag 416) 
-91) Warning: GC 21544 is FAR from L 6571 (dist = 214.8 arcsec).
+47) Warning: GC 21544 is FAR from L 6571 (dist = 214.8 arcsec).
      Register GC 21544: mag = 7.0, RA = 15h47m00s70, DE = 44°09'39''9 (pag 416) 
-92) Warning: GC 21595 is FAR from L 6599 (dist = 299.6 arcsec).
+48) Warning: GC 21595 is FAR from L 6599 (dist = 299.6 arcsec).
      Register GC 21595: mag = 6.4, RA = 15h49m14s00, DE = 35°49'09''2 (pag 417) 
-93) Warning: GC 21893 is FAR from Lal 19372 (dist = 370388.7 arcsec).
+49) Warning: GC 21893 is FAR from Lal 19372 (dist = 370388.7 arcsec).
      Register GC 21893: mag = 8.0, RA = 16h02m05s46, DE = 19°07'25''0 (pag 423) 
-94) Warning: GC 22197 is FAR from Lal 29778 (dist = 475.2 arcsec).
+50) Warning: GC 22197 is FAR from Lal 29778 (dist = 475.2 arcsec).
      Register GC 22197: mag = 7.0, RA = 16h15m43s39, DE = 16°43'22''2 (pag 429) 
-95) Warning: GC 22398 is FAR from B 5753 (dist = 363.7 arcsec).
+51) Warning: GC 22398 is FAR from B 5753 (dist = 363.7 arcsec).
      Register GC 22398: mag = 7.7, RA = 16h25m22s36, DE = 49°07'44''5 (pag 432) 
-96) Warning: GC 22885 is FAR from L 7027 (dist = 75.7 arcsec).
-     Register GC 22885: mag = 7.5, RA = 16h47m33s88, DE = 57°35'14''9 (pag 442) 
-97) Warning: GC 23060 is FAR from B 5935 (dist = 32334.0 arcsec).
+52) Warning: GC 23060 is FAR from B 5935 (dist = 32334.0 arcsec).
      Register GC 23060: mag = 7.3, RA = 16h54m55s16, DE = 55°57'32''1 (pag 445) 
-98) Warning: GC 23700 is FAR from B 6097 (dist = 89.4 arcsec).
-     Register GC 23700: mag = 7.7, RA = 17h22m17s61, DE = 37°20'03''8 (pag 456) 
-99) Warning: GC 23883 is FAR from L 7356 (dist = 64.8 arcsec).
-     Register GC 23883: mag = 10.0, RA = 17h30m31s26, DE = 53°35'20''1 (pag 460) 
-100) Warning: GC 23885 is FAR from L 7356 (dist = 75.5 arcsec).
-     Register GC 23885: mag = 10.5, RA = 17h30m38s21, DE = 53°35'50''4 (pag 460) 
-101) Warning: GC 23891 is FAR from B 6144 (dist = 71.6 arcsec).
-     Register GC 23891: mag = 8.2, RA = 17h30m57s36, DE = 58°44'56''6 (pag 460) 
-102) Warning: GC 24233 is FAR from B 6225 (dist = 148.2 arcsec).
+53) Warning: GC 24233 is FAR from B 6225 (dist = 148.2 arcsec).
      Register GC 24233: mag = 8.5, RA = 17h43m30s23, DE = 46°05'05''0 (pag 466) 
-103) Warning: GC 24252 is FAR from B 6231 (dist = 73.3 arcsec).
-     Register GC 24252: mag = 8.2, RA = 17h44m29s26, DE = 46°21'22''8 (pag 467) 
-104) Warning: GC 24282 is FAR from Y 7477 / U 7615 (dist = 187.1 arcsec).
+54) Warning: GC 24282 is FAR from Y 7477 / U 7615 (dist = 187.1 arcsec).
      Register GC 24282: mag = 8.0, RA = 17h45m52s82, DE = 34°47'34''6 (pag 467) 
-105) Warning: GC 24435 is FAR from B 6273 (dist = 66.9 arcsec).
-     Register GC 24435: mag = 8.5, RA = 17h51m56s66, DE = 45°48'54''4 (pag 470) 
-106) Warning: GC 24587 is FAR from Lal 33034 (dist = 189170.7 arcsec).
+55) Warning: GC 24587 is FAR from Lal 33034 (dist = 189170.7 arcsec).
      Register GC 24587: mag = 6.5, RA = 17h57m30s50, DE = 24°24'09''6 (pag 473) neb 
-107) Warning: GC 24628 is FAR from L 7511 (dist = 487.3 arcsec).
+56) Warning: GC 24628 is FAR from L 7511 (dist = 487.3 arcsec).
      Register GC 24628: mag = 8.0, RA = 17h59m10s35, DE = 76°36'24''0 (pag 473) 
-108) Warning: GC 24870 is FAR from T 7717 (dist = 223567.3 arcsec).
+57) Warning: GC 24870 is FAR from T 7717 (dist = 223567.3 arcsec).
      Register GC 24870: mag = 7.7, RA = 18h08m28s68, DE = 30°26'34''5 (pag 478) 
-109) Warning: GC 24873 is FAR from T 7719 (dist = 79186.6 arcsec).
+58) Warning: GC 24873 is FAR from T 7719 (dist = 79186.6 arcsec).
      Register GC 24873: mag = 8.0, RA = 18h08m32s35, DE = 27°27'03''7 (pag 478) 
-110) Warning: GC 25096 is FAR from T 7787 (dist = 76607.0 arcsec).
+59) Warning: GC 25096 is FAR from T 7787 (dist = 76607.0 arcsec).
      Register GC 25096: mag = 9.2, RA = 18h17m24s63, DE = 32°12'32''4 (pag 482) 
-111) Warning: GC 25112 is FAR from B 6398 (dist = 62.3 arcsec).
-     Register GC 25112: mag = 8.5, RA = 18h18m10s54, DE = 57°12'42''3 (pag 482) 
-112) Warning: GC 25281 is FAR from OA 18325 (dist = 12323.1 arcsec).
+60) Warning: GC 25281 is FAR from OA 18325 (dist = 12323.1 arcsec).
      Register GC 25281: mag = 8.0, RA = 18h23m56s33, DE = 25°46'30''5 (pag 485) 
-113) Warning: GC 25545 is FAR from B 6457 (dist = 226.4 arcsec).
+61) Warning: GC 25545 is FAR from B 6457 (dist = 226.4 arcsec).
      Register GC 25545: mag = 8.5, RA = 18h35m11s26, DE = 73°01'52''4 (pag 490) 
-114) Warning: GC 25714 is FAR from L 7868 (dist = 350.1 arcsec).
+62) Warning: GC 25714 is FAR from L 7868 (dist = 350.1 arcsec).
      Register GC 25714: mag = 7.0, RA = 18h41m27s97, DE = 33°44'00''6 (pag 493) 
-115) Warning: GC 25844 is FAR from B 6504 (dist = 65.6 arcsec).
-     Register GC 25844: mag = 8.0, RA = 18h46m04s30, DE = 76°16'35''9 (pag 495) 
-116) Warning: GC 26056 is FAR from B 6565 (dist = 88.9 arcsec).
-     Register GC 26056: mag = 8.5, RA = 18h55m26s80, DE = 47°43'44''0 (pag 499) 
-117) Warning: GC 26134 is FAR from L 7990 (dist = 1212.0 arcsec).
+63) Warning: GC 26134 is FAR from L 7990 (dist = 1212.0 arcsec).
      Register GC 26134: mag = 6.8, RA = 18h58m25s19, DE = 37°59'08''8 (pag 501) 
-118) Warning: GC 26235 is FAR from B 6592 (dist = 85.2 arcsec).
-     Register GC 26235: mag = 8.0, RA = 19h02m38s33, DE = 55°53'04''1 (pag 503) 
-119) Warning: GC 26460 is FAR from L 8036 (dist = 115.9 arcsec).
-     Register GC 26460: mag = 8.5, RA = 19h12m27s87, DE = 71°42'09''8 (pag 507) 
-120) Warning: GC 26520 is FAR from B 6645 (dist = 64.2 arcsec).
-     Register GC 26520: mag = 7.7, RA = 19h14m49s37, DE = 56°25'06''5 (pag 508) 
-121) Warning: GC 27078 is FAR from Y 8486 / U 8702 (dist = 1347.1 arcsec).
+64) Warning: GC 27078 is FAR from Y 8486 / U 8702 (dist = 1347.1 arcsec).
      Register GC 27078: mag = 9.2, RA = 19h39m11s53, DE = 29°07'54''7 (pag 517) 
-122) Warning: GC 27293 is FAR from OA 20033 (dist = 42858.7 arcsec).
+65) Warning: GC 27293 is FAR from OA 20033 (dist = 42858.7 arcsec).
      Register GC 27293: mag = 8.0, RA = 19h49m23s77, DE = 30°31'51''8 (pag 521) 
-123) Warning: GC 27391 is FAR from L 6781 (dist = 153385.0 arcsec).
+66) Warning: GC 27391 is FAR from L 6781 (dist = 153385.0 arcsec).
      Register GC 27391: mag = 8.0, RA = 19h53m17s76, DE = 46°16'54''6 (pag 523) 
-124) Warning: GC 27698 is FAR from OA 20323 (dist = 14856.7 arcsec).
+67) Warning: GC 27698 is FAR from OA 20323 (dist = 14856.7 arcsec).
      Register GC 27698: mag = 8.7, RA = 20h06m50s11, DE = 23°15'17''0 (pag 528) 
-125) Warning: GC 27753 is FAR from Lal 38978 (dist = 229448.7 arcsec).
+68) Warning: GC 27753 is FAR from Lal 38978 (dist = 229448.7 arcsec).
      Register GC 27753: mag = 7.7, RA = 20h08m56s96, DE = 16°40'28''6 (pag 529) 
-126) Warning: GC 27923 is FAR from Lal 39131 (dist = 902.8 arcsec).
+69) Warning: GC 27923 is FAR from Lal 39131 (dist = 902.8 arcsec).
      Register GC 27923: mag = 8.2, RA = 20h15m58s31, DE = 05°39'42''7 (pag 532) 
-127) Warning: GC 27984 is FAR from B 6852 (dist = 77.8 arcsec).
-     Register GC 27984: mag = 8.0, RA = 20h18m12s32, DE = 42°27'39''8 (pag 533) 
 Scanned GC rows with a reference = 23985; references to checked catalogs (OA/Ll/B/St/L/T/Y) = 13953
-Cross-checks OK: Lacaille = 6953, Brisbane = 1896, Lalande = 2127, Taylor = 26, OA = 2399, Stone = 28, USNO = 266
+Cross-checks OK: Lacaille = 6965, Brisbane = 1934, Lalande = 2133, Taylor = 26, OA = 2401, Stone = 28, USNO = 266
 ZC (Gould's Zone Catalog) stars saved = 8224
-Errors logged = 127
+Errors logged = 69
 
 ***************************************
 Perform comparison between UA and PPM/CD/CPD...
@@ -1375,52 +1273,40 @@ Stars read from PPM: 468861
      No match found in PPM for SAO 227683 referenced by UA.
 **) Note: SAO references mismatch for 56G Ara: 227972 != 227971.
      No match found in PPM for SAO 227971 referenced by UA.
-6) Warning: 70G Ara is FAR from L 7356 (dist = 62.2 arcsec).
-     Register 70G Ara: 17h 30m 35s -53°35.6'
 **) Note: HD references mismatch for 3G Boo: 126128 != 126129.
      No match found in PPM for HD 126129 referenced by UA.
-7) Warning: SAO references mismatch for 6G Cnc: 116931 != 116929.
+6) Warning: SAO references mismatch for 6G Cnc: 116931 != 116929.
      Match suggested by UA (vmag=6.2): PPM 154707 (vmag=0.0) at distance 9.2 arcsec, instead of PPM 154708 (vmag=0.0) at 7.0 arcsec
 **) Note: HD references mismatch for 6G Cnc: 72946 != 72945.
      Match suggested by UA (vmag=6.2): PPM 154707 (vmag=0.0) at distance 9.2 arcsec, instead of PPM 154708 (vmag=0.0) at 7.0 arcsec
-8) Warning: 7G Cnc is FAR from Lal 17038 (dist = 118.4 arcsec).
-     Register 7G Cnc: 08h 32m 42s +08°25.5'
-9) Warning: 7G Cnc is ALONE (no PPM / CD / CPD star near it).
+7) Warning: 7G Cnc is ALONE (no PPM / CD / CPD star near it).
      Register 7G Cnc: 08h 32m 42s +08°25.5'
   Note: nearest PPM 154811 at 113.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-10) Warning: Annonymous is FAR from L 2220 (dist = 65.1 arcsec).
-     Register Annonymous: 06h 14m 09s -24°54.4'
 **) Note: SAO references mismatch for 28G CMa: 151463 != 151462.
      Match suggested by UA (vmag=6.9): PPM 217145 (vmag=7.1) at distance 9.9 arcsec, instead of PPM 217146 (vmag=8.6) at 8.9 arcsec
-11) Warning: 66G CMa is FAR from Lal 13040 (dist = 109.0 arcsec).
-     Register 66G CMa: 06h 39m 38s -16°32.8'
-12) Warning: 73G CMa is FAR from Lal 13067 (dist = 438.8 arcsec).
+8) Warning: 73G CMa is FAR from Lal 13067 (dist = 438.8 arcsec).
      Register 73G CMa: 06h 40m 00s -20°38.0'
-13) Warning: 73G CMa is ALONE (no PPM / CD / CPD star near it).
+9) Warning: 73G CMa is ALONE (no PPM / CD / CPD star near it).
      Register 73G CMa: 06h 40m 00s -20°38.0'
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: nearest PPM 726755 at 235.3 arcsec.
-14) Warning: SAO references mismatch for 101G CMa: 172629 != 172631.
+10) Warning: SAO references mismatch for 101G CMa: 172629 != 172631.
      No match found in PPM for SAO 172631 referenced by UA.
-15) Warning: 26G CMi is FAR from Lal 14914 (dist = 95.2 arcsec).
-     Register 26G CMi: 07h 32m 46s +05°32.6'
-16) Warning: 5G Cap is FAR from Lal 38711 (dist = 80.7 arcsec).
-     Register 5G Cap: 20h 07m 28s -27°24.2'
-17) Warning: 18G Cap is FAR from Lal 39229 (dist = 97159.5 arcsec).
+11) Warning: 18G Cap is FAR from Lal 39229 (dist = 97159.5 arcsec).
      Register 18G Cap: 20h 20m 31s -26°1.0'
 **) Note: SAO references mismatch for omicron Cap: 163625 != 163626.
      Match suggested by UA (vmag=6.2): PPM 237509 (vmag=6.4) at distance 12.7 arcsec, instead of PPM 237508 (vmag=7.1) at 9.7 arcsec
 **) Note: HD references mismatch for omicron Cap: 195093 != 195094.
      Match suggested by UA (vmag=6.2): PPM 237509 (vmag=6.4) at distance 12.7 arcsec, instead of PPM 237508 (vmag=7.1) at 9.7 arcsec
-18) Warning: 72G Cap is FAR from L 8690 (dist = 285.5 arcsec).
+12) Warning: 72G Cap is FAR from L 8690 (dist = 285.5 arcsec).
      Register 72G Cap: 20h 59m 48s -23°39.0'
-19) Warning: 80G Cap is FAR from T 9480 (dist = 132536.3 arcsec).
+13) Warning: 80G Cap is FAR from T 9480 (dist = 132536.3 arcsec).
      Register 80G Cap: 21h 08m 31s -21°10.1'
 **) Note: SAO references mismatch for 102G Car: 236240 != 236241.
      No match found in PPM for SAO 236241 referenced by UA.
-20) Warning: 120G Car is ALONE (no PPM / CD / CPD star near it).
+14) Warning: 120G Car is ALONE (no PPM / CD / CPD star near it).
      Register 120G Car: 09h 09m 35s -64°20.9'
   Possible cause: nebula.
   Note: nearest PPM 357181 at 189.2 arcsec.
@@ -1429,45 +1315,35 @@ Stars read from PPM: 468861
      No match found in PPM for HD 85123 referenced by UA.
 **) Note: HD references mismatch for 225G Car: 93128 != 93129.
      No match found in PPM for HD 93129 referenced by UA.
-21) Warning: Annonymous is FAR from L 4696 (dist = 399.3 arcsec).
+15) Warning: Annonymous is FAR from L 4696 (dist = 399.3 arcsec).
      Register Annonymous: 11h 11m 58s -58°25.4'
-22) Warning: Annonymous is FAR from L 4699 (dist = 113.4 arcsec).
-     Register Annonymous: 11h 12m 18s -58°31.5'
-23) Warning: Annonymous is FAR from B 3519 (dist = 60.6 arcsec).
-     Register Annonymous: 11h 12m 24s -58°33.2'
-24) Warning: 47G Cen is FAR from L 4809 (dist = 109.7 arcsec).
-     Register 47G Cen: 11h 30m 00s -60°55.0'
-25) Warning: 69G Cen is FAR from L 4903 (dist = 60.7 arcsec).
-     Register 69G Cen: 11h 43m 37s -63°4.6'
-26) Warning: 89G Cen is FAR from L 4993 (dist = 791.8 arcsec).
+16) Warning: 89G Cen is FAR from L 4993 (dist = 791.8 arcsec).
      Register 89G Cen: 11h 57m 16s -38°18.7'
-27) Warning: 219G Cen is FAR from L 5533 (dist = 129.7 arcsec).
+17) Warning: 219G Cen is FAR from L 5533 (dist = 129.7 arcsec).
      Register 219G Cen: 13h 19m 16s -46°49.5'
-28) Warning: 219G Cen is ALONE (no PPM / CD / CPD star near it).
+18) Warning: 219G Cen is ALONE (no PPM / CD / CPD star near it).
      Register 219G Cen: 13h 19m 16s -46°49.5'
   Possible cause: cumulus.
   Note: nearest PPM 318491 at 529.0 arcsec.
 **) Note: SAO references mismatch for 268G Cen: 241172 != 241173.
      No match found in PPM for SAO 241173 referenced by UA.
-29) Warning: 59G Cet is FAR from Lal 950 (dist = 88.6 arcsec).
-     Register 59G Cet: 00h 30m 54s -25°27.3'
 **) Note: SAO references mismatch for 107G Cet: 129129 != 129128.
      No match found in PPM for SAO 129128 referenced by UA.
-30) Warning: 142G Cet is FAR from Lal 2598 (dist = 122.0 arcsec).
+19) Warning: 142G Cet is FAR from Lal 2598 (dist = 122.0 arcsec).
      Register 142G Cet: 01h 19m 31s -04°36.6'
-31) Warning: 142G Cet is ALONE (no PPM / CD / CPD star near it).
+20) Warning: 142G Cet is ALONE (no PPM / CD / CPD star near it).
      Register 142G Cet: 01h 19m 31s -04°36.6'
   Note: nearest PPM 183425 at 116.8 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-32) Warning: 268G Cet is FAR from Lal 4803 (dist = 192.8 arcsec).
+21) Warning: 268G Cet is FAR from Lal 4803 (dist = 192.8 arcsec).
      Register 268G Cet: 02h 29m 14s +06°17.3'
-33) Warning: 316G Cet is FAR from Lal 1079 (dist = 167740.7 arcsec).
+22) Warning: 316G Cet is FAR from Lal 1079 (dist = 167740.7 arcsec).
      Register 316G Cet: 03h 06m 23s -01°39.9'
 **) Note: SAO references mismatch for kappa1 CrA: 210295 != 210296.
      Match suggested by UA (vmag=5.4): PPM 297868 (vmag=6.4) at distance 22.6 arcsec, instead of PPM 297869 (vmag=5.7) at 1.2 arcsec
-34) Warning: 42G CrA is FAR from L 7990 (dist = 1214.2 arcsec).
+23) Warning: 42G CrA is FAR from L 7990 (dist = 1214.2 arcsec).
      Register 42G CrA: 18h 58m 25s -37°59.1'
-35) Warning: SAO references mismatch for 17G Crv: 180617 != 180619.
+24) Warning: SAO references mismatch for 17G Crv: 180617 != 180619.
      No match found in PPM for SAO 180619 referenced by UA.
 **) Note: SAO references mismatch for 43G Crv: 157448 != 157447.
      No match found in PPM for SAO 157447 referenced by UA.
@@ -1475,9 +1351,7 @@ Stars read from PPM: 468861
      No match found in PPM for HD 110317 referenced by UA.
 **) Note: SAO references mismatch for 33G Crt: 179936 != 179935.
      No match found in PPM for SAO 179935 referenced by UA.
-36) Warning: 17G Dor is FAR from L 1687 (dist = 119.0 arcsec).
-     Register 17G Dor: 04h 51m 37s -68°18.6'
-37) Warning: 17G Dor is ALONE (no PPM / CD / CPD star near it).
+25) Warning: 17G Dor is ALONE (no PPM / CD / CPD star near it).
      Register 17G Dor: 04h 51m 37s -68°18.6'
   Note: nearest PPM 354371 at 91.0 arcsec.
   Note: poor CD coverage for stars above 61°.
@@ -1485,25 +1359,19 @@ Stars read from PPM: 468861
      Match suggested by UA (vmag=5.6): PPM 171073 (vmag=0.0) at distance 7.2 arcsec, instead of PPM 171074 (vmag=0.0) at 6.6 arcsec
 **) Note: HD references mismatch for p Eri: 10360 != 10361.
      No match found in PPM for HD 10361 referenced by UA.
-38) Warning: 101G Eri is FAR from Lal 6581 (dist = 69.4 arcsec).
-     Register 101G Eri: 03h 27m 03s -09°52.9'
 **) Note: SAO references mismatch for f1 Eri: 194551 != 194550.
      No match found in PPM for SAO 194550 referenced by UA.
 **) Note: HD references mismatch for f1 Eri: 24072 != 24071.
      No match found in PPM for HD 24071 referenced by UA.
-39) Warning: 195G Eri is FAR from Lal 7892 (dist = 102709.2 arcsec).
+26) Warning: 195G Eri is FAR from Lal 7892 (dist = 102709.2 arcsec).
      Register 195G Eri: 04h 09m 20s -16°29.6'
-40) Warning: 197G Eri is FAR from Lal 7988 (dist = 312.4 arcsec).
+27) Warning: 197G Eri is FAR from Lal 7988 (dist = 312.4 arcsec).
      Register 197G Eri: 04h 09m 31s -07°50.9'
-41) Warning: 71G Gru is FAR from L 9295 (dist = 91.4 arcsec).
-     Register 71G Gru: 22h 47m 58s -49°9.5'
 **) Note: HD references mismatch for 87G Gru: 218268 != 218269.
      No match found in PPM for HD 218269 referenced by UA.
 **) Note: SAO references mismatch for 24G Hor: 232934 != 232933.
      Match suggested by UA (vmag=6.2): PPM 332241 (vmag=5.9) at distance 96.7 arcsec, instead of PPM 332243 (vmag=7.9) at 4.2 arcsec
-42) Warning: 24G Hor is FAR from L 930 (dist = 96.6 arcsec).
-     Register 24G Hor: 02h 50m 07s -51°21.3'
-43) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
+28) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
      Register Annonymous: 08h 07m 09s -05°11.0'
   Note: nearest PPM 191095 at 299.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -1511,9 +1379,9 @@ Stars read from PPM: 468861
      No match found in PPM for HD 69480 referenced by UA.
 **) Note: SAO references mismatch for 17 Hya: 136408 != 136409.
      No match found in PPM for SAO 136409 referenced by UA.
-44) Warning: Annonymous is FAR from Lal 17812 (dist = 146.4 arcsec).
+29) Warning: Annonymous is FAR from Lal 17812 (dist = 146.4 arcsec).
      Register Annonymous: 08h 54m 50s -08°42.2'
-45) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
+30) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
      Register Annonymous: 08h 54m 50s -08°42.2'
   Note: nearest PPM 191935 at 141.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
@@ -1521,116 +1389,98 @@ Stars read from PPM: 468861
      Match suggested by UA (vmag=5.2): PPM 259117 (vmag=0.0) at distance 11.0 arcsec, instead of PPM 259116 (vmag=0.0) at 2.7 arcsec
 **) Note: HD references mismatch for N Hya: 100287 != 100286.
      Match suggested by UA (vmag=5.2): PPM 259117 (vmag=0.0) at distance 11.0 arcsec, instead of PPM 259116 (vmag=0.0) at 2.7 arcsec
-46) Warning: 312G Hya is FAR from L 5015 (dist = 1103.6 arcsec).
+31) Warning: 312G Hya is FAR from L 5015 (dist = 1103.6 arcsec).
      Register 312G Hya: 11h 59m 41s -32°15.5'
 **) Note: SAO references mismatch for 20G Hyi: 248462 != 248461.
      No match found in PPM for SAO 248461 referenced by UA.
-47) Warning: 20G Hyi is FAR from L 584 (dist = 7900.3 arcsec).
+32) Warning: 20G Hyi is FAR from L 584 (dist = 7900.3 arcsec).
      Register 20G Hyi: 01h 51m 17s -60°55.4'
 **) Note: SAO references mismatch for 83 Leo: 118865 != 118864.
      Match suggested by UA (vmag=6.5): PPM 157865 (vmag=0.0) at distance 22.4 arcsec, instead of PPM 157866 (vmag=0.0) at 17.3 arcsec
 **) Note: HD references mismatch for 83 Leo: 99492 != 99491.
      Match suggested by UA (vmag=6.5): PPM 157865 (vmag=0.0) at distance 22.4 arcsec, instead of PPM 157866 (vmag=0.0) at 17.3 arcsec
-48) Warning: 91G Lep is ALONE (no PPM / CD / CPD star near it).
+33) Warning: 91G Lep is ALONE (no PPM / CD / CPD star near it).
      Register 91G Lep: 06h 01m 40s -21°48.9'
   Note: nearest PPM 249863 at 57.3 arcsec.
-49) Warning: 33G Lib is FAR from Lal 27173 (dist = 155.2 arcsec).
+34) Warning: 33G Lib is FAR from Lal 27173 (dist = 155.2 arcsec).
      Register 33G Lib: 14h 50m 10s -20°51.0'
 **) Note: SAO references mismatch for 40G Lup: 225327 != 225328.
      No match found in PPM for SAO 225328 referenced by UA.
 **) Note: HD references mismatch for 72G Lup: 135345 != 135346.
      No match found in PPM for HD 135346 referenced by UA.
-50) Warning: 141G Lup is FAR from L 6599 (dist = 296.4 arcsec).
+35) Warning: 141G Lup is FAR from L 6599 (dist = 296.4 arcsec).
      Register 141G Lup: 15h 49m 14s -35°49.1'
-51) Warning: 42G Mic is FAR from L 8638 (dist = 60.5 arcsec).
-     Register 42G Mic: 20h 54m 01s -43°28.9'
-52) Warning: 50G Mic is FAR from L 8693 (dist = 617.7 arcsec).
+36) Warning: 50G Mic is FAR from L 8693 (dist = 617.7 arcsec).
      Register 50G Mic: 21h 00m 48s -37°44.7'
-53) Warning: 10G Mon is FAR from Lal 11723 (dist = 62.2 arcsec).
-     Register 10G Mon: 06h 03m 07s -08°17.0'
-54) Warning: 51G Mon is ALONE (no PPM / CD / CPD star near it).
+37) Warning: 51G Mon is ALONE (no PPM / CD / CPD star near it).
      Register 51G Mon: 06h 25m 00s +05°2.0'
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: nearest PPM 150680 at 61.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-55) Warning: 73G Mon is FAR from Lal 13091 (dist = 118832.3 arcsec).
+38) Warning: 73G Mon is FAR from Lal 13091 (dist = 118832.3 arcsec).
      Register 73G Mon: 06h 39m 43s +08°43.0'
-56) Warning: 84G Mon is ALONE (no PPM / CD / CPD star near it).
+39) Warning: 84G Mon is ALONE (no PPM / CD / CPD star near it).
      Register 84G Mon: 06h 45m 00s +00°30.0'
   Possible cause: cumulus.
   Possible cause: lack of RA (s).
   Note: nearest PPM 151409 at 240.0 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-57) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
+40) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
      Register Annonymous: 06h 56m 58s -08°10.0'
   Note: nearest PPM 189855 at 177.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-58) Warning: 31G Mus is FAR from L 5072 (dist = 101.6 arcsec).
-     Register 31G Mus: 12h 07m 35s -65°51.2'
-59) Warning: 21G Nor is FAR from L 6567 (dist = 214.5 arcsec).
+41) Warning: 21G Nor is FAR from L 6567 (dist = 214.5 arcsec).
      Register 21G Nor: 15h 46m 41s -44°9.2'
-60) Warning: 22G Nor is FAR from L 6571 (dist = 218.3 arcsec).
+42) Warning: 22G Nor is FAR from L 6571 (dist = 218.3 arcsec).
      Register 22G Nor: 15h 47m 01s -44°9.7'
 **) Note: SAO references mismatch for mu2 Oct: 257837 != 257836.
      Match suggested by UA (vmag=6.2): PPM 374746 (vmag=6.7) at distance 15.7 arcsec, instead of PPM 374747 (vmag=7.4) at 9.5 arcsec
-61) Warning: 57G Oct is FAR from L 8672 (dist = 119.0 arcsec).
-     Register 57G Oct: 21h 13m 32s -83°11.5'
-62) Warning: 57G Oct is ALONE (no PPM / CD / CPD star near it).
+43) Warning: 57G Oct is ALONE (no PPM / CD / CPD star near it).
      Register 57G Oct: 21h 13m 32s -83°11.5'
   Note: nearest PPM 378600 at 117.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-63) Warning: 8G Oph is FAR from B 2070 (dist = 366016.1 arcsec).
+44) Warning: 8G Oph is FAR from B 2070 (dist = 366016.1 arcsec).
      Register 8G Oph: 16h 10m 21s -03°38.5'
 **) Note: SAO references mismatch for rho Oph: 184382 != 184381.
      No match found in PPM for SAO 184381 referenced by UA.
 **) Note: HD references mismatch for rho Oph: 147933 != 147934.
      No match found in PPM for HD 147934 referenced by UA.
-64) Warning: 55G Oph is FAR from Lal 30694 (dist = 110.1 arcsec).
-     Register 55G Oph: 16h 46m 41s +00°14.4'
-65) Warning: 130G Oph is ALONE (no PPM / CD / CPD star near it).
+45) Warning: 130G Oph is ALONE (no PPM / CD / CPD star near it).
      Register 130G Oph: 17h 16m 19s -06°57.8'
   Note: nearest PPM 200608 at 64.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-66) Warning: 145G Oph is ALONE (no PPM / CD / CPD star near it).
+46) Warning: 145G Oph is ALONE (no PPM / CD / CPD star near it).
      Register 145G Oph: 17h 21m 44s +08°37.0'
   Note: nearest PPM 164037 at 201.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-67) Warning: SAO references mismatch for 177G Oph: 122843 != 122847.
+47) Warning: SAO references mismatch for 177G Oph: 122843 != 122847.
      Match suggested by UA (vmag=6.7): PPM 164729 (vmag=0.0) at distance 80.7 arcsec, instead of PPM 164723 (vmag=0.0) at 5.9 arcsec
 **) Note: HD references mismatch for 177G Oph: 162651 != 162652.
      Match suggested by UA (vmag=6.7): PPM 164729 (vmag=0.0) at distance 80.7 arcsec, instead of PPM 164723 (vmag=0.0) at 5.9 arcsec
-68) Warning: 177G Oph is FAR from Lal 32649 (dist = 83.6 arcsec).
-     Register 177G Oph: 17h 45m 40s +01°7.9'
 **) Note: HD references mismatch for tau Oph: 164764 != 164765.
      No match found in PPM for HD 164765 referenced by UA.
-69) Warning: 197G Oph is FAR from Lal 33169 (dist = 91.2 arcsec).
-     Register 197G Oph: 17h 59m 08s +02°31.8'
-70) Warning: 199G Oph is FAR from T 8391 (dist = 2986.1 arcsec).
+48) Warning: 199G Oph is FAR from T 8391 (dist = 2986.1 arcsec).
      Register 199G Oph: 18h 01m 26s +09°32.9'
-71) Warning: SAO references mismatch for 170G Ori: 113509 != 113507.
+49) Warning: SAO references mismatch for 170G Ori: 113509 != 113507.
      Match suggested by UA (vmag=5.8): PPM 149973 (vmag=0.0) at distance 24.3 arcsec, instead of PPM 149975 (vmag=0.0) at 9.6 arcsec
-72) Warning: HD references mismatch for 170G Ori: 42092 != 42111.
+50) Warning: HD references mismatch for 170G Ori: 42092 != 42111.
      Match suggested by UA (vmag=5.8): PPM 149973 (vmag=0.0) at distance 24.3 arcsec, instead of PPM 149975 (vmag=0.0) at 9.6 arcsec
 **) Note: SAO references mismatch for 114G Pav: 254884 != 254883.
      No match found in PPM for SAO 254883 referenced by UA.
-73) Warning: Annonymous is FAR from L 2055 (dist = 110.3 arcsec).
-     Register Annonymous: 05h 47m 51s -55°5.3'
 **) Note: SAO references mismatch for 50G Pic: 234418 != 234417.
      Match suggested by UA (vmag=6.5): PPM 335046 (vmag=7.9) at distance 53.0 arcsec, instead of PPM 335049 (vmag=6.6) at 3.2 arcsec
-74) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
+51) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
      Register Annonymous: 22h 51m 16s -03°51.0'
   Note: nearest PPM 206974 at 87.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-75) Warning: 96G Psc is FAR from Lal 1299 (dist = 99.6 arcsec).
-     Register 96G Psc: 00h 41m 49s +04°38.5'
 **) Note: SAO references mismatch for zeta Psc: 109739 != 109740.
      Match suggested by UA (vmag=4.8): PPM 144381 (vmag=0.0) at distance 25.2 arcsec, instead of PPM 144380 (vmag=0.0) at 1.8 arcsec
 **) Note: HD references mismatch for zeta Psc: 7344 != 7345.
      Match suggested by UA (vmag=4.8): PPM 144381 (vmag=0.0) at distance 25.2 arcsec, instead of PPM 144380 (vmag=0.0) at 1.8 arcsec
 **) Note: HD references mismatch for alpha Psc: 12446 != 12447.
      No match found in PPM for HD 12447 referenced by UA.
-76) Warning: Annonymous is FAR from L 8889 (dist = 434.7 arcsec).
+52) Warning: Annonymous is FAR from L 8889 (dist = 434.7 arcsec).
      Register Annonymous: 21h 34m 46s -33°4.5'
 **) Note: SAO references mismatch for 90G Pup: 197975 != 197974.
      No match found in PPM for SAO 197974 referenced by UA.
@@ -1638,7 +1488,7 @@ Stars read from PPM: 468861
      No match found in PPM for HD 58634 referenced by UA.
 **) Note: SAO references mismatch for n1 Pup: 174020 != 174019.
      Match suggested by UA (vmag=5.7): PPM 252685 (vmag=0.0) at distance 12.7 arcsec, instead of PPM 252684 (vmag=3.0) at 7.2 arcsec
-77) Warning: 128G Pup is FAR from Lal 14934 (dist = 213742.7 arcsec).
+53) Warning: 128G Pup is FAR from Lal 14934 (dist = 213742.7 arcsec).
      Register 128G Pup: 07h 33m 06s -25°4.9'
 **) Note: SAO references mismatch for 2 Pup: 153362 != 153363.
      No match found in PPM for SAO 153363 referenced by UA.
@@ -1646,19 +1496,13 @@ Stars read from PPM: 468861
      No match found in PPM for HD 62864 referenced by UA.
 **) Note: SAO references mismatch for 5 Pup: 153413 != 153414.
      No match found in PPM for SAO 153414 referenced by UA.
-78) Warning: 285G Pup is FAR from Lal 16304 (dist = 78.3 arcsec).
-     Register 285G Pup: 08h 12m 28s -12°12.5'
-79) Warning: SAO references mismatch for 312G Pup: 199224 != 199222.
+54) Warning: SAO references mismatch for 312G Pup: 199224 != 199222.
      Match suggested by UA (vmag=6.5): PPM 285226 (vmag=0.0) at distance 7.7 arcsec, instead of PPM 285229 (vmag=0.0) at 5.0 arcsec
-80) Warning: Annonymous is FAR from L 1342 (dist = 63.3 arcsec).
-     Register Annonymous: 03h 57m 58s -54°44.5'
 **) Note: HD references mismatch for 14G Sgr: 163756 != 163755.
      No match found in PPM for HD 163755 referenced by UA.
-81) Warning: 81G Sgr is FAR from L 7786 (dist = 79.2 arcsec).
-     Register 81G Sgr: 18h 28m 46s -24°1.0'
-82) Warning: Annonymous is FAR from Lal 36192 (dist = 1795.0 arcsec).
+55) Warning: Annonymous is FAR from Lal 36192 (dist = 1795.0 arcsec).
      Register Annonymous: 19h 11m 11s -18°55.2'
-83) Warning: 216G Sgr is ALONE (no PPM / CD / CPD star near it).
+56) Warning: 216G Sgr is ALONE (no PPM / CD / CPD star near it).
      Register 216G Sgr: 19h 32m 07s -31°14.8'
   Possible cause: nebula.
   Note: nearest PPM 299229 at 935.4 arcsec.
@@ -1670,106 +1514,88 @@ Stars read from PPM: 468861
      Match suggested by UA (vmag=6.6): PPM 294737 (vmag=0.0) at distance 10.7 arcsec, instead of PPM 294735 (vmag=0.0) at 4.5 arcsec
 **) Note: HD references mismatch for 28G Sco: 144928 != 144927.
      No match found in PPM for HD 144927 referenced by UA.
-84) Warning: 63G Sco is FAR from Lal 29778 (dist = 479.0 arcsec).
+57) Warning: 63G Sco is FAR from Lal 29778 (dist = 479.0 arcsec).
      Register 63G Sco: 16h 15m 43s -16°43.3'
-85) Warning: 65G Sco is ALONE (no PPM / CD / CPD star near it).
+58) Warning: 65G Sco is ALONE (no PPM / CD / CPD star near it).
      Register 65G Sco: 16h 15m 56s -26°13.5'
   Possible cause: nebula.
   Note: nearest PPM 265478 at 227.7 arcsec.
-86) Warning: Annonymous is FAR from L 6819 (dist = 548.6 arcsec).
+59) Warning: Annonymous is FAR from L 6819 (dist = 548.6 arcsec).
      Register Annonymous: 16h 17m 16s -40°24.0'
-87) Warning: Annonymous is FAR from L 6923 (dist = 3602.7 arcsec).
+60) Warning: Annonymous is FAR from L 6923 (dist = 3602.7 arcsec).
      Register Annonymous: 16h 32m 25s -35°54.3'
-88) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
+61) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
      Register Annonymous: 16h 32m 25s -35°54.3'
   Note: nearest PPM 295344 at 276.9 arcsec.
-89) Warning: 115G Sco is FAR from B 5915 (dist = 14408.4 arcsec).
+62) Warning: 115G Sco is FAR from B 5915 (dist = 14408.4 arcsec).
      Register 115G Sco: 16h 51m 10s -40°47.6'
-90) Warning: 115G Sco is ALONE (no PPM / CD / CPD star near it).
+63) Warning: 115G Sco is ALONE (no PPM / CD / CPD star near it).
      Register 115G Sco: 16h 51m 10s -40°47.6'
   Note: nearest PPM 762397 at 617.4 arcsec.
-91) Warning: 138G Sco is FAR from L 7189 (dist = 120.0 arcsec).
-     Register 138G Sco: 17h 08m 11s -35°35.6'
-92) Warning: 138G Sco is ALONE (no PPM / CD / CPD star near it).
+64) Warning: 138G Sco is ALONE (no PPM / CD / CPD star near it).
      Register 138G Sco: 17h 08m 11s -35°35.6'
   Note: nearest PPM 296118 at 119.9 arcsec.
-93) Warning: Annonymous is FAR from Y 7335 / U 6992 (dist = 1872.9 arcsec).
+65) Warning: Annonymous is FAR from Y 7335 / U 6992 (dist = 1872.9 arcsec).
      Register Annonymous: 16h 32m 02s -32°11.0'
-94) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
+66) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
      Register Annonymous: 16h 32m 02s -32°11.0'
   Note: nearest PPM 747944 at 276.8 arcsec.
-95) Warning: 80G Scl is FAR from L 169 (dist = 1564.2 arcsec).
+67) Warning: 80G Scl is FAR from L 169 (dist = 1564.2 arcsec).
      Register 80G Scl: 00h 32m 24s -30°6.5'
-96) Warning: 80G Scl is ALONE (no PPM / CD / CPD star near it).
+68) Warning: 80G Scl is ALONE (no PPM / CD / CPD star near it).
      Register 80G Scl: 00h 32m 24s -30°6.5'
   Note: nearest PPM 243047 at 528.4 arcsec.
-97) Warning: Annonymous is FAR from Lal 34985 (dist = 111.8 arcsec).
-     Register Annonymous: 18h 43m 01s -06°3.1'
-98) Warning: 1G Sera is FAR from Lal 27744 (dist = 102.2 arcsec).
-     Register 1G Sera: 15h 07m 35s -00°51.9'
-99) Warning: 7G Sera is ALONE (no PPM / CD / CPD star near it).
+69) Warning: 7G Sera is ALONE (no PPM / CD / CPD star near it).
      Register 7G Sera: 15h 12m 22s +02°32.5'
   Possible cause: nebula.
   Note: nearest PPM 161442 at 1140.4 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-100) Warning: 42G Sera is FAR from Lal 29437 (dist = 77.6 arcsec).
-     Register 42G Sera: 16h 03m 02s +06°43.9'
-101) Warning: 31G Serb is ALONE (no PPM / CD / CPD star near it).
+70) Warning: 31G Serb is ALONE (no PPM / CD / CPD star near it).
      Register 31G Serb: 18h 12m 00s -13°50.0'
   Possible cause: nebula.
   Possible cause: lack of RA (s).
   Note: nearest PPM 719115 at 71.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-102) Warning: 54G Serb is ALONE (no PPM / CD / CPD star near it).
+71) Warning: 54G Serb is ALONE (no PPM / CD / CPD star near it).
      Register 54G Serb: 18h 30m 40s +03°40.3'
   Note: nearest PPM 166181 at 57.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-103) Warning: 59G Serb is ALONE (no PPM / CD / CPD star near it).
+72) Warning: 59G Serb is ALONE (no PPM / CD / CPD star near it).
      Register 59G Serb: 18h 31m 42s +05°45.9'
   Note: nearest PPM 166224 at 49.7 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-104) Warning: 70G Serb is ALONE (no PPM / CD / CPD star near it).
+73) Warning: 70G Serb is ALONE (no PPM / CD / CPD star near it).
      Register 70G Serb: 18h 49m 41s +07°0.1'
   Note: nearest PPM 166816 at 59.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 **) Note: SAO references mismatch for 35 Sex: 118448 != 118449.
      Match suggested by UA (vmag=6.2): PPM 157110 (vmag=0.0) at distance 7.9 arcsec, instead of PPM 157109 (vmag=0.0) at 5.6 arcsec
-105) Warning: 55G Tau is FAR from Lal 8465 (dist = 60.5 arcsec).
-     Register 55G Tau: 04h 23m 11s +09°58.4'
-106) Warning: 55G Tau is ALONE (no PPM / CD / CPD star near it).
+74) Warning: 55G Tau is ALONE (no PPM / CD / CPD star near it).
      Register 55G Tau: 04h 23m 11s +09°58.4'
   Note: nearest PPM 119958 at 55.9 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-107) Warning: 51G Tuc is ALONE (no PPM / CD / CPD star near it).
+75) Warning: 51G Tuc is ALONE (no PPM / CD / CPD star near it).
      Register 51G Tuc: 00h 18m 28s -72°46.6'
   Note: nearest PPM 366914 at 320.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-108) Warning: Annonymous is FAR from B 2137 (dist = 130.9 arcsec).
+76) Warning: Annonymous is FAR from B 2137 (dist = 130.9 arcsec).
      Register Annonymous: 08h 36m 24s -41°53.5'
-109) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
+77) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
      Register Annonymous: 08h 36m 24s -41°53.5'
   Note: nearest PPM 313403 at 98.3 arcsec.
-110) Warning: Annonymous is FAR from L 3879 (dist = 104.6 arcsec).
-     Register Annonymous: 09h 24m 46s -43°59.1'
-111) Warning: 11G Vir is FAR from Lal 22343 (dist = 71.3 arcsec).
-     Register 11G Vir: 11h 44m 11s +02°28.1'
-112) Warning: 41G Vir is FAR from Lal 22954 (dist = 75.9 arcsec).
-     Register 41G Vir: 12h 08m 44s -09°34.9'
-113) Warning: 111G Vir is FAR from Lal 24414 (dist = 64.9 arcsec).
-     Register 111G Vir: 13h 02m 31s +05°53.8'
 **) Note: SAO references mismatch for 54 Vir: 157799 != 157798.
      No match found in PPM for SAO 157798 referenced by UA.
-114) Warning: 190G Vir is FAR from Lal 25445 (dist = 53845.5 arcsec).
+78) Warning: 190G Vir is FAR from Lal 25445 (dist = 53845.5 arcsec).
      Register 190G Vir: 13h 43m 05s -17°30.6'
-115) Warning: 248G Vir is FAR from Lal 26427 (dist = 7192.5 arcsec).
+79) Warning: 248G Vir is FAR from Lal 26427 (dist = 7192.5 arcsec).
      Register 248G Vir: 14h 22m 15s +03°20.8'
 **) Note: SAO references mismatch for 269G Vir: 120821 != 120822.
      Match suggested by UA (vmag=6.7): PPM 161228 (vmag=0.0) at distance 10.9 arcsec, instead of PPM 161227 (vmag=0.0) at 0.2 arcsec
 Available UA stars = 7727
-Stars from UA with Lacaille = 4436, Brisbane = 172, Lalande = 3132, Taylor = 118, OA = 51 and USNO = 33
+Stars from UA with Lacaille = 4452, Brisbane = 173, Lalande = 3151, Taylor = 118, OA = 51 and USNO = 33
 Stars from UA identified with PPM = 8381, CD = 4994 and CPD = 5227
 RSME of distance (arcsec) = 5.87  among a total of 8381 stars
-Errors logged = 115
+Errors logged = 79
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
@@ -1796,51 +1622,49 @@ Stars read from PPM: 468861
 9) Warning: T 1881 477 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 477: 10h 57m 55s07 -58°57'40"0
   Note: nearest PPM 339699 at 504.0 arcsec.
-10) Warning: T 1881 493 is FAR from B 3381 (dist = 60.0 arcsec).
-     Register T 1881 493: 10h 59m 44s15 -58°03'38"6
-11) Warning: T 1881 580 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+10) Warning: T 1881 580 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-12) Warning: T 1881 581 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+11) Warning: T 1881 581 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-13) Warning: T 1881 582 (vmag = 10.0) has a near PPM 359729 star (vmag = 6.0) with a different magnitude (delta = 4.0).
-14) Warning: T 1881 582 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+12) Warning: T 1881 582 (vmag = 10.0) has a near PPM 359729 star (vmag = 6.0) with a different magnitude (delta = 4.0).
+13) Warning: T 1881 582 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-15) Warning: T 1881 583 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
+14) Warning: T 1881 583 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-16) Warning: T 1881 585 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+15) Warning: T 1881 585 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-17) Warning: T 1881 586 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
+16) Warning: T 1881 586 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-18) Warning: T 1881 587 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
+17) Warning: T 1881 587 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-19) Warning: T 1881 625 (vmag = 3.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+18) Warning: T 1881 625 (vmag = 3.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -60°5293 (en 14h):  0.2 | 31m5.0s | 19.0'     (pag. 271)
-20) Warning: T 1881 673 (vmag = 10.5) has a near PPM 322447 star (vmag = 7.0) with a different magnitude (delta = 3.5).
-21) Warning: T 1881 673 (vmag = 10.5) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+19) Warning: T 1881 673 (vmag = 10.5) has a near PPM 322447 star (vmag = 7.0) with a different magnitude (delta = 3.5).
+20) Warning: T 1881 673 (vmag = 10.5) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -40°10986 (en 16h):  7.5 | 48m14.3s | 18.8'     (pag. 472)
-22) Warning: T 1881 674 (vmag = 10.2) has a near PPM 322447 star (vmag = 7.0) with a different magnitude (delta = 3.2).
-23) Warning: T 1881 827 is ALONE (no PPM / CD / CPD / GSC star near it).
+21) Warning: T 1881 674 (vmag = 10.2) has a near PPM 322447 star (vmag = 7.0) with a different magnitude (delta = 3.2).
+22) Warning: T 1881 827 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 827: 18h 07m 51s64 -18°58'22"3
   Note: nearest PPM 718951 at 117.8 arcsec.
-24) Warning: T 1881 843 is ALONE (no PPM / CD / CPD / GSC star near it).
+23) Warning: T 1881 843 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 843: 18h 08m 26s27 -16°52'55"2
   Note: nearest PPM 234238 at 59.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-25) Warning: T 1881 866 is FAR from Lal 33564 (dist = 473.3 arcsec).
+24) Warning: T 1881 866 is FAR from Lal 33564 (dist = 473.3 arcsec).
      Register T 1881 866: 18h 09m 25s19 -19°00'35"2
-26) Warning: T 1881 882 is ALONE (no PPM / CD / CPD / GSC star near it).
+25) Warning: T 1881 882 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 882: 18h 10m 12s59 -17°51'46"0
   Note: nearest PPM 719023 at 451.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-27) Warning: T 1881 892 is ALONE (no PPM / CD / CPD / GSC star near it).
+26) Warning: T 1881 892 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 892: 18h 10m 36s02 -18°59'16"8
   Note: nearest PPM 719039 at 526.4 arcsec.
-28) Warning: T 1881 986 (vmag = 8.0) has a near PPM 269861 star (vmag = 4.9) with a different magnitude (delta = 3.1).
+27) Warning: T 1881 986 (vmag = 8.0) has a near PPM 269861 star (vmag = 4.9) with a different magnitude (delta = 3.1).
 Stars from Thome 1881 identified with PPM = 741, CD = 707 and CPD = 784
-Stars from Thome 1881 with Lacaille = 35, Lalande = 17, OA = 56, Taylor = 0, Stone = 1, GC = 0, USNO = 7 and Brisbane = 28
+Stars from Thome 1881 with Lacaille = 35, Lalande = 17, OA = 56, Taylor = 0, Stone = 1, GC = 0, USNO = 7 and Brisbane = 29
 RSME of distance (arcsec) = 2.52  among a total of 741 stars
 RSME of visual magnitude = 0.58641  among a total of 544 stars
-Errors logged = 28
+Errors logged = 27
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
@@ -1855,57 +1679,55 @@ Stars read from PPM: 468861
      Register T 1882 128: 05h 22m 32s70 -02°30'25"8
   Note: nearest PPM 188087 at 380.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-4) Warning: T 1882 135 is FAR from OA 4093 (dist = 85.9 arcsec).
-     Register T 1882 135: 05h 29m 59s94 -30°50'00"0
-5) Warning: T 1882 149 (vmag = 9.2) has a near PPM 310383 star (vmag = 5.6) with a different magnitude (delta = 3.6).
-6) Warning: T 1882 157 (vmag = 8.0) has a near PPM 400087 star (vmag = 3.8) with a different magnitude (delta = 4.2).
-7) Warning: T 1882 158 (vmag = 8.0) has a near PPM 400087 star (vmag = 3.8) with a different magnitude (delta = 4.2).
-8) Warning: T 1882 165 is ALONE (no PPM / CD / CPD / GSC star near it).
+4) Warning: T 1882 149 (vmag = 9.2) has a near PPM 310383 star (vmag = 5.6) with a different magnitude (delta = 3.6).
+5) Warning: T 1882 157 (vmag = 8.0) has a near PPM 400087 star (vmag = 3.8) with a different magnitude (delta = 4.2).
+6) Warning: T 1882 158 (vmag = 8.0) has a near PPM 400087 star (vmag = 3.8) with a different magnitude (delta = 4.2).
+7) Warning: T 1882 165 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 165: 06h 43m 22s37 -17°22'50"2
   Note: nearest PPM 217689 at 859.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-9) Warning: T 1882 165 is FAR from Lal 13130 (dist = 859.5 arcsec).
+8) Warning: T 1882 165 is FAR from Lal 13130 (dist = 859.5 arcsec).
      Register T 1882 165: 06h 43m 22s37 -17°22'50"2
-10) Warning: T 1882 197 (vmag = 9.5) has a near CD with dif. magnitude (delta = 5.2). Check dpl.
+9) Warning: T 1882 197 (vmag = 9.5) has a near CD with dif. magnitude (delta = 5.2). Check dpl.
      Register CD -72°417 (en 7h):  4.3 | 43m23.0s | 18.0'     (pag. 244)
-11) Warning: T 1882 200 is ALONE (no PPM / CD / CPD / GSC star near it).
+10) Warning: T 1882 200 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 200: 07h 48m 47s51 -27°05'19"5
   Note: nearest PPM 253405 at 241.4 arcsec.
-12) Warning: T 1882 200 is FAR from OA 7616 (dist = 241.1 arcsec).
+11) Warning: T 1882 200 is FAR from OA 7616 (dist = 241.1 arcsec).
      Register T 1882 200: 07h 48m 47s51 -27°05'19"5
-13) Warning: T 1882 206 (vmag = 8.0) has a near PPM 356519 star (vmag = 4.2) with a different magnitude (delta = 3.8).
-14) Warning: T 1882 206 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+12) Warning: T 1882 206 (vmag = 8.0) has a near PPM 356519 star (vmag = 4.2) with a different magnitude (delta = 3.8).
+13) Warning: T 1882 206 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -68°528 (en 8h):  4.5 | 7m32.0s | 15.0'     (pag. 151)
-15) Warning: T 1882 209 (vmag = 9.5) has a near PPM 356597 star (vmag = 5.1) with a different magnitude (delta = 4.4).
-16) Warning: T 1882 209 (vmag = 9.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+14) Warning: T 1882 209 (vmag = 9.5) has a near PPM 356597 star (vmag = 5.1) with a different magnitude (delta = 4.4).
+15) Warning: T 1882 209 (vmag = 9.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -62°337 (en 8h):  6.2 | 13m22.0s | 32.0'     (pag. 3)
-17) Warning: T 1882 233 is ALONE (no PPM / CD / CPD / GSC star near it).
+16) Warning: T 1882 233 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 233: 09h 18m 27s73 -59°30'25"7
   Note: nearest PPM 777474 at 463.4 arcsec.
-18) Warning: T 1882 243 (vmag = 8.2) has a near CD with dif. magnitude (delta = 4.9). Check dpl.
+17) Warning: T 1882 243 (vmag = 8.2) has a near CD with dif. magnitude (delta = 4.9). Check dpl.
      Register CD -64°412 (en 9h):  3.3 | 43m56.0s | 30.0'     (pag. 40)
 **) Warning: ZC 12h 1557 is FAR from previous registration (dist = 18084.6 arcsec).
 **) Warning: ZC 12h 3413 is FAR from previous registration (dist = 16.3 arcsec).
-19) Warning: T 1882 475 (vmag = 3.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+18) Warning: T 1882 475 (vmag = 3.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -60°5293 (en 14h):  0.2 | 31m5.0s | 19.0'     (pag. 271)
-20) Warning: T 1882 566 is ALONE (no PPM / CD / CPD / GSC star near it).
+19) Warning: T 1882 566 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 566: 15h 29m 50s38 -34°11'37"9
   Note: nearest PPM 294049 at 525.2 arcsec.
 **) Warning: ZC 15h 2024 is FAR from previous registration (dist = 35998.7 arcsec).
-21) Warning: T 1882 584 (vmag = 7.7) has a near PPM 231150 star (vmag = 3.4) with a different magnitude (delta = 4.3).
-22) Warning: T 1882 622 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+20) Warning: T 1882 584 (vmag = 7.7) has a near PPM 231150 star (vmag = 3.4) with a different magnitude (delta = 4.3).
+21) Warning: T 1882 622 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -76°871 (en 16h):  9.8 | 43m40.0s | 0.5'     (pag. 322)
-23) Warning: T 1882 695 is FAR from B 6164 (dist = 153777.2 arcsec).
+22) Warning: T 1882 695 is FAR from B 6164 (dist = 153777.2 arcsec).
      Register T 1882 695: 17h 31m 56s02 -32°15'01"8
-24) Warning: T 1882 905 is ALONE (no PPM / CD / CPD / GSC star near it).
+23) Warning: T 1882 905 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 905: 18h 08m 35s70 -16°51'24"2
   Note: nearest PPM 234238 at 90.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 Stars from Thome 1882 identified with PPM = 1259, CD = 1118 and CPD = 1163
-Stars from Thome 1882 with Lacaille = 48, Lalande = 24, OA = 149, Taylor = 2, Stone = 0, GC = 0, USNO = 12 and Brisbane = 12
+Stars from Thome 1882 with Lacaille = 48, Lalande = 24, OA = 150, Taylor = 2, Stone = 0, GC = 0, USNO = 12 and Brisbane = 12
 RSME of distance (arcsec) = 2.43  among a total of 1259 stars
 RSME of visual magnitude = 0.49423  among a total of 1033 stars
-Errors logged = 24
+Errors logged = 23
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
@@ -1915,25 +1737,21 @@ Stars read from PPM: 468861
 2) Warning: T 1883 80 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1883 80: 09h 09m 35s86 -26°49'52"1
   Note: nearest PPM 255852 at 475.2 arcsec.
-3) Warning: T 1883 105 is FAR from B 3942 (dist = 77.1 arcsec).
-     Register T 1883 105: 12h 03m 41s33 -51°07'56"6
-4) Warning: T 1883 123 is FAR from Lal 27026 (dist = 89.6 arcsec).
-     Register T 1883 123: 14h 45m 02s18 -23°48'23"1
-5) Warning: T 1883 124 is FAR from St 8109 (dist = 139.9 arcsec).
+3) Warning: T 1883 124 is FAR from St 8109 (dist = 139.9 arcsec).
      Register T 1883 124: 14h 47m 07s29 -38°51'58"0
-6) Warning: T 1883 131 is ALONE (no PPM / CD / CPD / GSC star near it).
+4) Warning: T 1883 131 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1883 131: 16h 02m 54s60 -87°23'50"9
   Note: nearest PPM 378016 at 298.0 arcsec.
   Note: poor CD coverage for stars above 61°.
-7) Warning: T 1883 141 is FAR from B 6316 (dist = 530.3 arcsec).
+5) Warning: T 1883 141 is FAR from B 6316 (dist = 530.3 arcsec).
      Register T 1883 141: 18h 02m 31s63 -65°04'55"6
-8) Warning: T 1883 156 is FAR from L 8467 (dist = 1155.8 arcsec).
+6) Warning: T 1883 156 is FAR from L 8467 (dist = 1155.8 arcsec).
      Register T 1883 156: 20h 29m 00s60 -70°21'33"6
 Stars from Thome 1883 identified with PPM = 160, CD = 127 and CPD = 133
-Stars from Thome 1883 with Lacaille = 13, Lalande = 7, OA = 15, Taylor = 0, Stone = 0, GC = 0, USNO = 0 and Brisbane = 1
+Stars from Thome 1883 with Lacaille = 13, Lalande = 8, OA = 15, Taylor = 0, Stone = 0, GC = 0, USNO = 0 and Brisbane = 2
 RSME of distance (arcsec) = 2.62  among a total of 160 stars
 RSME of visual magnitude = 0.58106  among a total of 80 stars
-Errors logged = 8
+Errors logged = 6
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
@@ -1980,23 +1798,19 @@ Stars read from PPM: 468861
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
 16) Warning: T 1884 531 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-17) Warning: T 1884 558 is FAR from Lal 27026 (dist = 91.9 arcsec).
-     Register T 1884 558: 14h 45m 05s51 -23°48'39"7
-18) Warning: T 1884 587 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+17) Warning: T 1884 587 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -76°871 (en 16h):  9.8 | 43m40.0s | 0.5'     (pag. 322)
-19) Warning: T 1884 841 is ALONE (no PPM / CD / CPD / GSC star near it).
+18) Warning: T 1884 841 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1884 841: 18h 11m 48s70 -17°09'42"7
   Note: nearest PPM 234330 at 43.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-20) Warning: T 1884 918 is FAR from Lal 44964 (dist = 77.1 arcsec).
-     Register T 1884 918: 22h 54m 09s45 -23°08'54"1
-21) Warning: T 1884 943 is FAR from Lal 4692 (dist = 135544.1 arcsec).
+19) Warning: T 1884 943 is FAR from Lal 4692 (dist = 135544.1 arcsec).
      Register T 1884 943: 23h 51m 08s41 -13°36'25"8
 Stars from Thome 1884 identified with PPM = 658, CD = 701 and CPD = 749
-Stars from Thome 1884 with Lacaille = 53, Lalande = 14, OA = 36, Taylor = 1, Stone = 1, GC = 120, USNO = 17 and Brisbane = 11
+Stars from Thome 1884 with Lacaille = 53, Lalande = 16, OA = 36, Taylor = 1, Stone = 1, GC = 120, USNO = 17 and Brisbane = 11
 RSME of distance (arcsec) = 1.99  among a total of 658 stars
 RSME of visual magnitude = 0.44585  among a total of 543 stars
-Errors logged = 21
+Errors logged = 19
 
 ***************************************
 Perform comparison between Gilliss and PPM/CD/CPD...
@@ -2110,504 +1924,484 @@ Stars read from PPM: 468861
      Register G 2602: 04h 32m 36s92 -77°00'18"9
   Note: nearest PPM 368415 at 543.8 arcsec.
   Note: poor CD coverage for stars above 61°.
-46) Warning: G 2624 is FAR from B 759 (dist = 87.5 arcsec).
-     Register G 2624: 04h 35m 24s81 -69°23'14"8
-47) Warning: G 2680 reports -1.049 on precession RA but it should be -0.956 (diff=0.093).
+46) Warning: G 2680 reports -1.049 on precession RA but it should be -0.956 (diff=0.093).
      Register G 2680: 04h 40m 32s49 -72°39'32"9
-48) Warning: G 2707 reports -11.868 on precession RA but it should be -11.913 (diff=0.045).
+47) Warning: G 2707 reports -11.868 on precession RA but it should be -11.913 (diff=0.045).
      Register G 2707: 04h 42m 45s27 -85°11'11"4
-49) Warning: G 2733 reports 0.202 on precession RA but it should be 0.116 (diff=0.086).
+48) Warning: G 2733 reports 0.202 on precession RA but it should be 0.116 (diff=0.086).
      Register G 2733: 04h 45m 33s55 -66°47'30"0
-50) Warning: G 2748 is ALONE (no PPM / CD / CPD / GSC star near it).
+49) Warning: G 2748 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 2748: 04h 47m 24s05 -67°48'25"3
   Note: nearest PPM 775777 at 645.8 arcsec.
   Note: poor CD coverage for stars above 61°.
-51) Warning: G 2759 reports -0.602 on precession RA but it should be -0.702 (diff=0.100).
+50) Warning: G 2759 reports -0.602 on precession RA but it should be -0.702 (diff=0.100).
      Register G 2759: 04h 48m 17s73 -71°22'16"6
-52) Warning: G 2816 is FAR from B 838 (dist = 87.5 arcsec).
-     Register G 2816: 04h 53m 21s64 -70°18'25"7
-53) Warning: G 3068 is FAR from B 941 (dist = 60.2 arcsec).
-     Register G 3068: 05h 17m 17s18 -68°20'36"6
-54) Warning: G 3222 is FAR from GC 6499 (dist = 3402.8 arcsec). Check if it is a 1/2 star in GC.
+51) Warning: G 3222 is FAR from GC 6499 (dist = 3402.8 arcsec). Check if it is a 1/2 star in GC.
      Register G 3222: 05h 29m 00s27 -76°44'17"6
-55) Warning: G 3254 reports -25.579 on precession RA but it should be -25.645 (diff=0.066).
+52) Warning: G 3254 reports -25.579 on precession RA but it should be -25.645 (diff=0.066).
      Register G 3254: 05h 31m 02s34 -87°21'19"4
-56) Warning: G 3276 (vmag = 12.0) has a near PPM 368814 star (vmag = 8.4) with a different magnitude (delta = 3.6).
-57) Warning: G 3276 (vmag = 12.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
+53) Warning: G 3276 (vmag = 12.0) has a near PPM 368814 star (vmag = 8.4) with a different magnitude (delta = 3.6).
+54) Warning: G 3276 (vmag = 12.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
      Register CD -71°283 (en 5h):  8.8 | 32m21.0s | 0.5'     (pag. 222)
-58) Warning: G 3364 reports -1.301 on precession RA but it should be -1.250 (diff=0.051).
+55) Warning: G 3364 reports -1.301 on precession RA but it should be -1.250 (diff=0.051).
      Register G 3364: 05h 39m 17s62 -72°52'32"4
-59) Warning: G 3380 (vmag = 19.0) has a near CD with dif. magnitude (delta = 9.0). Check dpl.
+56) Warning: G 3380 (vmag = 19.0) has a near CD with dif. magnitude (delta = 9.0). Check dpl.
      Register CD -78°212 (en 5h):  10.0 | 38m57.0s | 22.0'     (pag. 342)
-60) Warning: G 3432 reports 1.36 on precession DECL but it should be 1.71 (diff=0.35).
+57) Warning: G 3432 reports 1.36 on precession DECL but it should be 1.71 (diff=0.35).
      Register G 3432: 05h 40m 27s10 -75°26'13"1
-61) Warning: G 3476 is ALONE (no PPM / CD / CPD / GSC star near it).
+58) Warning: G 3476 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 3476: 05h 47m 16s61 -62°44'17"6
   Note: nearest PPM 776100 at 65.2 arcsec.
   Note: poor CD coverage for stars above 61°.
-62) Warning: G 3502 is ALONE (no PPM / CD / CPD / GSC star near it).
+59) Warning: G 3502 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 3502: 05h 48m 25s00 -74°35'12"3
   Note: nearest PPM 368897 at 449.6 arcsec.
   Note: poor CD coverage for stars above 61°.
-63) Warning: G 3512 reports -3.151 on precession RA but it should be -3.081 (diff=0.070).
+60) Warning: G 3512 reports -3.151 on precession RA but it should be -3.081 (diff=0.070).
      Register G 3512: 05h 49m 21s30 -77°45'06"8
-64) Warning: G 3603 reports -2.628 on precession RA but it should be -2.528 (diff=0.100).
+61) Warning: G 3603 reports -2.628 on precession RA but it should be -2.528 (diff=0.100).
      Register G 3603: 05h 54m 47s58 -76°34'26"0
-65) Warning: G 3670 reports -11.776 on precession RA but it should be -11.743 (diff=0.033).
+62) Warning: G 3670 reports -11.776 on precession RA but it should be -11.743 (diff=0.033).
      Register G 3670: 05h 59m 20s72 -84°50'33"7
-66) Warning: G 3776 reports 2.462 on precession RA but it should be -2.462 (diff=4.924).
+63) Warning: G 3776 reports 2.462 on precession RA but it should be -2.462 (diff=4.924).
      Register G 3776: 06h 07m 01s78 -76°25'21"0
-67) Warning: G 3872 is FAR from B 1206 (dist = 77.5 arcsec).
-     Register G 3872: 06h 13m 52s26 -62°19'04"5
-68) Warning: G 3879 reports -0.296 on precession RA but it should be 0.296 (diff=0.592).
+64) Warning: G 3879 reports -0.296 on precession RA but it should be 0.296 (diff=0.592).
      Register G 3879: 06h 14m 13s39 -64°19'29"8
-69) Warning: G 3932 reports 0.145 on precession RA but it should be 0.207 (diff=0.062).
+65) Warning: G 3932 reports 0.145 on precession RA but it should be 0.207 (diff=0.062).
      Register G 3932: 06h 18m 19s76 -65°02'46"8
-70) Warning: G 3946 reports 0.391 on precession RA but it should be 0.452 (diff=0.061).
+66) Warning: G 3946 reports 0.391 on precession RA but it should be 0.452 (diff=0.061).
      Register G 3946: 06h 18m 57s82 -63°02'18"0
-71) Warning: G 3956 is ALONE (no PPM / CD / CPD / GSC star near it).
+67) Warning: G 3956 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 3956: 06h 19m 43s83 -73°23'06"5
   Note: nearest PPM 369103 at 227.8 arcsec.
   Note: poor CD coverage for stars above 61°.
-72) Warning: G 3959 reports -3.849 on precession RA but it should be -3.881 (diff=0.032).
+68) Warning: G 3959 reports -3.849 on precession RA but it should be -3.881 (diff=0.032).
      Register G 3959: 06h 19m 57s02 -79°09'15"2
-73) Warning: G 4001 reports -1.232 on precession RA but it should be -1.192 (diff=0.040).
+69) Warning: G 4001 reports -1.232 on precession RA but it should be -1.192 (diff=0.040).
      Register G 4001: 06h 23m 00s06 -72°40'21"2
-74) Warning: G 4061 reports -8.601 on precession RA but it should be -8.631 (diff=0.030).
+70) Warning: G 4061 reports -8.601 on precession RA but it should be -8.631 (diff=0.030).
      Register G 4061: 06h 26m 28s14 -83°31'30"4
-75) Warning: G 4190 reports 0.506 on precession RA but it should be 0.564 (diff=0.058).
+71) Warning: G 4190 reports 0.506 on precession RA but it should be 0.564 (diff=0.058).
      Register G 4190: 06h 35m 30s42 -62°13'07"7
-76) Warning: G 4239 reports -13.530 on precession RA but it should be -13.478 (diff=0.052).
+72) Warning: G 4239 reports -13.530 on precession RA but it should be -13.478 (diff=0.052).
      Register G 4239: 06h 38m 57s75 -85°26'49"8
-77) Warning: G 4242 (vmag = 12.0) has a near CD with dif. magnitude (delta = 3.9). Check dpl.
+73) Warning: G 4242 (vmag = 12.0) has a near CD with dif. magnitude (delta = 3.9). Check dpl.
      Register CD -65°449 (en 6h):  8.1 | 39m14.0s | 9.5'     (pag. 57)
-78) Warning: G 4269 reports 0.472 on precession RA but it should be 0.531 (diff=0.059).
+74) Warning: G 4269 reports 0.472 on precession RA but it should be 0.531 (diff=0.059).
      Register G 4269: 06h 41m 17s65 -62°37'23"0
-79) Warning: G 4276 reports 0.460 on precession RA but it should be 0.519 (diff=0.059).
+75) Warning: G 4276 reports 0.460 on precession RA but it should be 0.519 (diff=0.059).
      Register G 4276: 06h 41m 32s19 -62°44'32"7
-80) Warning: G 4292 (vmag = 6.0) has a near PPM 355583 star (vmag = 9.1) with a different magnitude (delta = 3.1).
-81) Warning: G 4292 (vmag = 6.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+76) Warning: G 4292 (vmag = 6.0) has a near PPM 355583 star (vmag = 9.1) with a different magnitude (delta = 3.1).
+77) Warning: G 4292 (vmag = 6.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -63°267 (en 6h):  9.5 | 42m34.0s | 46.1'     (pag. 19)
-82) Warning: G 4316 reports -3.81 on precession DECL but it should be -4.24 (diff=0.43).
+78) Warning: G 4316 reports -3.81 on precession DECL but it should be -4.24 (diff=0.43).
      Register G 4316: 06h 48m 49s04 -75°24'44"8
-83) Warning: G 4346 is ALONE (no PPM / CD / CPD / GSC star near it).
+79) Warning: G 4346 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 4346: 06h 46m 23s92 -63°16'41"7
   Note: nearest PPM 355617 at 117.0 arcsec.
   Note: poor CD coverage for stars above 61°.
-84) Warning: G 4430 reports 0.460 on precession RA but it should be 0.497 (diff=0.037).
+80) Warning: G 4430 reports 0.460 on precession RA but it should be 0.497 (diff=0.037).
      Register G 4430: 06h 52m 42s37 -63°10'36"0
-85) Warning: G 4460 reports -0.781 on precession RA but it should be -0.927 (diff=0.146).
+81) Warning: G 4460 reports -0.781 on precession RA but it should be -0.927 (diff=0.146).
      Register G 4460: 06h 54m 45s25 -72°00'03"0
-86) Warning: G 4473 reports -0.519 on precession RA but it should be 0.515 (diff=1.034).
+82) Warning: G 4473 reports -0.519 on precession RA but it should be 0.515 (diff=1.034).
      Register G 4473: 06h 56m 04s72 -63°05'49"0
-87) Warning: G 4517 (vmag = 13.0) has a near PPM 369353 star (vmag = 8.5) with a different magnitude (delta = 4.5).
-88) Warning: G 4517 (vmag = 13.0) has a near CD with dif. magnitude (delta = 5.0). Check dpl.
+83) Warning: G 4517 (vmag = 13.0) has a near PPM 369353 star (vmag = 8.5) with a different magnitude (delta = 4.5).
+84) Warning: G 4517 (vmag = 13.0) has a near CD with dif. magnitude (delta = 5.0). Check dpl.
      Register CD -71°374 (en 6h):  8.0 | 58m56.0s | 52.0'     (pag. 223)
-89) Warning: G 4656 reports 0.034 on precession RA but it should be -0.034 (diff=0.068).
+85) Warning: G 4656 reports 0.034 on precession RA but it should be -0.034 (diff=0.068).
      Register G 4656: 07h 11m 07s84 -67°42'24"0
-90) Warning: G 4707 reports -1.236 on precession RA but it should be -1.187 (diff=0.049).
+86) Warning: G 4707 reports -1.236 on precession RA but it should be -1.187 (diff=0.049).
      Register G 4707: 07h 15m 41s20 -73°27'36"8
-91) Warning: G 4744 reports 0.355 on precession RA but it should be 0.417 (diff=0.062).
+87) Warning: G 4744 reports 0.355 on precession RA but it should be 0.417 (diff=0.062).
      Register G 4744: 07h 18m 04s62 -64°36'31"5
-92) Warning: G 4747 reports 0.416 on precession RA but it should be 0.376 (diff=0.040).
+88) Warning: G 4747 reports 0.416 on precession RA but it should be 0.376 (diff=0.040).
      Register G 4747: 07h 18m 07s67 -64°56'41"2
-93) Warning: G 4836 is ALONE (no PPM / CD / CPD / GSC star near it).
+89) Warning: G 4836 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 4836: 07h 24m 39s33 -72°50'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 369516 at 472.2 arcsec.
   Note: poor CD coverage for stars above 61°.
-94) Warning: G 4885 reports -11.526 on precession RA but it should be -11.559 (diff=0.033).
+90) Warning: G 4885 reports -11.526 on precession RA but it should be -11.559 (diff=0.033).
      Register G 4885: 07h 27m 57s83 -85°09'23"2
-95) Warning: G 4892 is ALONE (no PPM / CD / CPD / GSC star near it).
+91) Warning: G 4892 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 4892: 07h 28m 41s96 -66°10'28"8
   Note: nearest PPM 776656 at 56.9 arcsec.
   Note: poor CD coverage for stars above 61°.
-96) Warning: G 4959 is FAR from GC 9878 (dist = 125698.6 arcsec). Check if it is a 1/2 star in GC.
+92) Warning: G 4959 is FAR from GC 9878 (dist = 125698.6 arcsec). Check if it is a 1/2 star in GC.
      Register G 4959: 07h 34m 19s59 -69°33'26"5
-97) Warning: G 5033 reports -4.700 on precession RA but it should be -4.649 (diff=0.051).
+93) Warning: G 5033 reports -4.700 on precession RA but it should be -4.649 (diff=0.051).
      Register G 5033: 07h 40m 11s18 -81°04'58"0
-98) Warning: G 5076 (vmag = 10.2) has a near CD with dif. magnitude (delta = 5.9). Check dpl.
+94) Warning: G 5076 (vmag = 10.2) has a near CD with dif. magnitude (delta = 5.9). Check dpl.
      Register CD -72°417 (en 7h):  4.3 | 43m23.0s | 18.0'     (pag. 244)
-99) Warning: G 5186 is ALONE (no PPM / CD / CPD / GSC star near it).
+95) Warning: G 5186 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 5186: 07h 51m 54s13 -77°50'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 369682 at 173.1 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) Warning: ZC 7h 4109 is FAR from previous registration (dist = 110075.2 arcsec).
-100) Warning: G 5240 is ALONE (no PPM / CD / CPD / GSC star near it).
+96) Warning: G 5240 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 5240: 07h 55m 49s90 -62°47'33"9
   Note: nearest PPM 776839 at 38.6 arcsec.
   Note: poor CD coverage for stars above 61°.
-101) Warning: G 5297 is ALONE (no PPM / CD / CPD / GSC star near it).
+97) Warning: G 5297 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 5297: 08h 00m 11s36 -69°14'03"9
   Note: nearest PPM 356423 at 120.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-102) Warning: G 5299 reports -22.503 on precession RA but it should be -22.670 (diff=0.167).
+98) Warning: G 5299 reports -22.503 on precession RA but it should be -22.670 (diff=0.167).
      Register G 5299: 08h 00m 20s78 -87°25'35"7
-103) Warning: G 5318 reports -15.684 on precession RA but it should be -15.725 (diff=0.041).
+99) Warning: G 5318 reports -15.684 on precession RA but it should be -15.725 (diff=0.041).
      Register G 5318: 08h 03m 02s86 -86°30'07"6
-104) Warning: G 5372 (vmag = 10.0) has a near PPM 356519 star (vmag = 4.2) with a different magnitude (delta = 5.8).
-105) Warning: G 5372 (vmag = 10.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
+100) Warning: G 5372 (vmag = 10.0) has a near PPM 356519 star (vmag = 4.2) with a different magnitude (delta = 5.8).
+101) Warning: G 5372 (vmag = 10.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
      Register CD -68°528 (en 8h):  4.5 | 7m32.0s | 15.0'     (pag. 151)
-106) Warning: G 5423 is ALONE (no PPM / CD / CPD / GSC star near it).
+102) Warning: G 5423 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 5423: 08h 12m 23s43 -75°29'14"6
   Note: nearest PPM 784637 at 398.0 arcsec.
   Note: poor CD coverage for stars above 61°.
-107) Warning: G 5474 is FAR from GC 12220 (dist = 149710.9 arcsec). Check if it is a 1/2 star in GC.
+103) Warning: G 5474 is FAR from GC 12220 (dist = 149710.9 arcsec). Check if it is a 1/2 star in GC.
      Register G 5474: 08h 17m 14s12 -64°48'13"1
-108) Warning: G 5545 reports 1.438 on precession RA but it should be -1.438 (diff=2.876).
+104) Warning: G 5545 reports 1.438 on precession RA but it should be -1.438 (diff=2.876).
      Register G 5545: 08h 22m 18s54 -76°26'33"6
-109) Warning: G 5605 reports 0.323 on precession RA but it should be 0.423 (diff=0.100).
+105) Warning: G 5605 reports 0.323 on precession RA but it should be 0.423 (diff=0.100).
      Register G 5605: 08h 29m 06s00 -68°07'03"1
-110) Warning: G 5724 reports -0.441 on precession RA but it should be -0.376 (diff=0.065).
+106) Warning: G 5724 reports -0.441 on precession RA but it should be -0.376 (diff=0.065).
      Register G 5724: 08h 45m 07s45 -73°45'12"6
-111) Warning: G 5724 reports -12.90 on precession DECL but it should be -13.23 (diff=0.33).
+107) Warning: G 5724 reports -12.90 on precession DECL but it should be -13.23 (diff=0.33).
      Register G 5724: 08h 45m 07s45 -73°45'12"6
-112) Warning: G 5733 reports -7.446 on precession RA but it should be -19.892 (diff=12.446).
+108) Warning: G 5733 reports -7.446 on precession RA but it should be -19.892 (diff=12.446).
      Register G 5733: 08h 40m 44s62 -87°27'10"7
-113) Warning: G 5756 reports -0.444 on precession RA but it should be -0.377 (diff=0.067).
+109) Warning: G 5756 reports -0.444 on precession RA but it should be -0.377 (diff=0.067).
      Register G 5756: 08h 47m 41s06 -73°54'28"8
-114) Warning: G 5756 reports -13.07 on precession DECL but it should be -13.40 (diff=0.33).
+110) Warning: G 5756 reports -13.07 on precession DECL but it should be -13.40 (diff=0.33).
      Register G 5756: 08h 47m 41s06 -73°54'28"8
-115) Warning: G 5772 reports 0.233 on precession RA but it should be 0.191 (diff=0.042).
+111) Warning: G 5772 reports 0.233 on precession RA but it should be 0.191 (diff=0.042).
      Register G 5772: 08h 41m 59s85 -70°33'39"4
-116) Warning: G 5782 is ALONE (no PPM / CD / CPD / GSC star near it).
+112) Warning: G 5782 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 5782: 08h 44m 58s21 -63°54'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 777212 at 74.3 arcsec.
   Note: poor CD coverage for stars above 61°.
-117) Warning: G 5849 reports 1.960 on precession RA but it should be -1.949 (diff=3.909).
+113) Warning: G 5849 reports 1.960 on precession RA but it should be -1.949 (diff=3.909).
      Register G 5849: 08h 51m 16s83 -78°56'48"8
-118) Warning: G 5875 is ALONE (no PPM / CD / CPD / GSC star near it).
+114) Warning: G 5875 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 5875: 08h 53m 44s63 -75°21'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 370107 at 259.4 arcsec.
   Note: poor CD coverage for stars above 61°.
-119) Warning: G 5885 reports 1.279 on precession RA but it should be 1.179 (diff=0.100).
+115) Warning: G 5885 reports 1.279 on precession RA but it should be 1.179 (diff=0.100).
      Register G 5885: 08h 54m 28s01 -62°54'55"6
-120) Warning: G 5896 is FAR from B 2310 (dist = 118.7 arcsec).
-     Register G 5896: 08h 55m 15s28 -73°27'59"2
-121) Warning: G 5994 reports -14.50 on precession DECL but it should be -14.40 (diff=0.10).
+116) Warning: G 5994 reports -14.50 on precession DECL but it should be -14.40 (diff=0.10).
      Register G 5994: 09h 03m 31s25 -75°42'40"7
-122) Warning: G 6028 reports -3.672 on precession RA but it should be -3.239 (diff=0.433).
+117) Warning: G 6028 reports -3.672 on precession RA but it should be -3.239 (diff=0.433).
      Register G 6028: 09h 07m 50s08 -81°46'16"2
-123) Warning: G 6114 is FAR from L 3806 (dist = 1202.4 arcsec).
+118) Warning: G 6114 is FAR from L 3806 (dist = 1202.4 arcsec).
      Register G 6114: 09h 14m 47s18 -67°02'43"4
-124) Warning: G 6130 is ALONE (no PPM / CD / CPD / GSC star near it).
+119) Warning: G 6130 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 6130: 09h 15m 56s62 -75°29'20"3
   Note: nearest PPM 370247 at 120.8 arcsec.
   Note: poor CD coverage for stars above 61°.
-125) Warning: G 6150 (vmag = 11.5) has a near PPM 370260 star (vmag = 4.7) with a different magnitude (delta = 6.8).
-126) Warning: G 6150 (vmag = 11.5) has a near CD with dif. magnitude (delta = 5.7). Check dpl.
+120) Warning: G 6150 (vmag = 11.5) has a near PPM 370260 star (vmag = 4.7) with a different magnitude (delta = 6.8).
+121) Warning: G 6150 (vmag = 11.5) has a near CD with dif. magnitude (delta = 5.7). Check dpl.
      Register CD -74°468 (en 9h):  5.8 | 17m35.0s | 22.0'     (pag. 285)
-127) Warning: G 6157 is ALONE (no PPM / CD / CPD / GSC star near it).
+122) Warning: G 6157 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 6157: 09h 17m 55s54 -62°24'32"5
   Note: nearest PPM 357301 at 120.1 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) ZC 9h 1482 is also ALONE.
-128) Warning: G 6244 reports 0.443 on precession RA but it should be 0.485 (diff=0.042).
+123) Warning: G 6244 reports 0.443 on precession RA but it should be 0.485 (diff=0.042).
      Register G 6244: 09h 27m 34s58 -72°18'24"2
-129) Warning: G 6244 reports -15.62 on precession DECL but it should be -15.78 (diff=0.16).
+124) Warning: G 6244 reports -15.62 on precession DECL but it should be -15.78 (diff=0.16).
      Register G 6244: 09h 27m 34s58 -72°18'24"2
-130) Warning: G 6268 reports -15.71 on precession DECL but it should be -15.82 (diff=0.11).
+125) Warning: G 6268 reports -15.71 on precession DECL but it should be -15.82 (diff=0.11).
      Register G 6268: 09h 28m 14s36 -67°31'15"4
-131) Warning: G 6276 reports -15.75 on precession DECL but it should be -15.85 (diff=0.10).
+126) Warning: G 6276 reports -15.75 on precession DECL but it should be -15.85 (diff=0.10).
      Register G 6276: 09h 28m 54s98 -67°40'50"0
-132) Warning: G 6361 reports -16.328 on precession RA but it should be -16.368 (diff=0.040).
+127) Warning: G 6361 reports -16.328 on precession RA but it should be -16.368 (diff=0.040).
      Register G 6361: 09h 32m 42s96 -87°38'22"3
-133) Warning: G 6469 is FAR from L 4043 (dist = 63.5 arcsec).
-     Register G 6469: 09h 41m 52s44 -66°05'59"9
-134) Warning: G 6493 (vmag = 9.5) has a near CD with dif. magnitude (delta = 6.2). Check dpl.
+128) Warning: G 6493 (vmag = 9.5) has a near CD with dif. magnitude (delta = 6.2). Check dpl.
      Register CD -64°412 (en 9h):  3.3 | 43m56.0s | 30.0'     (pag. 40)
-135) Warning: G 6590 reports -5.772 on precession RA but it should be -5.662 (diff=0.110).
+129) Warning: G 6590 reports -5.772 on precession RA but it should be -5.662 (diff=0.110).
      Register G 6590: 09h 50m 41s34 -85°19'10"7
-136) Warning: G 6600 reports -2.116 on precession RA but it should be -1.934 (diff=0.182).
+130) Warning: G 6600 reports -2.116 on precession RA but it should be -1.934 (diff=0.182).
      Register G 6600: 09h 56m 34s03 -82°11'57"7
-137) Warning: G 6600 reports -16.99 on precession DECL but it should be -17.22 (diff=0.23).
+131) Warning: G 6600 reports -16.99 on precession DECL but it should be -17.22 (diff=0.23).
      Register G 6600: 09h 56m 34s03 -82°11'57"7
-138) Warning: G 6602 (vmag = 10.0) has a near PPM 357650 star (vmag = 6.8) with a different magnitude (delta = 3.2).
-139) Warning: G 6602 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
+132) Warning: G 6602 (vmag = 10.0) has a near PPM 357650 star (vmag = 6.8) with a different magnitude (delta = 3.2).
+133) Warning: G 6602 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
      Register CD -68°702 (en 9h):  6.8 | 52m30.0s | 36.0'     (pag. 153)
 **) Warning: ZC 9h 4193 is FAR from previous registration (dist = 143988.6 arcsec).
-140) Warning: G 6637 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+134) Warning: G 6637 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -62°427 (en 9h):  8.0 | 55m29.0s | 45.2'     (pag. 4)
-141) Warning: G 6873 (vmag = 11.0) has a near PPM 357897 star (vmag = 7.9) with a different magnitude (delta = 3.1).
-142) Warning: G 6873 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+135) Warning: G 6873 (vmag = 11.0) has a near PPM 357897 star (vmag = 7.9) with a different magnitude (delta = 3.1).
+136) Warning: G 6873 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -65°905 (en 10h):  8.0 | 13m32.0s | 58.0'     (pag. 62)
-143) Warning: G 6902 (vmag = 9.0) has a near PPM 357917 star (vmag = 5.8) with a different magnitude (delta = 3.2).
-144) Warning: G 6904 (vmag = 9.0) has a near PPM 357917 star (vmag = 5.8) with a different magnitude (delta = 3.2).
-145) Warning: G 6973 reports 1.958 on precession RA but it should be 1.885 (diff=0.073).
+137) Warning: G 6902 (vmag = 9.0) has a near PPM 357917 star (vmag = 5.8) with a different magnitude (delta = 3.2).
+138) Warning: G 6904 (vmag = 9.0) has a near PPM 357917 star (vmag = 5.8) with a different magnitude (delta = 3.2).
+139) Warning: G 6973 reports 1.958 on precession RA but it should be 1.885 (diff=0.073).
      Register G 6973: 10h 19m 39s48 -64°28'06"3
-146) Warning: G 6992 is FAR from L 4311 (dist = 958.5 arcsec).
+140) Warning: G 6992 is FAR from L 4311 (dist = 958.5 arcsec).
      Register G 6992: 10h 21m 13s32 -62°32'08"9
-147) Warning: G 7159 reports 1.405 on precession RA but it should be 1.366 (diff=0.039).
+141) Warning: G 7159 reports 1.405 on precession RA but it should be 1.366 (diff=0.039).
      Register G 7159: 10h 32m 04s27 -73°38'38"0
-148) Warning: G 7178 is ALONE (no PPM / CD / CPD / GSC star near it).
+142) Warning: G 7178 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 7178: 10h 32m 42s19 -77°08'59"9
   Note: nearest PPM 370796 at 424.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-149) Warning: G 7230 reports -2.101 on precession RA but it should be 2.101 (diff=4.202).
+143) Warning: G 7230 reports -2.101 on precession RA but it should be 2.101 (diff=4.202).
      Register G 7230: 10h 35m 49s58 -63°41'29"4
-150) Warning: G 7259 (vmag = 9.0) has a near CD with dif. magnitude (delta = 6.0). Check dpl.
+144) Warning: G 7259 (vmag = 9.0) has a near CD with dif. magnitude (delta = 6.0). Check dpl.
      Register CD -63°580 (en 10h):  3.0 | 38m28.0s | 44.4'     (pag. 23)
-151) Warning: G 7291 (vmag = 1.0) has a near CD with dif. magnitude (delta = 7.2). Check dpl.
+145) Warning: G 7291 (vmag = 1.0) has a near CD with dif. magnitude (delta = 7.2). Check dpl.
      Register CD -59°3306 (en 10h):  8.2 | 40m13.3s | 2.0'     (pag. 236)
 **) Warning: ZC 10h 3116 is FAR from previous registration (dist = 100.9 arcsec).
-152) Warning: G 7401 reports 1.375 on precession RA but it should be 1.336 (diff=0.039).
+146) Warning: G 7401 reports 1.375 on precession RA but it should be 1.336 (diff=0.039).
      Register G 7401: 10h 46m 16s96 -76°18'53"0
-153) Warning: G 7470 (vmag = 9.6) has a near PPM 358361 star (vmag = 6.5) with a different magnitude (delta = 3.1).
-154) Warning: G 7517 is ALONE (no PPM / CD / CPD / GSC star near it).
+147) Warning: G 7470 (vmag = 9.6) has a near PPM 358361 star (vmag = 6.5) with a different magnitude (delta = 3.1).
+148) Warning: G 7517 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 7517: 10h 56m 22s17 -63°30'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 358418 at 155.5 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) ZC 10h 4150 is also ALONE.
   Possible cause: lack of Decl (s).
-155) Warning: G 7596 is FAR from L 4618 (dist = 1246.1 arcsec).
+149) Warning: G 7596 is FAR from L 4618 (dist = 1246.1 arcsec).
      Register G 7596: 11h 00m 54s90 -67°06'50"6
-156) Warning: G 7693 reports 1.358 on precession RA but it should be 1.492 (diff=0.134).
+150) Warning: G 7693 reports 1.358 on precession RA but it should be 1.492 (diff=0.134).
      Register G 7693: 11h 09m 49s32 -79°35'01"3
-157) Warning: G 7765 reports 2.451 on precession RA but it should be 2.410 (diff=0.041).
+151) Warning: G 7765 reports 2.451 on precession RA but it should be 2.410 (diff=0.041).
      Register G 7765: 11h 11m 49s37 -67°08'12"0
-158) Warning: G 8169 is ALONE (no PPM / CD / CPD / GSC star near it).
+152) Warning: G 8169 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8169: 11h 43m 34s69 -69°21'00"9
   Note: nearest PPM 371278 at 131.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-159) Warning: G 8179 (vmag = 11.0) has a near PPM 359020 star (vmag = 7.1) with a different magnitude (delta = 3.9).
-160) Warning: G 8179 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
+153) Warning: G 8179 (vmag = 11.0) has a near PPM 359020 star (vmag = 7.1) with a different magnitude (delta = 3.9).
+154) Warning: G 8179 (vmag = 11.0) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
      Register CD -63°675 (en 11h):  7.8 | 45m40.0s | 54.2'     (pag. 24)
-161) Warning: G 8254 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+155) Warning: G 8254 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -70°899 (en 11h):  9.7 | 51m36.0s | 40.5'     (pag. 207)
-162) Warning: G 8311 (vmag = 11.0) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
+156) Warning: G 8311 (vmag = 11.0) has a near CD with dif. magnitude (delta = 4.1). Check dpl.
      Register CD -72°766 (en 11h):  6.9 | 55m30.0s | 36.0'     (pag. 248)
-163) Warning: G 8323 reports 2.903 on precession RA but it should be 3.003 (diff=0.100).
+157) Warning: G 8323 reports 2.903 on precession RA but it should be 3.003 (diff=0.100).
      Register G 8323: 11h 54m 45s93 -66°03'13"7
-164) Warning: G 8395 (vmag = 9.5) has a near PPM 359192 star (vmag = 5.6) with a different magnitude (delta = 3.9).
-165) Warning: G 8425 (vmag = 13.0) has a near PPM 371390 star (vmag = 9.8) with a different magnitude (delta = 3.2).
-166) Warning: G 8425 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.8). Check dpl.
+158) Warning: G 8395 (vmag = 9.5) has a near PPM 359192 star (vmag = 5.6) with a different magnitude (delta = 3.9).
+159) Warning: G 8425 (vmag = 13.0) has a near PPM 371390 star (vmag = 9.8) with a different magnitude (delta = 3.2).
+160) Warning: G 8425 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.8). Check dpl.
      Register CD -75°571 (en 12h):  9.2 | 2m9.0s | 47.5'     (pag. 304)
-167) Warning: G 8574 reports 3.721 on precession RA but it should be 3.769 (diff=0.048).
+161) Warning: G 8574 reports 3.721 on precession RA but it should be 3.769 (diff=0.048).
      Register G 8574: 12h 14m 17s58 -83°11'17"4
-168) Warning: G 8651 is ALONE (no PPM / CD / CPD / GSC star near it).
+162) Warning: G 8651 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8651: 12h 22m 01s44 -72°12'18"5
   Note: nearest PPM 371533 at 201.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-169) Warning: G 8733 is ALONE (no PPM / CD / CPD / GSC star near it).
+163) Warning: G 8733 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8733: 12h 29m 10s94 -66°08'07"3
   Note: nearest PPM 779086 at 171.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-170) Warning: G 8753 is ALONE (no PPM / CD / CPD / GSC star near it).
+164) Warning: G 8753 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8753: 12h 30m 20s07 -72°32'58"5
   Note: nearest PPM 371595 at 120.1 arcsec.
   Note: poor CD coverage for stars above 61°.
-171) Warning: G 8874 (vmag = 11.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
+165) Warning: G 8874 (vmag = 11.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
      Register CD -84°127 (en 12h):  5.5 | 42m5.0s | 26.6'     (pag. 392)
-172) Warning: G 8876 is ALONE (no PPM / CD / CPD / GSC star near it).
+166) Warning: G 8876 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8876: 12h 40m 41s65 -86°38'36"0
   Note: nearest PPM 377536 at 208.9 arcsec.
   Note: poor CD coverage for stars above 61°.
-173) Warning: G 8894 is ALONE (no PPM / CD / CPD / GSC star near it).
+167) Warning: G 8894 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 8894: 12h 42m 15s51 -73°34'10"3
   Note: nearest PPM 371660 at 333.7 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) ZC 12h 2622 is also ALONE.
-174) Warning: G 8945 (vmag = 0.2) has a near PPM 779216 star (vmag = 9.1) with a different magnitude (delta = 8.9).
-175) Warning: G 8945 (vmag = 0.2) has a near CD with dif. magnitude (delta = 8.8). Check dpl.
+168) Warning: G 8945 (vmag = 0.2) has a near PPM 779216 star (vmag = 9.1) with a different magnitude (delta = 8.9).
+169) Warning: G 8945 (vmag = 0.2) has a near CD with dif. magnitude (delta = 8.8). Check dpl.
      Register CD -66°1318 (en 12h):  9.0 | 48m23.0s | 51.5'     (pag. 100)
-176) Warning: G 9003 is ALONE (no PPM / CD / CPD / GSC star near it).
+170) Warning: G 9003 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 9003: 12h 51m 19s37 -76°22'37"4
   Note: nearest PPM 371734 at 595.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-177) Warning: G 9016 reports -19.54 on precession DECL but it should be -19.44 (diff=0.10).
+171) Warning: G 9016 reports -19.54 on precession DECL but it should be -19.44 (diff=0.10).
      Register G 9016: 12h 57m 10s62 -88°00'55"1
-178) Warning: G 9073 is ALONE (no PPM / CD / CPD / GSC star near it).
+172) Warning: G 9073 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 9073: 12h 56m 40s36 -66°18'50"5
   Note: nearest PPM 779283 at 280.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-179) Warning: G 9123 is FAR from B 4342 (dist = 80.7 arcsec).
-     Register G 9123: 13h 01m 37s87 -68°07'01"2
-180) Warning: G 9254 reports 5.516 on precession RA but it should be 5.460 (diff=0.056).
+173) Warning: G 9254 reports 5.516 on precession RA but it should be 5.460 (diff=0.056).
      Register G 9254: 13h 11m 07s97 -80°17'47"4
-181) Warning: G 9308 reports 5.335 on precession RA but it should be 15.327 (diff=9.992).
+174) Warning: G 9308 reports 5.335 on precession RA but it should be 15.327 (diff=9.992).
      Register G 9308: 13h 14m 52s61 -87°59'40"8
-182) Warning: G 9409 is FAR from B 4505 (dist = 67.9 arcsec).
-     Register G 9409: 13h 23m 10s58 -65°57'30"0
-183) Warning: G 9577 reports 8.092 on precession RA but it should be 8.126 (diff=0.034).
+175) Warning: G 9577 reports 8.092 on precession RA but it should be 8.126 (diff=0.034).
      Register G 9577: 13h 37m 58s03 -83°44'30"5
-184) Warning: G 9591 is ALONE (no PPM / CD / CPD / GSC star near it).
+176) Warning: G 9591 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 9591: 13h 38m 25s98 -71°27'21"9
   Note: nearest PPM 786091 at 107.9 arcsec.
   Note: poor CD coverage for stars above 61°.
-185) Warning: G 9686 reports 5.284 on precession RA but it should be 5.336 (diff=0.052).
+177) Warning: G 9686 reports 5.284 on precession RA but it should be 5.336 (diff=0.052).
      Register G 9686: 13h 45m 43s79 -75°16'14"9
-186) Warning: G 10011 is ALONE (no PPM / CD / CPD / GSC star near it).
+178) Warning: G 10011 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 10011: 14h 11m 12s83 -70°16'30"4
   Note: nearest PPM 786253 at 191.8 arcsec.
   Note: poor CD coverage for stars above 61°.
-187) Warning: G 10274 reports 5.008 on precession RA but it should be 4.964 (diff=0.044).
+179) Warning: G 10274 reports 5.008 on precession RA but it should be 4.964 (diff=0.044).
      Register G 10274: 14h 29m 24s20 -66°47'44"6
-188) Warning: G 10434 reports 16.098 on precession RA but it should be 16.068 (diff=0.030).
+180) Warning: G 10434 reports 16.098 on precession RA but it should be 16.068 (diff=0.030).
      Register G 10434: 14h 40m 18s10 -86°12'37"8
-189) Warning: G 10549 (vmag = 10.5) has a near PPM 361143 star (vmag = 7.2) with a different magnitude (delta = 3.3).
-190) Warning: G 10549 (vmag = 10.5) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
+181) Warning: G 10549 (vmag = 10.5) has a near PPM 361143 star (vmag = 7.2) with a different magnitude (delta = 3.3).
+182) Warning: G 10549 (vmag = 10.5) has a near CD with dif. magnitude (delta = 3.2). Check dpl.
      Register CD -67°1670 (en 14h):  7.3 | 50m10.0s | 29.0'     (pag. 134)
-191) Warning: G 10595 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.0). Check dpl.
+183) Warning: G 10595 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.0). Check dpl.
      Register CD -86°98 (en 15h):  8.0 | 0m34.0s | 49.6'     (pag. 397)
-192) Warning: G 10775 (vmag = 15.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
+184) Warning: G 10775 (vmag = 15.0) has a near CD with dif. magnitude (delta = 5.5). Check dpl.
      Register CD -75°788 (en 15h):  9.5 | 5m37.0s | 50.0'     (pag. 306)
-193) Warning: G 10829 reports 15.682 on precession RA but it should be 15.635 (diff=0.047).
+185) Warning: G 10829 reports 15.682 on precession RA but it should be 15.635 (diff=0.047).
      Register G 10829: 15h 06m 45s31 -85°34'18"1
-194) Warning: G 10835 reports -13.74 on precession DECL but it should be -13.61 (diff=0.13).
+186) Warning: G 10835 reports -13.74 on precession DECL but it should be -13.61 (diff=0.13).
      Register G 10835: 15h 09m 02s32 -66°39'27"5
-195) Warning: G 10975 (vmag = 0.9) has a near CD with dif. magnitude (delta = 9.1). Check dpl.
+187) Warning: G 10975 (vmag = 0.9) has a near CD with dif. magnitude (delta = 9.1). Check dpl.
      Register CD -67°1765 (en 15h):  10.0 | 19m11.0s | 49.5'     (pag. 136)
-196) Warning: G 11020 reports 7.748 on precession RA but it should be 7.648 (diff=0.100).
+188) Warning: G 11020 reports 7.748 on precession RA but it should be 7.648 (diff=0.100).
      Register G 11020: 15h 19m 35s07 -77°24'09"1
-197) Warning: G 11025 is FAR from L 6371 (dist = 432.7 arcsec).
+189) Warning: G 11025 is FAR from L 6371 (dist = 432.7 arcsec).
      Register G 11025: 15h 19m 41s34 -66°49'13"1
-198) Warning: G 11035 reports 6.727 on precession RA but it should be 6.627 (diff=0.100).
+190) Warning: G 11035 reports 6.727 on precession RA but it should be 6.627 (diff=0.100).
      Register G 11035: 15h 20m 15s05 -73°54'56"2
-199) Warning: G 11061 is FAR from B 5364 (dist = 205.8 arcsec).
+191) Warning: G 11061 is FAR from B 5364 (dist = 205.8 arcsec).
      Register G 11061: 15h 22m 46s12 -73°55'21"9
-200) Warning: G 11113 reports 76.717 on precession RA but it should be 76.516 (diff=0.201).
+192) Warning: G 11113 reports 76.717 on precession RA but it should be 76.516 (diff=0.201).
      Register G 11113: 15h 26m 03s32 -89°11'00"8
-201) Warning: G 11324 reports 17.130 on precession RA but it should be 17.162 (diff=0.032).
+193) Warning: G 11324 reports 17.130 on precession RA but it should be 17.162 (diff=0.032).
      Register G 11324: 15h 41m 40s96 -85°31'57"2
-202) Warning: G 11456 reports 28.776 on precession RA but it should be 28.867 (diff=0.091).
+194) Warning: G 11456 reports 28.776 on precession RA but it should be 28.867 (diff=0.091).
      Register G 11456: 15h 51m 20s58 -87°29'14"8
-203) Warning: G 11713 reports 5.991 on precession RA but it should be 6.042 (diff=0.051).
+195) Warning: G 11713 reports 5.991 on precession RA but it should be 6.042 (diff=0.051).
      Register G 11713: 16h 09m 31s03 -68°15'28"2
-204) Warning: G 11986 is ALONE (no PPM / CD / CPD / GSC star near it).
+196) Warning: G 11986 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 11986: 16h 31m 14s02 -69°38'53"2
   Note: nearest PPM 362315 at 58.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-205) Warning: G 12050 reports 24.046 on precession RA but it should be 23.946 (diff=0.100).
+197) Warning: G 12050 reports 24.046 on precession RA but it should be 23.946 (diff=0.100).
      Register G 12050: 16h 35m 53s87 -86°34'42"2
 **) Warning: ZC 16h 2743 is FAR from previous registration (dist = 31680.0 arcsec).
-206) Warning: G 12285 reports 9.031 on precession RA but it should be 9.062 (diff=0.031).
+198) Warning: G 12285 reports 9.031 on precession RA but it should be 9.062 (diff=0.031).
      Register G 12285: 16h 56m 48s53 -77°52'37"6
-207) Warning: G 12285 reports -5.80 on precession DECL but it should be -5.46 (diff=0.34).
+199) Warning: G 12285 reports -5.80 on precession DECL but it should be -5.46 (diff=0.34).
      Register G 12285: 16h 56m 48s53 -77°52'37"6
-208) Warning: G 12378 reports 6.991 on precession RA but it should be 7.034 (diff=0.043).
+200) Warning: G 12378 reports 6.991 on precession RA but it should be 7.034 (diff=0.043).
      Register G 12378: 17h 09m 24s28 -71°46'25"3
-209) Warning: G 12378 reports -5.24 on precession DECL but it should be -4.39 (diff=0.85).
+201) Warning: G 12378 reports -5.24 on precession DECL but it should be -4.39 (diff=0.85).
      Register G 12378: 17h 09m 24s28 -71°46'25"3
-210) Warning: G 12380 reports 6.219 on precession RA but it should be 6.119 (diff=0.100).
+202) Warning: G 12380 reports 6.219 on precession RA but it should be 6.119 (diff=0.100).
      Register G 12380: 16h 59m 36s11 -67°02'33"2
-211) Warning: G 12403 is ALONE (no PPM / CD / CPD / GSC star near it).
+203) Warning: G 12403 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 12403: 17h 01m 30s93 -75°51'56"2
   Note: nearest PPM 787075 at 113.7 arcsec.
   Note: poor CD coverage for stars above 61°.
-212) Warning: G 12557 reports 10.907 on precession RA but it should be 10.943 (diff=0.036).
+204) Warning: G 12557 reports 10.907 on precession RA but it should be 10.943 (diff=0.036).
      Register G 12557: 17h 14m 22s28 -80°32'45"3
-213) Warning: G 12611 is FAR from L 7361 (dist = 15758.3 arcsec).
+205) Warning: G 12611 is FAR from L 7361 (dist = 15758.3 arcsec).
      Register G 12611: 17h 18m 45s44 -73°32'07"2
-214) Warning: G 12658 reports 18.215 on precession RA but it should be 18.251 (diff=0.036).
+206) Warning: G 12658 reports 18.215 on precession RA but it should be 18.251 (diff=0.036).
      Register G 12658: 17h 22m 35s06 -85°01'56"7
-215) Warning: G 12663 reports 5.913 on precession RA but it should be 6.047 (diff=0.134).
+207) Warning: G 12663 reports 5.913 on precession RA but it should be 6.047 (diff=0.134).
      Register G 12663: 17h 23m 01s65 -66°04'48"3
-216) Warning: G 12881 reports -1.62 on precession DECL but it should be -1.45 (diff=0.17).
+208) Warning: G 12881 reports -1.62 on precession DECL but it should be -1.45 (diff=0.17).
      Register G 12881: 17h 43m 26s61 -75°06'00"3
-217) Warning: G 12995 reports 23.634 on precession RA but it should be 23.541 (diff=0.093).
+209) Warning: G 12995 reports 23.634 on precession RA but it should be 23.541 (diff=0.093).
      Register G 12995: 17h 50m 40s03 -86°15'56"6
-218) Warning: G 13019 reports 11.843 on precession RA but it should be 13.005 (diff=1.162).
+210) Warning: G 13019 reports 11.843 on precession RA but it should be 13.005 (diff=1.162).
      Register G 13019: 17h 52m 53s42 -82°20'13"6
-219) Warning: G 13031 reports -0.58 on precession DECL but it should be -0.76 (diff=0.18).
+211) Warning: G 13031 reports -0.58 on precession DECL but it should be -0.76 (diff=0.18).
      Register G 13031: 17h 51m 19s63 -79°54'41"2
-220) Warning: G 13222 reports 10.467 on precession RA but it should be 10.433 (diff=0.034).
+212) Warning: G 13222 reports 10.467 on precession RA but it should be 10.433 (diff=0.034).
      Register G 13222: 18h 11m 08s40 -79°43'00"9
-221) Warning: G 13449 is FAR from B 6457 (dist = 228.0 arcsec).
+213) Warning: G 13449 is FAR from B 6457 (dist = 228.0 arcsec).
      Register G 13449: 18h 32m 06s44 -73°03'05"3
-222) Warning: G 13501 reports 26.108 on precession RA but it should be 26.208 (diff=0.100).
+214) Warning: G 13501 reports 26.108 on precession RA but it should be 26.208 (diff=0.100).
      Register G 13501: 18h 36m 44s16 -86°44'05"2
-223) Warning: G 13507 reports 9.809 on precession RA but it should be 9.841 (diff=0.032).
+215) Warning: G 13507 reports 9.809 on precession RA but it should be 9.841 (diff=0.032).
      Register G 13507: 18h 37m 30s53 -78°58'18"2
-224) Warning: G 13514 reports 3.08 on precession DECL but it should be 3.34 (diff=0.26).
+216) Warning: G 13514 reports 3.08 on precession DECL but it should be 3.34 (diff=0.26).
      Register G 13514: 18h 38m 19s24 -65°50'46"7
-225) Warning: G 13514 is ALONE (no PPM / CD / CPD / GSC star near it).
+217) Warning: G 13514 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 13514: 18h 38m 19s24 -65°50'46"7
   Note: nearest PPM 782218 at 789.5 arcsec.
   Note: poor CD coverage for stars above 61°.
-226) Warning: G 13549 is FAR from B 6504 (dist = 63.9 arcsec).
-     Register G 13549: 18h 42m 33s25 -76°18'10"2
-227) Warning: G 13842 is FAR from L 8036 (dist = 116.8 arcsec).
-     Register G 13842: 19h 09m 34s91 -71°44'42"6
-228) Warning: G 13851 reports 7.140 on precession RA but it should be 7.192 (diff=0.052).
+218) Warning: G 13851 reports 7.140 on precession RA but it should be 7.192 (diff=0.052).
      Register G 13851: 19h 00m 03s51 -72°35'48"8
-229) Warning: G 13851 reports 6.04 on precession DECL but it should be 5.20 (diff=0.84).
+219) Warning: G 13851 reports 6.04 on precession DECL but it should be 5.20 (diff=0.84).
      Register G 13851: 19h 00m 03s51 -72°35'48"8
-230) Warning: G 13861 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+220) Warning: G 13861 (vmag = 13.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -76°998 (en 19h):  9.5 | 14m12.0s | 54.0'     (pag. 324)
-231) Warning: G 13917 reports 16.680 on precession RA but it should be 16.723 (diff=0.043).
+221) Warning: G 13917 reports 16.680 on precession RA but it should be 16.723 (diff=0.043).
      Register G 13917: 19h 14m 47s54 -84°41'58"2
-232) Warning: G 14173 is ALONE (no PPM / CD / CPD / GSC star near it).
+222) Warning: G 14173 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 14173: 19h 37m 30s44 -78°03'11"0
   Note: nearest PPM 374438 at 28.3 arcsec.
   Note: poor CD coverage for stars above 61°.
-233) Warning: G 14288 reports 24.073 on precession RA but it should be 24.303 (diff=0.230).
+223) Warning: G 14288 reports 24.073 on precession RA but it should be 24.303 (diff=0.230).
      Register G 14288: 19h 43m 24s00 -86°45'22"0
-234) Warning: G 14288 reports 9.14 on precession DECL but it should be 8.74 (diff=0.40).
+224) Warning: G 14288 reports 9.14 on precession DECL but it should be 8.74 (diff=0.40).
      Register G 14288: 19h 43m 24s00 -86°45'22"0
-235) Warning: G 14333 (vmag = 12.0) has a near PPM 374506 star (vmag = 7.6) with a different magnitude (delta = 4.4).
-236) Warning: G 14333 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.2). Check dpl.
+225) Warning: G 14333 (vmag = 12.0) has a near PPM 374506 star (vmag = 7.6) with a different magnitude (delta = 4.4).
+226) Warning: G 14333 (vmag = 12.0) has a near CD with dif. magnitude (delta = 4.2). Check dpl.
      Register CD -71°1601 (en 19h):  7.8 | 54m33.0s | 10.0'     (pag. 237)
 **) Warning: ZC 20h 465 is FAR from previous registration (dist = 22712.4 arcsec).
-237) Warning: G 14702 is FAR from L 8467 (dist = 1103.6 arcsec).
+227) Warning: G 14702 is FAR from L 8467 (dist = 1103.6 arcsec).
      Register G 14702: 20h 25m 55s55 -70°16'48"4
-238) Warning: G 14840 reports 16.224 on precession RA but it should be 17.011 (diff=0.787).
+228) Warning: G 14840 reports 16.224 on precession RA but it should be 17.011 (diff=0.787).
      Register G 14840: 20h 23m 49s80 -85°33'36"2
-239) Warning: G 14840 reports 12.95 on precession DECL but it should be 11.78 (diff=1.17).
+229) Warning: G 14840 reports 12.95 on precession DECL but it should be 11.78 (diff=1.17).
      Register G 14840: 20h 23m 49s80 -85°33'36"2
-240) Warning: G 14880 reports 12.542 on precession RA but it should be 12.506 (diff=0.036).
+230) Warning: G 14880 reports 12.542 on precession RA but it should be 12.506 (diff=0.036).
      Register G 14880: 20h 45m 19s06 -83°55'30"0
-241) Warning: G 15028 reports 8.320 on precession RA but it should be 8.251 (diff=0.069).
+231) Warning: G 15028 reports 8.320 on precession RA but it should be 8.251 (diff=0.069).
      Register G 15028: 21h 03m 04s96 -79°47'30"3
-242) Warning: G 15028 reports 14.19 on precession DECL but it should be 14.37 (diff=0.18).
+232) Warning: G 15028 reports 14.19 on precession DECL but it should be 14.37 (diff=0.18).
      Register G 15028: 21h 03m 04s96 -79°47'30"3
-243) Warning: G 15055 is FAR from L 8696 (dist = 1000.4 arcsec).
+233) Warning: G 15055 is FAR from L 8696 (dist = 1000.4 arcsec).
      Register G 15055: 21h 03m 13s54 -73°38'40"9
-244) Warning: G 15291 (vmag = 9.0) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 4.0).
-245) Warning: G 15291 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.6). Check dpl.
+234) Warning: G 15291 (vmag = 9.0) has a near PPM 378641 star (vmag = 5.0) with a different magnitude (delta = 4.0).
+235) Warning: G 15291 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.6). Check dpl.
      Register CD -83°276 (en 21h):  5.4 | 31m30.0s | 17.4'     (pag. 390)
-246) Warning: G 15853 reports 8.496 on precession RA but it should be 8.549 (diff=0.053).
+236) Warning: G 15853 reports 8.496 on precession RA but it should be 8.549 (diff=0.053).
      Register G 15853: 22h 22m 24s45 -84°14'30"4
-247) Warning: G 15874 reports 8.597 on precession RA but it should be 8.725 (diff=0.128).
+237) Warning: G 15874 reports 8.597 on precession RA but it should be 8.725 (diff=0.128).
      Register G 15874: 22h 25m 47s16 -84°36'03"6
-248) Warning: G 16000 reports 4.449 on precession RA but it should be 4.409 (diff=0.040).
+238) Warning: G 16000 reports 4.449 on precession RA but it should be 4.409 (diff=0.040).
      Register G 16000: 22h 39m 07s38 -70°56'27"8
-249) Warning: G 16121 reports 3.860 on precession RA but it should be 3.936 (diff=0.076).
+239) Warning: G 16121 reports 3.860 on precession RA but it should be 3.936 (diff=0.076).
      Register G 16121: 22h 52m 32s60 -65°50'07"5
-250) Warning: G 16225 reports 3.859 on precession RA but it should be 3.959 (diff=0.100).
+240) Warning: G 16225 reports 3.859 on precession RA but it should be 3.959 (diff=0.100).
      Register G 16225: 23h 03m 18s00 -69°44'14"8
-251) Warning: G 16289 reports 6.893 on precession RA but it should be 6.806 (diff=0.087).
+241) Warning: G 16289 reports 6.893 on precession RA but it should be 6.806 (diff=0.087).
      Register G 16289: 23h 08m 32s05 -85°26'28"0
-252) Warning: G 16311 reports 4.206 on precession RA but it should be 4.106 (diff=0.100).
+242) Warning: G 16311 reports 4.206 on precession RA but it should be 4.106 (diff=0.100).
      Register G 16311: 23h 12m 05s74 -74°59'13"3
-253) Warning: G 16350 reports 4.124 on precession RA but it should be 4.212 (diff=0.088).
+243) Warning: G 16350 reports 4.124 on precession RA but it should be 4.212 (diff=0.088).
      Register G 16350: 23h 16m 50s25 -77°36'52"2
-254) Warning: G 16474 reports 4.081 on precession RA but it should be 4.170 (diff=0.089).
+244) Warning: G 16474 reports 4.081 on precession RA but it should be 4.170 (diff=0.089).
      Register G 16474: 23h 31m 23s72 -81°22'51"3
-255) Warning: G 16487 reports 4.663 on precession RA but it should be 4.592 (diff=0.071).
+245) Warning: G 16487 reports 4.663 on precession RA but it should be 4.592 (diff=0.071).
      Register G 16487: 23h 32m 23s23 -83°57'55"2
-256) Warning: G 16491 reports 3.880 on precession RA but it should be 3.912 (diff=0.032).
+246) Warning: G 16491 reports 3.880 on precession RA but it should be 3.912 (diff=0.032).
      Register G 16491: 23h 31m 55s90 -78°59'48"1
-257) Warning: G 16497 is ALONE (no PPM / CD / CPD / GSC star near it).
+247) Warning: G 16497 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register G 16497: 23h 33m 54s89 -85°24'00"0
   Possible cause: lack of Decl (s).
   Note: nearest PPM 789670 at 74.9 arcsec.
   Note: poor CD coverage for stars above 61°.
-258) Warning: G 16580 reports 5.120 on precession RA but it should be 5.000 (diff=0.120).
+248) Warning: G 16580 reports 5.120 on precession RA but it should be 5.000 (diff=0.120).
      Register G 16580: 23h 43m 51s32 -87°12'22"6
-259) Warning: G 16640 reports 3.742 on precession RA but it should be 3.842 (diff=0.100).
+249) Warning: G 16640 reports 3.742 on precession RA but it should be 3.842 (diff=0.100).
      Register G 16640: 23h 48m 50s05 -85°09'59"4
-260) Warning: G 16678 (vmag = 10.5) has a near PPM 351563 star (vmag = 7.4) with a different magnitude (delta = 3.1).
-261) Warning: G 16710 reports 3.112 on precession RA but it should be 3.212 (diff=0.100).
+250) Warning: G 16678 (vmag = 10.5) has a near PPM 351563 star (vmag = 7.4) with a different magnitude (delta = 3.1).
+251) Warning: G 16710 reports 3.112 on precession RA but it should be 3.212 (diff=0.100).
      Register G 16710: 23h 56m 17s75 -81°13'51"5
 Stars from Gilliss identified with PPM = 15773, GSC-PPM = 766, CD = 15941 and CPD = 16176
-Stars from Gilliss with Lacaille = 1557, Stone = 68, GC = 959 and Brisbane = 336
+Stars from Gilliss with Lacaille = 1559, Stone = 68, GC = 959 and Brisbane = 344
 RSME of distance (arcsec) = 2.87  among a total of 15773 stars
 RSME of visual magnitude = 0.49631  among a total of 14783 stars
-Errors logged = 261
+Errors logged = 251
 Doubles found in G catalog: 5 (saved to results/doubles/gilliss.csv)
 
 Number of ZC stars registered = 13280

@@ -21,7 +21,7 @@
 #define EPOCH_BAC 1850.0
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
-#define MAX_DIST_CROSS 60.0
+#define MAX_DIST_CROSS 120.0
 #define MAX_DIST_PPM 120.0
 #define CURATED true // true if curated BD catalog should be used
 
