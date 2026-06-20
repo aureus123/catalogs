@@ -1787,7 +1787,7 @@ void readGCScanned() {
     sortPPM();
 
     /* recorremos las páginas escaneadas */
-    for (int page = 1; page <= 286; page++) {
+    for (int page = 1; page <= 412; page++) {
         char filename[64];
         snprintf(filename, 64, "scans/rnao14_page%d.csv", page);
         FILE *stream = fopen(filename, "rt");

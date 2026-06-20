@@ -8,7 +8,7 @@ Digitization of `RNAO14.pdf` into per-page CSV files `rnao14_pageNN.csv`
 
 This file records every non-trivial finding: magnitude discrepancies (corrected or
 kept), numbering/structural problems, genuine catalog gaps, gc.txt omissions, and
-cross-identification results. Last updated **2026-06-16**.
+cross-identification results. Last updated **2026-06-19**.
 
 ---
 
@@ -19,11 +19,15 @@ cross-identification results. Last updated **2026-06-16**.
 | Pages 1–61 | Done, chain-clean (stars 1 … 3072) |
 | Pages 62–214 | Done (62–70 are manual ground truth — do NOT overwrite) |
 | Pages 215–286 | Done, chain-clean (stars 10935 … 14575) |
-| **Page 287+** | Not yet extracted (catalog runs to ~page 620, last star 32448) |
-| **Missing pages** | **90, 126, 128** ("no stars extracted" — need redo) |
-| **Corrupt pages** | **144, 158** (committed with bad numbering — need redo, see §3) |
+| Pages 287–412 | Done (stars 14576 … 21458); pages 372 & 408 number-fixed (§3a) |
+| **Page 413+** | Not yet extracted (catalog runs to ~page 620, last star 32448) |
+| **Missing pages** | **90, 126, 128** and **296** ("no stars extracted" — need redo) |
+| **Corrupt pages** | **144, 158** and **304, 362, 368, 410** (bad numbering — need redo, see §3) |
+| **Reference-drop pages** | **328, 353, 386** (full), **372, 408** (partial) — numbers/mags OK but reference column dropped; need a reference redo (see §5e) |
 
-Chain is fully consecutive over all extracted pages except the genuine gaps in §4.
+Chain is fully consecutive over all extracted pages except the genuine gaps in §4 and
+the corrupt pages above (304/362/368/410 sit inside the 287–412 range and break the seam
+there until re-extracted).
 
 ---
 
@@ -71,6 +75,30 @@ checked against the page image.
 | 245 | 12522 | 8.5 | 8¼ | 8.2 | ¼ read as ½ |
 | 245 | 12526 | 6.9 | 6.2 | 6.2 | decimal misread |
 | 261 | 13313 | 7.2 | 7¾ | 7.7 | ¾ read as ¼ |
+| 331 | 16863 | 7.2 | 7¾ | 7.7 | ¾ read as ¼ |
+| 351 | 18070 | 8.5 | 8¼ | 8.2 | ¼ read as ½ |
+| 351 | 18073 | 8.5 | 8¼ | 8.2 | ¼ read as ½ |
+| 351 | 18076 | 6.6 | 6.9 | 6.9 | decimal misread |
+| 353 | 18179 | 8.5 | 8¼ | 8.2 | ¼ read as ½ |
+| 353 | 18180 | 8.5 | 8¼ | 8.2 | ¼ read as ½ |
+| 353 | 18185 | 7.3 | 7.2 | 7.2 | decimal misread |
+| 353 | 18192 | 5.8 | 5.6 | 5.6 | decimal misread |
+| 353 | 18195 | 6.7 | 6.6 | 6.6 | decimal misread |
+| 357 | 18381 | 7.2 | 7.7 | 7.7 | decimal misread |
+| 357 | 18384 | 9.2 | 9½ | 9.5 | ½ read as ¼ |
+| 365 | 18831 | 7.2 | 7¾ | 7.7 | ¾ read as ¼ |
+| 397 | 20599 | 8.2 | 8¾ | 8.7 | ¾ read as ¼ |
+| 404 | 20928 | 7   | 9   | 9   | digit 9 read as 7 (top-of-page misalign) |
+| 404 | 20930 | 7   | 8   | 8   | digit 8 read as 7 (top-of-page misalign) |
+| 404 | 20931 | 7   | 8   | 8   | digit 8 read as 7 (top-of-page misalign) |
+| 408 | 21220 | 8.5 | 8¼ | 8.2 | ¼ read as ½ |
+| 408 | 21226 | 5.5 | 5.2 | 5.2 | decimal misread (Lupus g, var.) |
+| 408 | 21230 | 8   | 8½ | 8.5 | fraction dropped |
+
+**Page 353 note:** 5 flags on one page, all "one tenth too high" — same systematic
+fraction/decimal over-read as page 37. All matched gc.txt and were corrected.
+**Page 404 note:** the first data rows of the page (20928, 20930, 20931) were all read
+`7.0` regardless of the printed digit — a top-of-page magnitude-column misalignment.
 
 **Page 37 note:** 12 flags on one page = systematic fraction drop/misread by the model
 (it dropped or halved ¼/¾ glyphs across the whole page). All 12 print values matched
@@ -95,6 +123,19 @@ was left unchanged.
 | 276 | 14069 | 7.5 (7½) | 9.5 | integer digit differs in gc.txt |
 | 278 | 14144 | 9.0 | 5.0 | **gc.txt has 14144/14145 SWAPPED** |
 | 278 | 14145 | 5.0 | 9.0 | **gc.txt has 14144/14145 SWAPPED** |
+| 288 | 14647 | 8.2 (8¼) | 7.5 | integer digit differs in gc.txt |
+| 318 | 16152 | 9.5 (9½) | 11.0 | integer digit differs in gc.txt |
+| 343 | 17575 | 9.2 (9¼) | 7.5 | integer digit differs in gc.txt |
+| 348 | 17903 | 9.5 (9½) | 9.2 | gc.txt differs |
+| 350 | 17986 | 7.2 (7¼) | 6.7 | **gc.txt has 17986/17987 SWAPPED** |
+| 350 | 17987 | 6.7 (6¾) | 7.2 | **gc.txt has 17986/17987 SWAPPED** |
+| 383 | 19825 | 1.0 (1) | 3.5 | **gc.txt has α¹/α² Cen (19825/19826) SWAPPED** |
+| 384 | 19826 | 3.5 (3½) | 1.0 | **gc.txt has α¹/α² Cen (19825/19826) SWAPPED** |
+| 388 | 20063 | 9.0 (9) | 7.0 | integer digit differs in gc.txt |
+| 388 | 20091 | 9.5 (9½) | 7.5 | integer digit differs in gc.txt |
+| 405 | 21046 | 7.5 (7½) | 7.2 | gc.txt differs |
+| 409 | 21236 | 10.0 (10) | 8.5 | **gc.txt has 21236/21237 SWAPPED** |
+| 409 | 21237 | 8.5 (8½) | 10.0 | **gc.txt has 21236/21237 SWAPPED** |
 
 ### 2c. Self-corrected by majority vote (no action; logged for completeness)
 Pages 12 (536→7.7), 14 (676→9.5, 678→8.2), 27 (1289→7.5): a single run misread but the
@@ -116,8 +157,14 @@ number `< 10000` on pages 215+ is unambiguously this error → fix is `+10000`.
 | 239 | 12 |
 | 241 | 59 (entire page) |
 | 245 | 56 (entire page) |
+| 372 | 13 (rows 9156–9168 → 19156–19168) |
+| 408 | 12 (rows 1171–1182 → 21171–21182) |
 
-149 rows total; after the fix the chain is perfectly consecutive (0 residual anomalies).
+On pages 372 and 408 the model dropped the leading digit only for the first chunk of
+rows and then self-corrected partway down the page (so the tail already had the full
+number). The page endpoints (confirmed by the neighbouring pages' seams: 372 = 19156–19212,
+408 = 21171–21230) made the true range unambiguous, so the early rows were lifted by
++10000 (372) / +20000 (408); both pages are now perfectly consecutive internally.
 **The numbering validator does NOT catch this — re-scan every future deep batch for
 star numbers `< 10000` and for non-monotonic page seams.**
 
@@ -132,8 +179,23 @@ actually sent to the model, not the white gap. Both pages re-extracted cleanly a
 ### 3c. Still-corrupt pages (need redo)
 - **Page 144:** numbering is garbage (`3006 … 8013` interleaved; correct range `7317…7374`).
 - **Page 158:** starts `2855` (correct range `8064…8110`).
+- **Page 296:** "no stars extracted" — the model returned all rows as unnumbered text
+  (refs like `L. 45448`, `ZC. 38866` …); the N° column was not parsed. Bridge implies
+  ~54 stars `15012…15065` (page 295 ends 15011, page 297 starts 15065). Needs redo.
+- **Page 304:** numbers read `7341 … 8046` (58 rows, non-consecutive) instead of the
+  bridge `15392…15439`; whole N° column misread. The 58-vs-48 row count does not
+  reconcile with the seam → genuine re-OCR required (not a blanket digit shift).
+- **Page 362:** numbers read `5594 … 5663` (70 consecutive rows) instead of bridge
+  `18598…18656` (59 stars). Row count mismatch (70≠59) → re-OCR.
+- **Page 368:** numbers read `7251 … 8252` (59 rows, non-consecutive) instead of bridge
+  `18929…18986` (58 stars) → re-OCR.
+- **Page 410:** numbers read `8370 … 8424` (55 consecutive rows) instead of bridge
+  `21287…21342` (56 stars). Off-by-one vs the seam → re-OCR.
 
-Both were committed corrupt in an earlier session; they require re-extraction (Gemini quota).
+Pages 144/158 were committed corrupt in an earlier session; 296/304/362/368/410 are from
+the 287–412 batch. All require re-extraction (Gemini quota). **Unlike 372/408, these were
+NOT auto-fixed** because the row counts do not reconcile with the page seams, so the true
+numbering can only be recovered by re-OCR.
 
 ---
 
@@ -144,6 +206,9 @@ These are NOT extraction errors — confirmed against the print image and/or gc.
 ### 4a. Genuine gaps (number absent from BOTH print and gc.txt)
 - **10045** (page 197), **10808** (page 212) — the print itself skips the number.
 - **9631** (page 189) — real gap (gc.txt also skips it).
+- **14683** (page 289), **19915** (page 385), **20795** (page 401) — single-number gaps
+  in the 287–412 batch; gc.txt lacks each one while both neighbours are present in gc.txt
+  and in our CSVs, so the catalog itself skips them (not dropped rows).
 
 ### 4b. Print star ABSENT from gc.txt (inverse discrepancy — row KEPT)
 The print shows a real numbered row; gc.txt omits the entry. Verified via image; our
@@ -198,6 +263,79 @@ slightly different components) or genuine book-vs-modern discrepancies:
 - Parenthesized references (e.g. `L. (589)`) are uncertain in the book and are skipped by
   `readGCScanned` for cross-checking.
 
+### 5d. Reference validation of magnitude-flagged rows
+Rationale: when Gemini **misread the magnitude** of a row (a §2a CORRECTED entry), it may
+have struggled with that whole row, so its **reference** is also suspect → verified against
+the print. Rows where the print simply differs from gc.txt (§2b KEPT) need no such check —
+the cause is gc.txt, not Gemini. Reference reads must use the `compose()`-aligned image
+(num+mag+ref); a raw crop spanning far-apart columns misaligns because the print rows lean
+up to half a row across the page (the row anchor is the **magnitude**, not the number).
+
+Result for the §2a CORRECTED rows: the reference is **correct** for essentially all of them
+(the mag glyph and the reference are independent crops, so a fraction misread rarely touches
+the reference). Two genuine reference defects were found on the same rows whose magnitude was
+wrong, plus the drop-page cases:
+
+| Page | Star | CSV ref was | Print shows | Action |
+|------|------|-------------|-------------|--------|
+| 245 | 12522 | (empty) | `L. 3767` | **FIXED** — reference filled in |
+| 11  | 494   | (empty) | `comes, n.sq.` | left as-is — a double-star note, not a catalog ID |
+| 353 | 18179, 18180, 18185, 18192, 18195 | (empty) | refs exist (e.g. 18179=`OA.12816`, 18180=`ZC.892`) | covered by the whole-page drop, §5e |
+| 408 | 21220, 21226, 21230 | (empty) | refs exist on the page | covered by the whole-page drop, §5e |
+
+### 5e. Whole-page reference-column drops (NEW class of error — need re-extraction)
+On some pages Gemini dropped the **entire** (or most of the) reference column while numbers,
+magnitudes and dates came through fine. Detected by reference-completeness per page (neighbours
+run ~90%+); confirmed against the print (the references are plainly there). **All are in the
+287–412 batch; pages 1–286 are clean** (only the known-corrupt 144/158 are empty there).
+
+| Page | rows | refs present | note |
+|------|------|--------------|------|
+| 328 | 59 | 0 | full drop (print has B.3968, L.5070, ZC.490 …) |
+| 353 | 57 | 0 | full drop (print has ZC.877, Ll.24755, OA.12816 …) |
+| 386 | 59 | 0 | full drop (print has OA.13831, L.6075, M.1240 …) |
+| 372 | 57 | 13 | partial — also a number-misread page (§3a) |
+| 408 | 60 | 10 | partial — also a number-misread page (§3a); refs lost from ~21182 on |
+| 304, 368, 410 | — | 0 | corrupt pages (§3c) — references lost as part of the corruption |
+| 362 | 70 | 38 | corrupt page (§3c) — partial reference loss |
+
+Fix: re-run these pages through the pipeline when quota resets (the reference pass uses
+3-run majority voting). Numbers/mags on 328/353/386 are already correct, so a reference-only
+redo would suffice; 372/408 also need their §3a number fix preserved. Manual transcription of
+whole columns was deliberately avoided as error-prone.
+
+### 5f. Reference fixes from the cross-position check (`results/log_south.log`)
+`cross_south.cpp::readGCScanned` flags every scanned reference whose reference-catalogue
+position is far from the GC star's 1875.0 position (`is FAR from … dist = … arcsec`).
+Reviewing the ≥ 600 arcsec entries (lines 1083–1335) against the print — checking each star
+plus its neighbours — turned up **11 wrong references that were fixed** (the rest were faithful
+to the print: the large distance there is a genuine book/position discrepancy or a double-star
+component, not a transcription error). Read references from the **`compose`-aligned image**,
+anchored by the printed number/magnitude, because the page lean offsets the far-right reference
+column from the number column.
+
+| Page | Star | CSV had | Print shows | Cause |
+|------|------|---------|-------------|-------|
+| 16  | 684   | OA. 64    | UA. 64    | letter: U read as O |
+| 51  | 2486  | L. 722    | L. 733    | digits 33 read as 22 |
+| 172 | 8794  | Ll. 13622 | Ll. 13623 | digit 3 read as 2 |
+| 172 | 8807  | OA. 6041  | OA. 6044  | digit 4 read as 1 |
+| 197 | 10031 | L. 2959   | L. 2939   | digit 3 read as 5 (dup of 10030) |
+| 219 | 11159 | L. 3280   | L. 3289   | digit 9 read as 0 |
+| 232 | 11823 | B. 159    | P. 159    | letter: P read as B |
+| 235 | 11935 | L. 3531   | *(blank)* | ref belonged to 11936 (shifted up one row) |
+| 235 | 11936 | *(blank)* | L. 3531   | "" |
+| 345 | 17699 | B. 309    | R. 309    | letter: R read as B |
+| 377 | 19457 | OA. 13572 | UA. 343½  | UA fraction misread as an OA number |
+
+**The out-of-order block in the log is corrupt page 362, not a fixable reference set.**
+`readGCScanned` walks pages 1→412 but prints each star's *gc.txt* page in the register line,
+so the GC 5625–5662 block (log lines 1259–1309, printed "(pag 112/113)") appearing right after
+GC 18494 is page **362**'s garbage GC numbers (read as 5594–5663, should be 18598–18667) with
+garbage references (`L 5631`, `B 4588`, `Lal 22538` …). Those are not real references — page
+362 needs the full re-OCR already noted in §3c. Same applies to the other corrupt pages.
+Entries < 600 arcsec were ignored (mostly double-star components and small position offsets).
+
 ---
 
 ## 6. Pipeline facts (for whoever resumes)
@@ -213,10 +351,20 @@ slightly different components) or genuine book-vs-modern discrepancies:
 
 ### Resume commands
 ```sh
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 144 144   # redo corrupt
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 158 158   # redo corrupt
+# redo the missing/corrupt singles (each anchors numbering from the previous page's CSV):
 /Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 90 90     # plus 126, 128
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 287 0     # continue until quota
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 144 144   # corrupt
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 158 158   # corrupt
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 296 296   # no stars
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 304 304   # corrupt N°
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 362 362   # corrupt N°
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 368 368   # corrupt N°
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 410 410   # corrupt N°
+# reference-column drops (numbers/mags already OK — see §5e):
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 328 328   # plus 353, 386
+# (372 & 408 also lost refs but need their §3a number fix re-applied after any redo)
+# continue the main run:
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 413 0     # continue until quota
 ```
 `--pages FIRST 0` runs until quota/catalog end; each page anchors its numbering from the
 previous page's CSV.

@@ -1080,141 +1080,192 @@ Doubles found in U catalog: 97 (saved to results/doubles/usno.csv)
 ***************************************
 Perform cross-checking of scanned GC pages...
 Stars read from PPM: 468861
-1) Warning: GC 684 is FAR from OA 64 (dist = 132615.7 arcsec).
-     Register GC 684: mag = 6.7, RA = 00h39m04s69, DE = 63°10'56''3 (pag 16) 
-2) Warning: GC 961 is FAR from L 286 (dist = 103.3 arcsec).
+1) Warning: GC 961 is FAR from L 286 (dist = 103.3 arcsec).
      Register GC 961: mag = 7.7, RA = 00h57m00s54, DE = 37°59'07''0 (pag 22) 
-3) Warning: GC 1181 is FAR from L 338 (dist = 372.0 arcsec).
+2) Warning: GC 1181 is FAR from L 338 (dist = 372.0 arcsec).
      Register GC 1181: mag = 7.2, RA = 01h09m53s28, DE = 24°38'05''5 (pag 26) 
-4) Warning: GC 1908 is FAR from L 584 (dist = 7897.0 arcsec).
+3) Warning: GC 1908 is FAR from L 584 (dist = 7897.0 arcsec).
      Register GC 1908: mag = 7.0, RA = 01h51m17s06, DE = 60°55'27''3 (pag 41) dpl 
-5) Warning: GC 1909 is FAR from L 584 (dist = 7900.8 arcsec).
+4) Warning: GC 1909 is FAR from L 584 (dist = 7900.8 arcsec).
      Register GC 1909: mag = 7.5, RA = 01h51m17s33, DE = 60°55'23''5 (pag 41) dpl 
-6) Warning: GC 2393 is FAR from OA 1495 (dist = 60.3 arcsec).
+5) Warning: GC 2393 is FAR from OA 1495 (dist = 60.3 arcsec).
      Register GC 2393: mag = 8.7, RA = 02h14m59s72, DE = 29°25'35''6 (pag 50) 
-7) Warning: GC 2486 is FAR from L 722 (dist = 8227.7 arcsec).
-     Register GC 2486: mag = 7.2, RA = 02h19m00s39, DE = 55°05'58''9 (pag 52) 
-8) Warning: GC 2615 is FAR from OA 1616 (dist = 41185.3 arcsec).
+6) Warning: GC 2615 is FAR from OA 1616 (dist = 41185.3 arcsec).
      Register GC 2615: mag = 9.0, RA = 02h24m55s49, DE = 27°18'24''8 (pag 54) 
-9) Warning: GC 2943 is FAR from L 869 (dist = 63.3 arcsec).
+7) Warning: GC 2943 is FAR from L 869 (dist = 63.3 arcsec).
      Register GC 2943: mag = 8.0, RA = 02h40m30s46, DE = 34°24'05''5 (pag 61) 
-10) Warning: GC 3378 is FAR from L 1146 (dist = 872.1 arcsec).
+8) Warning: GC 3378 is FAR from L 1146 (dist = 872.1 arcsec).
      Register GC 3378: mag = 7.5, RA = 03h02m18s79, DE = 85°39'57''8 (pag 69) 
 **) Warning: ZC 3h 681 is FAR from previous registration (dist = 53257.0 arcsec).
-11) Warning: GC 4540 is FAR from B 650 (dist = 338.1 arcsec).
+9) Warning: GC 4540 is FAR from B 650 (dist = 338.1 arcsec).
      Register GC 4540: mag = 8.0, RA = 03h58m57s84, DE = 44°44'04''7 (pag 91) 
-12) Warning: GC 5081 is FAR from L 1523 (dist = 129.7 arcsec).
+10) Warning: GC 5081 is FAR from L 1523 (dist = 129.7 arcsec).
      Register GC 5081: mag = 6.1, RA = 04h26m00s00, DE = 62°47'45''7 (pag 102) 
-13) Warning: GC 5277 is FAR from B 759 (dist = 89.3 arcsec).
+11) Warning: GC 5277 is FAR from B 759 (dist = 89.3 arcsec).
      Register GC 5277: mag = 9.2, RA = 04h35m18s63, DE = 69°20'12''4 (pag 105) 
-14) Warning: GC 5643 is FAR from B 831 (dist = 73.8 arcsec).
+12) Warning: GC 5643 is FAR from B 831 (dist = 73.8 arcsec).
      Register GC 5643: mag = 8.0, RA = 04h52m08s27, DE = 63°49'04''1 (pag 113) 
-15) Warning: GC 5665 is FAR from B 838 (dist = 86.5 arcsec).
+13) Warning: GC 5665 is FAR from B 838 (dist = 86.5 arcsec).
      Register GC 5665: mag = 9.2, RA = 04h53m08s87, DE = 70°16'00''9 (pag 113) 
-16) Warning: GC 5867 is FAR from OA 686 (dist = 195271.9 arcsec).
+14) Warning: GC 5867 is FAR from OA 686 (dist = 195271.9 arcsec).
      Register GC 5867: mag = 9.0, RA = 05h02m25s60, DE = 23°26'23''6 (pag 117) 
-17) Warning: GC 6319 is FAR from L 1873 (dist = 481.3 arcsec).
+15) Warning: GC 6319 is FAR from L 1873 (dist = 481.3 arcsec).
      Register GC 6319: mag = 8.2, RA = 05h22m01s84, DE = 58°12'24''0 (pag 126) 
-18) Warning: GC 6922 is FAR from L 2055 (dist = 109.8 arcsec).
+16) Warning: GC 6922 is FAR from L 2055 (dist = 109.8 arcsec).
      Register GC 6922: mag = 7.5, RA = 05h47m51s36, DE = 55°05'19''6 (pag 138) 
-19) Warning: GC 7192 is FAR from B 1121 (dist = 60.5 arcsec).
+17) Warning: GC 7192 is FAR from B 1121 (dist = 60.5 arcsec).
      Register GC 7192: mag = 8.5, RA = 05h58m10s86, DE = 60°29'13''4 (pag 143) 
-20) Warning: GC 7217 is FAR from B 1125 (dist = 70.8 arcsec).
+18) Warning: GC 7217 is FAR from B 1125 (dist = 70.8 arcsec).
      Register GC 7217: mag = 8.5, RA = 05h58m58s09, DE = 60°29'33''3 (pag 143) 
-21) Warning: GC 7292 is FAR from OA 4643 (dist = 20564.7 arcsec).
+19) Warning: GC 7292 is FAR from OA 4643 (dist = 20564.7 arcsec).
      Register GC 7292: mag = 8.5, RA = 06h01m30s43, DE = 28°06'10''9 (pag 144) 
-22) Warning: GC 7641 is FAR from B 1206 (dist = 78.8 arcsec).
+20) Warning: GC 7641 is FAR from B 1206 (dist = 78.8 arcsec).
      Register GC 7641: mag = 8.5, RA = 06h14m05s66, DE = 62°19'35''5 (pag 151) 
-23) Warning: GC 8690 is FAR from B 1405 (dist = 2291.1 arcsec).
+21) Warning: GC 8690 is FAR from B 1405 (dist = 2291.1 arcsec).
      Register GC 8690: mag = 8.0, RA = 06h51m19s45, DE = 32°54'37''3 (pag 171) 
-24) Warning: GC 8794 is FAR from Lal 13622 (dist = 195949.7 arcsec).
-     Register GC 8794: mag = 7.0, RA = 06h55m11s55, DE = 20°27'58''8 (pag 173) 
-25) Warning: GC 8807 is FAR from OA 6041 (dist = 13366.4 arcsec).
-     Register GC 8807: mag = 8.2, RA = 06h55m42s30, DE = 25°55'06''6 (pag 174) 
-26) Warning: GC 9226 is FAR from L 2634 (dist = 5835.7 arcsec).
+22) Warning: GC 9226 is FAR from L 2634 (dist = 5835.7 arcsec).
      Register GC 9226: mag = 6.8, RA = 07h10m32s72, DE = 23°31'19''2 (pag 182) 
-27) Warning: GC 9251 is FAR from L 2708 (dist = 283.1 arcsec).
+23) Warning: GC 9251 is FAR from L 2708 (dist = 283.1 arcsec).
      Register GC 9251: mag = 7.1, RA = 07h11m22s70, DE = 41°52'08''3 (pag 183) 
-28) Warning: GC 9396 is FAR from OA 6673 (dist = 28005.2 arcsec).
+24) Warning: GC 9396 is FAR from OA 6673 (dist = 28005.2 arcsec).
      Register GC 9396: mag = 8.0, RA = 07h16m28s59, DE = 27°57'22''0 (pag 186) 
-29) Warning: GC 9595 is FAR from B 1623 (dist = 77.7 arcsec).
+25) Warning: GC 9595 is FAR from B 1623 (dist = 77.7 arcsec).
      Register GC 9595: mag = 8.7, RA = 07h23m12s03, DE = 55°06'41''5 (pag 190) 
-30) Warning: GC 9660 is FAR from L 2833 (dist = 89.4 arcsec).
+26) Warning: GC 9660 is FAR from L 2833 (dist = 89.4 arcsec).
      Register GC 9660: mag = 8.0, RA = 07h25m44s30, DE = 27°50'05''3 (pag 191) 
-31) Warning: GC 9684 is FAR from OA 6964 (dist = 355.2 arcsec).
+27) Warning: GC 9684 is FAR from OA 6964 (dist = 355.2 arcsec).
      Register GC 9684: mag = 8.2, RA = 07h26m26s12, DE = 30°08'24''6 (pag 192) 
-32) Warning: GC 9778 is FAR from Lal 14863 (dist = 22254.0 arcsec).
+28) Warning: GC 9778 is FAR from Lal 14863 (dist = 22254.0 arcsec).
      Register GC 9778: mag = 6.0, RA = 07h30m19s14, DE = 14°13'02''6 (pag 194) dpl 
-33) Warning: GC 9960 is FAR from B 1703 (dist = 97.5 arcsec).
+29) Warning: GC 9960 is FAR from B 1703 (dist = 97.5 arcsec).
      Register GC 9960: mag = 8.2, RA = 07h36m11s49, DE = 44°08'41''7 (pag 197) 
-34) Warning: GC 9998 is FAR from B 1712 (dist = 66.0 arcsec).
+30) Warning: GC 9998 is FAR from B 1712 (dist = 66.0 arcsec).
      Register GC 9998: mag = 8.5, RA = 07h37m32s42, DE = 44°35'24''7 (pag 198) 
-35) Warning: GC 10031 is FAR from L 2959 (dist = 82165.5 arcsec).
-     Register GC 10031: mag = 6.2, RA = 07h38m37s58, DE = 35°45'13''9 (pag 199) 
-36) Warning: GC 10453 is FAR from B 1821 (dist = 126.9 arcsec).
+31) Warning: GC 10453 is FAR from B 1821 (dist = 126.9 arcsec).
      Register GC 10453: mag = 7.7, RA = 07h51m38s48, DE = 46°58'55''0 (pag 207) 
-37) Warning: GC 10493 is FAR from B 1832 (dist = 119.4 arcsec).
+32) Warning: GC 10493 is FAR from B 1832 (dist = 119.4 arcsec).
      Register GC 10493: mag = 8.5, RA = 07h53m02s32, DE = 47°08'02''3 (pag 208) 
-38) Warning: GC 10740 is FAR from B 1893 (dist = 231.9 arcsec).
+33) Warning: GC 10740 is FAR from B 1893 (dist = 231.9 arcsec).
      Register GC 10740: mag = 8.7, RA = 08h01m23s06, DE = 54°38'24''0 (pag 213) 
-39) Warning: GC 11009 is FAR from B 1949 (dist = 62.6 arcsec).
+34) Warning: GC 11009 is FAR from B 1949 (dist = 62.6 arcsec).
      Register GC 11009: mag = 8.7, RA = 08h10m26s27, DE = 48°51'16''9 (pag 218) 
-40) Warning: GC 11070 is FAR from Lal 16304 (dist = 87.4 arcsec).
+35) Warning: GC 11070 is FAR from Lal 16304 (dist = 87.4 arcsec).
      Register GC 11070: mag = 6.5, RA = 08h12m28s05, DE = 12°12'39''3 (pag 219) 
-41) Warning: GC 11159 is FAR from L 3280 (dist = 11777.1 arcsec).
-     Register GC 11159: mag = 6.8, RA = 08h15m22s33, DE = 58°46'30''1 (pag 221) 
-42) Warning: GC 11214 is FAR from B 1989 (dist = 236.5 arcsec).
+36) Warning: GC 11214 is FAR from B 1989 (dist = 236.5 arcsec).
      Register GC 11214: mag = 8.2, RA = 08h17m17s78, DE = 44°35'31''8 (pag 222) 
-43) Warning: GC 11344 is FAR from L 3321 (dist = 803.9 arcsec).
+37) Warning: GC 11344 is FAR from L 3321 (dist = 803.9 arcsec).
      Register GC 11344: mag = 7.2, RA = 08h22m04s44, DE = 31°46'22''5 (pag 225) 
-44) Warning: GC 11447 is FAR from L 3369 (dist = 63.3 arcsec).
+38) Warning: GC 11447 is FAR from L 3369 (dist = 63.3 arcsec).
      Register GC 11447: mag = 7.2, RA = 08h26m03s50, DE = 40°05'31''0 (pag 227) 
-45) Warning: GC 11608 is FAR from OA 8796 (dist = 1465.8 arcsec).
+39) Warning: GC 11608 is FAR from OA 8796 (dist = 1465.8 arcsec).
      Register GC 11608: mag = 8.7, RA = 08h31m54s02, DE = 23°52'00''8 (pag 230) 
-46) Warning: GC 11618 is FAR from B 2107 (dist = 80.9 arcsec).
+40) Warning: GC 11618 is FAR from B 2107 (dist = 80.9 arcsec).
      Register GC 11618: mag = 8.5, RA = 08h32m12s09, DE = 54°40'10''2 (pag 230) 
-47) Warning: GC 11823 is FAR from B 159 (dist = 343164.8 arcsec).
-     Register GC 11823: mag = 8.7, RA = 08h39m01s65, DE = 02°08'53''9 (pag 234) dpl 
-48) Warning: GC 11935 is FAR from L 3531 (dist = 20293.2 arcsec).
-     Register GC 11935: mag = 9.0, RA = 08h42m49s08, DE = 27°18'05''6 (pag 237) 
-49) Warning: GC 12086 is FAR from B 2255 (dist = 60.8 arcsec).
+41) Warning: GC 12086 is FAR from B 2255 (dist = 60.8 arcsec).
      Register GC 12086: mag = 8.7, RA = 08h48m18s19, DE = 59°00'51''4 (pag 240) 
-50) Warning: GC 12097 is FAR from B 2257 (dist = 69.7 arcsec).
+42) Warning: GC 12097 is FAR from B 2257 (dist = 69.7 arcsec).
      Register GC 12097: mag = 8.5, RA = 08h48m43s41, DE = 52°51'15''3 (pag 240) 
-51) Warning: GC 12245 is FAR from B 2310 (dist = 118.1 arcsec).
+43) Warning: GC 12245 is FAR from B 2310 (dist = 118.1 arcsec).
      Register GC 12245: mag = 8.0, RA = 08h55m10s43, DE = 73°33'45''2 (pag 243) 
-52) Warning: GC 12706 is FAR from L 3806 (dist = 1200.8 arcsec).
+44) Warning: GC 12706 is FAR from L 3806 (dist = 1200.8 arcsec).
      Register GC 12706: mag = 8.0, RA = 09h15m12s14, DE = 67°09'01''9 (pag 251) 
-53) Warning: GC 12912 is FAR from B 2500 (dist = 69.8 arcsec).
+45) Warning: GC 12912 is FAR from B 2500 (dist = 69.8 arcsec).
      Register GC 12912: mag = 9.0, RA = 09h23m15s41, DE = 53°46'03''5 (pag 255) 
-54) Warning: GC 12923 is FAR from L 3881 (dist = 65.0 arcsec).
+46) Warning: GC 12923 is FAR from L 3881 (dist = 65.0 arcsec).
      Register GC 12923: mag = 9.0, RA = 09h23m55s21, DE = 56°26'40''8 (pag 256) cum 
-55) Warning: GC 12956 is FAR from L 3879 (dist = 107.3 arcsec).
+47) Warning: GC 12956 is FAR from L 3879 (dist = 107.3 arcsec).
      Register GC 12956: mag = 7.2, RA = 09h24m46s33, DE = 43°59'09''1 (pag 256) 
-56) Warning: GC 13038 is FAR from Lal 18823 (dist = 127886.6 arcsec).
+48) Warning: GC 13038 is FAR from Lal 18823 (dist = 127886.6 arcsec).
      Register GC 13038: mag = 6.3, RA = 09h27m44s67, DE = 22°18'44''5 (pag 258) 
-57) Warning: GC 13058 is FAR from L 3908 (dist = 284.8 arcsec).
+49) Warning: GC 13058 is FAR from L 3908 (dist = 284.8 arcsec).
      Register GC 13058: mag = 8.0, RA = 09h28m37s01, DE = 31°23'24''7 (pag 258) 
-58) Warning: GC 13078 is FAR from L 3919 (dist = 133.9 arcsec).
+50) Warning: GC 13078 is FAR from L 3919 (dist = 133.9 arcsec).
      Register GC 13078: mag = 7.7, RA = 09h29m19s64, DE = 49°10'12''1 (pag 259) 
-59) Warning: GC 13111 is FAR from B 2560 (dist = 178.9 arcsec).
+51) Warning: GC 13111 is FAR from B 2560 (dist = 178.9 arcsec).
      Register GC 13111: mag = 8.5, RA = 09h30m46s69, DE = 48°34'20''9 (pag 259) 
-60) Warning: GC 13211 is FAR from L 3978 (dist = 297.9 arcsec).
+52) Warning: GC 13211 is FAR from L 3978 (dist = 297.9 arcsec).
      Register GC 13211: mag = 8.5, RA = 09h35m28s89, DE = 49°38'56''1 (pag 261) 
-61) Warning: GC 13248 is FAR from B 2621 (dist = 2087.3 arcsec).
+53) Warning: GC 13248 is FAR from B 2621 (dist = 2087.3 arcsec).
      Register GC 13248: mag = 9.5, RA = 09h37m30s79, DE = 45°19'53''8 (pag 262) 
-62) Warning: GC 13495 is FAR from B 2719 (dist = 1666.3 arcsec).
+54) Warning: GC 13495 is FAR from B 2719 (dist = 1666.3 arcsec).
      Register GC 13495: mag = 8.5, RA = 09h48m33s54, DE = 41°43'14''0 (pag 267) 
-63) Warning: GC 13497 is FAR from B 2718 (dist = 1658.8 arcsec).
+55) Warning: GC 13497 is FAR from B 2718 (dist = 1658.8 arcsec).
      Register GC 13497: mag = 7.7, RA = 09h48m39s63, DE = 41°15'31''2 (pag 267) 
-64) Warning: GC 13667 is FAR from L 4107 (dist = 1288.4 arcsec).
+56) Warning: GC 13667 is FAR from L 4107 (dist = 1288.4 arcsec).
      Register GC 13667: mag = 7.5, RA = 09h55m59s63, DE = 38°51'00''9 (pag 270) 
-65) Warning: GC 14501 is FAR from OA 10769 (dist = 63.8 arcsec).
+57) Warning: GC 14501 is FAR from OA 10769 (dist = 63.8 arcsec).
      Register GC 14501: mag = 9.0, RA = 10h31m36s44, DE = 29°20'07''5 (pag 287) 
-Scanned GC rows with a reference = 12669; references to checked catalogs (OA/Ll/B/St/L/T/Y) = 7321
-Cross-checks OK: Lacaille = 3711, Brisbane = 756, Lalande = 1154, Taylor = 15, OA = 1421, Stone = 16, USNO = 0
-ZC (Gould's Zone Catalog) stars saved = 4549
-Errors logged = 65
+**) ZC 10h 2585 is also ALONE.
+  Possible cause: lack of RA (s).
+58) Warning: GC 15229 is FAR from L 4618 (dist = 1245.7 arcsec).
+     Register GC 15229: mag = 7.7, RA = 11h01m51s54, DE = 67°14'55''6 (pag 302) 
+59) Warning: GC 15457 is FAR from OA 11233 (dist = 7690.7 arcsec).
+     Register GC 15457: mag = 8.5, RA = 11h11m38s87, DE = 23°17'34''5 (pag 306) 
+60) Warning: GC 15463 is FAR from Lal 21565 (dist = 62.8 arcsec).
+     Register GC 15463: mag = 7.7, RA = 11h11m54s19, DE = 04°22'46''2 (pag 306) 
+61) Warning: GC 15464 is FAR from L 4696 (dist = 400.6 arcsec).
+     Register GC 15464: mag = 7.1, RA = 11h11m57s92, DE = 58°25'22''8 (pag 306) 
+62) Warning: GC 15475 is FAR from L 4699 (dist = 113.2 arcsec).
+     Register GC 15475: mag = 7.2, RA = 11h12m18s22, DE = 58°31'29''4 (pag 307) 
+63) Warning: GC 15477 is FAR from B 3519 (dist = 61.8 arcsec).
+     Register GC 15477: mag = 7.3, RA = 11h12m23s82, DE = 58°33'12''8 (pag 307) 
+64) Warning: GC 15697 is FAR from B 3598 (dist = 69.2 arcsec).
+     Register GC 15697: mag = 8.2, RA = 11h23m01s10, DE = 57°42'22''1 (pag 311) 
+65) Warning: GC 15742 is FAR from B 3623 (dist = 85.8 arcsec).
+     Register GC 15742: mag = 8.0, RA = 11h25m08s41, DE = 44°16'41''7 (pag 312) 
+66) Warning: GC 15862 is FAR from L 4810 (dist = 1947.2 arcsec).
+     Register GC 15862: mag = 6.6, RA = 11h30m33s31, DE = 60°54'07''8 (pag 314) 
+67) Warning: GC 15868 is FAR from L 4809 (dist = 375.7 arcsec).
+     Register GC 15868: mag = 8.5, RA = 11h30m46s00, DE = 60°55'06''2 (pag 314) 
+68) Warning: GC 16087 is FAR from B 3753 (dist = 79.0 arcsec).
+     Register GC 16087: mag = 8.5, RA = 11h39m44s12, DE = 49°15'16''5 (pag 318) 
+69) Warning: GC 16174 is FAR from Lal 22301 (dist = 122902.4 arcsec).
+     Register GC 16174: mag = 6.0, RA = 11h44m38s84, DE = 04°38'17''6 (pag 320) 
+70) Warning: GC 16411 is FAR from L 4970 (dist = 36398.5 arcsec).
+     Register GC 16411: mag = 9.0, RA = 11h54m43s89, DE = 38°20'15''7 (pag 324) 
+71) Warning: GC 16460 is FAR from L 4993 (dist = 791.3 arcsec).
+     Register GC 16460: mag = 6.9, RA = 11h57m15s95, DE = 38°18'41''1 (pag 325) 
+72) Warning: GC 16521 is FAR from L 5015 (dist = 1100.7 arcsec).
+     Register GC 16521: mag = 6.7, RA = 11h59m40s79, DE = 32°15'28''9 (pag 326) 
+73) Warning: GC 16606 is FAR from B 3942 (dist = 75.6 arcsec).
+     Register GC 16606: mag = 7.5, RA = 12h03m16s41, DE = 51°05'17''7 (pag 328) 
+**) ZC 12h 874 is also ALONE.
+74) Warning: GC 18406 is FAR from B 4505 (dist = 65.9 arcsec).
+     Register GC 18406: mag = 8.0, RA = 13h24m54s43, DE = 66°05'20''2 (pag 360) 
+75) Warning: GC 18414 is FAR from Lal 25012 (dist = 66.3 arcsec).
+     Register GC 18414: mag = 8.5, RA = 13h25m20s28, DE = 01°40'53''2 (pag 360) 
+76) Warning: GC 18458 is FAR from B 4531 (dist = 63.1 arcsec).
+     Register GC 18458: mag = 8.2, RA = 13h27m00s95, DE = 57°43'27''1 (pag 361) 
+77) Warning: GC 18494 is FAR from Lal 25116 (dist = 36178.6 arcsec).
+     Register GC 18494: mag = 8.7, RA = 13h28m55s43, DE = 04°17'31''9 (pag 361) 
+78) Warning: GC 19168 is FAR from B 4776 (dist = 75.0 arcsec).
+     Register GC 19168: mag = 8.5, RA = 14h00m55s75, DE = 34°22'33''5 (pag 374) 
+79) Warning: GC 19808 is FAR from Lal 26630 (dist = 77.1 arcsec).
+     Register GC 19808: mag = 6.6, RA = 14h30m20s78, DE = 11°46'20''2 (pag 385) 
+80) Warning: GC 19815 is FAR from B 4984 (dist = 68.7 arcsec).
+     Register GC 19815: mag = 8.2, RA = 14h30m40s41, DE = 39°23'11''6 (pag 385) 
+81) Warning: GC 19900 is FAR from B 5012 (dist = 84.9 arcsec).
+     Register GC 19900: mag = 8.5, RA = 14h34m37s17, DE = 45°03'41''9 (pag 387) 
+82) Warning: GC 20128 is FAR from Lal 27026 (dist = 87.2 arcsec).
+     Register GC 20128: mag = 8.2, RA = 14h44m34s72, DE = 23°46'22''9 (pag 391) 
+83) Warning: GC 20171 is FAR from St 8109 (dist = 141.0 arcsec).
+     Register GC 20171: mag = 7.7, RA = 14h46m36s94, DE = 38°49'59''2 (pag 392) 
+84) Warning: GC 20175 is FAR from L 6133 (dist = 142.9 arcsec).
+     Register GC 20175: mag = 7.7, RA = 14h46m41s61, DE = 38°47'48''0 (pag 392) 
+85) Warning: GC 20257 is FAR from Lal 27173 (dist = 158.9 arcsec).
+     Register GC 20257: mag = 6.3, RA = 14h50m10s25, DE = 20°51'02''4 (pag 394) dpl 
+86) Warning: GC 20267 is FAR from B 5127 (dist = 3655.9 arcsec).
+     Register GC 20267: mag = 9.2, RA = 14h50m31s19, DE = 50°03'24''0 (pag 394) 
+87) Warning: GC 20544 is FAR from B 5200 (dist = 72.3 arcsec).
+     Register GC 20544: mag = 8.7, RA = 15h02m02s58, DE = 40°31'29''4 (pag 398) 
+88) Warning: GC 20662 is FAR from Lal 27744 (dist = 108.0 arcsec).
+     Register GC 20662: mag = 6.7, RA = 15h07m34s69, DE = 00°51'57''7 (pag 401) 
+89) Warning: GC 20677 is FAR from B 5246 (dist = 61.5 arcsec).
+     Register GC 20677: mag = 8.2, RA = 15h07m56s15, DE = 36°31'51''5 (pag 401) 
+Scanned GC rows with a reference = 18329; references to checked catalogs (OA/Ll/B/St/L/T/Y) = 10744
+Cross-checks OK: Lacaille = 5380, Brisbane = 1471, Lalande = 1610, Taylor = 23, OA = 1873, Stone = 20, USNO = 0
+ZC (Gould's Zone Catalog) stars saved = 6448
+Errors logged = 89
 
 ***************************************
 Perform comparison between UA and PPM/CD/CPD...
@@ -1757,12 +1808,14 @@ Stars read from PPM: 468861
   Note: nearest PPM 777474 at 463.4 arcsec.
 18) Warning: T 1882 243 (vmag = 8.2) has a near CD with dif. magnitude (delta = 4.9). Check dpl.
      Register CD -64°412 (en 9h):  3.3 | 43m56.0s | 30.0'     (pag. 40)
+**) Warning: ZC 12h 1557 is FAR from previous registration (dist = 18084.6 arcsec).
+**) Warning: ZC 12h 3413 is FAR from previous registration (dist = 16.3 arcsec).
 19) Warning: T 1882 475 (vmag = 3.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -60°5293 (en 14h):  0.2 | 31m5.0s | 19.0'     (pag. 271)
 20) Warning: T 1882 566 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 566: 15h 29m 50s38 -34°11'37"9
   Note: nearest PPM 294049 at 525.2 arcsec.
-**) ZC 15h 2024 is also ALONE.
+**) Warning: ZC 15h 2024 is FAR from previous registration (dist = 35998.7 arcsec).
 21) Warning: T 1882 584 (vmag = 7.7) has a near PPM 231150 star (vmag = 3.4) with a different magnitude (delta = 4.3).
 22) Warning: T 1882 622 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -76°871 (en 16h):  9.8 | 43m40.0s | 0.5'     (pag. 322)
@@ -2223,6 +2276,7 @@ Stars read from PPM: 468861
      Register CD -63°580 (en 10h):  3.0 | 38m28.0s | 44.4'     (pag. 23)
 151) Warning: G 7291 (vmag = 1.0) has a near CD with dif. magnitude (delta = 7.2). Check dpl.
      Register CD -59°3306 (en 10h):  8.2 | 40m13.3s | 2.0'     (pag. 236)
+**) Warning: ZC 10h 3116 is FAR from previous registration (dist = 100.9 arcsec).
 152) Warning: G 7401 reports 1.375 on precession RA but it should be 1.336 (diff=0.039).
      Register G 7401: 10h 46m 16s96 -76°18'53"0
 153) Warning: G 7470 (vmag = 9.6) has a near PPM 358361 star (vmag = 6.5) with a different magnitude (delta = 3.1).
@@ -2478,5 +2532,5 @@ RSME of visual magnitude = 0.49631  among a total of 14783 stars
 Errors logged = 261
 Doubles found in G catalog: 5 (saved to results/doubles/gilliss.csv)
 
-Number of ZC stars registered = 10157
-Stars from ZC identified with PPM = 9855, GSC-PPM = 275, CD = 10107 and CPD = 10103
+Number of ZC stars registered = 11795
+Stars from ZC identified with PPM = 11396, GSC-PPM = 368, CD = 11734 and CPD = 11726
