@@ -1787,7 +1787,7 @@ void readGCScanned() {
     sortPPM();
 
     /* recorremos las páginas escaneadas */
-    for (int page = 1; page <= 412; page++) {
+    for (int page = 1; page <= 530; page++) {
         char filename[64];
         snprintf(filename, 64, "scans/rnao14_page%d.csv", page);
         FILE *stream = fopen(filename, "rt");
@@ -1919,12 +1919,12 @@ void readGCScanned() {
                         printf("%d) Warning: %s is FAR from Y %d / U %d (dist = %.1f arcsec).\n",
                             ++errors, catgName, numRefCat, usnoRef[usnoIndex], minDistance);
                         writeRegisterGC(gcIndex);
+                    } else {
+                        #ifdef PRINT_NOTES
+                        printf("**) USNO: Y %d = U %d <%s>\n", numRefCat, usnoRef[usnoIndex], usnoCatRef[usnoIndex]);
+                        #endif
+                        checkUSNO++;
                     }
-                } else {
-                    #ifdef PRINT_NOTES
-                    printf("**) USNO: Y %d = U %d <%s>\n", numRefCat, usnoRef[usnoIndex], usnoCatRef[usnoIndex]);
-                    #endif
-                    checkUSNO++;
                 }
             } else if (!strncmp(ref, "ZC.", 3)) {
                 /* guardamos la estrella en el Zone Catalog de Gould. */

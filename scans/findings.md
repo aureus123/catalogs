@@ -8,7 +8,7 @@ Digitization of `RNAO14.pdf` into per-page CSV files `rnao14_pageNN.csv`
 
 This file records every non-trivial finding: magnitude discrepancies (corrected or
 kept), numbering/structural problems, genuine catalog gaps, gc.txt omissions, and
-cross-identification results. Last updated **2026-06-19**.
+cross-identification results. Last updated **2026-06-20**.
 
 ---
 
@@ -20,7 +20,8 @@ cross-identification results. Last updated **2026-06-19**.
 | Pages 62–214 | Done (62–70 are manual ground truth — do NOT overwrite) |
 | Pages 215–286 | Done, chain-clean (stars 10935 … 14575) |
 | Pages 287–412 | Done (stars 14576 … 21458); pages 372 & 408 number-fixed (§3a) |
-| **Page 413+** | Not yet extracted (catalog runs to ~page 620, last star 32448) |
+| Pages 413–530 | Done, chain-clean (stars 21459 … 28022); pages 419/442/464/466/468/512/526 number-fixed (§3a) |
+| **Page 531+** | Not yet extracted (catalog runs to ~page 620, last star 32448) |
 | **Missing pages** | **90, 126, 128** and **296** ("no stars extracted" — need redo) |
 | **Corrupt pages** | **144, 158** and **304, 362, 368, 410** (bad numbering — need redo, see §3) |
 | **Reference-drop pages** | **328, 353, 386** (full), **372, 408** (partial) — numbers/mags OK but reference column dropped; need a reference redo (see §5e) |
@@ -167,6 +168,24 @@ number). The page endpoints (confirmed by the neighbouring pages' seams: 372 = 1
 +10000 (372) / +20000 (408); both pages are now perfectly consecutive internally.
 **The numbering validator does NOT catch this — re-scan every future deep batch for
 star numbers `< 10000` and for non-monotonic page seams.**
+
+On the 413–530 batch the bug recurred as a dropped leading **"2"** (numbers now in the
+`2xxxx` range), so the threshold becomes `< 20000` → `+20000`:
+
+| Page | Rows fixed | Note |
+|------|-----------|------|
+| 419 | 3 (first rows → 21795–21797) | partial; self-corrected mid-page |
+| 442 | 7 (→ 23015–23021) | partial |
+| 464 | 45 (entire page → 24231–24275) | full page |
+| 466 | 6 (→ 24329–24334) | partial |
+| 468 | 66 (entire page → 24445–24510) | MIXED: first 15 dropped "24" (445→24445), next 13 dropped "2" (4460→24460) → renumbered sequentially since the run is continuous |
+| 512 | 57 (entire page → 26922–26978) | full page |
+| 526 | 61 (entire page → 27735–27795) | full page |
+
+Partial first-row drops (419/442/466/468) are **invisible in a last-row progress monitor** —
+they only surfaced in the post-run per-page continuity check (start == prev_last+1 AND
+monotonic). Always run that check after a batch; don't trust page tails. After all fixes the
+whole 413–530 chain is perfectly consecutive 21459–28022, zero gaps.
 
 ### 3b. Layout guard false-positive on dark pages — SCRIPT FIXED
 Pages **43** and **61** were skipped with `suspicious Mag column width`. Cause: these are
@@ -336,6 +355,28 @@ garbage references (`L 5631`, `B 4588`, `Lal 22538` …). Those are not real ref
 362 needs the full re-OCR already noted in §3c. Same applies to the other corrupt pages.
 Entries < 600 arcsec were ignored (mostly double-star components and small position offsets).
 
+**Pages 413–530 (run of `./cross_south`, 2026-06-20):** the same check over the new batch gave
+13 entries with GC ≥ 21459 and dist ≥ 600 arcsec. Every one was verified against the print
+(`compose`-aligned, with neighbours) and **all 13 are faithful to the book — zero CSV errors**:
+GC 21893 `Ll. 19372`, 23060 `B. 5935`, 24587 `Ll. 33034` *(print also says "neb." — a nebula,
+so the stellar cross-match is meaningless)*, 24870 `T. 7717`, 24873 `T. 7719`, 25096 `T. 7787`,
+25281 `OA. 18325`, 26134 `L. 7990`, 27293 `OA. 20033`, 27391 `L. 6781`, 27698 `OA. 20323`,
+27753 `Ll. 38978`, 27923 `Ll. 39131`. The very large distances (many tens of thousands of
+arcsec) come from the **cross-catalogue lookup**, not the transcription: high Taylor (T) /
+Lalande (Ll) / OA numbers that the cross files map to a wrong or distant star, a nebula
+reference, or a genuine book peculiarity (e.g. `L. 6781` cited for a high-RA star). Unlike the
+1–412 batch (11 real misreads), the 413–530 scan introduced **no reference transcription
+errors** in the ≥ 600 arcsec set.
+
+**3′–10′ band, all pages 1–530 (2026-06-20):** filtering the same `a.log` to 180 ≤ dist ≤ 600
+arcsec gave 19 entries; every one was checked against the print (with neighbours) and **all 19
+are faithful — zero CSV errors**: GC 1181 `L. 338`, 4540 `B. 650`, 6319 `L. 1873`, 9251
+`L. 2708`, 9684 `OA. 6964`, 10740 `B. 1893`, 11214 `B. 1989`, 13058 `L. 3908`, 13211 `L. 3978`,
+15464 `L. 4696`, 15868 `L. 4809` *(print "cum." — a combined/double star)*, 21533 `L. 6567`,
+21544 `L. 6571`, 21595 `L. 6599`, 22197 `Ll. 29778`, 22398 `B. 5753`, 24628 `L. 7511`, 25545
+`B. 6457`, 25714 `L. 7868`. In this 3′–10′ regime the offsets are genuine (double-star
+components and small position/cross-catalogue differences), not transcription errors.
+
 ---
 
 ## 6. Pipeline facts (for whoever resumes)
@@ -364,7 +405,7 @@ Entries < 600 arcsec were ignored (mostly double-star components and small posit
 /Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 328 328   # plus 353, 386
 # (372 & 408 also lost refs but need their §3a number fix re-applied after any redo)
 # continue the main run:
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 413 0     # continue until quota
+/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 531 0     # continue until quota
 ```
 `--pages FIRST 0` runs until quota/catalog end; each page anchors its numbering from the
 previous page's CSV.
