@@ -218,6 +218,13 @@ the guard now validates the **crop width** (`40 ≤ width(crops[2]) ≤ 200`), i
 actually sent to the model, not the white gap. Both pages re-extracted cleanly afterward.
 
 ### 3c. Still-corrupt pages (need redo)
+> **ROOT CAUSE FOUND & FIXED 2026-06-21 (§3d):** pages 144/158/304/368/410 are all **EVEN
+> (verso) pages**, where the table sits further right and a spurious page-edge rule made
+> `detect_layout` skip the N° column → every column shifted → garbage numbers. Fixed by
+> dropping edge-artifact rules in `detect_layout`. Page **410 re-scanned and verified** via the
+> subagent (21287→B.5438 … 21342→ZC.2641). Pages 144/158/304/368 are now unblocked (re-run the
+> subagent or the Gemini pipeline). Page 296 (no-stars) and 362 (also even) still pending.
+
 - **Page 144:** numbering is garbage (`3006 … 8013` interleaved; correct range `7317…7374`).
 - **Page 158:** starts `2855` (correct range `8064…8110`).
 - **Page 296:** "no stars extracted" — the model returned all rows as unnumbered text
@@ -237,6 +244,25 @@ Pages 144/158 were committed corrupt in an earlier session; 296/304/362/368/410 
 the 287–412 batch. All require re-extraction (Gemini quota). **Unlike 372/408, these were
 NOT auto-fixed** because the row counts do not reconcile with the page seams, so the true
 numbering can only be recovered by re-OCR.
+
+### 3d. The even-page N°-column miss — `detect_layout` FIXED (2026-06-21)
+Every garbage-number page above (144, 158, 304, 368, 410) is an **even/verso** page. On even
+pages the printed table is shifted right (recto/verso margin alternation), and the page's
+trimmed/binding edge leaves a faint vertical rule within a few px of the image border. In
+`detect_layout` the border-pair vote (two heavy rules 1900–2090 px apart enclosing the most
+inner rules) then **tied** between the true pair (e.g. p410 mid 328 ↔ 2356) and a wrong pair
+anchored on that edge rule (mid 448 ↔ 2506); because the loop scans right-to-left with a strict
+`>`, the wrong, N°-skipping pair won. Result: col 0 landed on the constellation column and every
+column shifted, so the model read dates/constellations as "numbers" → the digit-drop garbage.
+
+**Fix:** drop rule groups within 25 px of either image edge before the border vote
+(`groups = [g for g in groups if g[0] > 25 and g[1] < w-25]`). Real table borders are always
+well inside the page, so no legitimate rule is removed. Verified: cols[0] now correct on
+144/158/304/368/410; **unchanged** on good pages (213/328/408/411/564); full-page regression
+sweep clean. This fixes the column detection for BOTH the Gemini pipeline and the subagent.
+Page **410** was then re-scanned with the subagent (56 rows 21287–21342, 54/56 refs, all mags ==
+gc.txt, ground-truth 21287 B.5438 / 21288 B.5435 / 21341 blank-"neb." / 21342 ZC.2641 confirmed).
+**Still TODO:** re-scan 144, 158, 304, 368 (now unblocked) and 296/362.
 
 ---
 
@@ -459,6 +485,39 @@ pages 531–616** in the south.
   FAR (e.g. F→L on 29781); silent prefix slips (L↔Ll on a number that cross-matches either way)
   may remain on those three restored pages. A targeted prefix re-check of 532/564/598 is worth a
   future pass.
+
+### 5i. Claude-subagent re-scanner; item-B reference-drop pages fixed (2026-06-21)
+Built a Claude subagent (`.claude/agents/gc-page-extractor.md`, model **sonnet**) + helper
+(`scans/render_for_agent.py`) to re-scan a single page WITHOUT the Gemini API. The helper reuses
+the pipeline (`render_page`/`detect_layout`/`compose`/`split_segments`) and emits, mirroring the
+two-pass Gemini design:
+- `EXPECTED_FIRST_NUMBER` / `EXPECTED_LAST_NUMBER` (from the neighbouring pages' CSVs — bounds the
+  page so it can't over-run),
+- gc.txt magnitudes for the range (a validator, NOT a row template),
+- **MAG strips** `compose(["num","mag"])` and **REF strips** `compose(["num","fecha","ref"])`
+  (the date column is the per-row anchor), plus **RAW full-width bands** (broken-layout fallback).
+
+Hard-won lessons baked into the agent prompt:
+- **Haiku is not accurate enough** (misaligned refs, padded phantom rows). Use **Sonnet**.
+- **Never let the agent cross-check references against the RAW bands on a good-layout page** — the
+  far-right reference column leans ~one row high in the raw image, and "reconciling" against it
+  pulls every reference up by one row. The `compose` REF strips are already lean-corrected and are
+  the authority. (This single rule was the difference between the failing v2 and the passing v3
+  test on p564, which then exactly reproduced the manually-verified ground truth incl. 29781=F.50.)
+- Number rows consecutively from `EXPECTED_FIRST_NUMBER`; this **auto-preserves digit-drop number
+  fixes** (e.g. p408, where the N° column crop clips the leading "2" → strips show 1171.. but the
+  agent emits 21171..). For such pages tell the agent explicitly: layout is GOOD, use REF strips,
+  ignore the clipped digit.
+- Verify each output by: bounds + **last-star match** (no net row-shift), `num+mag` unchanged vs
+  the prior file, every mag == gc.txt (or faithful-to-print like p472 24691=6.7), completeness ~90%.
+
+**FIXED via this agent (item-B reference-column drops):** 328 (57/59), 353 (51/57), 386 (56/59),
+408 (55/60, partial drop on the number-fixed page — refs were 10/60), 448 (45/46), 472 (49/50;
+mag 24716 corrected 8.2→8.5 per gc.txt), 524 (51/58). All bounds/seams clean, mags == gc.txt,
+ground-truth points (328: L.5065/L.5064/B.3982; 408: 21183 L.6423 / 21230 OA.14746) confirmed.
+Remaining item-B: **372, 466** (partial drops). Remaining item-A (garbage numbers, `detect_layout`
+misses the N° column — the agent's RAW-band path is the unproven hard case): **144, 158, 304, 368,
+410**; plus missing CSVs **90, 126, 128, 296, 362**.
 
 ---
 

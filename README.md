@@ -82,16 +82,16 @@ catalogs (OA and Lacaille):
 | T 1882 | Resultados XV, pg. 140-164 | 1882 | 1259 | 2.43 |
 | T 1883 | Resultados XV, pg. 181-184 | 1883 | 160 | 2.62 |
 | T 1884 | Resultados XV, pg. 232-249 | 1884 | 658 | 1.99 |
-| Lal | Lalande | 1800 | 46914 | 6.88 |
+| Lal | Lalande | 1800 | 47000 | 7.35 |
 | T | Taylor General Catalogue | 1835 | 10944 | 4.19 |
-| OA | Oeltzen-Argelander (North) | 1842 | 26001 | 6.17 |
-| W / OA | Weiss / Oeltzen-Argelander (South) | 1850 | 18010 | 4.66 |
-| WB | Weisse | 1825 | 31079 | 8.82 |
-| St / L | Stone / Lacaille | 1880 | 12414 | 1.48 |
+| OA | Oeltzen-Argelander (North) | 1842 | 25852 | 3.73 |
+| W | Weiss / Oeltzen-Argelander (South) | 1850 | 18011 | 4.66 |
+| WB | Weisse | 1825 | 31022 | 7.52 |
+| St | Stone | 1880 | 12414 | 1.48 |
 | U | Yarnall-Frisby USNO 3rd. edition | 1860 | 10495 | 2.71 |
-| G | Gilliss | 1850 | 15792 | 2.87 |
-| B | Brisbane | 1825 | 6403 | 19.99 |
-| BAC | British Association Catalogue | 1850 | 8228 | 11.91 |
+| G | Gilliss | 1850 | 15773 | 2.87 |
+| B | Brisbane | 1825 | 6570 | 21.99 |
+| BAC | British Association Catalogue | 1850 | 8205 | 10.62 |
 
 ### Wishlist
 

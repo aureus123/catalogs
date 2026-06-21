@@ -171,6 +171,12 @@ def detect_layout(img: Image.Image) -> dict:
 
     vert = _max_runs(a)
     groups = _group(np.where(vert > 140)[0], tol=10)
+    # Drop page-edge artifacts (binding shadow / trimmed-edge rules within ~25 px
+    # of either image border): on even (verso) pages the table sits further right
+    # and a spurious right-edge rule can tie the border-pair vote, making the
+    # picker skip the N° column (pages 144/158/304/368/410). Real table borders
+    # are always well inside the page, so this never removes a legitimate rule.
+    groups = [g for g in groups if g[0] > 25 and g[1] < w - 25]
     if len(groups) < 10:
         raise ValueError(f"only {len(groups)} vertical rule groups")
     mid = lambda g: (g[0] + g[1]) / 2
