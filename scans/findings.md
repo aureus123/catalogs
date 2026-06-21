@@ -8,7 +8,7 @@ Digitization of `RNAO14.pdf` into per-page CSV files `rnao14_pageNN.csv`
 
 This file records every non-trivial finding: magnitude discrepancies (corrected or
 kept), numbering/structural problems, genuine catalog gaps, gc.txt omissions, and
-cross-identification results. Last updated **2026-06-20**.
+cross-identification results. Last updated **2026-06-21**.
 
 ---
 
@@ -21,7 +21,8 @@ cross-identification results. Last updated **2026-06-20**.
 | Pages 215–286 | Done, chain-clean (stars 10935 … 14575) |
 | Pages 287–412 | Done (stars 14576 … 21458); pages 372 & 408 number-fixed (§3a) |
 | Pages 413–530 | Done, chain-clean (stars 21459 … 28022); pages 419/442/464/466/468/512/526 number-fixed (§3a) |
-| **Page 531+** | Not yet extracted (catalog runs to ~page 620, last star 32448) |
+| Pages 531–616 | **Done — catalog complete.** Chain-clean (stars 28023 … **32448**, the last star); pages 572/586/598/600 number-fixed (§3a). Page 616 is the final page (34 stars). |
+| **Catalog fully digitized** | Pages 1–616, stars 1 … 32448. Remaining work is redo/refs of flagged earlier pages (below), not new extraction. |
 | **Missing pages** | **90, 126, 128** and **296** ("no stars extracted" — need redo) |
 | **Corrupt pages** | **144, 158** and **304, 362, 368, 410** (bad numbering — need redo, see §3) |
 | **Reference-drop pages** | **328, 353, 386** (full), **372, 408** (partial) — numbers/mags OK but reference column dropped; need a reference redo (see §5e) |
@@ -186,6 +187,27 @@ Partial first-row drops (419/442/466/468) are **invisible in a last-row progress
 they only surfaced in the post-run per-page continuity check (start == prev_last+1 AND
 monotonic). Always run that check after a batch; don't trust page tails. After all fixes the
 whole 413–530 chain is perfectly consecutive 21459–28022, zero gaps.
+
+On the 531–616 batch (the final pages, numbers in the `3xxxx` range) the bug recurred in two
+forms; threshold for the leading-"3" drop is `< 20000` → `+30000`:
+
+| Page | Rows fixed | Note |
+|------|-----------|------|
+| 572 | phantom row | model lifted row `30226` (`ZC. 1884`), dropped its ref, and re-emitted it as a trailing `33226, 8.5,` row. Because `33226 > 32448` (catalog max) this **falsely tripped "Catalog exhausted" and stopped the run 44 pages early.** Fix: reinsert `30226, 8.5, ZC. 1884` in sequence, delete the phantom trailing row. |
+| 586 | 48 (entire page → 30927–30974) | dropped the **middle "9"** of `309xx` (`30927`→`3027`), not the leading digit → fix is `+27900`, NOT `+30000`. Inspect the actual digits before choosing the offset. |
+| 598 | 5 (first rows → 31529–31533) | partial leading-"3" drop; self-corrected at 31534 |
+| 600 | 7 (first rows → 31616–31622) | partial leading-"3" drop; self-corrected at 31623 |
+
+Genuine printed-catalog gaps confirmed faithful (NOT errors): **29590** (page 560, print jumps
+29589→29591) and **32368** (page 614, print jumps 32367→32369, where 32369 is `dpl.pr.`). Also
+fixed one corrupt magnitude: page 576 star **30419** read `0` (leading "1" of "10" fell outside
+the mag strip; gc.txt = 10.0, neighbours mag 8 / 7¾) → set to `10`. After all fixes the
+531–616 chain is perfectly consecutive 28023–32448 (with the two faithful gaps above), and the
+**whole catalog (pages 1–616, stars 1–32448) is now digitized.**
+
+**Lesson:** a single misread number ≥ the catalog max (32448) silently terminates the run via the
+"exhausted" check. Always confirm the run reached the expected last page / last star before
+treating an exit as completion.
 
 ### 3b. Layout guard false-positive on dark pages — SCRIPT FIXED
 Pages **43** and **61** were skipped with `suspicious Mag column width`. Cause: these are
@@ -377,6 +399,67 @@ are faithful — zero CSV errors**: GC 1181 `L. 338`, 4540 `B. 650`, 6319 `L. 18
 `B. 6457`, 25714 `L. 7868`. In this 3′–10′ regime the offsets are genuine (double-star
 components and small position/cross-catalogue differences), not transcription errors.
 
+### 5g. Magnitude cross-validation as a reference tripwire — pages 531–616 (2026-06-21)
+Purpose (per user): use each `gc.txt` magnitude mismatch as a **signal that a row may have been
+misread**, which would corrupt that row's *reference* — the magnitude value itself is not the
+target. Flagged all 25 mag mismatches on 531–616 (`load_gc_magnitudes()` vs CSV) and verified
+each flagged row's reference against the print (num+mag+ref compose, anchored by number).
+
+Result on reference-complete pages: **every flagged row's reference matched the print** — all
+diffs were ¼/½/¾ glyph ambiguity or `gc.txt` swaps/discrepancies, NOT row shifts. Spot list:
+534·28173, 537·28346, 546·28829 (ZC.1757/58/59 sequence), 549·29016, 559·29521, 576·30459/61/63
+(ZC.374/377/378), 580·30667, 595·31378 (`9, ZC.1749` — print-faithful, gc.txt 7.7 differs),
+600·31675, 612·32251 (gc.txt has 32251/32252 swapped). 534·28213 = mag glyph misread (print 3.1,
+CSV 8.1) but reference correctly blank. Minor: 580·30662/30663 dropped the double-star notes
+`n. pr.`/`s. sq.` (floating right-side annotations) → **added**.
+
+The tripwire's real catch: **four pages had dropped (almost) the entire reference column** —
+532 (0%), 564 (0%), 586 (0%), 598 (10%) vs the batch median 90.5% (all four also threw mag
+flags). Same class as §5e's 328/353/386. Fixes:
+- **586** recovered on a plain re-extraction (its drop was stochastic; re-applied its §3a +27900
+  number fix — though the redo happened to read the numbers correctly that time).
+- **532 / 564 / 598** failed the redo *deterministically* (identical "never extracted" for the
+  whole column both times). Cause: the script's reference pass feeds the model the WIDE composite
+  `num+fecha+obs+obs+ref` (`extract_refs`), which these pages' obs columns break; the NARROW
+  `num+ref` composite renders the refs cleanly. Re-extracted refs for these three via a one-off
+  narrow-composite call (3 runs, majority vote, merged by star number; 598 normalised model
+  numbers `<20000` by +30000 to match its digit-dropped rows). Restored **532 → 84%, 564 → 89%,
+  598 → 78%** (remaining blanks are genuine empty cells). Spot-checked bands on all three: refs
+  align perfectly with the print, no row shift. *** LESSON: when a whole page's refs come back
+  empty and a plain redo doesn't help, switch the ref pass to a `num+ref` composite — the wide
+  composite is the failure point, not the scan. ***
+
+### 5h. Cross-position reference revision — north + south scanned-GC sections (2026-06-21)
+Reviewed the `Perform cross-checking of scanned GC pages...` sections of both `results/log_north.log`
+and `results/log_south.log` (the FAR-warnings emitted by `cross_north.cpp`/`cross_south.cpp`).
+Pages 1–530 were already done in §5f; this pass covered the **north WB list** and the **new
+pages 531–616** in the south.
+
+- **North — all 4 WB warnings faithful (no fix):** GC 7701 `WB. 435` (pag 150), 8781 `WB. 1655`
+  (171), 10619 `WB. 1645` (208), 31915 `WB. 591` (605). Each matches the print exactly. The large
+  distances are WB cross-catalogue / epoch-1825 hour-zone artifacts (cf. the WB hour-boundary note
+  in §5e/Findings), not scan errors.
+- **South, pages 531+ — 14 warnings checked, 2 real misreads FIXED:**
+  - **GC 29781** (p564): CSV `L. 50` → **`F. 50`** (Flamsteed 50 Capricorni). F→L prefix misread;
+    `L 50` (Lacaille) gave the 157805″ distance. *This ref came from the §5g narrow-composite
+    restoration of p564* — see the caveat below.
+  - **GC 28894** (p547): CSV `Ll. 40754` → **`Ll. 40774`** (tens digit 7 misread as 5; 40774 fits
+    RA 20h57m and resolves the 147015″ distance).
+  - Also corrected two adjacent §5g-restoration prefix errors on p564 directly observed while
+    verifying: 29777 `L. 42424`→`Ll. 42424`, 29782 `L. 42431`→`Ll. 42431` (Lacaille maxes ~9900, so
+    a 42xxx number must be Lalande). These were not FAR-flagged (high "L" numbers still cross-match
+    as Lalande), but are genuine.
+  - **12 faithful (print = CSV; distance is a genuine artifact):** OA — 28191 `OA.21620`, 28724
+    `OA.20291`, 29081 `OA.21199`, 32393 `OA.23025`; anomalously-low Lalande that are original-book
+    typos faithfully transcribed — 28489 `Ll.8566`, 29398 `Ll.21683`; small offsets / doubles —
+    28799 `Ll.40634`, 28949 `L.8690`, 28972 `L.8693`, 29448 `L.8827`, 29683 `L.8889`, 32286 `L.9614`.
+- **CAVEAT on the §5g narrow-composite restorations (532/564/598):** the narrow `num+ref` model
+  pass is weaker at the **L vs Ll vs F** prefix distinction (it produced the 29781/29777/29782
+  prefix errors on p564). The cross-check catches prefix errors only when they push the position
+  FAR (e.g. F→L on 29781); silent prefix slips (L↔Ll on a number that cross-matches either way)
+  may remain on those three restored pages. A targeted prefix re-check of 532/564/598 is worth a
+  future pass.
+
 ---
 
 ## 6. Pipeline facts (for whoever resumes)
@@ -404,8 +487,8 @@ components and small position/cross-catalogue differences), not transcription er
 # reference-column drops (numbers/mags already OK — see §5e):
 /Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 328 328   # plus 353, 386
 # (372 & 408 also lost refs but need their §3a number fix re-applied after any redo)
-# continue the main run:
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 531 0     # continue until quota
+# main run is COMPLETE — catalog fully extracted through page 616 (last star 32448).
+# Remaining work is only the redo/refs of the flagged earlier pages listed above.
 ```
 `--pages FIRST 0` runs until quota/catalog end; each page anchors its numbering from the
 previous page's CSV.

@@ -1819,7 +1819,7 @@ void readGCScanned() {
     sortPPM();
 
     /* recorremos las páginas escaneadas */
-    for (int page = 1; page <= 530; page++) {
+    for (int page = 1; page <= 616; page++) {
         char filename[64];
         snprintf(filename, 64, "scans/rnao14_page%d.csv", page);
         FILE *stream = fopen(filename, "rt");
@@ -3260,6 +3260,9 @@ int main(int argc, char** argv)
     readUSNO();
     makeDoubles(countUsno, usnoRef, usnoX, usnoY, usnoZ, usnoMag, "U", "results/doubles/usno.csv");
 
+    /* leemos, cruzamos y revisamos Uranometria Argentina */
+    readUA();
+
     crossPPMZCStream = openCrossFile("results/cross/cross_zc_ppm.csv");
     crossCDZCStream = openCrossFile("results/cross/cross_zc_cd.csv");
     crossCPDZCStream = openCrossFile("results/cross/cross_zc_cpd.csv");
@@ -3267,24 +3270,21 @@ int main(int argc, char** argv)
     crossHDZCStream = openCrossFile("results/cross/cross_zc_hd.csv");
     unidentifiedZCStream = openUnidentifiedFile("results/cross/zc_unidentified.csv");
 
-    /* hacemos cross-checkings de páginas escaneadas de GC
-     * (tambien generamos identificaciones ZC) */
-    readGCScanned();
-
-    /* leemos, cruzamos y revisamos Uranometria Argentina */
-    readUA();
-
     /* leemos, cruzamos y revisamos identificaciones de Thome */
-    /* tambien generamos Gould's Zone Catalog */
+    /* tambien generamos identificaciones de Gould's Zone Catalog */
     readThome(1881.0, "cat/thome1881.txt", 0);
     readThome(1882.0, "cat/thome1882.txt", 0);
     readThome(1883.0, "cat/thome1883.txt", -1);
     readThome(1884.0, "cat/thome1884.txt", -1);
 
     /* leemos, cruzamos y revisamos identificaciones de Gilliss */
-    /* tambien generamos Gould's Zone Catalog */
+    /* tambien generamos identificaciones de Gould's Zone Catalog */
     readGilliss();
     makeDoubles(countGil, gilRef, gilX, gilY, gilZ, gilMag, "G", "results/doubles/gilliss.csv");
+
+    /* hacemos cross-checkings de páginas escaneadas de GC
+     * tambien generamos identificaciones de Gould's Zone Catalog */
+    readGCScanned();
 
     fclose(unidentifiedZCStream);
 	fclose(crossPPMZCStream);

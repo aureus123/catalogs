@@ -945,8 +945,8 @@ Error: line 24080 has unexpected value 8 in magnitude columns 12-13 (expected 7,
 717) Warning: WB 23h 1184 is ALONE (nearest PPM star at 390.4 arcsec).
 718) Warning: WB 23h 1265 is ALONE (nearest PPM star at 456.1 arcsec).
 Available WB stars = 31895
-Stars from WB identified with PPM = 31079
-RSME of distance (arcsec) = 8.82  among a total of 31079 stars
+Stars from WB identified with PPM = 31022
+RSME of distance (arcsec) = 7.52  among a total of 31022 stars
 Stars not identified with PPM nor GSC = 718
 
 ***************************************
@@ -1112,8 +1112,8 @@ Stars read from PPM: 175863
 158) Warning: OA 25638 is ALONE (nearest PPM star at 146.5 arcsec).
 159) Warning: OA 25639 is ALONE (nearest PPM star at 147.8 arcsec).
 Available OA stars = 26425
-Stars from OA identified with PPM = 26001
-RSME of distance (arcsec) = 6.17  among a total of 26001 stars
+Stars from OA identified with PPM = 25852
+RSME of distance (arcsec) = 3.73  among a total of 25852 stars
 Stars not identified with PPM nor GSC = 159
 
 ***************************************
@@ -1254,8 +1254,8 @@ Stars read from PPM: 468861
 133) Warning: BAC 8164 is ALONE (nearest PPM star at 168.5 arcsec).
 134) Warning: BAC 8260 is ALONE (nearest PPM star at 178.6 arcsec).
 Available BAC stars = 8377
-Stars from BAC identified with PPM = 8228
-RSME of distance (arcsec) = 11.91  among a total of 8228 stars
+Stars from BAC identified with PPM = 8205
+RSME of distance (arcsec) = 10.62  among a total of 8205 stars
 Stars not identified with PPM nor GSC = 134
 
 ***************************************
@@ -1459,4 +1459,20 @@ Check references between UA and BD...
      Register 42G Serb: 18h 21m 00s +06°28.0'
 UA stars properly identified with BD = 14
 UA stars properly identified with WB = 202
+Errors logged = 4
+Stars read from Catalogo General Argentino: 32379
+   Doubles: 1633, Cumulus: 10, Nebulae: 17, Variables: 67
+
+***************************************
+Perform cross-checking of scanned GC pages...
+1) Warning: GC 7701 is FAR from WB 6h 435 star (dist = 84627.9 arcsec).
+     Register GC 7701: mag = 7.5, RA = 06h16m21s61, DE = 13°16'47''3 (pag 152) 
+2) Warning: GC 8781 is FAR from WB 6h 1655 star (dist = 8434.3 arcsec).
+     Register GC 8781: mag = 9.0, RA = 06h54m45s54, DE = 11°04'21''0 (pag 173) 
+3) Warning: GC 10619 is FAR from WB 7h 1645 star (dist = 229.4 arcsec).
+     Register GC 10619: mag = 7.5, RA = 07h56m38s09, DE = 05°58'32''5 (pag 210) 
+4) Warning: GC 31915 is FAR from WB 23h 591 star (dist = 36876.0 arcsec).
+     Register GC 31915: mag = 7.2, RA = 23h28m59s49, DE = 11°14'44''4 (pag 609) 
+Scanned GC rows with a reference = 27915; references to checked catalogs (WB) = 188
+GC properly identified with WB = 184
 Errors logged = 4

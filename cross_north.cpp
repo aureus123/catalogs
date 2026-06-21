@@ -9,6 +9,7 @@
 #include <string.h>
 #include "read_ppm.h"
 #include "read_dm.h"
+#include "read_gc.h"
 #include "trig.h"
 #include "misc.h"
 #include "find_gsc.h"
@@ -21,8 +22,11 @@
 #define EPOCH_BAC 1850.0
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
+#define EPOCH_GC 1875.0
 #define MAX_DIST_CROSS 120.0
-#define MAX_DIST_PPM 120.0
+#define MAX_DIST_CAT_PPM 90.0
+#define MAX_DIST_OA_PPM 45.0
+#define MAX_DIST_PPM_FAR 120.0
 #define CURATED true // true if curated BD catalog should be used
 
 // Here, we save 1825.0 coordinates of WB stars in rectangular form
@@ -128,7 +132,7 @@ void readWB() {
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_PPM) {
+		if (minDistance < MAX_DIST_CAT_PPM) {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
@@ -136,7 +140,7 @@ void readWB() {
             writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
 		}
 
-        if (!ppmFound) {
+        if (!ppmFound && minDistance > MAX_DIST_PPM_FAR) {
             bool gscFound = findGSCStar(RA, Decl, EPOCH_WB, MAX_DIST_GSC);
             if (!gscFound) {
                 printf("%d) Warning: WB %dh %d is ALONE (nearest PPM star at %.1f arcsec).\n",
@@ -254,7 +258,7 @@ void readOARN() {
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_PPM) {
+		if (minDistance < MAX_DIST_OA_PPM) {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
@@ -262,7 +266,7 @@ void readOARN() {
             writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
 		}
 
-        if (!ppmFound) {
+        if (!ppmFound && minDistance > MAX_DIST_PPM_FAR) {
             bool gscFound = findGSCStar(RA, Decl, EPOCH_OA, MAX_DIST_GSC);
             if (!gscFound) {
                 printf("%d) Warning: OA %d is ALONE (nearest PPM star at %.1f arcsec).\n",
@@ -370,7 +374,7 @@ void readBAC() {
 		double x, y, z;
 		sph2rec(RA, Decl, &x, &y, &z);
 		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_PPM) {
+		if (minDistance < MAX_DIST_CAT_PPM) {
             akkuDistError += minDistance * minDistance;
             countDist++;
             ppmFound = true;
@@ -378,7 +382,7 @@ void readBAC() {
             writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
 		}
 
-        if (!ppmFound) {
+        if (!ppmFound && minDistance > MAX_DIST_PPM_FAR) {
             bool gscFound = findGSCStar(RA, Decl, EPOCH_BAC, MAX_DIST_GSC);
             if (!gscFound) {
                 printf("%d) Warning: BAC %d is ALONE (nearest PPM star at %.1f arcsec).\n",
@@ -635,6 +639,102 @@ void readUSNO() {
 }
 
 /*
+ * readGCScanned - revisa referencias cruzadas de las páginas escaneadas de GC
+ * (ya se deben haber leidos los catálogos WB)
+ * Lee todos los archivos scans/rnao14_page*.csv y, para cada estrella (una fila),
+ * calcula la distancia entre la estrella GC (1a columna; la 2a columna -magnitud-
+ * se ignora) y la estrella de referencia (3a columna)
+ */
+void readGCScanned() {
+    char buffer[1024], ref[64], catgName[20];
+
+    printf("\n***************************************\n");
+    printf("Perform cross-checking of scanned GC pages...\n");
+
+    int errors = 0;
+    int checkWB = 0;
+    int countStars = 0, countRefs = 0;
+
+    /* coordenadas (1875.0) de las estrellas GC ya leídas */
+    struct GCstar_struct *GCstar = getGCStruct();
+
+    /* recorremos las páginas escaneadas */
+    for (int page = 1; page <= 616; page++) {
+        char filename[64];
+        snprintf(filename, 64, "scans/rnao14_page%d.csv", page);
+        FILE *stream = fopen(filename, "rt");
+        if (stream == NULL) continue;
+
+        while (fgets(buffer, 1023, stream) != NULL) {
+            /* 1a columna: número GC */
+            int gcRef = atoi(buffer);
+            if (gcRef <= 0) continue;
+
+            /* ubicamos la 3a columna (luego de la 2a coma) */
+            char *p = strchr(buffer, ',');
+            if (p == NULL) continue;
+            p = strchr(p + 1, ',');
+            if (p == NULL) continue;
+            p++;
+            while (*p == ' ') p++; /* saltamos espacios iniciales */
+
+            /* copiamos la referencia, sin salto de línea ni espacios finales */
+            int k = 0;
+            for (int i = 0; p[i] != 0 && p[i] != '\n' && p[i] != '\r' && k < 63; i++) {
+                ref[k++] = p[i];
+            }
+            while (k > 0 && ref[k - 1] == ' ') k--;
+            ref[k] = 0;
+
+            if (ref[0] == 0) continue; /* sin referencia */
+            if (strchr(ref, '(') != NULL) continue; /* parentesis: identificación no confiable */
+
+            snprintf(catgName, 20, "GC %d", gcRef);
+
+            /* coordenadas (1875.0) de la estrella GC */
+            double x, y, z;
+            int gcIndex = -1;
+            if (!getGCStarData(gcRef, &gcIndex, &x, &y, &z)) continue;
+            countStars++;
+
+            /* despachamos según el catálogo referido en la 3a columna */
+            if (!strncmp(ref, "WB.", 3)) {
+                countRefs++;
+                int numRefCat = atoi(&ref[3]);
+
+        	    /* convierte coordenadas a la de WB y calcula rectangulares */
+                double newRA = GCstar[gcIndex].RA1875;
+                double newDecl = GCstar[gcIndex].Decl1875;
+                transform(EPOCH_GC, EPOCH_WB, &newRA, &newDecl);
+                sph2rec(newRA, newDecl, &x, &y, &z);
+
+                int RARef = (int) floor(newRA / 15.0);
+                for (int i = 0; i < countWB; i++) {
+                    if (wbRARef[i] != RARef) continue;
+                    if (wbNumRef[i] != numRefCat) continue;
+                    double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
+                    if (dist > MAX_DIST_CROSS) {
+                        printf("%d) Warning: %s is FAR from WB %dh %d star (dist = %.1f arcsec).\n",
+                            ++errors,
+                            catgName,
+                            RARef,
+                            numRefCat,
+                            dist);
+                        writeRegisterGC(gcIndex);
+                    } else checkWB++;
+                }
+            }
+        }
+        fclose(stream);
+    }
+
+    printf("Scanned GC rows with a reference = %d; references to checked catalogs (WB) = %d\n",
+        countStars, countRefs);
+    printf("GC properly identified with WB = %d\n", checkWB);
+    printf("Errors logged = %d\n", errors);
+}
+
+/*
  * readUA - lee Uranometria Argentina
  * tambien revisa referencias cruzadas a BD
  */
@@ -820,5 +920,9 @@ int main(int argc, char** argv)
 
     /* leemos, cruzamos y revisamos Uranometria Argentina */
     readUA();
+
+    /* leemos, cruzamos y revisamos GC */
+    readGC();
+    readGCScanned();
     return 0;
 }
