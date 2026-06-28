@@ -24,12 +24,12 @@ cross-identification results. Last updated **2026-06-21**.
 | Pages 531–616 | **Done — catalog complete.** Chain-clean (stars 28023 … **32448**, the last star); pages 572/586/598/600 number-fixed (§3a). Page 616 is the final page (34 stars). |
 | **Catalog fully digitized** | Pages 1–616, stars 1 … 32448. Remaining work is redo/refs of flagged earlier pages (below), not new extraction. |
 | **Missing pages** | **90, 126, 128** and **296** ("no stars extracted" — need redo) |
-| **Corrupt pages** | **144, 158** and **304, 362, 368, 410** (bad numbering — need redo, see §3) |
+| **Corrupt pages** | **362** still TODO. FIXED: 144, 158, 304, 368, 410 re-scanned & verified (see §3d). |
 | **Reference-drop pages** | **328, 353, 386** (full), **372, 408** (partial) — numbers/mags OK but reference column dropped; need a reference redo (see §5e) |
 
 Chain is fully consecutive over all extracted pages except the genuine gaps in §4 and
-the corrupt pages above (304/362/368/410 sit inside the 287–412 range and break the seam
-there until re-extracted).
+the corrupt pages above (362 sits inside the 287–412 range and breaks the seam
+there until re-extracted; 304/368/410 are now fixed).
 
 ---
 
@@ -262,7 +262,15 @@ well inside the page, so no legitimate rule is removed. Verified: cols[0] now co
 sweep clean. This fixes the column detection for BOTH the Gemini pipeline and the subagent.
 Page **410** was then re-scanned with the subagent (56 rows 21287–21342, 54/56 refs, all mags ==
 gc.txt, ground-truth 21287 B.5438 / 21288 B.5435 / 21341 blank-"neb." / 21342 ZC.2641 confirmed).
-**Still TODO:** re-scan 144, 158, 304, 368 (now unblocked) and 296/362.
+
+**Pages 144/158/304/368 re-scanned & verified 2026-06-27** (subagent, all strictly consecutive,
+all mags == gc.txt):
+- **144:** 58 rows 7317–7374, 56/58 refs. GT confirmed: 7317 ZC.104, 7318 ZC.107, 7373 OA.4716, 7374 B.1162.
+- **158:** 47 rows 8064–8110, 42/47 refs. Last 8110 L.2371.
+- **304:** 48 rows 15392–15439, 46/48 refs. GT confirmed: 15392 B.3480, 15393 ZC.647, 15439 ZC.780.
+- **368:** 58 rows 18929–18986, 56/58 refs. First 18929 L.(5756), last 18986 ZC.3182.
+
+**Still TODO:** re-scan 296 (no-stars) and 362 (even); missing CSVs 90/126/128; item-B partials 372/466.
 
 ---
 
