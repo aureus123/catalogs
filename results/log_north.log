@@ -1473,6 +1473,6 @@ Perform cross-checking of scanned GC pages...
      Register GC 10619: mag = 7.5, RA = 07h56m38s09, DE = 05°58'32''5 (pag 210) 
 4) Warning: GC 31915 is FAR from WB 23h 591 star (dist = 36876.0 arcsec).
      Register GC 31915: mag = 7.2, RA = 23h28m59s49, DE = 11°14'44''4 (pag 609) 
-Scanned GC rows with a reference = 28505; references to checked catalogs (WB) = 198
-GC properly identified with WB = 194
+Scanned GC rows with a reference = 28817; references to checked catalogs (WB) = 203
+GC properly identified with WB = 199
 Errors logged = 4

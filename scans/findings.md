@@ -23,9 +23,9 @@ cross-identification results. Last updated **2026-06-21**.
 | Pages 413–530 | Done, chain-clean (stars 21459 … 28022); pages 419/442/464/466/468/512/526 number-fixed (§3a) |
 | Pages 531–616 | **Done — catalog complete.** Chain-clean (stars 28023 … **32448**, the last star); pages 572/586/598/600 number-fixed (§3a). Page 616 is the final page (34 stars). |
 | **Catalog fully digitized** | Pages 1–616, stars 1 … 32448. Remaining work is redo/refs of flagged earlier pages (below), not new extraction. |
-| **Missing pages** | **90, 126, 128** and **296** ("no stars extracted" — need redo) |
-| **Corrupt pages** | **362** still TODO. FIXED: 144, 158, 304, 368, 410 re-scanned & verified (see §3d). |
-| **Reference-drop pages** | **328, 353, 386** (full), **372, 408** (partial) — numbers/mags OK but reference column dropped; need a reference redo (see §5e) |
+| **Missing pages** | **NONE** — 90/126/128/296/362 all extracted manually (Claude vision, star by star) 2026-07-02: 90 from RAW bands (even-page layout miss; 57 rows 4482–4538, 53/57 refs), 126 (46 rows 6378–6423, 41/46 refs), 128 (41 rows 6470–6510, 34/41 refs), 296 (53 rows 15012–15064, 50/53 refs; 15047 `var.`), 362 (59 rows 18598–18656, 57/59 refs; layout OK after the §3d fix). All mags == gc.txt except two §2b book-discrepancies on 362. |
+| **Corrupt pages** | **NONE** — all fixed: 144, 158, 304, 368, 410 re-scanned & verified (see §3d); 362 extracted 2026-07-02. |
+| **Reference-drop pages** | **NONE** — all fixed. 328/353/386/408/448/472/524 via the subagent (§5i); **372 & 466 filled manually (Claude vision) 2026-07-02** → 54/57 and 50/54 refs, remaining blanks genuine. |
 
 Chain is fully consecutive over all extracted pages except the genuine gaps in §4 and
 the corrupt pages above (362 sits inside the 287–412 range and breaks the seam
@@ -138,6 +138,8 @@ was left unchanged.
 | 405 | 21046 | 7.5 (7½) | 7.2 | gc.txt differs |
 | 409 | 21236 | 10.0 (10) | 8.5 | **gc.txt has 21236/21237 SWAPPED** |
 | 409 | 21237 | 8.5 (8½) | 10.0 | **gc.txt has 21236/21237 SWAPPED** |
+| 362 | 18608 | 7.0 | 7.6 | print plainly shows 7.0 (verified at zoom, 2026-07-02) |
+| 362 | 18618 | 7.5 (7½) | 7.8 | print plainly shows 7½ (verified at zoom, 2026-07-02) |
 
 ### 2c. Self-corrected by majority vote (no action; logged for completeness)
 Pages 12 (536→7.7), 14 (676→9.5, 678→8.2), 27 (1289→7.5): a single run misread but the
@@ -270,7 +272,7 @@ all mags == gc.txt):
 - **304:** 48 rows 15392–15439, 46/48 refs. GT confirmed: 15392 B.3480, 15393 ZC.647, 15439 ZC.780.
 - **368:** 58 rows 18929–18986, 56/58 refs. First 18929 L.(5756), last 18986 ZC.3182.
 
-**Still TODO:** re-scan 296 (no-stars) and 362 (even); missing CSVs 90/126/128; item-B partials 372/466.
+**Still TODO:** NOTHING — the GC extraction is fully complete. (90/126/128/296/362 extracted manually 2026-07-02; on 126/128/296 the layout was actually GOOD — only 90 needed the RAW-band fallback, and 362's layout was healed by the §3d edge-rule fix. The item-B partials 372/466 had their reference columns filled manually the same day: 372 → 54/57 with the "+10000" numbering preserved and a previously-missed color note added on 19158 `ZC. 21 orange yellow`; 466 → 50/54, incl. 24329 `comes, s. sq.`, 24351 `comes, s.pr.`, 24338 `Y. 7509, 10`, 24362 `Ll. 32766 red`.)
 
 ---
 
@@ -281,6 +283,8 @@ These are NOT extraction errors — confirmed against the print image and/or gc.
 ### 4a. Genuine gaps (number absent from BOTH print and gc.txt)
 - **10045** (page 197), **10808** (page 212) — the print itself skips the number.
 - **9631** (page 189) — real gap (gc.txt also skips it).
+- **7048** (page 139), **7605** (page 149) — real gaps (gc.txt also skips them); found by the
+  2026-07-02 whole-catalog sweep, previously unlogged.
 - **14683** (page 289), **19915** (page 385), **20795** (page 401) — single-number gaps
   in the 287–412 batch; gc.txt lacks each one while both neighbours are present in gc.txt
   and in our CSVs, so the catalog itself skips them (not dropped rows).
@@ -523,9 +527,9 @@ Hard-won lessons baked into the agent prompt:
 408 (55/60, partial drop on the number-fixed page — refs were 10/60), 448 (45/46), 472 (49/50;
 mag 24716 corrected 8.2→8.5 per gc.txt), 524 (51/58). All bounds/seams clean, mags == gc.txt,
 ground-truth points (328: L.5065/L.5064/B.3982; 408: 21183 L.6423 / 21230 OA.14746) confirmed.
-Remaining item-B: **372, 466** (partial drops). Remaining item-A (garbage numbers, `detect_layout`
-misses the N° column — the agent's RAW-band path is the unproven hard case): **144, 158, 304, 368,
-410**; plus missing CSVs **90, 126, 128, 296, 362**.
+Remaining item-B: ~~372, 466~~ — **DONE 2026-07-02** (references read manually by Claude vision from
+the REF strips; both pages' ZC sequences strictly increasing, seams clean). Item-A pages all done
+earlier (144/158/304/368/410 via subagent; 90/126/128/296/362 manually 2026-07-02). **Nothing remains.**
 
 ---
 
