@@ -1448,6 +1448,10 @@ RSME of distance (arcsec) = 5.87  among a total of 8381 stars
 Errors logged = 79
 
 ***************************************
+Read RNAO2 Circumpolar List (CL)...
+Available CL stars = 54
+
+***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
 1) Warning: T 1881 112 is ALONE (no PPM / CD / CPD / GSC star near it).
@@ -1511,7 +1515,7 @@ Stars read from PPM: 468861
   Note: nearest PPM 719039 at 526.4 arcsec.
 27) Warning: T 1881 986 (vmag = 8.0) has a near PPM 269861 star (vmag = 4.9) with a different magnitude (delta = 3.1).
 Stars from Thome 1881 identified with PPM = 741, CD = 707 and CPD = 784
-Stars from Thome 1881 with Lacaille = 35, Lalande = 17, OA = 56, Taylor = 0, Stone = 1, GC = 0, USNO = 7 and Brisbane = 29
+Stars from Thome 1881 with Lacaille = 35, Lalande = 17, OA = 56, Taylor = 0, Stone = 1, GC = 0, USNO = 7, Brisbane = 29 and CL = 9
 RSME of distance (arcsec) = 2.52  among a total of 741 stars
 RSME of visual magnitude = 0.58641  among a total of 544 stars
 Errors logged = 27
@@ -1571,7 +1575,7 @@ Stars read from PPM: 468861
   Note: nearest PPM 234238 at 90.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
 Stars from Thome 1882 identified with PPM = 1259, CD = 1118 and CPD = 1163
-Stars from Thome 1882 with Lacaille = 48, Lalande = 24, OA = 150, Taylor = 2, Stone = 0, GC = 0, USNO = 12 and Brisbane = 12
+Stars from Thome 1882 with Lacaille = 48, Lalande = 24, OA = 150, Taylor = 2, Stone = 0, GC = 0, USNO = 12, Brisbane = 12 and CL = 10
 RSME of distance (arcsec) = 2.43  among a total of 1259 stars
 RSME of visual magnitude = 0.49423  among a total of 1033 stars
 Errors logged = 23
@@ -1595,7 +1599,7 @@ Stars read from PPM: 468861
 6) Warning: T 1883 156 is FAR from L 8467 (dist = 1155.8 arcsec).
      Register T 1883 156: 20h 29m 00s60 -70°21'33"6
 Stars from Thome 1883 identified with PPM = 160, CD = 127 and CPD = 133
-Stars from Thome 1883 with Lacaille = 13, Lalande = 8, OA = 15, Taylor = 0, Stone = 0, GC = 0, USNO = 0 and Brisbane = 2
+Stars from Thome 1883 with Lacaille = 13, Lalande = 8, OA = 15, Taylor = 0, Stone = 0, GC = 0, USNO = 0, Brisbane = 2 and CL = 10
 RSME of distance (arcsec) = 2.62  among a total of 160 stars
 RSME of visual magnitude = 0.58106  among a total of 80 stars
 Errors logged = 6
@@ -1655,7 +1659,7 @@ Stars read from PPM: 468861
 19) Warning: T 1884 943 is FAR from Lal 4692 (dist = 135544.1 arcsec).
      Register T 1884 943: 23h 51m 08s41 -13°36'25"8
 Stars from Thome 1884 identified with PPM = 658, CD = 701 and CPD = 749
-Stars from Thome 1884 with Lacaille = 53, Lalande = 16, OA = 36, Taylor = 1, Stone = 1, GC = 120, USNO = 17 and Brisbane = 11
+Stars from Thome 1884 with Lacaille = 53, Lalande = 16, OA = 36, Taylor = 1, Stone = 1, GC = 120, USNO = 17, Brisbane = 11 and CL = 9
 RSME of distance (arcsec) = 1.99  among a total of 658 stars
 RSME of visual magnitude = 0.44585  among a total of 543 stars
 Errors logged = 19
@@ -2435,8 +2439,8 @@ Stars read from PPM: 468861
 84) Warning: GC 32393 is FAR from OA 23025 (dist = 19669.3 arcsec).
      Register GC 32393: mag = 8.5, RA = 23h56m30s83, DE = 30°50'46''3 (pag 619) 
 **) Warning: ZC 23h 1584 is FAR from previous registration (dist = 56.1 arcsec).
-Scanned GC rows with a reference = 28817; references to checked catalogs (OA/Ll/B/St/L/T/Y) = 16593
-Cross-checks OK: Lacaille = 8342, Brisbane = 2101, Lalande = 2659, Taylor = 28, OA = 2835, Stone = 33, USNO = 332
+Scanned GC rows with a reference = 28817; references to checked catalogs (OA/Ll/B/St/L/T/Y/CL) = 16603
+Cross-checks OK: Lacaille = 8342, Brisbane = 2101, Lalande = 2659, Taylor = 28, OA = 2835, Stone = 33, USNO = 332, CL = 10
 ZC (Gould's Zone Catalog) stars saved = 9926
 Errors logged = 84
 

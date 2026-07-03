@@ -24,6 +24,7 @@ These catalogs were downloaded from _GAVO Data Center_: https://dc.g-vo.org/arig
 
 ### Other catalogs
 
+- CL : Circumpolar List from Resultados del Observatorio Nacional Argentino, Tomo II, pg. 42, extracted with _Claude Fable 5_
 - ppm : Positions and Proper Motions from _VizieR_ (merge of I/146, I/193, I/206 and I/208)
 - ua †: Uranometría Argentina from _VizieR_ (code V/135A)
 - bd : Bonner Durchmusterung from _VizieR_ (code I/122)

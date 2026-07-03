@@ -24,6 +24,7 @@
 #define MAXUSNOSTAR 11000
 #define MAXGILLISSSTAR 17000
 #define MAXZCSTAR 15000
+#define MAXCLSTAR 100
 #define EPOCH_GC2 1900.0
 #define EPOCH_OA 1850.0
 #define EPOCH_LAL 1800.0
@@ -33,6 +34,7 @@
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
 #define EPOCH_GILLISS 1850.0
+#define EPOCH_CL 1872.0
 #define MAX_DIST_PPM_FAR 120.0
 #define MAX_DIST_OA_PPM 45.0
 #define MAX_DIST_LAL_PPM 90.0
@@ -79,6 +81,11 @@ int countSt = 0;
 // Maps a Taylor designation (number) to the index (into stX/stY/stZ/stRef)
 // of the Stone star that cross-references it.
 int stTayRef[MAXTAYLORSTAR];
+
+// Here, we save 1875.0 coordinates of Circumpolar List (CL) stars in rectangular form
+double clX[MAXCLSTAR], clY[MAXCLSTAR], clZ[MAXCLSTAR];
+int clRef[MAXCLSTAR];
+int countCL = 0;
 
 // Here, we save 1875.0 coordinates of Brisbane stars in rectangular form
 double briX[MAXBRISTAR], briY[MAXBRISTAR], briZ[MAXBRISTAR], briMag[MAXBRISTAR];
@@ -1796,7 +1803,8 @@ void readUSNO() {
  * calcula la distancia entre la estrella GC (1a columna; la 2a columna -magnitud-
  * se ignora) y la estrella de referencia (3a columna) en los catalogs
  * Oeltzen-Argelander (OA.), Lalande (Ll.), Brisbane (B.), Stone (St.),
- * Lacaille (L.), Taylor (T.) y Yarnall/USNO (Y.). Otras designaciones se ignoran.
+ * Lacaille (L.), Taylor (T.), Yarnall/USNO (Y.) y Circumpolar List (CL.).
+ * Otras designaciones se ignoran.
  */
 void readGCScanned() {
     char buffer[1024], ref[64], catgName[20];
@@ -1806,7 +1814,7 @@ void readGCScanned() {
 
     int errors = 0;
     int checkLac = 0, checkLal = 0, checkOA = 0, checkTaylor = 0;
-    int checkUSNO = 0, checkBri = 0, checkSt = 0;
+    int checkUSNO = 0, checkBri = 0, checkSt = 0, checkCL = 0;
     int countStars = 0, countRefs = 0;
     int countZCsaved = 0;
 
@@ -1958,6 +1966,18 @@ void readGCScanned() {
                         checkUSNO++;
                     }
                 }
+            } else if (!strncmp(ref, "CL.", 3)) {
+                countRefs++;
+                int numRefCat = atoi(&ref[3]);
+                for (int i = 0; i < countCL; i++) {
+                    if (clRef[i] != numRefCat) continue;
+                    double dist = 3600.0 * calcAngularDistance(x, y, z, clX[i], clY[i], clZ[i]);
+                    if (dist > MAX_DIST_CROSS) {
+                        printf("%d) Warning: %s is FAR from CL %d (dist = %.1f arcsec).\n",
+                            ++errors, catgName, numRefCat, dist);
+                        writeRegisterGC(gcIndex);
+                    } else checkCL++;
+                }
             } else if (!strncmp(ref, "ZC.", 3)) {
                 /* guardamos la estrella en el Zone Catalog de Gould. */
                 int numRefCat = atoi(&ref[3]);
@@ -2020,10 +2040,10 @@ void readGCScanned() {
         fclose(stream);
     }
 
-    printf("Scanned GC rows with a reference = %d; references to checked catalogs (OA/Ll/B/St/L/T/Y) = %d\n",
+    printf("Scanned GC rows with a reference = %d; references to checked catalogs (OA/Ll/B/St/L/T/Y/CL) = %d\n",
         countStars, countRefs);
-    printf("Cross-checks OK: Lacaille = %d, Brisbane = %d, Lalande = %d, Taylor = %d, OA = %d, Stone = %d, USNO = %d\n",
-        checkLac, checkBri, checkLal, checkTaylor, checkOA, checkSt, checkUSNO);
+    printf("Cross-checks OK: Lacaille = %d, Brisbane = %d, Lalande = %d, Taylor = %d, OA = %d, Stone = %d, USNO = %d, CL = %d\n",
+        checkLac, checkBri, checkLal, checkTaylor, checkOA, checkSt, checkUSNO, checkCL);
     printf("ZC (Gould's Zone Catalog) stars saved = %d\n", countZCsaved);
     printf("Errors logged = %d\n", errors);
 }
@@ -2510,6 +2530,62 @@ void readUA() {
 }
 
 /*
+ * readCL - lee catalogo de la lista de estrellas circumpolares (Circumpolar List)
+ * Cada fila de cat/CL.csv es una estrella: numero, designacion, magnitud,
+ * ascension recta (h, m, s) y declinacion (grados, minutos) para 1872.0.
+ */
+void readCL() {
+    char buffer[1024], name[32], magStr[16];
+
+    printf("\n***************************************\n");
+    printf("Read RNAO2 Circumpolar List (CL)...\n");
+
+    FILE *stream = fopen("cat/CL.csv", "rt");
+    if (stream == NULL) {
+        perror("Cannot read CL.csv");
+        exit(1);
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+        int clNum, RAh, RAm, Decld;
+        double RAs, Declm;
+
+        /* lee la fila; la cabecera y las lineas vacias no matchean y se saltan */
+        int n = sscanf(buffer, "%d,%31[^,],%15[^,],%d,%d,%lf,%d,%lf",
+            &clNum, name, magStr, &RAh, &RAm, &RAs, &Decld, &Declm);
+        if (n != 8) continue;
+
+        /* ascension recta 1872.0 (h, m, s) a grados */
+        double RA = ((double) RAh) + ((double) RAm)/60.0 + RAs/3600.0;
+        RA *= 15.0; /* conversion horas a grados */
+
+        /* declinacion 1872.0 (siempre negativa en esta lista) */
+        double Decl = (double) Decld;
+        Decl = Decl < 0.0 ? Decl - Declm/60.0 : Decl + Declm/60.0;
+
+        /* convierte coordenadas de 1872.0 a 1875.0 y calcula rectangulares */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        transform(EPOCH_CL, 1875.0, &RA1875, &Decl1875);
+        double x, y, z;
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+        /* la almacenamos para futuras identificaciones */
+        if (countCL >= MAXCLSTAR) {
+            printf("Error: too many CL stars.\n");
+            exit(1);
+        }
+        clX[countCL] = x;
+        clY[countCL] = y;
+        clZ[countCL] = z;
+        clRef[countCL] = clNum;
+        countCL++;
+    }
+    fclose(stream);
+
+    printf("Available CL stars = %d\n", countCL);
+}
+
+/*
  * readThome - lee y cruza catalogo de los Resultados 15
  * (ya se deben haber leidos los catalogs CD, CPD, GC, Yarnall, Brisbane y Stone)
  * tambien revisa referencias cruzadas a GC, OA, Yarnall, Lacaille, Brisbane y Stone
@@ -2543,6 +2619,7 @@ void readThome(double epoch, const char *filename, int correction) {
     int checkGC = 0;
     int checkUSNO = 0;
     int checkBri = 0;
+    int checkCL = 0;
     int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -2760,6 +2837,22 @@ void readThome(double epoch, const char *filename, int correction) {
             }
         }
 
+        if (!strncmp(cell, "CL", 2)) {
+            for (int i = 0; i < countCL; i++) {
+                if (clRef[i] != numRefCat) continue;
+                double dist = 3600.0 * calcAngularDistance(x, y, z, clX[i], clY[i], clZ[i]);
+                if (dist > MAX_DIST_CROSS) {
+                    printf("%d) Warning: T %.0f %d is FAR from CL %d (dist = %.1f arcsec).\n",
+                        ++errors,
+                        epoch,
+                        numRef,
+                        numRefCat,
+                        dist);
+                    printf("     Register T %.0f %d: %s\n", epoch, numRef, catLine);
+                } else checkCL++;
+            }
+        }
+
         if (!strncmp(cell, "OA", 2)) {
             for (int i = 0; i < countOA; i++) {
                 if (oaRef[i] != numRefCat) continue;
@@ -2851,8 +2944,8 @@ void readThome(double epoch, const char *filename, int correction) {
     fclose(stream);
 
     printf("Stars from Thome %.0f identified with PPM = %d, CD = %d and CPD = %d\n", epoch, countDist, countCD, countCPD);
-    printf("Stars from Thome %.0f with Lacaille = %d, Lalande = %d, OA = %d, Taylor = %d, Stone = %d, GC = %d, USNO = %d and Brisbane = %d\n",
-        epoch, checkLac, checkLal, checkOA, checkTaylor, checkStone, checkGC, checkUSNO, checkBri);
+    printf("Stars from Thome %.0f with Lacaille = %d, Lalande = %d, OA = %d, Taylor = %d, Stone = %d, GC = %d, USNO = %d, Brisbane = %d and CL = %d\n",
+        epoch, checkLac, checkLal, checkOA, checkTaylor, checkStone, checkGC, checkUSNO, checkBri, checkCL);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
         sqrt(akkuDistError / (double)countDist),
         countDist);
@@ -3269,6 +3362,9 @@ int main(int argc, char** argv)
     crossSAOZCStream = openCrossFile("results/cross/cross_zc_sao.csv");
     crossHDZCStream = openCrossFile("results/cross/cross_zc_hd.csv");
     unidentifiedZCStream = openUnidentifiedFile("results/cross/zc_unidentified.csv");
+
+    /* leemos la lista de estrellas circumpolares (Circumpolar List) */
+    readCL();
 
     /* leemos, cruzamos y revisamos identificaciones de Thome */
     /* tambien generamos identificaciones de Gould's Zone Catalog */
