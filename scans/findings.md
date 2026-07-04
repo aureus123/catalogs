@@ -544,26 +544,6 @@ earlier (144/158/304/368/410 via subagent; 90/126/128/296/362 manually 2026-07-0
   ("065"→6.5, "082"→8.2); if 2 chars it is a whole magnitude ("09"→9.0, "11"→11.0).
   A naive always-÷10 parser is WRONG for whole magnitudes — use `load_gc_magnitudes()`.
 
-### Resume commands
-```sh
-# redo the missing/corrupt singles (each anchors numbering from the previous page's CSV):
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 90 90     # plus 126, 128
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 144 144   # corrupt
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 158 158   # corrupt
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 296 296   # no stars
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 304 304   # corrupt N°
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 362 362   # corrupt N°
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 368 368   # corrupt N°
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 410 410   # corrupt N°
-# reference-column drops (numbers/mags already OK — see §5e):
-/Users/dseverin/.venv/bin/python scans/extract_gc_catalog.py --pages 328 328   # plus 353, 386
-# (372 & 408 also lost refs but need their §3a number fix re-applied after any redo)
-# main run is COMPLETE — catalog fully extracted through page 616 (last star 32448).
-# Remaining work is only the redo/refs of the flagged earlier pages listed above.
-```
-`--pages FIRST 0` runs until quota/catalog end; each page anchors its numbering from the
-previous page's CSV.
-
 ---
 
 # RNAO16 (Cordoba Durchmusterung −22°…−31°) — Footnote Extraction Findings
@@ -673,7 +653,7 @@ differs` lines in `--check` mode are uncertainty-mark differences only.
   `--write D1 D2 [--force]` — refuses to overwrite without `--force`, which protects
   the manual −22…−24 files).
 - API key from `$GOOGLE_API_KEY` or `../../gapikey.txt` (outside the repo).
-- Python via `/Users/dseverin/.venv/bin/python`; `CALL_DELAY=5s` (15 RPM).
+- Python via `.venv/bin/python`; `CALL_DELAY=5s` (15 RPM).
 - Page JSON entry: `{"page", "decl" (negative), "first", "last", "dpl", "color",
   "dpl_uncertain", "color_uncertain", "notes"}` — a list, because zone-transition
   pages carry two declinations.

@@ -251,7 +251,7 @@ int main(int argc, char** argv) {
     int PPMstars = 0;
 #ifdef ALTERNATIVE
     /* leemos atributos de color y dobles */
-    for (int decl = 22; decl <= 24; decl++) {
+    for (int decl = 22; decl <= 31; decl++) {
         int cdRef;
         // Color
         snprintf(buffer, 1024, "cd/color_%d.txt", decl);

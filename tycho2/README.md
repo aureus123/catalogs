@@ -30,10 +30,10 @@ For the southern hemisphere, there are 6584 UA, 9557 Lal, 5371 L, 18344 GC, 4639
 
 Since all identifications are performed just by angular distance thresholds, misidentifications might happen. On the other hand, some BD stars are
 missing in the southern hemisphere (precisely declination -0 and -1; only BD identified with PPM are considered).
-Files *cross_gc.cpp* and *cross_south.cpp* do the cross-identifications between PPM/CD/CPD and UA/L/Lal/GC/ZC/OA/U/G/WB.
+Files *cross_gc.cpp* (GC), *cross_north.cpp* (WB) and *cross_south.cpp* (UA/L/Lal/ZC/OA/U/G) do the cross-identifications between PPM/CD/CPD and UA/L/Lal/GC/ZC/OA/U/G/WB.
 
 Further improvements might be to use a better
-cross-identification algorithm, this idea is explored (here)[likelihood/README.md].
+cross-identification algorithm, this idea is explored [here](likelihood/README.md).
 
 ### Instructions
 
@@ -77,13 +77,13 @@ Stars that you can see here:
 
 ### Colored and double CD stars
 
-Based on extra data entered by hand (see folder *cd*), it is possible to flag those CD stars marked as color or double. Three additional identifications were performed:
+Based on extra data (see folder *cd*), it is possible to flag those CD stars marked as color or double. Three additional identifications were performed:
 - cross_tyc2_south_plain.csv = Cross identifications between Tycho-2 and unflagged CD stars
 - cross_tyc2_south_color.csv = Cross identifications between Tycho-2 and single colored CD stars
 - cross_tyc2_south_dpl.csv = Cross identifications between Tycho-2 and double CD stars (regardless if they are colored or not)
 
 The script *colored.sh* uses *plotann.py* in a way these stars are highlighted with different colors according to their flags: green (unflagged), magenta (double) and red (color).
-Currently, only stars of the first volume of CD are considered (declinations -22 to -31) and flags are available only for declinations -22 to -24. The lists are in the folder *cd*.
+Currently, only stars of the first volume of CD are considered (declinations -22 to -31). The lists are in the folder *cd*.
 
 Example:
 ![Alt text](NGC4993.png?raw=true "NGC4993")

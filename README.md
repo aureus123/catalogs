@@ -20,7 +20,7 @@ One can compare these data against the real printed catalog, in order to
 find typo errors during the creation of the digital version of BD or CD.
 Results and logs are in the [results](results) folder.
 
-Another more complex approach for making cross-identifications is explained [here](likelihood/README.md) but it is more experimental and not used for typo corrections. It models the cross-identification problem as a Maximum Weighted Matching Problem where the goal is to maximize the joint likelihood, taking into account both the angular distance and the magnitude difference.
+🤓 Another more complex approach for making cross-identifications is explained [here](likelihood/README.md) but it is more experimental and not used for typo corrections. It models the cross-identification problem as a Maximum Weighted Matching Problem where the goal is to maximize the joint likelihood, taking into account both the angular distance and the magnitude difference.
 
 ### Limitations of the approach
 
@@ -46,6 +46,8 @@ Another more complex approach for making cross-identifications is explained [her
 - *gen_tycho2_north* and *gen_tycho2_south*: See README in [tycho2](tycho2) folder, also see the [gallery](gallery) folder
 - Python scripts: *find_const*, *gen_atlas* and *keep_nearest*, *cross_likelihood*
 (you can see description of them in the comments of their source code).
+- Folder *cd*: Contains footnote extractions from CD (color and double stars). Declinations -22 to -24 were manually extracted, while -25 to -31 were extracted by IA, see [findings.md](scans/findings.md).
+- Folder *scans*: Contains Python scripts and scan extractions from CD (footnotes) and GC (references), see [findings.md](scans/findings.md.
 
 ### Requirements
 
@@ -53,6 +55,9 @@ Another more complex approach for making cross-identifications is explained [her
 The routine "wcsconp" is used for transforming coordinates.
 
 🚰 Some experiments require having GSC catalog and source files in the gsc folder.
+
+🚰 *gen_tycho2* tools require having Tycho-2 catalog, see the
+Instructions [here](tycho2/README.md).
 
 ### Mean accuracy of catalogues
 
@@ -96,7 +101,6 @@ catalogs (OA and Lacaille):
 ### Wishlist
 
 - Perform comparisons between the greedy and the likelihood approach. Which one is better for cross-identifications?
-- Write a list of all double stars from footnotes of Resultados del Observatorio Nacional Argentino, [Vol XVI](https://articles.adsabs.harvard.edu/cgi-bin/iarticle_query?journal=RNAO.&volume=0016&type=SCREEN_THMB) (only declinations -22, -23 and -24 were transcribed at the moment) and perform a cross-identification of that CD volume with a modern catalog.
 - Correct typo errors in all CD catalogs.
 - Usually, the supplementary letter of BD/SD/CD designations is ignored. Revise it.
 
