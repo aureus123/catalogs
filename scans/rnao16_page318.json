@@ -1,0 +1,21 @@
+[
+ {
+  "page": 318,
+  "decl": -27,
+  "first": 8051,
+  "last": 8350,
+  "dpl": [
+   8132,
+   8138,
+   8267,
+   8314,
+   8346
+  ],
+  "color": [
+   8237
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": []
+ }
+]

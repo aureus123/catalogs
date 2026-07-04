@@ -1,0 +1,20 @@
+[
+ {
+  "page": 65,
+  "decl": -23,
+  "first": 2451,
+  "last": 2750,
+  "dpl": [],
+  "color": [
+   2466,
+   2675
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [
+   2539
+  ],
+  "notes": [
+   "color 3539 outside page interval 2451-2750: repaired to 2539"
+  ]
+ }
+]

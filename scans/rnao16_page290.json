@@ -1,0 +1,18 @@
+[
+ {
+  "page": 290,
+  "decl": -26,
+  "first": 16651,
+  "last": 16910,
+  "dpl": [],
+  "color": [],
+  "dpl_uncertain": [],
+  "color_uncertain": [
+   16683
+  ],
+  "notes": [
+   "dropped stray ranges: kept [(16701, 16750), (16751, 16800)] of [(16651, 16670), (16701, 16750), (16751, 16800), (16804, 16850), (16851, 16900)]",
+   "color 16683 outside page interval 16701-16910"
+  ]
+ }
+]

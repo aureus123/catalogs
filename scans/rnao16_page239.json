@@ -1,0 +1,23 @@
+[
+ {
+  "page": 239,
+  "decl": -26,
+  "first": 1351,
+  "last": 1650,
+  "dpl": [
+   1527
+  ],
+  "color": [],
+  "dpl_uncertain": [],
+  "color_uncertain": [
+   1575,
+   1875
+  ],
+  "notes": [
+   "color 1875 seen in only 1 of 3 runs",
+   "dropped stray ranges: kept [(1351, 1410), (1411, 1470), (1471, 1530)] of [(1351, 1410), (1411, 1470), (1471, 1530), (4531, 4590), (4591, 4650)]",
+   "color 1575 outside page interval 1351-1530",
+   "color 1875 outside page interval 1351-1650"
+  ]
+ }
+]

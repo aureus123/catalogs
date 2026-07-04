@@ -1,0 +1,17 @@
+[
+ {
+  "page": 544,
+  "decl": -31,
+  "first": 1551,
+  "last": 1850,
+  "dpl": [
+   1566
+  ],
+  "color": [],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "one run misread the header interval as 4551-4850 and 'repaired' 1566 to 4566; footnote visually verified on the 600 DPI scan: Dpl.: No 1566."
+  ]
+ }
+]

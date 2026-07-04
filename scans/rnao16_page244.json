@@ -1,0 +1,27 @@
+[
+ {
+  "page": 244,
+  "decl": -26,
+  "first": 2941,
+  "last": 3150,
+  "dpl": [
+   3025
+  ],
+  "color": [
+   2977,
+   2983,
+   3056
+  ],
+  "dpl_uncertain": [
+   2901
+  ],
+  "color_uncertain": [
+   2922
+  ],
+  "notes": [
+   "dropped stray ranges: kept [(2941, 2970), (2971, 3030), (3031, 3090), (3091, 3150)] of [(2854, 2910), (2941, 2970), (2971, 3030), (3031, 3090), (3091, 3150)]",
+   "dpl 2901 outside page interval 2941-3150",
+   "color 2922 outside page interval 2941-3150"
+  ]
+ }
+]

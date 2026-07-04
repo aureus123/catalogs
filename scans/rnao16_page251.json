@@ -1,0 +1,23 @@
+[
+ {
+  "page": 251,
+  "decl": -26,
+  "first": 4951,
+  "last": 5250,
+  "dpl": [
+   5124,
+   5128,
+   5180,
+   5183
+  ],
+  "color": [
+   5161,
+   5211
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "declination not readable in header '\u2014 251 \u2014 7h'; carried over -26"
+  ]
+ }
+]

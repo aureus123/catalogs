@@ -1,0 +1,17 @@
+[
+ {
+  "page": 2,
+  "decl": -22,
+  "first": 201,
+  "last": 500,
+  "dpl": [
+   473
+  ],
+  "color": [],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "declination not readable in header '-2 \u221222\u00b0 0\u02b0 - 1\u02b0'; carried over -22"
+  ]
+ }
+]

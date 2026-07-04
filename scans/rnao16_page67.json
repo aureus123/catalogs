@@ -1,0 +1,29 @@
+[
+ {
+  "page": 67,
+  "decl": -23,
+  "first": 3051,
+  "last": 3350,
+  "dpl": [
+   3143,
+   3161,
+   3175,
+   3232,
+   3314
+  ],
+  "color": [
+   3263
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [
+   3068,
+   3073
+  ],
+  "notes": [
+   "color 3068 outside page interval 3081-3350",
+   "color 3073 outside page interval 3081-3350",
+   "color 3068 outside page interval 3084-3350",
+   "color 3073 outside page interval 3084-3350"
+  ]
+ }
+]

@@ -1,0 +1,17 @@
+[
+ {
+  "page": 455,
+  "decl": -29,
+  "first": 13901,
+  "last": 14200,
+  "dpl": [
+   13901
+  ],
+  "color": [],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "declination not readable in header '- 455 - 17h'; carried over -29"
+  ]
+ }
+]

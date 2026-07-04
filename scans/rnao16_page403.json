@@ -1,0 +1,19 @@
+[
+ {
+  "page": 403,
+  "decl": -28,
+  "first": 16904,
+  "last": 17200,
+  "dpl": [],
+  "color": [
+   16975,
+   17077,
+   17178
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "declination not readable in header '- 403 - 20\u02b0 - 21\u02b0'; carried over -28"
+  ]
+ }
+]

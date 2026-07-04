@@ -1,0 +1,28 @@
+[
+ {
+  "page": 195,
+  "decl": -25,
+  "first": 5054,
+  "last": 5350,
+  "dpl": [
+   5063,
+   5124,
+   5130,
+   5183,
+   5197
+  ],
+  "color": [
+   5208
+  ],
+  "dpl_uncertain": [
+   5241,
+   5247
+  ],
+  "color_uncertain": [],
+  "notes": [
+   "dropped stray ranges: kept [(5054, 5110), (5111, 5170), (5171, 5230)] of [(5054, 5110), (5111, 5170), (5171, 5230), (5234, 5290), (5291, 5330)]",
+   "dpl 5241 outside page interval 5054-5230",
+   "dpl 5247 outside page interval 5054-5230"
+  ]
+ }
+]

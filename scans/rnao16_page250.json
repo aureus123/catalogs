@@ -1,0 +1,30 @@
+[
+ {
+  "page": 250,
+  "decl": -26,
+  "first": 4654,
+  "last": 4950,
+  "dpl": [
+   4695,
+   4707,
+   4744,
+   4754,
+   4839
+  ],
+  "color": [
+   4655,
+   4824,
+   4855
+  ],
+  "dpl_uncertain": [
+   4653
+  ],
+  "color_uncertain": [
+   4658
+  ],
+  "notes": [
+   "color 4658 seen in only 1 of 3 runs",
+   "dpl 4653 outside page interval 4654-4950"
+  ]
+ }
+]

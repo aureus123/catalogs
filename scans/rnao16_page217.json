@@ -1,0 +1,25 @@
+[
+ {
+  "page": 217,
+  "decl": -25,
+  "first": 11651,
+  "last": 11950,
+  "dpl": [
+   11678,
+   11768,
+   11790,
+   11807
+  ],
+  "color": [
+   11667,
+   11721,
+   11829
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "table header misread 11xxx as 14xxx/44xxx (worn digit 1); interval fixed to 11651-11950 from neighbouring pages, footnote numbers visually verified on the 600 DPI scan",
+   "stray '28' was the printer's sheet-signature mark, not a star number"
+  ]
+ }
+]

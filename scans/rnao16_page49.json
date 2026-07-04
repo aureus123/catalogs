@@ -1,0 +1,25 @@
+[
+ {
+  "page": 49,
+  "decl": -22,
+  "first": 14301,
+  "last": 14600,
+  "dpl": [
+   14390,
+   14421,
+   14438,
+   14446,
+   14486,
+   14552,
+   14575
+  ],
+  "color": [
+   14412
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "dpl 14440 corrected to 14446 (visually verified against 14486 glyph)"
+  ]
+ }
+]

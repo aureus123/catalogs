@@ -1,0 +1,22 @@
+[
+ {
+  "page": 61,
+  "decl": -23,
+  "first": 1251,
+  "last": 1550,
+  "dpl": [],
+  "color": [],
+  "dpl_uncertain": [
+   1348
+  ],
+  "color_uncertain": [
+   1308,
+   1412
+  ],
+  "notes": [
+   "dpl 1348 seen in only 1 of 1 runs",
+   "color 1308 seen in only 1 of 1 runs",
+   "color 1412 seen in only 1 of 1 runs"
+  ]
+ }
+]

@@ -1,0 +1,23 @@
+[
+ {
+  "page": 223,
+  "decl": -25,
+  "first": 13451,
+  "last": 13750,
+  "dpl": [
+   13456,
+   13523,
+   13647,
+   13650,
+   13737
+  ],
+  "color": [
+   13614
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "declination not readable in header '- 223 - 18\u02b0 - 19\u02b0'; carried over -25"
+  ]
+ }
+]

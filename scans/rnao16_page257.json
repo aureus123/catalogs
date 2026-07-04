@@ -1,0 +1,27 @@
+[
+ {
+  "page": 257,
+  "decl": -26,
+  "first": 6751,
+  "last": 6870,
+  "dpl": [
+   6804
+  ],
+  "color": [],
+  "dpl_uncertain": [
+   6835,
+   6886,
+   6985
+  ],
+  "color_uncertain": [],
+  "notes": [
+   "dropped stray ranges: kept [(6751, 6810), (6811, 6870)] of [(6751, 6810), (6811, 6870), (6874, 6930), (6934, 6990), (6991, 7050)]",
+   "dpl 6886 outside page interval 6751-6870",
+   "dpl 6985 outside page interval 6751-6870",
+   "dropped stray ranges: kept [(6751, 6810)] of [(6751, 6810), (6814, 6870), (6874, 6930), (6934, 6990), (6994, 7050)]",
+   "dpl 6835 outside page interval 6751-6810",
+   "dpl 6886 outside page interval 6751-6810",
+   "dpl 6985 outside page interval 6751-6810"
+  ]
+ }
+]

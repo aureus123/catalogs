@@ -1,0 +1,24 @@
+[
+ {
+  "page": 201,
+  "decl": -25,
+  "first": 6851,
+  "last": 7150,
+  "dpl": [
+   6889,
+   6939,
+   7041,
+   7074,
+   7076
+  ],
+  "color": [
+   6895,
+   7114
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "dpl numbers not ascending: [6889, 6939, 7041, 7076, 7074]"
+  ]
+ }
+]

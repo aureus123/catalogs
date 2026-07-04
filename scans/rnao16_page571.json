@@ -1,0 +1,24 @@
+[
+ {
+  "page": 571,
+  "decl": -31,
+  "first": 9651,
+  "last": 9830,
+  "dpl": [
+   9718,
+   9800
+  ],
+  "color": [],
+  "dpl_uncertain": [
+   9713
+  ],
+  "color_uncertain": [
+   9900
+  ],
+  "notes": [
+   "dpl 9713 seen in only 1 of 3 runs",
+   "dropped stray ranges: kept [(9651, 9710), (9711, 9770), (9771, 9830)] of [(9651, 9710), (9711, 9770), (9771, 9830), (9834, 9890), (9891, 9950)]",
+   "color 9900 outside page interval 9651-9830"
+  ]
+ }
+]

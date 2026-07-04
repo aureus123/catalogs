@@ -1,0 +1,23 @@
+[
+ {
+  "page": 166,
+  "decl": -24,
+  "first": 14501,
+  "last": 14800,
+  "dpl": [
+   14524,
+   14589,
+   14599,
+   14651,
+   14664
+  ],
+  "color": [
+   14555
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "dpl 14590 corrected to 14599 (visually verified)"
+  ]
+ }
+]

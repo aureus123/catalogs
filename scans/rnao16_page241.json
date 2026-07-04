@@ -1,0 +1,26 @@
+[
+ {
+  "page": 241,
+  "decl": -26,
+  "first": 1951,
+  "last": 2250,
+  "dpl": [
+   1966,
+   2060,
+   2205
+  ],
+  "color": [
+   1975,
+   2005,
+   2013,
+   2045,
+   2084,
+   2085
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "stray '31' was the printer's sheet-signature mark on the right margin, not a star number (visually verified pattern)"
+  ]
+ }
+]

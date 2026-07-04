@@ -1,0 +1,18 @@
+[
+ {
+  "page": 468,
+  "decl": -29,
+  "first": 17801,
+  "last": 17920,
+  "dpl": [],
+  "color": [],
+  "dpl_uncertain": [
+   18046
+  ],
+  "color_uncertain": [],
+  "notes": [
+   "dropped stray ranges: kept [(17801, 17860), (17861, 17920)] of [(17801, 17860), (17861, 17920), (17981, 18040), (18041, 18100)]",
+   "dpl 18046 outside page interval 17801-17920"
+  ]
+ }
+]

@@ -1,0 +1,22 @@
+[
+ {
+  "page": 327,
+  "decl": -27,
+  "first": 10751,
+  "last": 11050,
+  "dpl": [
+   10796,
+   10817
+  ],
+  "color": [
+   10831
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "declination not readable in header '- 327 - 15h - 16h'; carried over -27",
+   "unreadable table header '40751 - 40810 15h - 16h | -27\u00b0 | 40811 - 40870 16h | -27\u00b0 | 40871 - 40930 16h | -27\u00b0 | 40931 - 40990 16h | -27\u00b0 | 40991 - 11050 16h | -27\u00b0 |'",
+   "dropped stray ranges: kept [(10751, 10840), (10841, 10870), (10871, 10930)] of [(10751, 10840), (10841, 10870), (10871, 10930), (10934, 10990), (10991, 11050)]"
+  ]
+ }
+]

@@ -1,0 +1,22 @@
+[
+ {
+  "page": 175,
+  "decl": -24,
+  "first": 17101,
+  "last": 17400,
+  "dpl": [
+   17333,
+   17362
+  ],
+  "color": [
+   17232
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [
+   17496
+  ],
+  "notes": [
+   "color 17496 outside page interval 17101-17400"
+  ]
+ }
+]

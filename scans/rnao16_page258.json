@@ -1,0 +1,21 @@
+[
+ {
+  "page": 258,
+  "decl": -26,
+  "first": 7141,
+  "last": 7350,
+  "dpl": [
+   7248,
+   7296
+  ],
+  "color": [],
+  "dpl_uncertain": [],
+  "color_uncertain": [
+   7117
+  ],
+  "notes": [
+   "dropped stray ranges: kept [(7141, 7170), (7171, 7230), (7231, 7290), (7291, 7350)] of [(7051, 7110), (7141, 7170), (7171, 7230), (7231, 7290), (7291, 7350)]",
+   "color 7117 outside page interval 7141-7350"
+  ]
+ }
+]

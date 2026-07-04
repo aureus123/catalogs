@@ -1,0 +1,23 @@
+[
+ {
+  "page": 205,
+  "decl": -25,
+  "first": 8054,
+  "last": 8350,
+  "dpl": [
+   8080,
+   8167,
+   8168,
+   8265,
+   8267
+  ],
+  "color": [],
+  "dpl_uncertain": [
+   8052
+  ],
+  "color_uncertain": [],
+  "notes": [
+   "dpl 8052 outside page interval 8054-8350"
+  ]
+ }
+]

@@ -1,0 +1,21 @@
+[
+ {
+  "page": 62,
+  "decl": -23,
+  "first": 1551,
+  "last": 1850,
+  "dpl": [
+   1759,
+   1810
+  ],
+  "color": [
+   1619
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "dropped stray ranges: kept [(1641, 1670), (1671, 1730), (1731, 1790), (1791, 1850)] of [(1551, 1610), (1641, 1670), (1671, 1730), (1731, 1790), (1791, 1850)]",
+   "color 1619 outside page interval 1641-1850"
+  ]
+ }
+]

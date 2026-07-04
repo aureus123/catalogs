@@ -1,0 +1,23 @@
+[
+ {
+  "page": 367,
+  "decl": -28,
+  "first": 6101,
+  "last": 6400,
+  "dpl": [
+   6191,
+   6243
+  ],
+  "color": [
+   6212,
+   6276
+  ],
+  "dpl_uncertain": [
+   6101
+  ],
+  "color_uncertain": [],
+  "notes": [
+   "dpl 6101 seen in only 1 of 3 runs"
+  ]
+ }
+]

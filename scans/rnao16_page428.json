@@ -1,0 +1,24 @@
+[
+ {
+  "page": 428,
+  "decl": -29,
+  "first": 5801,
+  "last": 6100,
+  "dpl": [],
+  "color": [],
+  "dpl_uncertain": [
+   5976,
+   6010,
+   6013
+  ],
+  "color_uncertain": [],
+  "notes": [
+   "dropped stray ranges: kept [(5801, 5860)] of [(5801, 5860), (5864, 5920), (5924, 5980), (5984, 6040), (6044, 6100)]",
+   "dpl 5976 outside page interval 5801-5860",
+   "dpl 6010 outside page interval 5801-5860",
+   "dpl 6013 outside page interval 5801-5860",
+   "declination not readable in header '- 428 - 8\u00b0'; carried over -29",
+   "dropped stray ranges: kept [(5864, 5920), (5921, 5980), (5981, 6040), (6041, 6100)] of [(5801, 5860), (5864, 5920), (5921, 5980), (5981, 6040), (6041, 6100)]"
+  ]
+ }
+]

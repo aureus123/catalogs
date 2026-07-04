@@ -1,0 +1,25 @@
+[
+ {
+  "page": 133,
+  "decl": -24,
+  "first": 4601,
+  "last": 4900,
+  "dpl": [
+   4627,
+   4659,
+   4866,
+   4900
+  ],
+  "color": [
+   4635,
+   4868
+  ],
+  "dpl_uncertain": [
+   4793
+  ],
+  "color_uncertain": [],
+  "notes": [
+   "dpl third number worn: reads like 4703 but manual cd/dpl_24.txt has 4793; kept 4793 as uncertain"
+  ]
+ }
+]

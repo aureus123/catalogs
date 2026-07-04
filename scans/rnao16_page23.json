@@ -1,0 +1,20 @@
+[
+ {
+  "page": 23,
+  "decl": -22,
+  "first": 6501,
+  "last": 6800,
+  "dpl": [
+   6541,
+   6555,
+   6691,
+   6780
+  ],
+  "color": [],
+  "dpl_uncertain": [],
+  "color_uncertain": [],
+  "notes": [
+   "dpl 6585 removed: visually verified footnote prints only 6541, 6555, 6691, 6780"
+  ]
+ }
+]

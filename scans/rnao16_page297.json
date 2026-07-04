@@ -1,0 +1,31 @@
+[
+ {
+  "page": 297,
+  "decl": -27,
+  "first": 1751,
+  "last": 2050,
+  "dpl": [
+   1829,
+   1899,
+   1950,
+   1974
+  ],
+  "color": [
+   1809,
+   1869,
+   1930
+  ],
+  "dpl_uncertain": [
+   1820
+  ],
+  "color_uncertain": [
+   38
+  ],
+  "notes": [
+   "dpl 1820 seen in only 1 of 3 runs",
+   "color 38 outside page interval 1751-2050",
+   "color numbers not ascending: [1809, 1869, 1930, 38]",
+   "declination not readable in header '- 297 - 4h'; carried over -27"
+  ]
+ }
+]

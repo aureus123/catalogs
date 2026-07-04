@@ -1,0 +1,22 @@
+[
+ {
+  "page": 573,
+  "decl": -31,
+  "first": 10254,
+  "last": 10550,
+  "dpl": [
+   10423
+  ],
+  "color": [
+   10440,
+   10485
+  ],
+  "dpl_uncertain": [],
+  "color_uncertain": [
+   10290
+  ],
+  "notes": [
+   "first color number worn: page interval 10254-10550 rules out 10200, kept 10290 as uncertain (visually verified)"
+  ]
+ }
+]

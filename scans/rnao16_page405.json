@@ -1,0 +1,23 @@
+[
+ {
+  "page": 405,
+  "decl": -28,
+  "first": 17504,
+  "last": 17800,
+  "dpl": [],
+  "color": [],
+  "dpl_uncertain": [],
+  "color_uncertain": [
+   17694,
+   17758
+  ],
+  "notes": [
+   "dropped stray ranges: kept [(17504, 17560), (17561, 17620), (17621, 17680)] of [(17504, 17560), (17561, 17620), (17621, 17680), (17684, 17740), (17741, 17800)]",
+   "color 17694 outside page interval 17504-17680",
+   "color 17758 outside page interval 17504-17680",
+   "dropped stray ranges: kept [(17504, 17560)] of [(17504, 17560), (17564, 17620), (17624, 17680), (17684, 17740), (17744, 17800)]",
+   "color 17694 outside page interval 17504-17560",
+   "color 17758 outside page interval 17504-17560"
+  ]
+ }
+]
