@@ -950,6 +950,140 @@ RSME of distance (arcsec) = 7.52  among a total of 31022 stars
 Stars not identified with PPM nor GSC = 718
 
 ***************************************
+Perform comparison between UA Standards of Magnitude and PPM...
+Stars read from PPM: 468861
+1) Warning: SOM 19 is FAR from WB 0h 484 star (dist = 22757.1 arcsec).
+     Register SOM 19: 00h 25m 57s +06°15.9'
+2) Warning: SOM 71 is FAR from BD +9°322 star (dist = 1508.3 arcsec).
+     Register SOM 71: 02h 20m 46s +09°38.7'
+     Register BD +9°322 (en 2h):  8.8 | 19m2.4s | 56.4'     (pag. 65)
+3) Warning: SOM 71 reports BD mag 7.3 but BD +9°322 has mag 8.8.
+4) Warning: SOM 104a is ALONE (nearest PPM star at 100.5 arcsec).
+5) Warning: SOM 104b is ALONE (nearest PPM star at 121.5 arcsec).
+6) Warning: SOM 104b is FAR from WB 3h 167 star (dist = 121.4 arcsec).
+     Register SOM 104b: 03h 10m 50s +07°15.8'
+7) Warning: SOM 114 is ALONE (nearest PPM star at 146.8 arcsec).
+8) Warning: SOM 114 is FAR from BD +11°487 star (dist = 141.5 arcsec).
+     Register SOM 114: 03h 25m 31s +11°07.1'
+     Register BD +11°487 (en 3h):  7.3 | 24m15.9s | 3.1'     (pag. 77)
+9) Warning: SOM 114 is FAR from WB 3h 426 star (dist = 140.6 arcsec).
+     Register SOM 114: 03h 25m 31s +11°07.1'
+10) Warning: SOM 125 reports BD mag 7.8 but BD +7°560 has mag 30.0.
+11) Warning: SOM 142a is FAR from BD +5°513 star (dist = 35784.5 arcsec).
+     Register SOM 142a: 04h 08m 47s +05°53.3'
+     Register BD +5°513 (en 3h):  9.3 | 27m46.5s | 34.0'     (pag. 41)
+12) Warning: SOM 142a reports BD mag 8.5 but BD +5°513 has mag 9.3.
+13) Warning: SOM 142b is FAR from BD +5°514 star (dist = 35772.7 arcsec).
+     Register SOM 142b: 04h 08m 50s +05°52.6'
+     Register BD +5°514 (en 3h):  8.5 | 27m48.8s | 55.4'     (pag. 41)
+14) Warning: SOM 142b reports BD mag 7.5 but BD +5°514 has mag 8.5.
+15) Warning: SOM 206 reports BD mag 4.0 but BD +14°1152 has mag 4.6.
+16) Warning: SOM 225 is ALONE (nearest PPM star at 503.2 arcsec).
+17) Warning: SOM 225 is FAR from BD +10°1563 star (dist = 53046.0 arcsec).
+     Register SOM 225: 06h 27m 12s +10°50.2'
+     Register BD +10°1563 (en 7h):  7.0 | 26m6.8s | 52.9'     (pag. 72)
+18) Warning: SOM 225 is FAR from WB 6h 799 star (dist = 3577.4 arcsec).
+     Register SOM 225: 06h 27m 12s +10°50.2'
+19) Warning: SOM 233 is FAR from BD +9°1276 star (dist = 10995.0 arcsec).
+     Register SOM 233: 06h 38m 33s +09°53.6'
+     Register BD +9°1276 (en 6h):  9.5 | 25m7.0s | 36.2'     (pag. 66)
+20) Warning: SOM 233 reports BD mag 7.5 but BD +9°1276 has mag 9.5.
+21) Warning: SOM 264 is FAR from BD +14°1898 star (dist = 2473.8 arcsec).
+     Register SOM 264: 08h 21m 39s +14°37.4'
+     Register BD +14°1898 (en 8h):  9.4 | 20m16.4s | 0.2'     (pag. 96)
+22) Warning: SOM 264 reports BD mag 6.2 but BD +14°1898 has mag 9.4.
+23) Warning: SOM 264 is FAR from WB 8h 529 star (dist = 121.0 arcsec).
+     Register SOM 264: 08h 21m 39s +14°37.4'
+24) Warning: SOM 271 is ALONE (nearest PPM star at 113.9 arcsec).
+25) Warning: SOM 273 is FAR from WB 8h 926 star (dist = 14905.5 arcsec).
+     Register SOM 273: 08h 36m 41s +03°50.8'
+26) Warning: SOM 283 is FAR from WB 8h 1385 star (dist = 182.3 arcsec).
+     Register SOM 283: 08h 54m 55s +06°07.8'
+27) Warning: SOM 307 is FAR from BD +12°3005 star (dist = 342238.0 arcsec).
+     Register SOM 307: 09h 44m 06s +12°25.5'
+     Register BD +12°3005 (en 16h):  9.1 | 15m54.2s | 45.1'     (pag. 86)
+28) Warning: SOM 307 reports BD mag 6.8 but BD +12°3005 has mag 9.1.
+29) Warning: SOM 329 is ALONE (nearest PPM star at 410.9 arcsec).
+30) Warning: SOM 329 is FAR from BD +12°2284 star (dist = 630.3 arcsec).
+     Register SOM 329: 10h 53m 09s +12°12.4'
+     Register BD +12°2284 (en 10h):  6.5 | 52m6.5s | 29.3'     (pag. 85)
+31) Warning: SOM 329 is FAR from WB 10h 937 star (dist = 600.4 arcsec).
+     Register SOM 329: 10h 53m 09s +12°12.4'
+32) Warning: SOM 345 is FAR from WB 11h 381 star (dist = 154.2 arcsec).
+     Register SOM 345: 11h 23m 13s +08°17.3'
+33) Warning: SOM 358 is FAR from BD +13°2482 star (dist = 5652.9 arcsec).
+     Register SOM 358: 12h 00m 47s +13°41.0'
+     Register BD +13°2482 (en 11h):  7.2 | 53m48.6s | 11.0'     (pag. 91)
+34) Warning: SOM 410 is FAR from BD +11°2615 star (dist = 5334.9 arcsec).
+     Register SOM 410: 13h 57m 23s +11°24.3'
+     Register BD +11°2615 (en 13h):  9.3 | 50m41.3s | 1.2'     (pag. 79)
+35) Warning: SOM 410 reports BD mag 7.0 but BD +11°2615 has mag 9.3.
+36) Warning: SOM 456 is ALONE (nearest PPM star at 1449.3 arcsec).
+37) Warning: SOM 456 is FAR from BD +16°3236 star (dist = 59938.8 arcsec).
+     Register SOM 456: 16h 23m 43s +16°14.9'
+     Register BD +16°3236 (en 17h):  9.5 | 32m11.6s | 10.0'     (pag. 110)
+38) Warning: SOM 456 reports BD mag 7.0 but BD +16°3236 has mag 9.5.
+39) Warning: SOM 457 is FAR from BD +8°3110 star (dist = 29764.0 arcsec).
+     Register SOM 457: 16h 23m 44s +08°01.5'
+     Register BD +8°3110 (en 15h):  9.5 | 49m24.2s | 33.9'     (pag. 62)
+40) Warning: SOM 457 reports BD mag 7.3 but BD +8°3110 has mag 9.5.
+41) Warning: SOM 478 is ALONE (nearest PPM star at 144.9 arcsec).
+42) Warning: SOM 478 is FAR from BD +8°3337 star (dist = 152.5 arcsec).
+     Register SOM 478: 16h 55m 49s +08°37.8'
+     Register BD +8°3337 (en 16h):  6.5 | 55m1.7s | 39.4'     (pag. 62)
+43) Warning: SOM 478 is FAR from WB 16h 1044 star (dist = 143.9 arcsec).
+     Register SOM 478: 16h 55m 49s +08°37.8'
+44) Warning: SOM 501 is FAR from BD +6°3556 star (dist = 2046.3 arcsec).
+     Register SOM 501: 17h 47m 09s +06°07.7'
+     Register BD +6°3556 (en 17h):  9.5 | 44m28.4s | 30.9'     (pag. 50)
+45) Warning: SOM 501 reports BD mag 5.9 but BD +6°3556 has mag 9.5.
+46) Warning: SOM 514a is FAR from BD +11°3382 star (dist = 7740.2 arcsec).
+     Register SOM 514a: 17h 59m 52s +11°59.7'
+     Register BD +11°3382 (en 18h):  9.5 | 7m19.0s | 21.1'     (pag. 80)
+47) Warning: SOM 514a reports BD mag 7.6 but BD +11°3382 has mag 9.5.
+48) Warning: SOM 514b is FAR from BD +11°3383 star (dist = 8492.4 arcsec).
+     Register SOM 514b: 17h 59m 55s +11°59.7'
+     Register BD +11°3383 (en 18h):  9.0 | 7m44.4s | 0.7'     (pag. 80)
+49) Warning: SOM 514b reports BD mag 7.5 but BD +11°3383 has mag 9.0.
+50) Warning: SOM 525 is FAR from BD +3°3620 star (dist = 9163.8 arcsec).
+     Register SOM 525: 18h 14m 38s +03°19.4'
+     Register BD +3°3620 (en 18h):  6.0 | 3m26.2s | 17.7'     (pag. 33)
+51) Warning: SOM 537a is FAR from BD +11°3660 star (dist = 6773.8 arcsec).
+     Register SOM 537a: 18h 42m 01s +11°01.8'
+     Register BD +11°3660 (en 18h):  9.5 | 47m54.9s | 52.0'     (pag. 81)
+52) Warning: SOM 537a reports BD mag 8.0 but BD +11°3660 has mag 9.5.
+53) Warning: SOM 537b is FAR from BD +10°3663 star (dist = 1795.7 arcsec).
+     Register SOM 537b: 18h 42m 04s +11°00.1'
+     Register BD +10°3663 (en 18h):  8.1 | 41m22.9s | 29.2'     (pag. 75)
+54) Warning: SOM 537b reports BD mag 7.5 but BD +10°3663 has mag 8.1.
+55) Warning: SOM 550 refers to BD +10°3787 but it does not exist.
+     Register SOM 550: 19h 01m 06s +10°52.8'
+56) Warning: SOM 551 is FAR from BD +9°3592 star (dist = 51154.2 arcsec).
+     Register SOM 551: 19h 02m 14s +09°23.1'
+     Register BD +9°3592 (en 18h):  9.3 | 3m40.2s | 55.5'     (pag. 68)
+57) Warning: SOM 551 reports BD mag 7.0 but BD +9°3592 has mag 9.3.
+58) Warning: SOM 560 is ALONE (nearest PPM star at 823.4 arcsec).
+59) Warning: SOM 560 is FAR from BD +12°4057 star (dist = 22670.9 arcsec).
+     Register SOM 560: 19h 12m 55s +12°23.7'
+     Register BD +12°4057 (en 19h):  9.5 | 37m45.4s | 11.6'     (pag. 87)
+60) Warning: SOM 560 reports BD mag 6.0 but BD +12°4057 has mag 9.5.
+61) Warning: SOM 599 is FAR from BD +8°4226 star (dist = 31623.2 arcsec).
+     Register SOM 599: 20h 18m 34s +08°11.7'
+     Register BD +8°4226 (en 19h):  9.1 | 42m8.7s | 40.7'     (pag. 63)
+62) Warning: SOM 599 reports BD mag 6.9 but BD +8°4226 has mag 9.1.
+63) Warning: SOM 718 is FAR from WB 23h 928 star (dist = 21597.0 arcsec).
+     Register SOM 718: 23h 46m 38s +11°12.4'
+64) Warning: SOM 719 is FAR from BD +10°5014 star (dist = 374.6 arcsec).
+     Register SOM 719: 23h 51m 23s +10°46.7'
+     Register BD +10°5014 (en 23h):  8.5 | 50m38.6s | 44.7'     (pag. 76)
+65) Warning: SOM 719 reports BD mag 7.0 but BD +10°5014 has mag 8.5.
+Stars from SOM identified with PPM = 727
+RSME of distance (arcsec) = 9.56  among a total of 727 stars
+SOM stars properly identified with BD = 711
+SOM stars properly identified with WB = 530
+Errors logged = 65
+
+***************************************
 Perform comparison between Oeltzen-Argelander North catalog and PPM...
 Stars read from PPM: 175863
 1) Warning: OA 144 is ALONE (nearest PPM star at 1023.9 arcsec).

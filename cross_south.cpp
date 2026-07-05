@@ -786,6 +786,113 @@ void readLalande() {
 }
 
 /*
+ * readSOM - lee los "Standards of Magnitude" de la Uranometria Argentina
+ * (cat/UA_standards.csv, epoca 1875.0) y revisa las referencias al
+ * catalogo de Lalande: posicion y magnitud (tolerancia 0.25)
+ * (ya se debe haber leido el catalogo Lalande; sus coordenadas
+ * almacenadas ya estan en 1875.0, no hace falta transformar)
+ */
+void readSOM() {
+    char buffer[1024], catName[20];
+    char catLine[64];
+
+    printf("\n***************************************\n");
+    printf("Check references between UA Standards of Magnitude and Lalande...\n");
+
+    int checkLal = 0;
+    int errors = 0;
+
+    /* leemos los Standards of Magnitude */
+    FILE *stream = fopen("cat/UA_standards.csv", "rt");
+    if (stream == NULL) {
+        perror("Cannot read UA_standards.csv");
+		exit(1);
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+        /* separa la linea CSV en 17 campos:
+           number,name,ra_h,ra_m,ra_s,dec_d,dec_m,mag,BD_num,BD_mag,
+           Lal_num,Lal_mag,WB_num,WB_mag,ARGEL,Albany,HEIS */
+        char field[17][32];
+        int nf = 0, j = 0;
+        for (char *p = buffer; nf < 17; p++) {
+            char c = *p;
+            if (c == ',' || c == '\n' || c == '\r' || c == 0) {
+                field[nf][j] = 0;
+                nf++;
+                j = 0;
+                if (c != ',') break;
+            } else if (j < 31) field[nf][j++] = c;
+        }
+        if (nf < 17) continue; /* linea incompleta */
+
+		/* lee numeración como string, p.ej. "34a"/"34b" para las
+           dobles (omite la cabecera) */
+        if (atoi(field[0]) <= 0) continue;
+
+        /* omite si no hay referencia a Lalande, o si no es
+           confiable (parentesis) */
+        if (field[10][0] == 0 || field[10][0] == '(') continue;
+        int numRefCat = atoi(field[10]);
+
+        snprintf(catName, 20, "SOM %s", field[0]);
+
+		/* lee ascension recta B1875.0 */
+        int RAh = atoi(field[2]);
+        int RAm = atoi(field[3]);
+        int RAs = atoi(field[4]);
+        double RA = (double) RAh;
+        RA += ((double) RAm)/60.0;
+        RA += ((double) RAs)/3600.0;
+		RA *= 15.0; /* conversion horas a grados */
+
+		/* lee declinacion B1875.0 (el signo viene en dec_d, p.ej. "-0") */
+        int Decld = atoi(field[5]);
+        if (Decld < 0) Decld = -Decld;
+        double Declm = atof(field[6]);
+        double Decl = (double) Decld;
+        Decl += Declm/60.0;
+		if (field[5][0] == '-') Decl = -Decl;
+
+        snprintf(catLine, 64, "%02dh %02dm %02ds %c%02d°%04.1f'",
+            RAh, RAm, RAs, field[5][0] == '-' ? '-' : '+', Decld, Declm);
+
+        /* calcula rectangulares (Lalande ya esta en 1875.0) */
+        double x, y, z;
+        sph2rec(RA, Decl, &x, &y, &z);
+
+        for (int i = 0; i < countLal; i++) {
+            if (lalRef[i] != numRefCat) continue;
+            double dist = 3600.0 * calcAngularDistance(x, y, z, lalX[i], lalY[i], lalZ[i]);
+            if (dist > MAX_DIST_CROSS) {
+                printf("%d) Warning: %s is FAR from Lal %d (dist = %.1f arcsec).\n",
+                    ++errors,
+                    catName,
+                    numRefCat,
+                    dist);
+                printf("     Register %s: %s\n", catName, catLine);
+            } else checkLal++;
+
+            /* revisa la magnitud, si ambas estan disponibles */
+            if (field[11][0] != 0 && lalMag[i] > 0.0) {
+                double somMag = atof(field[11]);
+                if (fabs(somMag - lalMag[i]) > 0.5) {
+                    printf("%d) Warning: %s reports Lal mag %.1f but Lal %d has mag %.1f.\n",
+                        ++errors,
+                        catName,
+                        somMag,
+                        numRefCat,
+                        lalMag[i]);
+                }
+            }
+        }
+    }
+	fclose(stream);
+
+    printf("SOM stars properly identified with Lalande = %d\n", checkLal);
+    printf("Errors logged = %d\n", errors);
+}
+
+/*
  * readStone - lee y cruza catalogo de Stone
  * (ya se deben haber leidos los catalogs CD, CPD y Brisbane)
  */
@@ -3335,6 +3442,9 @@ int main(int argc, char** argv)
 
     /* leemos y cruzamos Lalande (solo contra PPM) */
     readLalande();
+
+    /* revisamos las referencias a Lalande de los Standards of Magnitude */
+    readSOM();
 
     /* leemos y cruzamos Brisbane */
     readBrisbane();

@@ -444,6 +444,48 @@ RSME of distance (arcsec) = 7.35  among a total of 47000 stars
 Errors logged = 90
 
 ***************************************
+Check references between UA Standards of Magnitude and Lalande...
+1) Warning: SOM 38 reports Lal mag 7.2 but Lal 2123 has mag 8.0.
+2) Warning: SOM 58 reports Lal mag 4.7 but Lal 3449 has mag 4.0.
+3) Warning: SOM 114 is FAR from Lal 6508 (dist = 153.7 arcsec).
+     Register SOM 114: 03h 25m 31s +11°07.1'
+4) Warning: SOM 165 reports Lal mag 7.0 but Lal 9082 has mag 6.0.
+5) Warning: SOM 189 is FAR from Lal 10497 (dist = 574.5 arcsec).
+     Register SOM 189: 05h 28m 15s +09°50.9'
+6) Warning: SOM 221a reports Lal mag 5.2 but Lal 12221 has mag 4.0.
+7) Warning: SOM 221b reports Lal mag 7.8 but Lal 12222 has mag 8.5.
+8) Warning: SOM 236 reports Lal mag 5.0 but Lal 13075 has mag 6.0.
+9) Warning: SOM 309 is FAR from Lal 19380 (dist = 4056.8 arcsec).
+     Register SOM 309: 09h 47m 29s +08°39.9'
+10) Warning: SOM 329 is FAR from Lal 19532 (dist = 52921.0 arcsec).
+     Register SOM 329: 10h 53m 09s +12°12.4'
+11) Warning: SOM 350 reports Lal mag 3.0 but Lal 22343 has mag 2.0.
+12) Warning: SOM 376 is FAR from Lal 23834 (dist = 98244.2 arcsec).
+     Register SOM 376: 12h 40m 01s +10°14.5'
+13) Warning: SOM 376 reports Lal mag 5.8 but Lal 23834 has mag 9.0.
+14) Warning: SOM 478 is FAR from Lal 30979 (dist = 145.6 arcsec).
+     Register SOM 478: 16h 55m 49s +08°37.8'
+15) Warning: SOM 497 reports Lal mag 6.0 but Lal 32410 has mag 7.0.
+16) Warning: SOM 532 is FAR from Lal 32424 (dist = 127087.3 arcsec).
+     Register SOM 532: 18h 28m 55s +10°47.7'
+17) Warning: SOM 541 reports Lal mag 6.0 but Lal 35270 has mag 5.0.
+18) Warning: SOM 560 is FAR from Lal 36356 (dist = 10800.9 arcsec).
+     Register SOM 560: 19h 12m 55s +12°23.7'
+19) Warning: SOM 565 reports Lal mag 6.5 but Lal 36647 has mag 5.5.
+20) Warning: SOM 584 reports Lal mag 5.2 but Lal 38001 has mag 4.5.
+21) Warning: SOM 612 reports Lal mag 5.0 but Lal 39810 has mag 4.0.
+22) Warning: SOM 615 is FAR from Lal 39959 (dist = 75866.0 arcsec).
+     Register SOM 615: 20h 33m 03s +09°38.9'
+23) Warning: SOM 615 reports Lal mag 5.0 but Lal 39959 has mag 8.0.
+24) Warning: SOM 617 is FAR from Lal 40006 (dist = 84481.8 arcsec).
+     Register SOM 617: 20h 37m 38s +14°37.7'
+25) Warning: SOM 617 reports Lal mag 4.2 but Lal 40006 has mag 9.0.
+26) Warning: SOM 648 reports Lal mag 7.0 but Lal 42126 has mag 6.0.
+27) Warning: SOM 664 reports Lal mag 7.0 but Lal 43007 has mag 8.0.
+SOM stars properly identified with Lalande = 645
+Errors logged = 27
+
+***************************************
 Perform comparison between Brisbane and PPM...
 Stars read from PPM: 468861
 1) Warning: B 24 is ALONE (no PPM or GSC star near it).
