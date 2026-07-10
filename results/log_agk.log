@@ -3,7 +3,6 @@ Made in 2024 by Daniel Severin.
 Stars read from Cordoba Durchmusterung: 613778
    Tomo XVI: 179745, Tomo XVII: 160381, Tomo XVIII: 149433, Tomo XXIa: 89128, Tomo XXIb: 35091
 Reading AGK A:
-Star DM 19035 not found (corresponding to AGK 5). Discarding star.
 Warning: Decl = -22 of AGK 48 does not coincide with CD -23°26
 Warning: Decl = -26 of AGK 149 does not coincide with CD -27°116
 Warning: Decl = -25 of AGK 613 does not coincide with CD -24°560
@@ -78,19 +77,6 @@ Warning: Decl = -23 of AGK 14249 does not coincide with CD -22°14781
 Warning: Decl = -21 of AGK 14846 does not coincide with CD -22°15485
 Warning: Decl = -26 of AGK 14990 does not coincide with CD -27°15684
 Warning: Decl = -23 of AGK 15214 does not coincide with CD -24°17160
-Star DM 19004 not found (corresponding to AGK 15929). Discarding star.
-Star DM 19005 not found (corresponding to AGK 15931). Discarding star.
-Star DM 19008 not found (corresponding to AGK 15936). Discarding star.
-Star DM 19011 not found (corresponding to AGK 15937). Discarding star.
-Star DM 19012 not found (corresponding to AGK 15941). Discarding star.
-Star DM 19013 not found (corresponding to AGK 15945). Discarding star.
-Star DM 19014 not found (corresponding to AGK 15949). Discarding star.
-Star DM 19021 not found (corresponding to AGK 15955). Discarding star.
-Star DM 19020 not found (corresponding to AGK 15956). Discarding star.
-Star DM 19027 not found (corresponding to AGK 15968). Discarding star.
-Star DM 19029 not found (corresponding to AGK 15970). Discarding star.
-Star DM 19032 not found (corresponding to AGK 15971). Discarding star.
-Star DM 19033 not found (corresponding to AGK 15974). Discarding star.
 Reading AGK B:
 Warning: Decl = -30 of AGK 457 does not coincide with CD -31°533
 Warning: Decl = -30 of AGK 682 does not coincide with CD -29°625
@@ -274,7 +260,7 @@ Star DM 16649 not found (corresponding to AGK 12624). Discarding star.
 Warning: Decl = -33 of AGK 12635 does not coincide with CD -34°16159
 Warning: Decl = -34 of AGK 12642 does not coincide with CD -33°16668
 Warning: Decl = -34 of AGK 12714 does not coincide with CD -35°16008
-Stars read from AGK: 43885
+Stars read from AGK: 43899
 1) CD -23°26 separated from AGK A48 in 1725.1 arcsec.
      Register CD -23°26 (en 0h):  10.0 | 3m26.5s | 3.2'     (pag. 55)
    Neighbors:
@@ -2078,5 +2064,5 @@ Stars read from AGK: 43885
 *) CD -33°16668 too separated from AGK C12642 in 3612.6 arcsec.
      Register CD -33°16668 (en 23h):  9.0 | 36m40.1s | 4.9'     (pag. 115)
 Total errors: 444 (position: 252, mag: 192), Drops: 62
-RSME of distance (arcsec) = 24.39  among a total of 43571 stars
-RSME of visual magnitude = 0.19640  among a total of 43329 stars
+RSME of distance (arcsec) = 24.40  among a total of 43585 stars
+RSME of visual magnitude = 0.19640  among a total of 43343 stars

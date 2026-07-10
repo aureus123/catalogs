@@ -911,3 +911,50 @@ against CD -31°5338 (the AGK position is actually in perfect agreement with the
 This was the only occurrence of "&" inside a coordinate field in all three digital
 AGK files; the "&" was replaced by "0" in *cat/cordb.txt* (the field now reads
 "2000", i.e. 20.00s), which removes the false suspect.
+
+## 18. The "19000" numbering misprint at the end of zone -23 and its echo in Cordoba A
+
+The printed page 117 of volume 16 (RNAO16) is the last page of zone -23. Its column
+headers run 18051-18060, 18061-18070, 18071-18080, 18081-18090 and then
+**18091-19000** — a misprint for 18091-18100 — and the numbering error propagates
+through the remaining columns of the page, which are headed 19001-19010,
+19011-19020, 19021-19029 and 19030-19038. The zone therefore *appears* to end at
+star 19038 in print, while the digital catalog numbers these stars correctly and
+continuously: the zone ends at CD -23°18138 (= 19038 - 900). The correspondence was
+verified star by star on the printed page: e.g. printed 19001 (M 9.8,
+23h51m53.0s, -23°41'.1) is exactly the digital CD -23°18101, and printed 19004
+(M 8.8, 23h52m31.0s, -23°42'.6) is exactly CD -23°18104.
+
+The Cordoba A observers quoted the *printed* (misprinted) numbers. Fourteen AGK A
+registers of zone -23 — AGK A5 (printed page 1) and thirteen registers between
+AGK A15929 and A15974 (printed pages 320-321, the last of the catalog; stars of
+RA 23h5xm whose 1900 declination is -23, or -22°5x' precessing into -23 at 1875) —
+carry C.D. numbers 19004 to 19035 in their C.D. column, faithfully reproduced by the
+digital *cat/corda.txt*. Since zone -23 only reaches 18138, *compare_agk* discarded
+all fourteen with "Star DM not found".
+
+The fourteen identifications were corrected in *cat/corda.txt* by subtracting 900:
+
+| AGK | C.D. quoted | corrected |
+| --- | --- | --- |
+| A5     | 19035 | -23°18135 |
+| A15929 | 19004 | -23°18104 |
+| A15931 | 19005 | -23°18105 |
+| A15936 | 19008 | -23°18108 |
+| A15937 | 19011 | -23°18111 |
+| A15941 | 19012 | -23°18112 |
+| A15945 | 19013 | -23°18113 |
+| A15949 | 19014 | -23°18114 |
+| A15955 | 19021 | -23°18121 |
+| A15956 | 19020 | -23°18120 |
+| A15968 | 19027 | -23°18127 |
+| A15970 | 19029 | -23°18129 |
+| A15971 | 19032 | -23°18132 |
+| A15974 | 19033 | -23°18133 |
+
+After re-running *compare_agk* the hypothesis is fully confirmed: the fourteen
+"Star DM not found" discards disappear, the stars read rise from 43885 to 43899,
+and **all fourteen stars match their corrected CD entry within both the position
+and the magnitude thresholds** — the good-star counts increase by exactly 14 (to
+43585 and 43343) with the RMS errors essentially unchanged (24.40" and 0.196 mag),
+and no new position or magnitude suspect emerges.

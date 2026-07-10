@@ -84,7 +84,7 @@ Some catalogs in this folder were sanitized (i.e. those with the "†") but thei
 - weiss : 3 registers
 - gilliss : 28 registers
 - usno : 15 registers
-- corda : 3 registers
+- corda : 17 registers
 - cordc : 7 registers
 - stone1: 2 register
 - thome1881: 4 registers
