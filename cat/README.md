@@ -59,9 +59,7 @@ January 1, 1850, from _GAVO Data Center_
 - thome1884 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 232-249, from _GAVO Data Center_
 - 4005 †: Table of Correspondences BD/CD/CPD (Jung, Bischoff 1971) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/5)
 - 4011 †: Correspondences CD/CPD, Zones -18 to -39 (Bonnet) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/11)
-- 4019 †: CD/CPD Cross Index (Rappaport, Warren 1987), from _NASA-ADC CD-ROMs_
-
-_Note_: a buggy line from catalog 4019 was deleted.
+- 4019: CD/CPD Cross Index (Rappaport, Warren 1987), from _NASA-ADC CD-ROMs_
 
 In the "other" subfolder, there are catalogs from _GAVO Data Center_ not used yet
 by the current code:
