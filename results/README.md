@@ -152,6 +152,27 @@ Swaps:
 - from CD -31°903 to 950 (rotation)
   (after rotation, change -31°903 mag from 9.3 to 10 and RAm from 17 to 10) 
 
+By comparing CD against AGK, we found some of the mentioned entries plus these new ones:
+
+| Star | Parameter | current | corrected | dist1 | dist2 |
+| --- | --- | --- | --- | --- | --- |
+| CD -28°3678 | DEm | 1.7 | 4.7 | 180 | 185 |
+| CD -24°8247  | mag | 8.0  | 8.9  | | |
+| CD -25°3773  | mag | 8.0  | 8.9  | | |
+| CD -26°1159  | mag | 9.4  | 8.1  | | |
+| CD -26°8900  | mag | 7.8  | 9.8  | | |
+| CD -26°8902  | mag | 6.0  | 10.0 | | |
+| CD -26°8903  | mag | 9.5  | 8.5  | | |
+| CD -26°8905  | mag | 9.0  | 10.0 | | |
+| CD -26°8907  | mag | 9.0  | 10.0 | | |
+| CD -26°8908  | mag | 10.0 | 8.7  | | |
+| CD -26°8910  | mag | 9.5  | 9.7  | | |
+| CD -26°14362 | mag | 8.2  | 9.2  | | |
+| CD -27°5678  | mag | 10.0 | 8.6  | | |
+| CD -27°7546  | mag | 8.2  | 9.2  | | |
+| CD -31°5979  | mag | 9.5  | 8.5  | | |
+
+
 Curated version of Cordoba Durchmusterung (first volume, i.e. Resultados XVI)
 can be found in file *cat/cd_vol1_curated.txt*. This version contains all
 corrections from 2018 version and those presented in this section.
