@@ -47,16 +47,19 @@ compare_agk: compare_agk.o read_cd.o trig.o misc.o
 compare_agk.o: compare_agk.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-cross_north: cross_north.o read_bd.o read_ppm.o read_gc.o trig.o misc.o find_gsc.o
+cross_north: cross_north.o read_bd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o find_gsc.o cross_utils.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 cross_north.o: cross_north.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-cross_south: cross_south.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o find_gsc.o
+cross_south: cross_south.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o find_gsc.o cross_utils.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 cross_south.o: cross_south.cpp
+	$(CC) $(CCFLAGS) -c $<
+
+cross_utils.o: cross_utils.cpp
 	$(CC) $(CCFLAGS) -c $<
 
 cross_gc: cross_gc.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o find_gsc.o

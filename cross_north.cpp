@@ -13,6 +13,7 @@
 #include "trig.h"
 #include "misc.h"
 #include "find_gsc.h"
+#include "cross_utils.h"
 
 #define MAXWBSTAR 31900
 #define MAXOASTAR 26500
@@ -23,26 +24,27 @@
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
 #define EPOCH_GC 1875.0
-#define MAX_DIST_CROSS 120.0
 #define MAX_DIST_CAT_PPM 90.0
 #define MAX_DIST_OA_PPM 45.0
-#define MAX_DIST_PPM_FAR 120.0
 #define CURATED true // true if curated BD catalog should be used
 
 // Here, we save 1825.0 coordinates of WB stars in rectangular form
 double wbX[MAXWBSTAR], wbY[MAXWBSTAR], wbZ[MAXWBSTAR];
 int wbRARef[MAXWBSTAR], wbNumRef[MAXWBSTAR];
 int countWB = 0;
+StarList wbList = {&countWB, wbNumRef, wbX, wbY, wbZ};
 
 // Here, we save 1842.0 coordinates of OA stars in rectangular form
 double oaX[MAXOASTAR], oaY[MAXOASTAR], oaZ[MAXOASTAR];
 int oaRef[MAXOASTAR];
 int countOA = 0;
+StarList oaList = {&countOA, oaRef, oaX, oaY, oaZ};
 
 // Here, we save 1850.0 coordinates of BAC stars in rectangular form
 double bacX[MAXBACSTAR], bacY[MAXBACSTAR], bacZ[MAXBACSTAR];
 int bacRef[MAXBACSTAR];
 int countBAC = 0;
+StarList bacList = {&countBAC, bacRef, bacX, bacY, bacZ};
 
 /*
  * readWB - lee y cruza catalogo de Weisse
@@ -53,19 +55,13 @@ void readWB() {
     printf("\n***************************************\n");
     printf("Perform comparison between Weisse catalog and PPM...\n");
 
-    int countDist = 0;
-    double akkuDistError = 0.0;
-    int errors = 0;
+    CrossStats stats;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
-    readPPM(false, true, false, false, EPOCH_WB);
-    sortPPM();
-	struct PPMstar_struct *PPMstar = getPPMStruct();
-    int PPMstars = getPPMStars();
+    preparePPM(EPOCH_WB, false);
 
-    FILE *crossPPMStream = openCrossFile("results/cross/cross_wb_ppm.csv");
-    FILE *crossSAOStream = openCrossFile("results/cross/cross_wb_sao.csv");
-    FILE *crossHDStream = openCrossFile("results/cross/cross_wb_hd.csv");
+    FILE *crossPPMStream, *crossSAOStream, *crossHDStream;
+    openCrossSet("wb", &crossPPMStream, &crossSAOStream, &crossHDStream);
 
     /* leemos catalogo WB */
     FILE *stream = fopen("cat/wb.txt", "rt");
@@ -102,78 +98,37 @@ void readWB() {
 		    }
 		}
 
-		/* lee ascension recta B1825.0 */
-        double RA = (double) RARef; // same as RAh
-		readFieldSanitized(buffer, cell, 16, 2);
-		int RAm = atoi(cell);
-        RA += ((double) RAm)/60.0;
-		readFieldSanitized(buffer, cell, 18, 4);
-		int RAs = atoi(cell);
-        RA += (((double) RAs)/100.0)/3600.0;
-		RA *= 15.0; /* conversion horas a grados */
+		/* lee ascension recta B1825.0 (la hora es la misma numeración RARef) */
+        int RAh, RAm, RAs;
+        double RA = readRAField(buffer, 14, &RAh, &RAm, &RAs);
 
 		/* lee declinacion B1825.0 */
-		readFieldSanitized(buffer, cell, 31, 2);
-		int Decld = atoi(cell);
-        double Decl = (double) Decld;
-		readFieldSanitized(buffer, cell, 33, 2);
-		int Declm = atoi(cell);
-        Decl += ((double) Declm)/60.0;
-		readFieldSanitized(buffer, cell, 35, 3);
-		int Decls = atoi(cell);
-        Decl += (((double) Decls)/10.0)/3600.0;
+        int Decld, Declm, Decls;
+        double Decl = readDeclField(buffer, 31, 2, 33, 35, 3, 10.0, &Decld, &Declm, &Decls);
         readField(buffer, cell, 30, 1);
 		if (cell[0] == '-') Decl = -Decl;
 
-        bool ppmFound = false;
-		int ppmIndex = -1;
-		double minDistance = HUGE_NUMBER;
 		/* busca la PPM mas cercana y genera el cruzamiento */
-		double x, y, z;
+		double x, y, z, minDistance;
+		int ppmIndex;
 		sph2rec(RA, Decl, &x, &y, &z);
-		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_CAT_PPM) {
-            akkuDistError += minDistance * minDistance;
-            countDist++;
-            ppmFound = true;
-            snprintf(catName, 20, "WB %dh %d", RARef, numRef);
-            writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
-		}
+        snprintf(catName, 20, "WB %dh %d", RARef, numRef);
+        bool ppmFound = crossWithPPM(x, y, z, Decl, vmag, MAX_DIST_CAT_PPM, NULL, catName,
+            crossPPMStream, crossSAOStream, crossHDStream, &ppmIndex, &minDistance, &stats);
 
-        if (!ppmFound && minDistance > MAX_DIST_PPM_FAR) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_WB, MAX_DIST_GSC);
-            if (!gscFound) {
-                printf("%d) Warning: WB %dh %d is ALONE (nearest PPM star at %.1f arcsec).\n",
-                    ++errors,
-                    RARef,
-                    numRef,
-                    minDistance);
-            }
-        }
+        warnIfAloneNorth(ppmFound, minDistance, RA, Decl, EPOCH_WB, catName, &stats.errors);
 
         /* la almacenamos para futuras identificaciones */
-        if (countWB >= MAXWBSTAR) {
-            printf("Error: too many WB stars.\n");
-            exit(1);
-        }
-        wbX[countWB] = x;
-        wbY[countWB] = y;
-        wbZ[countWB] = z;
-        wbRARef[countWB] = RARef;
-        wbNumRef[countWB] = numRef;
-        countWB++;
+        int i = storeStar(&countWB, MAXWBSTAR, "WB", wbNumRef, wbX, wbY, wbZ, NULL, numRef, x, y, z, 0.0);
+        wbRARef[i] = RARef;
     }
 	fclose(stream);
-    fclose(crossPPMStream);
-    fclose(crossSAOStream);
-    fclose(crossHDStream);
+    closeCrossSet(crossPPMStream, crossSAOStream, crossHDStream);
 
     printf("Available WB stars = %d\n", countWB);
-    printf("Stars from WB identified with PPM = %d\n", countDist);
-    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
-        sqrt(akkuDistError / (double)countDist),
-        countDist);
-    printf("Stars not identified with PPM nor GSC = %d\n", errors);
+    printf("Stars from WB identified with PPM = %d\n", stats.countDist);
+    printRSMEDist(&stats);
+    printf("Stars not identified with PPM nor GSC = %d\n", stats.errors);
 }
 
 /*
@@ -185,19 +140,13 @@ void readOARN() {
     printf("\n***************************************\n");
     printf("Perform comparison between Oeltzen-Argelander North catalog and PPM...\n");
 
-    int countDist = 0;
-    double akkuDistError = 0.0;
-    int errors = 0;
+    CrossStats stats;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
-    readPPM(false, true, false, true, EPOCH_OA);
-    sortPPM();
-	struct PPMstar_struct *PPMstar = getPPMStruct();
-    int PPMstars = getPPMStars();
+    preparePPM(EPOCH_OA, true);
 
-    FILE *crossPPMStream = openCrossFile("results/cross/cross_oarn_ppm.csv");
-    FILE *crossSAOStream = openCrossFile("results/cross/cross_oarn_sao.csv");
-    FILE *crossHDStream = openCrossFile("results/cross/cross_oarn_hd.csv");
+    FILE *crossPPMStream, *crossSAOStream, *crossHDStream;
+    openCrossSet("oarn", &crossPPMStream, &crossSAOStream, &crossHDStream);
 
     /* leemos catalogo OARN */
     FILE *stream = fopen("cat/oarn.txt", "rt");
@@ -229,75 +178,33 @@ void readOARN() {
 		}
 
 		/* lee ascension recta B1842.0 */
-		readFieldSanitized(buffer, cell, 11, 2);
-		int RAh = atoi(cell);
-        double RA = (double) RAh;
-		readFieldSanitized(buffer, cell, 13, 2);
-		int RAm = atoi(cell);
-        RA += ((double) RAm)/60.0;
-		readFieldSanitized(buffer, cell, 15, 4);
-		int RAs = atoi(cell);
-        RA += (((double) RAs)/100.0)/3600.0;
-		RA *= 15.0; /* conversion horas a grados */
+        int RAh, RAm, RAs;
+        double RA = readRAField(buffer, 11, &RAh, &RAm, &RAs);
 
 		/* lee declinacion B1842.0 (siempre positiva) */
-		readFieldSanitized(buffer, cell, 20, 2);
-		int Decld = atoi(cell);
-        double Decl = (double) Decld;
-		readFieldSanitized(buffer, cell, 22, 2);
-		int Declm = atoi(cell);
-        Decl += ((double) Declm)/60.0;
-		readFieldSanitized(buffer, cell, 24, 3);
-		int Decls = atoi(cell);
-        Decl += (((double) Decls)/10.0)/3600.0;
+        int Decld, Declm, Decls;
+        double Decl = readDeclField(buffer, 20, 2, 22, 24, 3, 10.0, &Decld, &Declm, &Decls);
 
-        bool ppmFound = false;
-		int ppmIndex = -1;
-		double minDistance = HUGE_NUMBER;
 		/* busca la PPM mas cercana y genera el cruzamiento */
-		double x, y, z;
+		double x, y, z, minDistance;
+		int ppmIndex;
 		sph2rec(RA, Decl, &x, &y, &z);
-		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_OA_PPM) {
-            akkuDistError += minDistance * minDistance;
-            countDist++;
-            ppmFound = true;
-            snprintf(catName, 20, "OA %d", oeltzenRef);
-            writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
-		}
+        snprintf(catName, 20, "OA %d", oeltzenRef);
+        bool ppmFound = crossWithPPM(x, y, z, Decl, vmag, MAX_DIST_OA_PPM, NULL, catName,
+            crossPPMStream, crossSAOStream, crossHDStream, &ppmIndex, &minDistance, &stats);
 
-        if (!ppmFound && minDistance > MAX_DIST_PPM_FAR) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_OA, MAX_DIST_GSC);
-            if (!gscFound) {
-                printf("%d) Warning: OA %d is ALONE (nearest PPM star at %.1f arcsec).\n",
-                    ++errors,
-                    oeltzenRef,
-                    minDistance);
-            }
-        }
+        warnIfAloneNorth(ppmFound, minDistance, RA, Decl, EPOCH_OA, catName, &stats.errors);
 
         /* la almacenamos para futuras identificaciones */
-        if (countOA >= MAXOASTAR) {
-            printf("Error: too many OA stars.\n");
-            exit(1);
-        }
-        oaX[countOA] = x;
-        oaY[countOA] = y;
-        oaZ[countOA] = z;
-        oaRef[countOA] = oeltzenRef;
-        countOA++;
+        storeStar(&countOA, MAXOASTAR, "OA", oaRef, oaX, oaY, oaZ, NULL, oeltzenRef, x, y, z, 0.0);
     }
 	fclose(stream);
-    fclose(crossPPMStream);
-    fclose(crossSAOStream);
-    fclose(crossHDStream);
+    closeCrossSet(crossPPMStream, crossSAOStream, crossHDStream);
 
     printf("Available OA stars = %d\n", countOA);
-    printf("Stars from OA identified with PPM = %d\n", countDist);
-    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
-        sqrt(akkuDistError / (double)countDist),
-        countDist);
-    printf("Stars not identified with PPM nor GSC = %d\n", errors);
+    printf("Stars from OA identified with PPM = %d\n", stats.countDist);
+    printRSMEDist(&stats);
+    printf("Stars not identified with PPM nor GSC = %d\n", stats.errors);
 }
 
 /*
@@ -309,19 +216,13 @@ void readBAC() {
     printf("\n***************************************\n");
     printf("Perform comparison between BAC catalog and PPM...\n");
 
-    int countDist = 0;
-    double akkuDistError = 0.0;
-    int errors = 0;
+    CrossStats stats;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
-    readPPM(false, true, false, false, EPOCH_BAC);
-    sortPPM();
-	struct PPMstar_struct *PPMstar = getPPMStruct();
-    int PPMstars = getPPMStars();
+    preparePPM(EPOCH_BAC, false);
 
-    FILE *crossPPMStream = openCrossFile("results/cross/cross_bac_ppm.csv");
-    FILE *crossSAOStream = openCrossFile("results/cross/cross_bac_sao.csv");
-    FILE *crossHDStream = openCrossFile("results/cross/cross_bac_hd.csv");
+    FILE *crossPPMStream, *crossSAOStream, *crossHDStream;
+    openCrossSet("bac", &crossPPMStream, &crossSAOStream, &crossHDStream);
 
     /* leemos catalogo BAC */
     FILE *stream = fopen("cat/bac.txt", "rt");
@@ -335,85 +236,37 @@ void readBAC() {
 		int numRef = atoi(cell);
 
 		/* lee magnitud */
-		readField(buffer, cell, 17, 1);
-		float vmag = 0.0;
-		if (cell[0] != ' ') {
-		    vmag = (float) atoi(cell);
-		    readField(buffer, cell, 18, 1);
-		    if (cell[0] == '5') vmag += 0.5;
-		}
+		float vmag = readMagIntHalf(buffer, 17, 1, 18);
 
 		/* lee ascension recta B1850.0 */
-		readFieldSanitized(buffer, cell, 20, 2);
-		int RAh = atoi(cell);
-        double RA = (double) RAh;
-		readFieldSanitized(buffer, cell, 22, 2);
-		int RAm = atoi(cell);
-        RA += ((double) RAm)/60.0;
-		readFieldSanitized(buffer, cell, 24, 4);
-		int RAs = atoi(cell);
-        RA += (((double) RAs)/100.0)/3600.0;
-		RA *= 15.0; /* conversion horas a grados */
+        int RAh, RAm, RAs;
+        double RA = readRAField(buffer, 20, &RAh, &RAm, &RAs);
 
 		/* lee declinacion B1850.0 (en realidad NPD) */
-		readFieldSanitized(buffer, cell, 48, 3);
-		int Decld = atoi(cell);
-        double Decl = (double) Decld;
-		readFieldSanitized(buffer, cell, 51, 2);
-		int Declm = atoi(cell);
-        Decl += ((double) Declm)/60.0;
-		readFieldSanitized(buffer, cell, 53, 3);
-		int Decls = atoi(cell);
-        Decl += (((double) Decls)/10.0)/3600.0;
+        int Decld, Declm, Decls;
+        double Decl = readDeclField(buffer, 48, 3, 51, 53, 3, 10.0, &Decld, &Declm, &Decls);
 		Decl = 90.0 - Decl; /* convertimos NPD a declinación */
 
-        bool ppmFound = false;
-		int ppmIndex = -1;
-		double minDistance = HUGE_NUMBER;
 		/* busca la PPM mas cercana y genera el cruzamiento */
-		double x, y, z;
+		double x, y, z, minDistance;
+		int ppmIndex;
 		sph2rec(RA, Decl, &x, &y, &z);
-		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_CAT_PPM) {
-            akkuDistError += minDistance * minDistance;
-            countDist++;
-            ppmFound = true;
-            snprintf(catName, 20, "BAC %d", numRef);
-            writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
-		}
+        snprintf(catName, 20, "BAC %d", numRef);
+        bool ppmFound = crossWithPPM(x, y, z, Decl, vmag, MAX_DIST_CAT_PPM, NULL, catName,
+            crossPPMStream, crossSAOStream, crossHDStream, &ppmIndex, &minDistance, &stats);
 
-        if (!ppmFound && minDistance > MAX_DIST_PPM_FAR) {
-            bool gscFound = findGSCStar(RA, Decl, EPOCH_BAC, MAX_DIST_GSC);
-            if (!gscFound) {
-                printf("%d) Warning: BAC %d is ALONE (nearest PPM star at %.1f arcsec).\n",
-                    ++errors,
-                    numRef,
-                    minDistance);
-            }
-        }
+        warnIfAloneNorth(ppmFound, minDistance, RA, Decl, EPOCH_BAC, catName, &stats.errors);
 
         /* la almacenamos para futuras identificaciones */
-        if (countBAC >= MAXBACSTAR) {
-            printf("Error: too many BAC stars.\n");
-            exit(1);
-        }
-        bacX[countBAC] = x;
-        bacY[countBAC] = y;
-        bacZ[countBAC] = z;
-        bacRef[countBAC] = numRef;
-        countBAC++;
+        storeStar(&countBAC, MAXBACSTAR, "BAC", bacRef, bacX, bacY, bacZ, NULL, numRef, x, y, z, 0.0);
     }
 	fclose(stream);
-    fclose(crossPPMStream);
-    fclose(crossSAOStream);
-    fclose(crossHDStream);
+    closeCrossSet(crossPPMStream, crossSAOStream, crossHDStream);
 
     printf("Available BAC stars = %d\n", countBAC);
-    printf("Stars from BAC identified with PPM = %d\n", countDist);
-    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
-        sqrt(akkuDistError / (double)countDist),
-        countDist);
-    printf("Stars not identified with PPM nor GSC = %d\n", errors);
+    printf("Stars from BAC identified with PPM = %d\n", stats.countDist);
+    printRSMEDist(&stats);
+    printf("Stars not identified with PPM nor GSC = %d\n", stats.errors);
 }
 
 /*
@@ -421,11 +274,8 @@ void readBAC() {
  * tambien revisa referencias cruzadas a OARN, BAC y BD
  */
 void readUSNO() {
-    char buffer[1024], cell[256], catName[20];
+    char buffer[1024], cell[256], srcName[20];
     char catLine[64];
-
-    /* usamos catalogo BD */
-    struct DMstar_struct *BDstar = getDMStruct();
 
     printf("\n***************************************\n");
     printf("Check references between USNO and BD/BAC/OA...\n");
@@ -448,69 +298,27 @@ void readUSNO() {
         if (cell[0] != ' ') continue;
 
 		/* lee ascension recta B1860.0 */
-		readFieldSanitized(buffer, cell, 40, 2);
-		int RAh = atoi(cell);
-        double RA = (double) RAh;
-		readFieldSanitized(buffer, cell, 42, 2);
-		int RAm = atoi(cell);
-        RA += ((double) RAm)/60.0;
-		readFieldSanitized(buffer, cell, 44, 4);
-		int RAs = atoi(cell);
-        RA += (((double) RAs)/100.0)/3600.0;
-		RA *= 15.0; /* conversion horas a grados */
+        int RAh, RAm, RAs;
+        double RA = readRAField(buffer, 40, &RAh, &RAm, &RAs);
 
 		/* lee declinacion B1860.0 */
-		readFieldSanitized(buffer, cell, 61, 2);
-		int Decld = atoi(cell);
-        double Decl = (double) Decld;
-		readFieldSanitized(buffer, cell, 63, 2);
-		int Declm = atoi(cell);
-        Decl += ((double) Declm)/60.0;
-		readFieldSanitized(buffer, cell, 65, 3);
-		int Decls = atoi(cell);
-        Decl += (((double) Decls)/10.0)/3600.0;
+        int Decld, Declm, Decls;
+        double Decl = readDeclField(buffer, 61, 2, 63, 65, 3, 10.0, &Decld, &Declm, &Decls);
 		readField(buffer, cell, 60, 1);
 		if (cell[0] == '-') Decl = -Decl;
 
-        snprintf(catLine, 64, "%02dh %02dm %02ds%02d %c%02d°%02d'%02d\"%01d",
-            RAh, RAm, RAs / 100, RAs % 100, cell[0], Decld, Declm, Decls / 10, Decls % 10);
+        formatCatLine(catLine, RAh, RAm, RAs, cell[0], Decld, Declm, Decls);
 
 		/* lee numeracion */
 		readField(buffer, cell, 1, 5);
 		int numRef = atoi(cell);
+        snprintf(srcName, 20, "U %d", numRef);
 
         /* si esta disponible, tambien lee precesiones y chequea (usamos constantes de Struve) */
         readFieldSanitized(buffer, cell, 54, 6);
-        double preRA = atof(cell) / 1000.0;
-        if (fabs(preRA) > EPS) {
-            double realPreRA = 3.07196 + 1.33704 * dsin(RA) * dtan(Decl);
-            double diff = fabs(preRA - realPreRA);
-            if (diff > 0.0099) {
-                printf("%d) Warning: U %d reports %.3f on precession RA but it should be %.3f (diff=%.3f).\n",
-                    ++errors,
-                    numRef,
-                    preRA,
-                    realPreRA,
-                    diff);
-                printf("     Register U %d: %s\n", numRef, catLine);    
-            }
-        }
-
+        checkPrecessionRA(atof(cell) / 1000.0, srcName, catLine, RA, Decl, 3.07196, 1.33704, 0.0099, &errors);
         readFieldSanitized(buffer, cell, 74, 5);
-        double preDecl = atof(cell) / 100.0;
-        if (fabs(preDecl) > EPS) {
-            double realPreDecl = 20.05554 * dcos(RA);
-            double diff = fabs(preDecl - realPreDecl);
-            if (diff > 0.099) {
-                printf("%d) Warning: U %d reports %.2f on precession DECL but it should be %.2f (diff=%.2f).\n",
-                    ++errors,
-                    numRef,
-                    preDecl,
-                    realPreDecl,
-                    diff);
-                printf("     Register U %d: %s\n", numRef, catLine);    
-            }
-        }
+        checkPrecessionDecl(atof(cell) / 100.0, srcName, catLine, RA, 20.05554, 0.099, &errors);
 
 	    /* convierte coordenadas a la de OARN y calcula rectangulares */
         double newRA = RA;
@@ -523,19 +331,7 @@ void readUSNO() {
 		readField(buffer, cell, 19, 4);
         if (!strncmp(cell, "OARN", 4)) {
     		readField(buffer, cell, 30, 5);
-            int numRefCat = atoi(cell);
-            for (int i = 0; i < countOA; i++) {
-                if (oaRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, oaX[i], oaY[i], oaZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: U %d is FAR from OA %d (dist = %.1f arcsec).\n",
-                        ++errors,
-                        numRef,
-                        numRefCat,
-                        dist);
-                    printf("     Register U %d: %s\n", numRef, catLine);    
-                } else checkOA++;
-            }
+            checkCrossRef(srcName, catLine, "OA", x, y, z, atoi(cell), &oaList, false, -1, &checkOA, &errors);
         }
 
 	    /* convierte coordenadas a la de WB y calcula rectangulares */
@@ -550,21 +346,7 @@ void readUSNO() {
     		readField(buffer, cell, 28, 2);
             int RARef = atoi(cell);
     		readField(buffer, cell, 30, 5);
-            int numRefCat = atoi(cell);
-            for (int i = 0; i < countWB; i++) {
-                if (wbRARef[i] != RARef) continue;
-                if (wbNumRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: U %d is FAR from WB %dh %d (dist = %.1f arcsec).\n",
-                        ++errors,
-                        numRef,
-                        RARef,
-                        numRefCat,
-                        dist);
-                    printf("     Register U %d: %s\n", numRef, catLine);    
-                } else checkWB++;
-            }
+            checkCrossRefWB(srcName, catLine, false, x, y, z, RARef, atoi(cell), &wbList, wbRARef, -1, &checkWB, &errors);
         }
 
 	    /* convierte coordenadas a la de BAC y calcula rectangulares */
@@ -577,19 +359,7 @@ void readUSNO() {
 		readField(buffer, cell, 19, 4);
         if (!strncmp(cell, "BAC ", 4)) {
     		readField(buffer, cell, 30, 5);
-            int numRefCat = atoi(cell);
-            for (int i = 0; i < countBAC; i++) {
-                if (bacRef[i] != numRefCat) continue;
-                double dist = 3600.0 * calcAngularDistance(x, y, z, bacX[i], bacY[i], bacZ[i]);
-                if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: U %d is FAR from BAC %d (dist = %.1f arcsec).\n",
-                        ++errors,
-                        numRef,
-                        numRefCat,
-                        dist);
-                    printf("     Register U %d: %s\n", numRef, catLine);    
-                } else checkBAC++;
-            }
+            checkCrossRef(srcName, catLine, "BAC", x, y, z, atoi(cell), &bacList, false, -1, &checkBAC, &errors);
         }
 
 	    /* convierte coordenadas a la de BD y calcula rectangulares */
@@ -603,31 +373,14 @@ void readUSNO() {
            (se identifica si tiene un signo + o -). */
 		readField(buffer, cell, 19, 9);
         if (!strncmp(cell, "DM  ", 4) ||
-                (!strncmp(cell, "BON6", 4) && 
+                (!strncmp(cell, "BON6", 4) &&
                     (cell[8] == '+' || cell[8] == '-'))) {
 		    readField(buffer, cell, 27, 1);
             bool signRef = (cell[0] == '-');
             readField(buffer, cell, 28, 2);
             int declRef = atoi(cell);
             readField(buffer, cell, 30, 5);
-            int numRefCat = atoi(cell);
-
-            int index = getDMindex(signRef, declRef, numRefCat);
-            if (index == -1) {
-                printf("DM not found for declRef = %d, numRef = %d.\n",
-                    declRef,
-                    numRefCat);
-                bye("Cannot find DM star!");
-            }
-            double dist = 3600.0 * calcAngularDistance(x, y, z, BDstar[index].x, BDstar[index].y, BDstar[index].z);
-            if (dist > MAX_DIST_CROSS) {
-                printf("%d) Warning: U %d is FAR from BD star (dist = %.1f arcsec).\n",
-                    ++errors,
-                    numRef,
-                    dist);
-                printf("     Register U %d: %s\n", numRef, catLine);
-                writeRegister(index, false);
-            } else checkDM++;
+            checkBDRef(srcName, catLine, true, signRef, declRef, atoi(cell), x, y, z, &checkDM, &errors);
         }
     }
 	fclose(stream);
@@ -666,28 +419,8 @@ void readGCScanned() {
         if (stream == NULL) continue;
 
         while (fgets(buffer, 1023, stream) != NULL) {
-            /* 1a columna: número GC */
-            int gcRef = atoi(buffer);
-            if (gcRef <= 0) continue;
-
-            /* ubicamos la 3a columna (luego de la 2a coma) */
-            char *p = strchr(buffer, ',');
-            if (p == NULL) continue;
-            p = strchr(p + 1, ',');
-            if (p == NULL) continue;
-            p++;
-            while (*p == ' ') p++; /* saltamos espacios iniciales */
-
-            /* copiamos la referencia, sin salto de línea ni espacios finales */
-            int k = 0;
-            for (int i = 0; p[i] != 0 && p[i] != '\n' && p[i] != '\r' && k < 63; i++) {
-                ref[k++] = p[i];
-            }
-            while (k > 0 && ref[k - 1] == ' ') k--;
-            ref[k] = 0;
-
-            if (ref[0] == 0) continue; /* sin referencia */
-            if (strchr(ref, '(') != NULL) continue; /* parentesis: identificación no confiable */
+            int gcRef;
+            if (!parseGCScanLine(buffer, &gcRef, ref)) continue;
 
             snprintf(catgName, 20, "GC %d", gcRef);
 
@@ -709,20 +442,7 @@ void readGCScanned() {
                 sph2rec(newRA, newDecl, &x, &y, &z);
 
                 int RARef = (int) floor(newRA / 15.0);
-                for (int i = 0; i < countWB; i++) {
-                    if (wbRARef[i] != RARef) continue;
-                    if (wbNumRef[i] != numRefCat) continue;
-                    double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
-                    if (dist > MAX_DIST_CROSS) {
-                        printf("%d) Warning: %s is FAR from WB %dh %d star (dist = %.1f arcsec).\n",
-                            ++errors,
-                            catgName,
-                            RARef,
-                            numRefCat,
-                            dist);
-                        writeRegisterGC(gcIndex);
-                    } else checkWB++;
-                }
+                checkCrossRefWB(catgName, NULL, true, x, y, z, RARef, numRefCat, &wbList, wbRARef, gcIndex, &checkWB, &errors);
             }
         }
         fclose(stream);
@@ -739,11 +459,7 @@ void readGCScanned() {
  * tambien revisa referencias cruzadas a BD
  */
 void readUA() {
-    char buffer[1024], cell[256], catgName[20];
-    char catLine[64];
-
-    /* usamos catalogo BD */
-    struct DMstar_struct *BDstar = getDMStruct();
+    char buffer[1024];
 
     printf("\n***************************************\n");
     printf("Check references between UA and BD...\n");
@@ -759,85 +475,20 @@ void readUA() {
 		exit(1);
     }
     char serpens = 'a';
+    UAstar_struct ua;
     while (fgets(buffer, 1023, stream) != NULL) {
-        /* no leemos estrellas sin coordenadas */
-		readField(buffer, cell, 101, 1);
-        if (cell[0] == ' ') continue;
-
-		/* lee ascension recta B1875.0 */
-		readFieldSanitized(buffer, cell, 100, 2);
-		int RAh = atoi(cell);
-        double RA = (double) RAh;
-		readFieldSanitized(buffer, cell, 103, 2);
-		int RAm = atoi(cell);
-        RA += ((double) RAm)/60.0;
-		readFieldSanitized(buffer, cell, 106, 2);
-		int RAs = atoi(cell);
-        RA += ((double) RAs)/3600.0;
-		RA *= 15.0; /* conversion horas a grados */
-
-		/* lee declinacion B1875.0 */
-		readFieldSanitized(buffer, cell, 111, 2);
-		int Decld = atoi(cell);
-        double Decl = (double) Decld;
-		readFieldSanitized(buffer, cell, 114, 4);
-		double Declm = atof(cell);
-        Decl += Declm/60.0;
-		readField(buffer, cell, 110, 1);
-		if (cell[0] == '-') Decl = -Decl;
-
-        snprintf(catLine, 64, "%02dh %02dm %02ds %c%02d°%02.1f'",
-            RAh, RAm, RAs, cell[0], Decld, Declm);
-
-		/* lee numeración de Gould y constelación, si existe */
-        bool existsRef;
-		readFieldSanitized(buffer, cell, 1, 1);
-        if (cell[0] == 'G') {
-            existsRef = true;
-    		readField(buffer, cell, 3, 3);
-		    int gouldRef = atoi(cell);
-            char cstRef[5];
-    		readField(buffer, cell, 7, 3);
-            copyWithoutSpaces(cstRef, cell);
-            if (cstRef[0] == 'S' && cstRef[1] == 'e' && cstRef[2] == 'r') {
-                /* Serpens tiene parte (a) y (b) */
-                cstRef[3] = serpens;
-                cstRef[4] = 0;
-                /* si es la ultima estrella de (a), actualiza a (b) */
-                if (gouldRef == 49) {
-                    serpens = 'b';
-                }
-            }
-            snprintf(catgName, 20, "%dG %s", gouldRef, cstRef);
-        } else {
-            existsRef = false;
-            snprintf(catgName, 11, "Annonymous");
-        }
+        if (!parseUALine(buffer, &serpens, &ua)) continue;
 
 	    /* convierte coordenadas a la de BD y calcula rectangulares */
-        double newRA = RA;
-        double newDecl = Decl;
+        double newRA = ua.RA;
+        double newDecl = ua.Decl;
         double x, y, z;
         transform(EPOCH_UA, 1855.0, &newRA, &newDecl);
         sph2rec(newRA, newDecl, &x, &y, &z);
 
         /* lee referencias a catalogos. */
         char subcell[3][18];
-        readField(buffer, cell, 82, 17);
-
-        int count = 0;
-        int j = 0;
-        for (int i = 0; i < 17; i++) {
-            char c = cell[i];
-            if (j == 0 && c == ' ') continue; /* skip space at beggining if exists. */
-            if (c == ',') {
-                subcell[count++][j] = 0;
-                j = 0;
-                continue;
-            }
-            subcell[count][j++] = c;
-        }
-        subcell[count++][j] = 0;
+        int count = splitUARefs(buffer, subcell);
 
         for (int refs = 0; refs < count; refs++) {
             /* lee referencia a catalogo Durchmusterung */
@@ -845,20 +496,7 @@ void readUA() {
                 int numRefCat = atoi(&subcell[refs][3]);
                 bool signRef = newDecl < 0.0;
                 int declRef = (int) fabs(newDecl);
-            
-                int index = getDMindex(signRef, declRef, numRefCat);
-                if (index == -1) {
-                    bye("Cannot find DM star!");
-                }
-                double dist = 3600.0 * calcAngularDistance(x, y, z, BDstar[index].x, BDstar[index].y, BDstar[index].z);
-                if (dist > MAX_DIST_CROSS) {
-                    printf("%d) Warning: %s is FAR from BD star (dist = %.1f arcsec).\n",
-                        ++errors,
-                        catgName,
-                        dist);
-                    printf("     Register %s: %s\n", catgName, catLine);
-                    writeRegister(index, false);
-                } else checkDM++;
+                checkBDRef(ua.catgName, ua.catLine, false, signRef, declRef, numRefCat, x, y, z, &checkDM, &errors);
             }
 
             /* lee referencia a catalogo Weisse */
@@ -866,26 +504,13 @@ void readUA() {
                 int numRefCat = atoi(&subcell[refs][3]);
 
         	    /* convierte coordenadas a la de WB y calcula rectangulares */
-                newRA = RA;
-                newDecl = Decl;
+                newRA = ua.RA;
+                newDecl = ua.Decl;
                 transform(EPOCH_UA, EPOCH_WB, &newRA, &newDecl);
                 sph2rec(newRA, newDecl, &x, &y, &z);
 
                 int RARef = (int) floor(newRA / 15.0);
-                for (int i = 0; i < countWB; i++) {
-                    if (wbRARef[i] != RARef) continue;
-                    if (wbNumRef[i] != numRefCat) continue;
-                    double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
-                    if (dist > MAX_DIST_CROSS) {
-                        printf("%d) Warning: %s is FAR from WB %dh %d star (dist = %.1f arcsec).\n",
-                            ++errors,
-                            catgName,
-                            RARef,
-                            numRefCat,
-                            dist);
-                        printf("     Register %s: %s\n", catgName, catLine);
-                    } else checkWB++;
-                }
+                checkCrossRefWB(ua.catgName, ua.catLine, true, x, y, z, RARef, numRefCat, &wbList, wbRARef, -1, &checkWB, &errors);
             }
         }
     }
@@ -910,21 +535,15 @@ void readSOM() {
     printf("\n***************************************\n");
     printf("Perform comparison between UA Standards of Magnitude and PPM...\n");
 
-    int countDist = 0;
-    double akkuDistError = 0.0;
+    CrossStats stats;
     int checkDM = 0;
     int checkWB = 0;
-    int errors = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
-    readPPM(false, true, false, false, EPOCH_UA);
-    sortPPM();
-	struct PPMstar_struct *PPMstar = getPPMStruct();
-    int PPMstars = getPPMStars();
+    preparePPM(EPOCH_UA, false);
 
-    FILE *crossPPMStream = openCrossFile("results/cross/cross_som_ppm.csv");
-    FILE *crossSAOStream = openCrossFile("results/cross/cross_som_sao.csv");
-    FILE *crossHDStream = openCrossFile("results/cross/cross_som_hd.csv");
+    FILE *crossPPMStream, *crossSAOStream, *crossHDStream;
+    openCrossSet("som", &crossPPMStream, &crossSAOStream, &crossHDStream);
 
     /* leemos los Standards of Magnitude */
     FILE *stream = fopen("cat/UA_standards.csv", "rt");
@@ -933,68 +552,24 @@ void readSOM() {
 		exit(1);
     }
     while (fgets(buffer, 1023, stream) != NULL) {
-        /* separa la linea CSV en 17 campos:
-           number,name,ra_h,ra_m,ra_s,dec_d,dec_m,mag,BD_num,BD_mag,
-           Lal_num,Lal_mag,WB_num,WB_mag,ARGEL,Albany,HEIS */
         char field[17][32];
-        int nf = 0, j = 0;
-        for (char *p = buffer; nf < 17; p++) {
-            char c = *p;
-            if (c == ',' || c == '\n' || c == '\r' || c == 0) {
-                field[nf][j] = 0;
-                nf++;
-                j = 0;
-                if (c != ',') break;
-            } else if (j < 31) field[nf][j++] = c;
-        }
-        if (nf < 17) continue; /* linea incompleta */
-
-		/* lee numeración como string, p.ej. "34a"/"34b" para las
-           dobles (omite la cabecera) */
-        if (atoi(field[0]) <= 0) continue;
-        snprintf(catName, 20, "SOM %s", field[0]);
+        double RA, Decl;
+        if (!parseSOMLine(buffer, field, catName, catLine, &RA, &Decl)) continue;
 
 		/* lee magnitud */
         float vmag = (float) atof(field[7]);
 
-		/* lee ascension recta B1875.0 */
-        int RAh = atoi(field[2]);
-        int RAm = atoi(field[3]);
-        int RAs = atoi(field[4]);
-        double RA = (double) RAh;
-        RA += ((double) RAm)/60.0;
-        RA += ((double) RAs)/3600.0;
-		RA *= 15.0; /* conversion horas a grados */
-
-		/* lee declinacion B1875.0 (el signo viene en dec_d, p.ej. "-0") */
-        int Decld = atoi(field[5]);
-        if (Decld < 0) Decld = -Decld;
-        double Declm = atof(field[6]);
-        double Decl = (double) Decld;
-        Decl += Declm/60.0;
-		if (field[5][0] == '-') Decl = -Decl;
-
-        snprintf(catLine, 64, "%02dh %02dm %02ds %c%02d°%04.1f'",
-            RAh, RAm, RAs, field[5][0] == '-' ? '-' : '+', Decld, Declm);
-
-        bool ppmFound = false;
-		int ppmIndex = -1;
-		double minDistance = HUGE_NUMBER;
 		/* busca la PPM mas cercana y genera el cruzamiento */
-		double x, y, z;
+		double x, y, z, minDistance;
+		int ppmIndex;
 		sph2rec(RA, Decl, &x, &y, &z);
-		findPPMByCoordinates(x, y, z, Decl, &ppmIndex, &minDistance);
-		if (minDistance < MAX_DIST_CAT_PPM) {
-            akkuDistError += minDistance * minDistance;
-            countDist++;
-            ppmFound = true;
-            writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], vmag, minDistance);
-		}
+        bool ppmFound = crossWithPPM(x, y, z, Decl, vmag, MAX_DIST_CAT_PPM, NULL, catName,
+            crossPPMStream, crossSAOStream, crossHDStream, &ppmIndex, &minDistance, &stats);
 
         /* estrellas brillantes: no hace falta consultar GSC, con PPM alcanza */
         if (!ppmFound) {
             printf("%d) Warning: %s is ALONE (nearest PPM star at %.1f arcsec).\n",
-                ++errors,
+                ++stats.errors,
                 catName,
                 minDistance);
         }
@@ -1012,7 +587,7 @@ void readSOM() {
         int index = getDMindex(signRef, declRef, numRefCat);
         if (index == -1) {
             printf("%d) Warning: %s refers to BD %c%d°%d but it does not exist.\n",
-                ++errors,
+                ++stats.errors,
                 catName,
                 signRef ? '-' : '+',
                 declRef,
@@ -1022,7 +597,7 @@ void readSOM() {
             double dist = 3600.0 * calcAngularDistance(x, y, z, BDstar[index].x, BDstar[index].y, BDstar[index].z);
             if (dist > MAX_DIST_CROSS) {
                 printf("%d) Warning: %s is FAR from BD %c%d°%d star (dist = %.1f arcsec).\n",
-                    ++errors,
+                    ++stats.errors,
                     catName,
                     signRef ? '-' : '+',
                     declRef,
@@ -1035,7 +610,7 @@ void readSOM() {
             double bdMag = atof(field[9]);
             if (fabs(bdMag - BDstar[index].vmag) > 0.1) {
                 printf("%d) Warning: %s reports BD mag %.1f but BD %c%d°%d has mag %.1f.\n",
-                    ++errors,
+                    ++stats.errors,
                     catName,
                     bdMag,
                     signRef ? '-' : '+',
@@ -1061,35 +636,18 @@ void readSOM() {
                la serie de Weisse 1863, cuya numeracion no esta aqui */
             if (newDecl < 15.0) {
                 int RARef = (int) floor(newRA / 15.0);
-                for (int i = 0; i < countWB; i++) {
-                    if (wbRARef[i] != RARef) continue;
-                    if (wbNumRef[i] != numRefCat) continue;
-                    double dist = 3600.0 * calcAngularDistance(x, y, z, wbX[i], wbY[i], wbZ[i]);
-                    if (dist > MAX_DIST_CROSS) {
-                        printf("%d) Warning: %s is FAR from WB %dh %d star (dist = %.1f arcsec).\n",
-                            ++errors,
-                            catName,
-                            RARef,
-                            numRefCat,
-                            dist);
-                        printf("     Register %s: %s\n", catName, catLine);
-                    } else checkWB++;
-                }
+                checkCrossRefWB(catName, catLine, true, x, y, z, RARef, numRefCat, &wbList, wbRARef, -1, &checkWB, &stats.errors);
             }
         }
     }
 	fclose(stream);
-    fclose(crossPPMStream);
-    fclose(crossSAOStream);
-    fclose(crossHDStream);
+    closeCrossSet(crossPPMStream, crossSAOStream, crossHDStream);
 
-    printf("Stars from SOM identified with PPM = %d\n", countDist);
-    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
-        sqrt(akkuDistError / (double)countDist),
-        countDist);
+    printf("Stars from SOM identified with PPM = %d\n", stats.countDist);
+    printRSMEDist(&stats);
     printf("SOM stars properly identified with BD = %d\n", checkDM);
     printf("SOM stars properly identified with WB = %d\n", checkWB);
-    printf("Errors logged = %d\n", errors);
+    printf("Errors logged = %d\n", stats.errors);
 }
 
 /*
