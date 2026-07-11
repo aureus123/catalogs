@@ -62,7 +62,7 @@ cross_south.o: cross_south.cpp
 cross_utils.o: cross_utils.cpp
 	$(CC) $(CCFLAGS) -c $<
 
-cross_gc: cross_gc.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o find_gsc.o
+cross_gc: cross_gc.o read_cd.o read_ppm.o read_gc.o read_cpd.o trig.o misc.o find_gsc.o cross_utils.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(CCLNFLAGS)
 
 cross_gc.o: cross_gc.cpp

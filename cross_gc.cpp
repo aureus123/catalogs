@@ -14,6 +14,7 @@
 #include "trig.h"
 #include "misc.h"
 #include "find_gsc.h"
+#include "cross_utils.h"
 
 #define CURATED true // true if curated CD catalog should be used
 #define PRINT_WARNINGS false // true if print warnings about stars without CD star near them
@@ -23,7 +24,7 @@
  */
 int main(int argc, char** argv)
 {
-    char catName[20], cdName[20], ppmName[20], saoName[20], hdName[20];
+    char catName[20], cdName[20];
 
     printf("CROSS_GC - Compare GC and PPM/CD catalogs.\n");
     printf("Made in 2025 by Daniel Severin.\n");
@@ -37,10 +38,7 @@ int main(int argc, char** argv)
     struct CPDstar_struct *CPDstar = getCPDStruct();
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
-    readPPM(false, true, false, false, 1875.0);
-    sortPPM();
-	struct PPMstar_struct *PPMstar = getPPMStruct();
-    int PPMstars = getPPMStars();
+    struct PPMstar_struct *PPMstar = preparePPM(1875.0, false);
 
     /* leemos catalogo GC */
 	readGC();
@@ -52,20 +50,12 @@ int main(int argc, char** argv)
 
 	FILE *crossCDStream = openCrossFile("results/cross/cross_gc_cd.csv");
 	FILE *crossCPDStream = openCrossFile("results/cross/cross_gc_cpd.csv");
-	FILE *crossPPMStream = openCrossFile("results/cross/cross_gc_ppm.csv");
-	FILE *crossSAOStream = openCrossFile("results/cross/cross_gc_sao.csv");
-	FILE *crossHDStream = openCrossFile("results/cross/cross_gc_hd.csv");
+    FILE *crossPPMStream, *crossSAOStream, *crossHDStream;
+    openCrossSet("gc", &crossPPMStream, &crossSAOStream, &crossHDStream);
 	FILE *unidentifiedStream = openUnidentifiedFile("results/cross/gc_unidentified.csv");
     FILE *catalogStream = openCatalogFile("likelihood/cat1875/gc.csv");
 
-    int countDist = 0;
-    double akkuDistError = 0.0;
-    int countDelta = 0;
-    double akkuDeltaError = 0.0;
-    int countGSC = 0;
-    int countCD = 0;
-    int countCPD = 0;
-    int errors = 0;
+    CrossStats stats;
     for (int gcIndex = 0; gcIndex < GCstars; gcIndex++) {
         double ra = GCstar[gcIndex].RA1875;
         double decl = GCstar[gcIndex].Decl1875;
@@ -79,7 +69,7 @@ int main(int argc, char** argv)
             double diff = fabs(preRA - realPreRA);
             if (diff > 0.0099) {
                 printf("%d) Warning: GC %d reports %.3f on precession RA but it should be %.3f (diff=%.3f).\n",
-                    ++errors,
+                    ++stats.errors,
                     gcRef,
                     preRA,
                     realPreRA,
@@ -94,7 +84,7 @@ int main(int argc, char** argv)
             double diff = fabs(preDecl - realPreDecl);
             if (diff > 0.099) {
                 printf("%d) Warning: GC %d reports %.3f on precession DECL but it should be %.3f (diff=%.3f).\n",
-                    ++errors,
+                    ++stats.errors,
                     gcRef,
                     preDecl,
                     realPreDecl,
@@ -120,20 +110,20 @@ int main(int argc, char** argv)
                 float vmag = compGCmagToVmag(gcVmag); // perform magnitude transformation
 				float delta = fabs(vmag - ppmVmag);
 				if (delta < MAX_MAGNITUDE) {
-                    akkuDeltaError += delta * delta;
-                    countDelta++;
+                    stats.akkuDeltaError += delta * delta;
+                    stats.countDelta++;
                 } else {
 					printf("%d) Warning: GC has a near PPM %d star (vmag = %.1f) with a different magnitude (delta = %.1f).\n",
-                        ++errors,
+                        ++stats.errors,
 						PPMstar[ppmIndex].ppmRef,
 						ppmVmag,
-						delta);	
+						delta);
                     writeRegisterGC(gcIndex);
 				}
 			}
 
-            akkuDistError += minDistance * minDistance;
-            countDist++;
+            stats.akkuDistError += minDistance * minDistance;
+            stats.countDist++;
             ppmFound = true;
 
             writePPMCrossEntry(crossPPMStream, crossSAOStream, crossHDStream, catName, &PPMstar[ppmIndex], gcVmag, minDistance);
@@ -145,15 +135,7 @@ int main(int argc, char** argv)
 		}
 
         /* si no encuentra una PPM cercana, prueba con GSC */
-        bool gscFound = false;
-        if (!ppmFound) {
-            gscFound = findGSCStar(ra, decl, 1875.0, MAX_DIST_GSC);
-            if (gscFound) {
-			    snprintf(cdName, 20, "GSC %s", getGSCId());
-			    writeCrossEntry(crossPPMStream, catName, cdName, gcVmag, getDist());
-                countGSC++;
-            }
-        }
+        bool gscFound = tryGSC(ppmFound, ra, decl, 1875.0, crossPPMStream, catName, gcVmag, &stats);
 
         bool cpdFound = false;
         /* busca la CPD mas cercana y genera el cruzamiento */
@@ -162,7 +144,7 @@ int main(int argc, char** argv)
             minDistance = HUGE_NUMBER;
             findCPDByCoordinates(x, y, z, decl, &cpdIndex, &minDistance);
 			if (minDistance < MAX_DIST_CPD) {
-                countCPD++;
+                stats.countCPD++;
                 cpdFound = true;
 
 			    snprintf(cdName, 20, "CPD %d°%d", CPDstar[cpdIndex].declRef, CPDstar[cpdIndex].numRef);
@@ -174,7 +156,7 @@ int main(int argc, char** argv)
 				}
 			}
         }
-		
+
         bool cdFound = false;
 		/* busca la CD mas cercana y genera el cruzamiento */
 		if (GCstar[gcIndex].Decld >= 22) {
@@ -187,14 +169,14 @@ int main(int argc, char** argv)
 				    float delta = fabs(gcVmag - cdVmag);
 				    if (delta >= MAX_MAGNITUDE) {
 					    printf("%d) Warning: GC has a near CD with a different magnitude (delta = %.1f).\n",
-                            ++errors,
+                            ++stats.errors,
                             delta);
                         writeRegisterGC(gcIndex);
 					    writeRegister(cdIndex, false);
 				    }
 			    }
 
-                countCD++;
+                stats.countCD++;
                 cdFound = true;
 
 			    snprintf(cdName, 20, "CD %d°%d", CDstar[cdIndex].declRef, CDstar[cdIndex].numRef);
@@ -209,9 +191,9 @@ int main(int argc, char** argv)
 
         if (!ppmFound && !cdFound && !cpdFound) {
             if (gscFound) {
-                fprintf(unidentifiedStream, "%s,%.8f,%.8f,%.8f\n", catName, x, y, z);
+                writeUnidentified(unidentifiedStream, catName, x, y, z);
             } else {
-                printf("%d) Warning: GC %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++errors, gcRef);
+                printf("%d) Warning: GC %d is ALONE (no PPM / CD / CPD / GSC star near it).\n", ++stats.errors, gcRef);
                 writeRegisterGC(gcIndex);
                 logCauses(catName, true,
                     GCstar[gcIndex].cum, GCstar[gcIndex].neb,
@@ -223,21 +205,15 @@ int main(int argc, char** argv)
 	}
     fclose(unidentifiedStream);
     fclose(catalogStream);
-	fclose(crossPPMStream);
-	fclose(crossSAOStream);
-	fclose(crossHDStream);
+    closeCrossSet(crossPPMStream, crossSAOStream, crossHDStream);
 	fclose(crossCPDStream);
 	fclose(crossCDStream);
 
-    
-    printf("Stars from GC identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n", countDist,  countGSC, countCD, countCPD);
-    printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
-        sqrt(akkuDistError / (double)countDist),
-        countDist);
-    printf("RSME of visual magnitude = %.5f  among a total of %d stars\n",
-        sqrt(akkuDeltaError / (double)countDelta),
-        countDelta);
-    printf("Errors logged = %d\n", errors);
+    printf("Stars from GC identified with PPM = %d, GSC-PPM = %d, CD = %d and CPD = %d\n",
+        stats.countDist, stats.countGSC, stats.countCD, stats.countCPD);
+    printRSMEDist(&stats);
+    printRSMEMag(&stats);
+    printf("Errors logged = %d\n", stats.errors);
 
     // Also, generate a file with all GC double stars
     double *gcX   = (double*) malloc(GCstars * sizeof(double));
