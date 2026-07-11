@@ -59,10 +59,8 @@ int main(int argc, char** argv)
     int CDstars = getDMStars();
 
     /* revisamos la identificación cruzada y generamos planillas */
-    FILE *posStream, *magStream, *crossPPMStreamV1, *crossPPMStreamV2;
+    FILE *crossPPMStreamV1, *crossPPMStreamV2;
     FILE *crossPPMStreamV3, *crossPPMStreamV4, *crossPPMStreamV5;
-    posStream = openPositionFile("results/table_pos_ppm.csv");
-    magStream = openMagnitudeFile("results/table_mag_ppm.csv");
     if (allSky) {
         /* si cubrimos todo el cielo, generamos planillas para cada volumen */
         crossPPMStreamV1 = openCrossFile("results/cross/cross_cd_vol1_ppm.csv");
@@ -108,12 +106,6 @@ int main(int argc, char** argv)
                 dist);
             writeRegister(cdIndex, true);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            writePositionEntry(posStream,
-                indexError,
-                CDstar[cdIndex].declRef,
-                CDstar[cdIndex].numRef,
-                ppmName,
-                dist);
             continue;
         }
         goodStarsPosition++;
@@ -143,12 +135,6 @@ int main(int argc, char** argv)
                 delta);
             writeRegister(cdIndex, false);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            writeMagnitudeEntry(magStream,
-                indexError,
-                CDstar[cdIndex].declRef,
-                CDstar[cdIndex].numRef,
-                ppmName,
-                delta);
             continue;
         }
 
@@ -199,8 +185,6 @@ int main(int argc, char** argv)
     }
     fclose(ppmCatStream);
 
-    fclose(magStream);
-    fclose(posStream);
     printf("Total errors: %d (position: %d, mag: %d); errors without warning = %d, PPM with problems = %d\n",
         indexError, maxDistError, magDiffError, totalErrorsMinusDoubles,  problematic);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",

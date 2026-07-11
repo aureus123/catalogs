@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <string.h>
 #include "read_dm.h"
 #include "read_sd.h"
 #include "trig.h"
@@ -25,8 +24,6 @@ int main(int argc, char** argv)
     printf("COMPARE_SD - Compare CD and SD catalogs.\n");
     printf("Made in 2024 by Daniel Severin.\n");
 
-    char sdName[20];
-
     /* leemos catalogo CD */
     readDM("cat/cd.txt");
     struct DMstar_struct *CDstar = getDMStruct();
@@ -36,11 +33,7 @@ int main(int argc, char** argv)
     int SDstars = getSDStars();
     struct SDstar_struct *SDstar = getSDStruct();
 
-    /* revisamos la identificación cruzada y generamos dos planillas */
-    FILE *posStream, *magStream;
-    posStream = openPositionFile("results/table_pos_sd.csv");
-    magStream = openMagnitudeFile("results/table_mag_sd.csv");
-
+    /* revisamos la identificación cruzada */
     int dropDistError = 0;
     int maxDistError = 0;
     int magDiffError = 0;
@@ -77,13 +70,6 @@ int main(int argc, char** argv)
                 dist);
             writeRegister(cdIndex, true);
             writeRegisterSD(i);
-            snprintf(sdName, 20, "SD -22°%d", SDstar[i].numRef);
-            writePositionEntry(posStream,
-                indexError,
-                CDstar[cdIndex].declRef,
-                CDstar[cdIndex].numRef,
-                sdName,
-                dist);
             continue;
         }
         goodStarsPosition++;
@@ -107,20 +93,11 @@ int main(int argc, char** argv)
                 delta);
             writeRegister(cdIndex, false);
             writeRegisterSD(i);
-            snprintf(sdName, 20, "SD -22°%d", SDstar[i].numRef);
-            writeMagnitudeEntry(magStream,
-                indexError,
-                CDstar[cdIndex].declRef,
-                CDstar[cdIndex].numRef,
-                sdName,
-                delta);
             continue;
         }
         goodStarsMagnitude++;
         akkuDeltaError += delta * delta;
     }
-    fclose(magStream);
-    fclose(posStream);
     printf("Total errors: %d (position: %d, mag: %d), Drops: %d\n",
         indexError, maxDistError, magDiffError, dropDistError);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",

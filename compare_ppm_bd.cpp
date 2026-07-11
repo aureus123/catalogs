@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <string.h>
 #include "read_dm.h"
 #include "read_ppm.h"
 #include "trig.h"
@@ -25,8 +24,6 @@ int main(int argc, char** argv)
     printf("COMPARE_PPM_BD - Compare BD and PPM catalogs.\n");
     printf("Made in 2024 by Daniel Severin.\n");
 
-    char ppmName[20];
-
     /* leemos catalogo BD (primer volumen) */
     readDM(CURATED ? "cat/bd_vol1_curated.txt" : "cat/bd_vol1.txt");
     struct DMstar_struct *BDstar = getDMStruct();
@@ -36,11 +33,7 @@ int main(int argc, char** argv)
     int PPMstars = getPPMStars();
     struct PPMstar_struct *PPMstar = getPPMStruct();
 
-    /* revisamos la identificación cruzada y generamos dos planillas */
-    FILE *posStream, *magStream;
-    posStream = openPositionFile("results/table_pos_bd.csv");
-    magStream = openMagnitudeFile("results/table_mag_bd.csv");
-
+    /* revisamos la identificación cruzada */
     int maxDistError = 0;
     int magDiffError = 0;
     int totalErrorsMinusDoubles = 0;
@@ -73,13 +66,6 @@ int main(int argc, char** argv)
                 dist);
             writeRegister(bdIndex, true);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            snprintf(ppmName, 20, "PPM %d", PPMstar[i].ppmRef);
-            writePositionEntry(posStream,
-                indexError,
-                BDstar[bdIndex].declRef,
-                BDstar[bdIndex].numRef,
-                ppmName,
-                dist);
             continue;
         }
         goodStarsPosition++;
@@ -104,20 +90,11 @@ int main(int argc, char** argv)
                 delta);
             writeRegister(bdIndex, false);
             if (!revise(i)) totalErrorsMinusDoubles++;
-            snprintf(ppmName, 20, "PPM %d", PPMstar[i].ppmRef);
-            writeMagnitudeEntry(magStream,
-                indexError,
-                BDstar[bdIndex].declRef,
-                BDstar[bdIndex].numRef,
-                ppmName,
-                delta);
             continue;
         }
         goodStarsMagnitude++;
         akkuDeltaError += delta * delta;
     }
-    fclose(magStream);
-    fclose(posStream);
     printf("Total errors: %d (position: %d, mag: %d); errors without warning = %d, PPM with problems = %d\n",
         indexError, maxDistError, magDiffError, totalErrorsMinusDoubles,  problematic);
     printf("RSME of distance (arcsec) = %.2f  among a total of %d stars\n",
