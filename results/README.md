@@ -78,6 +78,13 @@ reported for the comparison of the parameter with the largest difference:
 | CD -22°9452 | RAs | 35.3 | 35.2 |  |  |
 | CD -22°9452 | DEm | 29.9 | 6.5 |  |  |
 
+For declination -22, we also found the following error by comparing CD and CPD through catalog 4011:
+
+| Star | Parameter | current | corrected | dist1 | dist2 |
+| --- | --- | --- | --- | --- | --- |
+| CD -22°13069 | DEm | 25.6 | 52.6 | 1620 | 1698 |
+
+
 We now enumerate those errors found by comparing CD (first volume) and PPM.
 Those swaps (i.e. two or more consecutive stars in a wrong order) are given after the following table:
 
