@@ -83,10 +83,11 @@ Some catalogs in this folder were sanitized (i.e. those with the "†") but thei
 - gc : 3 registers
 - weiss : 3 registers
 - gilliss : 34 registers
-- usno : 15 registers
+- usno : 19 registers
 - corda : 17 registers
 - cordc : 7 registers
-- stone1: 2 register
+- stone1: 3 registers
+- stone2: 1 register
 - thome1881: 4 registers
 - thome1882: 1 register
 - thome1884: 2 registers
