@@ -47,7 +47,7 @@ Results and logs are in the [results](results) folder.
 - Python scripts: *find_const*, *gen_atlas* and *keep_nearest*, *cross_likelihood*
 (you can see description of them in the comments of their source code).
 - Folder *cd*: Contains footnote extractions from CD (color and double stars). Declinations -22 to -24 were manually extracted, while -25 to -31 were extracted by IA, see [findings.md](scans/findings.md).
-- Folder *scans*: Contains Python scripts and scan extractions from CD (footnotes) and GC (references), see [findings.md](scans/findings.md.
+- Folder *scans*: Contains Python scripts and scan extractions from CD (footnotes) and GC (references), see [findings.md](scans/findings.md).
 
 ### Requirements
 
@@ -94,9 +94,12 @@ catalogs (OA and Lacaille):
 | WB | Weisse | 1825 | 31022 | 7.52 |
 | St | Stone | 1880 | 12414 | 1.48 |
 | U | Yarnall-Frisby USNO 3rd. edition | 1860 | 10495 | 2.71 |
-| G | Gilliss | 1850 | 15773 | 2.87 |
+| G | Gilliss (16748 stars) | 1850 | 15773 | 2.87 |
+| G | Gilliss (1963 stars) | 1850 | 1887 | 3.69 |
 | B | Brisbane | 1825 | 6570 | 21.99 |
 | BAC | British Association Catalogue | 1850 | 8205 | 10.62 |
+
+Note: "OA" and "G" are abbreviations used in more than one catalog (Oeltzen-Argelander North and South, and Gilliss catalogs, resp.).
 
 ### Wishlist
 

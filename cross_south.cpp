@@ -24,6 +24,7 @@
 #define MAXTAYLORSTAR 11100
 #define MAXUSNOSTAR 11000
 #define MAXGILLISSSTAR 17000
+#define MAXGIL1963STAR 2000
 #define MAXZCSTAR 15000
 #define MAXCLSTAR 100
 #define EPOCH_GC2 1900.0
@@ -35,6 +36,7 @@
 #define EPOCH_USNO 1860.0
 #define EPOCH_UA 1875.0
 #define EPOCH_GILLISS 1850.0
+#define EPOCH_GIL1963 1850.0
 #define EPOCH_CL 1872.0
 #define MAX_DIST_OA_PPM 45.0
 #define MAX_DIST_LAL_PPM 90.0
@@ -46,6 +48,7 @@
 #define MAX_DIST_USNO_CPD 30.0
 #define MAX_DIST_TH_CPD 30.0
 #define MAX_DIST_UA_PPM 45.0
+#define MAX_DIST_GI1963_PPM 30.0
 #define MAX_DIST_ZC_ZC 15.0
 #define CURATED true // true if curated CD catalog should be used
 
@@ -105,6 +108,13 @@ StarList usnoList = {&countUsno, usnoRef, usnoX, usnoY, usnoZ};
 double gilX[MAXGILLISSSTAR], gilY[MAXGILLISSSTAR], gilZ[MAXGILLISSSTAR], gilMag[MAXGILLISSSTAR];
 int gilRef[MAXGILLISSSTAR];
 int countGil = 0;
+
+// Here, we save 1875.0 coordinates of the 1963 stars of Gilliss in rectangular form
+// (catalogo distinto al de las zonas de Santiago leido por readGilliss)
+double gi1963X[MAXGIL1963STAR], gi1963Y[MAXGIL1963STAR], gi1963Z[MAXGIL1963STAR], gi1963Mag[MAXGIL1963STAR];
+int gi1963Ref[MAXGIL1963STAR];
+int countGi1963 = 0;
+StarList gi1963List = {&countGi1963, gi1963Ref, gi1963X, gi1963Y, gi1963Z};
 
 // Here, we save 1875.0 coordinates of Gould's ZC stars in rectangular form
 double zcX[MAXZCSTAR], zcY[MAXZCSTAR], zcZ[MAXZCSTAR];
@@ -1094,7 +1104,8 @@ void readUSNO() {
  * calcula la distancia entre la estrella GC (1a columna; la 2a columna -magnitud-
  * se ignora) y la estrella de referencia (3a columna) en los catalogs
  * Oeltzen-Argelander (OA.), Lalande (Ll.), Brisbane (B.), Stone (St.),
- * Lacaille (L.), Taylor (T.), Yarnall/USNO (Y.) y Circumpolar List (CL.).
+ * Lacaille (L.), Taylor (T.), Yarnall/USNO (Y.), Circumpolar List (CL.) y
+ * Gilliss de 1963 estrellas (G.).
  * Otras designaciones se ignoran.
  */
 void readGCScanned() {
@@ -1105,7 +1116,7 @@ void readGCScanned() {
 
     int errors = 0;
     int checkLac = 0, checkLal = 0, checkOA = 0, checkTaylor = 0;
-    int checkUSNO = 0, checkBri = 0, checkSt = 0, checkCL = 0;
+    int checkUSNO = 0, checkBri = 0, checkSt = 0, checkCL = 0, checkGi1963 = 0;
     int countStars = 0, countRefs = 0;
     int countZCsaved = 0;
 
@@ -1160,6 +1171,9 @@ void readGCScanned() {
             } else if (!strncmp(ref, "CL.", 3)) {
                 countRefs++;
                 checkCrossRef(catgName, NULL, "CL", x, y, z, atoi(&ref[3]), &clList, false, gcIndex, &checkCL, &errors);
+            } else if (!strncmp(ref, "G.", 2)) {
+                countRefs++;
+                checkCrossRef(catgName, NULL, "G", x, y, z, atoi(&ref[2]), &gi1963List, false, gcIndex, &checkGi1963, &errors);
             } else if (!strncmp(ref, "ZC.", 3)) {
                 /* guardamos la estrella en el Zone Catalog de Gould. */
                 int numRefCat = atoi(&ref[3]);
@@ -1217,17 +1231,137 @@ void readGCScanned() {
                     cpdFound, cpdIndex, nearestCPDDistance);
                 countZCsaved++;
             }
-            /* otras designaciones (WB, UA, F, P, G, M, Melb.I, nombres, ...) se ignoran */
+            /* otras designaciones (WB, UA, F, P, M, Melb.I, nombres, ...) se ignoran */
         }
         fclose(stream);
     }
 
-    printf("Scanned GC rows with a reference = %d; references to checked catalogs (OA/Ll/B/St/L/T/Y/CL) = %d\n",
+    printf("Scanned GC rows with a reference = %d; references to checked catalogs (OA/Ll/B/St/L/T/Y/CL/G) = %d\n",
         countStars, countRefs);
-    printf("Cross-checks OK: Lacaille = %d, Brisbane = %d, Lalande = %d, Taylor = %d, OA = %d, Stone = %d, USNO = %d, CL = %d\n",
-        checkLac, checkBri, checkLal, checkTaylor, checkOA, checkSt, checkUSNO, checkCL);
+    printf("Cross-checks OK: Lacaille = %d, Brisbane = %d, Lalande = %d, Taylor = %d, OA = %d, Stone = %d, USNO = %d, CL = %d, Gilliss = %d\n",
+        checkLac, checkBri, checkLal, checkTaylor, checkOA, checkSt, checkUSNO, checkCL, checkGi1963);
     printf("ZC (Gould's Zone Catalog) stars saved = %d\n", countZCsaved);
     printf("Errors logged = %d\n", errors);
+}
+
+/*
+ * readGil1963 - lee y cruza el catalogo de 1963 estrellas de J. M. Gilliss
+ * (reducidas a 1850, observadas en Santiago de Chile durante 1850-52 por la
+ *  US Naval Astronomical Expedition; ver Washington Observations 1868, Ap. I)
+ * Es un catalogo distinto al de las zonas de Santiago leido por readGilliss.
+ * (ya se deben haber leidos los catalogs Brisbane y Lacaille)
+ * tambien revisa referencias cruzadas a Lacaille y Brisbane
+ */
+void readGil1963() {
+    char buffer[1024], cell[256], catName[20];
+    char catLine[64];
+
+    printf("\n***************************************\n");
+    printf("Perform comparison between Gilliss (1963 stars) and PPM...\n");
+
+    FILE *crossPPMStream, *crossSAOStream, *crossHDStream;
+    openCrossSet("gil1963", &crossPPMStream, &crossSAOStream, &crossHDStream);
+    FILE *catalogStream = openCatalogFile("likelihood/cat1875/gil1963.csv");
+
+    CrossStats stats;
+    int checkLac = 0;
+    int checkBri = 0;
+
+    /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
+    struct PPMstar_struct *PPMstar = preparePPM(EPOCH_GIL1963, false);
+
+    /* leemos catalogo Gilliss de 1963 estrellas */
+    FILE *stream = fopen("cat/gil1963.txt", "rt");
+    if (stream == NULL) {
+        perror("Cannot read gil1963.txt");
+		exit(1);
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+        /* descarta nebulas */
+        readField(buffer, cell, 26, 1);
+        if (cell[0] == 'N') continue;
+
+        /* descarta si faltan los segundos de RA o de declinacion
+           (la linea puede incluso terminar antes de esas columnas) */
+        readField(buffer, cell, 31, 1);
+        if (cell[0] < '0' || cell[0] > '9') continue;
+        readField(buffer, cell, 54, 1);
+        if (cell[0] < '0' || cell[0] > '9') continue;
+
+		/* lee numeración catálogo Gilliss */
+		readField(buffer, cell, 1, 4);
+		int giRef = atoi(cell);
+        snprintf(catName, 20, "G %d", giRef);
+
+		/* lee ascension recta B1850.0 */
+        int RAh, RAm, RAs;
+        double RA = readRAField(buffer, 27, &RAh, &RAm, &RAs);
+
+		/* lee declinacion B1850.0 (el catalogo incluye estrellas del norte) */
+        int Decld, Declm, Decls;
+        double Decl = readDeclField(buffer, 50, 2, 52, 54, 3, 10.0, &Decld, &Declm, &Decls);
+		readField(buffer, cell, 49, 1);
+		if (cell[0] == '-') Decl = -Decl;
+
+        formatCatLine(catLine, RAh, RAm, RAs, cell[0], Decld, Declm, Decls);
+
+		/* lee magnitud (entero en 23-24 y decima en 25); si es 0 indica ausencia */
+        float vmag = 0.0;
+		readField(buffer, cell, 23, 2);
+        if (cell[0] != ' ') {
+            vmag = (float) atoi(cell);
+            readField(buffer, cell, 25, 1);
+            if (cell[0] != ' ') vmag += ((float) atoi(cell)) / 10.0;
+        }
+
+		/* busca la PPM mas cercana y genera el cruzamiento */
+        double x, y, z, minDistance;
+        int ppmIndex;
+        sph2rec(RA, Decl, &x, &y, &z);
+        bool ppmFound = crossWithPPM(x, y, z, Decl, vmag, MAX_DIST_GI1963_PPM, catName, catName,
+            crossPPMStream, crossSAOStream, crossHDStream, &ppmIndex, &minDistance, &stats);
+        double nearestPPMDistance = minDistance;
+
+        /* si no encuentra una PPM cercana, prueba con GSC */
+        bool gscFound = tryGSC(ppmFound, RA, Decl, EPOCH_GIL1963, crossPPMStream, catName, vmag, &stats);
+
+	    /* convierte coordenadas a 1875.0 y calcula rectangulares */
+        double RA1875 = RA;
+        double Decl1875 = Decl;
+        transform(EPOCH_GIL1963, 1875.0, &RA1875, &Decl1875);
+        sph2rec(RA1875, Decl1875, &x, &y, &z);
+
+        if (!ppmFound && !gscFound && nearestPPMDistance > MAX_DIST_PPM_FAR) {
+            warnAlonePPMGSC(&stats.errors, catName, catName,
+                RAs, Decl1875, Decls, PPMstar[ppmIndex].ppmRef, nearestPPMDistance);
+        }
+
+        /* lee referencia numerica y referencia a catalogo (que queda en "cell");
+           las demas referencias (BAC, BES, GRE, HC, RUM, WAS) se ignoran */
+		readField(buffer, cell, 18, 5);
+        int numRefCat = atoi(cell);
+		readField(buffer, cell, 15, 3);
+
+        if (!strncmp(cell, "LAC", 3))
+            checkCrossRef(catName, catLine, "L", x, y, z, numRefCat, &lacList, false, -1, &checkLac, &stats.errors);
+        if (!strncmp(cell, "BRI", 3))
+            checkCrossRef(catName, catLine, "B", x, y, z, numRefCat, &briList, true, -1, &checkBri, &stats.errors);
+
+        /* la almacenamos para futuras identificaciones */
+        storeStar(&countGi1963, MAXGIL1963STAR, "Gilliss 1963", gi1963Ref, gi1963X, gi1963Y, gi1963Z,
+            gi1963Mag, giRef, x, y, z, vmag);
+        writeCatalogFile(catalogStream, catName, x, y, z, vmag);
+    }
+    fclose(stream);
+    fclose(catalogStream);
+    closeCrossSet(crossPPMStream, crossSAOStream, crossHDStream);
+
+    printf("Available Gilliss = %d\n", countGi1963);
+    printf("Stars from Gilliss with Lacaille = %d and Brisbane = %d\n", checkLac, checkBri);
+    printf("Stars from Gilliss identified with PPM = %d and GSC-PPM = %d\n", stats.countDist, stats.countGSC);
+    printRSMEDist(&stats);
+    printRSMEMag(&stats);
+    printf("Errors logged = %d\n", stats.errors);
 }
 
 /*
@@ -1298,7 +1432,7 @@ static void checkUACatalogRef(char *buffer, int col, bool isHD, char *catName, d
 
 /*
  * readUA - lee y cruza Uranometria Argentina
- * (ya se deben haber leidos los catalogs CD, CPD, Weiss, Brisbane, Stone y Yarnall)
+ * (ya se deben haber leidos los catalogs CD, CPD, G, Weiss, Brisbane, Stone y Yarnall)
  * tambien revisa referencias cruzadas; no tiene en cuenta magnitudes
  */
 void readUA() {
@@ -1320,6 +1454,7 @@ void readUA() {
     int checkTaylor = 0;
     int checkUSNO = 0;
     int checkBri = 0;
+    int checkGi1963 = 0;
     int countUA = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
@@ -1436,6 +1571,8 @@ void readUA() {
                 checkCrossRef(ua.catgName, ua.catLine, "OA", x, y, z, atoi(&subcell[refs][3]), &oaList, false, -1, &checkOA, &stats.errors);
             if (!strncmp(subcell[refs], "Y.", 2))
                 checkYarnallRef(ua.catgName, ua.catLine, atoi(&subcell[refs][2]), x, y, z, false, -1, &usnoList, &checkUSNO, &stats.errors);
+            if (!strncmp(subcell[refs], "G.", 2))
+                checkCrossRef(ua.catgName, ua.catLine, "G", x, y, z, atoi(&subcell[refs][2]), &gi1963List, false, -1, &checkGi1963, &stats.errors);
         }
 
         if (!ppmFound && !cdFound && !cpdFound) {
@@ -1463,8 +1600,8 @@ void readUA() {
 	fclose(crossCDStream);
 
     printf("Available UA stars = %d\n", countUA);
-    printf("Stars from UA with Lacaille = %d, Brisbane = %d, Lalande = %d, Taylor = %d, OA = %d and USNO = %d\n",
-        checkLac, checkBri, checkLal, checkTaylor, checkOA, checkUSNO);
+    printf("Stars from UA with Lacaille = %d, Brisbane = %d, Lalande = %d, Taylor = %d, OA = %d, USNO = %d and Gilliss = %d\n",
+        checkLac, checkBri, checkLal, checkTaylor, checkOA, checkUSNO, checkGi1963);
     printf("Stars from UA identified with PPM = %d, CD = %d and CPD = %d\n", stats.countDist, stats.countCD, stats.countCPD);
     printRSMEDist(&stats);
     printf("Errors logged = %d\n", stats.errors);
@@ -1866,6 +2003,9 @@ int main(int argc, char** argv)
     /* leemos, cruzamos y revisamos identificaciones de Yarnall */
     readUSNO();
     makeDoubles(countUsno, usnoRef, usnoX, usnoY, usnoZ, usnoMag, "U", "results/doubles/usno.csv");
+
+    /* leemos y cruzamos el catalogo de 1963 estrellas de Gilliss */
+    readGil1963();
 
     /* leemos, cruzamos y revisamos Uranometria Argentina */
     readUA();

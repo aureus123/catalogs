@@ -48,6 +48,8 @@ to 1879 from _GAVO Data Center_
 - gilliss †: Gilliss, A catalogue of 16748 southern stars deduced by the
 United States Naval Observatory from the zone observations made at
 Santiago de Chile, from _GAVO Data Center_
+- gil1963 †: J. M. Gilliss, Catalogue of 1963 stars reduced to 1850 from
+observations made at Santiago de Chile during the years 1850-52, from _GAVO Data Center_
 - oarn : Oeltzen-Argelander's Zonen-Beobachtungen vom 45. bis 80. Grade noerdlicher Declination in mittleren Positionen fuer 1842.0, from _GAVO Data Center_
 - bac : F. Baily, Catalogue of stars of the British Association for the advancement of science, containing 8377 fixed stars reduced to
 January 1, 1850, from _GAVO Data Center_
@@ -83,6 +85,7 @@ Some catalogs in this folder were sanitized (i.e. those with the "†") but thei
 - gc : 3 registers
 - weiss : 3 registers
 - gilliss : 34 registers
+- gil1963 : 3 registers
 - usno : 19 registers
 - corda : 17 registers
 - cordc : 7 registers
