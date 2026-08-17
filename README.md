@@ -84,8 +84,8 @@ catalogs (OA and Lacaille):
 | GC | Catálogo General Argentino | 1875 | 31706 | 1.96 |
 | G2 | Segundo Cat. General Argentino | 1900 | 5357 | 2.84 |
 | T 1881 | Resultados XV, pg. 55-74 | 1881 | 739 | 2.52 |
-| T 1882 | Resultados XV, pg. 140-164 | 1882 | 1259 | 2.43 |
-| T 1883 | Resultados XV, pg. 181-184 | 1883 | 160 | 2.62 |
+| T 1882 | Resultados XV, pg. 140-164 | 1882 | 1266 | 2.43 |
+| T 1883 | Resultados XV, pg. 181-184 | 1883 | 161 | 2.61 |
 | T 1884 | Resultados XV, pg. 232-249 | 1884 | 658 | 1.99 |
 | Lal | Lalande | 1800 | 47000 | 7.35 |
 | T | Taylor General Catalogue | 1835 | 10944 | 4.19 |

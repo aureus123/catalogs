@@ -57,7 +57,7 @@ January 1, 1850, from _GAVO Data Center_
 - wb : M. Weisse, Positiones Mediae Stellarum Fixarum, in Zonis Regiomontanis a Besselio inter -15° et +15° declinationis observatarum, ad 1825 reductae, from _GAVO Data Center_
 - thome1881 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 55-74, from _GAVO Data Center_
 - thome1882 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 140-164, from _GAVO Data Center_
-- thome1883 : Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 181-184, from _GAVO Data Center_
+- thome1883 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 181-184, from _GAVO Data Center_
 - thome1884 †: Resultados del Observatorio Nacional Argentino, Tomo XV, pg. 232-249, from _GAVO Data Center_
 - 4005 †: Table of Correspondences BD/CD/CPD (Jung, Bischoff 1971) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/5)
 - 4011 †: Correspondences CD/CPD, Zones -18 to -39 (Bonnet) from _NASA-ADC CD-ROMs_, also on _Vizier_ (code IV/11)
@@ -91,6 +91,7 @@ Some catalogs in this folder were sanitized (i.e. those with the "†") but thei
 - cordc : 7 registers
 - stone1: 3 registers
 - stone2: 1 register
-- thome1881: 4 registers
-- thome1882: 1 register
-- thome1884: 2 registers
+- thome1881: 6 registers
+- thome1882: 10 registers
+- thome1883: 2 registers
+- thome1884: 4 registers

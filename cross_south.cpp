@@ -1682,6 +1682,14 @@ void readThome(double epoch, const char *filename, int correction) {
     int checkCL = 0;
     int checkGi1963 = 0;
 
+    /* constantes de precesion de Struve y Peters para la epoca del catalogo, segun
+     * Yarnall-Frisby (3ra. ed.), pag. XXIII:
+     *   m = 3s.07177 + 0s.000019 (y - 1850)
+     *   n = 20".0564 - 0".000086 (y - 1850) */
+    double coefDecl = 20.0564 - 0.000086 * (epoch - 1850.0);
+    double baseRA = 3.07177 + 0.000019 * (epoch - 1850.0);
+    double factorRA = coefDecl / 15.0;
+
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
     struct PPMstar_struct *PPMstar = preparePPM(epoch, false);
 
@@ -1711,6 +1719,19 @@ void readThome(double epoch, const char *filename, int correction) {
 		float vmag = atof(cell)/10.0;
 
         snprintf(srcName, 24, "T %.0f %d", epoch, numRef);
+
+        /* revisa las precesiones anuales impresas contra las calculadas a partir de la
+         * posicion (constantes de Struve/Peters interpoladas linealmente a la epoca;
+         * ver "baseRA", "factorRA" y "coefDecl" mas arriba).
+         * La tolerancia en AR crece con el tamaño de la precesion porque cerca del polo
+         * la formula de primer orden m + n sen(a) tan(d) ya no alcanza: las estrellas de
+         * la secuencia polar (sigma Oct, B3 Oct, chi Oct) se apartan hasta 0.13s. */
+        readFieldSanitized(buffer, cell, 30 + correction, 7);
+        double preRA = atof(cell) / 1000.0;
+        checkPrecessionRA(preRA, srcName, catLine, RA, Decl, baseRA, factorRA,
+            0.0099 + 0.002 * fabs(preRA - baseRA), &stats.errors);
+        readFieldSanitized(buffer, cell, 54 + correction, 6);
+        checkPrecessionDecl(atof(cell) / 1000.0, srcName, catLine, RA, coefDecl, 0.099, &stats.errors);
 
 		/* busca la PPM mas cercana */
         double x, y, z, minDistance;

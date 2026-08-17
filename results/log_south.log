@@ -1541,155 +1541,148 @@ Available CL stars = 54
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
-1) Warning: T 1881 112 is ALONE (no PPM / CD / CPD / GSC star near it).
+1) Warning: T 1881 2 reports 2.538 on precession RA but it should be -1.313 (diff=3.851).
+     Register T 1881 2: 00h 12m 48s64 -89°01'27"6
+2) Warning: T 1881 58 reports 2.156 on precession RA but it should be -2.155 (diff=4.311).
+     Register T 1881 58: 05h 29m 35s96 -75°46'33"9
+3) Warning: T 1881 68 reports 1.035 on precession RA but it should be 1.936 (diff=0.901).
+     Register T 1881 68: 06h 07m 47s19 -40°23'08"9
+4) Warning: T 1881 84 reports 2.327 on precession RA but it should be 2.357 (diff=0.030).
+     Register T 1881 84: 06h 53m 56s98 -28°48'38"2
+5) Warning: T 1881 84 reports -4.34 on precession DECL but it should be -4.68 (diff=0.34).
+     Register T 1881 84: 06h 53m 56s98 -28°48'38"2
+6) Warning: T 1881 112 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 112: 07h 51m 21s41 -22°32'22"1
   Note: nearest PPM 253502 at 204.9 arcsec.
-2) Warning: T 1881 176 (vmag = 7.5) has a near CD with dif. magnitude (delta = 4.2). Check dpl.
+7) Warning: T 1881 176 (vmag = 7.5) has a near CD with dif. magnitude (delta = 4.2). Check dpl.
      Register CD -64°412 (en 9h):  3.3 | 43m56.0s | 30.0'     (pag. 40)
-3) Warning: T 1881 225 (vmag = 9.0) has a near PPM 338934 star (vmag = 4.5) with a different magnitude (delta = 4.5).
-4) Warning: T 1881 225 (vmag = 9.0) has a near CD with dif. magnitude (delta = 4.6). Check dpl.
+8) Warning: T 1881 225 (vmag = 9.0) has a near PPM 338934 star (vmag = 4.5) with a different magnitude (delta = 4.5).
+9) Warning: T 1881 225 (vmag = 9.0) has a near CD with dif. magnitude (delta = 4.6). Check dpl.
      Register CD -55°3306 (en 10h):  4.4 | 16m16.1s | 25.1'     (pag. 113)
-5) Warning: T 1881 248 is ALONE (no PPM / CD / CPD / GSC star near it).
+10) Warning: T 1881 248 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 248: 10h 31m 30s27 -57°32'11"3
   Note: nearest PPM 339207 at 219.4 arcsec.
-6) Warning: T 1881 282 is ALONE (no PPM / CD / CPD / GSC star near it).
+11) Warning: T 1881 282 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 282: 10h 37m 34s76 -59°01'56"5
   Note: nearest PPM 339350 at 351.4 arcsec.
-7) Warning: T 1881 382 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register T 1881 382: 10h 46m 46s45 -58°51'21"3
-  Note: nearest PPM 339536 at 568.2 arcsec.
-8) Warning: T 1881 423 (vmag = 7.7) has a near CD with dif. magnitude (delta = 3.9). Check dpl.
+12) Warning: T 1881 423 (vmag = 7.7) has a near CD with dif. magnitude (delta = 3.9). Check dpl.
      Register CD -58°3625 (en 10h):  3.8 | 48m25.1s | 10.7'     (pag. 207)
-9) Warning: T 1881 477 is ALONE (no PPM / CD / CPD / GSC star near it).
+13) Warning: T 1881 477 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 477: 10h 57m 55s07 -58°57'40"0
   Note: nearest PPM 339699 at 504.0 arcsec.
-10) Warning: T 1881 580 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+14) Warning: T 1881 562 reports -19.39 on precession DECL but it should be -19.89 (diff=0.50).
+     Register T 1881 562: 11h 30m 51s40 -00°09'59"0
+15) Warning: T 1881 580 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-11) Warning: T 1881 581 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+16) Warning: T 1881 581 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-12) Warning: T 1881 582 (vmag = 10.0) has a near PPM 359729 star (vmag = 6.0) with a different magnitude (delta = 4.0).
-13) Warning: T 1881 582 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+17) Warning: T 1881 582 (vmag = 10.0) has a near PPM 359729 star (vmag = 6.0) with a different magnitude (delta = 4.0).
+18) Warning: T 1881 582 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-14) Warning: T 1881 583 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
+19) Warning: T 1881 583 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-15) Warning: T 1881 585 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
+20) Warning: T 1881 585 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-16) Warning: T 1881 586 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
+21) Warning: T 1881 586 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-17) Warning: T 1881 587 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
+22) Warning: T 1881 587 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
-18) Warning: T 1881 625 (vmag = 3.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+23) Warning: T 1881 625 (vmag = 3.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -60°5293 (en 14h):  0.2 | 31m5.0s | 19.0'     (pag. 271)
-19) Warning: T 1881 673 (vmag = 10.5) has a near PPM 322447 star (vmag = 7.0) with a different magnitude (delta = 3.5).
-20) Warning: T 1881 673 (vmag = 10.5) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+24) Warning: T 1881 673 (vmag = 10.5) has a near PPM 322447 star (vmag = 7.0) with a different magnitude (delta = 3.5).
+25) Warning: T 1881 673 (vmag = 10.5) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -40°10986 (en 16h):  7.5 | 48m14.3s | 18.8'     (pag. 472)
-21) Warning: T 1881 674 (vmag = 10.2) has a near PPM 322447 star (vmag = 7.0) with a different magnitude (delta = 3.2).
-22) Warning: T 1881 827 is ALONE (no PPM / CD / CPD / GSC star near it).
+26) Warning: T 1881 674 (vmag = 10.2) has a near PPM 322447 star (vmag = 7.0) with a different magnitude (delta = 3.2).
+27) Warning: T 1881 827 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 827: 18h 07m 51s64 -18°58'22"3
   Note: nearest PPM 718951 at 117.8 arcsec.
-23) Warning: T 1881 843 is ALONE (no PPM / CD / CPD / GSC star near it).
+28) Warning: T 1881 843 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 843: 18h 08m 26s27 -16°52'55"2
   Note: nearest PPM 234238 at 59.3 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-24) Warning: T 1881 866 is FAR from Lal 33564 (dist = 473.3 arcsec).
+29) Warning: T 1881 866 is FAR from Lal 33564 (dist = 473.3 arcsec).
      Register T 1881 866: 18h 09m 25s19 -19°00'35"2
-25) Warning: T 1881 882 is ALONE (no PPM / CD / CPD / GSC star near it).
+30) Warning: T 1881 882 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 882: 18h 10m 12s59 -17°51'46"0
   Note: nearest PPM 719023 at 451.5 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-26) Warning: T 1881 892 is ALONE (no PPM / CD / CPD / GSC star near it).
+31) Warning: T 1881 892 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1881 892: 18h 10m 36s02 -18°59'16"8
   Note: nearest PPM 719039 at 526.4 arcsec.
-27) Warning: T 1881 986 (vmag = 8.0) has a near PPM 269861 star (vmag = 4.9) with a different magnitude (delta = 3.1).
-Stars from Thome 1881 identified with PPM = 741, CD = 707 and CPD = 784
+32) Warning: T 1881 969 reports 3.447 on precession RA but it should be 3.747 (diff=0.300).
+     Register T 1881 969: 18h 38m 13s31 -27°06'40"0
+33) Warning: T 1881 986 (vmag = 8.0) has a near PPM 269861 star (vmag = 4.9) with a different magnitude (delta = 3.1).
+34) Warning: T 1881 1048 reports 3.941 on precession RA but it should be 3.742 (diff=0.199).
+     Register T 1881 1048: 22h 06m 30s89 -46°29'54"4
+Stars from Thome 1881 identified with PPM = 741, CD = 708 and CPD = 785
 Stars from Thome 1881 with Lacaille = 35, Lalande = 17, OA = 56, Taylor = 0, Stone = 1, GC = 0, USNO = 7, Brisbane = 29, CL = 9 and Gilliss = 4
 RSME of distance (arcsec) = 2.52  among a total of 741 stars
 RSME of visual magnitude = 0.58641  among a total of 544 stars
-Errors logged = 27
+Errors logged = 34
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
-1) Warning: T 1882 125 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register T 1882 125: 05h 15m 08s29 -33°36'26"6
-  Note: nearest PPM 281320 at 239.3 arcsec.
-**) ZC 5h 539 is also ALONE.
+1) Warning: T 1882 117 reports 2.754 on precession RA but it should be 2.954 (diff=0.200).
+     Register T 1882 117: 05h 02m 02s92 -05°14'23"9
 2) Warning: T 1882 126 (vmag = 9.7) has a near PPM 248771 star (vmag = 4.2) with a different magnitude (delta = 5.5).
-3) Warning: T 1882 128 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register T 1882 128: 05h 22m 32s70 -02°30'25"8
-  Note: nearest PPM 188087 at 380.3 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
+3) Warning: T 1882 144 reports 0.48 on precession DECL but it should be 0.58 (diff=0.10).
+     Register T 1882 144: 05h 53m 21s34 -35°17'49"2
 4) Warning: T 1882 149 (vmag = 9.2) has a near PPM 310383 star (vmag = 5.6) with a different magnitude (delta = 3.6).
 5) Warning: T 1882 157 (vmag = 8.0) has a near PPM 400087 star (vmag = 3.8) with a different magnitude (delta = 4.2).
 6) Warning: T 1882 158 (vmag = 8.0) has a near PPM 400087 star (vmag = 3.8) with a different magnitude (delta = 4.2).
-7) Warning: T 1882 165 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register T 1882 165: 06h 43m 22s37 -17°22'50"2
-  Note: nearest PPM 217689 at 859.6 arcsec.
-  Note: no CD/CPD coverage for stars below 18°.
-8) Warning: T 1882 165 is FAR from Lal 13130 (dist = 859.5 arcsec).
-     Register T 1882 165: 06h 43m 22s37 -17°22'50"2
-9) Warning: T 1882 197 (vmag = 9.5) has a near CD with dif. magnitude (delta = 5.2). Check dpl.
+7) Warning: T 1882 197 (vmag = 9.5) has a near CD with dif. magnitude (delta = 5.2). Check dpl.
      Register CD -72°417 (en 7h):  4.3 | 43m23.0s | 18.0'     (pag. 244)
-10) Warning: T 1882 200 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register T 1882 200: 07h 48m 47s51 -27°05'19"5
-  Note: nearest PPM 253405 at 241.4 arcsec.
-11) Warning: T 1882 200 is FAR from OA 7616 (dist = 241.1 arcsec).
-     Register T 1882 200: 07h 48m 47s51 -27°05'19"5
-12) Warning: T 1882 206 (vmag = 8.0) has a near PPM 356519 star (vmag = 4.2) with a different magnitude (delta = 3.8).
-13) Warning: T 1882 206 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
+8) Warning: T 1882 206 (vmag = 8.0) has a near PPM 356519 star (vmag = 4.2) with a different magnitude (delta = 3.8).
+9) Warning: T 1882 206 (vmag = 8.0) has a near CD with dif. magnitude (delta = 3.5). Check dpl.
      Register CD -68°528 (en 8h):  4.5 | 7m32.0s | 15.0'     (pag. 151)
-14) Warning: T 1882 209 (vmag = 9.5) has a near PPM 356597 star (vmag = 5.1) with a different magnitude (delta = 4.4).
-15) Warning: T 1882 209 (vmag = 9.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+10) Warning: T 1882 209 (vmag = 9.5) has a near PPM 356597 star (vmag = 5.1) with a different magnitude (delta = 4.4).
+11) Warning: T 1882 209 (vmag = 9.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -62°337 (en 8h):  6.2 | 13m22.0s | 32.0'     (pag. 3)
-16) Warning: T 1882 233 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register T 1882 233: 09h 18m 27s73 -59°30'25"7
-  Note: nearest PPM 777474 at 463.4 arcsec.
-17) Warning: T 1882 243 (vmag = 8.2) has a near CD with dif. magnitude (delta = 4.9). Check dpl.
+12) Warning: T 1882 243 (vmag = 8.2) has a near CD with dif. magnitude (delta = 4.9). Check dpl.
      Register CD -64°412 (en 9h):  3.3 | 43m56.0s | 30.0'     (pag. 40)
-18) Warning: T 1882 475 (vmag = 3.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
+13) Warning: T 1882 263 reports 2.058 on precession RA but it should be 2.659 (diff=0.601).
+     Register T 1882 263: 10h 29m 58s62 -38°57'09"2
+14) Warning: T 1882 475 (vmag = 3.5) has a near CD with dif. magnitude (delta = 3.3). Check dpl.
      Register CD -60°5293 (en 14h):  0.2 | 31m5.0s | 19.0'     (pag. 271)
-19) Warning: T 1882 566 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register T 1882 566: 15h 29m 50s38 -34°11'37"9
-  Note: nearest PPM 294049 at 525.2 arcsec.
-**) ZC 15h 2024 is also ALONE.
-20) Warning: T 1882 584 (vmag = 7.7) has a near PPM 231150 star (vmag = 3.4) with a different magnitude (delta = 4.3).
-21) Warning: T 1882 622 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+15) Warning: T 1882 584 (vmag = 7.7) has a near PPM 231150 star (vmag = 3.4) with a different magnitude (delta = 4.3).
+16) Warning: T 1882 622 (vmag = 6.8) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -76°871 (en 16h):  9.8 | 43m40.0s | 0.5'     (pag. 322)
-22) Warning: T 1882 695 is FAR from B 6164 (dist = 153777.2 arcsec).
-     Register T 1882 695: 17h 31m 56s02 -32°15'01"8
-23) Warning: T 1882 905 is ALONE (no PPM / CD / CPD / GSC star near it).
+17) Warning: T 1882 905 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1882 905: 18h 08m 35s70 -16°51'24"2
   Note: nearest PPM 234238 at 90.6 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-Stars from Thome 1882 identified with PPM = 1259, CD = 1118 and CPD = 1163
-Stars from Thome 1882 with Lacaille = 48, Lalande = 24, OA = 150, Taylor = 2, Stone = 0, GC = 0, USNO = 12, Brisbane = 12, CL = 10 and Gilliss = 1
-RSME of distance (arcsec) = 2.43  among a total of 1259 stars
-RSME of visual magnitude = 0.49423  among a total of 1033 stars
-Errors logged = 23
+18) Warning: T 1882 1360 reports 2.221 on precession RA but it should be 3.220 (diff=0.999).
+     Register T 1882 1360: 23h 36m 32s88 -47°15'54"9
+Stars from Thome 1882 identified with PPM = 1266, CD = 1122 and CPD = 1168
+Stars from Thome 1882 with Lacaille = 48, Lalande = 25, OA = 151, Taylor = 2, Stone = 0, GC = 0, USNO = 12, Brisbane = 13, CL = 10 and Gilliss = 1
+RSME of distance (arcsec) = 2.43  among a total of 1266 stars
+RSME of visual magnitude = 0.49511  among a total of 1038 stars
+Errors logged = 18
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
 Stars read from PPM: 468861
 1) Warning: T 1883 52 is FAR from L 2555 (dist = 924.0 arcsec).
      Register T 1883 52: 06h 54m 16s39 -26°18'54"4
-2) Warning: T 1883 80 is ALONE (no PPM / CD / CPD / GSC star near it).
+2) Warning: T 1883 70 reports -1.491 on precession RA but it should be 1.492 (diff=2.983).
+     Register T 1883 70: 08h 21m 28s52 -55°24'33"8
+3) Warning: T 1883 80 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1883 80: 09h 09m 35s86 -26°49'52"1
   Note: nearest PPM 255852 at 475.2 arcsec.
-3) Warning: T 1883 124 is FAR from St 8109 (dist = 139.9 arcsec).
-     Register T 1883 124: 14h 47m 07s29 -38°51'58"0
-4) Warning: T 1883 131 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register T 1883 131: 16h 02m 54s60 -87°23'50"9
-  Note: nearest PPM 378016 at 298.0 arcsec.
-  Note: poor CD coverage for stars above 61°.
+4) Warning: T 1883 102 reports -20.35 on precession DECL but it should be -20.05 (diff=0.30).
+     Register T 1883 102: 11h 56m 31s83 -84°58'47"9
 5) Warning: T 1883 141 is FAR from B 6316 (dist = 530.3 arcsec).
      Register T 1883 141: 18h 02m 31s63 -65°04'55"6
 6) Warning: T 1883 156 is FAR from L 8467 (dist = 1155.8 arcsec).
      Register T 1883 156: 20h 29m 00s60 -70°21'33"6
-Stars from Thome 1883 identified with PPM = 160, CD = 127 and CPD = 133
-Stars from Thome 1883 with Lacaille = 13, Lalande = 8, OA = 15, Taylor = 0, Stone = 0, GC = 0, USNO = 0, Brisbane = 2, CL = 10 and Gilliss = 0
-RSME of distance (arcsec) = 2.62  among a total of 160 stars
+7) Warning: T 1883 160 reports 15.56 on precession DECL but it should be 15.66 (diff=0.10).
+     Register T 1883 160: 21h 25m 23s98 -06°05'04"8
+Stars from Thome 1883 identified with PPM = 161, CD = 128 and CPD = 134
+Stars from Thome 1883 with Lacaille = 13, Lalande = 8, OA = 15, Taylor = 0, Stone = 1, GC = 0, USNO = 0, Brisbane = 2, CL = 10 and Gilliss = 0
+RSME of distance (arcsec) = 2.61  among a total of 161 stars
 RSME of visual magnitude = 0.58106  among a total of 80 stars
-Errors logged = 6
+Errors logged = 7
 
 ***************************************
 Perform comparison between Thome (Resultados ONA 15) and PPM/CD/CPD...
@@ -1701,32 +1694,31 @@ Stars read from PPM: 468861
   Note: no CD/CPD coverage for stars below 18°.
 2) Warning: T 1884 120 is FAR from GC 7778 (dist = 314.4 arcsec). Check if it is a 1/2 star in GC.
      Register T 1884 120: 06h 19m 00s00 -04°22'24"1
-3) Warning: T 1884 209 is ALONE (no PPM / CD / CPD / GSC star near it).
+3) Warning: T 1884 153 reports 2.071 on precession RA but it should be 2.057 (diff=0.014).
+     Register T 1884 153: 07h 16m 49s29 -38°48'07"4
+4) Warning: T 1884 209 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1884 209: 08h 08m 43s86 -05°22'13"1
   Note: nearest PPM 704181 at 60.1 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-4) Warning: T 1884 213 is ALONE (no PPM / CD / CPD / GSC star near it).
+5) Warning: T 1884 213 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1884 213: 08h 13m 00s00 -47°22'23"0
   Possible cause: lack of RA (s).
   Note: nearest PPM 312858 at 359.0 arcsec.
 **) ZC 8h 1103 is also ALONE.
   Possible cause: lack of RA (s).
-5) Warning: T 1884 251 (vmag = 10.0) has a near PPM 285738 star (vmag = 7.1) with a different magnitude (delta = 2.9).
-6) Warning: T 1884 251 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+6) Warning: T 1884 251 (vmag = 10.0) has a near PPM 285738 star (vmag = 7.1) with a different magnitude (delta = 2.9).
+7) Warning: T 1884 251 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -35°5098 (en 8h):  7.0 | 45m29.5s | 28.0'     (pag. 188)
-7) Warning: T 1884 292 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
+8) Warning: T 1884 292 (vmag = 9.0) has a near CD with dif. magnitude (delta = 3.0). Check dpl.
      Register CD -59°2753 (en 9h):  12.0 | 57m49.5s | 27.4'     (pag. 234)
-8) Warning: T 1884 319 is FAR from L 4223 (dist = 1008.5 arcsec).
+9) Warning: T 1884 319 is FAR from L 4223 (dist = 1008.5 arcsec).
      Register T 1884 319: 10h 10m 12s55 -43°53'28"7
-9) Warning: T 1884 336 is ALONE (no PPM / CD / CPD / GSC star near it).
+10) Warning: T 1884 336 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1884 336: 10h 37m 41s12 -59°00'55"3
   Note: nearest PPM 339350 at 233.9 arcsec.
-10) Warning: T 1884 338 is ALONE (no PPM / CD / CPD / GSC star near it).
+11) Warning: T 1884 338 is ALONE (no PPM / CD / CPD / GSC star near it).
      Register T 1884 338: 10h 37m 45s01 -58°45'55"7
   Note: nearest PPM 339360 at 602.6 arcsec.
-11) Warning: T 1884 382 is ALONE (no PPM / CD / CPD / GSC star near it).
-     Register T 1884 382: 10h 42m 50s03 -56°36'13"6
-  Note: nearest PPM 339455 at 185.8 arcsec.
 12) Warning: T 1884 523 (vmag = 10.0) has a near CD with dif. magnitude (delta = 3.4). Check dpl.
      Register CD -59°4460 (en 12h):  6.6 | 46m22.4s | 40.9'     (pag. 240)
 13) Warning: T 1884 528 (vmag = 9.7) has a near CD with dif. magnitude (delta = 3.1). Check dpl.
@@ -1743,10 +1735,10 @@ Stars read from PPM: 468861
      Register T 1884 841: 18h 11m 48s70 -17°09'42"7
   Note: nearest PPM 234330 at 43.2 arcsec.
   Note: no CD/CPD coverage for stars below 18°.
-19) Warning: T 1884 943 is FAR from Lal 4692 (dist = 135544.1 arcsec).
-     Register T 1884 943: 23h 51m 08s41 -13°36'25"8
-Stars from Thome 1884 identified with PPM = 658, CD = 701 and CPD = 749
-Stars from Thome 1884 with Lacaille = 53, Lalande = 16, OA = 36, Taylor = 1, Stone = 1, GC = 120, USNO = 17, Brisbane = 11, CL = 9 and Gilliss = 2
+19) Warning: T 1884 887 reports 3.181 on precession RA but it should be 3.191 (diff=0.010).
+     Register T 1884 887: 21h 31m 34s59 -08°22'25"6
+Stars from Thome 1884 identified with PPM = 658, CD = 702 and CPD = 750
+Stars from Thome 1884 with Lacaille = 53, Lalande = 17, OA = 36, Taylor = 1, Stone = 1, GC = 120, USNO = 17, Brisbane = 11, CL = 9 and Gilliss = 2
 RSME of distance (arcsec) = 1.99  among a total of 658 stars
 RSME of visual magnitude = 0.44585  among a total of 543 stars
 Errors logged = 19
@@ -2347,7 +2339,6 @@ Stars read from PPM: 468861
      Register GC 5081: mag = 6.1, RA = 04h26m00s00, DE = 62°47'45''7 (pag 102) 
 8) Warning: GC 5867 is FAR from OA 686 (dist = 195271.9 arcsec).
      Register GC 5867: mag = 9.0, RA = 05h02m25s60, DE = 23°26'23''6 (pag 117) 
-**) Warning: ZC 5h 539 is FAR from previous registration (dist = 240.2 arcsec).
 9) Warning: GC 6319 is FAR from L 1873 (dist = 481.3 arcsec).
      Register GC 6319: mag = 8.2, RA = 05h22m01s84, DE = 58°12'24''0 (pag 126) 
 10) Warning: GC 7292 is FAR from OA 4643 (dist = 20564.7 arcsec).
@@ -2441,7 +2432,6 @@ Stars read from PPM: 468861
      Register GC 20257: mag = 6.3, RA = 14h50m10s25, DE = 20°51'02''4 (pag 394) dpl 
 50) Warning: GC 20267 is FAR from B 5127 (dist = 3655.9 arcsec).
      Register GC 20267: mag = 9.2, RA = 14h50m31s19, DE = 50°03'24''0 (pag 394) 
-**) Warning: ZC 15h 2024 is FAR from previous registration (dist = 35998.7 arcsec).
 51) Warning: GC 21533 is FAR from L 6567 (dist = 217.0 arcsec).
      Register GC 21533: mag = 6.9, RA = 15h46m40s75, DE = 44°09'13''5 (pag 416) 
 52) Warning: GC 21544 is FAR from L 6571 (dist = 214.8 arcsec).
@@ -2524,4 +2514,4 @@ ZC (Gould's Zone Catalog) stars saved = 9926
 Errors logged = 86
 
 Number of ZC stars registered = 14790
-Stars from ZC identified with PPM = 14331, GSC-PPM = 418, CD = 14717 and CPD = 14707
+Stars from ZC identified with PPM = 14333, GSC-PPM = 418, CD = 14719 and CPD = 14709
