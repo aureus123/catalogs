@@ -1657,8 +1657,10 @@ void readCL() {
 
 /*
  * readThome - lee y cruza catalogo de los Resultados 15
- * (ya se deben haber leidos los catalogs CD, CPD, GC, Yarnall, Brisbane y Stone)
- * tambien revisa referencias cruzadas a GC, OA, Yarnall, Lacaille, Brisbane y Stone
+ * (ya se deben haber leidos los catalogs CD, CPD, GC, Yarnall, Brisbane, Stone
+ *  y Gilliss de 1963 estrellas)
+ * tambien revisa referencias cruzadas a GC, OA, Yarnall, Lacaille, Brisbane,
+ * Stone y Gilliss (1963 estrellas)
  * tambien genera identificaciones cruzadas para aquellas estrellas ZC
  */
 void readThome(double epoch, const char *filename, int correction) {
@@ -1678,6 +1680,7 @@ void readThome(double epoch, const char *filename, int correction) {
     int checkUSNO = 0;
     int checkBri = 0;
     int checkCL = 0;
+    int checkGi1963 = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
     struct PPMstar_struct *PPMstar = preparePPM(epoch, false);
@@ -1776,6 +1779,8 @@ void readThome(double epoch, const char *filename, int correction) {
             checkCrossRef(srcName, catLine, "B", x, y, z, numRefCat, &briList, false, -1, &checkBri, &stats.errors);
         if (!strncmp(cell, "Y ", 2))
             checkYarnallRef(srcName, catLine, numRefCat, x, y, z, false, -1, &usnoList, &checkUSNO, &stats.errors);
+        if (!strncmp(cell, "G ", 2))
+            checkCrossRef(srcName, catLine, "G", x, y, z, numRefCat, &gi1963List, false, -1, &checkGi1963, &stats.errors);
 
         if (!strncmp(cell, "ZC", 2)) {
             // save Gould's Zone Catalog
@@ -1790,8 +1795,8 @@ void readThome(double epoch, const char *filename, int correction) {
     fclose(stream);
 
     printf("Stars from Thome %.0f identified with PPM = %d, CD = %d and CPD = %d\n", epoch, stats.countDist, stats.countCD, stats.countCPD);
-    printf("Stars from Thome %.0f with Lacaille = %d, Lalande = %d, OA = %d, Taylor = %d, Stone = %d, GC = %d, USNO = %d, Brisbane = %d and CL = %d\n",
-        epoch, checkLac, checkLal, checkOA, checkTaylor, checkStone, checkGC, checkUSNO, checkBri, checkCL);
+    printf("Stars from Thome %.0f with Lacaille = %d, Lalande = %d, OA = %d, Taylor = %d, Stone = %d, GC = %d, USNO = %d, Brisbane = %d, CL = %d and Gilliss = %d\n",
+        epoch, checkLac, checkLal, checkOA, checkTaylor, checkStone, checkGC, checkUSNO, checkBri, checkCL, checkGi1963);
     printRSMEDist(&stats);
     printRSMEMag(&stats);
     printf("Errors logged = %d\n", stats.errors);
