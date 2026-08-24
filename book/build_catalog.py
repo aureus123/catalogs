@@ -3,8 +3,8 @@
 
 Primary source is the Bright Star Catalogue 5th ed. (book/ybsc5.txt).
 Gould designations come from the Uranometria Argentina (cat/ua.txt), joined
-on HD.  Positions are optionally refined against Tycho-2 (cat/tyc2.txt), since
-BSC5 only carries RA to 0.1s and Dec to 1".
+on HD.  Positions are the BSC5 ones: the table prints RA to the second and
+Dec to a tenth of an arcminute, well inside what BSC5 already carries.
 
 Usage:
     python build_catalog.py                    # 2 pages, 50 stars/page
@@ -67,12 +67,45 @@ STRUVE_PREFIX = {"STF": "Σ ", "STFA": "Σ I ", "STFB": "Σ II "}
 BSC5 = BOOK / "ybsc5.txt"
 BSC5_NOTES = BOOK / "ybsc5.notes.txt"
 UA = CAT / "ua.txt"
-TYC2 = CAT / "tyc2.txt"
-TYC2_SUPPL = CAT / "tyc2_suppl.txt"
-TYC_CACHE = BOOK / ".tyc2_bright.parquet"
 MAPS = BOOK / "maps"      # atlas plates produced by gen_maps.py
 
-SUPPL1_N = 17588  # supplement-2 (probably-false stars) starts after this
+# Hipparcos parallaxes, borrowed from the atlas star file.  BSC5 carries a
+# parallax of its own but it is pre-Hipparcos (1991) and badly wrong at these
+# distances: of the 457 stars it places inside 100 ly, 198 are farther -- one
+# of them (HR 4511) is really 2568 ly away.  See the log, "Distancia".
+BIGSKY = ROOT / "stars.bigksy.0.1.3.mag11.parquet"
+
+# 1 pc = 3.2616 ly; distance in ly = LY_PC / parallax_in_arcsec.
+LY_PC = 3.2616
+
+# Colour names from B-V.  Each entry is the upper bound of its bin; the
+# boundaries sit on the spectral-class transitions and were checked against
+# the Sp. column (azul is 90% B, amarillo 74% G, rojo 72% M).  B-V is the
+# *observed* colour, not dereddened: 28 reddened O/B supergiants therefore
+# read yellower than they intrinsically are, which is deliberate -- this is a
+# visual catalogue, and that is the colour the star shows at the eyepiece.
+COLOUR_BINS = [
+    (-0.02, "azul"),
+    (0.15, "azul-blanco"),
+    (0.40, "blanco"),
+    (0.60, "blanco-amarillo"),
+    (0.85, "amarillo"),
+    (1.20, "amarillo-anaranjado"),
+    (1.55, "anaranjado"),
+    (None, "rojo"),
+]
+
+# Spectral type as printed in the "Sp." column: the class letter and its
+# numeric grade, nothing else.  Three things the raw BSC5 field forces us to
+# handle (the log works through every case, under "La columna Sp."):
+#   * a leading lowercase Yerkes luminosity prefix (c, d, g, sd, sg) comes
+#     *before* the class -- "gK3" is a K3 giant, not a "gK" anything;
+#   * Wolf-Rayet classes are two letters (WC8+O9I -> WC8);
+#   * the grade may be fractional (B2.5, O9.7, S3.5) and is kept in full.
+# When no grade was determined we print none: a bare "K" (HR 5044, "KIII")
+# says the subclass is unknown, which is what the catalogue means.  A trailing
+# m/p peculiarity marker is kept instead, since "Am"/"Ap" *is* the class.
+SP_RE = re.compile(r"^[a-z]*(W[CNR]|[OBAFGKMRNSC])(\d+(?:\.\d+)?|[mp])?")
 
 # BSC5 3-letter Bayer codes -> LaTeX math.  Omicron has no macro; plain "o".
 GREEK = {
@@ -105,10 +138,12 @@ class Star:
     sao: str = ""       # BSC5 SAO number (bytes 32-37)
     ads: str = ""       # BSC5 ADS number (bytes 45-49); present => double
     var_id: str = ""    # BSC5 VarID (bytes 52-60), whitespace-normalised
+    sp_type: str = ""   # BSC5 SpType (bytes 128-147), raw
+    bv: str = ""        # BSC5 B-V (bytes 110-114), raw
+    dist_ly: float | None = None   # from the Hipparcos parallax, if near enough
     con: str = ""       # IAU constellation from J2000 position
     gould: str = ""
     notes: list[str] = field(default_factory=list)
-    pos_src: str = "bsc5"
 
 
 def _f(s: str):
@@ -151,6 +186,8 @@ def parse_bsc5(path: Path, vmax: float, decmax: float) -> list[Star]:
                 sao=line[31:37].strip(),
                 ads=line[44:49].strip(),
                 var_id=" ".join(line[51:60].split()),
+                sp_type=line[127:147].strip(),
+                bv=line[109:114].strip(),
             ))
     out.sort(key=lambda s: s.ra_deg)
     return out
@@ -241,6 +278,19 @@ def fmt_cross(entries: list[tuple[str, str, float]]) -> str:
     return ", ".join(f"{lab} ({num}): {mag:.1f}" for lab, num, mag in entries)
 
 
+def fit_notes(free: list[str], opt: list[str]) -> str:
+    """Wrap the note fragments in the LaTeX macros that fit them to the line.
+
+    `free` is always printed; `opt` is offered in priority order and kept only
+    while the accumulated line still fits the notes column.  The measuring is
+    done by TeX at the real font and size -- see the preamble.
+    """
+    return ("\\ntstart"
+            + "".join(rf"\ntfree{{{f}}}" for f in free)
+            + "".join(rf"\ntopt{{{o}}}" for o in opt)
+            + "\\ntend")
+
+
 def load_notes(path: Path) -> dict[int, list[str]]:
     """HR -> list of remark strings, from the BSC5 notes file."""
     n: dict[int, list[str]] = {}
@@ -261,115 +311,105 @@ def load_notes(path: Path) -> dict[int, list[str]]:
 
 
 # --------------------------------------------------------------------------
-# Tycho-2 positional refinement
+# Hipparcos distances
 # --------------------------------------------------------------------------
 
-def build_tyc_cache(decmax: float, vtmax: float = 7.5) -> pd.DataFrame:
-    """Scan Tycho-2 + supplement-1 once, keep the bright end, cache to parquet."""
-    rows = []
-    with open(TYC2, encoding="latin-1") as fh:
-        for line in fh:
-            p = line.split("|")
-            vt = p[19].strip()
-            if not vt or float(vt) > vtmax:
-                continue
-            ra = p[2].strip() or p[24].strip()
-            de = p[3].strip() or p[25].strip()
-            if not ra or not de or float(de) >= decmax + 1.0:
-                continue
-            rows.append((float(ra), float(de), float(vt)))
-    with open(TYC2_SUPPL, encoding="latin-1") as fh:
-        for i, line in enumerate(fh):
-            if i >= SUPPL1_N:
-                break
-            p = line.split("|")
-            vt = p[13].strip()
-            if not vt or float(vt) > vtmax:
-                continue
-            ra, de = p[2].strip(), p[3].strip()
-            if not ra or not de or float(de) >= decmax + 1.0:
-                continue
-            rows.append((float(ra), float(de), float(vt)))
-    df = pd.DataFrame(rows, columns=["ra", "de", "vt"]).sort_values("ra")
-    df.to_parquet(TYC_CACHE, index=False)
-    return df
+def load_distances(stars: list[Star], max_ly: float, radius_as: float = 20.0) -> int:
+    """Fill in Star.dist_ly from the Hipparcos parallaxes in the atlas file.
 
+    BSC5 has no HIP number, so the join is positional -- the same kind of
+    cross-match that Tycho-2 once needed, but a far cheaper one: the parquet
+    holds 9487 rows down to V=6.5, which is a fraction of a second to read,
+    against the 2.5 million lines Tycho-2 cost.
 
-def refine_positions(stars: list[Star], decmax: float, radius_as: float = 6.0):
-    """Replace BSC5 positions with Tycho-2 ones where an unambiguous match exists."""
-    if TYC_CACHE.exists():
-        tyc = pd.read_parquet(TYC_CACHE)
-    else:
-        print("  building Tycho-2 bright-star cache (one-time, ~1 min)...",
-              file=sys.stderr)
-        tyc = build_tyc_cache(decmax)
+    Two details, both learned the hard way (see the log, section 2.3):
 
-    tra = tyc.ra.to_numpy()
-    tde = tyc.de.to_numpy()
-    tvt = tyc.vt.to_numpy()
+    * the radius is a generous **20"**, because BSC5's own position is off by
+      that much for the fastest-moving stars -- alpha Cen sits 7.0" from it and
+      61 Cygni 15.1", and a tight 5" radius silently dropped exactly the
+      nearest stars, which are the ones this note exists for;
+    * among candidates the **brightest** wins, not the nearest.  At 20" the
+      nearest neighbour can be an unrelated faint star, whereas the brightest
+      inside the circle is the counterpart.  In a close double this picks the
+      primary for both components, which is harmless: they share a distance.
+    """
+    if not BIGSKY.exists():
+        print(f"  warning: {BIGSKY} not found, no distance notes", file=sys.stderr)
+        return 0
+    import pyarrow.parquet as pq
+    df = pq.read_table(BIGSKY,
+                       columns=["ra", "dec", "magnitude", "parallax_mas"]).to_pandas()
+    df = df[df.magnitude <= 6.5].dropna(subset=["ra", "dec", "parallax_mas"])
+
+    tra, tde, tpx, tmg = (df.ra.to_numpy(), df.dec.to_numpy(),
+                          df.parallax_mas.to_numpy(), df.magnitude.to_numpy())
     order = np.argsort(tra)
-    tra, tde, tvt = tra[order], tde[order], tvt[order]
+    tra, tde, tpx, tmg = tra[order], tde[order], tpx[order], tmg[order]
 
     rad = radius_as / 3600.0
-    matched = 0
+    found = 0
     for s in stars:
-        # RA window, widened by 1/cos(dec); handle wraparound by searching twice
+        # RA window widened by 1/cos(dec); the poles are handled by the clamp
         dra = rad / max(math.cos(math.radians(s.de_deg)), 0.02)
-        lo, hi = s.ra_deg - dra, s.ra_deg + dra
-        idx = np.arange(np.searchsorted(tra, lo), np.searchsorted(tra, hi))
-        if lo < 0:
-            idx = np.r_[idx, np.arange(np.searchsorted(tra, lo + 360), len(tra))]
-        if hi > 360:
-            idx = np.r_[idx, np.arange(0, np.searchsorted(tra, hi - 360))]
+        idx = np.arange(np.searchsorted(tra, s.ra_deg - dra),
+                        np.searchsorted(tra, s.ra_deg + dra))
         if idx.size == 0:
             continue
-        d_de = tde[idx] - s.de_deg
         d_ra = (tra[idx] - s.ra_deg + 180) % 360 - 180
-        sep = np.hypot(d_ra * math.cos(math.radians(s.de_deg)), d_de)
+        sep = np.hypot(d_ra * math.cos(math.radians(s.de_deg)), tde[idx] - s.de_deg)
         near = idx[sep <= rad]
         if near.size == 0:
             continue
-        best = near[np.argmin(tvt[near])]   # brightest inside the radius
-        s.ra_deg, s.de_deg = float(tra[best]), float(tde[best])
-        s.pos_src = "tyc2"
-        matched += 1
-    return matched
+        px = float(tpx[near[np.argmin(tmg[near])]])   # brightest inside the radius
+        if px <= 0:                     # negative parallaxes carry no distance
+            continue
+        ly = LY_PC / (px / 1000.0)
+        if ly <= max_ly:
+            s.dist_ly = ly
+            found += 1
+    return found
 
 
 # --------------------------------------------------------------------------
 # formatting
 # --------------------------------------------------------------------------
 
-def ra_hms(deg: float) -> tuple[int, int, float]:
-    """Right ascension in h, m, s, with the rounding carry already applied."""
+def ra_hms(deg: float) -> tuple[int, int, int]:
+    """Right ascension in whole h, m, s, with the rounding carry applied.
+
+    One second of time is 15" at the equator, so the worst-case error from
+    dropping the fraction is 7.5" -- finer than a fifth-magnitude catalogue
+    needs, and BSC5 only carries 0.1s anyway.
+    """
     h = deg / 15.0
     hh = int(h)
     mm = int((h - hh) * 60)
-    ss = (h - hh - mm / 60) * 3600
-    if round(ss, 2) >= 60.0:
-        ss -= 60.0
+    ss = int(round((h - hh - mm / 60) * 3600))
+    if ss >= 60:
+        ss -= 60
         mm += 1
     if mm >= 60:
         mm -= 60
         hh += 1
+    if hh >= 24:       # 23h59m59.7s rounds up and wraps to 0h
+        hh -= 24
     return hh, mm, ss
 
 
 def fmt_ra(deg: float, show_h: bool = True, show_m: bool = True) -> str:
-    """e.g. 15h 32m 40.32s, as LaTeX with superscript units.
+    """e.g. 15h 32m 40s, as LaTeX with superscript units.
 
     A suppressed hour or minute is set as \\hphantom of itself: it prints
     nothing but keeps its width, so the seconds stay in the same column.
     """
     hh, mm, ss = ra_hms(deg)
-    whole, frac = divmod(round(ss * 100), 100)
     h_part = rf"{hh:02d}\ra{{h}}"
     m_part = rf"{mm:02d}\ra{{m}}"
     if not show_h:
         h_part = rf"\hphantom{{{h_part}}}"
     if not show_m:
         m_part = rf"\hphantom{{{m_part}}}"
-    return rf"{h_part}{m_part}{whole:02d}\fs{frac:02d}"
+    return rf"{h_part}{m_part}{ss:02d}\ra{{s}}"
 
 
 def runs_visible(keys: list, page: int) -> list[bool]:
@@ -393,20 +433,51 @@ def runs_visible(keys: list, page: int) -> list[bool]:
 
 
 def fmt_dec(deg: float) -> str:
-    """e.g. -20 deg 23' 44.1''."""
+    """e.g. -20 deg 17.5', to a tenth of an arcminute (worst case 3" off)."""
     sign = "-" if deg < 0 else "+"
     a = abs(deg)
     dd = int(a)
-    mm = int((a - dd) * 60)
-    ss = (a - dd - mm / 60) * 3600
-    if round(ss, 1) >= 60.0:
-        ss -= 60.0
-        mm += 1
-    if mm >= 60:
-        mm -= 60
+    tenths = int(round((a - dd) * 600))    # tenths of an arcminute
+    if tenths >= 600:
+        tenths -= 600
         dd += 1
-    whole, frac = divmod(round(ss * 10), 10)
-    return rf"${sign}${dd:02d}\degr{mm:02d}\arcm{whole:02d}\farcs{frac:01d}"
+    whole, frac = divmod(tenths, 10)
+    return rf"${sign}${dd:02d}\degr{whole:02d}\farcm{frac:01d}"
+
+
+def fmt_sp(sp_type: str) -> str:
+    """Spectral class and grade from a raw BSC5 SpType, e.g. K0IIIbCN-0.5 -> K0.
+
+    Returns "" if the field is blank or unparseable; no star in the current
+    selection hits either case.
+    """
+    m = SP_RE.match(sp_type)
+    if not m:
+        return ""
+    return m.group(1) + (m.group(2) or "")
+
+
+def colour_name(bv: str) -> str:
+    """Colour word from a raw BSC5 B-V field; "" when the field is blank.
+
+    19 of the 2596 stars have no B-V and so get no colour note, per the rule
+    that nothing is printed where the colour cannot be inferred.
+    """
+    if not bv:
+        return ""
+    try:
+        f = float(bv)
+    except ValueError:
+        return ""
+    for hi, name in COLOUR_BINS:
+        if hi is None or f < hi:
+            return name
+    return ""
+
+
+def fmt_dist(ly: float) -> str:
+    """e.g. "27.5 al".  Hipparcos is precise enough here to earn the decimal."""
+    return f"{ly:.1f} al"
 
 
 def fmt_bayer(s: Star) -> str:
@@ -464,6 +535,8 @@ PREAMBLE = r"""%% twoside makes LaTeX distinguish recto (odd) from verso (even) 
 %% old-catalogue notes, the headers and the rules.
 \definecolor{coldec}{HTML}{1F3D7A}   %% declination -- dark blue
 \definecolor{colmag}{HTML}{8B1A1A}   %% magnitude -- dark red
+\definecolor{colsp}{HTML}{008B8B}    %% spectral class -- turquoise
+\definecolor{coldist}{HTML}{4E6E8E}  %% distance -- slate blue
 \definecolor{colcon}{HTML}{2E8B57}   %% constellation -- as on the plates
 \definecolor{colhd}{HTML}{5B2C87}    %% HD -- dark violet
 \definecolor{colsao}{HTML}{7A4B22}   %% SAO -- brown
@@ -480,11 +553,36 @@ PREAMBLE = r"""%% twoside makes LaTeX distinguish recto (odd) from verso (even) 
 %% Units that follow a whole number sit after it, with a thin space.
 \newcommand{\ra}[1]{\textsuperscript{\textrm{#1}}\,}
 \newcommand{\degr}{\ensuremath{^{\circ}}\,}
-\newcommand{\arcm}{\ensuremath{'}\,}
 %% Units on a fractional number sit *over the decimal point*, the usual
-%% A&A/AAS convention: 35\fs68 sets the "s" between the 35 and the 68.
-\newcommand{\fs}{\hbox{$.\!\!^{\mathrm{s}}$}}
-\newcommand{\farcs}{\hbox{$.\!\!^{\prime\prime}$}}
+%% A&A/AAS convention: 17\farcm5 sets the prime between the 17 and the 5.
+\newcommand{\farcm}{\hbox{$.\!\!^{\prime}$}}
+
+%% ---- notes that fit themselves to the line ------------------------------
+%% Rather than allowing a fixed number of notes per star, we keep as many as
+%% the line actually holds.  TeX does the measuring, so it is exact at the
+%% real font and size -- no width table on the Python side, no extra pass.
+%%
+%%   \ntfree{...}  always kept   (colour, distance)
+%%   \ntopt{...}   kept only while the accumulated line still fits \notew
+%%
+%% The first \ntopt that does not fit sets \ntstop, so everything after it is
+%% skipped too: what survives is always a *prefix* of the priority order, and
+%% a shorter low-priority note can never jump ahead of a dropped one.
+%% \ntend unpacks with \unhcopy rather than \usebox, so in the pathological
+%% case where the always-kept parts alone overrun the column the line wraps
+%% (ugly but complete) instead of spilling into the margin.
+\newsavebox{\ntbox}\newsavebox{\ntry}
+\newif\ifntfirst \newif\ifntstop
+\newcommand{\ntstart}{\sbox{\ntbox}{}\ntfirsttrue\ntstopfalse}
+\newcommand{\ntfree}[1]{%
+  \sbox{\ntbox}{\usebox{\ntbox}\ifntfirst\else,\space\fi#1}\ntfirstfalse}
+\newcommand{\ntopt}[1]{%
+  \ifntstop\else
+    \sbox{\ntry}{\usebox{\ntbox}\ifntfirst\else,\space\fi#1}%
+    \ifdim\wd\ntry>\notew\relax \ntstoptrue
+    \else \sbox{\ntbox}{\usebox{\ntry}}\ntfirstfalse\fi
+  \fi}
+\newcommand{\ntend}{\unhcopy\ntbox}
 
 %% ---- table metrics -----------------------------------------------------
 \setlength{\tabcolsep}{3pt}
@@ -608,7 +706,7 @@ FONTSIZE
 %% sides of the baseline.
 \setlength{\extrarowheight}{EXTRAROWHEIGHT}
 
-\begin{longtable}{@{}l l r l c l rSAOSPEC p{\notew}@{}}
+\begin{longtable}{@{}l l r l l c l rSAOSPEC p{\notew}@{}}
 HEADBLOCK"""
 
 # The header row.  When it lives in \endhead, longtable boxes it separately and
@@ -617,7 +715,7 @@ HEADBLOCK"""
 # out short, its rules stop early, and the headings drift left of their columns.
 # Emitting the row as ordinary table rows puts it in the same alignment pass as
 # the data, which fixes both symptoms at once.
-HEADER_ROW = (r"\textbf{AR (J2000)} & \textbf{Dec (J2000)} & \textbf{V} & "
+HEADER_ROW = (r"\textbf{AR} & \textbf{Dec} & \textbf{V} & \textbf{Sp.} & "
               r"\textbf{Cst.} & \textbf{B.} & \textbf{Fl/G} & \textbf{HD} &"
               r"SAOHEAD \textbf{Notas} \\")
 
@@ -729,6 +827,7 @@ def emit(stars: list[Star], out: Path, per_page: int, fontsize: str,
             # every magnitude stays flush right and the decimal points line up
             colour(f"{s.vmag:.1f}", "colmag")
             + (r"\rlap{" + colour(r"$^{*}$", "colvar") + "}" if s.var_id else ""),
+            colour(fmt_sp(s.sp_type), "colsp") if s.sp_type else "",
             colour(s.con, "colcon"),
             fmt_bayer(s),
             fmt_desig(s),
@@ -774,17 +873,20 @@ def main() -> int:
     ap.add_argument("--pages", type=int, default=2,
                     help="number of pages to emit; 0 = the whole catalogue")
     ap.add_argument("--out", type=Path, default=BOOK / "catalog.tex")
-    ap.add_argument("--positions", choices=["bsc5", "tycho2"], default="tycho2",
-                    help="tycho2 refines BSC5's 0.1s/1'' positions (default)")
     ap.add_argument("--notes", choices=["cross", "bsc5", "none"], default="cross",
                     help="notes source: old-catalogue cross-identifications "
                          "from results/cross (default), the BSC5 remarks, "
                          "or an empty column")
     ap.add_argument("--max-dist", type=float, default=None,
                     help="drop cross-matches farther than this many arcsec")
-    ap.add_argument("--max-notes", type=int, default=3,
-                    help="most cross-identifications shown per star; the "
-                         "lowest-priority ones are dropped first")
+    ap.add_argument("--max-notes", type=int, default=0,
+                    help="optional hard cap on notes per star; 0 (default) "
+                         "lets the line width decide, keeping as many as fit "
+                         "and dropping the lowest-priority ones first")
+    ap.add_argument("--parallax", choices=["bigsky", "none"], default="bigsky",
+                    help="source of the distance note; none omits it")
+    ap.add_argument("--max-dist-ly", type=float, default=100.0,
+                    help="stars farther than this get no distance note")
     ap.add_argument("--note-chars", type=int, default=80,
                     help="truncate demo notes to this many characters; 80 is "
                          "the measured break-even at 50 stars/page, i.e. the "
@@ -828,13 +930,16 @@ def main() -> int:
             s.gould = gould.get(s.hd, "")
     print(f"Gould designations available: "
           f"{sum(1 for s in stars if s.gould)}", file=sys.stderr)
+    n_sp = sum(1 for s in stars if fmt_sp(s.sp_type))
+    print(f"spectral classes parsed: {n_sp}/{total}", file=sys.stderr)
 
     if args.pages:
         stars = stars[: args.pages * args.per_page]
 
-    if args.positions == "tycho2":
-        m = refine_positions(stars, args.decmax)
-        print(f"positions refined from Tycho-2: {m}/{len(stars)}", file=sys.stderr)
+    if args.parallax == "bigsky" and args.notes == "cross":
+        n = load_distances(stars, args.max_dist_ly)
+        print(f"Hipparcos distances within {args.max_dist_ly:g} ly: "
+              f"{n}/{len(stars)}", file=sys.stderr)
 
     # IAU constellation from the J2000 position
     from astropy.coordinates import SkyCoord, get_constellation
@@ -849,31 +954,47 @@ def main() -> int:
         struve = load_struve(STRUVE)
         hit = nstruve = 0
         for s in stars:
-            if not s.hd:
-                continue
-            parts = []
-            # A BSC5 ADS number means the star is a known double; if Struve
-            # also catalogued it, lead with his designation.
-            if s.ads and s.sao:
-                st = struve.get(s.sao)
-                if st:
-                    parts.append(colour(tex_escape(st), "coldbl"))
-                    nstruve += 1
-            # Only a real variable-star designation earns a leading note; the
-            # asterisk in the V column already covers the rest.
-            vn = var_note(s.var_id)
-            if vn:
-                parts.append(colour(tex_escape(vn), "colvar"))
-            # keep at most --max-notes entries in total, in priority order
-            ent = cross.get(int(s.hd), [])[: max(args.max_notes - len(parts), 0)]
-            if ent:
-                parts.append(tex_escape(fmt_cross(ent)))
-            if parts:
-                s.notes = [", ".join(parts)]
+            # "free" notes are never dropped: they are short, and they answer
+            # what the star *is* rather than what it was once called.
+            free = []
+            cn = colour_name(s.bv)
+            if cn:
+                free.append(colour(tex_escape(cn), "colsp"))
+            if s.dist_ly is not None:
+                free.append(colour(tex_escape(fmt_dist(s.dist_ly)), "coldist"))
+            # "opt" notes are offered in priority order and kept while the
+            # line holds them; LaTeX decides, not this loop.
+            opt = []
+            if s.hd:
+                # A BSC5 ADS number means the star is a known double; if Struve
+                # also catalogued it, lead with his designation.
+                if s.ads and s.sao:
+                    st = struve.get(s.sao)
+                    if st:
+                        opt.append(colour(tex_escape(st), "coldbl"))
+                        nstruve += 1
+                # Only a real variable-star designation earns a note; the
+                # asterisk in the V column already covers the rest.
+                vn = var_note(s.var_id)
+                if vn:
+                    opt.append(colour(tex_escape(vn), "colvar"))
+                # each cross-identification is its own fragment, so they can be
+                # dropped one at a time from the low-priority end
+                ent = cross.get(int(s.hd), [])
+                if args.max_notes:      # optional hard cap, off by default
+                    ent = ent[: max(args.max_notes - len(opt), 0)]
+                opt += [tex_escape(f"{lab} ({num}): {mag:.1f}")
+                        for lab, num, mag in ent]
+            if free or opt:
+                s.notes = [fit_notes(free, opt)]
                 hit += 1
         ndouble = sum(1 for s in stars if s.ads)
+        ncol = sum(1 for s in stars if colour_name(s.bv))
+        ndist = sum(1 for s in stars if s.dist_ly is not None)
         print(f"stars with a note: {hit}/{len(stars)};  "
               f"ADS doubles {ndouble}, of which Struve {nstruve}", file=sys.stderr)
+        print(f"colour names: {ncol}/{len(stars)};  "
+              f"distances within {args.max_dist_ly:g} ly: {ndist}", file=sys.stderr)
     elif args.notes == "bsc5":
         allnotes = load_notes(BSC5_NOTES)
         for s in stars:
