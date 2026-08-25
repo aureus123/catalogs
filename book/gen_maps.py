@@ -27,7 +27,8 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_catalog import BSC5, parse_bsc5  # noqa: E402
+from build_catalog import (BSC5, NGC2000, NGC_LIST,  # noqa: E402
+                           parse_bsc5, parse_ngc2000)
 
 ROOT = Path(__file__).resolve().parent.parent
 BOOK = ROOT / "book"
@@ -44,6 +45,18 @@ DEC_POLAR = -45.0   # polar cap starts here (7 deg of overlap with the band)
 # obviously larger without swamping the plate
 MAG_FAINT = 6.2     # notional zero-size magnitude
 SIZE_SCALE = 2.2
+
+# Deep-sky objects are drawn as an open circle with a cross through it, the
+# atlas convention for a nebula.  One size for all of them: the symbol says
+# "there is something here worth a telescope", not how bright it is, and a
+# magnitude-scaled version would make the faint galaxies vanish.  It is a
+# little larger than a first-magnitude dot so it reads as a symbol, not a star.
+DSO_SIZE = 9.0
+# ~0.19 pt printed.  Lighter than everything else on the plate on purpose: at
+# the weight of the constellation lines (1.0) the circle and its cross close up
+# into a blob at this size.  0.5 is about as thin as it can go -- below ~0.15 pt
+# a hairline starts breaking up on press -- so there is little room left.
+LW_DSO = 0.6
 
 
 def plates() -> list[dict]:
@@ -100,14 +113,36 @@ POLAR_DEC_PT = 26.0
 # Colours for the on-screen PDF.  --mono gives the black-and-white set a
 # printed edition wants.  The frame, ticks, labels and stars stay black in
 # both: they are furniture, not data.
+#
+# Two of them are quoted straight from the table's palette, so that a reader
+# moving between the chart and the catalogue meets the same colour for the same
+# thing: the constellation borders take the declination blue, and the deep-sky
+# symbol takes the violet of the HD/NGC column.  The constellation names
+# already shared the green.  If any of these is retouched in the LaTeX
+# preamble, it has to be retouched here too.
 COLOURS = {
     "grid":     "#C9564B",   # light red
     "figures":  "#000000",   # constellation lines stay black
-    "borders":  "#8A76C4",   # light violet
-    "names":    "#2E8B57",   # constellation names
+    "borders":  "#1F3D7A",   # dark blue -- \definecolor{coldec}
+    "names":    "#2E8B57",   # constellation names -- \definecolor{colcon}
+    "dso":      "#5B2C87",   # dark violet -- \definecolor{colhd}
 }
 MONO = {"grid": "#666666", "figures": "#000000", "borders": "#888888",
-        "names": "#000000"}
+        "names": "#000000", "dso": "#000000"}
+
+# Stacking order of the plate, back to front.  matplotlib breaks ties by draw
+# order, and everything used to sit on starplot's single default layer, so the
+# order was implicit in the sequence of calls -- fragile, and impossible to read
+# off the code.  These make it explicit: stars on top of everything, the grid
+# underneath everything.
+Z = {
+    "grid":     100,
+    "borders":  200,
+    "figures":  300,
+    "dso":      400,
+    "names":    500,
+    "stars":    600,
+}
 
 NAME_FS_FACTOR = 0.75   # constellation names, relative to the gridline labels
 
@@ -139,7 +174,7 @@ def draw_constellation_names(chart, p: dict, colour: str) -> None:
                                              ccrs.PlateCarree())
         placed.append(ax.text(x, y, str(name), color=colour, fontsize=fs,
                               ha="center", va="center", clip_on=False,
-                              zorder=1004))
+                              zorder=Z["names"]))
 
     if not placed:
         return 0
@@ -367,7 +402,7 @@ def marker_size(mag: float) -> float:
 
 
 def build_plate(p: dict, stars, hip_pos, lines, out_dir: Path,
-                colours: dict = COLOURS) -> Path:
+                colours: dict = COLOURS, dsos=()) -> Path:
     from starplot import (LineStyle, MapPlot, MarkerStyle, ObjectStyle,
                           PathStyle, Stereographic, Miller)
 
@@ -431,7 +466,7 @@ def build_plate(p: dict, stars, hip_pos, lines, out_dir: Path,
     # the plate, so on the printed page they read along their own axis.
     grid_kw = dict(
         style=PathStyle(line=LineStyle(style="dotted", width=LW_GRID, alpha=0.9,
-                                       color=colours["grid"])),
+                                       color=colours["grid"], zorder=Z["grid"])),
         labels=True,
         ra_formatter_fn=ra_label,
         dec_formatter_fn=dec_label,
@@ -453,12 +488,13 @@ def build_plate(p: dict, stars, hip_pos, lines, out_dir: Path,
         draw_klein_frame(chart, p, band_dec_locs)
     chart.constellation_borders(
         style=LineStyle(style="dashed", width=LW_BORDERS, alpha=0.9,
-                        color=colours["borders"]))
+                        color=colours["borders"], zorder=Z["borders"]))
 
     # Constellation figures: a segment is drawn only when *both* endpoints fall
     # inside this plate, so no line is left dangling off the edge.
     seg_style = PathStyle(line=LineStyle(style="solid", width=LW_FIGURES,
-                                         alpha=1.0, color=colours["figures"]))
+                                         alpha=1.0, color=colours["figures"],
+                                         zorder=Z["figures"]))
     named = draw_constellation_names(chart, p, colours["names"])
 
     drawn = 0
@@ -477,14 +513,29 @@ def build_plate(p: dict, stars, hip_pos, lines, out_dir: Path,
         chart.marker(
             ra=s.ra_deg, dec=s.de_deg,
             style=ObjectStyle(marker=MarkerStyle(
-                size=marker_size(s.vmag), fill="full", color="black")),
+                size=marker_size(s.vmag), fill="full", color="black",
+                zorder=Z["stars"])),
         )
         plotted += 1
 
+    ndso = 0
+    for d in dsos:
+        if not in_fov(d.ra_deg, d.de_deg, p):
+            continue
+        chart.marker(
+            ra=d.ra_deg, dec=d.de_deg,
+            style=ObjectStyle(marker=MarkerStyle(
+                symbol="circle_plus", size=DSO_SIZE, fill="none",
+                color=colours["dso"], edge_color=colours["dso"],
+                edge_width=LW_DSO, zorder=Z["dso"])),
+        )
+        ndso += 1
+
     out = out_dir / f"{p['name']}.pdf"
     chart.export(str(out))
-    print(f"  {p['name']}: {plotted} stars, {drawn} constellation segments, "
-          f"{named} names -> {out.name}", file=sys.stderr)
+    print(f"  {p['name']}: {plotted} stars, {ndso} deep-sky, "
+          f"{drawn} constellation segments, {named} names -> {out.name}",
+          file=sys.stderr)
     return out
 
 
@@ -500,6 +551,10 @@ def main() -> int:
 
     stars = parse_bsc5(BSC5, VMAX, 90.0)
     print(f"stars available: {len(stars)}", file=sys.stderr)
+    # the same deep-sky list the table carries, so a symbol on a plate always
+    # has a row to look up.  DEC_BAND is the table's own +52 cut.
+    dsos, _ = parse_ngc2000(NGC2000, NGC_LIST, DEC_BAND)
+    print(f"deep-sky objects: {len(dsos)}", file=sys.stderr)
     hip_pos = load_hip_positions()
     lines = load_constellation_lines()
     print(f"HIP positions: {len(hip_pos)}, constellation segments: {len(lines)}",
@@ -509,7 +564,7 @@ def main() -> int:
         if args.only and p["name"] != args.only:
             continue
         build_plate(p, stars, hip_pos, lines, args.out,
-                    MONO if args.mono else COLOURS)
+                    MONO if args.mono else COLOURS, dsos)
     return 0
 
 

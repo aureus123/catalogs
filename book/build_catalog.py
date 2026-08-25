@@ -6,10 +6,15 @@ Gould designations come from the Uranometria Argentina (cat/ua.txt), joined
 on HD.  Positions are the BSC5 ones: the table prints RA to the second and
 Dec to a tenth of an arcminute, well inside what BSC5 already carries.
 
+A hand-picked list of deep-sky objects (book/ngc2000.txt) is merged into the
+same RA-ordered table, sharing its columns but filling only those that mean
+anything for a nebula or a cluster -- see NGC_LIST and the Dso class.
+
 Usage:
-    python build_catalog.py                    # 2 pages, 50 stars/page
+    python build_catalog.py                    # 2 pages, 55 rows/page
     python build_catalog.py --pages 0          # whole catalogue
-    python build_catalog.py --notes            # fill notes from ybsc5.notes.txt
+    python build_catalog.py --notes bsc5       # notes from ybsc5.notes.txt
+    python build_catalog.py --dso none         # stars only, no deep-sky rows
 """
 from __future__ import annotations
 
@@ -68,6 +73,59 @@ BSC5 = BOOK / "ybsc5.txt"
 BSC5_NOTES = BOOK / "ybsc5.notes.txt"
 UA = CAT / "ua.txt"
 MAPS = BOOK / "maps"      # atlas plates produced by gen_maps.py
+
+# ---- deep-sky objects ----------------------------------------------------
+# NGC 2000.0 (Sinnott 1988), the machine-readable NGC/IC.  Positions there are
+# equinox 2000.0 despite the "B2000" label in the byte description -- M 31 sits
+# at 0h42.7m +41d16', which is the J2000 place, not the B1950 one.
+NGC2000 = BOOK / "ngc2000.txt"
+NGC2000_NAMES = BOOK / "ngc2000.names.txt"
+
+# The objects to include, chosen by hand rather than by any magnitude cut: a
+# deep-sky list is a list of things worth pointing a telescope at, which no
+# single number selects.  Kept sorted for reading; duplicates are harmless.
+NGC_LIST = [
+    104, 121, 224, 253, 288, 362, 1068, 1316, 1399, 1535, 1543, 1566, 1574,
+    1647, 1851, 1904, 1960, 2064, 2067, 2070, 2071, 2074, 2079, 2080, 2099,
+    2100, 2158, 2168, 2169, 2232, 2287, 2298, 2323, 2362, 2392, 2422, 2425,
+    2437, 2438, 2447, 2451, 2477, 2478, 2516, 2547, 2548, 2632, 2645, 2660,
+    2682, 2808, 2867, 2899, 3114, 3115, 3201, 3228, 3242, 3293, 3532, 3621,
+    3766, 3918, 4103, 4361, 4409, 4486, 4594, 4609, 4755, 4833, 5139, 5156,
+    5206, 5236, 5253, 5264, 5272, 5408, 5460, 5904, 6025, 6093, 6121, 6231,
+    6337, 6369, 6397, 6405, 6475, 6520, 6523, 6530, 6618, 6656, 6705, 6752,
+    6809, 6853, 6934, 7009, 7078, 7089, 7213,
+]
+
+# NGC 2000.0 type code -> the word that opens the note.
+#
+# "Nb" is the one code that does not map cleanly: the catalogue defines it as
+# "bright emission *or* reflection nebula" and offers nothing that separates
+# the two, so it becomes the neutral "nebulosa difusa" -- true of NGC 2064,
+# 2067 and 2071 (reflection, the M78 complex) and of NGC 6523 (emission, the
+# Lagoon) alike, and contrasting usefully with "nebulosa planetaria".
+DSO_TYPE = {
+    "Gx":  "Galaxia",
+    "OC":  "Cúmulo abierto",
+    "Gb":  "Cúmulo globular",
+    "Nb":  "Nebulosa difusa",
+    "Pl":  "Nebulosa planetaria",
+    "C+N": "Cúmulo con nebulosidad",
+    "Ast": "Asterismo",
+    "Kt":  "Nudo en una galaxia",
+    "***": "Estrella triple",
+    "D*":  "Estrella doble",
+    "*":   "Estrella",
+}
+
+# Three objects carry type "-", meaning the RNGC (1973) called them
+# nonexistent, so NGC 2000.0 leaves them with no type, magnitude or size.
+# Dreyer and modern catalogues both disagree with that verdict, and since the
+# list asks for these objects by name they are typed from his description
+# rather than printed blank:
+#   2478  "cluster"                 open cluster in Puppis
+#   2645  "Cl, S, st L and S"       open cluster in Vela
+#   4409  "vF, pS, r; = 4420?"      Dreyer's own guess; NGC 4420 is a galaxy
+DSO_TYPE_FIX = {2478: "OC", 2645: "OC", 4409: "Gx"}
 
 # Hipparcos parallaxes, borrowed from the atlas star file.  BSC5 carries a
 # parallax of its own but it is pre-Hipparcos (1991) and badly wrong at these
@@ -146,6 +204,21 @@ class Star:
     notes: list[str] = field(default_factory=list)
 
 
+@dataclass
+class Dso:
+    """A deep-sky row.  Shares the table's columns with Star, but only RA,
+    Dec, V, Cst., HD/NGC and Notas ever carry anything."""
+    ngc: int
+    ra_deg: float
+    de_deg: float
+    vmag: float | None      # integrated magnitude, absent for 15 of them
+    phot: bool              # magnitude is photographic (blue), not visual
+    typ: str                # NGC 2000.0 type code
+    names: list[str] = field(default_factory=list)
+    con: str = ""           # IAU constellation from J2000 position
+    notes: list[str] = field(default_factory=list)
+
+
 def _f(s: str):
     s = s.strip()
     return float(s) if s else None
@@ -191,6 +264,76 @@ def parse_bsc5(path: Path, vmax: float, decmax: float) -> list[Star]:
             ))
     out.sort(key=lambda s: s.ra_deg)
     return out
+
+
+def load_ngc_names(path: Path) -> dict[int, list[str]]:
+    """NGC number -> the common names NGC 2000.0 records for it.
+
+    The file's Comment field is either a list of co-designations ("4038-9" for
+    the Antennae) or an editorial aside in parentheses.  The parenthesised ones
+    are not names of the object at all -- "Beehive cluster (See Praesepe)" and
+    "kappa Cru cluster (See Jewel Box)" are pointers to the entry that follows,
+    and "Hourglass nebula (Brightest part of NGC 6523)" names a *part* of the
+    Lagoon -- so those rows are dropped and the object keeps its real name.
+
+    Names are printed exactly as the file spells them, "omega Cen" and all;
+    only a Messier number is renormalised, from "M  31" to "M 31".
+    """
+    names: dict[int, list[str]] = {}
+    if not path.exists():
+        return names
+    with open(path, encoding="latin-1") as fh:
+        for line in fh:
+            obj = " ".join(line[0:35].split())
+            num, comment = line[36:41].strip(), line[42:70].strip()
+            if not obj or not num.isdigit() or comment.startswith("("):
+                continue
+            names.setdefault(int(num), []).append(obj)
+    # Messier first, then the proper names in the file's own (alphabetical)
+    # order: the number is the shorter and more useful handle at the eyepiece.
+    for lst in names.values():
+        lst.sort(key=lambda n: (0 if n.startswith("M ") else 1))
+    return names
+
+
+def parse_ngc2000(path: Path, wanted: list[int], decmax: float
+                  ) -> tuple[list[Dso], list[tuple[int, float]]]:
+    """Read the requested NGC objects.  Returns (kept, skipped-too-far-north).
+
+    NGC 2000.0 gives RA to a tenth of a minute and Dec to the whole arcminute,
+    so a deep-sky row is coarser than the stars around it by roughly 6s and
+    30" respectively.  It is still printed in the table's own format: a second
+    position style for 104 rows out of 2700 would cost the reader more than the
+    spurious final digit does, and no object here is small enough to care.
+    """
+    want = set(wanted)
+    kept: list[Dso] = []
+    north: list[tuple[int, float]] = []
+    with open(path, encoding="latin-1") as fh:
+        for line in fh:
+            name = line[0:5].strip()
+            if not name.isdigit() or int(name) not in want:
+                continue          # IC entries keep their "I" and never match
+            n = int(name)
+            rah, ram = _f(line[10:12]), _f(line[13:17])
+            ded, dem = _f(line[20:22]), _f(line[23:25])
+            if None in (rah, ram, ded, dem) or line[19] not in "+-":
+                continue
+            de = ded + dem / 60.0
+            if line[19] == "-":
+                de = -de
+            if de >= decmax:
+                north.append((n, de))
+                continue
+            kept.append(Dso(
+                ngc=n,
+                ra_deg=(rah + ram / 60.0) * 15.0,
+                de_deg=de,
+                vmag=_f(line[40:44]),
+                phot=line[44:45] == "p",
+                typ=DSO_TYPE_FIX.get(n, line[6:9].strip()),
+            ))
+    return kept, north
 
 
 def load_gould(path: Path) -> dict[str, str]:
@@ -598,7 +741,10 @@ PREAMBLE = r"""%% twoside makes LaTeX distinguish recto (odd) from verso (even) 
 %% Width taken by the seven fixed columns plus their separators.  The notes
 %% column absorbs whatever is left, so it re-adapts if the margins change.
 %% Tune this one number after the first compile if the table over/underruns.
+%% HDEXTRA is the allowance for the wider "HD/NGC" heading, added only when
+%% deep-sky rows are present, so --fixedcolw keeps one meaning in both modes.
 \newlength{\fixedcolw}\setlength{\fixedcolw}{FIXEDCOLW}
+\addtolength{\fixedcolw}{HDEXTRA}
 \newlength{\notew}\setlength{\notew}{\dimexpr\textwidth-\fixedcolw\relax}
 
 %% ---- title page ---------------------------------------------------------
@@ -706,7 +852,7 @@ FONTSIZE
 %% sides of the baseline.
 \setlength{\extrarowheight}{EXTRAROWHEIGHT}
 
-\begin{longtable}{@{}l l r l l c l rSAOSPEC p{\notew}@{}}
+\begin{longtable}{@{}l l r l l c l r r p{\notew}@{}}
 HEADBLOCK"""
 
 # The header row.  When it lives in \endhead, longtable boxes it separately and
@@ -716,8 +862,8 @@ HEADBLOCK"""
 # Emitting the row as ordinary table rows puts it in the same alignment pass as
 # the data, which fixes both symptoms at once.
 HEADER_ROW = (r"\textbf{AR} & \textbf{Dec} & \textbf{V} & \textbf{Sp.} & "
-              r"\textbf{Cst.} & \textbf{B.} & \textbf{Fl/G} & \textbf{HD} &"
-              r"SAOHEAD \textbf{Notas} \\")
+              r"\textbf{Cst.} & \textbf{B.} & \textbf{Fl/G} & \textbf{HDHEAD} & "
+              r"\textbf{SAO} & \textbf{Notas} \\")
 
 HEADER_BLOCK = "\\hline\n" + HEADER_ROW + "\n\\hline"
 
@@ -731,6 +877,11 @@ ATLAS
 \end{document}
 """
 
+
+# Extra width the bold "HD/NGC" heading claims over the widest HD number.
+# Measured from the overfull-hbox warning the plain 78/90mm settings produce
+# once deep-sky rows are in: 14.42pt = 5.06mm, rounded up for a little slack.
+HD_NGC_EXTRA = "5.5mm"
 
 # Space a plate may occupy on the page, in mm (text block minus a little).
 ATLAS_MAX_W = 186.0
@@ -797,15 +948,67 @@ def atlas_block(maps_dir: Path) -> str:
     return "\n".join(out)
 
 
-def emit(stars: list[Star], out: Path, per_page: int, fontsize: str,
+def star_cells(s: Star) -> list[str]:
+    return [
+        "",                                     # RA, filled in by the caller
+        colour(fmt_dec(s.de_deg), "coldec"),
+        # \rlap keeps the asterisk out of the cell's measured width, so
+        # every magnitude stays flush right and the decimal points line up
+        colour(f"{s.vmag:.1f}", "colmag")
+        + (r"\rlap{" + colour(r"$^{*}$", "colvar") + "}" if s.var_id else ""),
+        colour(fmt_sp(s.sp_type), "colsp") if s.sp_type else "",
+        colour(s.con, "colcon"),
+        fmt_bayer(s),
+        fmt_desig(s),
+        colour(s.hd, "colhd") if s.hd else "",
+        colour(s.sao, "colsao") if s.sao else "",
+        " ".join(s.notes),
+    ]
+
+
+def dso_cells(d: Dso) -> list[str]:
+    """The same ten columns, with the six that mean nothing here left empty.
+
+    A dagger on the magnitude marks the photographic (blue) values: NGC 2000.0
+    carries whichever of the two it has, and 13 of these objects were never
+    measured visually.  It is \\rlap'd for the same reason the variable-star
+    asterisk is -- so the digits stay flush right with the stars above.
+    """
+    if d.vmag is None:
+        mag = ""
+    else:
+        mag = colour(f"{d.vmag:.1f}", "colmag")
+        if d.phot:
+            mag += r"\rlap{" + colour(r"$^{\dagger}$", "colmag") + "}"
+    return [
+        "",                                     # RA, filled in by the caller
+        colour(fmt_dec(d.de_deg), "coldec"),
+        mag,
+        "",                                     # Sp.
+        colour(d.con, "colcon"),
+        "", "",                                 # B., Fl/G
+        colour(str(d.ngc), "colhd"),
+        "",                                     # SAO
+        " ".join(d.notes),
+    ]
+
+
+def emit(stars: list, out: Path, per_page: int, fontsize: str,
          arraystretch: float, notewidth: str, flow: bool = False,
          extrarowheight: str = "2pt", rule_every: int = 5,
-         sao: bool = False, title: str = "", repeat_ra: bool = False,
+         title: str = "", repeat_ra: bool = False,
          atlas: str = "", author: str = "") -> None:
-    # resolve the optional SAO cell once; the mid-table headers are appended to
-    # the body, which never goes through the preamble's placeholder pass
-    sao_head = r" \textbf{SAO} &" if sao else ""
-    head_block = HEADER_BLOCK.replace("SAOHEAD", sao_head)
+    # The mid-table headers are appended to the body, which never goes through
+    # the preamble's placeholder pass, so they need their own substitution.
+    # The HD column only earns its second name when deep-sky rows are present.
+    # It is not cosmetic: bold "HD/NGC" is wider than any six-digit HD number,
+    # so it is the heading, not the data, that then sets the column's width.
+    # The measured cost is 14.42pt (5.06mm); HD_NGC_EXTRA rounds that up and is
+    # added to \fixedcolw here rather than being left for --fixedcolw to carry,
+    # so the same number works whether or not the deep-sky rows are in.
+    has_dso = any(isinstance(r, Dso) for r in stars)
+    hd_head = "HD/NGC" if has_dso else "HD"
+    head_block = HEADER_BLOCK.replace("HDHEAD", hd_head)
     # Ink-saving rule: within a page, an hour or minute that repeats down the
     # column is printed only on the first and last row of the run.  Minutes are
     # keyed on (hour, minute) so a run can never straddle an hour boundary.
@@ -819,22 +1022,8 @@ def emit(stars: list[Star], out: Path, per_page: int, fontsize: str,
 
     body = []
     for i, s in enumerate(stars):
-        note = " ".join(s.notes)
-        cells = [
-            fmt_ra(s.ra_deg, show_h[i], show_m[i]),
-            colour(fmt_dec(s.de_deg), "coldec"),
-            # \rlap keeps the asterisk out of the cell's measured width, so
-            # every magnitude stays flush right and the decimal points line up
-            colour(f"{s.vmag:.1f}", "colmag")
-            + (r"\rlap{" + colour(r"$^{*}$", "colvar") + "}" if s.var_id else ""),
-            colour(fmt_sp(s.sp_type), "colsp") if s.sp_type else "",
-            colour(s.con, "colcon"),
-            fmt_bayer(s),
-            fmt_desig(s),
-            colour(s.hd, "colhd") if s.hd else "",
-            *([colour(s.sao, "colsao") if s.sao else ""] if sao else []),
-            note,
-        ]
+        cells = dso_cells(s) if isinstance(s, Dso) else star_cells(s)
+        cells[0] = fmt_ra(s.ra_deg, show_h[i], show_m[i])
         body.append(" & ".join(cells) + r" \\")
         # a rule every rule_every rows, banding the table instead of boxing
         # every star; always close the table with one
@@ -853,9 +1042,9 @@ def emit(stars: list[Star], out: Path, per_page: int, fontsize: str,
            .replace("ARRAYSTRETCH", f"{arraystretch:.2f}")
            .replace("FONTSIZE", fontsize)
            .replace("FIXEDCOLW", notewidth)
+           .replace("HDEXTRA", HD_NGC_EXTRA if has_dso else "0pt")
            .replace("EXTRAROWHEIGHT", extrarowheight)
-           .replace("SAOSPEC", " r" if sao else "")
-           .replace("SAOHEAD", r" \textbf{SAO} &" if sao else "")
+           .replace("HDHEAD", hd_head)
            .replace("TITLETEXT", title)
            .replace("AUTHORTEXT", author.upper())
            + "\n".join(body) + "\n" + post)
@@ -883,6 +1072,10 @@ def main() -> int:
                     help="optional hard cap on notes per star; 0 (default) "
                          "lets the line width decide, keeping as many as fit "
                          "and dropping the lowest-priority ones first")
+    ap.add_argument("--dso", choices=["ngc", "none"], default="ngc",
+                    help="merge the hand-picked NGC 2000.0 deep-sky objects "
+                         "into the table (default); none leaves the "
+                         "catalogue stars-only")
     ap.add_argument("--parallax", choices=["bigsky", "none"], default="bigsky",
                     help="source of the distance note; none omits it")
     ap.add_argument("--max-dist-ly", type=float, default=100.0,
@@ -902,8 +1095,6 @@ def main() -> int:
                     help="name set below the title-page flourish")
     ap.add_argument("--title", default="",
                     help="override the title-page text (LaTeX)")
-    ap.add_argument("--sao", action="store_true",
-                    help="add an SAO column to the right of HD")
     ap.add_argument("--rule-every", type=int, default=5,
                     help="draw a horizontal rule every N rows (1 = one per star)")
     ap.add_argument("--extrarowheight", default="2pt",
@@ -912,9 +1103,10 @@ def main() -> int:
     ap.add_argument("--flow", action="store_true",
                     help="let longtable break pages naturally instead of "
                          "forcing a break every --per-page rows")
-    ap.add_argument("--fixedcolw", dest="notewidth", default="78mm",
-                    help="width allowance for the 7 fixed columns; the notes "
-                         "column takes textwidth minus this")
+    ap.add_argument("--fixedcolw", dest="notewidth", default="90mm",
+                    help="width allowance for the nine fixed columns; the "
+                         "notes column takes textwidth minus this, less "
+                         "HD_NGC_EXTRA when deep-sky rows widen the HD heading")
     args = ap.parse_args()
 
     stars = parse_bsc5(BSC5, args.vmax, args.decmax)
@@ -933,8 +1125,29 @@ def main() -> int:
     n_sp = sum(1 for s in stars if fmt_sp(s.sp_type))
     print(f"spectral classes parsed: {n_sp}/{total}", file=sys.stderr)
 
+    dsos: list[Dso] = []
+    if args.dso == "ngc":
+        dsos, north = parse_ngc2000(NGC2000, NGC_LIST, args.decmax)
+        for n, de in north:
+            print(f"  NGC {n} is at Dec {de:+.1f}, north of the "
+                  f"{args.decmax:+g} limit -- omitted", file=sys.stderr)
+        names = load_ngc_names(NGC2000_NAMES)
+        for d in dsos:
+            d.names = names.get(d.ngc, [])
+        found = {d.ngc for d in dsos} | {n for n, _ in north}
+        for n in sorted(set(NGC_LIST) - found):
+            print(f"  NGC {n} not found in {NGC2000.name}", file=sys.stderr)
+        print(f"deep-sky objects: {len(dsos)} of {len(set(NGC_LIST))} requested",
+              file=sys.stderr)
+    total_dso = len(dsos)
+
+    # One RA-ordered sequence: a deep-sky object sits among the stars that
+    # share its patch of sky, which is how it will be looked up.
+    rows = sorted(stars + dsos, key=lambda r: r.ra_deg)
     if args.pages:
-        stars = stars[: args.pages * args.per_page]
+        rows = rows[: args.pages * args.per_page]
+    stars = [r for r in rows if isinstance(r, Star)]
+    dsos = [r for r in rows if isinstance(r, Dso)]
 
     if args.parallax == "bigsky" and args.notes == "cross":
         n = load_distances(stars, args.max_dist_ly)
@@ -944,10 +1157,25 @@ def main() -> int:
     # IAU constellation from the J2000 position
     from astropy.coordinates import SkyCoord, get_constellation
     import astropy.units as u
-    coords = SkyCoord([s.ra_deg for s in stars] * u.deg,
-                      [s.de_deg for s in stars] * u.deg, frame="icrs")
-    for s, c in zip(stars, get_constellation(coords, short_name=True)):
-        s.con = c
+    coords = SkyCoord([r.ra_deg for r in rows] * u.deg,
+                      [r.de_deg for r in rows] * u.deg, frame="icrs")
+    for r, c in zip(rows, get_constellation(coords, short_name=True)):
+        r.con = c
+
+    # Deep-sky notes: what the object *is*, then what it is called.  The type
+    # is never dropped; the names are offered to the same width rule the stars
+    # use, so a long one gives way rather than wrapping the row.
+    for d in dsos:
+        typ = DSO_TYPE.get(d.typ, "")
+        d.notes = [fit_notes([tex_escape(typ)] if typ else [],
+                             [tex_escape(n) for n in d.names])]
+    n_phot = sum(1 for d in dsos if d.phot)
+    n_untyped = sum(1 for d in dsos if d.typ not in DSO_TYPE)
+    if dsos:
+        print(f"deep-sky: {sum(1 for d in dsos if d.vmag is not None)} with a "
+              f"magnitude ({n_phot} photographic), "
+              f"{sum(1 for d in dsos if d.names)} named, "
+              f"{n_untyped} without a type", file=sys.stderr)
 
     if args.notes == "cross":
         cross = load_cross(args.max_dist)
@@ -1008,18 +1236,19 @@ def main() -> int:
     # Upper case, and the degree sign as text (\textdegree) rather than a math
     # superscript so it comes from the same Times face as the digits.
     title = args.title or (
-        (f"Catálogo y Atlas de {total} estrellas hasta la quinta magnitud "
-         f"y al sur de la declinación {args.decmax:+g}").upper()
+        (f"Catálogo y Atlas de {total} estrellas hasta la quinta magnitud"
+         + (f" y {total_dso} objetos de cielo profundo," if total_dso else " y")
+         + f" al sur de la declinación {args.decmax:+g}").upper()
         + r"\textdegree{}")
 
-    emit(stars, args.out, args.per_page, args.fontsize,
+    emit(rows, args.out, args.per_page, args.fontsize,
          args.arraystretch, args.notewidth, args.flow, args.extrarowheight,
-         args.rule_every, args.sao, title, args.repeat_ra,
+         args.rule_every, title, args.repeat_ra,
          atlas_block(MAPS) if args.atlas else "", args.author)
 
     n_mismatch = sum(1 for s in stars if s.name_con and s.con != s.name_con)
-    print(f"wrote {args.out} - {len(stars)} stars, "
-          f"{math.ceil(len(stars)/args.per_page)} pages", file=sys.stderr)
+    print(f"wrote {args.out} - {len(stars)} stars + {len(dsos)} deep-sky, "
+          f"{math.ceil(len(rows)/args.per_page)} pages", file=sys.stderr)
     print(f"designation/IAU constellation mismatches: {n_mismatch}", file=sys.stderr)
     return 0
 
