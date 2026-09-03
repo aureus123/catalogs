@@ -1124,59 +1124,45 @@ Doubles found in U catalog: 97 (saved to results/doubles/usno.csv)
 ***************************************
 Perform comparison between Gilliss (1963 stars) and PPM...
 Stars read from PPM: 468861
-1) Warning: G 223 is FAR from L 2152 (dist = 572.7 arcsec).
-     Register G 223: 06h 01m 22s46 -43°55'22"2
-2) Warning: G 443 is FAR from L 2670 (dist = 884.3 arcsec).
+1) Warning: G 443 is FAR from L 2670 (dist = 884.3 arcsec).
      Register G 443: 07h 07m 04s48 -37°55'23"5
-3) Warning: G 462 is FAR from L 2708 (dist = 282.2 arcsec).
+2) Warning: G 462 is FAR from L 2708 (dist = 282.2 arcsec).
      Register G 462: 07h 10m 34s64 -41°49'35"0
-4) Warning: G 529 is FAR from L 2879 (dist = 1649.6 arcsec).
-     Register G 529: 07h 29m 34s01 -42°04'25"3
-5) Warning: G 779 (vmag = 9.5) has a near PPM 356597 star (vmag = 5.1) with a different magnitude (delta = 4.4).
-6) Warning: G 780 is FAR from L 3271 (dist = 278.6 arcsec).
+3) Warning: G 779 (vmag = 9.5) has a near PPM 356597 star (vmag = 5.1) with a different magnitude (delta = 4.4).
+4) Warning: G 780 is FAR from L 3271 (dist = 278.6 arcsec).
      Register G 780: 08h 13m 01s73 -53°14'20"8
-7) Warning: G 820 (vmag = 10.5) has a near PPM 285269 star (vmag = 6.2) with a different magnitude (delta = 4.3).
-8) Warning: G 830 is ALONE (no PPM or GSC star near it).
+5) Warning: G 820 (vmag = 10.5) has a near PPM 285269 star (vmag = 6.2) with a different magnitude (delta = 4.3).
+6) Warning: G 830 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 98808 at 886.3 arcsec.
-9) Warning: G 987 is FAR from L 3645 (dist = 660.6 arcsec).
+7) Warning: G 987 is FAR from L 3645 (dist = 660.6 arcsec).
      Register G 987: 08h 54m 48s56 -50°16'55"3
-10) Warning: G 991 (vmag = 11.0) has a near PPM 313855 star (vmag = 6.6) with a different magnitude (delta = 4.4).
-11) Warning: G 1155 is FAR from L 4078 (dist = 509.4 arcsec).
+8) Warning: G 991 (vmag = 11.0) has a near PPM 313855 star (vmag = 6.6) with a different magnitude (delta = 4.4).
+9) Warning: G 1155 is FAR from L 4078 (dist = 509.4 arcsec).
      Register G 1155: 09h 49m 05s88 -56°56'22"0
-12) Warning: G 1174 is FAR from L 4107 (dist = 1286.4 arcsec).
+10) Warning: G 1174 is FAR from L 4107 (dist = 1286.4 arcsec).
      Register G 1174: 09h 54m 56s90 -38°43'52"0
-13) Warning: G 1181 is FAR from L 4136 (dist = 1096.4 arcsec).
+11) Warning: G 1181 is FAR from L 4136 (dist = 1096.4 arcsec).
      Register G 1181: 09h 58m 30s87 -47°43'15"4
-14) Warning: G 1198 is FAR from L 4181 (dist = 1240.6 arcsec).
+12) Warning: G 1198 is FAR from L 4181 (dist = 1240.6 arcsec).
      Register G 1198: 10h 04m 05s44 -45°03'06"7
-15) Warning: G 1206 is FAR from L 4210 (dist = 844.7 arcsec).
-     Register G 1206: 10h 07m 46s34 -38°21'35"8
-16) Warning: G 1245 (vmag = 9.5) has a near PPM 338934 star (vmag = 4.5) with a different magnitude (delta = 5.0).
-17) Warning: G 1279 is FAR from L 4352 (dist = 3198.4 arcsec).
-     Register G 1279: 10h 27m 11s80 -57°53'43"1
-18) Warning: G 1414 is ALONE (no PPM or GSC star near it).
-  Note: nearest PPM 758062 at 283.9 arcsec.
-19) Warning: G 1414 is FAR from L 4675 (dist = 3597.4 arcsec).
-     Register G 1414: 11h 08m 58s10 -46°06'14"5
-20) Warning: G 1423 is FAR from L 4696 (dist = 401.3 arcsec).
+13) Warning: G 1245 (vmag = 9.5) has a near PPM 338934 star (vmag = 4.5) with a different magnitude (delta = 5.0).
+14) Warning: G 1423 is FAR from L 4696 (dist = 401.3 arcsec).
      Register G 1423: 11h 10m 52s41 -58°17'12"5
-21) Warning: G 1497 is FAR from L 4993 (dist = 801.6 arcsec).
+15) Warning: G 1497 is FAR from L 4993 (dist = 801.6 arcsec).
      Register G 1497: 11h 56m 00s42 -38°10'20"4
-22) Warning: G 1519 is FAR from L 5190 (dist = 572.9 arcsec).
-     Register G 1519: 12h 23m 45s43 -55°27'32"4
-23) Warning: G 1645 is ALONE (no PPM or GSC star near it).
+16) Warning: G 1645 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 161855 at 363.9 arcsec.
-24) Warning: G 1795 is FAR from L 8048 (dist = 674.0 arcsec).
-     Register G 1795: 19h 12m 19s04 -74°16'33"7
-25) Warning: G 1850 is ALONE (no PPM or GSC star near it).
+17) Warning: G 1795 is FAR from L 8048 (dist = 673.9 arcsec).
+     Register G 1795: 19h 12m 19s30 -74°16'33"7
+18) Warning: G 1850 is ALONE (no PPM or GSC star near it).
   Note: nearest PPM 374960 at 641.5 arcsec.
-26) Warning: G 1888 (vmag = 10.5) has a near PPM 365805 star (vmag = 4.2) with a different magnitude (delta = 6.3).
+19) Warning: G 1888 (vmag = 10.5) has a near PPM 365805 star (vmag = 4.2) with a different magnitude (delta = 6.3).
 Available Gilliss = 1898
-Stars from Gilliss with Lacaille = 943 and Brisbane = 20
+Stars from Gilliss with Lacaille = 946 and Brisbane = 20
 Stars from Gilliss identified with PPM = 1887 and GSC-PPM = 5
 RSME of distance (arcsec) = 3.69  among a total of 1887 stars
 RSME of visual magnitude = 0.57033  among a total of 1461 stars
-Errors logged = 26
+Errors logged = 19
 
 ***************************************
 Perform comparison between UA and PPM/CD/CPD...
