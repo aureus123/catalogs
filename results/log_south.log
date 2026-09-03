@@ -1158,7 +1158,7 @@ Stars read from PPM: 468861
   Note: nearest PPM 374960 at 641.5 arcsec.
 19) Warning: G 1888 (vmag = 10.5) has a near PPM 365805 star (vmag = 4.2) with a different magnitude (delta = 6.3).
 Available Gilliss = 1898
-Stars from Gilliss with Lacaille = 946 and Brisbane = 20
+Stars from Gilliss with Lacaille = 946, Brisbane = 20 and Lalande = 10
 Stars from Gilliss identified with PPM = 1887 and GSC-PPM = 5
 RSME of distance (arcsec) = 3.69  among a total of 1887 stars
 RSME of visual magnitude = 0.57033  among a total of 1461 stars

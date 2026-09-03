@@ -1249,8 +1249,8 @@ void readGCScanned() {
  * (reducidas a 1850, observadas en Santiago de Chile durante 1850-52 por la
  *  US Naval Astronomical Expedition; ver Washington Observations 1868, Ap. I)
  * Es un catalogo distinto al de las zonas de Santiago leido por readGilliss.
- * (ya se deben haber leidos los catalogs Brisbane y Lacaille)
- * tambien revisa referencias cruzadas a Lacaille y Brisbane
+ * (ya se deben haber leidos los catalogs Brisbane, Lacaille y Lalande)
+ * tambien revisa referencias cruzadas a Lacaille, Brisbane y Lalande
  */
 void readGil1963() {
     char buffer[1024], cell[256], catName[20];
@@ -1266,6 +1266,7 @@ void readGil1963() {
     CrossStats stats;
     int checkLac = 0;
     int checkBri = 0;
+    int checkLal = 0;
 
     /* leemos catalogo PPM (pero no es necesario cruzarlo con DM) */
     struct PPMstar_struct *PPMstar = preparePPM(EPOCH_GIL1963, false);
@@ -1337,7 +1338,7 @@ void readGil1963() {
         }
 
         /* lee referencia numerica y referencia a catalogo (que queda en "cell");
-           las demas referencias (BAC, BES, GRE, HC, RUM, WAS) se ignoran */
+           las demas referencias (BAC, BES, GRE, RUM, WAS) se ignoran. */
 		readField(buffer, cell, 18, 5);
         int numRefCat = atoi(cell);
 		readField(buffer, cell, 15, 3);
@@ -1346,6 +1347,8 @@ void readGil1963() {
             checkCrossRef(catName, catLine, "L", x, y, z, numRefCat, &lacList, false, -1, &checkLac, &stats.errors);
         if (!strncmp(cell, "BRI", 3))
             checkCrossRef(catName, catLine, "B", x, y, z, numRefCat, &briList, true, -1, &checkBri, &stats.errors);
+        if (!strncmp(cell, "HC ", 3))
+            checkCrossRef(catName, catLine, "Lal", x, y, z, numRefCat, &lalList, false, -1, &checkLal, &stats.errors);
 
         /* la almacenamos para futuras identificaciones */
         storeStar(&countGi1963, MAXGIL1963STAR, "Gilliss 1963", gi1963Ref, gi1963X, gi1963Y, gi1963Z,
@@ -1357,7 +1360,7 @@ void readGil1963() {
     closeCrossSet(crossPPMStream, crossSAOStream, crossHDStream);
 
     printf("Available Gilliss = %d\n", countGi1963);
-    printf("Stars from Gilliss with Lacaille = %d and Brisbane = %d\n", checkLac, checkBri);
+    printf("Stars from Gilliss with Lacaille = %d, Brisbane = %d and Lalande = %d\n", checkLac, checkBri, checkLal);
     printf("Stars from Gilliss identified with PPM = %d and GSC-PPM = %d\n", stats.countDist, stats.countGSC);
     printRSMEDist(&stats);
     printRSMEMag(&stats);
