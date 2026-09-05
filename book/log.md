@@ -526,9 +526,11 @@ fijo, que es el de interés para un lector del hemisferio sur:
 
 1. **Gould** — `cross_gc_hd.csv`
 2. **Yarnall** — `cross_usno_hd.csv`
-3. **Oeltzen-Arg** — `cross_oa_hd.csv` + `cross_oarn_hd.csv`
-4. **Gilliss** — `cross_gilliss_hd.csv`
-5. **BAC** — `cross_bac_hd.csv`
+3. **Gilliss** — `cross_gilliss_hd.csv`, con `cross_gil1963_hd.csv` de reserva
+4. **Taylor** — `cross_taylor_hd.csv`
+5. **Oeltzen-Arg** — `cross_oa_hd.csv` + `cross_oarn_hd.csv`
+6. **BAC** — `cross_bac_hd.csv`
+7. **Stone** — `cross_stone_hd.csv`
 
 Reglas de depuración:
 
@@ -537,15 +539,112 @@ Reglas de depuración:
   `0.0` sería una afirmación falsa.
 - Si un catálogo empata el mismo HD varias veces, gana **la más brillante** (decisión
   explícita del autor), y la distancia sólo desempata. Cada catálogo aporta **como máximo
-  una** designación por estrella.
+  una** designación por estrella. Esa regla se gana el sueldo en las dobles cerradas que
+  el GC resolvió: cuando separa un par, la secundaria le sale sistemáticamente demasiado
+  débil —υ Car 3.5 y 7.5 para V 2.9 y 6.0; β Mon 4.2 y dos 8.0 para 4.6, 5.0 y 5.3— y
+  quedarse con la más brillante es quedarse con la primaria, que es la que trae la
+  magnitud sana.
+- **No se descarta una magnitud por inverosímil.** El único caso en 6107 identificaciones
+  donde la regla anterior no alcanza es γ Vir, porque las *dos* componentes salieron mal:
+  GC 17291 y 17292 dicen 5.5 y 5.2 para dos estrellas de V 3.65. La identificación es
+  correcta —son las únicas dos entradas del GC en media hora de arco, a 3.75″ y 4.05″ del
+  punto medio del par, o sea a ~7.8″ una de otra, que es el par resuelto—, así que lo que
+  se imprime, `Gould (17292): 5.2`, es literalmente lo que Gould publicó. Se deja: el
+  compromiso de esta columna es reportar lo que dijo el catálogo antiguo, no corregirlo, y
+  un filtro por Δmag contra el BSC5 exigiría un umbral arbitrario y tiraría información
+  real. Además la fila lo delata sola, porque al lado va `Yarnall (5396): 3.5`, que sí
+  coincide con la V: se ve que Gould separó el par donde Yarnall lo midió entero.
+- **Gilliss tiene dos escalones.** Se busca primero en la lista de siempre
+  (`cross_gilliss_hd.csv`); si la estrella no está ahí, y sólo entonces, se toma de la
+  reducción de 1963 (`cross_gil1963_hd.csv`) y el número se marca con un **asterisco**:
+  `Gilliss (1878*): 2.0` para α Gru. Nunca se mezclan los dos: la estrella entra por el
+  escalón más alto que la tenga, y el que aporta sigue siendo un solo número por
+  catálogo. De las 445 notas de Gilliss que se ofrecen, **291** vienen del escalón 1963.
+  (El asterisco de la nota es negro y va pegado al número dentro del paréntesis; el de
+  variabilidad es dorado y vive en la columna V, así que no se confunden.)
 - Cuántas entran en la fila **no lo decide una cuota fija** sino el ancho de la línea
   (§4.5); se recortan primero las de menor prioridad.
 - Oeltzen-Argelander viene partido en zona norte y sur, que reutilizan la misma
   numeración. No se desambigua en el texto: **el signo de la declinación de la fila
   alcanza** para que el lector sepa cuál es.
 
-Cobertura: **2589 de 2596** estrellas llevan alguna nota, y se imprimen **5013**
-identificaciones antiguas en total.
+Cobertura: **2590 de 2596** estrellas llevan alguna nota, y se imprimen **6107**
+identificaciones antiguas en total, repartidas así:
+
+| catálogo | se ofrecen | se imprimen |
+|---|---:|---:|
+| Gould | 1476 | 1476 |
+| Yarnall | 1143 | 1140 |
+| Gilliss | 445 | 397 (243 con asterisco) |
+| Taylor | 2221 | 1816 |
+| Oeltzen-Arg | 361 | 106 |
+| BAC | 2419 | 1088 |
+| Stone | 1510 | 84 |
+
+La caída al final de la lista no es un defecto sino la regla de §4.5 funcionando: con
+siete catálogos hay mucha más oferta que ancho de línea, y lo que se recorta es siempre
+la cola de menor prioridad. Stone imprime 84 de 1510 porque casi siempre llega cuando la
+línea ya está llena; aparece justo donde importa, en las estrellas de las que poco más
+se sabe.
+
+Las **35 estrellas que no llevan ninguna identificación antigua** no se reparten al azar,
+y conviene tener anotado por qué, porque ninguna de las tres causas es un error del
+libro. Salieron de buscar por qué ζ Scl —quinta magnitud, catalogada por ocho
+observatorios del siglo XIX— aparecía con la nota vacía:
+
+1. **El HD que PPM no trae.** Las tablas `cross_*_hd.csv` no cruzan catálogo antiguo
+   contra HD: cruzan contra **PPM**, y el número HD se copia del campo que trae el propio
+   registro PPM. Ese campo viene vacío en 248279 de sus 468861 filas y en **las 275 del
+   suplemento de estrellas brillantes (PPM 400001-400321), donde falta siempre**, junto
+   con SAO y DM. `read_ppm.cpp` sólo escribe la línea HD si el campo tiene algo, así que
+   la estrella se borraba de todos los `_hd` aunque el cruce con PPM hubiera salido bien:
+   ζ Scl = PPM 400001 estaba correctamente identificada con GC 32389 a 2.05″ en
+   `cross_gc_ppm.csv` y en ninguna parte más. Se arregló con `cat/ppm_hd.csv` (§4.4.1);
+   costaba 40 estrellas del libro, hoy cuesta las que quedan abajo como componente débil.
+2. **El HD de la otra componente.** El BSC5 numera las dos componentes de una doble con
+   HD consecutivos y PPM guarda una sola fila, con el de la más brillante: α Gem es
+   HD 60179 en el BSC5 y 60178 en PPM, γ² And es 12534 y 12533. La identificación antigua
+   existe y se imprime, pero colgada de la estrella hermana, porque el catálogo del siglo
+   XIX midió el par como un objeto solo. Es la causa de la mayoría de las 35.
+3. **Nunca las observaron.** Media docena —R Cas, R Hor, la componente débil de un par de
+   la DM— cuya PPM no aparece en ningún `cross_*_ppm.csv`. Que ningún catálogo antiguo
+   las tenga es un resultado, no una falla.
+
+#### 4.4.1 `cat/ppm_hd.csv`: completar lo que PPM dejó en blanco
+
+El arreglo de la causa 1 es un archivo aparte, no un parche sobre `cat/ppm.txt`: los
+catálogos descargados se dejan como vinieron, y las correcciones viven al lado y a la
+vista. `read_ppm.cpp` lo lee al empezar y lo consulta **sólo cuando el campo HD del
+registro está vacío** — nunca corrige un HD que PPM sí trae.
+
+Las 101 identificaciones se recuperan del BSC5 (`gen_ppm_hd.py`), que es lo único con
+número HD, posición y magnitud disponible sin red. Eso pone el techo: 75 de las 275 filas
+del suplemento y 26 sueltas, todas del extremo brillante, que es justamente el que usa el
+libro. Las ~248000 filas débiles sin HD siguen sin HD, y no hay con qué darles uno.
+
+Dos decisiones del cruce que vale la pena tener escritas:
+
+- **El peso es el de `cross_likelihood.py`**, `(θ/σ_pos)² + (Δm/σ_m)²`, y no la distancia
+  sola. El suplemento pone las dobles cerradas en el punto medio de las dos componentes,
+  así que la estrella del BSC5 que queda a 0.00″ de PPM 400225 es α² Her (V 5.39) cuando
+  la magnitud del registro, 3.6, dice a gritos α¹ (V 3.48). Ordenando sólo por distancia
+  el par salía cruzado en tres casos (α Her, μ Cyg, ο Oph); pesando las dos cosas, no.
+  σ_pos = 5″ —lo que hay que absorber no es error de observación sino ese punto medio— y
+  la magnitud de PPM se usa únicamente donde es visual (Flag5 = `V`, o el suplemento).
+- **El mapeo es inyectivo y sólo llena huecos**: ningún HD se reparte a dos PPM, y un HD
+  que PPM ya usa en otra fila no se reparte en absoluto. Eso no quiere decir que los
+  `_hd` queden sin HD repetidos —los tienen desde siempre, 5869 en el de Lalande— porque
+  ahí la repetición la produce otra cosa: varias estrellas de un mismo catálogo antiguo
+  cayendo sobre una misma PPM. Ese mecanismo no cambia; lo único que hace este archivo es
+  que ahora esas filas tengan HD en vez de desaparecer.
+
+Efecto medido: las estrellas del libro sin ninguna identificación antigua bajan de **69 a
+35**, y las identificaciones impresas suben de 6038 a **6107**. Los `cross_*_hd.csv`
+ganan 518 líneas y **no pierden ninguna**, salvo dos de `cross_ua_hd.csv` que son una
+mejora y no una pérdida: `checkUACatalogRef` sólo escribe la referencia HD que imprime la
+UA cuando el desacuerdo con la PPM vecina *no* se explica, y ahora sí se explica —el
+HD 62864 que la UA le asigna a 2 Pup resultó ser PPM 400111, y el 85123 de υ Car,
+PPM 400148, ambas del suplemento y ambas invisibles antes de este archivo.
 
 ### 4.5 Cuántas notas entran: las mide LaTeX
 
@@ -587,7 +686,14 @@ imprime **5013** identificaciones antiguas donde el cupo de 3 imprimía 5192: **
 (3.4 %)**. A cambio el libro sigue en 55 páginas. Las alternativas medidas fueron peores:
 mantener el cupo de 3 obligaba a bajar a 50 filas por página (**59 páginas**, +4), y
 bajar el cupo a 2 mantenía las 55 páginas pero costaba **1037** identificaciones. La
-distribución final por fila es 445 filas con una, 1567 con dos y 478 con tres.
+distribución final por fila era 445 filas con una, 1567 con dos y 478 con tres.
+
+Esa medición, y las de §3 sobre el ancho del encabezado `HD/NGC`, son de cuando había
+**cinco** catálogos antiguos. Con los siete de hoy (§4.4) la oferta creció sin que
+creciera la línea, así que la regla imprime **6107** identificaciones repartidas en 88
+filas con una, 1308 con dos, 1133 con tres y una con cuatro. Lo que cambió no es cuántas
+entran por fila —sigue mandando el ancho— sino que ahora las que entran son mejores: la
+competencia por el lugar la ganan los catálogos de más arriba en la prioridad.
 
 ### 4.6 Escapado y color: el orden importa
 

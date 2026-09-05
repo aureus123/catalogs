@@ -44,7 +44,7 @@ Results and logs are in the [results](results) folder.
 - *compare_cd*: Logs differences between two digital versions of CD
 - *cross_txt*: Fits (by least squares) magnitude scales
 - *gen_tycho2_north* and *gen_tycho2_south*: See README in [tycho2](tycho2) folder, also see the [gallery](gallery) folder
-- Python scripts: *find_const*, *gen_atlas* and *keep_nearest*, *cross_likelihood*
+- Python scripts: *find_const*, *gen_atlas*, *gen_ppm_hd* and *keep_nearest*, *cross_likelihood*
 (you can see description of them in the comments of their source code).
 - Folder *cd*: Contains footnote extractions from CD (color and double stars). Declinations -22 to -24 were manually extracted, while -25 to -31 were extracted by IA, see [findings.md](scans/findings.md).
 - Folder *scans*: Contains Python scripts and scan extractions from CD (footnotes) and GC (references), see [findings.md](scans/findings.md).

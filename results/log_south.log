@@ -1169,6 +1169,8 @@ Perform comparison between UA and PPM/CD/CPD...
 Stars read from PPM: 468861
 **) Note: SAO references mismatch for zeta1 Ant: 200445 != 200444.
      No match found in PPM for SAO 200444 referenced by UA.
+**) Note: HD references mismatch for zeta1 Ant: 82384 != 82383.
+     No match found in PPM for HD 82383 referenced by UA.
 1) Warning: SAO references mismatch for 60G Aqr: 164311 != 164303.
      Match suggested by UA (vmag=6.9): PPM 238672 (vmag=7.4) at distance 648.5 arcsec, instead of PPM 238690 (vmag=8.4) at 1.0 arcsec
 2) Warning: HD references mismatch for 60G Aqr: 203035 != 202929.
@@ -1235,7 +1237,7 @@ Stars read from PPM: 468861
   Note: nearest PPM 357181 at 189.2 arcsec.
   Note: poor CD coverage for stars above 61°.
 **) Note: HD references mismatch for upsilon Car: 85124 != 85123.
-     No match found in PPM for HD 85123 referenced by UA.
+     Match suggested by UA (vmag=3.4): PPM 400148 (vmag=2.9) at distance 5.3 arcsec, instead of PPM 357553 (vmag=0.0) at 4.6 arcsec
 **) Note: HD references mismatch for 225G Car: 93128 != 93129.
      No match found in PPM for HD 93129 referenced by UA.
 15) Warning: Annonymous is FAR from L 4696 (dist = 399.3 arcsec).
@@ -1411,12 +1413,16 @@ Stars read from PPM: 468861
      No match found in PPM for HD 58634 referenced by UA.
 **) Note: SAO references mismatch for n1 Pup: 174020 != 174019.
      Match suggested by UA (vmag=5.7): PPM 252685 (vmag=0.0) at distance 12.7 arcsec, instead of PPM 252684 (vmag=3.0) at 7.2 arcsec
+**) Note: HD references mismatch for n1 Pup: 60585 != 60584.
+     Match suggested by UA (vmag=5.7): PPM 252685 (vmag=0.0) at distance 12.7 arcsec, instead of PPM 252684 (vmag=3.0) at 7.2 arcsec
 53) Warning: 128G Pup is FAR from Lal 14934 (dist = 213742.7 arcsec).
      Register 128G Pup: 07h 33m 06s -25°4.9'
+**) Note: HD references mismatch for k Pup: 61556 != 61555.
+     No match found in PPM for HD 61555 referenced by UA.
 **) Note: SAO references mismatch for 2 Pup: 153362 != 153363.
      No match found in PPM for SAO 153363 referenced by UA.
 **) Note: HD references mismatch for 2 Pup: 62863 != 62864.
-     No match found in PPM for HD 62864 referenced by UA.
+     Match suggested by UA (vmag=6.4): PPM 400111 (vmag=5.6) at distance 11.8 arcsec, instead of PPM 219151 (vmag=7.2) at 6.6 arcsec
 **) Note: SAO references mismatch for 5 Pup: 153413 != 153414.
      No match found in PPM for SAO 153414 referenced by UA.
 54) Warning: SAO references mismatch for 312G Pup: 199224 != 199222.
@@ -1506,6 +1512,8 @@ Stars read from PPM: 468861
 77) Warning: Annonymous is ALONE (no PPM / CD / CPD star near it).
      Register Annonymous: 08h 36m 24s -41°53.5'
   Note: nearest PPM 313403 at 98.3 arcsec.
+**) Note: HD references mismatch for gamma Vir: 110379 != 110380.
+     No match found in PPM for HD 110380 referenced by UA.
 **) Note: SAO references mismatch for 54 Vir: 157799 != 157798.
      No match found in PPM for SAO 157798 referenced by UA.
 78) Warning: 190G Vir is FAR from Lal 25445 (dist = 53845.5 arcsec).

@@ -35,6 +35,60 @@ static int PPMstars = 0;
 
 static int polarDistByIndex[181];
 
+/* Identificaciones PPM -> HD que el propio PPM no trae (ver cat/ppm_hd.csv y
+ * gen_ppm_hd.py).  El campo HD de PPM viene vacío en 248279 de sus 468861
+ * filas, y en las 275 del suplemento de estrellas brillantes (400001-400321)
+ * viene vacío siempre; como writePPMCrossEntry proyecta a HD por ese campo,
+ * un blanco ahí borra la estrella de todos los cross_*_hd.csv.  La tabla se
+ * lee ordenada por PPM y sólo se consulta cuando el campo está vacío. */
+#define MAXPPMHD 4096
+static int ppmHDref[MAXPPMHD], ppmHDhd[MAXPPMHD];
+static int ppmHDcount = 0;
+
+/*
+ * readPPMHD - lee cat/ppm_hd.csv (opcional: si no está, no se completa nada)
+ */
+static void readPPMHD()
+{
+    char buffer[1024];
+
+    ppmHDcount = 0;
+    FILE *stream = fopen("cat/ppm_hd.csv", "rt");
+    if (stream == NULL) {
+        printf("Warning: cat/ppm_hd.csv not found, PPM stars without HD stay without HD.\n");
+        return;
+    }
+    while (fgets(buffer, 1023, stream) != NULL) {
+        if (buffer[0] == '#' || buffer[0] == 'p') continue;   /* comentario o encabezado */
+        int ppmRef = 0, hdRef = 0;
+        if (sscanf(buffer, "%d,%d", &ppmRef, &hdRef) != 2) continue;
+        if (ppmRef <= 0 || hdRef <= 0) continue;
+        if (ppmHDcount == MAXPPMHD) bye("Maximum amount of PPM-HD entries reached!\n");
+        if (ppmHDcount > 0 && ppmRef <= ppmHDref[ppmHDcount - 1]) {
+            bye("cat/ppm_hd.csv must be sorted by PPM number, without repeats!\n");
+        }
+        ppmHDref[ppmHDcount] = ppmRef;
+        ppmHDhd[ppmHDcount] = hdRef;
+        ppmHDcount++;
+    }
+    fclose(stream);
+}
+
+/*
+ * findPPMHD - busca el HD de una PPM en la tabla, o 0 si no está
+ */
+static int findPPMHD(int ppmRef)
+{
+    int lo = 0, hi = ppmHDcount - 1;
+    while (lo <= hi) {
+        int mid = (lo + hi) / 2;
+        if (ppmHDref[mid] == ppmRef) return ppmHDhd[mid];
+        if (ppmHDref[mid] < ppmRef) lo = mid + 1;
+        else hi = mid - 1;
+    }
+    return 0;
+}
+
 /*
  * getPPMstars - devuelve la cantidad de estrellas de PPM leidas
  */
@@ -173,6 +227,8 @@ void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south,
 
     int DMstars = getDMStars();
     struct DMstar_struct *DMstar = getDMStruct();
+
+    readPPMHD();
 
     stream = fopen("cat/ppm.txt", "rt");
     if (stream == NULL) {
@@ -330,6 +386,8 @@ void readPPM(bool useDurch, bool allSky, bool discard_north, bool discard_south,
       int saoRef = atoi(cell);
       readFieldSanitized(buffer, cell, 109, 6);
       int hdRef = atoi(cell);
+      /* el catálogo manda: sólo se completan los blancos, nunca se corrige */
+      if (hdRef == 0) hdRef = findPPMHD(ppmRef);
 
       /* la almacena en memoria */
       if (PPMstars == MAXPPMSTAR) bye("Maximum amount reached!\n");

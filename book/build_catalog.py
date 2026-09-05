@@ -36,14 +36,22 @@ CROSS = ROOT / "results" / "cross"
 
 # Old-catalogue cross-identifications shown in the notes column, in the order
 # they appear in the note.  Each entry renders as "Label (number): mag".
-# Oeltzen-Argelander is split across two files (southern / northern zones);
-# they reuse each other's numbers but share no HD, so merging is unambiguous.
+#
+# A catalogue is a list of tiers, and a tier is (suffix, files).  Files inside
+# one tier are merged -- Oeltzen-Argelander is split across two files (southern
+# / northern zones) that reuse each other's numbers but share no HD, so the
+# merge is unambiguous.  Tiers are consulted in order: a later tier only
+# supplies stars the earlier ones do not carry, and its suffix marks the number
+# in print, so Gilliss falls back to the 1963 reduction as "Gilliss (1878*)".
 CROSS_SOURCES = [
-    ("Gould",       ["cross_gc_hd.csv"]),
-    ("Yarnall",     ["cross_usno_hd.csv"]),
-    ("Oeltzen-Arg", ["cross_oa_hd.csv", "cross_oarn_hd.csv"]),
-    ("Gilliss",     ["cross_gilliss_hd.csv"]),
-    ("BAC",         ["cross_bac_hd.csv"]),
+    ("Gould",       [("",  ["cross_gc_hd.csv"])]),
+    ("Yarnall",     [("",  ["cross_usno_hd.csv"])]),
+    ("Gilliss",     [("",  ["cross_gilliss_hd.csv"]),
+                     ("*", ["cross_gil1963_hd.csv"])]),
+    ("Taylor",      [("",  ["cross_taylor_hd.csv"])]),
+    ("Oeltzen-Arg", [("",  ["cross_oa_hd.csv", "cross_oarn_hd.csv"])]),
+    ("BAC",         [("",  ["cross_bac_hd.csv"])]),
+    ("Stone",       [("",  ["cross_stone_hd.csv"])]),
 ]
 
 # A magnitude of exactly 0 in a cross table means "variable, or no magnitude
@@ -388,31 +396,36 @@ def load_cross(max_dist: float | None = None) -> dict[int, list[tuple[str, str, 
     catalogue recorded the star as variable, or recorded no magnitude at all.
     Where a catalogue still matches the same HD more than once, the brightest
     surviving match wins (nearest breaks a tie), so each old catalogue
-    contributes at most one designation per star.
+    contributes at most one designation per star -- taken from the first tier
+    that has the star at all, never from two tiers at once.
     """
     out: dict[int, list[tuple[str, str, float]]] = {}
-    for label, files in CROSS_SOURCES:
-        best: dict[int, tuple[str, float, float]] = {}
-        for fn in files:
-            p = CROSS / fn
-            if not p.exists():
-                print(f"  warning: {p} not found, skipping", file=sys.stderr)
-                continue
-            df = pd.read_csv(p)
-            df = df[df.mag != CROSS_NO_MAG]
-            if max_dist is not None:
-                df = df[df.dist <= max_dist]
-            for i1, i2, mag, dist in df.itertuples(index=False):
-                try:
-                    hd = int(str(i2).split()[-1])
-                    num = str(i1).split()[-1]
-                except (ValueError, IndexError):
+    for label, tiers in CROSS_SOURCES:
+        chosen: dict[int, tuple[str, float]] = {}
+        for suffix, files in tiers:
+            best: dict[int, tuple[str, float, float]] = {}
+            for fn in files:
+                p = CROSS / fn
+                if not p.exists():
+                    print(f"  warning: {p} not found, skipping", file=sys.stderr)
                     continue
-                mag, dist = float(mag), float(dist)
-                cur = best.get(hd)
-                if cur is None or (mag, dist) < (cur[1], cur[2]):
-                    best[hd] = (num, mag, dist)
-        for hd, (num, mag, _) in best.items():
+                df = pd.read_csv(p)
+                df = df[df.mag != CROSS_NO_MAG]
+                if max_dist is not None:
+                    df = df[df.dist <= max_dist]
+                for i1, i2, mag, dist in df.itertuples(index=False):
+                    try:
+                        hd = int(str(i2).split()[-1])
+                        num = str(i1).split()[-1]
+                    except (ValueError, IndexError):
+                        continue
+                    mag, dist = float(mag), float(dist)
+                    cur = best.get(hd)
+                    if cur is None or (mag, dist) < (cur[1], cur[2]):
+                        best[hd] = (num, mag, dist)
+            for hd, (num, mag, _) in best.items():
+                chosen.setdefault(hd, (num + suffix, mag))
+        for hd, (num, mag) in chosen.items():
             out.setdefault(hd, []).append((label, num, mag))
     return out
 
