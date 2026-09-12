@@ -1262,8 +1262,8 @@ immediately afterwards — the change is deliberately not in the repository. The
 probe was modelled on `readUSNO`'s reference-only style: no `preparePPM`, no
 `crossWithPPM`/`tryGSC`, no cross files, no `warnIfAloneNorth`, no `storeStar`, and
 no code other than `BAC` examined. Both catalogues are B1850.0 (`EPOCH_BAC` and
-`EPOCH_GIL1963` are both 1850.0), so no `transform` was needed. The output was kept
-as *log_north_gil_bac.log* (untracked).
+`EPOCH_GIL1963` are both 1850.0), so no `transform` was needed. Neither the probe
+nor its output survives; what it found is recorded below.
 
 Of the 185 `BAC` rows, **169** were read and **163** fall inside tolerance. The 16
 missing rows are dropped by the pre-existing guard on byte 54 — they have no
