@@ -1,0 +1,13 @@
+# Local observing-site configuration (coordinates, obscode) -- not shared.
+site.json
+
+# Intermediate products: extracted R/G/B planes, ASTAP detections, solved WCS.
+# Rebuilt on demand from the read-only image archive; several GB.
+cache/
+
+# Large frames and generated products
+*.png
+*_aavso.csv
+
+__pycache__/
+.DS_Store

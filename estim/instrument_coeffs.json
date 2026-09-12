@@ -1,0 +1,726 @@
+{
+  "schema_version": 4,
+  "generated": "2026-09-06T20:38:59Z",
+  "calibrator_cuts": {
+    "V_range": [
+      7.0,
+      13.0
+    ],
+    "e_V_max": 0.1,
+    "snr_g_min": 5.0,
+    "blend": {
+      "radius_arcsec": 20.0,
+      "dmag": 3.0,
+      "rule": "reject if a catalogue neighbour within radius is brighter than V_target + dmag (flux-ratio test, depth-independent)"
+    }
+  },
+  "sets": [
+    {
+      "scope": "DWARF 3",
+      "filter": "VIS",
+      "gain": 60,
+      "reference_catalog": {
+        "name": "tycho2",
+        "system": "tycho2",
+        "mag_limit": 14.0,
+        "epoch": 2025.5,
+        "requires_network": false,
+        "source": "cat/tyc2.txt"
+      },
+      "n_fields": 63,
+      "n_stars": 8313,
+      "extraction": {
+        "detection": {
+          "tool": "ASTAP -extract",
+          "astap_version": "unknown",
+          "snr_min": 5,
+          "max_stars": 500,
+          "min_star_size_hfd": 0.8
+        },
+        "photometry": {
+          "backend": "photutils",
+          "photutils_version": "3.0.0",
+          "units": "multiples of the per-star measured HFD",
+          "aperture_hfd": 2.0,
+          "annulus_in_hfd": 4.0,
+          "annulus_out_hfd": 6.0,
+          "method": "exact",
+          "background": "sigma_clipped_median",
+          "sigma_clip": 3.0
+        },
+        "saturation_adu": 64000,
+        "match": {
+          "channel_radius_px": 1.5,
+          "tycho2_radius_arcsec": 8.0,
+          "isolation_arcsec": 20.0
+        }
+      },
+      "colour_index": "b-r",
+      "colour_index_candidates": {
+        "b-r": 1.673,
+        "b-g": 3.399,
+        "g-r": 3.295
+      },
+      "coefficients": {
+        "Tv_bv": {
+          "value": -0.039,
+          "sigma": 0.003,
+          "between_field_sigma": 0.017
+        },
+        "Tbv": {
+          "value": 1.673,
+          "sigma": 0.008
+        },
+        "k_r2": {
+          "value": 0.03,
+          "sigma": 0.006
+        }
+      },
+      "valid_bv_range": [
+        0.0,
+        2.02
+      ],
+      "sigma_V_by_band": {
+        "7-8": 0.284,
+        "8-9": 0.122,
+        "9-10": 0.066,
+        "10-11": 0.098,
+        "11-12": 0.147
+      },
+      "sigma_BV_by_band": {
+        "7-8": 0.189,
+        "8-9": 0.166,
+        "9-10": 0.121,
+        "10-11": 0.182,
+        "11-12": 0.251
+      },
+      "sweep": {
+        "objective": "not run -- extraction parameters are the plan's defaults",
+        "grid": null,
+        "best_score": null,
+        "astap_baseline_score": null
+      },
+      "fields": [
+        "27G_Cap",
+        "37Her",
+        "3Peg",
+        "67Oph",
+        "8Lac",
+        "AGCar",
+        "BTHyi",
+        "BXMic",
+        "EZCMa",
+        "GJ674",
+        "GJ710",
+        "GJ832",
+        "GhostJupiter",
+        "Gum46",
+        "HD122563",
+        "HD149382",
+        "HD97240",
+        "HIP54677",
+        "IC1276",
+        "KXLib",
+        "KapteynStar",
+        "L2Pup",
+        "M107",
+        "M5",
+        "M72",
+        "M80",
+        "NGC1955",
+        "NGC2264",
+        "NGC2451",
+        "NGC4050",
+        "NGC4361",
+        "NGC6369",
+        "NGC6520",
+        "NGC7006",
+        "NSV20131",
+        "RCMa",
+        "RCae",
+        "RCen",
+        "ROct2",
+        "ROct4",
+        "ROct5",
+        "ROct6",
+        "RSCha",
+        "SOct2",
+        "SPav",
+        "Spindle",
+        "TLup",
+        "TMon",
+        "TPup",
+        "TWHor",
+        "U2201",
+        "U3817",
+        "U7815",
+        "UMen",
+        "XOct",
+        "XOph",
+        "YCen",
+        "YCen2",
+        "ZC19h1521",
+        "betaMon",
+        "epsInd",
+        "muCru",
+        "zetaBoo"
+      ]
+    },
+    {
+      "scope": "DWARF 3",
+      "filter": "VIS",
+      "gain": 60,
+      "reference_catalog": {
+        "name": "gaia_v50",
+        "system": "gaia_dr3",
+        "mag_limit": 14.0,
+        "epoch": 2025.5,
+        "requires_network": false,
+        "source": "ASTAP v50 local database (.1476)"
+      },
+      "n_fields": 63,
+      "n_stars": 13912,
+      "extraction": {
+        "detection": {
+          "tool": "ASTAP -extract",
+          "astap_version": "unknown",
+          "snr_min": 5,
+          "max_stars": 500,
+          "min_star_size_hfd": 0.8
+        },
+        "photometry": {
+          "backend": "photutils",
+          "photutils_version": "3.0.0",
+          "units": "multiples of the per-star measured HFD",
+          "aperture_hfd": 2.0,
+          "annulus_in_hfd": 4.0,
+          "annulus_out_hfd": 6.0,
+          "method": "exact",
+          "background": "sigma_clipped_median",
+          "sigma_clip": 3.0
+        },
+        "saturation_adu": 64000,
+        "match": {
+          "channel_radius_px": 1.5,
+          "tycho2_radius_arcsec": 8.0,
+          "isolation_arcsec": 20.0
+        }
+      },
+      "colour_index": "b-r",
+      "colour_index_candidates": {
+        "b-r": 1.525,
+        "b-g": 3.119,
+        "g-r": 2.983
+      },
+      "coefficients": {
+        "Tv_bv": {
+          "value": -0.01,
+          "sigma": 0.002,
+          "between_field_sigma": 0.014
+        },
+        "Tbv": {
+          "value": 1.525,
+          "sigma": 0.007
+        },
+        "k_r2": {
+          "value": 0.029,
+          "sigma": 0.003
+        }
+      },
+      "valid_bv_range": [
+        0.0,
+        1.74
+      ],
+      "sigma_V_by_band": {
+        "7-8": 0.321,
+        "8-9": 0.118,
+        "9-10": 0.048,
+        "10-11": 0.05,
+        "11-12": 0.064
+      },
+      "sigma_BV_by_band": {
+        "7-8": 0.178,
+        "8-9": 0.128,
+        "9-10": 0.068,
+        "10-11": 0.096,
+        "11-12": 0.188
+      },
+      "sweep": {
+        "objective": "not run -- extraction parameters are the plan's defaults",
+        "grid": null,
+        "best_score": null,
+        "astap_baseline_score": null
+      },
+      "fields": [
+        "27G_Cap",
+        "37Her",
+        "3Peg",
+        "67Oph",
+        "8Lac",
+        "AGCar",
+        "BTHyi",
+        "BXMic",
+        "EZCMa",
+        "GJ674",
+        "GJ710",
+        "GJ832",
+        "GhostJupiter",
+        "Gum46",
+        "HD122563",
+        "HD149382",
+        "HD97240",
+        "HIP54677",
+        "IC1276",
+        "KXLib",
+        "KapteynStar",
+        "L2Pup",
+        "M107",
+        "M5",
+        "M72",
+        "M80",
+        "NGC1955",
+        "NGC2264",
+        "NGC2451",
+        "NGC4050",
+        "NGC4361",
+        "NGC6369",
+        "NGC6520",
+        "NGC7006",
+        "NSV20131",
+        "RCMa",
+        "RCae",
+        "RCen",
+        "ROct2",
+        "ROct4",
+        "ROct5",
+        "ROct6",
+        "RSCha",
+        "SOct2",
+        "SPav",
+        "Spindle",
+        "TLup",
+        "TMon",
+        "TPup",
+        "TWHor",
+        "U2201",
+        "U3817",
+        "U7815",
+        "UMen",
+        "XOct",
+        "XOph",
+        "YCen",
+        "YCen2",
+        "ZC19h1521",
+        "betaMon",
+        "epsInd",
+        "muCru",
+        "zetaBoo"
+      ]
+    },
+    {
+      "scope": "DWARF 3",
+      "filter": "VIS",
+      "gain": 60,
+      "reference_catalog": {
+        "name": "gaia_online",
+        "system": "gaia_dr3",
+        "mag_limit": 14.0,
+        "epoch": 2025.5,
+        "requires_network": true,
+        "source": "VizieR I/355/Gaiadr3 via asu-txt"
+      },
+      "n_fields": 63,
+      "n_stars": 13894,
+      "extraction": {
+        "detection": {
+          "tool": "ASTAP -extract",
+          "astap_version": "unknown",
+          "snr_min": 5,
+          "max_stars": 500,
+          "min_star_size_hfd": 0.8
+        },
+        "photometry": {
+          "backend": "photutils",
+          "photutils_version": "3.0.0",
+          "units": "multiples of the per-star measured HFD",
+          "aperture_hfd": 2.0,
+          "annulus_in_hfd": 4.0,
+          "annulus_out_hfd": 6.0,
+          "method": "exact",
+          "background": "sigma_clipped_median",
+          "sigma_clip": 3.0
+        },
+        "saturation_adu": 64000,
+        "match": {
+          "channel_radius_px": 1.5,
+          "tycho2_radius_arcsec": 8.0,
+          "isolation_arcsec": 20.0
+        }
+      },
+      "colour_index": "b-r",
+      "colour_index_candidates": {
+        "b-r": 1.527,
+        "b-g": 3.125,
+        "g-r": 2.987
+      },
+      "coefficients": {
+        "Tv_bv": {
+          "value": -0.013,
+          "sigma": 0.002,
+          "between_field_sigma": 0.013
+        },
+        "Tbv": {
+          "value": 1.527,
+          "sigma": 0.007
+        },
+        "k_r2": {
+          "value": 0.032,
+          "sigma": 0.003
+        }
+      },
+      "valid_bv_range": [
+        0.0,
+        1.74
+      ],
+      "sigma_V_by_band": {
+        "7-8": 0.293,
+        "8-9": 0.109,
+        "9-10": 0.041,
+        "10-11": 0.044,
+        "11-12": 0.063
+      },
+      "sigma_BV_by_band": {
+        "7-8": 0.163,
+        "8-9": 0.108,
+        "9-10": 0.049,
+        "10-11": 0.082,
+        "11-12": 0.188
+      },
+      "sweep": {
+        "objective": "not run -- extraction parameters are the plan's defaults",
+        "grid": null,
+        "best_score": null,
+        "astap_baseline_score": null
+      },
+      "fields": [
+        "27G_Cap",
+        "37Her",
+        "3Peg",
+        "67Oph",
+        "8Lac",
+        "AGCar",
+        "BTHyi",
+        "BXMic",
+        "EZCMa",
+        "GJ674",
+        "GJ710",
+        "GJ832",
+        "GhostJupiter",
+        "Gum46",
+        "HD122563",
+        "HD149382",
+        "HD97240",
+        "HIP54677",
+        "IC1276",
+        "KXLib",
+        "KapteynStar",
+        "L2Pup",
+        "M107",
+        "M5",
+        "M72",
+        "M80",
+        "NGC1955",
+        "NGC2264",
+        "NGC2451",
+        "NGC4050",
+        "NGC4361",
+        "NGC6369",
+        "NGC6520",
+        "NGC7006",
+        "NSV20131",
+        "RCMa",
+        "RCae",
+        "RCen",
+        "ROct2",
+        "ROct4",
+        "ROct5",
+        "ROct6",
+        "RSCha",
+        "SOct2",
+        "SPav",
+        "Spindle",
+        "TLup",
+        "TMon",
+        "TPup",
+        "TWHor",
+        "U2201",
+        "U3817",
+        "U7815",
+        "UMen",
+        "XOct",
+        "XOph",
+        "YCen",
+        "YCen2",
+        "ZC19h1521",
+        "betaMon",
+        "epsInd",
+        "muCru",
+        "zetaBoo"
+      ]
+    },
+    {
+      "scope": "DWARF II",
+      "filter": "VIS",
+      "gain": 60,
+      "reference_catalog": {
+        "name": "tycho2",
+        "system": "tycho2",
+        "mag_limit": 14.0,
+        "epoch": 2025.5,
+        "requires_network": false,
+        "source": "cat/tyc2.txt"
+      },
+      "n_fields": 39,
+      "n_stars": 5486,
+      "extraction": {
+        "detection": {
+          "tool": "ASTAP -extract",
+          "astap_version": "unknown",
+          "snr_min": 5,
+          "max_stars": 500,
+          "min_star_size_hfd": 0.8
+        },
+        "photometry": {
+          "backend": "photutils",
+          "photutils_version": "3.0.0",
+          "units": "multiples of the per-star measured HFD",
+          "aperture_hfd": 2.0,
+          "annulus_in_hfd": 4.0,
+          "annulus_out_hfd": 6.0,
+          "method": "exact",
+          "background": "sigma_clipped_median",
+          "sigma_clip": 3.0
+        },
+        "saturation_adu": 64000,
+        "match": {
+          "channel_radius_px": 1.5,
+          "tycho2_radius_arcsec": 8.0,
+          "isolation_arcsec": 20.0
+        }
+      },
+      "colour_index": "b-r",
+      "colour_index_candidates": {
+        "b-r": 1.454,
+        "b-g": 2.941,
+        "g-r": 2.876
+      },
+      "coefficients": {
+        "Tv_bv": {
+          "value": -0.047,
+          "sigma": 0.003,
+          "between_field_sigma": 0.013
+        },
+        "Tbv": {
+          "value": 1.454,
+          "sigma": 0.008
+        },
+        "k_r2": {
+          "value": -0.022,
+          "sigma": 0.007
+        }
+      },
+      "valid_bv_range": [
+        0.0,
+        2.06
+      ],
+      "sigma_V_by_band": {
+        "7-8": 0.143,
+        "8-9": 0.057,
+        "9-10": 0.089,
+        "10-11": 0.117,
+        "11-12": 0.158
+      },
+      "sigma_BV_by_band": {
+        "7-8": 0.119,
+        "8-9": 0.1,
+        "9-10": 0.136,
+        "10-11": 0.227,
+        "11-12": 0.316
+      },
+      "sweep": {
+        "objective": "not run -- extraction parameters are the plan's defaults",
+        "grid": null,
+        "best_score": null,
+        "astap_baseline_score": null
+      },
+      "fields": [
+        "1Lupi",
+        "36Oph",
+        "54Sgr",
+        "AKPyx",
+        "Lagoon",
+        "Lal33684",
+        "M19",
+        "M25",
+        "M3-6",
+        "M30",
+        "M4",
+        "M62",
+        "M83",
+        "NGC2997",
+        "NGC5822",
+        "NGC6374",
+        "NGC6603",
+        "NGC6818",
+        "NGC7418",
+        "NGC7424",
+        "NovaMus2026",
+        "RFor",
+        "SCen",
+        "SNor2",
+        "SaturnGhost",
+        "Sh2_1",
+        "Trifid",
+        "U1744",
+        "U7886",
+        "UCen",
+        "Zubeneschamali",
+        "alphaCap",
+        "iotaCrt",
+        "nuSco",
+        "omicronCap",
+        "rhoOph",
+        "sigmaGru",
+        "zeta2Ant",
+        "zetaCrv"
+      ]
+    },
+    {
+      "scope": "DWARF II",
+      "filter": "VIS",
+      "gain": 60,
+      "reference_catalog": {
+        "name": "gaia_v50",
+        "system": "gaia_dr3",
+        "mag_limit": 14.0,
+        "epoch": 2025.5,
+        "requires_network": false,
+        "source": "ASTAP v50 local database (.1476)"
+      },
+      "n_fields": 39,
+      "n_stars": 7006,
+      "extraction": {
+        "detection": {
+          "tool": "ASTAP -extract",
+          "astap_version": "unknown",
+          "snr_min": 5,
+          "max_stars": 500,
+          "min_star_size_hfd": 0.8
+        },
+        "photometry": {
+          "backend": "photutils",
+          "photutils_version": "3.0.0",
+          "units": "multiples of the per-star measured HFD",
+          "aperture_hfd": 2.0,
+          "annulus_in_hfd": 4.0,
+          "annulus_out_hfd": 6.0,
+          "method": "exact",
+          "background": "sigma_clipped_median",
+          "sigma_clip": 3.0
+        },
+        "saturation_adu": 64000,
+        "match": {
+          "channel_radius_px": 1.5,
+          "tycho2_radius_arcsec": 8.0,
+          "isolation_arcsec": 20.0
+        }
+      },
+      "colour_index": "b-r",
+      "colour_index_candidates": {
+        "b-r": 1.352,
+        "b-g": 2.721,
+        "g-r": 2.686
+      },
+      "coefficients": {
+        "Tv_bv": {
+          "value": -0.02,
+          "sigma": 0.003,
+          "between_field_sigma": 0.016
+        },
+        "Tbv": {
+          "value": 1.352,
+          "sigma": 0.008
+        },
+        "k_r2": {
+          "value": -0.0,
+          "sigma": 0.005
+        }
+      },
+      "valid_bv_range": [
+        0.0,
+        1.74
+      ],
+      "sigma_V_by_band": {
+        "7-8": 0.115,
+        "8-9": 0.058,
+        "9-10": 0.061,
+        "10-11": 0.074,
+        "11-12": 0.112
+      },
+      "sigma_BV_by_band": {
+        "7-8": 0.078,
+        "8-9": 0.073,
+        "9-10": 0.099,
+        "10-11": 0.157,
+        "11-12": 0.289
+      },
+      "sweep": {
+        "objective": "not run -- extraction parameters are the plan's defaults",
+        "grid": null,
+        "best_score": null,
+        "astap_baseline_score": null
+      },
+      "fields": [
+        "1Lupi",
+        "36Oph",
+        "54Sgr",
+        "AKPyx",
+        "Lagoon",
+        "Lal33684",
+        "M19",
+        "M25",
+        "M3-6",
+        "M30",
+        "M4",
+        "M62",
+        "M83",
+        "NGC2997",
+        "NGC5822",
+        "NGC6374",
+        "NGC6603",
+        "NGC6818",
+        "NGC7418",
+        "NGC7424",
+        "NovaMus2026",
+        "RFor",
+        "SCen",
+        "SNor2",
+        "SaturnGhost",
+        "Sh2_1",
+        "Trifid",
+        "U1744",
+        "U7886",
+        "UCen",
+        "Zubeneschamali",
+        "alphaCap",
+        "iotaCrt",
+        "nuSco",
+        "omicronCap",
+        "rhoOph",
+        "sigmaGru",
+        "zeta2Ant",
+        "zetaCrv"
+      ]
+    }
+  ]
+}

@@ -11,8 +11,9 @@ echo "* FITS extraction *"
 echo "*******************"
 echo
 
-# Extract channel from FITS file (channel 1 = Green)
-../wcstools-3.9.7/bin/imextract -v -o $1-TG 1 $1.fits
+# Extract green channel from FITS file.
+# imextract numbers planes from 1, so the RGB cube maps as 1=R, 2=G, 3=B.
+../wcstools-3.9.7/bin/imextract -v -o $1-TG 2 $1.fits
 
 # Solve-plate green channel
 solve-field --new-fits none --match none --solved none --rdls none --corr none --scale-units arcsecperpix --scale-low 2.76 --scale-high 2.79 $1-TG.fits --overwrite
