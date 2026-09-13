@@ -105,7 +105,7 @@ Note: "OA" and "G" are abbreviations used in more than one catalog (Oeltzen-Arge
 
 ### Wishlist
 
-- Perform comparisons between the greedy and the likelihood approach. Which one is better for cross-identifications?
+- Use the likelihood approach instead of the greedy for all cross-identifications.
 - Correct typo errors in all CD catalogs.
 - Usually, the supplementary letter of BD/SD/CD designations is ignored. Revise it.
 

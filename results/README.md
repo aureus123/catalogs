@@ -176,6 +176,8 @@ Curated version of Cordoba Durchmusterung (first volume, i.e. Resultados XVI)
 can be found in file *cat/cd_vol1_curated.txt*. This version contains all
 corrections from 2018 version and those presented in this section.
 After running "compare_ppm" over that file, only false positives are shown.
+An extended version containing the cross-identifications against PPM and GSC
+can be found in file *likelihood/cd_ppm_gsc.txt*.
 
 Curated version of full catalogue can be found in file *cat/cd_curated.txt* (but
 take into account that only errors found above were corrected, I mean,
