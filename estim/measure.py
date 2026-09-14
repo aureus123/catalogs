@@ -41,6 +41,34 @@ def instrumental_colour(name, g, r, b):
     return {"b-r": b - r, "b-g": b - g, "g-r": g - r}[name]
 
 
+def _band_floor(bands, V):
+    """Per-star empirical error floor, interpolated from a ``sigma_*_by_band`` table.
+
+    The table is keyed by magnitude band ("8-9": 0.058, ...). Stars outside the tabulated
+    range take the nearest band's value rather than zero -- a star fainter than the
+    faintest calibrated band is *less* well measured, not perfectly measured, so falling
+    back to no floor at all would be exactly backwards.
+    """
+    V = np.asarray(V, dtype=float)
+    if not bands:
+        return np.zeros(V.shape)
+    centres, values = [], []
+    for band, s in sorted(bands.items()):
+        try:
+            lo, hi = (float(x) for x in band.split("-"))
+        except ValueError:
+            continue
+        centres.append((lo + hi) / 2.0)
+        values.append(float(s))
+    if not centres:
+        return np.zeros(V.shape)
+    centres = np.asarray(centres); values = np.asarray(values)
+    order = np.argsort(centres)
+    out = np.interp(np.nan_to_num(V, nan=float(centres[order][0])),
+                    centres[order], values[order])
+    return np.where(np.isfinite(V), out, values[order][-1])
+
+
 def set_catalog(s):
     """Which reference a set was precalibrated against. Schema >= 4 records it per set;
     older files had it top level or not at all (they were all Tycho-2)."""
@@ -296,9 +324,20 @@ def main():
     # substituted-colour uncertainty takes their place via sigma_nocolour.
     colour_var = np.where(no_colour, 0.0, np.nan_to_num((Tv_bv * BV_err) ** 2)
                           + np.nan_to_num((sigma_Tv_bv * BVest) ** 2))
+    # Empirical noise floor. Everything above is *modelled* -- photon noise, the
+    # zero-point fit, coefficient uncertainty -- and on a bright star those sum to about
+    # 0.005 mag, a precision this pipeline has never demonstrated. sigma_V_by_band comes
+    # from the leave-one-out residuals measured during precalibration, so it is what the
+    # pipeline actually achieves on stars of that brightness, including the systematics
+    # no noise model sees: transparency drift, flat-field error, position on the chip.
+    # It is consistent with the 0.046 mag night-to-night repeat-field scatter, and with
+    # ASTAP's own MERR, which floors on the check star's observed scatter for the same
+    # reason (unit_aavso.pas:2511, max(2/SNR, sigma_check)).
+    floor_V = _band_floor((cset or {}).get("sigma_V_by_band"), Vest)
+    floor_BV = _band_floor((cset or {}).get("sigma_BV_by_band"), Vest)
     V_err = np.sqrt(sigma_phot_g ** 2 + sigma_zp ** 2 + colour_var
-                     + sigma_sat ** 2 + sigma_nocolour ** 2)
-    BV_err = np.sqrt(BV_err ** 2 + sigma_sat ** 2)
+                     + sigma_sat ** 2 + sigma_nocolour ** 2 + floor_V ** 2)
+    BV_err = np.sqrt(BV_err ** 2 + sigma_sat ** 2 + floor_BV ** 2)
 
     # --- flags ---
     flags = [[] for _ in range(fp.n())]
@@ -333,9 +372,9 @@ def main():
                 f"{fp.flux_b[k]:.1f}" if np.isfinite(fp.flux_b[k]) else "",
                 f"{fp.snr_g[k]:.0f}", f"{fp.hfd_g[k]:.2f}", f"{fp.n_sat_px[k]:d}",
                 f"{Vest[k]:.2f}" if np.isfinite(Vest[k]) else "",
-                f"{V_err[k]:.2f}" if np.isfinite(V_err[k]) else "",
+                f"{V_err[k]:.4f}" if np.isfinite(V_err[k]) else "",
                 f"{BVest[k]:.2f}" if np.isfinite(BVest[k]) else "",
-                f"{BV_err[k]:.2f}" if np.isfinite(BV_err[k]) else "",
+                f"{BV_err[k]:.4f}" if np.isfinite(BV_err[k]) else "",
                 tyc_name[k],
                 f"{tyc_V[k]:.2f}" if np.isfinite(tyc_V[k]) else "",
                 f"{tyc_BV[k]:.2f}" if np.isfinite(tyc_BV[k]) else "",
