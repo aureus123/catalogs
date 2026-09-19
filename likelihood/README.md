@@ -4,7 +4,7 @@ This folder contains tools that, given two star catalogs, find the matching that
 
 Two approaches are described below. [Section 2](#2-baseline-independent-gaussians-superseded) is the original baseline, which modelled position and magnitude as independent Gaussians; it is retained for context and is no longer implemented. [Section 3](#3-current-approach-evidence-against-a-field-model) is the current method, which follows the Bayesian cross-identification framework of Budavári & Szalay (2008) and Budavári & Basu (2016), extended with the double-star formulation of Severin (2018). [Section 4](#4-tools) documents the two scripts.
 
-For the completed cross-identification of Córdoba Durchmusterung volume I against PPM and GSC — its pipeline, fitted constants, results and machine-readable format — see **[CD_CROSS.md](CD_CROSS.md)**.
+For the completed cross-identification of Córdoba Durchmusterung volume I against PPM and GSC — its pipeline, fitted constants, results and machine-readable format — see **[CD_CROSS.md](CD_CROSS.md)**. The CD model uses ordered principal–companion hypotheses, split-normal magnitude contrast and a CD–PPM V magnitude RMS of 0.50 mag.
 
 ## 1. The matching problem
 
@@ -115,20 +115,11 @@ It does *not* directly represent one historical entry associated with two modern
 
 ### 3.3 Visually double historical entries
 
-[Severin (2018), *Cross-identification of stellar catalogs with multiple stars: Complexity and Resolution*](https://doi.org/10.1016/j.endm.2018.07.005) supplies the motivation for singleton and pair hypotheses and their combinatorial optimization. An unordered pair $\{b,c\}$ has evidence
+[Severin (2018), *Cross-identification of stellar catalogs with multiple stars: Complexity and Resolution*](https://doi.org/10.1016/j.endm.2018.07.005) motivates single and pair hypotheses and their combinatorial optimization. The CD model associates a historical entry with an **ordered principal and companion**. Only the principal is compared with CD in position and magnitude. A truncated normal separation factor and an asymmetric split-normal magnitude-contrast factor describe the companion relative to the principal; fluxes are not added.
 
-$$
-LR_{a,\{b,c\}}=(LR_{ab}+LR_{ac})\,
-\frac{g(d_{bc})}{2\pi d_{bc}\,\rho_a},
-$$
+Allowed source pairs are PPM/PPM, PPM/GSC and GSC/GSC. The pair normalization and contrast widths remain provisional. The exact formula, uncertainty treatment and constants are given in [CD_CROSS.md §3](CD_CROSS.md#3-model-and-parameters).
 
-where $g$ is a truncated normal density on the separation $d_{bc}$. Both members must lie inside the search disk. The sum allows either member to explain the historical position and photometry; **fluxes are not added**, and the model does not represent blended flux or a photocentre.
-
-A double-marked entry splits its prior between the two readings: singleton weight $Q\,p_{single}\,LR_{ab}$ against pair weight $Q(1-p_{single})\,LR_{pair}$, where $Q$ is the fitted probability that a counterpart is present at all and the unmatched weight is approximated by $1 - QF$.
-
-Two differences from the 2018 work are worth noting. That workflow used PPMX and APASS, solving the 2-matching as an integer program, and its results for zones −22 to −24 are published as [4]; the present one uses PPM and GSC and covers zones −22 to −31, while keeping the record layout of [4]. More importantly, it normalized within each candidate class, whereas the current score contrasts every hypothesis against a field model and an explicit empty alternative — so a sole weak candidate no longer receives high probability merely because it is alone.
-
-Components containing a double-marked entry cannot be solved by the Hungarian algorithm, since the assignment is no longer one-to-one. They are solved as a binary program (SCIP): one hypothesis per historical entry, at most one use of each modern object. This is the NP-hard case identified in [3]; solves are required to reach `optimal` with zero gap, and the extracted assignment is independently checked for integrality, objective consistency and exclusivity.
+Each hypothesis competes with the empty alternative and with other entries for exclusive use of modern objects. Components containing a double-marked entry use a binary set-partitioning program in SCIP; all other components use Hungarian assignment. SCIP solves must reach optimality with zero gap, and the assignment is checked for integrality, objective consistency and exclusivity. Local scores are not globally marginalized posterior probabilities.
 
 ## 4. Tools
 

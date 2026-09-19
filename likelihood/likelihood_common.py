@@ -1,5 +1,6 @@
 """Shared catalog I/O, calibration, evidence and matching functions. See CD_CROSS.md."""
 
+from scipy.stats import norm
 import numpy as np
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import connected_components
@@ -849,7 +850,7 @@ def write_result(cd, modern, hypotheses, selected, diagnostics, out, config, sta
         h = hypotheses[a][selected[a]]
         members = sorted(h.members, key=lambda b: (modern.source.iloc[b] != 'PPM', b != h.primary, modern.name.iloc[b]))
         names = [modern.name.iloc[b] for b in members] + ['', '']
-        row = dict(cd=r['name'], original=r.raw, zone=int(r.zone), number=int(r.num), supplement=r.suppl, double=bool(r.double), color=bool(r.color), double_uncertain=bool(r.get('double_uncertain', False)), color_uncertain=bool(r.get('color_uncertain', False)), type=len(members), id1=names[0], id2=names[1], distance_arcsec=float(separation(r[['x', 'y', 'z']].to_numpy(dtype=float), modern.iloc[members[0]][['x', 'y', 'z']].to_numpy(dtype=float))) if members else math.nan, pair_separation_arcsec=h.pair_separation, local_probability=math.nan if config.get('model') == 'robust_cd_v1' else math.exp(-h.cost), log_odds_vs_empty=-h.cost, astrometric_primary=modern.name.iloc[h.primary] if members else '', candidates_single=diagnostics[a][0], candidates_double=diagnostics[a][1])
+        row = dict(cd=r['name'], original=r.raw, zone=int(r.zone), number=int(r.num), supplement=r.suppl, double=bool(r.double), color=bool(r.color), double_uncertain=bool(r.get('double_uncertain', False)), color_uncertain=bool(r.get('color_uncertain', False)), type=len(members), id1=names[0], id2=names[1], distance_arcsec=float(separation(r[['x', 'y', 'z']].to_numpy(dtype=float), modern.iloc[members[0]][['x', 'y', 'z']].to_numpy(dtype=float))) if members else math.nan, pair_separation_arcsec=h.pair_separation, local_probability=math.nan if config.get('model') in ('robust_cd_v1','ordered_split_cd_v1') else math.exp(-h.cost), log_odds_vs_empty=-h.cost, astrometric_primary=modern.name.iloc[h.primary] if members else '', candidates_single=diagnostics[a][0], candidates_double=diagnostics[a][1])
         reasons = []
         if not r.active:
             reasons.append('excluded_deleted_or_nonstellar')
@@ -917,6 +918,24 @@ def pair_area_pdf(r, config):
         return 0.0
     return float(truncnorm.pdf(r, (lo - mu) / sig, (hi - mu) / sig, loc=mu, scale=sig) / (2 * np.pi * r))
 
+def split_contrast_factor(delta, tau, sigma_minus=.3, sigma_plus=1.):
+    if not np.isfinite(delta):
+        return 1.0
+    if tau < 0 or sigma_minus <= 0 or sigma_plus <= 0:
+        raise ValueError('Invalid contrast dispersion')
+    if tau == 0:
+        sig = sigma_minus if delta < 0 else sigma_plus
+        return math.exp(-.5*(delta/sig)**2)
+    return sum(sig/math.hypot(sig,tau)*math.exp(-.5*(delta/math.hypot(sig,tau))**2)*norm.cdf(sign*delta*sig/(tau*math.hypot(sig,tau))) for sig,sign in [(sigma_plus,1),(sigma_minus,-1)])
+
+def ordered_pair_factor(sep, delta, tau, config):
+    lo, hi = config.get('pair_min',2.), config['pair_radius']
+    if not lo <= sep <= hi:
+        return 0.0
+    mu, sig = config['separation_mean'], config['separation_sigma']
+    radial = truncnorm.pdf(sep,(lo-mu)/sig,(hi-mu)/sig,loc=mu,scale=sig)
+    return float(2*radial/(2*np.pi*mu)*split_contrast_factor(delta,tau))
+
 def make_cd_hypotheses(cd, modern, config, return_components=False):
     av = normalize(cd[['x', 'y', 'z']].to_numpy())
     bv = normalize(modern[['x', 'y', 'z']].to_numpy())
@@ -930,10 +949,18 @@ def make_cd_hypotheses(cd, modern, config, return_components=False):
     mag, sm = (modern.mag_cd.to_numpy(), modern.sigma_mag.to_numpy())
     var = modern.variability_sigma_cd.to_numpy()
     source = modern.source.to_numpy()
+    # Historical CD residual scatter is distinct from modern component contrast errors.
+    ppm_factor = float(config.get('ppm_cd_sigma_factor', 5/3))
+    if not np.isfinite(ppm_factor) or ppm_factor <= 0:
+        raise ValueError('ppm_cd_sigma_factor must be finite and positive')
+    match_sm = np.where(source == 'PPM', sm * ppm_factor, sm)
     am = cd.mag.to_numpy()
     active, doubles, colors = (cd.active.to_numpy(), cd.double.to_numpy(), cd.color.to_numpy())
     bg = np.interp(np.nan_to_num(am, nan=9), config['mag_centers'], config['mag_density'])
     ps = config['p_single']
+    config.update(model='ordered_split_cd_v1', ppm_cd_sigma_factor=ppm_factor, contrast_sigma_minus=.3, contrast_sigma_plus=1., ordered_pair_scale=2., pair_model='ordered principal evidence; constant reference area; convolved split-normal contrast', allowed_pair_sources=['PPM/PPM','PPM/GSC','GSC/GSC'])
+    neighbor_cache = {}
+    pair_chord = 2*np.sin(config['pair_radius']/(2*ARCSEC_PER_RAD))
     records, diagnostics, sums = ([], [], [])
     settings = Settings(broad_fraction=config.get('broad_fraction', 0.03))
     for a, js in enumerate(lists):
@@ -956,22 +983,31 @@ def make_cd_hypotheses(cd, modern, config, return_components=False):
         if np.isfinite(am[a]):
             known = np.isfinite(mag[js_array])
             kk = js_array[known]
-            sc = np.sqrt((sm[kk] ** 2 + var[kk] ** 2 + (0.5 if colors[a] else 0) ** 2) / 3)
+            sc = np.sqrt((match_sm[kk] ** 2 + var[kk] ** 2 + (0.5 if colors[a] else 0) ** 2) / 3)
             phot = t.pdf((am[a] - mag[kk]) / sc, 3) / sc / max(bg[a], 1e-05)
             lr_array[known] *= np.clip(phot, 0.05, 20.0)
         local = {b: (float(lr), float(r)) for b, lr, r in zip(js, lr_array, raw)}
         rec = [((b,), lr * (ps if doubles[a] else 1.0), b, r, math.nan) for b, (lr, r) in local.items()]
         npairs = 0
         if doubles[a]:
-            for b, c in combinations(js, 2):
-                sep = float(separation(bv[b], bv[c]))
-                area = pair_area_pdf(sep, config)
-                if area == 0:
-                    continue
-                lr = (local[b][0] + local[c][0]) * area / rho[a]
-                primary = max((b, c), key=lambda j: local[j][0])
-                rec.append(((b, c), (1 - ps) * lr, primary, local[primary][1], sep))
-                npairs += 1
+            involved = set(js)
+            for b in js:
+                if b not in neighbor_cache:
+                    neighbor_cache[b] = sorted(tree.query_ball_point(bv[b],pair_chord))
+                for c in neighbor_cache[b]:
+                    if b == c or (source[b] == 'GSC' and source[c] == 'PPM'):
+                        continue
+                    sep = float(separation(bv[b],bv[c]))
+                    delta = mag[c]-mag[b]
+                    tau = float(np.sqrt(sm[b]**2+sm[c]**2+var[b]**2+var[c]**2)) if np.isfinite(delta) else 0.
+                    factor = ordered_pair_factor(sep,delta,tau,config)
+                    if factor == 0:
+                        continue
+                    involved.add(c)
+                    lr = local[b][0]*factor/rho[a]
+                    rec.append(((b,c),(1-ps)*lr,b,local[b][1],sep))
+                    npairs += 1
+            lists[a] = sorted(involved)
         records.append(rec)
         diagnostics.append((len(js), npairs))
         sums.append(sum((x[1] for x in rec)))
