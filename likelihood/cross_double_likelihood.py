@@ -14,7 +14,7 @@ import pandas as pd
 from likelihood_common import (
     Hypothesis, load_inputs, prepare_catalogs, prepare_cd_match,
     make_cd_hypotheses, solve_hypotheses, write_result, validate_cd_match,
-    export_cd_catalog,
+    export_cd_catalog, refresh_cd_flags, PAIR_MODEL_VERSION,
 )
 # Hypothesis is also exposed here to read the original locally generated checkpoint.
 
@@ -26,6 +26,7 @@ def main():
     ap.add_argument('--output', type=Path, default=root/'cd_ppm_gsc.txt')
     ap.add_argument('--prepare', action='store_true', help='Regenerate PPM/GSC union from repository source catalogs')
     ap.add_argument('--rebuild', action='store_true', help='Recalibrate and rebuild hypotheses from cached source tables')
+    ap.add_argument('--refresh-flags', action='store_true', help='Refresh CD flags and rebuild hypotheses from --data, preserving its modern union and calibration')
     ap.add_argument('--build-only', action='store_true', help='Save preparation and hypotheses without solving')
     ap.add_argument('--solve-only', action='store_true', help='Solve the trusted saved checkpoint (default)')
     ap.add_argument('--validate', action='store_true', help='Check existing output and compare PPM CD designations')
@@ -35,7 +36,9 @@ def main():
     args = ap.parse_args()
     if args.time_limit <= 0:
         ap.error('--time-limit must be positive')
-    if args.solve_only and (args.prepare or args.rebuild or args.build_only):
+    if args.refresh_flags and (args.prepare or args.rebuild):
+        ap.error('--refresh-flags cannot be combined with --prepare or --rebuild')
+    if args.solve_only and (args.prepare or args.rebuild or args.build_only or args.refresh_flags):
         ap.error('--solve-only cannot be combined with preparation options')
     args.data.mkdir(parents=True, exist_ok=True)
     if args.export_only:
@@ -47,9 +50,14 @@ def main():
     start = time.monotonic()
     if args.prepare:
         prepare_catalogs(root.parent, root/'cd_cross/prepared')
-    rebuilding = args.prepare or args.rebuild or args.build_only
+    rebuilding = args.prepare or args.rebuild or args.build_only or args.refresh_flags
     if rebuilding:
-        cd, modern, config = prepare_cd_match(root/'cd_cross', args.data)
+        if args.refresh_flags:
+            cd, modern, config = load_inputs(args.data)
+            cd = refresh_cd_flags(cd, root.parent)
+            cd.to_csv(args.data/'cd.csv', index=False)
+        else:
+            cd, modern, config = prepare_cd_match(root/'cd_cross', args.data)
         hs, diag, labels = make_cd_hypotheses(cd, modern, config, return_components=True)
         with gzip.open(args.data/'hypotheses.pkl.gz', 'wb') as f:
             pickle.dump((hs, diag, labels, config), f, protocol=5)
@@ -66,6 +74,12 @@ def main():
         # This is a trusted local checkpoint, never a downloaded/untrusted pickle.
         with gzip.open(args.data/'hypotheses.pkl.gz', 'rb') as f:
             hs, diag, labels, config = pickle.load(f)
+    if config.get('model') != PAIR_MODEL_VERSION:
+        raise ValueError('Obsolete hypothesis model; use --refresh-flags to rebuild')
+    fresh_cd = refresh_cd_flags(cd, root.parent)
+    for field in ['double', 'color', 'double_uncertain', 'color_uncertain']:
+        if not fresh_cd[field].equals(cd[field]):
+            raise ValueError('Historical flags changed; use --refresh-flags to rebuild')
     counts = pd.Series(labels[:len(cd)]).value_counts()
     print(f'{len(cd)} CD; {len(counts)} components; {sum(map(len,hs))} hypotheses', flush=True)
     if args.build_only:

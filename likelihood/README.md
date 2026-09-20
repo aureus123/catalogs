@@ -4,7 +4,7 @@ This folder contains tools that, given two star catalogs, find the matching that
 
 Two approaches are described below. [Section 2](#2-baseline-independent-gaussians-superseded) is the original baseline, which modelled position and magnitude as independent Gaussians; it is retained for context and is no longer implemented. [Section 3](#3-current-approach-evidence-against-a-field-model) is the current method, which follows the Bayesian cross-identification framework of Budavári & Szalay (2008) and Budavári & Basu (2016), extended with the double-star formulation of Severin (2018). [Section 4](#4-tools) documents the two scripts.
 
-For the completed cross-identification of Córdoba Durchmusterung volume I against PPM and GSC — its pipeline, fitted constants, results and machine-readable format — see **[CD_CROSS.md](CD_CROSS.md)**. The CD model uses ordered principal–companion hypotheses, split-normal magnitude contrast and a CD–PPM V magnitude RMS of 0.50 mag.
+For the completed cross-identification of Córdoba Durchmusterung volume I against PPM and GSC — its pipeline, fitted constants, results and machine-readable format — see **[CD_CROSS.md](CD_CROSS.md)**. The CD model uses ordered principal–companion hypotheses, split-normal magnitude contrast, a peak-compensated generalized-normal separation factor on 2–90″, and a CD–PPM V magnitude RMS of 0.50 mag.
 
 ## 1. The matching problem
 
@@ -115,9 +115,9 @@ It does *not* directly represent one historical entry associated with two modern
 
 ### 3.3 Visually double historical entries
 
-[Severin (2018), *Cross-identification of stellar catalogs with multiple stars: Complexity and Resolution*](https://doi.org/10.1016/j.endm.2018.07.005) motivates single and pair hypotheses and their combinatorial optimization. The CD model associates a historical entry with an **ordered principal and companion**. Only the principal is compared with CD in position and magnitude. A truncated normal separation factor and an asymmetric split-normal magnitude-contrast factor describe the companion relative to the principal; fluxes are not added.
+[Severin (2018), *Cross-identification of stellar catalogs with multiple stars: Complexity and Resolution*](https://doi.org/10.1016/j.endm.2018.07.005) motivates single and pair hypotheses and their combinatorial optimization. The CD model associates a historical entry with an **ordered principal and companion**. Only the principal is compared with CD in position and magnitude. A truncated generalized-normal separation factor with a broad plateau and an asymmetric split-normal magnitude-contrast factor describe the companion relative to the principal; fluxes are not added.
 
-Allowed source pairs are PPM/PPM, PPM/GSC and GSC/GSC. The pair normalization and contrast widths remain provisional. The exact formula, uncertainty treatment and constants are given in [CD_CROSS.md §3](CD_CROSS.md#3-model-and-parameters).
+Allowed source pairs are PPM/PPM, PPM/GSC and GSC/GSC. The separation factor uses μ=44.19″, scale 30″ and exponent 4, with a 90″ ceiling and a pair multiplier of 1.677033 to preserve the reference central score scale. These choices and the contrast widths remain provisional. The exact formula, uncertainty treatment and constants are given in [CD_CROSS.md §3](CD_CROSS.md#3-model-and-parameters).
 
 Each hypothesis competes with the empty alternative and with other entries for exclusive use of modern objects. Components containing a double-marked entry use a binary set-partitioning program in SCIP; all other components use Hungarian assignment. SCIP solves must reach optimality with zero gap, and the assignment is checked for integrality, objective consistency and exclusivity. Local scores are not globally marginalized posterior probabilities.
 

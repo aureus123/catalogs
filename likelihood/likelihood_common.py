@@ -1,5 +1,6 @@
 """Shared catalog I/O, calibration, evidence and matching functions. See CD_CROSS.md."""
 
+from scipy.integrate import quad
 from scipy.stats import norm
 import numpy as np
 from scipy.sparse import csr_matrix
@@ -413,6 +414,16 @@ def read_cd(root):
             df.loc[mask, field] = True
             flag_audit[p.name] = int(mask.sum())
     return (df, flag_audit)
+
+def refresh_cd_flags(cd, root):
+    """Refresh historical flags without changing cached coordinates or calibration."""
+    fresh, _ = read_cd(root)
+    if cd.raw.tolist() != fresh.raw.tolist():
+        raise ValueError('Curated CD changed; use --prepare instead of cached inputs')
+    cd = cd.copy()
+    for col in ['double', 'color', 'double_uncertain', 'color_uncertain']:
+        cd[col] = fresh[col].to_numpy() if col in fresh else False
+    return cd
 
 def xyz(ra, dec):
     a, d = (np.deg2rad(ra), np.deg2rad(dec))
@@ -850,7 +861,7 @@ def write_result(cd, modern, hypotheses, selected, diagnostics, out, config, sta
         h = hypotheses[a][selected[a]]
         members = sorted(h.members, key=lambda b: (modern.source.iloc[b] != 'PPM', b != h.primary, modern.name.iloc[b]))
         names = [modern.name.iloc[b] for b in members] + ['', '']
-        row = dict(cd=r['name'], original=r.raw, zone=int(r.zone), number=int(r.num), supplement=r.suppl, double=bool(r.double), color=bool(r.color), double_uncertain=bool(r.get('double_uncertain', False)), color_uncertain=bool(r.get('color_uncertain', False)), type=len(members), id1=names[0], id2=names[1], distance_arcsec=float(separation(r[['x', 'y', 'z']].to_numpy(dtype=float), modern.iloc[members[0]][['x', 'y', 'z']].to_numpy(dtype=float))) if members else math.nan, pair_separation_arcsec=h.pair_separation, local_probability=math.nan if config.get('model') in ('robust_cd_v1','ordered_split_cd_v1') else math.exp(-h.cost), log_odds_vs_empty=-h.cost, astrometric_primary=modern.name.iloc[h.primary] if members else '', candidates_single=diagnostics[a][0], candidates_double=diagnostics[a][1])
+        row = dict(cd=r['name'], original=r.raw, zone=int(r.zone), number=int(r.num), supplement=r.suppl, double=bool(r.double), color=bool(r.color), double_uncertain=bool(r.get('double_uncertain', False)), color_uncertain=bool(r.get('color_uncertain', False)), type=len(members), id1=names[0], id2=names[1], distance_arcsec=float(separation(r[['x', 'y', 'z']].to_numpy(dtype=float), modern.iloc[members[0]][['x', 'y', 'z']].to_numpy(dtype=float))) if members else math.nan, pair_separation_arcsec=h.pair_separation, local_probability=math.nan if config.get('model') in ('robust_cd_v1','ordered_split_cd_v1',PAIR_MODEL_VERSION) else math.exp(-h.cost), log_odds_vs_empty=-h.cost, astrometric_primary=modern.name.iloc[h.primary] if members else '', candidates_single=diagnostics[a][0], candidates_double=diagnostics[a][1])
         reasons = []
         if not r.active:
             reasons.append('excluded_deleted_or_nonstellar')
@@ -928,15 +939,37 @@ def split_contrast_factor(delta, tau, sigma_minus=.3, sigma_plus=1.):
         return math.exp(-.5*(delta/sig)**2)
     return sum(sig/math.hypot(sig,tau)*math.exp(-.5*(delta/math.hypot(sig,tau))**2)*norm.cdf(sign*delta*sig/(tau*math.hypot(sig,tau))) for sig,sign in [(sigma_plus,1),(sigma_minus,-1)])
 
+PAIR_MODEL_VERSION = 'ordered_plateau_cd_v2'
+PAIR_MEAN = 44.19
+PAIR_SCALE = 30.0
+PAIR_BETA = 4.0
+PAIR_MIN, PAIR_MAX = 2.0, 90.0
+PAIR_REFERENCE_MEAN = 44.18584
+PAIR_NORMALIZATION = quad(
+    lambda r: math.exp(-0.5 * abs((r - PAIR_MEAN) / PAIR_SCALE) ** PAIR_BETA),
+    PAIR_MIN, PAIR_MAX, epsabs=1e-12)[0]
+# Preserve the previous truncated-normal peak, independently of the plateau width.
+PAIR_REFERENCE_PEAK = float(truncnorm.pdf(
+    PAIR_REFERENCE_MEAN, (2 - PAIR_REFERENCE_MEAN) / 15.39086,
+    (80 - PAIR_REFERENCE_MEAN) / 15.39086,
+    loc=PAIR_REFERENCE_MEAN, scale=15.39086))
+PAIR_COMPENSATION = PAIR_REFERENCE_PEAK * PAIR_NORMALIZATION
+
 def ordered_pair_factor(sep, delta, tau, config):
-    lo, hi = config.get('pair_min',2.), config['pair_radius']
-    if not lo <= sep <= hi:
+    if not PAIR_MIN <= sep <= PAIR_MAX:
         return 0.0
-    mu, sig = config['separation_mean'], config['separation_sigma']
-    radial = truncnorm.pdf(sep,(lo-mu)/sig,(hi-mu)/sig,loc=mu,scale=sig)
-    return float(2*radial/(2*np.pi*mu)*split_contrast_factor(delta,tau))
+    radial = math.exp(-0.5 * abs((sep - PAIR_MEAN) / PAIR_SCALE) ** PAIR_BETA) / PAIR_NORMALIZATION
+    return float(2 * PAIR_COMPENSATION * radial / (2 * np.pi * PAIR_REFERENCE_MEAN)
+                 * split_contrast_factor(delta, tau))
 
 def make_cd_hypotheses(cd, modern, config, return_components=False):
+    config.update(pair_min=PAIR_MIN, pair_radius=PAIR_MAX,
+                  separation_distribution='truncated_generalized_normal',
+                  separation_mean=PAIR_MEAN, separation_scale=PAIR_SCALE,
+                  separation_beta=PAIR_BETA, separation_normalization=PAIR_NORMALIZATION,
+                  pair_reference_mean=PAIR_REFERENCE_MEAN,
+                  pair_peak_compensation=PAIR_COMPENSATION)
+    config.pop('separation_sigma', None)  # scale is not a standard deviation
     av = normalize(cd[['x', 'y', 'z']].to_numpy())
     bv = normalize(modern[['x', 'y', 'z']].to_numpy())
     cv, _ = correct(av, config['systematic_coefficients'])
@@ -958,7 +991,7 @@ def make_cd_hypotheses(cd, modern, config, return_components=False):
     active, doubles, colors = (cd.active.to_numpy(), cd.double.to_numpy(), cd.color.to_numpy())
     bg = np.interp(np.nan_to_num(am, nan=9), config['mag_centers'], config['mag_density'])
     ps = config['p_single']
-    config.update(model='ordered_split_cd_v1', ppm_cd_sigma_factor=ppm_factor, contrast_sigma_minus=.3, contrast_sigma_plus=1., ordered_pair_scale=2., pair_model='ordered principal evidence; constant reference area; convolved split-normal contrast', allowed_pair_sources=['PPM/PPM','PPM/GSC','GSC/GSC'])
+    config.update(model=PAIR_MODEL_VERSION, ppm_cd_sigma_factor=ppm_factor, contrast_sigma_minus=.3, contrast_sigma_plus=1., ordered_pair_scale=2., pair_model='ordered principal evidence; compensated generalized-normal separation; constant reference area; convolved split-normal contrast', allowed_pair_sources=['PPM/PPM','PPM/GSC','GSC/GSC'])
     neighbor_cache = {}
     pair_chord = 2*np.sin(config['pair_radius']/(2*ARCSEC_PER_RAD))
     records, diagnostics, sums = ([], [], [])
@@ -1076,6 +1109,7 @@ def identify_variables(modern, variables, out):
 
 def prepare_cd_match(base, out):
     cd, modern, config = load_inputs(base / 'prepared')
+    cd = refresh_cd_flags(cd, Path(__file__).resolve().parent.parent)
     variables = pd.read_csv(base / 'variables/variables_sur.csv', keep_default_na=False)
     modern = identify_variables(modern, variables, out)
     keep = (modern.source == 'PPM') | modern.variable | modern.mag.isna() | (modern.mag <= 13.5)
@@ -1153,9 +1187,12 @@ def validate_cd_match(out, catalog_output, run_controls=False):
     assert not ((result.type == 2) & ~cd.double).any()
     assert set(used) <= set(modern.name)
     assert not (result.id2.str.startswith('PPM') & ~result.id1.str.startswith('PPM')).any()
-    pre = pd.read_csv(base / 'prepared/ppm_gsc.csv')
-    assert not pre.ppm.duplicated().any() and (not pre.gsc.duplicated().any())
-    assert not set(pre.gsc) & set(used)
+    aliases = modern.loc[modern.source == 'PPM', 'gsc_alias'].dropna()
+    aliases = aliases[aliases != '']
+    assert not aliases.duplicated().any()
+    assert not set(aliases) & set(used)
+    fresh_cd = refresh_cd_flags(cd, Path(__file__).resolve().parent.parent)
+    assert fresh_cd.double.equals(cd.double) and fresh_cd.color.equals(cd.color)
     for line, (_, r) in zip(raw, result.iterrows()):
         assert line[30] == ('D' if r.double else ' ') and line[31] == ('C' if r.color else ' ')
         assert int(line[32]) == r.type and line[33:52].strip() == r.id1 and (line[52:71].strip() == r.id2)

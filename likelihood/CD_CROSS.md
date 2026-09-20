@@ -7,7 +7,7 @@ This report documents the completed cross-identification of the 179,804 entries 
 
 The method itself, its literature and the general tool interface are documented in [README.md](README.md); this file covers what is specific to this run: the pipeline, catalog preparation, the constants actually fitted, the results and their validation, and the machine-readable format.
 
-The catalog is **[cd_ppm_gsc.txt](cd_ppm_gsc.txt)**, regenerated on 19 September 2026 with the model below.
+The catalog is **[cd_ppm_gsc.txt](cd_ppm_gsc.txt)**, regenerated on 20 September 2026 with the model below.
 
 ## 1. Pipeline
 
@@ -35,7 +35,15 @@ python cross_double_likelihood.py --export-only
 python cross_double_likelihood.py --rebuild --build-only
 ```
 
-`--data` selects a different prepared/results directory, `--output` the fixed-width catalog, and `--time-limit` the per-component SCIP time limit.
+`--data` selects a different calibrated-results directory, `--output` the fixed-width catalog, and `--time-limit` the per-component SCIP time limit.
+
+To update the pair model and historical flags while preserving a published calibration and modern union:
+
+```sh
+python cross_double_likelihood.py --refresh-flags
+```
+
+This reads the cached `cd.csv`, `modern.csv` and `calibration.json` under `--data`, refreshes double/colour and uncertainty flags from the current repository lists, rebuilds hypotheses and components, and solves again. It refuses changed original CD records; those require `--prepare`. The completed run used this route, preserving the existing PPM–GSC merge, variable tags, photometric/astrometric calibration, $Q$ and $p_{single}$. `--rebuild` also refreshes flags, but refits calibration from the prepared source tables. Saved hypotheses with an obsolete model or different historical flags are rejected by `--solve-only`.
 
 ### Step 1 inputs
 
@@ -50,9 +58,9 @@ python cross_double_likelihood.py --rebuild --build-only
 
 ## 2. Catalog preparation
 
-CD comes from `cat/cd_vol1_curated.txt`. All original 30-character records are retained, including supplemental and deleted entries. The lists under `cd/` provide the double and colour flags: **1,369 double entries and 739 colour annotations**. Deleted and non-stellar entries are preserved without assigned counterparts. Magnitude code 30 denotes a variable and supplies no numerical photometry.
+CD comes from `cat/cd_vol1_curated.txt`. All original 30-character records are retained, including supplemental and deleted entries. The lists under `cd/` provide the double and colour flags: **1,384 double entries and 739 colour annotations**. The current double lists include 15 additions from the volume-I corrigenda, including one uncertain annotation retained as such in the auxiliary CSV. Deleted and non-stellar entries are preserved without assigned counterparts. Magnitude code 30 denotes a variable and supplies no numerical photometry.
 
-PPM positions are propagated with proper motion and transformed to FK4, equinox and epoch B1875.0. GSC positions are transformed to the same equinox **without** proper-motion correction. Multiple observations sharing a GSC identifier are consolidated.
+PPM positions are propagated with proper motion and transformed to FK4, equinox and epoch B1875.0. GSC positions are transformed to the same equinox **without** proper-motion correction. Only GSC observations with classification 0 (stellar) or 2 (blend) are retained; classification 3 remains excluded. Multiple surviving observations sharing a GSC identifier are consolidated.
 
 For the PPM–GSC preidentification, PPM is first propagated to each GSC object's effective plate epoch, both remaining in a common J2000 equinox for that step. Where an epoch is absent the preparation uses the documented median fallback, approximately 1979.764, and retains a flag. The preidentification is exclusive and uses a calibrated positional cutoff; ambiguous alternatives are recorded for review.
 
@@ -62,7 +70,7 @@ PPM's DM designations are interpreted as CD only for zones −23 through −31; 
 
 ## 3. Model and parameters
 
-Angular quantities are arcseconds, densities per square arcsecond. Principal candidates use **R = 360″ (6′)** around CD. Companions are searched within 2–80″ of each principal, including companions outside the CD search disk. All such dependencies enter the graph before score pruning and component decomposition, ensuring exclusivity across components.
+Angular quantities are arcseconds, densities per square arcsecond. Principal candidates use **R = 360″ (6′)** around CD. Companions are searched within 2–90″ of each principal, including companions outside the CD search disk. All such dependencies enter the graph before score pruning and component decomposition, ensuring exclusivity across components.
 
 The fitted core scales of the positional kernel (README §3.1) are approximately **13.847 for PPM** and **17.297 for GSC**. These are circular Student scales, **not** Gaussian radial RMS values. A smooth tangent-plane offset was fitted on training sectors but **rejected**, because it did not improve held-out median residuals sufficiently; this run therefore applies no fitted positional shift, though the generic single-star method retains the validation-gated correction for other historical catalogs.
 
@@ -99,11 +107,23 @@ Here $b$ is the smoothed background magnitude density. The table gives base $\si
 For a double-marked CD entry, only the **principal** is compared to CD in position and magnitude. There is no CD–companion positional or photometric factor. With $\Delta m=m_c-m_p$ and component separation $s_{pc}$,
 
 $$
-H(p,c)=\frac{2g(s_{pc})}{2\pi\mu}\,
+H(p,c)=\frac{2k_{pair}g(s_{pc})}{2\pi\mu_{ref}}\,
 \frac{(f_{split}*\mathcal N(0,\tau_{pc}^2))(\Delta m)}{f_{split}(0)}.
 $$
 
-The separation density $g$ is a normal truncated to **2–80″**, with $\mu=44.18584$″ and dispersion **15.39086″**. The constant reference-area denominator uses $\mu$, so the separation factor peaks there. The contrast density is a zero-mode split normal:
+The separation density is a generalized normal truncated to **2–90″**:
+
+$$
+g(r)=\frac{1}{Z}\exp\left[-\frac12\left|\frac{r-44.19}{30}\right|^4\right],
+\qquad Z=\int_2^{90}\exp\left[-\frac12\left|\frac{r-44.19}{30}\right|^4\right]dr
+=63.85447555''.
+$$
+
+The scale 30″ is not a standard deviation. The centre is nearly flat over 30–60″, with smooth declining tails and a hard candidate ceiling of 90″. The constant reference-area denominator uses $\mu_{ref}=44.18584''$.
+
+The independent pair-weight multiplier is **$k_{pair}=1.6770333532$**, equivalent to adding **0.5170263713** to every pair log-score relative to the normalized density alone. It fixes the compensated central density to **0.026263364 arcsec⁻¹**, preserving the reference central score scale while relaxing separation preferences. This multiplier is not part of the normalized density $g$. It changes double-versus-single preference but cancels when comparing two pair hypotheses. Principal astrometry, principal photometry, split-normal contrast, $p_{single}$ and $Q$ are not rescaled. Neither the shape nor this normalization guarantees a fixed number of assigned doubles.
+
+The contrast density is a zero-mode split normal:
 
 $$
 f_{split}(x)=\frac{\sqrt{2/\pi}}{\sigma_-+\sigma_+}
@@ -131,7 +151,7 @@ W_{a;p,c}=Q(1-p_{single})L(a,p)H(p,c)/\rho_a.$$
 
 For ordinary CD entries the singleton weight is $QL(a,p)$. The empty weight is approximated by $1-QF$, where $F$ is the positional search-disk mass. Costs are minus the log weight relative to empty; positive costs are dominated by empty. The prior $p_{single}$ is approximately **0.3651**; $Q$ is fitted from ordinary CD entries for this run. Each CD entry selects one hypothesis, and each modern object can occur at most once. Components with at least one CD double use SCIP; the remaining components use Hungarian assignment.
 
-The factor 2, constant reference area and normalization by $f_{split}(0)$ define a provisional score scale. The split-normal widths, separation prior, $p_{single}$ and approximate double search mass are not a fully calibrated background-companion model. The formula models neither blended flux nor a photocentre, and its scores are not posterior probabilities.
+The factor 2, peak-compensation multiplier, constant reference area and normalization by $f_{split}(0)$ define a provisional score scale. The split-normal widths, separation prior, $p_{single}$ and approximate double search mass are not a fully calibrated background-companion model. The formula models neither blended flux nor a photocentre, and its scores are not posterior probabilities.
 
 ## 4. Variable stars
 
@@ -145,32 +165,34 @@ Broadening uses the **full** known amplitude, not its value truncated at 13. Ind
 
 ## 5. Results and validation
 
-The run covers **179,804 CD entries**, with **34,760 components**. Of these, 34,110 use Hungarian assignment and 650 use SCIP. All 650 SCIP solves reached optimality with zero gap. The fitted presence probability is $Q=0.95697414$.
+The run covers **179,804 CD entries**, with **34,760 components**. Of these, 34,108 use Hungarian assignment and 652 use SCIP. All 652 SCIP solves reached optimality with zero gap. The retained presence probability is $Q=0.95697414$.
 
 | Outcome | CD entries |
 |---|---:|
-| One counterpart | 170,304 |
-| Two counterparts | 955 |
-| No counterpart | 8,545 |
-| With PPM | 46,067 |
-| GSC only | 125,192 |
+| One counterpart | 170,238 |
+| Two counterparts | 1,024 |
+| No counterpart | 8,542 |
+| With PPM | 46,069 |
+| GSC only | 125,193 |
 
-Of the 1,369 double-marked entries, 955 receive a pair, 376 a singleton and 38 no counterpart. Integrity validation confirms the 71-byte records, unchanged original CD fields and flags, modern-object exclusivity, permitted source ordering and principal-first export. Five focused model tests cover the split-normal convolution, separation normalization, candidate roles and cross-boundary dependencies, isolated photometric broadening and solver exclusivity.
+Of the **1,384 double-marked entries**, 1,024 receive a pair, 324 a singleton and 36 no counterpart. Integrity validation confirms the 71-byte records, unchanged original CD fields, flags refreshed from the current repository lists, modern-object exclusivity, permitted source ordering and principal-first export. All assigned pair separations fall within 2–90″. Tests cover density normalization, compensated peak height, cutoffs, refreshed flags, five-field score regression, split-normal convolution, candidate roles and cross-boundary dependencies, isolated photometric broadening and solver exclusivity.
 
-PPM reference agreement is **40,345/40,841 (98.7855%)**; held-out-sector agreement is **98.8711%**. Zone −22 is excluded because its PPM DM labels refer to SD. These labels also inform training-sector astrometric calibration; agreement is not an independent accuracy estimate and does not validate the GSC-only majority.
+The publication audit records **128 changed identifications** and **134 changed fixed-width records**, including flag-only changes. There are 67 singleton-to-pair and two empty-to-pair transitions, with no pair-to-single or pair-to-empty transitions. These counts are descriptive results of this run, not constraints imposed on the optimization. The five image-reviewed fields retain the evaluated choices; CD −22 15263 uses GSC 06359-00090 + GSC 06359-00223. Small score margins remain flagged for review.
+
+PPM reference agreement is **40,347/40,841 (98.7904%)**; held-out-sector agreement is **98.8711%**. Zone −22 is excluded because its PPM DM labels refer to SD. These labels also inform training-sector astrometric calibration; agreement is not an independent accuracy estimate and does not validate the GSC-only majority.
 
 | CD zone | Entries | With PPM | GSC only | Unmatched | Pairs | PPM reference agreement |
 |---|---:|---:|---:|---:|---:|---:|
-| -31 | 19,600 | 4,485 | 14,163 | 952 | 69 | 4,418 / 4,472 |
-| -30 | 19,841 | 4,595 | 14,111 | 1,135 | 44 | 4,513 / 4,558 |
-| -29 | 18,965 | 4,892 | 13,056 | 1,017 | 73 | 4,794 / 4,854 |
-| -28 | 18,459 | 4,711 | 12,800 | 948 | 45 | 4,595 / 4,649 |
-| -27 | 16,541 | 4,465 | 11,543 | 533 | 110 | 4,372 / 4,428 |
-| -26 | 16,910 | 4,392 | 11,788 | 730 | 94 | 4,301 / 4,359 |
-| -25 | 16,795 | 4,368 | 11,598 | 829 | 134 | 4,253 / 4,302 |
-| -24 | 17,982 | 4,677 | 12,408 | 897 | 163 | 4,590 / 4,641 |
-| -23 | 18,138 | 4,727 | 12,511 | 900 | 126 | 4,509 / 4,578 |
-| -22 | 16,573 | 4,755 | 11,214 | 604 | 97 | Not applicable (SD) |
+| -31 | 19,600 | 4,486 | 14,162 | 952 | 76 | 4,419 / 4,472 |
+| -30 | 19,841 | 4,595 | 14,111 | 1,135 | 47 | 4,513 / 4,558 |
+| -29 | 18,965 | 4,893 | 13,055 | 1,017 | 79 | 4,795 / 4,854 |
+| -28 | 18,459 | 4,710 | 12,801 | 948 | 51 | 4,594 / 4,649 |
+| -27 | 16,541 | 4,465 | 11,543 | 533 | 116 | 4,372 / 4,428 |
+| -26 | 16,910 | 4,391 | 11,789 | 730 | 100 | 4,301 / 4,359 |
+| -25 | 16,795 | 4,368 | 11,598 | 829 | 142 | 4,253 / 4,302 |
+| -24 | 17,982 | 4,677 | 12,409 | 896 | 170 | 4,589 / 4,641 |
+| -23 | 18,138 | 4,729 | 12,511 | 898 | 136 | 4,511 / 4,578 |
+| -22 | 16,573 | 4,755 | 11,214 | 604 | 107 | Not applicable (SD) |
 
 No full sensitivity study or shifted-position control has been rerun for this exact model. Independent review and parameter sensitivity remain necessary.
 
