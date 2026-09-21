@@ -196,6 +196,31 @@ PPM reference agreement is **40,347/40,841 (98.7904%)**; held-out-sector agreeme
 
 No full sensitivity study or shifted-position control has been rerun for this exact model. Independent review and parameter sensitivity remain necessary.
 
+### GSC class 3 and visual checks
+
+The published catalog **excludes GSC class-3 observations because their stellar nature is uncertain**. This is a conservative selection, not a claim that every class-3 object is non-stellar. GSC classification was designed to avoid non-stellar guide-star candidates, and can reject genuine stars; extended sources and photographic artifacts can also enter the catalog. See the [STScI GSC-I description](https://gsss.stsci.edu/catalogs/gsc/GSC1/GSC1.htm). The filter acts on observations: an identifier with an accepted class-0 or class-2 observation can still survive even if another observation has class 3.
+
+An experimental run admitting classes 0, 2 and 3 recovered plausible pairs, but also introduced doubtful substitutions. PPM reference agreement decreased from 40,347 to 40,227 of 40,841 entries, with 33 agreements gained and 153 lost. This reference is not independent ground truth, but the result and the image checks do not support accepting class 3 indiscriminately. **The experiment is not adopted in the published catalog.**
+
+The mosaic below shows all **22 double-marked CD entries covered by nine VIS images**, using the current published assignments: 13 pairs, eight single counterparts and one unassigned entry. Each panel is a green-channel FITS cutout approximately 6.7 arcmin across. The cyan cross marks the historical CD position transformed to J2000; orange circles numbered 1 and 2 mark the assigned counterparts. The panels retain detector orientation, not north-up orientation; grey areas are outside the image. “Single”, “pair” and “unmatched” describe the current assignment, not the historical double flag.
+
+![The 22 double-marked CD entries in VIS images, with the published identifications](doubles_examples.png)
+
+The main cases requiring caution are:
+
+| CD entry | Visual evidence and remaining uncertainty |
+|---|---|
+| −22 3555 | GSC 06521-00200 (estimated V≈11.53) has a similarly bright neighbour, GSC 06521-00920 (V≈11.69), 43.1″ away. The latter is excluded as class 3. The image supports a possible missing companion. |
+| −24 4627 | GSC 06522-02733 (V≈10.79), excluded as class 3, lies close to CD and is brighter than the assigned GSC 06522-02243 (V≈11.94). A principal–companion interpretation with a separation of 59.6″ is plausible. |
+| −24 17069 | The image supports the pair GSC 06955-01094 + GSC 06955-01214, separated by about 53.4″. Class-3 exclusion removes the former, leaving a singleton. |
+| −22 15251 | The published pair remains acceptable, but a brighter nearby alternative makes the historical choice uncertain. The image alone does not uniquely determine the pair. |
+| −27 12368 | No counterpart is assigned despite visible sources near the CD position. This requires further identification work. |
+| −26 12597 | The assigned pair is near the image boundary; one component is only about eight pixels from the edge, limiting reliable aperture photometry. |
+
+The magnitude comparisons for CD −22 3555 and CD −24 4627 use the VIS calibration and targeted apertures anchored to pipeline measurements; their precision should not be inferred from the two displayed decimal places. The other panels raised no additional obvious objections in this inspection, which is not a confirmation of every historical identification.
+
+The class-3 experiment also changed the companion of **CD −27 12225** from a clearly visible source (V≈10.97) to a much weaker source (aperture estimate V≈13.8). For the ordinary, single-marked **CD −23 4638**, outside this double-star mosaic, it replaced PPM 727018 (V≈9.83) with a much weaker class-3 source. Such changes illustrate the need for reliability checks before relaxing the filter. Weak-source aperture estimates may include neighbouring light and are not secure isolated-star magnitudes. VIS images of both single and double CD entries provide useful follow-up material, but detecting a source does not by itself establish its historical identity.
+
 ## 6. Machine-readable format
 
 ### Fixed-width catalog
