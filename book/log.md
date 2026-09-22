@@ -364,8 +364,18 @@ Detalles que importan:
 - el valor suprimido se compone como `\hphantom` de sí mismo: no imprime nada pero
   conserva su ancho, así los segundos no se corren de columna;
 - la regla se reinicia en cada página, porque el lector no ve la página anterior cuando
-  consulta ésta;
+  consulta ésta. De ahí se sigue lo que de verdad importa: **la primera y la última fila
+  de cada página llevan siempre hora y minuto**, sea cual sea la corrida en la que caigan,
+  y no hay que dar vuelta la hoja para saber en qué hora de AR se está parado;
 - `--repeat-ra` la desactiva.
+
+**Esto depende de que los cortes de página se fuercen** (§3.6). La regla se reinicia
+cada `--per-page` filas, que es lo mismo que «cada página» sólo mientras LaTeX corte
+donde se le indica. Con `--flow` el corte lo decide `longtable`, Python no sabe dónde
+cayó, y el troceado pasa a hacerse sobre el catálogo entero: las corridas cruzan las
+páginas y la primera fila de una página puede quedar sin hora. Es la segunda razón para
+no usar `--flow` —la primera es el encabezado de §3.9— y por eso no está en la línea de
+compilación del libro.
 
 ### 3.6 Líneas y métrica
 
@@ -375,8 +385,12 @@ Detalles que importan:
 - `\extrarowheight = 2pt` — sin esto el superíndice `h`/`m` de la columna AR toca la
   línea de arriba.
 - `\arraystretch = 1.30`, `\tabcolsep = 3pt`, cuerpo `\scriptsize` sobre base 10 pt.
-- **55 estrellas por página** (se subió desde 50 al comprobar que sobraba caja): 2596 / 55
-  = **48 páginas** de tabla.
+- **55 filas por página, exactas** (se subió desde 50 al comprobar que sobraba caja).
+  El corte se fuerza con `\newpage` cada 55 filas, no se deja a `longtable`: es lo que
+  da la cadencia pareja, el encabezado bien alineado (§3.9) y la garantía de AR de §3.5.
+  Con las 2569 filas estelares y las 104 de cielo profundo son 2673 / 55 = **49 páginas**
+  de tabla, la última con 33 filas. Comprobado que ninguna se desborda: `pdflatex` no
+  emite un solo `Overfull \vbox`, y el PDF tiene exactamente esas 49 páginas de tabla.
 
 ### 3.7 Página, márgenes, numeración
 

@@ -1247,6 +1247,13 @@ def emit(stars: list, out: Path, per_page: int, fontsize: str,
     # Ink-saving rule: within a page, an hour or minute that repeats down the
     # column is printed only on the first and last row of the run.  Minutes are
     # keyed on (hour, minute) so a run can never straddle an hour boundary.
+    #
+    # Chunking by per_page is what guarantees the thing the reader needs: the
+    # first and last row of every page carry the hour and the minute, whatever
+    # run they fall in, so nobody has to turn back a page to find out which
+    # hour of RA they are in.  Under --flow the chunk is the whole catalogue --
+    # longtable breaks where it likes and Python cannot know where -- so runs
+    # straddle the page edges and that guarantee is lost.
     hms = [ra_hms(s.ra_deg) for s in stars]
     if repeat_ra:
         show_h = show_m = [True] * len(stars)
@@ -1341,7 +1348,10 @@ def main() -> int:
                          "the RA superscripts clear of the rule above")
     ap.add_argument("--flow", action="store_true",
                     help="let longtable break pages naturally instead of "
-                         "forcing a break every --per-page rows")
+                         "forcing a break every --per-page rows.  Costs three "
+                         "things the book wants: the exact row count per page, "
+                         "the aligned mid-table heading, and the guarantee "
+                         "that every page opens and closes with a full RA")
     ap.add_argument("--fixedcolw", dest="notewidth", default="90mm",
                     help="width allowance for the nine fixed columns; the "
                          "notes column takes textwidth minus this, less "
