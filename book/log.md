@@ -19,10 +19,10 @@ errors.
 |---|---|---|
 | Magnitud límite | **V ≤ 5.5** | Cubre toda la "quinta magnitud" en el sentido tradicional (clase 5 = 4.5–5.5). Es también el límite práctico de la vista sin instrumento desde un sitio no urbano. |
 | Corte en declinación | **Dec < +52°** | El público es del hemisferio sur (Rosario, φ ≈ −33°). A esa latitud culmina a +57° de altura una estrella de Dec = +24°; +52° deja fuera sólo lo que nunca sube más de ~5° sobre el horizonte norte. |
-| Total de estrellas | **2596** | Resultado de aplicar ambos cortes al BSC5. |
+| Total de estrellas | **2596** | Resultado de aplicar ambos cortes al BSC5. Es el número que anuncia la portada, y **no baja** con las 27 filas absorbidas por §4.8: esas estrellas siguen en el libro, nombradas en la nota de su primaria y con su punto propio en el atlas. La tabla imprime 2569 filas estelares. |
 | Objetos de cielo profundo | **104 NGC** | Lista elegida a mano (§2.4). No sale de ningún corte: un objeto de cielo profundo entra por ser digno de un telescopio, y eso no lo decide ningún número. |
 | Orden | **AR ascendente (J2000)** | Un catálogo de consulta se recorre por AR; el atlas al final se ordena igual. Los objetos NGC se intercalan entre las estrellas de su misma zona del cielo, que es como se los va a buscar. |
-| Granularidad | **una fila por estrella** | Sin agrupar componentes de dobles: cada fila es un objeto del BSC5. |
+| Granularidad | **una fila por estrella, salvo las dobles visuales** | Cada fila es un objeto del BSC5, excepto cuando la estrella es componente de una doble que ya se reporta en otra fila (§4.8): esas 27 filas se absorben en la de su primaria. |
 
 Un corte anterior a **+45°** se descartó: dejaba afuera estrellas de V ≤ 3 visibles
 desde Rosario. +52° se eligió como el punto donde la pérdida es ya sólo teórica.
@@ -46,6 +46,7 @@ del nombre BSC5 y la IAU calculada, así que la deuda hoy es sólo potencial.
 | Designaciones Gould | **Uranometría Argentina** | `cat/ua.txt` (8471 líneas) |
 | Constelación IAU | `astropy.coordinates.get_constellation` (límites Roman 1987) | offline |
 | Dobles de Struve | tabla WDS con número SAO | `book/Struve.csv` (4456 pares, `;` como separador) |
+| Dobles visuales: separación, ángulo de posición, magnitud del compañero, componentes | **stelledoppie.it** (que republica el WDS) | `book/doubles.csv` (28 608 pares, mismo esquema que `Struve.csv`) |
 | Identificaciones cruzadas antiguas | tablas propias del proyecto | `results/cross/cross_*_hd.csv` |
 | Paralajes para la distancia | **Hipparcos**, vía el archivo del atlas | `stars.bigksy.0.1.3.mag11.parquet` |
 | Objetos de cielo profundo: tipo, posición, tamaño, magnitud integrada | **NGC 2000.0** (Sinnott 1988) | `book/ngc2000.txt` (13226 registros) |
@@ -445,9 +446,14 @@ que este proyecto aporta. Orden de la nota, de izquierda a derecha:
 
 1. color (§4.1) — nunca se descarta
 2. distancia (§4.1) — nunca se descarta
-3. doble de Struve (§4.2)
-4. variabilidad (§4.3)
-5. identificaciones antiguas (§4.4), en su propio orden de prioridad
+3. **compañero visual (§4.8) — nunca se descarta, y cuando aparece desplaza a
+   todo lo que sigue**
+4. doble de Struve (§4.2)
+5. variabilidad (§4.3)
+6. identificaciones antiguas (§4.4), en su propio orden de prioridad
+
+Los puntos 4 a 6 son excluyentes con el 3: una estrella con compañero visible
+no imprime ninguna designación antigua (§4.8).
 
 Los dos primeros son **notas libres**: son cortas, dicen qué *es* la estrella y no qué
 la llamaron, y por eso no compiten por lugar con las demás (§4.5).
@@ -504,7 +510,13 @@ estrellas distintas, de ahí el numeral romano):
 `Struve.csv` tiene una fila por par de componentes (`STF 1744 AB`, `STF 1744 AC`), así
 que se indexa por SAO y gana la designación más baja, que es el par de descubrimiento.
 
-Resultado: **512 dobles ADS**, de las cuales **161** llevan designación de Struve.
+Resultado: **494 dobles ADS**, de las cuales **155** llevan designación de Struve:
+84 la imprimen suelta y 71 la llevan dentro de la nota de compañero (§4.8).
+
+Esta nota es la del par que **no** se puede desdoblar con el instrumento del lector,
+o que nadie midió lo bastante cerca: si el par califica por §4.8, la designación de
+Struve no se emite suelta sino dentro de la nota del compañero (`doble Σ 205: …`),
+y el cruce por SAO es exactamente el mismo.
 
 ### 4.3 Variabilidad (en oro `#B8860B`)
 
@@ -728,6 +740,84 @@ Va **toda en negro**, como las identificaciones antiguas (§4.4) y por el mismo 
 el color en esta tabla marca *tipo de dato*, y aquí el tipo de dato es el mismo — texto
 descriptivo. Ponerle color al `Galaxia` habría sugerido un parentesco con el turquesa del
 color estelar o con el rosa de las dobles que no existe.
+
+### 4.8 El compañero visual (en rosa `#C2185B`)
+
+Cuando la estrella tiene un compañero que el lector puede **ver separado**, eso es lo
+que la nota dice, y desplaza a todas las designaciones antiguas. En el ocular el par
+*es* el dato; cómo la llamó Gould en 1885, no.
+
+```
+α Cen   amarillo, 4.4 al, doble: d = 8.1'', m = 1.3, P = 5°
+β Mon   azul, triple Σ 919: d = 7.3'', m = 5.0, P = 132°
+γ And   anaranjado, triple Σ 205: d = 9.5'', m = 5.0, P = 63°
+α Cru   azul, triple: d = 3.5'', m = 1.6, P = 111°
+```
+
+**Qué par se reporta.** De los pares de la estrella, los que cumplen las tres
+condiciones a la vez, y de ésos el de compañero **más brillante**:
+
+| condición | valor | por qué |
+|---|---|---|
+| separación mínima | **3″** | más cerca no se desdobla con un instrumento chico |
+| separación máxima | **180″** | más lejos ya no se lee como una doble |
+| magnitud del compañero | **< 9.0** | más débil no está ahí |
+
+Son **211 estrellas** de las 2596. Si ningún par cumple, la estrella conserva sus notas
+de siempre — es el caso de ζ Orionis, cuyo par AB está a 2.5″ y cuyo C, a 57.6″, tiene
+magnitud 9.55.
+
+**La palabra.** `doble`, `triple`, `cuádruple`, `quíntuple`, `séxtuple`, y `múltiple` de
+ahí en adelante. Cuenta **componentes**, no pares: se unen las letras de todos los pares
+del sistema a menos de 180″, y el lado secundario sólo cuenta si llega a **magnitud 11**,
+que es aproximadamente donde termina el instrumento al que apunta este libro. Salen
+150 `doble`, 43 `triple`, 13 `cuádruple`, 4 `quíntuple` y 1 `múltiple`.
+
+Dos detalles de los que depende que la cuenta dé bien:
+
+- **El corte de 180″ también se aplica al contar.** Es lo que deja a α Centauri en
+  `doble` y no en `triple`: Próxima es componente C del sistema, pero está a 2.2° y no
+  es algo que se vea junto a las otras dos.
+- **Cómo se parte el token de componentes.** Con coma viene dado (`AB,C` es el par AB
+  contra C); sin coma, la **primera letra** es la primaria y el resto la secundaria, así
+  que `AD` es A contra D. Partirlo mal hace que el lado débil esquive el corte de
+  magnitud: con `AD` leído como una sola cosa, el compañero de magnitud 12.1 de β Mon
+  entraba en la cuenta y la estrella salía `cuádruple` en vez de `triple`. Los sufijos
+  en minúscula se descartan: `Aa,Ab` es A contra A, porque un par de speckle es un solo
+  punto de luz para este libro.
+
+**La fila del compañero se absorbe.** Si el compañero es a su vez una estrella del
+catálogo, su fila no dice nada que la nota de la primaria no diga ya, y desaparece. Son
+**27 filas**: α² Cen, α² Cru, γ¹ Vel, Cástor B, β Mon B, γ² And, γ¹ Ari, θ² Eri,
+γ² Leo, ξ UMa B, γ Vir B, μ² Cru, ε Boo B, β² Sco, δ² Aps, α² Her, 36 Oph B, ρ Her B,
+95 Her B, θ² Ser, β² Cyg, γ¹ Del, β² Tuc, θ¹ Ori, y tres sin designación.
+
+Se borra la **más débil**, que no siempre es la de número HR más alto: la primaria de
+Cástor es HR 2891 (V 1.98) y no HR 2890, y la de γ Velorum es HR 3207 —γ², V 1.78— y no
+γ¹. Los nombres no se reescriben nunca: α¹ Cen sigue siendo α¹ Cen aunque su compañera
+ya no esté en la tabla.
+
+La posición sola no alcanza para decidirlo, así que la **magnitud tiene que coincidir**
+también (a 0.8 mag) con alguno de los compañeros que el sistema reporta. Y sólo se
+absorbe lo que el par podía haber reportado: un compañero a menos de 3″ conserva su fila,
+porque si no se reporta tampoco se borra. Eso es lo que mantiene las dos filas de
+ξ Scorpii, separadas 1.1″, mientras la nota habla del componente C a 7″. Cada fila
+absorbida —y cada estrella que cae dentro del sistema pero **no** se absorbe— se imprime
+en `stderr` para poder revisarla.
+
+**El atlas no se entera.** `gen_maps.py` llama a `parse_bsc5` por su cuenta y nunca ve
+esta poda, así que las 27 componentes conservan su punto en las láminas. Por eso la
+portada sigue diciendo **2596 estrellas** aunque la tabla imprima 2569 filas: el libro
+cubre esas estrellas, sólo que a algunas las nombra en la nota de su compañera.
+
+**Precisión y época.** Los valores salen de `book/doubles.csv` tal como están: la
+separación con su décima por debajo de 100″, el ángulo de posición en grados enteros —más
+fino que eso es más de lo que un ocular puede juzgar— y la magnitud con un decimal. Son
+las **últimas medidas**, no efemérides. En **27 de los 211** pares hay órbita publicada y
+esa medida se atrasa: α Centauri se imprime `d = 8.1'', P = 5°` con su medida de 2023,
+cuando hoy está a 9.6″ y 14°. Se aceptó: corregir esas 27 exigía una segunda fuente
+(el Sexto Catálogo de Órbitas) y calcular efemérides, para un libro en el que el dato
+útil es «hay un compañero a unos 8 segundos de arco, hacia el norte».
 
 ---
 

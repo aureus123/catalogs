@@ -77,6 +77,33 @@ STRUVE = BOOK / "Struve.csv"
 # classical roman numeral.  The sigma is rewritten to $\Sigma$ at escape time.
 STRUVE_PREFIX = {"STF": "Σ ", "STFA": "Σ I ", "STFB": "Σ II "}
 
+# ---- visual doubles ------------------------------------------------------
+# A stelledoppie export, in the same schema Struve.csv already uses:
+#   name;cst;SAO;coord;wds_name;last;obs;pa;sep;m1;m2;d_mag;orb
+# cut at m1 <= 9.0 and sep <= 180" over the whole sky.  The reported pair
+# always has m1 <= 5.5, but the component count needs a system's *inner* pairs
+# too -- beta Mon is a triple only because its B-C row is there -- hence the
+# looser magnitude cut.  Do not add a declination filter to the query: the site
+# silently reduces "+52" to 0 and returns the southern sky alone.
+DOUBLES = BOOK / "doubles.csv"
+
+# A companion is worth reporting when it can actually be split and seen in a
+# small telescope: closer than 3" it is not resolved, past 180" it is not a
+# double to the eye any more, and fainter than 9.0 it is not there at all.
+DBL_MIN_SEP = 3.0
+DBL_MAX_SEP = 180.0
+DBL_MAX_MAG = 9.0
+
+# Counting components is a laxer question than reporting one -- "triple" says
+# something is there even when it is too faint or too tight to be the note's
+# subject -- so it runs to 11.0, roughly the limit of the apertures this book
+# is for.  The separation bound stays, which is what keeps Proxima (2.2 deg
+# from alpha Cen) from making the sky's best pair a triple.
+DBL_COUNT_MAG = 11.0
+
+MULT_WORDS = {2: "doble", 3: "triple", 4: "cuádruple",
+              5: "quíntuple", 6: "séxtuple"}
+
 BSC5 = BOOK / "ybsc5.txt"
 BSC5_NOTES = BOOK / "ybsc5.notes.txt"
 UA = CAT / "ua.txt"
@@ -209,7 +236,19 @@ class Star:
     dist_ly: float | None = None   # from the Hipparcos parallax, if near enough
     con: str = ""       # IAU constellation from J2000 position
     gould: str = ""
+    dbl: "Double | None" = None    # reportable visual companion, if any
     notes: list[str] = field(default_factory=list)
+
+
+@dataclass
+class Double:
+    """The companion a double star's note reports, and its system's size."""
+    sep: float          # arcsec, last measured
+    pa: int             # degrees, last measured
+    m2: float           # companion's magnitude
+    ncomp: int          # components counted in the system (>= 2)
+    struve: str = ""    # Struve designation of the system, if it has one
+    wds: str = ""       # the pair's own designation, for the stderr report
 
 
 @dataclass
@@ -387,6 +426,171 @@ def load_struve(path: Path) -> dict[str, str]:
         if key not in out or rank < out[key][:2]:
             out[key] = (*rank, f"{STRUVE_PREFIX[pfx]}{int(num)}")
     return {k: v[2] for k, v in out.items()}
+
+
+def parse_coord(c: str) -> tuple[float, float]:
+    """stelledoppie's "14 39 36 -60 50 02" -> (RA, Dec) in degrees.
+
+    The sign is read from the string, not from int(): a companion at -00 20 24
+    would otherwise come out north of the equator.
+    """
+    p = c.split()
+    ra = (int(p[0]) + int(p[1]) / 60 + int(p[2]) / 3600) * 15.0
+    de = abs(int(p[3])) + int(p[4]) / 60 + int(p[5]) / 3600
+    return ra, -de if p[3].lstrip().startswith("-") else de
+
+
+def wds_components(name: str) -> str:
+    """The component token ending a designation: "STF 1110 AB" -> "AB".
+
+    Taken from the end rather than by parsing the name, because a discoverer
+    designation is not one word -- "H 5 102 AB" is Herschel's class-5 number
+    102, and "DUN 252" has no component token at all.
+    """
+    parts = str(name).split()
+    if len(parts) > 1 and re.fullmatch(r"[A-Za-z]+(,[A-Za-z]+)?", parts[-1]):
+        return parts[-1]
+    return ""
+
+
+def split_comp(tok: str) -> tuple[set[str], set[str]]:
+    """Component token -> (letters on the primary side, on the secondary side).
+
+    With a comma the split is given: "AB,C" is the AB pair against C.  Without
+    one, the first letter is the primary and the rest the secondary, so "AD" is
+    A against D -- getting *that* wrong lets a faint secondary slip past the
+    magnitude cut and inflates the count.  Lowercase sub-component suffixes are
+    then dropped, so "Aa,Ab" is A against A: a speckle pair is one point of
+    light to this book, and contributes no new component.
+    """
+    tok = tok or "AB"
+    pri, _, sec = tok.partition(",")
+    if not sec:
+        pri, sec = tok[:1], tok[1:]
+    return (set(re.sub("[a-z]", "", pri)), set(re.sub("[a-z]", "", sec)))
+
+
+def load_doubles(path: Path) -> pd.DataFrame:
+    """The stelledoppie pairs, RA-sorted, with position and components parsed.
+
+    Rows are *pairs*, and a system is not identifiable from the file: its pairs
+    do not even share a position.  Beta Monocerotis keeps its B-C row at the B
+    component's own place, 5" from the A-B row's and under a different SAO, and
+    alpha Crucis does the same.  So nothing is grouped here -- match_doubles
+    assembles a system positionally, around the star it is looking at.
+    """
+    if not path.exists():
+        print(f"  warning: {path} not found, no double notes", file=sys.stderr)
+        return pd.DataFrame()
+    df = pd.read_csv(path, sep=";").dropna(subset=["coord", "sep", "m1"])
+    pos = [parse_coord(c) for c in df.coord]
+    df = df.assign(ra=[p[0] for p in pos], de=[p[1] for p in pos],
+                   comp=[wds_components(n) for n in df.wds_name])
+    return df.sort_values("ra", ignore_index=True)
+
+
+def match_doubles(stars: list[Star], pairs: pd.DataFrame, struve: dict[str, str],
+                  radius_as: float = 20.0) -> list[Star]:
+    """Set Star.dbl on the doubles, and return the component rows to delete.
+
+    The system around a star is every pair row within **20"** -- the same
+    radius, and for the same reason, as load_distances: BSC5's own position is
+    off by that much on the fastest movers.  It is wide enough to pull in the
+    rows registered on a *companion's* position (beta Mon's B-C) and so get the
+    component count right, and those rows must not be reportable themselves,
+    which is what the |V - m1| test separates: a row whose primary side is this
+    star, or a row whose primary side is one of its companions.
+    """
+    if pairs.empty:
+        return []
+    pra = pairs.ra.to_numpy()
+    rad = radius_as / 3600.0
+    mates: dict[int, list[tuple[float, float]]] = {}   # HR -> [(sep, m2), ...]
+
+    for s in stars:
+        cos_d = max(math.cos(math.radians(s.de_deg)), 0.02)
+        dra = rad / cos_d
+        idx = slice(np.searchsorted(pra, s.ra_deg - dra),
+                    np.searchsorted(pra, s.ra_deg + dra))
+        sub = pairs.iloc[idx]
+        if sub.empty:
+            continue
+        d_ra = (sub.ra.to_numpy() - s.ra_deg + 180) % 360 - 180
+        sub = sub[np.hypot(d_ra * cos_d, sub.de.to_numpy() - s.de_deg) <= rad]
+        if sub.empty:
+            continue
+
+        # the star's own pairs: those whose primary side is this star
+        own = sub[(sub.m1 - s.vmag).abs() <= 0.5]
+        near = own[(own.sep >= DBL_MIN_SEP) & (own.sep <= DBL_MAX_SEP)]
+        good = near[near.m2 < DBL_MAX_MAG]
+        if good.empty:
+            continue
+        best = good.loc[good.m2.idxmin()]
+
+        # component count over the whole system, faint companions included
+        letters: set[str] = set()
+        for r in sub.itertuples(index=False):
+            if r.sep > DBL_MAX_SEP:
+                continue
+            pri, sec = split_comp(r.comp)
+            letters |= pri
+            if pd.notna(r.m2) and r.m2 <= DBL_COUNT_MAG:
+                letters |= sec
+
+        s.dbl = Double(sep=float(best.sep), pa=int(best.pa), m2=float(best.m2),
+                       ncomp=max(len(letters), 2),
+                       struve=struve.get(s.sao, ""), wds=str(best.wds_name))
+        # Only a companion the note could have reported may cost a row.  The
+        # window is the reporting one, 3" included: a pair too tight to be
+        # written up is also too tight to absorb, which is what keeps both
+        # components of xi Scorpii (1.1" apart, while the note talks about the
+        # C component 7" away) on the page.
+        mates[s.hr] = [(float(r.sep), float(r.m2))
+                       for r in near.itertuples(index=False) if pd.notna(r.m2)]
+
+    return _companion_rows(stars, mates)
+
+
+def _companion_rows(stars: list[Star], mates: dict[int, list[tuple[float, float]]]
+                    ) -> list[Star]:
+    """The catalogue rows that are components of a system already reported.
+
+    Such a row says nothing its primary's note does not, so it goes.  Position
+    alone cannot decide it -- theta1 and theta2 Orionis stand 135" apart and are
+    different systems -- so the star's V must also match one of the system's
+    companion magnitudes.  Only fainter stars are ever dropped, which settles
+    the case where both components are bright enough to have picked up a note
+    of their own: beta1 Tucanae keeps the row, beta2 loses it.
+    """
+    sra = np.array([s.ra_deg for s in stars])
+    drop: dict[int, Star] = {}
+    for s in stars:
+        if s.dbl is None or not mates.get(s.hr):
+            continue
+        reach = (max(sep for sep, _ in mates[s.hr]) + 10.0) / 3600.0
+        cos_d = max(math.cos(math.radians(s.de_deg)), 0.02)
+        dra = reach / cos_d
+        idx = range(int(np.searchsorted(sra, s.ra_deg - dra)),
+                    int(np.searchsorted(sra, s.ra_deg + dra)))
+        for t in (stars[i] for i in idx):
+            if (t.vmag, t.hr) <= (s.vmag, s.hr):
+                continue                        # the primary keeps its row
+            d_ra = (t.ra_deg - s.ra_deg + 180) % 360 - 180
+            if math.hypot(d_ra * cos_d, t.de_deg - s.de_deg) > reach:
+                continue
+            hit = [m2 for _, m2 in mates[s.hr] if abs(t.vmag - m2) <= 0.8]
+            if hit:
+                drop[t.hr] = t
+                print(f"  double: HR {t.hr} (V {t.vmag:.2f}) absorbed into "
+                      f"HR {s.hr} {s.dbl.wds}", file=sys.stderr)
+            else:
+                print(f"  double: HR {t.hr} (V {t.vmag:.2f}) is inside "
+                      f"HR {s.hr} {s.dbl.wds} but matches no companion "
+                      f"magnitude -- kept", file=sys.stderr)
+    for t in drop.values():                 # a companion carries no note itself
+        t.dbl = None
+    return list(drop.values())
 
 
 def load_cross(max_dist: float | None = None) -> dict[int, list[tuple[str, str, float]]]:
@@ -636,6 +840,21 @@ def fmt_dist(ly: float) -> str:
     return f"{ly:.1f} al"
 
 
+def fmt_double(d: Double) -> str:
+    """e.g. "doble $\\Sigma$ 1744: d = 14.4$''$, m = 3.9, P = 153$^\\circ$".
+
+    The position angle is printed as the whole degree the source carries: finer
+    than that is more than an eyepiece can judge.  The separation keeps its
+    tenth below 100", where it still distinguishes one pair from another, and
+    loses it above, where it cannot.
+    """
+    word = MULT_WORDS.get(d.ncomp, "múltiple")
+    name = f" {d.struve}" if d.struve else ""
+    sep = f"{d.sep:.1f}" if d.sep < 100 else f"{d.sep:.0f}"
+    return (tex_escape(f"{word}{name}: d = {sep}") + r"\arcsec"
+            + tex_escape(f", m = {d.m2:.1f}, P = {d.pa}") + r"\degr")
+
+
 def fmt_bayer(s: Star) -> str:
     if not s.bayer:
         return ""
@@ -712,6 +931,9 @@ PREAMBLE = r"""%% twoside makes LaTeX distinguish recto (odd) from verso (even) 
 %% Units on a fractional number sit *over the decimal point*, the usual
 %% A&A/AAS convention: 17\farcm5 sets the prime between the 17 and the 5.
 \newcommand{\farcm}{\hbox{$.\!\!^{\prime}$}}
+%% The notes column is prose, not a position, so a separation there is written
+%% out plainly -- 14.4\arcsec, not 14\farcs4.
+\newcommand{\arcsec}{\ensuremath{^{\prime\prime}}}
 
 %% ---- notes that fit themselves to the line ------------------------------
 %% Rather than allowing a fixed number of notes per star, we keep as many as
@@ -1089,6 +1311,10 @@ def main() -> int:
                     help="merge the hand-picked NGC 2000.0 deep-sky objects "
                          "into the table (default); none leaves the "
                          "catalogue stars-only")
+    ap.add_argument("--doubles", choices=["csv", "none"], default="csv",
+                    help="report a star's brightest visual companion instead "
+                         "of its old-catalogue designations, and absorb the "
+                         "companion's own row; none leaves both alone")
     ap.add_argument("--parallax", choices=["bigsky", "none"], default="bigsky",
                     help="source of the distance note; none omits it")
     ap.add_argument("--max-dist-ly", type=float, default=100.0,
@@ -1128,6 +1354,25 @@ def main() -> int:
     total = len(stars)
     print(f"BSC5: {total} stars with V <= {args.vmax} and "
           f"Dec < +{args.decmax}", file=sys.stderr)
+
+    # Visual doubles, before anything else looks at the list: a star that is a
+    # component of a system already reported loses its row here.  `total` above
+    # deliberately keeps counting it -- the book still covers that star, in its
+    # primary's note and with its own dot on the atlas plates.
+    struve = load_struve(STRUVE) if args.doubles == "csv" else {}
+    if args.doubles == "csv":
+        dropped = match_doubles(stars, load_doubles(DOUBLES), struve)
+        gone = {s.hr for s in dropped}
+        stars = [s for s in stars if s.hr not in gone]
+        ndbl = sum(1 for s in stars if s.dbl)
+        words: dict[str, int] = {}
+        for s in stars:
+            if s.dbl:
+                w = MULT_WORDS.get(s.dbl.ncomp, "múltiple")
+                words[w] = words.get(w, 0) + 1
+        print(f"doubles: {ndbl} stars with a companion note "
+              f"({', '.join(f'{v} {k}' for k, v in sorted(words.items(), key=lambda kv: -kv[1]))}); "
+              f"{len(dropped)} component rows absorbed", file=sys.stderr)
 
     gould = load_gould(UA)
     for s in stars:
@@ -1192,8 +1437,8 @@ def main() -> int:
 
     if args.notes == "cross":
         cross = load_cross(args.max_dist)
-        struve = load_struve(STRUVE)
-        hit = nstruve = 0
+        struve = struve or load_struve(STRUVE)
+        hit = nstruve = ndblstruve = 0
         for s in stars:
             # "free" notes are never dropped: they are short, and they answer
             # what the star *is* rather than what it was once called.
@@ -1206,7 +1451,16 @@ def main() -> int:
             # "opt" notes are offered in priority order and kept while the
             # line holds them; LaTeX decides, not this loop.
             opt = []
-            if s.hd:
+            if s.dbl:
+                # What the companion is and where to look for it displaces
+                # every designation the star would otherwise have carried: at
+                # the eyepiece the pair is the fact, and the Struve number --
+                # the one designation still worth printing -- rides along
+                # inside the note.
+                free.append(colour(fmt_double(s.dbl), "coldbl"))
+                if s.dbl.struve:
+                    ndblstruve += 1
+            elif s.hd:
                 # A BSC5 ADS number means the star is a known double; if Struve
                 # also catalogued it, lead with his designation.
                 if s.ads and s.sao:
@@ -1233,7 +1487,8 @@ def main() -> int:
         ncol = sum(1 for s in stars if colour_name(s.bv))
         ndist = sum(1 for s in stars if s.dist_ly is not None)
         print(f"stars with a note: {hit}/{len(stars)};  "
-              f"ADS doubles {ndouble}, of which Struve {nstruve}", file=sys.stderr)
+              f"ADS doubles {ndouble}, of which Struve {nstruve} on their own"
+              f" + {ndblstruve} inside a companion note", file=sys.stderr)
         print(f"colour names: {ncol}/{len(stars)};  "
               f"distances within {args.max_dist_ly:g} ly: {ndist}", file=sys.stderr)
     elif args.notes == "bsc5":
