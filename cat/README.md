@@ -85,7 +85,7 @@ Some catalogs in this folder were sanitized (i.e. those with the "†") but thei
 - ua : 53 registers
 - gc : 5 registers
 - weiss : 3 registers
-- gilliss : 34 registers
+- gilliss : 37 registers
 - gil1963 : 14 registers
 - usno : 19 registers
 - corda : 17 registers
@@ -93,6 +93,6 @@ Some catalogs in this folder were sanitized (i.e. those with the "†") but thei
 - stone1: 3 registers
 - stone2: 1 register
 - thome1881: 6 registers
-- thome1882: 10 registers
+- thome1882: 17 registers
 - thome1883: 2 registers
-- thome1884: 4 registers
+- thome1884: 6 registers
