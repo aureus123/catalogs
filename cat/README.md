@@ -83,10 +83,10 @@ Some catalogs in this folder were sanitized (i.e. those with the "†") but thei
 - 4005 : 51 registers
 - 4011 : 76 registers
 - ua : 53 registers
-- gc : 3 registers
+- gc : 5 registers
 - weiss : 3 registers
 - gilliss : 34 registers
-- gil1963 : 12 registers
+- gil1963 : 14 registers
 - usno : 19 registers
 - corda : 17 registers
 - cordc : 7 registers
