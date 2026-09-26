@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <stdlib.h>
 #include "trig.h"
 #include "misc.h"
 #include "read_gc.h"
@@ -73,6 +74,59 @@ bool getGCStarData(int gcRef, int *index, double *x, double *y, double *z)
 }
 
 /*
+ * hasBlanks - devuelve true si el campo contiene algun espacio (dato ausente o incompleto)
+ */
+static bool hasBlanks(char *buffer, int initial, int bytes)
+{
+	char cell[256];
+	readField(buffer, cell, initial, bytes);
+	for (int i = 0; i < bytes; i++) {
+		if (cell[i] == ' ' || cell[i] == 0) return true;
+	}
+	return false;
+}
+
+/*
+ * readRA - lee ascension recta B1875.0 (en grados)
+ * Devuelve true si los segundos estan completos (sin espacios)
+ */
+static bool readRA(char *buffer, int *RAh, int *RAm, int *RAs, double *RA)
+{
+	char cell[256];
+	readFieldSanitized(buffer, cell, 16, 2);
+	*RAh = atoi(cell);
+	*RA = (double) *RAh;
+	readFieldSanitized(buffer, cell, 18, 2);
+	*RAm = atoi(cell);
+	*RA += ((double) *RAm)/60.0;
+	readFieldSanitized(buffer, cell, 20, 4);
+	*RAs = atoi(cell);
+	*RA += (((double) *RAs)/100.0)/3600.0;
+	*RA *= 15.0; /* conversion horas a grados */
+	return !hasBlanks(buffer, 20, 4);
+}
+
+/*
+ * readDecl - lee declinacion B1875.0 (en grados)
+ * Devuelve true si los segundos estan completos (sin espacios)
+ */
+static bool readDecl(char *buffer, int *Decld, int *Declm, int *Decls, double *Decl)
+{
+	char cell[256];
+	readFieldSanitized(buffer, cell, 39, 2);
+	*Decld = atoi(cell);
+	*Decl = (double) *Decld;
+	readFieldSanitized(buffer, cell, 41, 2);
+	*Declm = atoi(cell);
+	*Decl += ((double) *Declm)/60.0;
+	readFieldSanitized(buffer, cell, 43, 3);
+	*Decls = atoi(cell);
+	*Decl += (((double) *Decls)/10.0)/3600.0;
+	*Decl = -*Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
+	return !hasBlanks(buffer, 43, 3);
+}
+
+/*
  * Lee estrellas del Primer Catalogo Argentino, coordenadas 1875.0
  * supuestamente todas estas estrellas deberian estar incluidas en el catálogo CD
  * (excepto las que están fuera de la faja, y algunas de CD marcadas como "dobles")
@@ -87,6 +141,11 @@ void readGC()
 	int cumulus = 0;
 	int nebulae = 0;
 	int variables = 0;
+	bool pendingRA = false;   /* la ultima estrella almacenada tiene segundos de RA ausentes/incompletos */
+	bool pendingDecl = false; /* idem para Decl */
+	int fixedRA = 0;
+	int fixedDecl = 0;
+	int unresolved = 0;
     GCstars = 0;
 	
 	// Lee Catálogo General Argentino
@@ -103,9 +162,42 @@ void readGC()
 			page++;
 		}
 
-		/* omite cualquier observacion que no sea la primera */
-		readField(buffer, cell, 6, 2);
-		if (atoi(cell) != 1) continue;
+		/* omite cualquier observacion que no sea la primera, salvo que la primera tenga
+		   segundos ausentes/incompletos en RA o Decl: en tal caso se toman de la siguiente
+		   observacion completa (las siguientes observaciones no traen magnitud ni precesiones,
+		   por lo que solo se reemplaza la coordenada incompleta) */
+		/* descarta las estrellas "1/2" (byte 6 = 1), distintas de la estrella con igual numeracion */
+		if (buffer[6-1] == '1') continue;
+
+		/* numero de observacion (byte 7) */
+		readField(buffer, cell, 7, 1);
+		if (atoi(cell) != 1) {
+			if (!pendingRA && !pendingDecl) continue;
+			readField(buffer, cell, 1, 5);
+			struct GCstar_struct *st = &GCstar[GCstars - 1];
+			if (atoi(cell) != st->gcRef) continue;
+			int h, m, s;
+			double val;
+			/* solo se toman los segundos; horas/grados y minutos se mantienen de la primera observacion */
+			if (pendingRA && readRA(buffer, &h, &m, &s, &val)) {
+				st->RAs = s;
+				st->RA1875 = 15.0 * (st->RAh + st->RAm/60.0 + (s/100.0)/3600.0);
+				pendingRA = false;
+				fixedRA++;
+			}
+			if (pendingDecl && readDecl(buffer, &h, &m, &s, &val)) {
+				st->Decls = s;
+				st->Decl1875 = -(st->Decld + st->Declm/60.0 + (s/10.0)/3600.0);
+				pendingDecl = false;
+				fixedDecl++;
+			}
+			sph2rec(st->RA1875, st->Decl1875, &st->x, &st->y, &st->z);
+			continue;
+		}
+		if (pendingRA || pendingDecl) {
+			printf("Warning: GC %d has incomplete seconds with no later complete observation\n", GCstar[GCstars - 1].gcRef);
+			unresolved++;
+		}
 
 		/* lee numeracion */
 		readField(buffer, cell, 1, 5);
@@ -140,29 +232,11 @@ void readGC()
 		// readField(buffer, cell, 12, 4);
 		// double epoch = (atof(cell)/100.0) + 1800.0;
 
-		/* lee ascension recta B1875.0 */
-		readFieldSanitized(buffer, cell, 16, 2);
-		int RAh = atoi(cell);
-		double RA = (double) RAh;
-		readFieldSanitized(buffer, cell, 18, 2);
-		int RAm = atoi(cell);
-		RA += ((double) RAm)/60.0;
-		readFieldSanitized(buffer, cell, 20, 4);
-		int RAs = atoi(cell);
-		RA += (((double) RAs)/100.0)/3600.0;
-		RA *= 15.0; /* conversion horas a grados */
-
-		/* lee declinacion B1875.0 */
-		readFieldSanitized(buffer, cell, 39, 2);
-		int Decld = atoi(cell);
-		double Decl = (double) Decld;
-		readFieldSanitized(buffer, cell, 41, 2);
-		int Declm = atoi(cell);
-		Decl += ((double) Declm)/60.0;
-		readFieldSanitized(buffer, cell, 43, 3);
-		int Decls = atoi(cell);
-		Decl += (((double) Decls)/10.0)/3600.0;
-		Decl = -Decl; /* incorpora signo negativo (en nuestro caso, siempre) */
+		/* lee ascension recta y declinacion B1875.0 */
+		int RAh, RAm, RAs, Decld, Declm, Decls;
+		double RA, Decl;
+		bool completeRA = readRA(buffer, &RAh, &RAm, &RAs, &RA);
+		bool completeDecl = readDecl(buffer, &Decld, &Declm, &Decls, &Decl);
 
 		/* lee precesiones y chequea, si es requerido */
         readFieldSanitized(buffer, cell, 24, 7);
@@ -202,9 +276,19 @@ void readGC()
 
 		/* proxima estrella */
 		GCstars++;
+		pendingRA = !completeRA;
+		pendingDecl = !completeDecl;
 		//printf("Pos %d: id=%d RA=%.4f Decl=%.4f (%.2f) Vmag=%.1f\n", GCstars, gcRef, RA, Decl, epoch, vmag);
 	}
+	if (pendingRA || pendingDecl) {
+		printf("Warning: GC %d has incomplete seconds with no later complete observation\n", GCstar[GCstars - 1].gcRef);
+		unresolved++;
+	}
 	printf("Stars read from Catalogo General Argentino: %d\n", GCstars);
+	printf("   Incomplete seconds fixed from later observations: RA %d, Decl %d (unresolved %d)\n",
+		fixedRA,
+		fixedDecl,
+		unresolved);
 
 	/* Ahora vamos a identificar las dobles */
 	for (int i = 0; i < GCstars - 1; i++) {
