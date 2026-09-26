@@ -638,6 +638,80 @@ The log had `GC 2615 is FAR from OA 1616 (dist = 41185.3 arcsec)`. OA 1616 lies 
 precesses (IAU 1976) to 2h24m54.92s −27°18′25.0″, **7.6″ from GC 2615** (2h24m55.49s
 −27°18′24.8″). No other GC row references OA 1606.
 
+### 5m. Remaining large FAR warnings of the scanned GC references (2026-09-26)
+§5f checked the ≥ 600″ warnings of pages 1–412 only against the print ("faithful"), without
+looking for the star the reference should have named. This pass takes the 16 warnings of
+600″ or more that no earlier section listed individually, plus the two Yarnall ones (GC 24282,
+27078). For each star:
+- the GC position in `cat/gc.txt` was compared with the print (RNAO14.pdf; PDF page = printed
+  page + 19). All 18 agree.
+- The RNAO14 corrigenda (RNAO18a.pdf, pp. LII–LIV) were checked. None of the 18 is listed.
+- The cited catalogue was searched around the GC position (reference lists dumped from
+  `cross_south`, 1875.0).
+
+**Fixed in the CSV (9):** every new reference lies within 9″ of the GC star, and no other GC
+row cites it.
+
+| Page | Star | CSV had | Print (RNAO14) | Now | Dist. | Kind |
+|------|------|---------|----------------|-----|-------|------|
+| 116 | 5867  | OA. 686   | `OA. :686`, first digit did not print | OA. 3686  | 3″ | damaged digit |
+| 143 | 7292  | OA. 4643  | OA. 4643   | OA. 4648  | 3″ | **book error** |
+| 158 | 8087  | B. 178    | P. 178     | P. 178    | — | transcription: P read as B (cf. 11823 in §5f) |
+| 184 | 9396  | OA. 6673  | OA. 6673   | OA. 6678  | 3″ | **book error** |
+| 228 | 11608 | OA. 8796  | OA. 8796   | OA. 8776  | 1″ | **book error** |
+| 255 | 13038 | Ll. 18823 | `Ll. 188·3`, tens digit damaged | Ll. 18833 | 5″ | damaged digit |
+| 305 | 15457 | OA. 11233 | OA. 11283  | OA. 11283 | 6″ | transcription: 8 read as 3 |
+| 318 | 16174 | Ll. 22301 | `Ll. 223·1`, tens digit damaged | Ll. 22361 | 9″ | damaged digit |
+| 386 | 19951 | OA. 13831 | OA. 13831  | OA. 13881 | 8″ | **book error** |
+
+The cited stars lie far away: OA 686 at 1h06m, OA 4643 at −22°23′, and Ll 18823 and 22301
+at +13° and +29°.
+
+**Yarnall (2 warnings, GC correct).** `checkYarnallRef` ignores the Y number: it reports the
+USNO 3rd-edition (U) star nearest to the GC position. The Y numbers were therefore looked up in
+the 2nd edition (Yarnall2.pdf, 1860.0) and matched in the 3rd (Yarnall.pdf):
+- **GC 24282, Y. 7477.** Y 7477 is Anonymous 8.3, 17h44m52.69s, "−34 47" (no seconds). This is
+  **U 7619** (Anonymous 7.0, 17h44m52.66s, "−34 47"), not U 7615, which is Y 7473 (17h44m37.8s).
+  Precessed, Y 7477 agrees with GC 24282 to 0.1s in RA. U 7619 has no Decl seconds, so
+  `readUSNO` drops it and the nearest other U star (187″) is reported.
+- **GC 27078, Y. 8486.** Y 8486 is Anonymous 9.2, 19h38m15.22s −29°9′0.9″. This is **U 8684**
+  (Lamont 174, 9.2, 19h38m15.22s). The 3rd edition prints only "−29 10", with no Decl
+  observations, and −29°10′ is the right value: GC 27078 brought back to 1860.0 gives
+  −29°10′00″. So the 2nd edition's 9′ is wrong by 1′. U 8684 is also dropped by `readUSNO`.
+
+Both pairs were added to `yarnall/yarnall_usno.txt`. Both warnings stay: they only go away if
+the Yarnall check uses Y positions or accepts U stars without Decl seconds.
+
+**Error in the reference catalogue, not in GC (5 stars, 6 warnings).** Other catalogues cite
+these stars the same way as GC, at the same distance: Stone for B 1405, 2718, 2719 and 5127,
+and Taylor for B 2718 and 2719. As with the Lacaille entries of §24, the shared position in
+`cat/brisbane.txt` is what's wrong. No printed Brisbane was available, so nothing was changed:
+- **B 1405** (GC 8690, 2291″): RA₁₈₂₅ is 06h46m26.23s, between B 1404 (06h49m) and B 1406
+  (06h49m40s), and B 1405 is ALONE in the log. With 06h49m26.23s it precesses to
+  06h51m17s, against GC's 06h51m19.45s.
+- **B 2718 / B 2719** (GC 13495 / 13497, 1666″ and 1659″): each lands 21″ and 54″ from the
+  *other* GC star. The two Decls (SPD 48°30′52″ and 48°58′32″) appear to be exchanged.
+- **B 5127** (GC 20267, 3656″): SPD₁₈₂₅ 39°08′03.0″ is within 6″ of B 5126 and B 5128. With 40°
+  it lands 51″ from GC 20267 (−50°03′24″).
+- **B 2621** (GC 13248, 2087″): flagged by GC alone. RA₁₈₂₅ 09h38m53.83s is out of order
+  (B 2620 at 09h35m52.80s, B 2622 at 09h35m54.31s). The digital position is 24″ from GC 13308
+  = L 4011 = PPM 314646, a 7.8 mag star, and GC 13248 is 9½ mag. Undecided.
+
+**G 252 (GC 7633, 728″) — kept as is.** `cat/gil1963.txt` has G 252 at `06154732`
+(6h15m47.32s), but Gil1963.pdf (p. 22) prints **6h13m47.34s** −66°42′1.6″, in RA order between
+G 251 (6h13m43.93s) and G 253. So the digital RA differs from the print. However, the digital
+position is 3.45″ from PPM 355277 (= G 3896 = ZC 6h 715), and the printed one matches no star.
+With the printed RA, G 252 is still 174″ from GC 7633, all in Decl (−66°42′32″ against
+−66°45′30″ at 1875.0), so the warning would remain. The likeliest reading: Gilliss's RA is 2m
+off in the book, the digital catalogue carries a correction, and Gould identified GC 7633 from
+the misprinted RA. That would make "G. 252" a book error with no replacement.
+Decision (D. Severin): `cat/gil1963.txt` keeps 6h15m, and GC 7633 keeps `G. 252` as printed, so
+the warning remains. It is documented here only.
+
+Net effect on `cross_south`: GC "FAR from" warnings 76 → 67 and all "FAR from" warnings 281 → 272.
+No new warnings. OA cross-checks OK 2838 → 2844 and Lalande 2661 → 2663. P. 178 is not a
+checked catalogue, so checked references drop 16915 → 16914.
+
 ---
 
 ## 6. Pipeline facts (for whoever resumes)
