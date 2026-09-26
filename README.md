@@ -107,7 +107,7 @@ Note: "OA" and "G" are abbreviations used in more than one catalog (Oeltzen-Arge
 
 - Use the likelihood approach instead of the greedy for all cross-identifications.
 - Correct typo errors in all CD catalogs.
-- Usually, the supplementary letter of BD/SD/CD designations is ignored. Revise it.
+- The supplementary letter of BD/SD/CD designations is ignored. Same for 1/2 stars in GC. Revise how to introduce them.
 
 ### Bibliography
 

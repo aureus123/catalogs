@@ -143,9 +143,6 @@ void readGC()
 	int variables = 0;
 	bool pendingRA = false;   /* la ultima estrella almacenada tiene segundos de RA ausentes/incompletos */
 	bool pendingDecl = false; /* idem para Decl */
-	int fixedRA = 0;
-	int fixedDecl = 0;
-	int unresolved = 0;
     GCstars = 0;
 	
 	// Lee Catálogo General Argentino
@@ -183,20 +180,14 @@ void readGC()
 				st->RAs = s;
 				st->RA1875 = 15.0 * (st->RAh + st->RAm/60.0 + (s/100.0)/3600.0);
 				pendingRA = false;
-				fixedRA++;
 			}
 			if (pendingDecl && readDecl(buffer, &h, &m, &s, &val)) {
 				st->Decls = s;
 				st->Decl1875 = -(st->Decld + st->Declm/60.0 + (s/10.0)/3600.0);
 				pendingDecl = false;
-				fixedDecl++;
 			}
 			sph2rec(st->RA1875, st->Decl1875, &st->x, &st->y, &st->z);
 			continue;
-		}
-		if (pendingRA || pendingDecl) {
-			printf("Warning: GC %d has incomplete seconds with no later complete observation\n", GCstar[GCstars - 1].gcRef);
-			unresolved++;
 		}
 
 		/* lee numeracion */
@@ -280,15 +271,7 @@ void readGC()
 		pendingDecl = !completeDecl;
 		//printf("Pos %d: id=%d RA=%.4f Decl=%.4f (%.2f) Vmag=%.1f\n", GCstars, gcRef, RA, Decl, epoch, vmag);
 	}
-	if (pendingRA || pendingDecl) {
-		printf("Warning: GC %d has incomplete seconds with no later complete observation\n", GCstar[GCstars - 1].gcRef);
-		unresolved++;
-	}
 	printf("Stars read from Catalogo General Argentino: %d\n", GCstars);
-	printf("   Incomplete seconds fixed from later observations: RA %d, Decl %d (unresolved %d)\n",
-		fixedRA,
-		fixedDecl,
-		unresolved);
 
 	/* Ahora vamos a identificar las dobles */
 	for (int i = 0; i < GCstars - 1; i++) {

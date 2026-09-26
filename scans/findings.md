@@ -8,7 +8,7 @@ Digitization of `RNAO14.pdf` into per-page CSV files `rnao14_pageNN.csv`
 
 This file records every non-trivial finding: magnitude discrepancies (corrected or
 kept), numbering/structural problems, genuine catalog gaps, gc.txt omissions, and
-cross-identification results. Last updated **2026-06-21**.
+cross-identification results. Last updated **2026-09-26**.
 
 ---
 
@@ -491,6 +491,8 @@ pages 531–616** in the south.
     `OA.20291`, 29081 `OA.21199`, 32393 `OA.23025`; anomalously-low Lalande that are original-book
     typos faithfully transcribed — 28489 `Ll.8566`, 29398 `Ll.21683`; small offsets / doubles —
     28799 `Ll.40634`, 28949 `L.8690`, 28972 `L.8693`, 29448 `L.8827`, 29683 `L.8889`, 32286 `L.9614`.
+  *(2026-09-26: 32393, 28489, 29398 and 32286 turned out to be misprints in the book and are now
+  corrected in the CSV — see §5j.)*
 - **CAVEAT on the §5g narrow-composite restorations (532/564/598):** the narrow `num+ref` model
   pass is weaker at the **L vs Ll vs F** prefix distinction (it produced the 29781/29777/29782
   prefix errors on p564). The cross-check catches prefix errors only when they push the position
@@ -530,6 +532,80 @@ ground-truth points (328: L.5065/L.5064/B.3982; 408: 21183 L.6423 / 21230 OA.147
 Remaining item-B: ~~372, 466~~ — **DONE 2026-07-02** (references read manually by Claude vision from
 the REF strips; both pages' ZC sequences strictly increasing, seams clean). Item-A pages all done
 earlier (144/158/304/368/410 via subagent; 90/126/128/296/362 manually 2026-07-02). **Nothing remains.**
+
+### 5j. Reference errors in the printed catalogue — corrigenda and cross-checks (2026-09-26)
+Unlike §5f–§5i, these are errors **in the printed book**, not transcription errors: the CSV was
+faithful to the print and is now deliberately corrected. Several of these were listed as
+"faithful" in §5h; that is still true of the transcription, but the reference itself is wrong.
+
+**Source 1: the corrigenda.** The "Fé de erratas / Corrigenda" for volume XIV (Tomo décimo
+cuarto) is printed in **RNAO18a.pdf, PDF pages 55–57** (printed pp. LII–LIV). Only the reference
+corrections were applied; position, magnitude and "same as N°" entries were ignored. In every
+case the corrigenda's "En vez de / For" value matched the CSV exactly. "Anon." means no
+reference, so the reference cell is left blank.
+
+| Page | Star | CSV had (= print) | Corrigenda "Put" | Applied | FAR warning after |
+|------|------|-------------------|------------------|---------|-------------------|
+| 190 | 9723  | *(blank)*  | OA. 7022  | yes | none |
+| 284 | 14464 | G. 1289    | Anon.     | yes (blank) | gone |
+| 296 | 15061 | Ll. 4552   | L. (4552) | yes | gone |
+| 322 | 16411 | L. 4970    | ZC. 3740  | yes | gone |
+| 344 | 17645 | L. 24130   | Ll. (24130) | yes | none |
+| 390 | 20171 | St. 8109   | St. 8107  | yes | gone |
+| 397 | 20603 | *(blank)*  | L. 6273   | **no** (see below) | — |
+| 453 | 23668 | M. 1594?   | Anon.     | yes (blank) | none |
+| 539 | 28489 | Ll. 8566   | L. (8566) | yes | gone |
+| 556 | 29398 | Ll. 21683  | Ll. 41683 | yes | gone |
+| 613 | 32286 | L. 9614    | Anon.     | yes (blank) | gone |
+
+For the prefix-only corrections (15061, 17645, 28489) the corrigenda prints just the prefix, so the
+existing number was kept.
+
+**GC 20603: the corrigendum was rejected.** Adding `L. 6273` produced a new FAR warning
+(771″). L 6273 is already GC **20630** (page 398, matches without warning), and the neighbours of
+20603 are L. 6261 (20597) and L. 6263 (20604). To rule out an error in the Stone-derived
+Lacaille list (§23), Lacaille's own 1750.0 position (`cat/others/lacaille.txt`) was precessed
+to 1875.0 (IAU 1976): L 6273 → 15h06m14.3s −24°49′37″, i.e. **61″ from GC 20630** and 821″
+from GC 20603 (15h05m14.2s −24°48′40″). No Lacaille star from 6258–6280 lies near 20603 (the
+closest, L 6275 and L 6271, are ~1°). Both Stone and Lacaille therefore place L 6273 at GC 20630,
+so the corrigendum entry is itself wrong, and 20603 stays blank as printed.
+
+`cat/others/lacaille.txt` format (no reader exists in the code): cols 1–4 number, 7–9
+constellation, 15–16 magnitude (`65` = 6½), 18–24 RA 1750.0 `hhmmsss` (tenths of s), 25–32 annual
+precession in RA, 33–39 North Polar Distance `dddmmss` (Decl = 90° − NPD), then the annual
+precession in NPD.
+
+**Source 2: the cross-position check.** GC 32393 (p615) prints `OA. 23025` (listed as faithful
+in §5h). OA 23025 is 19669″ away and is already correctly GC 32079 (p608); **OA 23205** is 17.7″
+away, same constellation (Sculptor), mag 9.0 vs 8½, and fits the RA-ordered neighbours
+(32380 = OA. (23193), 32400 = OA. 23210, 32413 = OA. 23220). A printer's transposition 23205 →
+23025; CSV corrected to `OA. 23205`.
+
+Net effect on `cross_south`: "FAR from" warnings 1014 → 1008 with all 11 corrigenda entries
+applied, including 20603's new warning; reverting 20603 should give 1007.
+
+### 5k. `read_gc.cpp` — positions from `cat/gc.txt` (2026-09-26, commit `e6ba76e`)
+These changes affect the GC 1875.0 positions that every cross-check above is measured against.
+
+- **½ stars are skipped.** Byte 6 of `gc.txt` is the ½ flag (0 = normal, 1 = ½ star, e.g.
+  9614½ in Carina on printed p188, a different star from 9614). The 16 ½-star lines used to be
+  read under the number of the main star; they are now discarded.
+- **Missing seconds are filled from a later observation.** 58 stars have blank (or partly
+  blank) RA seconds (cols 20–23) or Decl seconds (cols 43–45) in observation 1. These used to
+  be read as zeros, putting the position off by up to 1 min of RA or 1′ of Decl. If a later
+  observation line of the same star has complete seconds, **only the seconds** are taken from
+  it; hours/degrees and minutes always come from observation 1 (no check is made on them).
+  Examples: 5081 (RA → 04h26m19.11s), 14371 (Decl → 16°18′47.5″), 7988 (Decl → 62°04′06.8″,
+  the second observation having only the seconds).
+  - Result: 50 fixed (RA 2, Decl 48); **8 unresolved**, having no later observation:
+    6881, 14595, 18800, 22984, 26912, 27163, 30334, 31011.
+  - Later observations never carry precessions, magnitude or type, so the stored record is
+    patched rather than replaced.
+- **Seconds ≥ 60 are legitimate.** Later observations keep observation 1's minute and let the
+  seconds run past 60 (8 RA and 120 Decl cases, e.g. 00788 `-7149600`/`-7149608`); observation 1
+  sometimes does too (00056 = 28°40′61.0″). The parse is additive (`m/60 + s/3600`), so these
+  give the correct coordinate and need no special handling.
+- Effect: GC 5081 is no longer "ALONE"; the double-star count (1633) is unchanged.
 
 ---
 
@@ -1015,7 +1091,7 @@ The digital Gilliss catalogue (*cat/gilliss.txt*) was cross-checked with
 The log emits 251 enumerated warnings in four classes. Classes 1 (near star with
 magnitude difference) and 2 (star "ALONE") were **not** audited per instructions.
 The remaining two classes were checked star by star against the printed catalogue
-(*/Desktop/Catalogos/Otros/Gilliss.pdf*; catalogue page 1 = PDF page 75, ~40 stars
+(catalogue page 1 = PDF page 75, ~40 stars
 per page, so catalogue page ≈ floor((N+54)/40), PDF page = catalogue page + 74):
 
 * **Class 3 — precession mismatch** (the log reports the stored annual precession
