@@ -2143,3 +2143,232 @@ Effect on `results/log_south.log`:
   unchanged at 2.43″.
 - ZC identifications: PPM 14339 → 14341, GSC-PPM 418 → 417, CPD 14715 → 14716.
 - ZC stars saved from the GC scans: 9927 → 9926, because GC 3793 lost its reference.
+
+# Klein's Star Atlas (1888) — catalogue of remarkable objects → cat/klein.txt
+
+Source: `~/Desktop/Catalogos/klein_star_atlas.pdf` (162 PDF pages, English edition 1888, translated
+by E. McClure, University of California copy). The catalogue is printed pages 11–71 (PDF pages 25–85).
+Only the catalogue was transcribed. The introduction, the editorial note on p. 71 and the plates
+were left out.
+
+## 46. Method and format
+
+- Visual transcription of 200-dpi renders, one file per printed page: `scans/klein_page1.txt`
+  (p. 11) … `scans/klein_page61.txt` (p. 71). A description that runs onto the next page is stored
+  there as a line beginning `CONT `, which is joined to the previous entry when merging.
+- `cat/klein.txt` has **782 entries** in fixed width: RA h (1-2), RA min (3-4), Decl sign+deg (5-7),
+  Decl min (8-9), description (10-…), in UTF-8 (Greek letters, ′ ″ °, ½ ⅓ ¼ ¾, ʰ ᵐ for times).
+  The text is kept as printed, including spelling slips (D'Arvest, Englemann, distinguised,
+  Berenicies, Baxendall). The positions are for **1880.0**, as the column headings say.
+- Leading numbers on nebulae and clusters are numbers in **J. Herschel's General Catalogue (GC,
+  1864)**: 116 = M31, 1179 = M42, 4230 = M13, 4447 = M57. Leading numbers on stars are Flamsteed
+  numbers, and Σ numbers are from Struve's Mensurae Micrometricae. M 25 (18h25m) is the only Messier
+  number printed.
+- Pencil notes in the copy (1940 positions, "M 5", "M 20", "M 21", "M22", "N.G.C 2261", "15" over
+  "14-inch" for Bond's refractor, "6.7 ?" under 35 Sex "67″") were **not** transcribed.
+- Table-like parts (Burnham's measures for 45 Lep, Anonyma in Libra, β Leo, υ CrB, etc.) are
+  flattened into one line as `AB d = … p = …; AC …`, with ditto marks expanded.
+
+## 47. Coordinate check against PPM
+
+PPM stars with V ≤ 8 were carried to epoch 1880 using their proper motions, precessed (FK5) to
+equinox 1880 with astropy, and matched to each stellar entry. Entries for nebulae, clusters and
+novae were skipped.
+
+- 428 of 516 stellar entries have a PPM star with V ≤ 8 within RA ±0.6ᵐ and Dec ±1′. For 364
+  non-variables with V ≤ 6.5, the median offset (PPM − Klein) is −0.04ᵐ in RA and −0.05′ in Dec,
+  so the book rounds to the nearest minute. Almost all residuals are within ±0.6ᵐ and ±1′.
+- Most of the 88 entries without a match are long-period variables (R, S, T … stars), which PPM
+  records near minimum. They are not errors.
+- About 15 double stars are off by 1–3′ in Dec (θ Hya +2.2′, 15 Hya −2.7′, Σ 921 −2.0′, υ CrB
+  −2.1′, Σ 2816 +2.8′, Σ 2215, Σ 2277, 70 Oph, π Gem, 16-17 Dra, m Her, ν Cet, 14 Lyn, Σ 1669,
+  Σ 2840). Each was re-read in the scan and is transcribed as printed. These are the book's own
+  imprecisions.
+
+Clear errors in the book (kept as printed in the page files; the coordinate errors are corrected in cat/klein.txt, see §49):
+
+| Entry | Printed | Should be | Note |
+|---|---|---|---|
+| R Aurigae (p. 23) | 5h08m −53°27′ | +53°27′ | sign |
+| β Orionis, Rigel (p. 23) | 5h09m +8°20′ | −8°20′ | sign (blotted "+") |
+| β Geminorum, Pollux (p. 35) | 7h37m +28°30′ | ≈7h38m +28°19′ | Dec 11′ too large |
+| 1383, cluster (p. 30) | "in Pegasus" | in Orion (NGC 2194) | constellation |
+| GC 820 (p. 20) | +?0°54′ (broken type) | read as +50°54′ | NGC 1528 |
+
+Other slips in the text (not in coordinates): ο² Eri "discovered by W. Herschel in 1873" (1783);
+GC 1551 "4 Feb., 1875" (1785); GC 4514 "6 Sept, 1773" (1793); GC 4415 "24 Sept., 1802" (1862?);
+R Cyg "at minimum very faint (3 mag.)" (13); ″ printed for ° in μ And, υ CrB and α Del angles of
+position, and ′ for ″ in 55 Psc "6.3′" and τ Oph "d = 100′"; 14 Aur given as Σ 652 (Σ 653) and
+ζ Ori as Σ 744 (Σ 774). 59 Cygni and f¹ Cygni (20h56m +47°03′, both Σ 2743) are the same star
+printed twice, and both entries are kept. One entry is out of RA order in the book (W Sgr 17h57m
+follows 18h11m across the page break, pp. 56–57) and was left in printed order.
+
+The nebula and cluster positions are checked against NGC 2000.0 in §48.
+
+## 48. Nebula and cluster check against NGC 2000.0
+
+The 260 entries that begin with a GC number were matched to `book/ngc2000.txt` (Sinnott,
+NGC 2000.0, J2000). Each Klein position was precessed from 1880.0 to J2000 with astropy FK5, and
+the nearest NGC object (not IC) was taken. Five nearest matches were replaced by hand because the
+nearest entry was a star or a neighbouring object and the description fits another: GC 1511 =
+NGC 2359 (not 2361), GC 1541 = NGC 2403, GC 4270 = NGC 6293, GC 4586 = NGC 6934, GC 4815 =
+NGC 7331. The table is in `scans/klein_ngc.txt` (GC → NGC, separation, ΔRA, ΔDec, flag).
+
+The GC numbers check out. GC and NGC are both in RA order, so NGC − GC should drift smoothly,
+and it does for every entry. No GC number is out of sequence, so no GC number looks misread.
+
+Results:
+- 214 of 260 agree within |ΔRA| ≤ 0.75ᵐ and |ΔDec| ≤ 2′. Their median offset is +0.03ᵐ and
+  +0.03′, with scatter 0.33ᵐ and 0.7′, as expected from rounding to the nearest minute.
+- About 25 entries are off by 2–6′ in Dec or about 0.5ᵐ in RA. Almost all of them are large
+  objects (M42, M31, M33, M44, M81, NGC 2403, h/χ Per and others), whose centres are not well
+  defined.
+- About 12 entries are off by 0.8–1.2ᵐ in RA while the Dec agrees. Late: M67, M19, NGC 6284,
+  NGC 6287, NGC 7662, NGC 6755, NGC 4643, NGC 6412. Early: NGC 1662, NGC 1342, NGC 3486,
+  NGC 2359. M67, M19 and NGC 6284 were re-read in the scan and are as printed, so these are
+  imprecise positions in the book, not reading errors.
+
+Large discrepancies. All were re-read in the scan and are as printed:
+
+| Entry | Book (1880) | NGC 2000 → 1880 | Difference |
+|---|---|---|---|
+| GC 940 (p. 22), NGC 1708, Cam | 4h52m +53°41′ | 4h53.1m +52°42′ | Dec +59′, probably 53 for 52 |
+| GC 256 (p. 14), NGC 457, Cas | 1h12m +58°09′ | 1h11.6m +57°42′ | Dec +27′ |
+| GC 63 (p. 11), NGC 129, Cas | 0h23m +59°10′ | 0h23.2m +59°34′ | Dec −24′ |
+| GC 996 (p. 22), NGC 1778, Aur | 5h00m +37°12′ | 5h00.0m +36°53′ | Dec +19′ |
+| GC 1534 (p. 34), NGC 2395, Gem | 7h22m +14°01′ | 7h20.3m +13°49′ | RA +1.7ᵐ, Dec +11′ |
+| GC 1101 (p. 24), NGC 1893, Aur | 5h17m +33°17′ | 5h14.8m +33°17′ | RA +2.2ᵐ |
+| GC 1415 (p. 30), NGC 2232, Mon | 6h22m −4°41′ | 6h20.7m −4°41′ | RA +1.3ᵐ |
+| GC 1030 (p. 23), NGC 1807, Tau | 5h03m +16°32′ | 5h03.8m +16°23′ | Dec +9′ (but it is NGC 1817, see §50) |
+| GC 1490 (p. 33), NGC 2331, Gem | 7h00m +27°23′ | 6h59.7m +27°32′ | Dec −9′ |
+| GC 4376 (p. 57), NGC 6546, Sgr | 18h00m −23°14′ | 17h59.9m −23°21′ | Dec +7′ |
+
+(Superseded by §50 for GC 2279 and GC 768.) Some identifications are uncertain. GC 2279 ("Nebula in Leo. According to Tempel, …", 10h54m
++4°16′) falls between NGC 3494, which NGC 2000 lists as nonexistent, and NGC 3495, 16′ away. GC
+768 (Tempel's nebula in the Pleiades) is matched to NGC 1435 (Merope), 14′ away. Several clusters
+match NGC entries that NGC 2000 lists as nonexistent ("−"), such as NGC 1708, 1996, 2224, 2312,
+6682 and 6832, which shows these were real catalogue entries in 1888.
+
+Entries without a GC number (M 25, the nebula in Cygnus at 21h03m, and the GC numbers only
+mentioned inside star entries) were not matched.
+
+## 49. Corrections applied to cat/klein.txt
+
+The page files `scans/klein_page*.txt` keep the book exactly as printed. `cat/klein.txt` has the
+coordinates corrected for every entry that is 10′ or more from its true 1880.0 position: 9 stars
+and 21 nebulae or clusters, 30 entries in all. Only the coordinates were changed. The text and the
+order of the entries are as printed, so a few corrected entries are now slightly out of RA order.
+
+How the true 1880 positions were found:
+- **Stars:** the star was looked up by name (variable, Bayer or Flamsteed designation) with the
+  CDS Sesame resolver, brought back to epoch 1880 with its proper motion, and precessed to
+  equinox 1880.0. Σ doubles were taken from `book/Struve.csv`.
+- **Nebulae and clusters:** the NGC 2000.0 position (§48) was precessed to 1880.0.
+
+The corrected value is rounded the way the book rounds: nearest minute in RA, nearest arcminute
+in Dec. Every original value was re-read in the scan and is what the book prints. None of these
+are transcription errors.
+
+| Page | Object | Printed (1880) | Corrected | Field | Error | Computed 1880.0 |
+|---|---|---|---|---|---|---|
+| 11 | GC 63 = NGC 129 | 0h23m +59°10′ | **0h23m +59°34′** | Dec | 24′ | 00h23.2m +59°34.2′ |
+| 14 | GC 256 = NGC 457 | 1h12m +58°09′ | **1h12m +57°42′** | Dec | 27′ | 01h11.6m +57°42.1′ |
+| 19 | GC 717 = NGC 1342 | 3h23m +36°53′ | **3h24m +36°55′** | RA, Dec | 11′ | 03h23.9m +36°55.3′ |
+| 22 | GC 905 = NGC 1662 | 4h41m +10°43′ | **4h42m +10°43′** | RA | 13′ | 04h41.9m +10°43.1′ |
+| 22 | GC 940 = NGC 1708 | 4h52m +53°41′ | **4h53m +52°42′** | RA, Dec | 60′ | 04h53.1m +52°42.3′ |
+| 22 | GC 996 = NGC 1778 | 5h00m +37°12′ | **5h00m +36°53′** | Dec | 19′ | 05h00.0m +36°53.3′ |
+| 23 | GC 1030 = NGC 1817 | 5h03m +16°32′ | **5h05m +16°33′** | RA, Dec | 31′ | 05h05.2m +16°33.1′ |
+| 23 | R Aurigae | 5h08m −53°27′ | **5h08m +53°27′** | sign | 6414′ | 05h07.6m +53°26.9′ |
+| 23 | β Orionis (Rigel) | 5h09m +8°20′ | **5h09m −8°20′** | sign | 1000′ | 05h08.8m −8°20.5′ |
+| 24 | GC 1101 = NGC 1893 | 5h17m +33°17′ | **5h15m +33°17′** | RA | 27′ | 05h14.8m +33°16.8′ |
+| 24 | γ Orionis | 5h18m +6°14′ | **5h19m +6°14′** | RA | 10′ | 05h18.7m +6°14.4′ |
+| 27 | GC 1184 = NGC 1981 | 5h30m −4°27′ | **5h29m −4°31′** | RA, Dec | 12′ | 05h29.3m −4°30.8′ |
+| 30 | GC 1415 = NGC 2232 | 6h22m −4°41′ | **6h21m −4°41′** | RA | 20′ | 06h20.7m −4°40.9′ |
+| 33 | GC 1511 = NGC 2359 | 7h12m −13°00′ | **7h13m −12°59′** | RA, Dec | 15′ | 07h13.0m −12°59.0′ |
+| 34 | GC 1534 = NGC 2395 | 7h22m +14°01′ | **7h20m +13°49′** | RA, Dec | 27′ | 07h20.3m +13°49.3′ |
+| 35 | β Geminorum (Pollux) | 7h37m +28°30′ | **7h38m +28°19′** | RA, Dec | 17′ | 07h38.0m +28°18.9′ |
+| 37 | GC 1712 = NGC 2682 | 8h45m +12°15′ | **8h44m +12°16′** | RA, Dec | 17′ | 08h43.8m +12°15.7′ |
+| 37 | 15 Hydrae | 8h45m −6°41′ | **8h46m −6°44′** | RA, Dec | 10′ | 08h45.7m −6°43.7′ |
+| 40 | 41 Sextantis | 10h45m −8°10′ | **10h44m −8°16′** | RA, Dec | 12′ | 10h44.3m −8°15.7′ |
+| 40 | GC 2274 = NGC 3486 | 10h53m +29°37′ | **10h54m +29°37′** | RA | 11′ | 10h53.8m +29°36.6′ |
+| 40 | GC 2279 = NGC 3495 | 10h54m +4°16′ | **10h55m +4°17′** | RA, Dec | 17′ | 10h55.1m +4°16.6′ |
+| 43 | GC 3105 = NGC 4568 | 12h30m +12°06′ | **12h31m +11°54′** | RA, Dec | 15′ | 12h30.5m +11°53.7′ |
+| 44 | GC 3176 = NGC 4643 | 12h38m +2°39′ | **12h37m +2°38′** | RA, Dec | 12′ | 12h37.2m +2°38.5′ |
+| 54 | GC 4264 = NGC 6273 | 16h56m −26°05′ | **16h55m −26°05′** | RA | 11′ | 16h55.2m −26°05.4′ |
+| 54 | GC 4268 = NGC 6284 | 16h58m −24°36′ | **16h57m −24°36′** | RA | 11′ | 16h57.2m −24°35.8′ |
+| 54 | GC 4269 = NGC 6287 | 16h59m −22°32′ | **16h58m −22°32′** | RA | 14′ | 16h58.0m −22°31.9′ |
+| 61 | GC 4470 = NGC 6755 | 19h03m +4°03′ | **19h02m +4°03′** | RA | 17′ | 19h01.8m +4°02.8′ |
+| 61 | ε Sagittae | 19h31m +16°12′ | **19h32m +16°12′** | RA | 12′ | 19h31.9m +16°11.7′ |
+| 63 | 57 Aquilae | 19h49m −8°32′ | **19h48m −8°32′** | RA | 13′ | 19h48.1m −8°32.3′ |
+| 63 | 32 (o²) Cygni | 20h10m +46°23′ | **20h12m +47°21′** | RA, Dec | 61′ | 20h11.8m +47°20.8′ |
+
+Not corrected:
+- **GC 768** (p. 19, Tempel's nebula in the Pleiades): 14′ from NGC 1435 (the 1901 edition
+  confirms NGC 1435), which is placed on Merope. The nebula is large and diffuse, and the book's point lies within it.
+
+A few stars have names that don't fit their positions, but the positions themselves are right
+(within the book's rounding), so they were left alone:
+- "μ Ursae Majoris" at 13h43m +49°55′ is η UMa (Alkaid).
+- "ο Persei (Σ 431)" fits Σ 431, not ο Per.
+- "ι² Cancri" fits Σ 1291 (ι Cnc).
+- "83 Herculis" fits Σ 2194.
+- "υ¹ Cancri" fits Σ 1224.
+- "96 B., Orionis" is W Orionis.
+- "52 Camelopardalis", "4 Tauri", "41 Ursae Majoris" and "ι Orionis" (5h01m) do not resolve to
+  the star at the printed position, but a star of the right brightness lies there (PPM check, §47).
+
+61 Cygni looked 16′ off at first. The cause was that Sesame returned no proper motion for it.
+With the PPM proper motion (about 5″ a year), the book's 21h01m +38°10′ is correct.
+
+Of the 496 stars resolved by name, the median separation is 3.3′, as expected from rounding RA to
+the nearest minute.
+
+A transcription slip was also fixed in both files: 35 Piscium had been written "335, Piscium".
+
+## 50. Identifications checked against the 1901 edition
+
+archive.org has a later English edition (London, SPCK, 1901; item `staratlascontain00kleiuoft`;
+no 1903 edition is on archive.org). It gives positions for 1900.0 and prints the NGC number in
+parentheses after each GC number, e.g. "2279 (3494), Nebula in Leo". Its OCR text was compared
+with `scans/klein_ngc.txt`, and every disagreement was read in the page images. 159 of the 260
+identifications agree. The OCR is too noisy to find the rest automatically, so those were not
+checked against the 1901 edition.
+
+The 1901 NGC numbers have misprints of their own. For example, "1067 (1851)" points to a southern
+globular cluster, "4359 (6520)" to an object 2° away, and "5023 (7742)" to a galaxy, while the
+1901 positions in those entries fit NGC 1857, 6522 and 7772. So each disagreement was judged on
+the description (compared with Dreyer's description in NGC 2000) and on both positions.
+
+| GC | Nearest NGC (§48) | 1901 ed. | Adopted | Reason |
+|---|---|---|---|---|
+| 1030 | 1807 | 1817 | **1817** | "stars 11 to 14 mag." = NGC 1817 "st 11…14"; 1901 position fits 1817 (4.7′) |
+| 2279 | 3494 | 3494 | **3495** | see below |
+| 3105 | 4564 | 4568 | **4568** | "a faint, double nebula" = NGC 4567/4568 |
+| 3165 | 4627 | 4631 | **4631** | "a strip of nebula 12′ long" = NGC 4631 |
+| 3637 | 5276 | 5273 | **5273** | "moderate brilliancy, fairly large" = 5273 "cB, pL"; 5276 is "F, S" |
+| 4361 | 6530 | 6523 | **6523** | M8; 1901 position fits 6523 |
+| 2038 | 3169 | 3166 | **3166** | "small, round, sudden increase" = 3166 "pS, R, psmbM" |
+| 1811 | 2825 | 2830 | **2830** | 1901 position fits 2830 |
+| 2287 | 3504 | 3512 | **3512** | 1901 position fits 3512 (5.6′ vs 16.6′) |
+| 3293, 3294 | 4794 | 4792 | **4792, 4794** | a pair 7′ apart |
+| 2245 | 3445 | 3440 | **3445** | "followed to the northward by a star 10 mag., distance 2′" = 3445 "*10 nf 2′"; 1901 misprint |
+| 1541 | 2403 | 2404 | **2403** | "very large, rather elongated" = 2403; NGC 2404 is a knot in it |
+| 1617 | 2513 | 2510 | 2513 (?) | both about 5′; uncertain |
+| 422 | 708 | 700 | 708 (?) | a group of four nebulae (Herschel 1784); uncertain |
+
+**GC 2279.** The 1901 edition prints "2279 (3494)". The adopted identification is NGC 3495, for
+these reasons:
+- Klein's description is a "large and thick spindle-shaped nebula 5′ long by 1.5′ broad". NGC 3495
+  is an edge-on galaxy of about that size (Dreyer: "vF, pL, mE").
+- Klein adds that "about 6′ north of the middle node, Tempel repeatedly observed a small nebula".
+  That is NGC 3494, described as "vS, 3495 6′ s" (a very small nebula with 3495 6′ to the south),
+  and listed as nonexistent in NGC 2000.
+- Klein's Dec (+4°16′ in 1880, +4°15′ in 1900) fits NGC 3495 (+4°16.6′) and not 3494 (+4°21.6′).
+
+So the 1901 number seems to belong to Tempel's small companion. Only the 1888 RA was a minute off,
+and it is corrected in §49 (10h54m → 10h55m).
+
+Effect on the corrections in §49:
+- GC 1030 was first corrected towards NGC 1807. It is now corrected to NGC 1817 (5h05m +16°33′).
+- GC 2279 (→ NGC 3495) and GC 3105 (→ NGC 4568, Dec 12′ off) were added.
+- The other new identifications are within 10′ of the printed positions, so they needed no change.

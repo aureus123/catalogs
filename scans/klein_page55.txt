@@ -1,0 +1,14 @@
+2029+60164590, Star Cluster in Cepheus, a beautiful, rich star cluster from 8′ to 9′ in diameter. Discovered by Herschel 9 Sept., 1798.
+2029+27544591, Star Cluster in Vulpecula, discovered by W. Herschel, brilliant, fairly large and rich, containing many brilliant stars densely massed together.
+2032+1411β Delphini (Σ 2704), a greenish star of 3.4 mag., with a faint companion 11 mag., d = 35.5″, p = 335.6°. There is a second exceedingly faint companion, d = 27.5″, p = 115°. Finally, Burnham found the primary to be itself double, consisting of two stars at a distance of only 0.26″.
+2033+00041, Aquarii, a star of 5 mag., with two very faint companions (11 mag.), whose positions Burnham calculated in 1879 as follows: d = 55.8″, p = 217.4°; d = 72.9″, p = 38.9°.
+2034+1529α Delphini, 4 mag., with a companion 9.5 mag., d = 35″, p = 278°. There are in addition three exceedingly faint stars near the primary, d = 20″, p = 225°; d = 45″, p = 350°; d = 81″, p = 114″. Auwers in 1858 found from numerous comparisons that α fluctuates in brilliancy to the extent of about half a magnitude, within a period of about 14 days. Since the date named this change of brilliancy does not seem to have been again noticed.
+2036+315249, Cygni (Σ 2716), 6 mag. and yellowish, with a blueish companion 8 mag., distance 2.7″. In both stars the colours are easily recognisable.
+2040+1558T Delphini, variable, discovered by Baxendell in 1860. At maximum it does not exceed 8 and often scarcely 9 mag., at minimum it is 13 mag. Period 331 days.
+2041+30184600, Nebula in Cygnus, a remarkable, irregular nebula, fairly bright and large. It extends beyond 52 Cygni. Discovered by Herschel 7 Sept., 1784; as seen by him it extended over more than 1°, indeed, with the highest magnifying power, almost 2°.
+2041+1542γ Delphini (Σ 2727), a star of 4 mag., golden yellow in colour, with a greenish-blue companion 5 mag., distance 11″.
+2041+301752, Cygni (Σ 2726), yellowish, 4 mag., with a companion 9 mag., distance 6.2″.
+2042+3356T Cygni, recognised as variable by Schmidt in 1864, it is usually about 6 mag., and yellowish-white in colour. The changes of brilliancy are slight but unmistakeable.
+2043+3603λ Cygni, 5 mag., with a companion 10.5 mag., distance 85″, angle of position 104°. Struve discovered that the primary is itself double, consisting of two stars of 5.5 mag., distance 0.6″. A very difficult object.
+2044-0535T Aquarii, recognised as variable by Goldschmidt in 1861. At maximum it is often somewhat above 7 mag., but at minimum it diminishes to 13 mag. Period 203 days.
+2045-06044, Aquarii (Σ 2729), a very difficult double star. The primary is 6 mag., and somewhat yellowish, the companion 8 mag. According to Burnham (1879), the distance is only 0.6″, angle of position 167°.
