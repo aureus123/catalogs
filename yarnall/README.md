@@ -25,3 +25,9 @@ The three instrument-based files indicate which instrument was used to measure t
 | **Total** | | **1,067** |
 
 All 1,067 stars across these four files represent the USNO's original observations, with no cross-reference to any prior catalog.
+
+## Gilliss Expedition
+
+`anon_gil1963.txt` lists, in the same format, the 385 stars of J. M. Gilliss's *Catalogue of 1963 stars* (`cat/gil1963.txt`, epoch 1850.0, observed at Santiago de Chile in 1850-52) that carry neither a Bayer/Flamsteed name nor a cross-reference to an earlier catalogue (Lacaille, B.A.C., Brisbane, etc.). These stars could therefore have been **observed for the first time by the U.S. Naval Astronomical Expedition** led by Gilliss. The constellation was derived from the B1850.0 coordinates, and five stars without a magnitude in the catalogue have an empty second field.
+
+The list comes from the curated digital file, not the printed catalogue, so it doesn't match the printed "Anonymous" entries exactly. Some stars printed as Anonymous carry a Lacaille number in the digital file (e.g. G 3, 80, 121, 140) and are left out here. Some stars whose printed name is a doubtful identification ("1267 B.A.C.?", G 105) or a lost one (G 185 = 2063 Lacaille) appear here. Also, seven stars (G 52, 53, 395, 891, 1156, 1261, 1658) are missing from the digital file.
