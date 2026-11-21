@@ -2168,10 +2168,10 @@ volumes VII, VIII and XIV), marked as "no existe", "no se halló en las Zonas de
 | 13 | 16h 3330 (VIII p. 199) | not found in Dm. |
 | 14 | 16h 3717 (VIII p. 203) | not found in Dm. nor Merid. Zones |
 
-Entry 5 (W Cen) was not looked up. Minniti's "CM 1899 Mar 7 mag 10.2" for entry 4 is the
-corrigenda's meridian-circle note.
+Entry 5 (W Cen) was not looked up. Minniti's "CM 1899 Mar 7 mag 10.2" for entry 4 comes from
+the corrigenda remark "C. M. 1899 Mar. 7, 10¼", whose meaning is not explained there.
 
-Entries 1–3 and 6–8 were traced to their original zone observations through the last two ZC
+Entries 1–4 and 6–8 were traced to their original zone observations through the last two ZC
 columns (Zona, No.). The zones are printed in RNAO II (1872, Zones 1–128), III (1873, 129–293),
 V (1874) and VI (1875).
 
@@ -2240,6 +2240,7 @@ Checks done:
 | 1 | 8h 1062 | 12m53.96s −24°12′43.6″ | 230, 43 (III p. 314, 1873 Apr 14) | ZC δ 10′ wrong: zone gives −24°02′43.6″ |
 | 2 | 8h 1308 | 15m55.02s −43°59′45.9″ | 627, 9 (VI p. 259, 1875 Apr 9) | reduced as group V, but taken on group II: CD −43°4197 |
 | 3 | 8h 3084 | 37m28.91s −31°57′38.9″ | 609, 117 (V p. 489, 1874 Apr 5) | transit time about 9s early: CD −31°6445 |
+| 4 | 9h 706 | 9m05.02s −23°20′48.3″ | 230, 158 (III p. 316, 1873 Apr 14) | ZC δ 20′ off the zone; no counterpart at either position |
 | 6 | 12h 1198 | 19m15.02s −61°03′13.6″ | 270, 89 (III p. 423, 1873 May 11) | duplicate of 270/88 = ZC 12h 1168 |
 | 7 | 13h 3654 | 59m17.50s −59°15′43.4″ | 713, 45 (VI p. 518, 1875 Jun 24) | duplicate of 713/43 = ZC 13h 3646 |
 | 8 | 14h 914 | 14m26.07s −42°56′16.8″ | 286, 80 (III p. 474, 1873 Jun 11) | ZC δ 7′ different from the zone; matches a real star |
@@ -2275,6 +2276,19 @@ Checks done:
   - This matches no tally interval or difference of intervals: in 1874, III +13.08, V −13.07,
     VI −25.18 and VII −37.2, in seconds × sec δ. So the Paso itself must have been recorded about
     9s early. CD −31°6445 does not appear anywhere else in the ZC.
+- **ZC 9h 706.**
+  - Zone 230 star 158 (mag. 10) is reduced correctly as group V: Paso 9h9m27.50s → T 13.31s,
+    Micr. I 23°0′25.17″, a1 = −8.18, a2 = +0.01, d1 = +23.15 and d2 = −0.07, giving
+    9h9m5.14s −23°0′48.2″.
+  - The ZC prints −23°20′48.3″: 20′ further south, with the same seconds, and α 0.12s smaller.
+    The corrigenda has no correction of this declination.
+  - The neighbouring stars of the zone match Tycho-2: 157 (= ZC 9h 709) is TYC 6587-1290-1 at
+    −0.34s, and 159 is TYC 6587-1091-1 at −0.11s.
+  - There is no counterpart at either position. Tycho-2, the CD and the GSC (to about mag. 15)
+    have nothing within 1′. At the same declinations, within ±2 min of RA, there are only GSC
+    stars of mag. 12.1–12.4, at +83s (zone δ) and at −101s and +128s (ZC δ).
+  - No tally or timing slip moves the observation onto a real star, so this is the only entry
+    of the list without an identification.
 - **ZC 12h 1198.**
   - Zone 270 star 89 is 2.4″ from star 88 in δ and 29.1s later in α.
   - Star 88 is TYC 8975-1084-1 = CD −61°3456. Nothing exists at star 89's position.
