@@ -2144,6 +2144,168 @@ Effect on `results/log_south.log`:
 - ZC identifications: PPM 14339 → 14341, GSC-PPM 418 → 417, CPD 14715 → 14716.
 - ZC stars saved from the GC scans: 9927 → 9926, because GC 3793 lost its reference.
 
+## 46. ZC stars "not found in the CD": the original zone observations
+
+E. R. Minniti Morgan, [*Estrellas del Córdoba Durchmusterung ausentes*](https://historiadelaastronomia.wordpress.com/2020/12/28/estrellas-del-cordoba-durchmusterung-ausentes/), lists ZC stars marked
+"CoD – No se halló", as candidates for peculiar or variable stars. Some stars of the list are also in the
+ZC corrigenda of RNAO XVIII (pp. XLV–L, "Fé de erratas de los tomos ya publicados", covering
+volumes VII, VIII and XIV), marked as "no existe", "no se halló en las Zonas de Exploración"
+(not found in Dm.) or "es variable":
+
+| Minniti | ZC (print) | Corrigenda remark |
+|---|---|---|
+| 1 | 8h 1062 (VII p. 212) | no existe |
+| 2 | 8h 1308 (VII p. 214) | not found in Dm. |
+| 3 | 8h 3084 (VII p. 232; Minniti cites p. 213) | no existe |
+| 4 | 9h 706 (VII p. 259) | not found in Dm.; M. C. 1899 Mch. 7, 10¼ |
+| 6 | 12h 1198 (VIII p. 13) | no existe |
+| 7 | 13h 3654 (VIII p. 77) | no existe |
+| 8 | 14h 914 (VIII p. 87) | not found in Dm. |
+| 9 | 14h 3709 (VIII p. 115) | not found in Dm. (now GI Lup) |
+| 10 | 15h 2202 (VIII p. 141) | not found in Dm. Planet? |
+| 11 | 15h 3164 (VIII p. 152) | is variable |
+| 12 | 16h 3097 (VIII p. 197) | not found in Dm. nor Merid. Zones |
+| 13 | 16h 3330 (VIII p. 199) | not found in Dm. |
+| 14 | 16h 3717 (VIII p. 203) | not found in Dm. nor Merid. Zones |
+
+Entry 5 (W Cen) was not looked up. Minniti's "CM 1899 Mar 7 mag 10.2" for entry 4 is the
+corrigenda's meridian-circle note.
+
+Entries 1–3 and 6–8 were traced to their original zone observations through the last two ZC
+columns (Zona, No.). The zones are printed in RNAO II (1872, Zones 1–128), III (1873, 129–293),
+V (1874) and VI (1875).
+
+### 46a. How a zone observation is reduced, and how it was checked
+
+Each zone page gives, per star: N°, Mag., Grupo, Paso, T, Microsc. I, a1, a2, d1, d2, and the
+resulting α, δ for 1875.0 (south declinations positive). The method is explained in the
+Introduction of RNAO II (pp. LVII–LVIII and LXI).
+
+1. **Transit time.** Paso is the clock time on one tally of threads ("Grupo"). It is reduced to
+   the middle of the field: T = Paso + i·sec δ, where i is the equatorial interval of the tally
+   (RNAO II, pp. XIX–XXIV).
+   - In 1872 the circle was East, so I = G … VII = A. Group IV (D) adds +0.02s (+0.022s when two
+     threads were skipped).
+   - From 1873 on it was West, so I = A … VII = G. Group IV adds nothing, III adds +13.066s·sec δ,
+     V subtracts 13.067s·sec δ and VI subtracts 25.170s·sec δ (1873 values).
+   - "O" means the three inner threads of the middle tally, which adds about +0.03–0.04s.
+2. **Declination.** Microsc. I is already a declination (211°25′15″ minus the circle reading),
+   not yet corrected.
+3. **Reduction to 1875.0.** Each volume's Introduction has "Tablas para reducir las
+   observaciones de las zonas":
+   - RNAO II from p. LXVI;
+   - RNAO III pp. XXVIII–XLIV (zones 129–293);
+   - RNAO V, up to p. CLXXX (1874 zones; Zone 609 on p. CLXXIX);
+   - RNAO VI pp. XXXII–XLIV (zones 620–754).
+
+   Each zone's table is headed by its number, date and a round declination D. It gives a1, a2,
+   d1, d2 every 10 min of sidereal time, with their differences:
+   - a1 contains the clock error, instrumental constants and precession/nutation in α;
+   - d1 contains refraction, nadir point, flexure, the microscope I → four-microscope mean and
+     precession/nutation in δ;
+   - a2, d2 are their changes per 100′ of declination.
+
+   The positions are
+
+   α₁₈₇₅ = T + a1 + (δ − D)/100′ · a2,  δ₁₈₇₅ = δ(Micr. I) + d1 + (δ − D)/100′ · d2.
+
+   The zone page prints a1, d1 already interpolated at T, and the a2, d2 terms already
+   multiplied by (δ − D)/100′.
+
+To check a star, recompute T from Paso and the group, interpolate a1 and d1 linearly at T in the
+zone's table, and multiply the table a2, d2 by (δ − D)/100′. The sums must reproduce the printed
+α, δ to about 0.01s and 0.1″. The result was then compared with Tycho-2 and the CD. Tycho-2 was
+carried back to the epoch of observation with its proper motions, and the zone position was
+precessed (FK5, B1875 → J2000).
+
+Checks done:
+- **Zone 1 (RNAO II p. 31, 1872 Sep 9, D = 24°), stars 1–10.**
+  - α is exact and δ agrees to ≤ 0.05″.
+  - In 45 of the 50 stars the printed d1 is 0.09–0.10″ smaller (in absolute value) than the
+    printed table gives, as if the reducer used a table differing by a constant 0.1″.
+  - Three d1 entries of that table (p. LXVI) contradict their own differences: 19h40 "31.78" →
+    34.78, 20h30 "42.82" → 43.03, 20h40 44.38 → 44.49.
+- **Zone 230 (RNAO III p. 314, 1873 Apr 14, D = 23°30′), stars 41–45.**
+  - All columns agree to 0.01s and 0.02″.
+  - Table misprint: d2 at 8h40 "+0.01" → +0.04.
+  - In this scan some 9s have a broken top and read as 0s (star 43 "53.07" is 53.97; star 50
+    "0.68" is 9.68).
+- **Zones 270, 286 and 713 (below).** All stars examined are reduced correctly. The only
+  deviation is star 43 of Zone 713, whose group correction is 25.62s against 25.56s computed.
+
+### 46b. Results
+
+| Minniti | ZC | ZC 1875.0 | Zone, No. (volume, page, date) | Finding |
+|---|---|---|---|---|
+| 1 | 8h 1062 | 12m53.96s −24°12′43.6″ | 230, 43 (III p. 314, 1873 Apr 14) | ZC δ 10′ wrong: zone gives −24°02′43.6″ |
+| 2 | 8h 1308 | 15m55.02s −43°59′45.9″ | 627, 9 (VI p. 259, 1875 Apr 9) | reduced as group V, but taken on group II: CD −43°4197 |
+| 3 | 8h 3084 | 37m28.91s −31°57′38.9″ | 609, 117 (V p. 489, 1874 Apr 5) | transit time about 9s early: CD −31°6445 |
+| 6 | 12h 1198 | 19m15.02s −61°03′13.6″ | 270, 89 (III p. 423, 1873 May 11) | duplicate of 270/88 = ZC 12h 1168 |
+| 7 | 13h 3654 | 59m17.50s −59°15′43.4″ | 713, 45 (VI p. 518, 1875 Jun 24) | duplicate of 713/43 = ZC 13h 3646 |
+| 8 | 14h 914 | 14m26.07s −42°56′16.8″ | 286, 80 (III p. 474, 1873 Jun 11) | ZC δ 7′ different from the zone; matches a real star |
+
+- **ZC 8h 1062.**
+  - The zone position (original observation in RNAO III, p. 314) is 8h12m53.97s −24°02′43.6″.
+    These coordinates land on CD −24°6767 = TYC 6560-648-1. Tycho-2 agrees with them to 0.1″ in
+    δ, but its α is about 3.3s larger.
+  - The other stars of the zone agree with Tycho-2 to about 0.2s and the reduction is right, so
+    the transit time itself was recorded about 3s early.
+  - The ZC entry is therefore a 10′ misprint in δ, plus an α error already present in the zone.
+- **ZC 8h 1308.**
+  - The ZC copies Zone 627 star 9 exactly. The star is reduced correctly as group V: Paso
+    8h16m09.17s → T 15m51.00s, with a1, d1 and the a2, d2 terms smooth with its neighbours.
+  - Stars 6–8 and 10–12 of the zone match Tycho-2 stars at −0.2 to −0.6s and +1–2″. Star 9 has
+    no counterpart at its position.
+  - From this page, the 1875 corrections are III ≈ +13.10s·sec δ, V ≈ −13.05s·sec δ and
+    VI ≈ −25.4s·sec δ.
+  - If the transit was taken on group II (assumed +25.4s·sec δ = +35.1s, symmetric to VI), then
+    T = 16m44.25s and α = 8h16m48.27s. That falls on CD −43°4197 (9.5) = TYC 7673-2491-1
+    (V_T 9.9), at −0.32s and +1.1″, the same offset as the rest of the zone.
+  - The star was therefore taken on tally B and reduced as tally V, which puts it 53.2s too
+    early. CD −43°4197 does not appear anywhere else in the ZC.
+- **ZC 8h 3084.**
+  - The ZC copies Zone 609 star 117 exactly. The star is reduced correctly as group VII: Paso
+    8h38m13.38s → T 37m29.58s, with a1 = −0.63, a2 = +0.01, d1 = +4.71 and d2 = −0.44, all as
+    in the zone's table.
+  - The other stars of the zone (112–116, 118–121) match Tycho-2 stars at −0.1 to −0.5s (mean
+    −0.26s).
+  - The only real star at the declination of star 117 is CD −31°6445 (9.6) = TYC 7141-59-1
+    (V_T 10.7), at +8.89s and +1.2″. Allowing for the zone offset, the error is about +9.15s
+    (7.76s at the equator).
+  - This matches no tally interval or difference of intervals: in 1874, III +13.08, V −13.07,
+    VI −25.18 and VII −37.2, in seconds × sec δ. So the Paso itself must have been recorded about
+    9s early. CD −31°6445 does not appear anywhere else in the ZC.
+- **ZC 12h 1198.**
+  - Zone 270 star 89 is 2.4″ from star 88 in δ and 29.1s later in α.
+  - Star 88 is TYC 8975-1084-1 = CD −61°3456. Nothing exists at star 89's position.
+  - The ZC itself already lists 270/89 as the second observation of ZC 12h 1168, with α corrected
+    to 18m45.91s (−29.11s; star 88 gives 45.90s). It then catalogued the same observation again,
+    uncorrected, as 1198.
+- **ZC 13h 3654.**
+  - Zone 713 star 45 is 0.9″ from star 43 in δ and 3.98s later in α.
+  - Star 43 is TYC 8677-2652-1 = CD −59°5095. Nothing exists at star 45's position.
+  - Star 43 was timed on group III and star 45 on group V. For the same star, the two Pasos should
+    differ by 26.133s·sec δ = 51.13s; they differ by 55.17s. So star 45 is star 43 timed about 4s
+    late.
+  - ZC 13h 3646 already includes 713/43 (with 313/171). Unlike 12h 1198, the duplicate was not
+    merged by the compilers.
+- **ZC 14h 914.**
+  - The zone gives star 80 at −42°49′16.8″ (Micr. I 42°48′40.31″), consistent with its
+    reduction. The ZC prints −42°56′16.8″: 7′ further south, with the same seconds and the same α.
+  - Nothing exists at the zone position.
+  - The ZC declination matches TYC 7817-481-1 (V_T 10.3) = CD −42°9269 (9.8 mag) to 3.9″, with
+    α 5.6s larger (about 5.9s after the zone's usual −0.3s offset to Tycho-2).
+  - This looks like a deliberate correction of the microscope minutes in the ZC, while the α
+    error was never caught. The Vol. III errata in hand stop at p. 260, so the official record
+    of a correction to p. 474 was not seen.
+  - Star 78 of the same zone (the second observation of ZC 14h 911) is TYC 7817-1335-1 =
+    CD −43°9004.
+
+For ZC 8h 1308 and 8h 3084, the nearest GSC objects are GSC 7673-2604
+(15.0″ from ZC 8h 1308, mag. 14.5) and GSC 7141-419 (47.8″ from ZC 8h 3084, mag. 14.4, flagged
+"non-star"). Neither identification is credible: both objects are about 5 magnitudes fainter than
+the ZC stars, and the second is also too far away.
+
 # Klein's Star Atlas (1888) — catalogue of remarkable objects → cat/klein.txt
 
 Source: `~/Desktop/Catalogos/klein_star_atlas.pdf` (162 PDF pages, English edition 1888, translated
@@ -2151,7 +2313,7 @@ by E. McClure, University of California copy). The catalogue is printed pages 11
 Only the catalogue was transcribed. The introduction, the editorial note on p. 71 and the plates
 were left out.
 
-## 46. Method and format
+## 47. Method and format
 
 - Visual transcription of 200-dpi renders, one file per printed page: `scans/klein_page1.txt`
   (p. 11) … `scans/klein_page61.txt` (p. 71). A description that runs onto the next page is stored
@@ -2169,7 +2331,7 @@ were left out.
 - Table-like parts (Burnham's measures for 45 Lep, Anonyma in Libra, β Leo, υ CrB, etc.) are
   flattened into one line as `AB d = … p = …; AC …`, with ditto marks expanded.
 
-## 47. Coordinate check against PPM
+## 48. Coordinate check against PPM
 
 PPM stars with V ≤ 8 were carried to epoch 1880 using their proper motions, precessed (FK5) to
 equinox 1880 with astropy, and matched to each stellar entry. Entries for nebulae, clusters and
@@ -2185,7 +2347,7 @@ novae were skipped.
   Σ 2840). Each was re-read in the scan and is transcribed as printed. These are the book's own
   imprecisions.
 
-Clear errors in the book (kept as printed in the page files; the coordinate errors are corrected in cat/klein.txt, see §49):
+Clear errors in the book (kept as printed in the page files; the coordinate errors are corrected in cat/klein.txt, see §50):
 
 | Entry | Printed | Should be | Note |
 |---|---|---|---|
@@ -2203,9 +2365,9 @@ position, and ′ for ″ in 55 Psc "6.3′" and τ Oph "d = 100′"; 14 Aur giv
 printed twice, and both entries are kept. One entry is out of RA order in the book (W Sgr 17h57m
 follows 18h11m across the page break, pp. 56–57) and was left in printed order.
 
-The nebula and cluster positions are checked against NGC 2000.0 in §48.
+The nebula and cluster positions are checked against NGC 2000.0 in §49.
 
-## 48. Nebula and cluster check against NGC 2000.0
+## 49. Nebula and cluster check against NGC 2000.0
 
 The 260 entries that begin with a GC number were matched to `book/ngc2000.txt` (Sinnott,
 NGC 2000.0, J2000). Each Klein position was precessed from 1880.0 to J2000 with astropy FK5, and
@@ -2239,11 +2401,11 @@ Large discrepancies. All were re-read in the scan and are as printed:
 | GC 1534 (p. 34), NGC 2395, Gem | 7h22m +14°01′ | 7h20.3m +13°49′ | RA +1.7ᵐ, Dec +11′ |
 | GC 1101 (p. 24), NGC 1893, Aur | 5h17m +33°17′ | 5h14.8m +33°17′ | RA +2.2ᵐ |
 | GC 1415 (p. 30), NGC 2232, Mon | 6h22m −4°41′ | 6h20.7m −4°41′ | RA +1.3ᵐ |
-| GC 1030 (p. 23), NGC 1807, Tau | 5h03m +16°32′ | 5h03.8m +16°23′ | Dec +9′ (but it is NGC 1817, see §50) |
+| GC 1030 (p. 23), NGC 1807, Tau | 5h03m +16°32′ | 5h03.8m +16°23′ | Dec +9′ (but it is NGC 1817, see §51) |
 | GC 1490 (p. 33), NGC 2331, Gem | 7h00m +27°23′ | 6h59.7m +27°32′ | Dec −9′ |
 | GC 4376 (p. 57), NGC 6546, Sgr | 18h00m −23°14′ | 17h59.9m −23°21′ | Dec +7′ |
 
-(Superseded by §50 for GC 2279 and GC 768.) Some identifications are uncertain. GC 2279 ("Nebula in Leo. According to Tempel, …", 10h54m
+(Superseded by §51 for GC 2279 and GC 768.) Some identifications are uncertain. GC 2279 ("Nebula in Leo. According to Tempel, …", 10h54m
 +4°16′) falls between NGC 3494, which NGC 2000 lists as nonexistent, and NGC 3495, 16′ away. GC
 768 (Tempel's nebula in the Pleiades) is matched to NGC 1435 (Merope), 14′ away. Several clusters
 match NGC entries that NGC 2000 lists as nonexistent ("−"), such as NGC 1708, 1996, 2224, 2312,
@@ -2252,7 +2414,7 @@ match NGC entries that NGC 2000 lists as nonexistent ("−"), such as NGC 1708, 
 Entries without a GC number (M 25, the nebula in Cygnus at 21h03m, and the GC numbers only
 mentioned inside star entries) were not matched.
 
-## 49. Corrections applied to cat/klein.txt
+## 50. Corrections applied to cat/klein.txt
 
 The page files `scans/klein_page*.txt` keep the book exactly as printed. `cat/klein.txt` has the
 coordinates corrected for every entry that is 10′ or more from its true 1880.0 position: 9 stars
@@ -2263,7 +2425,7 @@ How the true 1880 positions were found:
 - **Stars:** the star was looked up by name (variable, Bayer or Flamsteed designation) with the
   CDS Sesame resolver, brought back to epoch 1880 with its proper motion, and precessed to
   equinox 1880.0. Σ doubles were taken from `book/Struve.csv`.
-- **Nebulae and clusters:** the NGC 2000.0 position (§48) was precessed to 1880.0.
+- **Nebulae and clusters:** the NGC 2000.0 position (§49) was precessed to 1880.0.
 
 The corrected value is rounded the way the book rounds: nearest minute in RA, nearest arcminute
 in Dec. Every original value was re-read in the scan and is what the book prints. None of these
@@ -2315,7 +2477,7 @@ A few stars have names that don't fit their positions, but the positions themsel
 - "υ¹ Cancri" fits Σ 1224.
 - "96 B., Orionis" is W Orionis.
 - "52 Camelopardalis", "4 Tauri", "41 Ursae Majoris" and "ι Orionis" (5h01m) do not resolve to
-  the star at the printed position, but a star of the right brightness lies there (PPM check, §47).
+  the star at the printed position, but a star of the right brightness lies there (PPM check, §48).
 
 61 Cygni looked 16′ off at first. The cause was that Sesame returned no proper motion for it.
 With the PPM proper motion (about 5″ a year), the book's 21h01m +38°10′ is correct.
@@ -2325,7 +2487,7 @@ the nearest minute.
 
 A transcription slip was also fixed in both files: 35 Piscium had been written "335, Piscium".
 
-## 50. Identifications checked against the 1901 edition
+## 51. Identifications checked against the 1901 edition
 
 archive.org has a later English edition (London, SPCK, 1901; item `staratlascontain00kleiuoft`;
 no 1903 edition is on archive.org). It gives positions for 1900.0 and prints the NGC number in
@@ -2339,7 +2501,7 @@ globular cluster, "4359 (6520)" to an object 2° away, and "5023 (7742)" to a ga
 1901 positions in those entries fit NGC 1857, 6522 and 7772. So each disagreement was judged on
 the description (compared with Dreyer's description in NGC 2000) and on both positions.
 
-| GC | Nearest NGC (§48) | 1901 ed. | Adopted | Reason |
+| GC | Nearest NGC (§49) | 1901 ed. | Adopted | Reason |
 |---|---|---|---|---|
 | 1030 | 1807 | 1817 | **1817** | "stars 11 to 14 mag." = NGC 1817 "st 11…14"; 1901 position fits 1817 (4.7′) |
 | 2279 | 3494 | 3494 | **3495** | see below |
@@ -2366,9 +2528,9 @@ these reasons:
 - Klein's Dec (+4°16′ in 1880, +4°15′ in 1900) fits NGC 3495 (+4°16.6′) and not 3494 (+4°21.6′).
 
 So the 1901 number seems to belong to Tempel's small companion. Only the 1888 RA was a minute off,
-and it is corrected in §49 (10h54m → 10h55m).
+and it is corrected in §50 (10h54m → 10h55m).
 
-Effect on the corrections in §49:
+Effect on the corrections in §50:
 - GC 1030 was first corrected towards NGC 1807. It is now corrected to NGC 1817 (5h05m +16°33′).
 - GC 2279 (→ NGC 3495) and GC 3105 (→ NGC 4568, Dec 12′ off) were added.
 - The other new identifications are within 10′ of the printed positions, so they needed no change.
